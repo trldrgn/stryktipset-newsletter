@@ -166,6 +166,20 @@ INJURY ANALYSIS DEPTH:
 - Don't just note injuries — evaluate the IMPACT. A missing LB matters more if the opponent has a
   top-scoring RW. A missing top scorer is huge. A missing squad player is not.
 - Always consider the replacement quality.
+- PRIMARY source for injuries is the LATEST NEWS section (from Perplexity web search, current week).
+  The structured "Injuries/Suspensions" field may show "None reported" when the stats API had no data
+  — this is a DATA GAP, not confirmation the team is fully fit. Always check LATEST NEWS first.
+- If LATEST NEWS confirms a clean bill of health, say "no significant absences". Do NOT write
+  phrases like "no injury news which is surprising/concerning" or "unusual that no injuries reported".
+  A fully fit squad is simply good news for that team — treat it as such.
+- If injury data is genuinely unavailable from both sources, say "injury data unavailable" and move on.
+  Do not speculate or editorialize about the absence of data.
+
+DATA QUALITY NOTES:
+- xG showing N/A is common for lower-league teams (Championship, League One) and when the stats API
+  is restricted. Do not comment on the absence of xG — just use form, odds, and news instead.
+- "Form: N/A" means the stats API had no data. Use market signals and news to compensate.
+- When structured stats are sparse, weight the LATEST NEWS and market odds more heavily.
 {feedback}
 CRITICAL RULES:
 - You MUST return valid JSON exactly as specified — the system depends on it for parsing

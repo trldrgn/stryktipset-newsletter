@@ -644,6 +644,7 @@
   .type-full-badge   { background: #431407; color: #fb923c; }
 
   .row-conf { color: #2a3a54; font-size: 11px; }
+  .conf-covered { color: #fb923c; font-weight: 800; font-size: 10px; letter-spacing: 1px; }
 
   .coupon-legend {
     display: flex;
@@ -814,6 +815,84 @@
 
   <div class="spacer"></div>
 
+  <!-- ════════════════════════════════════════ COUPON -->
+  <div class="section-label">
+    <div class="section-label-line"></div>
+    <div class="section-label-text">Kupongsammanfattning</div>
+    <div class="section-label-line"></div>
+  </div>
+
+  <div class="coupon-wrap">
+    <div class="coupon-head">
+      <h2>Draw #{{ draw_number }} · System</h2>
+      <div class="coupon-cost">{{ report.total_cost_sek }} SEK <span>/ {{ report.total_rows }} rader</span></div>
+    </div>
+
+    <table class="coupon-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Match</th>
+          <th>Tips</th>
+          <th>Typ</th>
+          <th>Konfidens</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pred in predictions %}
+        <tr class="row-{{ pred.selection_type.value }}">
+          <td class="row-num">{{ pred.game_number }}</td>
+          <td class="row-match">{{ pred.home_team }} – {{ pred.away_team }}</td>
+          <td>
+            <span class="row-picks picks-{{ pred.selection_type.value }}">
+              {{ pred.predicted_outcomes | map(attribute='value') | join(' ') }}
+            </span>
+          </td>
+          <td>
+            <span class="row-type type-{{ pred.selection_type.value }}-badge">
+              {{ pred.selection_type.value | upper }}
+            </span>
+          </td>
+          <td class="row-conf">
+            {% if pred.selection_type.value == 'full' %}
+            <span class="conf-covered">✓ TÄCKT</span>
+            {% else %}
+            {{ (pred.confidence * 100)|int }}%
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="coupon-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#4ade80"></div>
+        SINGLE — 1 utfall, högst konfidens
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#60a5fa"></div>
+        DOUBLE — 2 utfall
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#fb923c"></div>
+        FULL — alla 3 utfall täckta (garanterad rad)
+      </div>
+      <div class="legend-item" style="margin-left:auto; font-style:italic; color:#2a3a54;">
+        Konfidens = modellens prediktionssäkerhet
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- ══════════════════════════════════ DETALJERAD ANALYS -->
+  <div class="section-label">
+    <div class="section-label-line"></div>
+    <div class="section-label-text">Detaljerad Analys</div>
+    <div class="section-label-line"></div>
+  </div>
+
   <!-- ═══════════════════════════════════ MATCH CARDS -->
   <div class="match-cards">
   {% for pred in predictions %}
@@ -981,67 +1060,6 @@
   </div><!-- /match-card -->
   {% endfor %}
   </div><!-- /match-cards -->
-
-
-  <!-- ════════════════════════════════════════ COUPON -->
-  <div class="section-label">
-    <div class="section-label-line"></div>
-    <div class="section-label-text">Kupongsammanfattning</div>
-    <div class="section-label-line"></div>
-  </div>
-
-  <div class="coupon-wrap">
-    <div class="coupon-head">
-      <h2>Draw #{{ draw_number }} · System</h2>
-      <div class="coupon-cost">{{ report.total_cost_sek }} SEK <span>/ {{ report.total_rows }} rader</span></div>
-    </div>
-
-    <table class="coupon-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Match</th>
-          <th>Tips</th>
-          <th>Typ</th>
-          <th>Konf.</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for pred in predictions %}
-        <tr class="row-{{ pred.selection_type.value }}">
-          <td class="row-num">{{ pred.game_number }}</td>
-          <td class="row-match">{{ pred.home_team }} – {{ pred.away_team }}</td>
-          <td>
-            <span class="row-picks picks-{{ pred.selection_type.value }}">
-              {{ pred.predicted_outcomes | map(attribute='value') | join(' ') }}
-            </span>
-          </td>
-          <td>
-            <span class="row-type type-{{ pred.selection_type.value }}-badge">
-              {{ pred.selection_type.value | upper }}
-            </span>
-          </td>
-          <td class="row-conf">{{ (pred.confidence * 100)|int }}%</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-
-    <div class="coupon-legend">
-      <div class="legend-item">
-        <div class="legend-dot" style="background:#4ade80"></div>
-        SINGLE — Högst konfidens, 1 utfall
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="background:#60a5fa"></div>
-        DOUBLE — 2 utfall
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="background:#fb923c"></div>
-        FULL — Svårast att förutse, 3 utfall
-      </div>
-    </div>
-  </div>
 
 
   <!-- ══════════════════════════════════════ FOOTER -->

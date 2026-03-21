@@ -37,17 +37,19 @@ def _build_query(match: Match) -> str:
     if match.kickoff:
         kickoff_str = match.kickoff.strftime("%d %B %Y")
 
+    today = datetime.now(timezone.utc).strftime("%d %B %Y")
+
     return (
         f"Football match preview: {match.home_team} vs {match.away_team} "
         f"({match.league}{', ' + kickoff_str if kickoff_str else ''}). "
-        f"Provide concise factual updates on: "
-        f"1) Current injury list and doubtful players for both teams "
-        f"2) Recent xG statistics (last 3-5 games) for both teams — cite FBref or similar "
-        f"3) Rotation/fatigue risk — did either team play in the last 3 days? "
-        f"Any upcoming high-priority fixture causing likely rotation? "
-        f"4) Manager press conference — any quotes on team selection or player availability? "
-        f"5) Squad morale, recent form narrative, or any unusual context (new manager, dressing room issues). "
-        f"Be factual and brief. If data is unavailable say so."
+        f"Today is {today}. Provide concise factual updates — ONLY use information from the last 14 days. "
+        f"1) INJURIES (confirmed as of this week): list injured/suspended/doubtful players for BOTH teams. "
+        f"State 'no recent injury news found' if nothing current. Do NOT list players who have already returned. "
+        f"2) Recent xG (last 3-5 games) — cite FBref or similar. If unavailable for this league level, say so. "
+        f"3) Rotation/fatigue: did either team play midweek? Key fixture coming up causing likely rotation? "
+        f"4) Manager press conference (this week only): quotes on team selection or absences. "
+        f"5) Any unusual context: new manager, morale issues, relegation/promotion pressure. "
+        f"Be factual and brief. Explicitly state when data is unavailable rather than speculating."
     )
 
 
