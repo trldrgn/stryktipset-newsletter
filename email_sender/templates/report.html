@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stryktipset Newsletter v.{{ draw_number }}</title>
+<style>
+  /* Reset */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #0f1117;
+    color: #e8eaf0;
+    line-height: 1.6;
+  }
+
+  .wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #0f1117;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1a1f2e 0%, #0d1117 100%);
+    border-bottom: 3px solid #f7c948;
+    padding: 32px 32px 24px;
+    text-align: center;
+  }
+  .header .logo {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #f7c948;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: #8892a4;
+    margin-top: 6px;
+  }
+
+  /* Section title */
+  .section-header {
+    padding: 20px 32px 12px;
+    border-bottom: 1px solid #1e2434;
+  }
+  .section-header .label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #f7c948;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .section-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 2px;
+  }
+
+  /* Last week report card */
+  .report-card {
+    margin: 0 32px 0;
+    background: #161b27;
+    border: 1px solid #1e2434;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 16px;
+  }
+  .score-banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .score-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #f7c948;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: #0f1117;
+    flex-shrink: 0;
+  }
+  .score-detail h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .score-detail p {
+    font-size: 13px;
+    color: #8892a4;
+    margin-top: 2px;
+  }
+  .stat-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .stat-pill {
+    background: #1e2434;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #c8d0e0;
+  }
+  .stat-pill strong { color: #fff; }
+
+  /* Wrong picks breakdown */
+  .wrong-pick {
+    border-left: 3px solid #e55353;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    background: #1a1520;
+    border-radius: 0 4px 4px 0;
+    font-size: 13px;
+  }
+  .wrong-pick .match-name { font-weight: 700; color: #e8eaf0; }
+  .wrong-pick .detail { color: #8892a4; margin-top: 2px; }
+
+  .lesson-box {
+    background: #1a2030;
+    border: 1px solid #2a3555;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #a0b0d0;
+  }
+  .lesson-box strong { color: #f7c948; }
+
+  /* Executive summary */
+  .exec-summary {
+    padding: 16px 32px;
+    font-size: 15px;
+    color: #b0bcd0;
+    border-bottom: 1px solid #1e2434;
+    font-style: italic;
+  }
+
+  /* Value radar */
+  .value-radar {
+    padding: 12px 32px 16px;
+    border-bottom: 1px solid #1e2434;
+  }
+  .value-item {
+    font-size: 13px;
+    color: #8892a4;
+    padding: 4px 0;
+  }
+  .value-item::before { content: "⚡ "; color: #f7c948; }
+
+  /* Match card */
+  .match-card {
+    margin: 0 32px 16px;
+    background: #161b27;
+    border: 1px solid #1e2434;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .match-card.single { border-top: 3px solid #4ade80; }
+  .match-card.double { border-top: 3px solid #60a5fa; }
+  .match-card.full   { border-top: 3px solid #f97316; }
+
+  .match-header {
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #1e2434;
+    background: #1a1f2e;
+  }
+  .game-badge {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #8892a4;
+    text-transform: uppercase;
+  }
+  .teams {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 2px;
+  }
+  .league-tag {
+    font-size: 11px;
+    color: #8892a4;
+    margin-top: 2px;
+  }
+  .selection-badge {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .selection-type {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .type-single { background: #14532d; color: #4ade80; }
+  .type-double { background: #1e3a5f; color: #60a5fa; }
+  .type-full   { background: #431407; color: #f97316; }
+
+  .prediction-outcomes {
+    margin-top: 6px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #ffffff;
+  }
+  .outcome-chip {
+    display: inline-block;
+    background: #2a3040;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin: 0 2px;
+    font-size: 16px;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid #1e2434;
+  }
+  .stat-cell {
+    flex: 1;
+    padding: 8px 12px;
+    border-right: 1px solid #1e2434;
+    font-size: 11px;
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-cell .stat-label {
+    color: #5a6478;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+  }
+  .stat-cell .stat-value {
+    color: #c8d0e0;
+    font-weight: 600;
+    display: block;
+    margin-top: 2px;
+  }
+  .stat-value.flag-fatigue { color: #f97316; }
+  .stat-value.flag-injury  { color: #e55353; }
+  .stat-value.flag-new-mgr { color: #a78bfa; }
+
+  /* Odds row */
+  .odds-row {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 8px;
+    border-bottom: 1px solid #1e2434;
+    font-size: 12px;
+  }
+  .odds-chip {
+    background: #1e2434;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-weight: 700;
+    color: #e8eaf0;
+  }
+  .odds-label { color: #5a6478; font-size: 10px; }
+  .distribution-bar {
+    flex: 1;
+    height: 6px;
+    background: #1e2434;
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+  }
+  .dist-home { background: #4ade80; }
+  .dist-draw { background: #f7c948; }
+  .dist-away { background: #60a5fa; }
+  .newspaper-tips {
+    font-size: 11px;
+    color: #8892a4;
+    padding: 0 12px;
+  }
+
+  /* Analysis text */
+  .analysis-body {
+    padding: 16px 18px;
+    font-size: 14px;
+    color: #b0bcd0;
+    line-height: 1.75;
+    border-bottom: 1px solid #1e2434;
+  }
+
+  /* Key factors */
+  .factors-section {
+    padding: 12px 18px;
+    border-bottom: 1px solid #1e2434;
+  }
+  .factors-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #f7c948;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .factor-item {
+    font-size: 12px;
+    color: #8892a4;
+    padding: 2px 0;
+  }
+  .factor-item::before { content: "→ "; color: #4ade80; }
+
+  /* Risk flags */
+  .risks-section {
+    padding: 10px 18px;
+  }
+  .risk-item {
+    font-size: 12px;
+    color: #8892a4;
+    padding: 2px 0;
+  }
+  .risk-item::before { content: "⚠ "; color: #f97316; }
+
+  /* Coupon table */
+  .coupon-section {
+    margin: 0 32px 24px;
+  }
+  .coupon-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .coupon-table th {
+    background: #1a1f2e;
+    color: #8892a4;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 2px solid #f7c948;
+  }
+  .coupon-table td {
+    padding: 9px 10px;
+    border-bottom: 1px solid #1e2434;
+    color: #c8d0e0;
+  }
+  .coupon-table tr:last-child td { border-bottom: none; }
+  .coupon-table tr.row-single td { background: rgba(74, 222, 128, 0.05); }
+  .coupon-table tr.row-full td   { background: rgba(249, 115, 22, 0.05); }
+  .pick-cell {
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+  .pick-single { color: #4ade80; }
+  .pick-double { color: #60a5fa; }
+  .pick-full   { color: #f97316; }
+  .badge-single { font-size: 9px; background: #14532d; color: #4ade80; padding: 1px 5px; border-radius: 3px; letter-spacing: 1px; }
+  .badge-double { font-size: 9px; background: #1e3a5f; color: #60a5fa; padding: 1px 5px; border-radius: 3px; letter-spacing: 1px; }
+  .badge-full   { font-size: 9px; background: #431407; color: #f97316; padding: 1px 5px; border-radius: 3px; letter-spacing: 1px; }
+
+  .coupon-footer {
+    text-align: right;
+    padding: 12px 0 0;
+    font-size: 13px;
+    color: #8892a4;
+  }
+  .coupon-footer strong { color: #f7c948; font-size: 15px; }
+
+  /* Footer */
+  .footer {
+    padding: 24px 32px;
+    text-align: center;
+    border-top: 1px solid #1e2434;
+    font-size: 11px;
+    color: #3a4155;
+  }
+  .footer a { color: #5a6478; }
+
+  /* Spacer */
+  .spacer { height: 24px; }
+  .spacer-sm { height: 12px; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <div class="logo">Stryktipset Newsletter</div>
+    <h1>Vecka {{ week_number }}, {{ year }}</h1>
+    <div class="subtitle">Draw #{{ draw_number }} &nbsp;·&nbsp; {{ generated_date }} &nbsp;·&nbsp; 768 SEK system</div>
+  </div>
+
+  <!-- ===== SECTION 1: LAST WEEK ===== -->
+  {% if evaluation %}
+  <div class="section-header">
+    <div class="label">Föregående omgång</div>
+    <h2>Förra veckans rapport</h2>
+  </div>
+
+  <div class="report-card" style="margin: 16px 32px;">
+    <div class="score-banner">
+      <div class="score-circle">{{ evaluation.total_correct }}/{{ evaluation.evaluations|length }}</div>
+      <div class="score-detail">
+        <h3>Draw #{{ evaluation.draw_number }} — {{ evaluation.accuracy_pct }}% rätt</h3>
+        <p>{{ evaluation.draw_date }}</p>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-pill">Singles: <strong>{{ evaluation.singles_correct }}/{{ evaluation.singles_total }}</strong></div>
+      <div class="stat-pill">Doubles: <strong>{{ evaluation.doubles_correct }}/{{ evaluation.doubles_total }}</strong></div>
+      <div class="stat-pill">Full: <strong>{% if evaluation.full_covered %}✓{% else %}–{% endif %}</strong></div>
+    </div>
+
+    {% set wrong = evaluation.evaluations | selectattr('correct', 'equalto', false) | selectattr('selection_type.value', 'ne', 'full') | list %}
+    {% if wrong %}
+    <div style="margin-top: 12px;">
+      {% for e in wrong %}
+      <div class="wrong-pick">
+        <div class="match-name">Spel {{ e.game_number }}: {{ e.home_team }} vs {{ e.away_team }}</div>
+        <div class="detail">
+          Vi tipsade: <strong>{{ e.our_prediction | map(attribute='value') | join('/') }}</strong>
+          ({{ e.selection_type.value }}) &nbsp;→&nbsp;
+          Resultat: <strong>{{ e.actual_result.value }}</strong>
+          {% if e.post_mortem %}&nbsp;— {{ e.post_mortem }}{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if evaluation.lessons %}
+    <div class="lesson-box">
+      <strong>Lärdomar för denna vecka:</strong><br>
+      {% for lesson in evaluation.lessons %}
+      {{ lesson }}<br>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="spacer"></div>
+  {% endif %}
+
+  <!-- ===== SECTION 2: THIS WEEK ===== -->
+  <div class="section-header">
+    <div class="label">Denna veckas analys</div>
+    <h2>13 matcher &nbsp;·&nbsp; Stryktipset #{{ draw_number }}</h2>
+  </div>
+
+  {% if executive_summary %}
+  <div class="exec-summary">{{ executive_summary }}</div>
+  {% endif %}
+
+  {% if value_radar %}
+  <div class="value-radar">
+    {% for item in value_radar %}
+    <div class="value-item">{{ item }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="spacer-sm"></div>
+
+  <!-- Match cards -->
+  {% for pred in predictions %}
+  {% set match = matches_by_game[pred.game_number] %}
+  <div class="match-card {{ pred.selection_type.value }}">
+
+    <!-- Header -->
+    <div class="match-header">
+      <div>
+        <div class="game-badge">Spel {{ pred.game_number }} &nbsp;·&nbsp; {{ match.league if match else '' }}</div>
+        <div class="teams">{{ pred.home_team }} vs {{ pred.away_team }}</div>
+        <div class="league-tag">
+          {% if match and match.kickoff %}{{ match.kickoff.strftime('%a %d %b, %H:%M') }} CET{% endif %}
+          {% if match and match.home_stats and match.home_stats.fatigue_flag %}
+            &nbsp;<span style="color:#f97316">⚠ HOME FATIGUE</span>
+          {% endif %}
+          {% if match and match.away_stats and match.away_stats.fatigue_flag %}
+            &nbsp;<span style="color:#f97316">⚠ AWAY FATIGUE</span>
+          {% endif %}
+        </div>
+      </div>
+      <div class="selection-badge">
+        <span class="selection-type type-{{ pred.selection_type.value }}">
+          {{ pred.selection_type.value }}
+        </span>
+        <div class="prediction-outcomes">
+          {% for o in pred.predicted_outcomes %}
+          <span class="outcome-chip">{{ o.value }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    {% if match and match.home_stats and match.away_stats %}
+    <div class="stats-bar">
+      <div class="stat-cell">
+        <span class="stat-label">HOME FORM (5)</span>
+        <span class="stat-value">
+          {% for r in match.home_stats.form_last5 %}{{ r.result.value }}{% endfor %}
+        </span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-label">AWAY FORM (5)</span>
+        <span class="stat-value">
+          {% for r in match.away_stats.form_last5 %}{{ r.result.value }}{% endfor %}
+        </span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-label">HOME xGF avg</span>
+        <span class="stat-value">
+          {% if match.home_stats.xg_for_avg %}{{ "%.2f"|format(match.home_stats.xg_for_avg) }}{% else %}—{% endif %}
+        </span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-label">AWAY xGF avg</span>
+        <span class="stat-value">
+          {% if match.away_stats.xg_for_avg %}{{ "%.2f"|format(match.away_stats.xg_for_avg) }}{% else %}—{% endif %}
+        </span>
+      </div>
+      {% if match.home_stats.league_position and match.away_stats.league_position %}
+      <div class="stat-cell">
+        <span class="stat-label">POSITION</span>
+        <span class="stat-value">P{{ match.home_stats.league_position }} vs P{{ match.away_stats.league_position }}</span>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Injuries -->
+    {% set home_critical = match.home_stats.critical_absences %}
+    {% set away_critical = match.away_stats.critical_absences %}
+    {% if home_critical or away_critical %}
+    <div class="stats-bar">
+      {% if home_critical %}
+      <div class="stat-cell" style="flex:2;">
+        <span class="stat-label">HOME INJURIES ⚠</span>
+        {% for a in home_critical %}
+        <span class="stat-value flag-injury">
+          {{ a.player_name }} ({{ a.position }})
+          {% if a.is_top_scorer %}★scorer{% endif %}
+          {% if a.is_top_assister %}★assist{% endif %}
+          {% if a.matchup_risk and a.matchup_risk.risk_level.value in ['high','critical'] %}
+            — vs {{ a.matchup_risk.opponent_player }}
+          {% endif %}
+        </span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if away_critical %}
+      <div class="stat-cell" style="flex:2;">
+        <span class="stat-label">AWAY INJURIES ⚠</span>
+        {% for a in away_critical %}
+        <span class="stat-value flag-injury">
+          {{ a.player_name }} ({{ a.position }})
+          {% if a.is_top_scorer %}★scorer{% endif %}
+          {% if a.is_top_assister %}★assist{% endif %}
+          {% if a.matchup_risk and a.matchup_risk.risk_level.value in ['high','critical'] %}
+            — vs {{ a.matchup_risk.opponent_player }}
+          {% endif %}
+        </span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% endif %}
+
+    <!-- Odds + distribution -->
+    {% if match and match.market %}
+    <div class="odds-row">
+      <span class="odds-label">1</span>
+      <span class="odds-chip">{{ match.market.odds_home or '—' }}</span>
+      <span class="odds-label">X</span>
+      <span class="odds-chip">{{ match.market.odds_draw or '—' }}</span>
+      <span class="odds-label">2</span>
+      <span class="odds-chip">{{ match.market.odds_away or '—' }}</span>
+      {% if match.market.public_pct_home is not none %}
+      <div class="distribution-bar" style="margin-left:8px;">
+        <div class="dist-home" style="width:{{ match.market.public_pct_home }}%"></div>
+        <div class="dist-draw" style="width:{{ match.market.public_pct_draw }}%"></div>
+        <div class="dist-away" style="width:{{ match.market.public_pct_away }}%"></div>
+      </div>
+      <span class="newspaper-tips">
+        📰 1:{{ match.market.newspaper_tips_home }} X:{{ match.market.newspaper_tips_draw }} 2:{{ match.market.newspaper_tips_away }}
+      </span>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <!-- Analysis -->
+    <div class="analysis-body">{{ pred.analysis | replace('\n', '<br>') }}</div>
+
+    <!-- Key factors -->
+    {% if pred.key_factors %}
+    <div class="factors-section">
+      <div class="factors-label">Nyckel&shy;faktorer</div>
+      {% for f in pred.key_factors %}
+      <div class="factor-item">{{ f }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Risks -->
+    {% if pred.risk_flags %}
+    <div class="risks-section">
+      {% for r in pred.risk_flags %}
+      <div class="risk-item">{{ r }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+  {% endfor %}
+
+  <!-- ===== SECTION 3: THE COUPON ===== -->
+  <div class="spacer"></div>
+  <div class="section-header">
+    <div class="label">Systemet</div>
+    <h2>Kupongsammanfattning — {{ report.total_cost_sek }} SEK</h2>
+  </div>
+
+  <div class="coupon-section" style="margin-top: 16px;">
+    <table class="coupon-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Match</th>
+          <th>Tips</th>
+          <th>Typ</th>
+          <th>Conf.</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pred in predictions %}
+        <tr class="row-{{ pred.selection_type.value }}">
+          <td style="color:#5a6478; font-size:11px;">{{ pred.game_number }}</td>
+          <td>{{ pred.home_team }} – {{ pred.away_team }}</td>
+          <td class="pick-cell pick-{{ pred.selection_type.value }}">
+            {{ pred.predicted_outcomes | map(attribute='value') | join(' ') }}
+          </td>
+          <td>
+            <span class="badge-{{ pred.selection_type.value }}">
+              {{ pred.selection_type.value | upper }}
+            </span>
+          </td>
+          <td style="color:#5a6478; font-size:12px;">
+            {{ (pred.confidence * 100) | int }}%
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="coupon-footer">
+      Totalt: <strong>{{ report.total_cost_sek }} SEK</strong>
+      &nbsp;({{ report.total_rows }} rader × 1 kr)
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="spacer"></div>
+  <div class="footer">
+    Genererat {{ generated_date }} &nbsp;·&nbsp; Draw #{{ draw_number }}<br>
+    <br>
+    Spela ansvarsfullt. Stöd: <a href="https://www.stodlinjen.se">stodlinjen.se</a> · 020-81 91 00
+  </div>
+
+</div>
+</body>
+</html>

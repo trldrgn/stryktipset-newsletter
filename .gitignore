@@ -1,0 +1,33 @@
+# Secrets — never commit these
+.env
+gmail_credentials.json
+gmail_token.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# Data — predictions and results are local state
+data/cache/
+logs/
+
+# Keep the data folder structure but not contents
+# (predictions and results are valuable — you may want to commit them
+#  or back them up separately. Uncomment below to ignore them too.)
+# data/predictions/
+# data/results/
+# data/performance/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
