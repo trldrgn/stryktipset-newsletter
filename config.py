@@ -61,7 +61,7 @@ SCHEDULE_TIMEZONE: str = os.getenv("SCHEDULE_TIMEZONE", "Europe/Stockholm")
 # ---------------------------------------------------------------------------
 
 CLAUDE_MODEL: str = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-5")
-CLAUDE_MAX_TOKENS: int = int(os.getenv("CLAUDE_MAX_TOKENS", "8192"))
+CLAUDE_MAX_TOKENS: int = int(os.getenv("CLAUDE_MAX_TOKENS", "16000"))
 
 
 # ---------------------------------------------------------------------------

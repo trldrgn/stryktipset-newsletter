@@ -192,7 +192,7 @@ Return ONLY valid JSON in this exact structure (no markdown, no extra text):
       "game_number": 1,
       "home_team": "...",
       "away_team": "...",
-      "analysis": "3-5 paragraph editorial analysis of this match. Cover form, key factors, injuries impact with matchup context, tactical angle, and what drives your prediction.",
+      "analysis": "3-4 paragraph editorial analysis. Cover form, H2H, key stats, injuries with matchup context, tactical angle, and prediction reasoning.",
       "key_factors": ["Factor 1", "Factor 2", "Factor 3"],
       "risk_flags": ["Risk 1", "Risk 2"],
       "predicted_outcomes": ["1"],

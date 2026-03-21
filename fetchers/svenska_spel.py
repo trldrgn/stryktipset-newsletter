@@ -188,7 +188,7 @@ def get_latest_result_raw() -> dict:
     if data.get("error"):
         raise ValueError(f"Svenska Spel result API error: {data['error']}")
 
-    return data.get("draw", data)
+    return data.get("result", data.get("draw", data))
 
 
 def fetch_result(draw_number: int) -> dict[int, Outcome]:

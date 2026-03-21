@@ -3,442 +3,781 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stryktipset Newsletter v.{{ draw_number }}</title>
+<title>Stryktipset v.{{ week_number }} · #{{ draw_number }}</title>
 <style>
-  /* Reset */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  /* ── Reset ─────────────────────────────────────────── */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  img { border:0; display:block; }
 
+  /* ── Base ───────────────────────────────────────────── */
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background: #0f1117;
-    color: #e8eaf0;
-    line-height: 1.6;
+    background: #080d18;
+    color: #e2e8f4;
+    font-family: 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-text-size-adjust: 100%;
   }
 
-  .wrapper {
-    max-width: 680px;
+  .email-wrap {
+    max-width: 660px;
     margin: 0 auto;
-    background: #0f1117;
+    background: #080d18;
   }
 
-  /* Header */
+  /* ── Header / Logo ──────────────────────────────────── */
   .header {
-    background: linear-gradient(135deg, #1a1f2e 0%, #0d1117 100%);
-    border-bottom: 3px solid #f7c948;
-    padding: 32px 32px 24px;
+    background: linear-gradient(160deg, #0d1526 0%, #111c35 60%, #0d1526 100%);
+    border-bottom: 2px solid #e8b84b;
+    padding: 36px 40px 28px;
     text-align: center;
   }
-  .header .logo {
-    font-size: 11px;
-    letter-spacing: 4px;
-    color: #f7c948;
-    text-transform: uppercase;
-    margin-bottom: 6px;
+
+  .logo-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
   }
-  .header h1 {
-    font-size: 28px;
+
+  .logo-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    text-align: left;
+  }
+
+  .logo-title {
+    font-size: 22px;
     font-weight: 800;
-    color: #ffffff;
-    letter-spacing: -0.5px;
-  }
-  .header .subtitle {
-    font-size: 13px;
-    color: #8892a4;
-    margin-top: 6px;
-  }
-
-  /* Section title */
-  .section-header {
-    padding: 20px 32px 12px;
-    border-bottom: 1px solid #1e2434;
-  }
-  .section-header .label {
-    font-size: 10px;
     letter-spacing: 3px;
-    color: #f7c948;
     text-transform: uppercase;
-    font-weight: 700;
-  }
-  .section-header h2 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-top: 2px;
+    color: #e8b84b;
+    line-height: 1;
   }
 
-  /* Last week report card */
-  .report-card {
-    margin: 0 32px 0;
-    background: #161b27;
-    border: 1px solid #1e2434;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 16px;
+  .logo-sub {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #5a7090;
+    margin-top: 4px;
   }
-  .score-banner {
+
+  .header-meta {
+    font-size: 13px;
+    color: #4a6080;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .header-meta strong {
+    color: #8ba4c4;
+  }
+
+  /* ── Section labels ─────────────────────────────────── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 40px 12px;
+  }
+
+  .section-label-line {
+    flex: 1;
+    height: 1px;
+    background: #1a2540;
+  }
+
+  .section-label-text {
+    font-size: 9px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: #e8b84b;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  /* ── Last week card ─────────────────────────────────── */
+  .last-week {
+    margin: 0 40px 8px;
+    background: #0d1526;
+    border: 1px solid #1a2540;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .last-week-header {
+    background: #111c35;
+    padding: 16px 20px;
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 16px;
+    border-bottom: 1px solid #1a2540;
   }
-  .score-circle {
-    width: 64px;
-    height: 64px;
+
+  .score-ring {
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
-    background: #f7c948;
+    border: 3px solid #e8b84b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .score-ring .score-num {
+    font-size: 18px;
+    font-weight: 900;
+    color: #e8b84b;
+    line-height: 1;
+  }
+
+  .score-ring .score-denom {
+    font-size: 10px;
+    color: #4a6080;
+    line-height: 1;
+    margin-top: 1px;
+  }
+
+  .last-week-title h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #e2e8f4;
+  }
+
+  .last-week-title p {
+    font-size: 12px;
+    color: #4a6080;
+    margin-top: 2px;
+  }
+
+  .stats-chips {
+    display: flex;
+    gap: 8px;
+    padding: 12px 20px;
+    border-bottom: 1px solid #1a2540;
+  }
+
+  .chip {
+    background: #111c35;
+    border: 1px solid #1a2540;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: #8ba4c4;
+  }
+
+  .chip strong { color: #e2e8f4; }
+
+  .chip.good strong { color: #4ade80; }
+  .chip.bad strong  { color: #f87171; }
+
+  .wrong-picks {
+    padding: 12px 20px 16px;
+  }
+
+  .wrong-pick-row {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    padding: 6px 0;
+    border-bottom: 1px solid #0d1526;
+    font-size: 13px;
+  }
+
+  .wrong-pick-row:last-child { border-bottom: none; }
+
+  .wrong-num {
+    width: 22px;
+    height: 22px;
+    background: #1a2540;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    font-weight: 900;
-    color: #0f1117;
+    font-size: 10px;
+    font-weight: 700;
+    color: #4a6080;
     flex-shrink: 0;
   }
-  .score-detail h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-  }
-  .score-detail p {
-    font-size: 13px;
-    color: #8892a4;
-    margin-top: 2px;
-  }
-  .stat-row {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-  .stat-pill {
-    background: #1e2434;
-    border-radius: 4px;
-    padding: 6px 12px;
+
+  .wrong-match { color: #8ba4c4; font-weight: 600; }
+
+  .wrong-detail {
+    color: #4a6080;
     font-size: 12px;
-    color: #c8d0e0;
+    margin-top: 1px;
   }
-  .stat-pill strong { color: #fff; }
 
-  /* Wrong picks breakdown */
-  .wrong-pick {
-    border-left: 3px solid #e55353;
-    padding: 8px 12px;
-    margin-bottom: 8px;
-    background: #1a1520;
-    border-radius: 0 4px 4px 0;
+  .wrong-arrow { color: #f87171; }
+
+  .lessons-box {
+    margin: 0 20px 16px;
+    background: #0a1220;
+    border-left: 3px solid #e8b84b;
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
     font-size: 13px;
+    color: #8ba4c4;
   }
-  .wrong-pick .match-name { font-weight: 700; color: #e8eaf0; }
-  .wrong-pick .detail { color: #8892a4; margin-top: 2px; }
 
-  .lesson-box {
-    background: #1a2030;
-    border: 1px solid #2a3555;
-    border-radius: 6px;
-    padding: 12px 16px;
-    margin-top: 12px;
-    font-size: 13px;
-    color: #a0b0d0;
-  }
-  .lesson-box strong { color: #f7c948; }
+  .lessons-box strong { color: #e8b84b; display: block; margin-bottom: 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
 
-  /* Executive summary */
+  /* ── Executive summary ──────────────────────────────── */
   .exec-summary {
-    padding: 16px 32px;
+    padding: 8px 40px 20px;
     font-size: 15px;
-    color: #b0bcd0;
-    border-bottom: 1px solid #1e2434;
+    color: #8ba4c4;
     font-style: italic;
+    line-height: 1.7;
+    border-bottom: 1px solid #1a2540;
   }
 
-  /* Value radar */
+  /* ── Value radar ────────────────────────────────────── */
   .value-radar {
-    padding: 12px 32px 16px;
-    border-bottom: 1px solid #1e2434;
+    padding: 12px 40px 16px;
+    border-bottom: 1px solid #1a2540;
   }
+
   .value-item {
     font-size: 13px;
-    color: #8892a4;
-    padding: 4px 0;
+    color: #5a7090;
+    padding: 3px 0;
   }
-  .value-item::before { content: "⚡ "; color: #f7c948; }
 
-  /* Match card */
+  .value-item::before { content: "⚡ "; color: #e8b84b; }
+
+  /* ── Match cards ────────────────────────────────────── */
+  .match-cards { padding: 0 40px; }
+
   .match-card {
-    margin: 0 32px 16px;
-    background: #161b27;
-    border: 1px solid #1e2434;
-    border-radius: 10px;
+    background: #0d1526;
+    border: 1px solid #1a2540;
+    border-radius: 12px;
     overflow: hidden;
+    margin-bottom: 20px;
   }
-  .match-card.single { border-top: 3px solid #4ade80; }
-  .match-card.double { border-top: 3px solid #60a5fa; }
-  .match-card.full   { border-top: 3px solid #f97316; }
 
-  .match-header {
-    padding: 14px 18px;
+  /* Top accent bar by selection type */
+  .match-card.type-single { border-top: 3px solid #4ade80; }
+  .match-card.type-double { border-top: 3px solid #60a5fa; }
+  .match-card.type-full   { border-top: 3px solid #fb923c; }
+
+  /* ── Card header ── */
+  .card-head {
+    padding: 16px 20px 14px;
+    background: #111c35;
+    border-bottom: 1px solid #1a2540;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 1px solid #1e2434;
-    background: #1a1f2e;
+    gap: 12px;
   }
-  .game-badge {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #8892a4;
-    text-transform: uppercase;
+
+  .card-head-left { flex: 1; min-width: 0; }
+
+  .game-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
   }
-  .teams {
-    font-size: 16px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-top: 2px;
-  }
-  .league-tag {
+
+  .game-num {
+    width: 24px;
+    height: 24px;
+    background: #1a2540;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 11px;
-    color: #8892a4;
-    margin-top: 2px;
-  }
-  .selection-badge {
-    text-align: right;
+    font-weight: 700;
+    color: #4a6080;
     flex-shrink: 0;
   }
-  .selection-type {
+
+  .league-pill {
     font-size: 10px;
-    font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 4px;
-  }
-  .type-single { background: #14532d; color: #4ade80; }
-  .type-double { background: #1e3a5f; color: #60a5fa; }
-  .type-full   { background: #431407; color: #f97316; }
-
-  .prediction-outcomes {
-    margin-top: 6px;
-    font-size: 20px;
-    font-weight: 900;
-    color: #ffffff;
-  }
-  .outcome-chip {
-    display: inline-block;
-    background: #2a3040;
-    border-radius: 4px;
-    padding: 2px 8px;
-    margin: 0 2px;
-    font-size: 16px;
+    color: #4a6080;
+    font-weight: 600;
   }
 
-  /* Stats bar */
-  .stats-bar {
-    display: flex;
-    gap: 0;
-    border-bottom: 1px solid #1e2434;
-  }
-  .stat-cell {
-    flex: 1;
-    padding: 8px 12px;
-    border-right: 1px solid #1e2434;
-    font-size: 11px;
-  }
-  .stat-cell:last-child { border-right: none; }
-  .stat-cell .stat-label {
-    color: #5a6478;
+  .kickoff-time {
     font-size: 10px;
+    color: #2a3a54;
+  }
+
+  .teams-row {
+    font-size: 18px;
+    font-weight: 800;
+    color: #e2e8f4;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .teams-vs { color: #2a3a54; font-weight: 400; font-size: 14px; margin: 0 6px; }
+
+  .card-head-flags {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 4px;
+  }
+
+  .flag {
+    font-size: 10px;
+    font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    display: block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    white-space: nowrap;
   }
-  .stat-cell .stat-value {
-    color: #c8d0e0;
-    font-weight: 600;
-    display: block;
-    margin-top: 2px;
-  }
-  .stat-value.flag-fatigue { color: #f97316; }
-  .stat-value.flag-injury  { color: #e55353; }
-  .stat-value.flag-new-mgr { color: #a78bfa; }
 
-  /* Odds row */
+  .flag-fatigue { background: #2a1a0a; color: #fb923c; }
+  .flag-injury  { background: #1a0a0a; color: #f87171; }
+  .flag-newmgr  { background: #1a0a2a; color: #c084fc; }
+
+  /* ── Selection badge ── */
+  .selection-badge {
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .sel-type {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  .sel-single { background: #14532d; color: #4ade80; }
+  .sel-double { background: #1e3a5f; color: #60a5fa; }
+  .sel-full   { background: #431407; color: #fb923c; }
+
+  .sel-picks {
+    margin-top: 8px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .pick-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  .pick-box.single { background: #14532d; color: #4ade80; }
+  .pick-box.double { background: #1e3a5f; color: #60a5fa; }
+  .pick-box.full   { background: #431407; color: #fb923c; }
+
+  .confidence-bar {
+    margin-top: 6px;
+    height: 3px;
+    background: #1a2540;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .confidence-fill { height: 100%; border-radius: 2px; background: #e8b84b; }
+
+  /* ── Stats strip ── */
+  .stats-strip {
+    display: flex;
+    border-bottom: 1px solid #1a2540;
+  }
+
+  .stat-col {
+    flex: 1;
+    padding: 9px 12px;
+    border-right: 1px solid #1a2540;
+    font-size: 11px;
+  }
+
+  .stat-col:last-child { border-right: none; }
+
+  .stat-lbl {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #2a3a54;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .stat-val {
+    color: #8ba4c4;
+    font-weight: 600;
+    font-size: 12px;
+    display: block;
+  }
+
+  .stat-val.warn { color: #fb923c; }
+  .stat-val.danger { color: #f87171; }
+
+  /* ── Injury strip ── */
+  .injury-strip {
+    padding: 8px 16px;
+    border-bottom: 1px solid #1a2540;
+    background: #0a0f1e;
+    font-size: 12px;
+  }
+
+  .injury-item {
+    padding: 3px 0;
+    color: #5a7090;
+  }
+
+  .injury-item .inj-name { color: #f87171; font-weight: 600; }
+  .injury-item .inj-risk { color: #fb923c; }
+  .injury-item .inj-badge { color: #fbbf24; font-size: 10px; }
+
+  /* ── Odds row ── */
   .odds-row {
     display: flex;
     align-items: center;
-    padding: 8px 12px;
-    gap: 8px;
-    border-bottom: 1px solid #1e2434;
-    font-size: 12px;
+    padding: 10px 16px;
+    gap: 6px;
+    border-bottom: 1px solid #1a2540;
+    background: #080d18;
   }
-  .odds-chip {
-    background: #1e2434;
-    border-radius: 4px;
+
+  .odds-lbl { font-size: 10px; color: #2a3a54; font-weight: 700; }
+
+  .odds-val {
+    background: #111c35;
+    border: 1px solid #1a2540;
+    border-radius: 5px;
     padding: 4px 10px;
+    font-size: 13px;
     font-weight: 700;
-    color: #e8eaf0;
+    color: #8ba4c4;
+    min-width: 44px;
+    text-align: center;
   }
-  .odds-label { color: #5a6478; font-size: 10px; }
-  .distribution-bar {
-    flex: 1;
-    height: 6px;
-    background: #1e2434;
-    border-radius: 3px;
+
+  .odds-spacer { flex: 1; }
+
+  .dist-wrap { display: flex; flex-direction: column; gap: 2px; }
+
+  .dist-bar {
+    height: 4px;
+    width: 80px;
+    background: #1a2540;
+    border-radius: 2px;
     overflow: hidden;
     display: flex;
   }
-  .dist-home { background: #4ade80; }
-  .dist-draw { background: #f7c948; }
-  .dist-away { background: #60a5fa; }
-  .newspaper-tips {
-    font-size: 11px;
-    color: #8892a4;
-    padding: 0 12px;
-  }
 
-  /* Analysis text */
-  .analysis-body {
-    padding: 16px 18px;
-    font-size: 14px;
-    color: #b0bcd0;
-    line-height: 1.75;
-    border-bottom: 1px solid #1e2434;
-  }
+  .dist-h { background: #4ade80; }
+  .dist-d { background: #e8b84b; }
+  .dist-a { background: #60a5fa; }
 
-  /* Key factors */
-  .factors-section {
-    padding: 12px 18px;
-    border-bottom: 1px solid #1e2434;
-  }
-  .factors-label {
+  .dist-pcts {
     font-size: 10px;
-    letter-spacing: 2px;
-    color: #f7c948;
+    color: #2a3a54;
+    letter-spacing: 0.5px;
+  }
+
+  .papers {
+    font-size: 11px;
+    color: #2a3a54;
+    padding: 0 8px;
+  }
+
+  /* ── Analysis text ── */
+  .analysis-text {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #8ba4c4;
+    line-height: 1.8;
+    border-bottom: 1px solid #1a2540;
+  }
+
+  .analysis-text p + p { margin-top: 10px; }
+
+  /* ── Factors + risks ── */
+  .card-footer {
+    display: flex;
+    border-bottom: 0;
+  }
+
+  .factors-col {
+    flex: 1;
+    padding: 12px 16px;
+    border-right: 1px solid #1a2540;
+  }
+
+  .risks-col {
+    flex: 1;
+    padding: 12px 16px;
+  }
+
+  .col-title {
+    font-size: 9px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
-    margin-bottom: 6px;
     font-weight: 700;
+    margin-bottom: 6px;
   }
-  .factor-item {
+
+  .factors-col .col-title { color: #4ade80; }
+  .risks-col   .col-title { color: #fb923c; }
+
+  .factor-item, .risk-item {
     font-size: 12px;
-    color: #8892a4;
+    color: #5a7090;
     padding: 2px 0;
+    line-height: 1.5;
   }
+
   .factor-item::before { content: "→ "; color: #4ade80; }
+  .risk-item::before   { content: "⚠ "; color: #fb923c; }
 
-  /* Risk flags */
-  .risks-section {
-    padding: 10px 18px;
+  /* ── Coupon section ─────────────────────────────────── */
+  .coupon-wrap {
+    margin: 0 40px 32px;
+    background: #0d1526;
+    border: 1px solid #1a2540;
+    border-radius: 12px;
+    overflow: hidden;
   }
-  .risk-item {
-    font-size: 12px;
-    color: #8892a4;
-    padding: 2px 0;
-  }
-  .risk-item::before { content: "⚠ "; color: #f97316; }
 
-  /* Coupon table */
-  .coupon-section {
-    margin: 0 32px 24px;
+  .coupon-head {
+    background: #111c35;
+    padding: 14px 20px;
+    border-bottom: 2px solid #e8b84b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
+
+  .coupon-head h2 {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #e8b84b;
+  }
+
+  .coupon-cost {
+    font-size: 20px;
+    font-weight: 900;
+    color: #e2e8f4;
+  }
+
+  .coupon-cost span { font-size: 12px; color: #4a6080; font-weight: 400; }
+
   .coupon-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
   }
+
   .coupon-table th {
-    background: #1a1f2e;
-    color: #8892a4;
-    font-size: 10px;
+    padding: 8px 14px;
+    text-align: left;
+    font-size: 9px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 8px 10px;
-    text-align: left;
-    border-bottom: 2px solid #f7c948;
+    color: #2a3a54;
+    font-weight: 700;
+    border-bottom: 1px solid #1a2540;
+    background: #0a0f1e;
   }
+
   .coupon-table td {
-    padding: 9px 10px;
-    border-bottom: 1px solid #1e2434;
-    color: #c8d0e0;
+    padding: 10px 14px;
+    border-bottom: 1px solid #0d1526;
+    vertical-align: middle;
   }
+
   .coupon-table tr:last-child td { border-bottom: none; }
-  .coupon-table tr.row-single td { background: rgba(74, 222, 128, 0.05); }
-  .coupon-table tr.row-full td   { background: rgba(249, 115, 22, 0.05); }
-  .pick-cell {
+  .coupon-table tr.row-single td { background: rgba(74,222,128,0.03); }
+  .coupon-table tr.row-full   td { background: rgba(251,146,60,0.03); }
+
+  .row-num { color: #2a3a54; font-size: 11px; }
+  .row-match { color: #8ba4c4; }
+
+  .row-picks {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 3px;
+  }
+
+  .picks-single { color: #4ade80; }
+  .picks-double { color: #60a5fa; }
+  .picks-full   { color: #fb923c; }
+
+  .row-type {
+    font-size: 9px;
     font-weight: 800;
-    font-size: 15px;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
   }
-  .pick-single { color: #4ade80; }
-  .pick-double { color: #60a5fa; }
-  .pick-full   { color: #f97316; }
-  .badge-single { font-size: 9px; background: #14532d; color: #4ade80; padding: 1px 5px; border-radius: 3px; letter-spacing: 1px; }
-  .badge-double { font-size: 9px; background: #1e3a5f; color: #60a5fa; padding: 1px 5px; border-radius: 3px; letter-spacing: 1px; }
-  .badge-full   { font-size: 9px; background: #431407; color: #f97316; padding: 1px 5px; border-radius: 3px; letter-spacing: 1px; }
 
-  .coupon-footer {
-    text-align: right;
-    padding: 12px 0 0;
-    font-size: 13px;
-    color: #8892a4;
+  .type-single-badge { background: #14532d; color: #4ade80; }
+  .type-double-badge { background: #1e3a5f; color: #60a5fa; }
+  .type-full-badge   { background: #431407; color: #fb923c; }
+
+  .row-conf { color: #2a3a54; font-size: 11px; }
+
+  .coupon-legend {
+    display: flex;
+    gap: 16px;
+    padding: 12px 20px;
+    border-top: 1px solid #1a2540;
+    background: #0a0f1e;
   }
-  .coupon-footer strong { color: #f7c948; font-size: 15px; }
 
-  /* Footer */
-  .footer {
-    padding: 24px 32px;
-    text-align: center;
-    border-top: 1px solid #1e2434;
+  .legend-item {
     font-size: 11px;
-    color: #3a4155;
+    color: #4a6080;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
-  .footer a { color: #5a6478; }
 
-  /* Spacer */
-  .spacer { height: 24px; }
-  .spacer-sm { height: 12px; }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── Footer ─────────────────────────────────────────── */
+  .footer {
+    padding: 24px 40px;
+    text-align: center;
+    border-top: 1px solid #111c35;
+  }
+
+  .footer p {
+    font-size: 11px;
+    color: #1e2a40;
+    line-height: 1.8;
+  }
+
+  .footer a { color: #2a3a54; text-decoration: none; }
+
+  .spacer { height: 20px; }
 </style>
 </head>
 <body>
-<div class="wrapper">
+<div class="email-wrap">
 
-  <!-- ===== HEADER ===== -->
+  <!-- ═══════════════════════════════════════ HEADER -->
   <div class="header">
-    <div class="logo">Stryktipset Newsletter</div>
-    <h1>Vecka {{ week_number }}, {{ year }}</h1>
-    <div class="subtitle">Draw #{{ draw_number }} &nbsp;·&nbsp; {{ generated_date }} &nbsp;·&nbsp; 768 SEK system</div>
+    <div class="logo-wrap">
+
+      <!-- SVG Football Logo -->
+      <svg class="logo-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="26" cy="26" r="24" stroke="#e8b84b" stroke-width="2" fill="#0d1526"/>
+        <circle cx="26" cy="26" r="24" stroke="#e8b84b20" stroke-width="8" fill="none"/>
+        <!-- Football pentagon patches -->
+        <polygon points="26,14 31,18 29,24 23,24 21,18" fill="#e8b84b" opacity="0.9"/>
+        <polygon points="14,22 19,20 21,26 17,30 12,27" fill="#e8b84b" opacity="0.6"/>
+        <polygon points="38,22 43,25 41,30 36,30 33,26 35,20" fill="#e8b84b" opacity="0.6"/>
+        <polygon points="17,34 21,30 27,32 27,38 22,40" fill="#e8b84b" opacity="0.5"/>
+        <polygon points="35,34 30,38 25,38 27,32 33,30" fill="#e8b84b" opacity="0.5"/>
+        <!-- Seam lines -->
+        <line x1="26" y1="14" x2="21" y2="18" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="26" y1="14" x2="31" y2="18" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="21" y1="18" x2="19" y2="20" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="31" y1="18" x2="33" y2="20" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="23" y1="24" x2="21" y2="26" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="29" y1="24" x2="31" y2="26" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="21" y1="26" x2="17" y2="30" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="31" y1="26" x2="35" y2="30" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="17" y1="30" x2="17" y2="34" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="35" y1="30" x2="35" y2="34" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="17" y1="34" x2="21" y2="34" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="35" y1="34" x2="30" y2="38" stroke="#080d18" stroke-width="1.2"/>
+        <line x1="27" y1="32" x2="27" y2="38" stroke="#080d18" stroke-width="1.2"/>
+      </svg>
+
+      <div class="logo-text">
+        <div class="logo-title">Stryktipset</div>
+        <div class="logo-sub">Weekly Analysis</div>
+      </div>
+    </div>
+
+    <div class="header-meta">
+      Vecka <strong>{{ week_number }}</strong> &nbsp;·&nbsp;
+      Draw <strong>#{{ draw_number }}</strong> &nbsp;·&nbsp;
+      {{ generated_date }}
+      &nbsp;·&nbsp; 768 SEK system
+    </div>
   </div>
 
-  <!-- ===== SECTION 1: LAST WEEK ===== -->
+
+  <!-- ═══════════════════════════════════ LAST WEEK -->
   {% if evaluation %}
-  <div class="section-header">
-    <div class="label">Föregående omgång</div>
-    <h2>Förra veckans rapport</h2>
+  <div class="section-label">
+    <div class="section-label-line"></div>
+    <div class="section-label-text">Föregående omgång</div>
+    <div class="section-label-line"></div>
   </div>
 
-  <div class="report-card" style="margin: 16px 32px;">
-    <div class="score-banner">
-      <div class="score-circle">{{ evaluation.total_correct }}/{{ evaluation.evaluations|length }}</div>
-      <div class="score-detail">
-        <h3>Draw #{{ evaluation.draw_number }} — {{ evaluation.accuracy_pct }}% rätt</h3>
+  <div class="last-week">
+    <div class="last-week-header">
+      <div class="score-ring">
+        <span class="score-num">{{ evaluation.total_correct }}</span>
+        <span class="score-denom">/ {{ evaluation.evaluations|length }}</span>
+      </div>
+      <div class="last-week-title">
+        <h3>Draw #{{ evaluation.draw_number }} &nbsp;—&nbsp; {{ evaluation.accuracy_pct }}% rätt</h3>
         <p>{{ evaluation.draw_date }}</p>
       </div>
     </div>
 
-    <div class="stat-row">
-      <div class="stat-pill">Singles: <strong>{{ evaluation.singles_correct }}/{{ evaluation.singles_total }}</strong></div>
-      <div class="stat-pill">Doubles: <strong>{{ evaluation.doubles_correct }}/{{ evaluation.doubles_total }}</strong></div>
-      <div class="stat-pill">Full: <strong>{% if evaluation.full_covered %}✓{% else %}–{% endif %}</strong></div>
+    <div class="stats-chips">
+      <div class="chip {% if evaluation.singles_correct == evaluation.singles_total %}good{% elif evaluation.singles_correct < evaluation.singles_total // 2 %}bad{% endif %}">
+        Singles <strong>{{ evaluation.singles_correct }}/{{ evaluation.singles_total }}</strong>
+      </div>
+      <div class="chip {% if evaluation.doubles_correct >= evaluation.doubles_total * 0.6 %}good{% elif evaluation.doubles_correct < evaluation.doubles_total * 0.4 %}bad{% endif %}">
+        Doubles <strong>{{ evaluation.doubles_correct }}/{{ evaluation.doubles_total }}</strong>
+      </div>
+      <div class="chip good">Full <strong>{% if evaluation.full_covered %}✓{% else %}✗{% endif %}</strong></div>
     </div>
 
     {% set wrong = evaluation.evaluations | selectattr('correct', 'equalto', false) | selectattr('selection_type.value', 'ne', 'full') | list %}
     {% if wrong %}
-    <div style="margin-top: 12px;">
+    <div class="wrong-picks">
       {% for e in wrong %}
-      <div class="wrong-pick">
-        <div class="match-name">Spel {{ e.game_number }}: {{ e.home_team }} vs {{ e.away_team }}</div>
-        <div class="detail">
-          Vi tipsade: <strong>{{ e.our_prediction | map(attribute='value') | join('/') }}</strong>
-          ({{ e.selection_type.value }}) &nbsp;→&nbsp;
-          Resultat: <strong>{{ e.actual_result.value }}</strong>
-          {% if e.post_mortem %}&nbsp;— {{ e.post_mortem }}{% endif %}
+      <div class="wrong-pick-row">
+        <div class="wrong-num">{{ e.game_number }}</div>
+        <div>
+          <div class="wrong-match">
+            {{ e.home_team }} vs {{ e.away_team }}
+            &nbsp;<span class="wrong-arrow">{{ e.our_prediction | map(attribute='value') | join('/') }} → {{ e.actual_result.value }}</span>
+          </div>
+          {% if e.post_mortem %}
+          <div class="wrong-detail">{{ e.post_mortem }}</div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
@@ -446,25 +785,22 @@
     {% endif %}
 
     {% if evaluation.lessons %}
-    <div class="lesson-box">
-      <strong>Lärdomar för denna vecka:</strong><br>
-      {% for lesson in evaluation.lessons %}
-      {{ lesson }}<br>
-      {% endfor %}
+    <div class="lessons-box">
+      <strong>Lärdomar denna vecka</strong>
+      {% for lesson in evaluation.lessons %}{{ lesson }}{% if not loop.last %}<br>{% endif %}{% endfor %}
     </div>
     {% endif %}
   </div>
-
-  <div class="spacer"></div>
   {% endif %}
 
-  <!-- ===== SECTION 2: THIS WEEK ===== -->
-  <div class="section-header">
-    <div class="label">Denna veckas analys</div>
-    <h2>13 matcher &nbsp;·&nbsp; Stryktipset #{{ draw_number }}</h2>
-  </div>
 
+  <!-- ══════════════════════════════ EXECUTIVE SUMMARY -->
   {% if executive_summary %}
+  <div class="section-label">
+    <div class="section-label-line"></div>
+    <div class="section-label-text">Veckans kupong</div>
+    <div class="section-label-line"></div>
+  </div>
   <div class="exec-summary">{{ executive_summary }}</div>
   {% endif %}
 
@@ -476,110 +812,115 @@
   </div>
   {% endif %}
 
-  <div class="spacer-sm"></div>
+  <div class="spacer"></div>
 
-  <!-- Match cards -->
+  <!-- ═══════════════════════════════════ MATCH CARDS -->
+  <div class="match-cards">
   {% for pred in predictions %}
   {% set match = matches_by_game[pred.game_number] %}
-  <div class="match-card {{ pred.selection_type.value }}">
 
-    <!-- Header -->
-    <div class="match-header">
-      <div>
-        <div class="game-badge">Spel {{ pred.game_number }} &nbsp;·&nbsp; {{ match.league if match else '' }}</div>
-        <div class="teams">{{ pred.home_team }} vs {{ pred.away_team }}</div>
-        <div class="league-tag">
-          {% if match and match.kickoff %}{{ match.kickoff.strftime('%a %d %b, %H:%M') }} CET{% endif %}
+  <div class="match-card type-{{ pred.selection_type.value }}">
+
+    <!-- Card head -->
+    <div class="card-head">
+      <div class="card-head-left">
+        <div class="game-meta">
+          <div class="game-num">{{ pred.game_number }}</div>
+          <span class="league-pill">{{ match.league if match else '—' }}</span>
+          {% if match and match.kickoff %}
+          <span class="kickoff-time">{{ match.kickoff.strftime('%a %d %b · %H:%M') }} CET</span>
+          {% endif %}
+        </div>
+        <div class="teams-row">
+          {{ pred.home_team }}
+          <span class="teams-vs">vs</span>
+          {{ pred.away_team }}
+        </div>
+        <div class="card-head-flags">
           {% if match and match.home_stats and match.home_stats.fatigue_flag %}
-            &nbsp;<span style="color:#f97316">⚠ HOME FATIGUE</span>
+          <span class="flag flag-fatigue">⚡ {{ pred.home_team }} fatigue risk</span>
           {% endif %}
           {% if match and match.away_stats and match.away_stats.fatigue_flag %}
-            &nbsp;<span style="color:#f97316">⚠ AWAY FATIGUE</span>
+          <span class="flag flag-fatigue">⚡ {{ pred.away_team }} fatigue risk</span>
+          {% endif %}
+          {% if match and match.home_stats and match.home_stats.new_manager_bounce %}
+          <span class="flag flag-newmgr">★ New manager bounce</span>
           {% endif %}
         </div>
       </div>
+
+      <!-- Selection badge -->
       <div class="selection-badge">
-        <span class="selection-type type-{{ pred.selection_type.value }}">
-          {{ pred.selection_type.value }}
-        </span>
-        <div class="prediction-outcomes">
+        <span class="sel-type sel-{{ pred.selection_type.value }}">{{ pred.selection_type.value }}</span>
+        <div class="sel-picks">
           {% for o in pred.predicted_outcomes %}
-          <span class="outcome-chip">{{ o.value }}</span>
+          <div class="pick-box {{ pred.selection_type.value }}">{{ o.value }}</div>
           {% endfor %}
         </div>
+        <div class="confidence-bar">
+          <div class="confidence-fill" style="width:{{ (pred.confidence * 100)|int }}%"></div>
+        </div>
       </div>
     </div>
 
-    <!-- Stats bar -->
+    <!-- Stats strip -->
     {% if match and match.home_stats and match.away_stats %}
-    <div class="stats-bar">
-      <div class="stat-cell">
-        <span class="stat-label">HOME FORM (5)</span>
-        <span class="stat-value">
-          {% for r in match.home_stats.form_last5 %}{{ r.result.value }}{% endfor %}
-        </span>
+    <div class="stats-strip">
+      <div class="stat-col">
+        <span class="stat-lbl">Form hemma (5)</span>
+        <span class="stat-val">{% for r in match.home_stats.form_last5 %}{{ r.result.value }}{% endfor %}</span>
       </div>
-      <div class="stat-cell">
-        <span class="stat-label">AWAY FORM (5)</span>
-        <span class="stat-value">
-          {% for r in match.away_stats.form_last5 %}{{ r.result.value }}{% endfor %}
-        </span>
+      <div class="stat-col">
+        <span class="stat-lbl">Form borta (5)</span>
+        <span class="stat-val">{% for r in match.away_stats.form_last5 %}{{ r.result.value }}{% endfor %}</span>
       </div>
-      <div class="stat-cell">
-        <span class="stat-label">HOME xGF avg</span>
-        <span class="stat-value">
-          {% if match.home_stats.xg_for_avg %}{{ "%.2f"|format(match.home_stats.xg_for_avg) }}{% else %}—{% endif %}
-        </span>
+      <div class="stat-col">
+        <span class="stat-lbl">xG hemma</span>
+        <span class="stat-val">{% if match.home_stats.xg_for_avg %}{{ "%.2f"|format(match.home_stats.xg_for_avg) }}{% else %}—{% endif %}</span>
       </div>
-      <div class="stat-cell">
-        <span class="stat-label">AWAY xGF avg</span>
-        <span class="stat-value">
-          {% if match.away_stats.xg_for_avg %}{{ "%.2f"|format(match.away_stats.xg_for_avg) }}{% else %}—{% endif %}
-        </span>
+      <div class="stat-col">
+        <span class="stat-lbl">xG borta</span>
+        <span class="stat-val">{% if match.away_stats.xg_for_avg %}{{ "%.2f"|format(match.away_stats.xg_for_avg) }}{% else %}—{% endif %}</span>
       </div>
-      {% if match.home_stats.league_position and match.away_stats.league_position %}
-      <div class="stat-cell">
-        <span class="stat-label">POSITION</span>
-        <span class="stat-value">P{{ match.home_stats.league_position }} vs P{{ match.away_stats.league_position }}</span>
+      {% if match.home_stats.league_position or match.away_stats.league_position %}
+      <div class="stat-col">
+        <span class="stat-lbl">Tabellplats</span>
+        <span class="stat-val">
+          {% if match.home_stats.league_position %}P{{ match.home_stats.league_position }}{% else %}—{% endif %}
+          vs
+          {% if match.away_stats.league_position %}P{{ match.away_stats.league_position }}{% else %}—{% endif %}
+        </span>
       </div>
       {% endif %}
     </div>
 
-    <!-- Injuries -->
-    {% set home_critical = match.home_stats.critical_absences %}
-    {% set away_critical = match.away_stats.critical_absences %}
-    {% if home_critical or away_critical %}
-    <div class="stats-bar">
-      {% if home_critical %}
-      <div class="stat-cell" style="flex:2;">
-        <span class="stat-label">HOME INJURIES ⚠</span>
-        {% for a in home_critical %}
-        <span class="stat-value flag-injury">
-          {{ a.player_name }} ({{ a.position }})
-          {% if a.is_top_scorer %}★scorer{% endif %}
-          {% if a.is_top_assister %}★assist{% endif %}
-          {% if a.matchup_risk and a.matchup_risk.risk_level.value in ['high','critical'] %}
-            — vs {{ a.matchup_risk.opponent_player }}
-          {% endif %}
-        </span>
-        {% endfor %}
+    <!-- Critical injuries -->
+    {% set h_crit = match.home_stats.critical_absences %}
+    {% set a_crit = match.away_stats.critical_absences %}
+    {% if h_crit or a_crit %}
+    <div class="injury-strip">
+      {% for a in h_crit %}
+      <div class="injury-item">
+        🔴 <span class="inj-name">{{ pred.home_team }}: {{ a.player_name }}</span>
+        ({{ a.position }}, {{ a.status.value }})
+        {% if a.is_top_scorer %}<span class="inj-badge">TOP SCORER</span>{% endif %}
+        {% if a.is_top_assister %}<span class="inj-badge">TOP ASSIST</span>{% endif %}
+        {% if a.matchup_risk and a.matchup_risk.risk_level.value in ['high','critical'] %}
+        — <span class="inj-risk">vs {{ a.matchup_risk.opponent_player }} ({{ a.matchup_risk.opponent_position }})</span>
+        {% endif %}
       </div>
-      {% endif %}
-      {% if away_critical %}
-      <div class="stat-cell" style="flex:2;">
-        <span class="stat-label">AWAY INJURIES ⚠</span>
-        {% for a in away_critical %}
-        <span class="stat-value flag-injury">
-          {{ a.player_name }} ({{ a.position }})
-          {% if a.is_top_scorer %}★scorer{% endif %}
-          {% if a.is_top_assister %}★assist{% endif %}
-          {% if a.matchup_risk and a.matchup_risk.risk_level.value in ['high','critical'] %}
-            — vs {{ a.matchup_risk.opponent_player }}
-          {% endif %}
-        </span>
-        {% endfor %}
+      {% endfor %}
+      {% for a in a_crit %}
+      <div class="injury-item">
+        🔴 <span class="inj-name">{{ pred.away_team }}: {{ a.player_name }}</span>
+        ({{ a.position }}, {{ a.status.value }})
+        {% if a.is_top_scorer %}<span class="inj-badge">TOP SCORER</span>{% endif %}
+        {% if a.is_top_assister %}<span class="inj-badge">TOP ASSIST</span>{% endif %}
+        {% if a.matchup_risk and a.matchup_risk.risk_level.value in ['high','critical'] %}
+        — <span class="inj-risk">vs {{ a.matchup_risk.opponent_player }} ({{ a.matchup_risk.opponent_position }})</span>
+        {% endif %}
       </div>
-      {% endif %}
+      {% endfor %}
     </div>
     {% endif %}
     {% endif %}
@@ -587,58 +928,74 @@
     <!-- Odds + distribution -->
     {% if match and match.market %}
     <div class="odds-row">
-      <span class="odds-label">1</span>
-      <span class="odds-chip">{{ match.market.odds_home or '—' }}</span>
-      <span class="odds-label">X</span>
-      <span class="odds-chip">{{ match.market.odds_draw or '—' }}</span>
-      <span class="odds-label">2</span>
-      <span class="odds-chip">{{ match.market.odds_away or '—' }}</span>
+      <span class="odds-lbl">1</span>
+      <span class="odds-val">{{ match.market.odds_home or '—' }}</span>
+      <span class="odds-lbl">X</span>
+      <span class="odds-val">{{ match.market.odds_draw or '—' }}</span>
+      <span class="odds-lbl">2</span>
+      <span class="odds-val">{{ match.market.odds_away or '—' }}</span>
+      <div class="odds-spacer"></div>
       {% if match.market.public_pct_home is not none %}
-      <div class="distribution-bar" style="margin-left:8px;">
-        <div class="dist-home" style="width:{{ match.market.public_pct_home }}%"></div>
-        <div class="dist-draw" style="width:{{ match.market.public_pct_draw }}%"></div>
-        <div class="dist-away" style="width:{{ match.market.public_pct_away }}%"></div>
+      <div class="dist-wrap">
+        <div class="dist-bar">
+          <div class="dist-h" style="width:{{ match.market.public_pct_home }}%"></div>
+          <div class="dist-d" style="width:{{ match.market.public_pct_draw }}%"></div>
+          <div class="dist-a" style="width:{{ match.market.public_pct_away }}%"></div>
+        </div>
+        <div class="dist-pcts">{{ match.market.public_pct_home }}% · {{ match.market.public_pct_draw }}% · {{ match.market.public_pct_away }}%</div>
       </div>
-      <span class="newspaper-tips">
-        📰 1:{{ match.market.newspaper_tips_home }} X:{{ match.market.newspaper_tips_draw }} 2:{{ match.market.newspaper_tips_away }}
-      </span>
+      {% endif %}
+      {% if match.market.newspaper_tips_home + match.market.newspaper_tips_draw + match.market.newspaper_tips_away > 0 %}
+      <div class="papers">📰 {{ match.market.newspaper_tips_home }}-{{ match.market.newspaper_tips_draw }}-{{ match.market.newspaper_tips_away }}</div>
       {% endif %}
     </div>
     {% endif %}
 
     <!-- Analysis -->
-    <div class="analysis-body">{{ pred.analysis | replace('\n', '<br>') }}</div>
-
-    <!-- Key factors -->
-    {% if pred.key_factors %}
-    <div class="factors-section">
-      <div class="factors-label">Nyckel&shy;faktorer</div>
-      {% for f in pred.key_factors %}
-      <div class="factor-item">{{ f }}</div>
+    <div class="analysis-text">
+      {% for para in pred.analysis.split('\n\n') %}
+      <p>{{ para }}</p>
       {% endfor %}
     </div>
-    {% endif %}
 
-    <!-- Risks -->
-    {% if pred.risk_flags %}
-    <div class="risks-section">
-      {% for r in pred.risk_flags %}
-      <div class="risk-item">{{ r }}</div>
-      {% endfor %}
+    <!-- Factors + risks -->
+    <div class="card-footer">
+      {% if pred.key_factors %}
+      <div class="factors-col">
+        <div class="col-title">Nyckelfaktorer</div>
+        {% for f in pred.key_factors %}
+        <div class="factor-item">{{ f }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if pred.risk_flags %}
+      <div class="risks-col">
+        <div class="col-title">Risker</div>
+        {% for r in pred.risk_flags %}
+        <div class="risk-item">{{ r }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
-    {% endif %}
 
-  </div>
+  </div><!-- /match-card -->
   {% endfor %}
+  </div><!-- /match-cards -->
 
-  <!-- ===== SECTION 3: THE COUPON ===== -->
-  <div class="spacer"></div>
-  <div class="section-header">
-    <div class="label">Systemet</div>
-    <h2>Kupongsammanfattning — {{ report.total_cost_sek }} SEK</h2>
+
+  <!-- ════════════════════════════════════════ COUPON -->
+  <div class="section-label">
+    <div class="section-label-line"></div>
+    <div class="section-label-text">Kupongsammanfattning</div>
+    <div class="section-label-line"></div>
   </div>
 
-  <div class="coupon-section" style="margin-top: 16px;">
+  <div class="coupon-wrap">
+    <div class="coupon-head">
+      <h2>Draw #{{ draw_number }} · System</h2>
+      <div class="coupon-cost">{{ report.total_cost_sek }} SEK <span>/ {{ report.total_rows }} rader</span></div>
+    </div>
+
     <table class="coupon-table">
       <thead>
         <tr>
@@ -646,41 +1003,56 @@
           <th>Match</th>
           <th>Tips</th>
           <th>Typ</th>
-          <th>Conf.</th>
+          <th>Konf.</th>
         </tr>
       </thead>
       <tbody>
         {% for pred in predictions %}
         <tr class="row-{{ pred.selection_type.value }}">
-          <td style="color:#5a6478; font-size:11px;">{{ pred.game_number }}</td>
-          <td>{{ pred.home_team }} – {{ pred.away_team }}</td>
-          <td class="pick-cell pick-{{ pred.selection_type.value }}">
-            {{ pred.predicted_outcomes | map(attribute='value') | join(' ') }}
+          <td class="row-num">{{ pred.game_number }}</td>
+          <td class="row-match">{{ pred.home_team }} – {{ pred.away_team }}</td>
+          <td>
+            <span class="row-picks picks-{{ pred.selection_type.value }}">
+              {{ pred.predicted_outcomes | map(attribute='value') | join(' ') }}
+            </span>
           </td>
           <td>
-            <span class="badge-{{ pred.selection_type.value }}">
+            <span class="row-type type-{{ pred.selection_type.value }}-badge">
               {{ pred.selection_type.value | upper }}
             </span>
           </td>
-          <td style="color:#5a6478; font-size:12px;">
-            {{ (pred.confidence * 100) | int }}%
-          </td>
+          <td class="row-conf">{{ (pred.confidence * 100)|int }}%</td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
-    <div class="coupon-footer">
-      Totalt: <strong>{{ report.total_cost_sek }} SEK</strong>
-      &nbsp;({{ report.total_rows }} rader × 1 kr)
+
+    <div class="coupon-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#4ade80"></div>
+        SINGLE — Högst konfidens, 1 utfall
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#60a5fa"></div>
+        DOUBLE — 2 utfall
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#fb923c"></div>
+        FULL — Svårast att förutse, 3 utfall
+      </div>
     </div>
   </div>
 
-  <!-- ===== FOOTER ===== -->
-  <div class="spacer"></div>
+
+  <!-- ══════════════════════════════════════ FOOTER -->
   <div class="footer">
-    Genererat {{ generated_date }} &nbsp;·&nbsp; Draw #{{ draw_number }}<br>
-    <br>
-    Spela ansvarsfullt. Stöd: <a href="https://www.stodlinjen.se">stodlinjen.se</a> · 020-81 91 00
+    <p>
+      Genererat {{ generated_date }} &nbsp;·&nbsp; Draw #{{ draw_number }}
+    </p>
+    <p style="margin-top:8px;">
+      Spela ansvarsfullt.
+      Hjälp finns på <a href="https://www.stodlinjen.se">stodlinjen.se</a> &nbsp;·&nbsp; 020-81 91 00
+    </p>
   </div>
 
 </div>
