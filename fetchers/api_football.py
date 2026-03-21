@@ -469,8 +469,8 @@ def _build_team_stats(
         stats.form_last5_away_only.append(_fixture_to_form(f, team_id))
 
     # --- Schedule / fatigue ---
-    if fixtures:
-        last = fixtures[0]
+    if team_fixtures:
+        last = team_fixtures[0]
         last_date_str = last.get("fixture", {}).get("date", "")
         try:
             last_dt = datetime.fromisoformat(last_date_str.replace("Z", "+00:00"))
@@ -480,7 +480,7 @@ def _build_team_stats(
 
         last_comp = last.get("league", {}).get("name", "")
         matches_14d = sum(
-            1 for f in fixtures
+            1 for f in team_fixtures
             if _days_ago(f.get("fixture", {}).get("date", "")) <= 14
         )
 
@@ -660,18 +660,11 @@ def enrich_match(match: Match, season: int) -> Match:
         except Exception as e:
             logger.warning("Could not fetch standings for %s: %s", match.league, e)
 
-    # --- League fixtures (one call per league covers all team form — no season param) ---
+    # --- League fixtures for form (requires season param — blocked on free tier) ---
+    # API-Football free tier blocks season=2025 AND requires season for all fixture queries.
+    # Form data is therefore unavailable on the free tier. Perplexity news compensates.
+    # TODO: Add Football-Data.org as secondary source for standings + form (free, current season).
     league_fixtures: list = []
-    if league_id:
-        try:
-            lf_data = _fetch_league_fixtures(league_id, season)
-            league_fixtures = lf_data.get("response", [])
-            logger.info(
-                "Loaded %d league fixtures for %s (form source)",
-                len(league_fixtures), match.league,
-            )
-        except Exception as e:
-            logger.warning("Could not fetch league fixtures for %s: %s", match.league, e)
 
     # --- Team stats ---
     home_team_id: Optional[int] = None
