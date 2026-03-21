@@ -201,6 +201,16 @@ class TeamStats:
     manager_name: str = ""
     manager_weeks_in_post: Optional[int] = None
 
+    # Fixture stats averages (last 5 completed games)
+    shots_on_target_avg: Optional[float] = None   # shots on target per game
+    shots_total_avg: Optional[float] = None
+    possession_avg: Optional[float] = None        # avg ball possession %
+    corners_avg: Optional[float] = None
+
+    # Lineup context (published ~1h before kickoff)
+    formation: str = ""                           # e.g. "4-3-3"
+    starting_xi: list[str] = field(default_factory=list)  # player names
+
     @property
     def new_manager_bounce(self) -> bool:
         return self.manager_weeks_in_post is not None and self.manager_weeks_in_post <= 8

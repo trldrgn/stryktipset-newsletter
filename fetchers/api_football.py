@@ -49,6 +49,8 @@ logger = get_logger(__name__)
 # ---------------------------------------------------------------------------
 
 _request_count = 0
+_last_call_at: float = 0.0
+_MIN_CALL_INTERVAL = 6.5   # seconds — keeps us under the 10 req/min free-tier limit
 
 
 def get_request_count() -> int:
@@ -58,14 +60,19 @@ def get_request_count() -> int:
 def _api_get(endpoint: str, params: dict) -> dict:
     """
     Single gateway for all API-Football calls.
-    Enforces daily limit, adds auth header, returns parsed JSON.
+    Enforces daily limit and per-minute rate limit, adds auth header, returns parsed JSON.
     """
-    global _request_count
+    global _request_count, _last_call_at
     if _request_count >= API_FOOTBALL_DAILY_LIMIT:
         raise RuntimeError(
             f"API-Football daily limit of {API_FOOTBALL_DAILY_LIMIT} requests reached. "
             "Remaining data will be omitted."
         )
+
+    # Rate limiting: pause so we never exceed 10 req/min
+    elapsed = time.time() - _last_call_at
+    if elapsed < _MIN_CALL_INTERVAL:
+        time.sleep(_MIN_CALL_INTERVAL - elapsed)
 
     url = f"{API_FOOTBALL_BASE_URL}/{endpoint}"
     headers = {"x-apisports-key": API_FOOTBALL_KEY}
@@ -73,6 +80,7 @@ def _api_get(endpoint: str, params: dict) -> dict:
 
     resp = requests.get(url, headers=headers, params=params, timeout=20)
     resp.raise_for_status()
+    _last_call_at = time.time()
     _request_count += 1
 
     data = resp.json()
@@ -148,34 +156,59 @@ def _fetch_fixtures_by_date(date_str: str) -> dict:
     return _api_get("fixtures", {"date": date_str})
 
 
-@cached(lambda team_id, season: f"fixtures_team_{team_id}_{season}")
-def _fetch_team_fixtures(team_id: int, season: int) -> dict:
-    """Last 10 fixtures for a team in the current season (for form calculation)."""
+@cached(lambda league_id, season: f"league_fixtures_{league_id}_{season}_daterange")
+def _fetch_league_fixtures(league_id: int, season: int) -> dict:
+    """
+    All finished fixtures in a league for the current season using date range.
+    Avoids the free-tier season=2025 block. One call covers all teams in the league.
+    """
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    season_start = f"{season}-07-01"
     return _api_get("fixtures", {
-        "team": team_id,
-        "season": season,
-        "last": 10,
+        "league": league_id,
+        "from": season_start,
+        "to": today,
         "status": "FT",
     })
 
 
-@cached(lambda h_id, a_id: f"h2h_{min(h_id, a_id)}_{max(h_id, a_id)}")
+@cached(lambda h_id, a_id: f"h2h_{min(h_id, a_id)}_{max(h_id, a_id)}_daterange")
 def _fetch_h2h(home_team_id: int, away_team_id: int) -> dict:
+    """Use date range instead of 'last' to avoid free-tier parameter restriction."""
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     return _api_get("fixtures/headtohead", {
         "h2h": f"{home_team_id}-{away_team_id}",
-        "last": 6,
+        "from": "2020-01-01",
+        "to": today,
         "status": "FT",
     })
 
 
 @cached(lambda league_id, season: f"standings_{league_id}_{season}")
 def _fetch_standings(league_id: int, season: int) -> dict:
-    return _api_get("standings", {"league": league_id, "season": season})
+    # The free tier blocks season=2025. Try without explicit season first
+    # (API defaults to current season), then fall back to explicit if needed.
+    try:
+        return _api_get("standings", {"league": league_id})
+    except Exception:
+        return _api_get("standings", {"league": league_id, "season": season})
 
 
 @cached(lambda fixture_id: f"injuries_{fixture_id}")
 def _fetch_injuries(fixture_id: int) -> dict:
     return _api_get("injuries", {"fixture": fixture_id})
+
+
+@cached(lambda fixture_id: f"fixture_stats_{fixture_id}")
+def _fetch_fixture_statistics(fixture_id: int) -> dict:
+    """Per-fixture in-game stats: shots, possession, corners, passes. Free tier OK."""
+    return _api_get("fixtures/statistics", {"fixture": fixture_id})
+
+
+@cached(lambda fixture_id: f"fixture_lineups_{fixture_id}")
+def _fetch_fixture_lineups(fixture_id: int) -> dict:
+    """Starting XI, formation, substitutes. Usually published 1h before kickoff."""
+    return _api_get("fixtures/lineups", {"fixture": fixture_id})
 
 
 @cached(lambda player_id, season: f"player_stats_{player_id}_{season}")
@@ -400,10 +433,11 @@ def _build_team_stats(
     season: int,
     league_id: int,
     standings_data: dict,
+    league_fixtures: list | None = None,
 ) -> TeamStats:
     stats = TeamStats(team_name=team_name, team_id=team_id)
 
-    # --- Standing ---
+    # --- Standing (from pre-fetched standings) ---
     for league_entry in standings_data.get("response", []):
         for group in league_entry.get("league", {}).get("standings", []):
             for row in group:
@@ -412,19 +446,22 @@ def _build_team_stats(
                     stats.league_points = row.get("points")
                     break
 
-    # --- Form from last 10 fixtures ---
-    form_data = _fetch_team_fixtures(team_id, season)
-    fixtures = form_data.get("response", [])
+    # --- Form from league fixtures (shared across all teams, no season param needed) ---
+    # Filter league-wide fixtures to only this team's games
+    all_fixtures = league_fixtures or []
+    team_fixtures = [
+        f for f in all_fixtures
+        if f.get("teams", {}).get("home", {}).get("id") == team_id
+        or f.get("teams", {}).get("away", {}).get("id") == team_id
+    ]
+    team_fixtures.sort(key=lambda f: f.get("fixture", {}).get("date", ""), reverse=True)
 
-    # Sort by date descending
-    fixtures.sort(key=lambda f: f.get("fixture", {}).get("date", ""), reverse=True)
-
-    for f in fixtures[:5]:
+    for f in team_fixtures[:5]:
         stats.form_last5.append(_fixture_to_form(f, team_id))
 
     # Home-only and away-only form
-    home_fixtures = [f for f in fixtures if f["teams"]["home"]["id"] == team_id]
-    away_fixtures = [f for f in fixtures if f["teams"]["away"]["id"] == team_id]
+    home_fixtures = [f for f in team_fixtures if f["teams"]["home"]["id"] == team_id]
+    away_fixtures = [f for f in team_fixtures if f["teams"]["away"]["id"] == team_id]
 
     for f in home_fixtures[:5]:
         stats.form_last5_home_only.append(_fixture_to_form(f, team_id))
@@ -486,6 +523,93 @@ def _build_h2h(home_team_id: int, away_team_id: int, home_name: str, away_name: 
 
 
 # ---------------------------------------------------------------------------
+# Fixture statistics helpers (shots, possession, corners)
+# ---------------------------------------------------------------------------
+
+def _parse_stat_value(stats_list: list, stat_name: str) -> Optional[float]:
+    """Extract a named stat value from the API statistics array."""
+    for s in stats_list:
+        if s.get("type", "").lower() == stat_name.lower():
+            val = s.get("value")
+            if val is None or val == "":
+                return None
+            try:
+                return float(str(val).replace("%", ""))
+            except (ValueError, TypeError):
+                return None
+    return None
+
+
+def _enrich_team_stats_with_fixtures(stats: TeamStats, team_id: int, season: int) -> None:
+    """
+    After building form from fixtures, also compute shot/possession/corner averages
+    from the stats of those same last 5 fixtures.
+    """
+    form_data = _fetch_team_fixtures(team_id, season)
+    fixtures = sorted(
+        form_data.get("response", []),
+        key=lambda f: f.get("fixture", {}).get("date", ""),
+        reverse=True,
+    )[:5]
+
+    shots_on, shots_total, possession, corners = [], [], [], []
+    for f in fixtures:
+        fid = f.get("fixture", {}).get("id")
+        if not fid:
+            continue
+        try:
+            stat_data = _fetch_fixture_statistics(fid)
+            for team_stat in stat_data.get("response", []):
+                if team_stat.get("team", {}).get("id") != team_id:
+                    continue
+                s = team_stat.get("statistics", [])
+                if (v := _parse_stat_value(s, "Shots on Goal")) is not None:
+                    shots_on.append(v)
+                if (v := _parse_stat_value(s, "Total Shots")) is not None:
+                    shots_total.append(v)
+                if (v := _parse_stat_value(s, "Ball Possession")) is not None:
+                    possession.append(v)
+                if (v := _parse_stat_value(s, "Corner Kicks")) is not None:
+                    corners.append(v)
+        except Exception as e:
+            logger.debug("Could not fetch fixture stats for fixture %d: %s", fid, e)
+
+    if shots_on:
+        stats.shots_on_target_avg = round(sum(shots_on) / len(shots_on), 1)
+    if shots_total:
+        stats.shots_total_avg = round(sum(shots_total) / len(shots_total), 1)
+    if possession:
+        stats.possession_avg = round(sum(possession) / len(possession), 1)
+    if corners:
+        stats.corners_avg = round(sum(corners) / len(corners), 1)
+
+
+def _enrich_with_lineups(match: Match, fixture_id: int) -> None:
+    """
+    Fetch confirmed lineups for a fixture and populate formation + starting_xi.
+    Usually available from ~1h before kickoff — will be empty before that.
+    """
+    try:
+        data = _fetch_fixture_lineups(fixture_id)
+        for team_entry in data.get("response", []):
+            tid = team_entry.get("team", {}).get("id")
+            formation = team_entry.get("formation", "")
+            starters = [
+                p.get("player", {}).get("name", "")
+                for p in team_entry.get("startXI", [])
+                if p.get("player", {}).get("name")
+            ]
+            if match.home_stats and match.home_stats.team_id == tid:
+                match.home_stats.formation = formation
+                match.home_stats.starting_xi = starters
+            elif match.away_stats and match.away_stats.team_id == tid:
+                match.away_stats.formation = formation
+                match.away_stats.starting_xi = starters
+    except Exception as e:
+        logger.debug("Could not fetch lineups for fixture %d: %s", fixture_id, e)
+
+
+# ---------------------------------------------------------------------------
 # League ID resolution
 # ---------------------------------------------------------------------------
 
@@ -536,6 +660,19 @@ def enrich_match(match: Match, season: int) -> Match:
         except Exception as e:
             logger.warning("Could not fetch standings for %s: %s", match.league, e)
 
+    # --- League fixtures (one call per league covers all team form — no season param) ---
+    league_fixtures: list = []
+    if league_id:
+        try:
+            lf_data = _fetch_league_fixtures(league_id, season)
+            league_fixtures = lf_data.get("response", [])
+            logger.info(
+                "Loaded %d league fixtures for %s (form source)",
+                len(league_fixtures), match.league,
+            )
+        except Exception as e:
+            logger.warning("Could not fetch league fixtures for %s: %s", match.league, e)
+
     # --- Team stats ---
     home_team_id: Optional[int] = None
     away_team_id: Optional[int] = None
@@ -556,7 +693,7 @@ def enrich_match(match: Match, season: int) -> Match:
     if home_team_id and away_team_id:
         try:
             match.home_stats = _build_team_stats(
-                home_team_id, match.home_team, season, league_id or 0, standings_data
+                home_team_id, match.home_team, season, league_id or 0, standings_data, league_fixtures
             )
         except Exception as e:
             logger.error("Failed to build home stats for %s: %s", match.home_team, e)
@@ -564,7 +701,7 @@ def enrich_match(match: Match, season: int) -> Match:
 
         try:
             match.away_stats = _build_team_stats(
-                away_team_id, match.away_team, season, league_id or 0, standings_data
+                away_team_id, match.away_team, season, league_id or 0, standings_data, league_fixtures
             )
         except Exception as e:
             logger.error("Failed to build away stats for %s: %s", match.away_team, e)
@@ -580,8 +717,6 @@ def enrich_match(match: Match, season: int) -> Match:
         if fixture_id:
             try:
                 injury_data = _fetch_injuries(fixture_id)
-                # Need opponent squad for matchup analysis — use cached form data
-                # For matchup analysis we pass None here (Perplexity will supplement)
                 all_absences = _build_absences(injury_data, league_id or 0, season)
 
                 home_absences = [
@@ -603,6 +738,14 @@ def enrich_match(match: Match, season: int) -> Match:
                     match.away_stats.injuries = away_absences
             except Exception as e:
                 logger.warning("Injury fetch failed for fixture %d: %s", fixture_id, e)
+
+            # --- Lineups (available ~1h before kickoff) ---
+            _enrich_with_lineups(match, fixture_id)
+
+        # NOTE: Shot/possession/corner averages (_enrich_team_stats_with_fixtures) would add
+        # 5 calls per team (130 total) — exceeds the free-tier 100/day limit.
+        # Enable once on a paid plan. The fields (shots_on_target_avg etc.) are defined on
+        # TeamStats and ready to use; just call _enrich_team_stats_with_fixtures here.
     else:
         logger.warning(
             "Could not resolve team IDs for %s vs %s — limited stats available",

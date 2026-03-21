@@ -97,8 +97,32 @@ def _format_match_block(match: Match) -> str:
     home_form_home = _format_form(h.form_last5_home_only) if h else "N/A"
     away_form_away = _format_form(a.form_last5_away_only) if a else "N/A"
 
-    home_xg = f"xGF:{h.xg_for_avg:.2f} xGA:{h.xg_against_avg:.2f}" if h and h.xg_for_avg else "xG: N/A"
-    away_xg = f"xGF:{a.xg_for_avg:.2f} xGA:{a.xg_against_avg:.2f}" if a and a.xg_for_avg else "xG: N/A"
+    home_xg = f"xGF:{h.xg_for_avg:.2f} xGA:{h.xg_against_avg:.2f}" if h and h.xg_for_avg else ""
+    away_xg = f"xGF:{a.xg_for_avg:.2f} xGA:{a.xg_against_avg:.2f}" if a and a.xg_for_avg else ""
+
+    def _fmt_shot_stats(ts) -> str:
+        parts = []
+        if ts and ts.shots_on_target_avg is not None:
+            parts.append(f"SoT/g:{ts.shots_on_target_avg}")
+        if ts and ts.shots_total_avg is not None:
+            parts.append(f"Shots/g:{ts.shots_total_avg}")
+        if ts and ts.possession_avg is not None:
+            parts.append(f"Poss:{ts.possession_avg}%")
+        if ts and ts.corners_avg is not None:
+            parts.append(f"Corners/g:{ts.corners_avg}")
+        return " ".join(parts) if parts else ""
+
+    home_shot_stats = _fmt_shot_stats(h)
+    away_shot_stats = _fmt_shot_stats(a)
+
+    def _fmt_lineup(ts) -> str:
+        if not ts or not ts.starting_xi:
+            return ""
+        xi = ", ".join(ts.starting_xi[:11])
+        return f"Formation:{ts.formation} | XI: {xi}" if ts.formation else f"XI: {xi}"
+
+    home_lineup = _fmt_lineup(h)
+    away_lineup = _fmt_lineup(a)
 
     home_fatigue = " ⚠️FATIGUE" if h and h.fatigue_flag else ""
     away_fatigue = " ⚠️FATIGUE" if a and a.fatigue_flag else ""
@@ -120,6 +144,10 @@ def _format_match_block(match: Match) -> str:
     if match.home_news and match.home_news.summary:
         news = f"\nLATEST NEWS:\n{match.home_news.summary}"
 
+    # Build stat lines — only include non-empty values to keep prompt compact
+    home_stats_line = " | ".join(filter(None, [home_xg, home_shot_stats]))
+    away_stats_line = " | ".join(filter(None, [away_xg, away_shot_stats]))
+
     return f"""
 GAME {match.game_number}: {match.home_team} vs {match.away_team}
 League: {match.league} ({match.country}) | Kickoff: {match.kickoff.strftime('%a %d %b %H:%M') if match.kickoff else 'TBD'}
@@ -127,13 +155,15 @@ Odds: {odds_str} | {dist_str} | {tips_str}
 
 HOME — {match.home_team} ({home_pos}){home_fatigue}{home_manager}
   Form (all): {home_form} | Form (home): {home_form_home}
-  {home_xg}
+  {home_stats_line if home_stats_line else 'Stats: N/A'}
+  {'Lineup: ' + home_lineup if home_lineup else ''}
   Injuries/Suspensions: {home_injuries}
   Intl call-ups missing: {home_intl}
 
 AWAY — {match.away_team} ({away_pos}){away_fatigue}{away_manager}
   Form (all): {away_form} | Form (away): {away_form_away}
-  {away_xg}
+  {away_stats_line if away_stats_line else 'Stats: N/A'}
+  {'Lineup: ' + away_lineup if away_lineup else ''}
   Injuries/Suspensions: {away_injuries}
   Intl call-ups missing: {away_intl}
 
