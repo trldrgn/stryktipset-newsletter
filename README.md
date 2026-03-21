@@ -1,0 +1,2 @@
+# stryktipset-newsletter
+
