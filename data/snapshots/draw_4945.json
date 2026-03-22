@@ -785,34 +785,19 @@
         "xg_against_avg": 1.25,
         "injuries": [
           {
-            "player_name": "T. Chalobah",
-            "position": "Missing Fixture",
-            "status": "out"
+            "player_name": "Cole Palmer",
+            "position": "AM",
+            "status": "injured"
           },
           {
-            "player_name": "L. Colwill",
-            "position": "Missing Fixture",
-            "status": "out"
+            "player_name": "Reece James",
+            "position": "RB",
+            "status": "injured"
           },
           {
-            "player_name": "R. James",
-            "position": "Missing Fixture",
-            "status": "out"
-          },
-          {
-            "player_name": "F. Jorgensen",
-            "position": "Missing Fixture",
-            "status": "out"
-          },
-          {
-            "player_name": "M. Mudryk",
-            "position": "Missing Fixture",
-            "status": "out"
-          },
-          {
-            "player_name": "J. Gittens",
-            "position": "Questionable",
-            "status": "out"
+            "player_name": "Romeo Lavia",
+            "position": "CM",
+            "status": "injured"
           }
         ],
         "schedule": {

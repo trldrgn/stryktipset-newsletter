@@ -156,9 +156,12 @@ def _format_match_block(match: Match) -> str:
     if a and a.new_manager_bounce:
         away_manager = f" [NEW MANAGER {a.manager_name} — {a.manager_weeks_in_post}wks, bounce effect possible]"
 
-    news = ""
+    news_parts: list[str] = []
     if match.home_news and match.home_news.summary:
-        news = f"\nLATEST NEWS:\n{match.home_news.summary}"
+        news_parts.append(match.home_news.summary)
+    if match.away_news and match.away_news.summary:
+        news_parts.append(match.away_news.summary)
+    news = f"\nLATEST NEWS:\n" + "\n".join(news_parts) if news_parts else ""
 
     # Build stat lines — only include non-empty values to keep prompt compact
     home_stats_line = " | ".join(filter(None, [home_xg, home_shot_stats]))
@@ -262,9 +265,8 @@ CRITICAL RULES:
 
 
 def _build_user_prompt(matches: list[Match], draw_number: int) -> str:
-    match_blocks = "\n\n" + "="*60 + "\n\n".join(
-        _format_match_block(m) for m in matches
-    )
+    separator = "\n\n" + "=" * 60 + "\n\n"
+    match_blocks = separator.join(_format_match_block(m) for m in matches)
 
     return f"""Analyse these 13 Stryktipset matches for draw #{draw_number} and return your analysis as JSON.
 
