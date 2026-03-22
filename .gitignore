@@ -1,5 +1,6 @@
 # Secrets — never commit these
 .env
+BACKLOG.md
 gmail_credentials.json
 gmail_token.json
 
