@@ -22,6 +22,7 @@ import pytest
 os.environ.setdefault("ANTHROPIC_API_KEY", "test-anthropic-key")
 os.environ.setdefault("PERPLEXITY_API_KEY", "test-perplexity-key")
 os.environ.setdefault("API_FOOTBALL_KEY", "test-api-football-key")
+os.environ.setdefault("FOOTBALL_DATA_API_KEY", "test-fd-key")
 os.environ.setdefault("GMAIL_SENDER", "test@example.com")
 os.environ.setdefault("GMAIL_APP_PASSWORD", "test-app-password")
 os.environ.setdefault("NEWSLETTER_RECIPIENTS", "test@example.com")
@@ -101,7 +102,6 @@ def sample_team_stats(sample_form) -> TeamStats:
         form_last5=sample_form,
         xg_for_avg=2.1,
         xg_against_avg=0.9,
-        xg_overperformance=0.4,
         schedule=ScheduleContext(
             days_since_last_match=5,
             last_match_competition="Premier League",

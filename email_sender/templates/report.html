@@ -961,6 +961,26 @@
         <span class="stat-lbl">xG borta</span>
         <span class="stat-val">{% if match.away_stats.xg_for_avg %}{{ "%.2f"|format(match.away_stats.xg_for_avg) }}{% else %}—{% endif %}</span>
       </div>
+      {% if match.home_stats.shots_on_target_avg or match.away_stats.shots_on_target_avg %}
+      <div class="stat-col">
+        <span class="stat-lbl">Skott på mål/match</span>
+        <span class="stat-val">
+          {% if match.home_stats.shots_on_target_avg %}{{ match.home_stats.shots_on_target_avg }}{% else %}—{% endif %}
+          vs
+          {% if match.away_stats.shots_on_target_avg %}{{ match.away_stats.shots_on_target_avg }}{% else %}—{% endif %}
+        </span>
+      </div>
+      {% endif %}
+      {% if match.home_stats.possession_avg or match.away_stats.possession_avg %}
+      <div class="stat-col">
+        <span class="stat-lbl">Bollinnehav %</span>
+        <span class="stat-val">
+          {% if match.home_stats.possession_avg %}{{ match.home_stats.possession_avg }}%{% else %}—{% endif %}
+          vs
+          {% if match.away_stats.possession_avg %}{{ match.away_stats.possession_avg }}%{% else %}—{% endif %}
+        </span>
+      </div>
+      {% endif %}
       {% if match.home_stats.league_position or match.away_stats.league_position %}
       <div class="stat-col">
         <span class="stat-lbl">Tabellplats</span>

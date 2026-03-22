@@ -4,9 +4,11 @@ Stryktipset Newsletter — main entry point.
 Usage:
   python main.py                  # Start the scheduler (runs every Saturday 08:00 Stockholm)
   python main.py --run            # Run the newsletter pipeline immediately (for testing)
-  python main.py --improve        # Print model improvement analysis prompt (monthly use)
-  python main.py --draw 4945      # Run for a specific draw number
   python main.py --dry-run        # Run pipeline but don't send email (saves HTML locally)
+  python main.py --draw 4945      # Run for a specific draw number
+  python main.py --improve        # Print model improvement analysis prompt (monthly use)
+  python main.py --collect-xg     # Collect xG data for last 7 days (run Fridays)
+  python main.py --backfill-xg    # Backfill xG data for last 5 weeks (first-time setup)
 """
 
 from __future__ import annotations
@@ -34,7 +36,9 @@ from config import (
 from email_sender.gmail import send_newsletter
 from email_sender.renderer import render_newsletter
 from fetchers.api_football import enrich_all_matches
+from fetchers.football_data import enrich_with_football_data
 from fetchers.perplexity import fetch_all_match_news
+from fetchers.understat_xg import enrich_with_understat_xg
 from fetchers.svenska_spel import fetch_current_coupon, fetch_coupon
 from utils.logger import get_logger
 
@@ -94,6 +98,14 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
     # --- Step 3: API-Football enrichment ---
     logger.info("[3/9] Enriching matches with API-Football stats...")
     matches = enrich_all_matches(matches, season)
+
+    # --- Step 3b: Football-Data.org enrichment (form + standings for PL/Championship/etc.) ---
+    logger.info("[3b] Enriching with Football-Data.org (form + standings)...")
+    matches = enrich_with_football_data(matches)
+
+    # --- Step 3c: Understat xG enrichment (Big 5 leagues) ---
+    logger.info("[3c] Enriching with Understat xG data...")
+    matches = enrich_with_understat_xg(matches)
 
     # --- Step 4: Perplexity news ---
     logger.info("[4/9] Fetching Perplexity news context...")
@@ -203,8 +215,35 @@ def main() -> None:
         metavar="NUMBER",
         help="Run pipeline for a specific draw number (e.g. --draw 4945)",
     )
+    parser.add_argument(
+        "--collect-xg",
+        action="store_true",
+        help="Collect xG data from API-Football (run on Fridays)",
+    )
+    parser.add_argument(
+        "--backfill-xg",
+        action="store_true",
+        help="Backfill xG data for last 5 weeks",
+    )
 
     args = parser.parse_args()
+
+    if args.collect_xg or args.backfill_xg:
+        from fetchers.xg_collector import collect_xg, _load_history, _request_count, _DAILY_LIMIT
+        days = 35 if args.backfill_xg else 7
+        logger.info("Collecting xG data for last %d days...", days)
+        new = collect_xg(days=days)
+        print(f"\nCollected {new} new fixtures.")
+        history = _load_history()
+        if history["fixtures"]:
+            leagues: dict[str, int] = {}
+            for f in history["fixtures"].values():
+                league = f.get("league", "Unknown")
+                leagues[league] = leagues.get(league, 0) + 1
+            print("\nxG database:")
+            for league, count in sorted(leagues.items(), key=lambda x: -x[1]):
+                print(f"  {league}: {count} fixtures")
+        return
 
     if args.improve:
         prompt = build_improvement_prompt()

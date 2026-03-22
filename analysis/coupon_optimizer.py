@@ -68,9 +68,9 @@ def _best_single_outcome(pred: MatchPrediction, match: Match | None) -> Outcome:
 def _best_double_outcomes(pred: MatchPrediction, match: Match | None) -> list[Outcome]:
     """
     For a double selection, pick 2 of the 3 outcomes.
-    - If Claude predicted exactly 2: use them
+    - If Claude predicted exactly 2: use them (Claude's ordering is authoritative)
     - If Claude predicted 1: add the market's 2nd most likely
-    - If Claude predicted 3: drop the market's least likely
+    - If Claude predicted 3: keep Claude's top 2 (they're in descending confidence order)
     """
     if len(pred.predicted_outcomes) == 2:
         return list(pred.predicted_outcomes)
@@ -83,9 +83,8 @@ def _best_double_outcomes(pred: MatchPrediction, match: Match | None) -> list[Ou
         second = next((o for o in market_ranked if o != kept), Outcome.DRAW)
         return [kept, second]
 
-    # Claude predicted 3 — drop the market's least likely
-    drop = market_ranked[-1]
-    return [o for o in pred.predicted_outcomes if o != drop][:2]
+    # Claude predicted 3 — keep top 2 from Claude's ordering (already descending confidence)
+    return list(pred.predicted_outcomes[:2])
 
 
 # ---------------------------------------------------------------------------
@@ -116,8 +115,24 @@ def optimise_coupon(report: WeeklyReport, matches: list[Match]) -> WeeklyReport:
         p.game_number for p in sorted_preds[4:-1]    # the 8 in between
     ]
 
+    # --- Quality gate: warn if singles have low confidence ---
+    singles_confs = [p.confidence for p in sorted_preds[:4]]
+    min_single_conf = min(singles_confs) if singles_confs else 0
+    high_conf_count = sum(1 for c in singles_confs if c >= 0.80)
+
+    if high_conf_count < 4:
+        logger.warning(
+            "VOLATILE WEEK: Only %d of 4 singles have confidence ≥0.80 "
+            "(lowest single: %.2f). This coupon carries higher risk.",
+            high_conf_count, min_single_conf,
+        )
+        report.volatile_week = True
+    else:
+        report.volatile_week = False
+
     logger.info("Coupon allocation:")
-    logger.info("  Singles (top 4 confidence): games %s", singles_games)
+    logger.info("  Singles (top 4 confidence): games %s (confs: %s)",
+                singles_games, [f"{c:.2f}" for c in singles_confs])
     logger.info("  Doubles (mid 8): games %s", doubles_games)
     logger.info("  Full (least confident): game %d", full_game)
 

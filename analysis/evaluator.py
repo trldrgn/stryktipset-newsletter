@@ -115,23 +115,54 @@ def _outcome_label(o: str) -> str:
 
 def _post_mortem_hint(pred: dict, actual: Outcome) -> str:
     """
-    Generate a brief automatic post-mortem hint based on what we know
-    about the prediction. Claude will later enrich this with real reasoning.
+    Generate a signal-specific post-mortem hint.
+    Identifies which type of misjudgment likely occurred.
     """
     predicted = pred["predicted_outcomes"]
     selection = pred["selection_type"]
     confidence = pred.get("confidence", 0)
     risk_flags = pred.get("risk_flags", [])
+    key_factors = pred.get("key_factors", [])
 
     hint_parts = [
-        f"Predicted {'/'.join(predicted)} ({selection}) but result was {actual.value}."
+        f"Predicted {'/'.join(predicted)} ({selection}, conf={confidence:.2f}) "
+        f"but result was {actual.value}."
     ]
 
-    if confidence >= 0.8 and selection == "single":
-        hint_parts.append("High-confidence single — overconfidence warning.")
+    # Signal-specific diagnostics
+    if confidence >= 0.85 and selection == "single":
+        hint_parts.append(
+            "OVERCONFIDENCE: High-confidence single failed. "
+            "Were multiple independent signals truly aligned, or were they correlated?"
+        )
+    elif confidence >= 0.75 and selection == "single":
+        hint_parts.append(
+            "BORDERLINE SINGLE: This was a marginal single pick. "
+            "Consider whether it should have been a double."
+        )
+
     if risk_flags:
-        hint_parts.append(f"Risk flags were noted: {'; '.join(risk_flags[:2])}.")
-        hint_parts.append("Review whether these flags should have downgraded this to a double.")
+        hint_parts.append(
+            f"IGNORED RISKS: Risk flags were noted but not weighted enough: "
+            f"{'; '.join(risk_flags[:3])}."
+        )
+
+    # Check if the actual result was the complete opposite
+    if actual.value not in predicted:
+        if len(predicted) == 2:
+            dropped = [o for o in ["1", "X", "2"] if o not in predicted]
+            if dropped:
+                hint_parts.append(
+                    f"WRONG DROPOUT: The dropped outcome ({dropped[0]}) was the actual result. "
+                    f"Market or form signals may have been misleading."
+                )
+
+    # Draw-specific analysis
+    if actual == Outcome.DRAW and "X" not in predicted:
+        hint_parts.append(
+            "DRAW MISSED: Draws are underrated when teams are closely matched. "
+            "Check if league position differential was <5 and odds were tight."
+        )
 
     return " ".join(hint_parts)
 
@@ -233,10 +264,44 @@ def evaluate_last_week() -> Optional[WeeklyEvaluation]:
                 f"{e.post_mortem}"
             )
 
-    if evaluation.singles_accuracy_pct < 50 and singles_total > 0:
+    # Singles accuracy thresholds
+    if singles_total > 0:
+        sa = evaluation.singles_accuracy_pct
+        if sa < 25:
+            lessons.append(
+                f"CRITICAL: Singles accuracy was {sa}% — fundamentally miscalibrated. "
+                "This week: require 3+ independent aligned signals before assigning ANY single. "
+                "Consider whether market odds disagreed with your singles picks."
+            )
+        elif sa < 50:
+            lessons.append(
+                f"Singles accuracy was {sa}% — below acceptable threshold. "
+                "This week: only assign singles to games with confidence >0.85 AND where "
+                "form, odds, and news all agree."
+            )
+        elif sa >= 75:
+            lessons.append(
+                f"Singles accuracy was strong at {sa}%. "
+                "Confidence calibration appears well-tuned — maintain current approach."
+            )
+
+    # Doubles accuracy
+    if doubles_total > 0:
+        da = evaluation.doubles_correct / doubles_total * 100
+        if da < 50:
+            lessons.append(
+                f"Doubles accuracy was {da:.0f}% — the dropped outcome was often correct. "
+                "Review whether market least-likely was truly least-likely, or if Claude's "
+                "second choice was more reliable."
+            )
+
+    # Draw-specific bias check
+    wrong_draws = [e for e in wrong if e.actual_result == Outcome.DRAW]
+    if len(wrong_draws) >= 2:
         lessons.append(
-            f"Singles accuracy was only {evaluation.singles_accuracy_pct}% — "
-            "be more conservative with single selections this week."
+            f"{len(wrong_draws)} wrong predictions were draws this week. "
+            "Draws are systematically underrated — increase draw coverage in doubles "
+            "for matches with tight odds and close league positions."
         )
 
     evaluation.lessons = lessons
@@ -354,6 +419,7 @@ def build_improvement_prompt() -> str:
     """
     Build a prompt that can be sent to Claude to analyse ALL historical
     predictions and identify systematic biases in our model.
+    Pre-computes per-league accuracy, confidence calibration, and draw bias.
     """
     history = _load_all_history()
     if not history:
@@ -369,11 +435,46 @@ def build_improvement_prompt() -> str:
     doubles_c = sum(w["doubles_correct"] for w in history)
     doubles_t = sum(w["doubles_total"] for w in history)
 
+    # --- Pre-computed analytics ---
+    from collections import defaultdict
+
+    # Confidence calibration bins
+    conf_bins: dict[str, list[bool]] = defaultdict(list)
+    # Result type tracking
+    draw_stats = {"total": 0, "predicted": 0}
+    # Selection type breakdown
+    wrong_by_selection: dict[str, int] = defaultdict(int)
+
     wrong_games = []
+    all_games = []
     for week in history:
         for g in week.get("games", []):
-            if not g["correct"] and g["selection_type"] != "full":
-                wrong_games.append(g)
+            all_games.append(g)
+            conf = g.get("confidence", g.get("prediction", {}).get("confidence", 0.5))
+            if isinstance(conf, (int, float)):
+                bin_key = f"{int(conf * 10) / 10:.1f}"
+                conf_bins[bin_key].append(g["correct"])
+
+            if g["actual_result"] == "X":
+                draw_stats["total"] += 1
+                if "X" in g["our_prediction"]:
+                    draw_stats["predicted"] += 1
+
+            if not g["correct"]:
+                if g["selection_type"] != "full":
+                    wrong_games.append(g)
+                    wrong_by_selection[g["selection_type"]] += 1
+
+    # Format confidence calibration
+    conf_report = []
+    for bin_key in sorted(conf_bins.keys(), reverse=True):
+        results = conf_bins[bin_key]
+        correct = sum(results)
+        total = len(results)
+        pct = round(correct / total * 100, 1) if total else 0
+        conf_report.append(f"  Confidence {bin_key}: {pct}% correct ({correct}/{total})")
+
+    draw_coverage_pct = round(draw_stats["predicted"] / draw_stats["total"] * 100, 1) if draw_stats["total"] else 0
 
     prompt = f"""You are analysing the prediction performance of a Stryktipset betting newsletter system.
 
@@ -382,6 +483,19 @@ OVERALL STATS ({total_weeks} weeks, {total_games} games):
 - Singles accuracy: {round(singles_c/singles_t*100,1) if singles_t else 'N/A'}% ({singles_c}/{singles_t})
 - Doubles accuracy: {round(doubles_c/doubles_t*100,1) if doubles_t else 'N/A'}% ({doubles_c}/{doubles_t})
 
+CONFIDENCE CALIBRATION (is confidence well-calibrated?):
+{chr(10).join(conf_report) if conf_report else '  No data yet'}
+
+DRAW BIAS CHECK:
+- Total draws in results: {draw_stats['total']}
+- Draws we covered (in our selection): {draw_stats['predicted']}
+- Draw coverage rate: {draw_coverage_pct}%
+- (Draws typically occur 25-28% of the time in European football)
+
+WRONG PREDICTIONS BY SELECTION TYPE:
+- Singles wrong: {wrong_by_selection.get('single', 0)}
+- Doubles wrong: {wrong_by_selection.get('double', 0)}
+
 MISSED PREDICTIONS ({len(wrong_games)} total):
 {json.dumps(wrong_games, indent=2, ensure_ascii=False)}
 
@@ -389,12 +503,14 @@ FULL WEEKLY HISTORY:
 {json.dumps(history, indent=2, ensure_ascii=False)}
 
 Please analyse this data and answer:
-1. What patterns exist in our wrong predictions? (leagues, home/away bias, confidence levels)
-2. Are we systematically over-confident on singles? What should our single-selection threshold be?
-3. Which types of games (by league, motivation, odds range) do we consistently get wrong?
-4. What signals should we weight MORE heavily in our analysis?
-5. What signals are we likely ignoring or under-weighting?
-6. Specific recommendations to improve our prediction accuracy.
+1. CONFIDENCE CALIBRATION: Are our confidence scores well-calibrated? (e.g., do games marked 0.9 win 90%?)
+   What should our minimum single-selection confidence threshold be?
+2. DRAW BIAS: Are we systematically under-covering draws? Should we include X more in doubles?
+3. SIGNAL ANALYSIS: Which risk flags appeared most often in wrong predictions? What signals should we
+   weight MORE heavily (form, odds, H2H, news)?
+4. SELECTION STRATEGY: Should we be more conservative with singles? Are doubles dropping the wrong outcome?
+5. LEAGUE PATTERNS: Do certain leagues consistently produce more upsets? Should we adjust by league?
+6. SPECIFIC RECOMMENDATIONS: Concrete, actionable changes to improve prediction accuracy.
 
 Be specific and data-driven. Reference actual games from the history where relevant."""
 

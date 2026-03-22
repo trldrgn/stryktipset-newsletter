@@ -199,17 +199,6 @@ def _fetch_injuries(fixture_id: int) -> dict:
     return _api_get("injuries", {"fixture": fixture_id})
 
 
-@cached(lambda fixture_id: f"fixture_stats_{fixture_id}")
-def _fetch_fixture_statistics(fixture_id: int) -> dict:
-    """Per-fixture in-game stats: shots, possession, corners, passes. Free tier OK."""
-    return _api_get("fixtures/statistics", {"fixture": fixture_id})
-
-
-@cached(lambda fixture_id: f"fixture_lineups_{fixture_id}")
-def _fetch_fixture_lineups(fixture_id: int) -> dict:
-    """Starting XI, formation, substitutes. Usually published 1h before kickoff."""
-    return _api_get("fixtures/lineups", {"fixture": fixture_id})
-
 
 @cached(lambda player_id, season: f"player_stats_{player_id}_{season}")
 def _fetch_player_stats(player_id: int, season: int) -> dict:
@@ -522,91 +511,11 @@ def _build_h2h(home_team_id: int, away_team_id: int, home_name: str, away_name: 
     return results
 
 
-# ---------------------------------------------------------------------------
-# Fixture statistics helpers (shots, possession, corners)
-# ---------------------------------------------------------------------------
-
-def _parse_stat_value(stats_list: list, stat_name: str) -> Optional[float]:
-    """Extract a named stat value from the API statistics array."""
-    for s in stats_list:
-        if s.get("type", "").lower() == stat_name.lower():
-            val = s.get("value")
-            if val is None or val == "":
-                return None
-            try:
-                return float(str(val).replace("%", ""))
-            except (ValueError, TypeError):
-                return None
-    return None
-
-
-def _enrich_team_stats_with_fixtures(stats: TeamStats, team_id: int, season: int) -> None:
-    """
-    After building form from fixtures, also compute shot/possession/corner averages
-    from the stats of those same last 5 fixtures.
-    """
-    form_data = _fetch_team_fixtures(team_id, season)
-    fixtures = sorted(
-        form_data.get("response", []),
-        key=lambda f: f.get("fixture", {}).get("date", ""),
-        reverse=True,
-    )[:5]
-
-    shots_on, shots_total, possession, corners = [], [], [], []
-    for f in fixtures:
-        fid = f.get("fixture", {}).get("id")
-        if not fid:
-            continue
-        try:
-            stat_data = _fetch_fixture_statistics(fid)
-            for team_stat in stat_data.get("response", []):
-                if team_stat.get("team", {}).get("id") != team_id:
-                    continue
-                s = team_stat.get("statistics", [])
-                if (v := _parse_stat_value(s, "Shots on Goal")) is not None:
-                    shots_on.append(v)
-                if (v := _parse_stat_value(s, "Total Shots")) is not None:
-                    shots_total.append(v)
-                if (v := _parse_stat_value(s, "Ball Possession")) is not None:
-                    possession.append(v)
-                if (v := _parse_stat_value(s, "Corner Kicks")) is not None:
-                    corners.append(v)
-        except Exception as e:
-            logger.debug("Could not fetch fixture stats for fixture %d: %s", fid, e)
-
-    if shots_on:
-        stats.shots_on_target_avg = round(sum(shots_on) / len(shots_on), 1)
-    if shots_total:
-        stats.shots_total_avg = round(sum(shots_total) / len(shots_total), 1)
-    if possession:
-        stats.possession_avg = round(sum(possession) / len(possession), 1)
-    if corners:
-        stats.corners_avg = round(sum(corners) / len(corners), 1)
-
-
-def _enrich_with_lineups(match: Match, fixture_id: int) -> None:
-    """
-    Fetch confirmed lineups for a fixture and populate formation + starting_xi.
-    Usually available from ~1h before kickoff — will be empty before that.
-    """
-    try:
-        data = _fetch_fixture_lineups(fixture_id)
-        for team_entry in data.get("response", []):
-            tid = team_entry.get("team", {}).get("id")
-            formation = team_entry.get("formation", "")
-            starters = [
-                p.get("player", {}).get("name", "")
-                for p in team_entry.get("startXI", [])
-                if p.get("player", {}).get("name")
-            ]
-            if match.home_stats and match.home_stats.team_id == tid:
-                match.home_stats.formation = formation
-                match.home_stats.starting_xi = starters
-            elif match.away_stats and match.away_stats.team_id == tid:
-                match.away_stats.formation = formation
-                match.away_stats.starting_xi = starters
-    except Exception as e:
-        logger.debug("Could not fetch lineups for fixture %d: %s", fixture_id, e)
+    # NOTE: Shot/possession/corner averages and lineups were removed here.
+    # Shot stats required _fetch_team_fixtures (undefined on free tier — exceeds 100/day budget).
+    # Lineups are always empty at 8AM Saturday (published ~1h before kickoff).
+    # The TeamStats fields (shots_on_target_avg, formation, etc.) remain defined
+    # for future use if we move to a paid plan.
 
 
 # ---------------------------------------------------------------------------
@@ -732,13 +641,7 @@ def enrich_match(match: Match, season: int) -> Match:
             except Exception as e:
                 logger.warning("Injury fetch failed for fixture %d: %s", fixture_id, e)
 
-            # --- Lineups (available ~1h before kickoff) ---
-            _enrich_with_lineups(match, fixture_id)
-
-        # NOTE: Shot/possession/corner averages (_enrich_team_stats_with_fixtures) would add
-        # 5 calls per team (130 total) — exceeds the free-tier 100/day limit.
-        # Enable once on a paid plan. The fields (shots_on_target_avg etc.) are defined on
-        # TeamStats and ready to use; just call _enrich_team_stats_with_fixtures here.
+        # Shot/possession stats and lineups not available on free tier (see note above).
     else:
         logger.warning(
             "Could not resolve team IDs for %s vs %s — limited stats available",

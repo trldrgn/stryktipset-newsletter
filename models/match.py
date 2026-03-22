@@ -184,10 +184,9 @@ class TeamStats:
     form_last5_home_only: list[FormResult] = field(default_factory=list)    # for home team
     form_last5_away_only: list[FormResult] = field(default_factory=list)    # for away team
 
-    # xG averages (last 5)
+    # xG averages (last 5) — populated by Perplexity news parsing when available
     xg_for_avg: Optional[float] = None
     xg_against_avg: Optional[float] = None
-    xg_overperformance: Optional[float] = None  # actual goals - xG total (luck indicator)
 
     # Absences
     injuries: list[PlayerAbsence] = field(default_factory=list)
@@ -373,6 +372,9 @@ class WeeklyReport:
     full_game: Optional[int] = None
     total_rows: int = 0
     total_cost_sek: int = 0
+
+    # Coupon quality
+    volatile_week: bool = False  # True if <4 singles have confidence ≥0.80
 
     # Claude's overall commentary
     executive_summary: str = ""

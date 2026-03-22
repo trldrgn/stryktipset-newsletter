@@ -13,15 +13,19 @@ The long-term goal is to **beat bookmaker odds** through systematic signal track
 ```
 Svenska Spel API → 13 Match objects
        ↓
-API-Football (100 req/day free tier) → form, H2H, standings, injuries
+API-Football (100 req/day free tier) → H2H, injuries, standings
        ↓
-Perplexity Sonar (13 queries) → latest news, xG, rotation risk
+Football-Data.org (free tier) → form, league position, points (PL/Championship/etc.)
        ↓
-Claude API (1 call, all 13 matches) → analysis + predictions JSON
+Understat (free, web scraping) → xG for/against averages (Big 5 leagues)
+       ↓
+Perplexity Sonar (13 queries, parallel) → injury news, rotation risk, press conferences
+       ↓
+Claude API (1 call, extended thinking) → analysis + predictions JSON
        ↓
 Coupon Optimizer → 4 singles / 8 doubles / 1 full = 768 SEK
        ↓
-Jinja2 template → HTML email → Gmail API → subscribers
+Jinja2 template → HTML email → Gmail SMTP → subscribers
        ↓
 Evaluator → score last week → append to data/performance/history.json
 ```
@@ -33,13 +37,17 @@ Evaluator → score last week → append to data/performance/history.json
 | Config / env | `config.py` |
 | Svenska Spel fetch | `fetchers/svenska_spel.py` |
 | API-Football fetch | `fetchers/api_football.py` |
+| Football-Data.org | `fetchers/football_data.py` |
+| Understat xG | `fetchers/understat_xg.py` |
 | Perplexity news | `fetchers/perplexity.py` |
 | Claude analysis | `analysis/claude_analyst.py` |
 | Coupon allocation | `analysis/coupon_optimizer.py` |
 | Weekly scoring | `analysis/evaluator.py` |
 | HTML template | `email_sender/templates/report.html` |
 | Gmail send | `email_sender/gmail.py` |
+| xG collector (lower leagues) | `fetchers/xg_collector.py` |
 | Orchestrator + scheduler | `main.py` |
+| API documentation | `docs/api-reference.md` |
 
 ---
 
@@ -64,6 +72,12 @@ python main.py
 
 # Print model improvement analysis prompt (use monthly)
 python main.py --improve
+
+# Collect xG data for last 7 days (run Tue + Fri, or automated via GitHub Actions)
+python main.py --collect-xg
+
+# Backfill xG data for last 5 weeks (first-time setup)
+python main.py --backfill-xg
 ```
 
 ---
@@ -76,19 +90,37 @@ python main.py --improve
 - Current budget per run: ~60–80 calls. Do not add new endpoints without checking the budget
 - If you're adding a new API-Football call, use the `@cached(...)` decorator
 
+### Football-Data.org (free tier)
+- **Rate limit: 10 req/min** — enforced via 6.5s sleep between calls
+- Provides: standings, form (last 5), league position, points
+- Covers: PL, Championship, League One, League Two, Bundesliga, 2.Bundesliga, La Liga, Serie A, Ligue 1, Eredivisie, Primeira Liga
+- Auth: `X-Auth-Token` header
+- Responses cached (7 days TTL)
+
+### Understat (free, web scraping)
+- Provides: **xG per match** — the strongest predictive signal we have
+- Covers Big 5 only: EPL, La Liga, Bundesliga, Serie A, Ligue 1
+- NOT covered: Championship, League One, Eredivisie, Primeira Liga
+- Rate limit: 1.5s between requests (polite scraping)
+- Responses cached (7 days TTL)
+- Python library: `understatapi`
+
 ### Claude API
 - **One call per pipeline run** (all 13 matches in one prompt) — do not add more calls
-- Model: `claude-sonnet-4-5` (set in `.env` / `CLAUDE_MODEL`)
+- Model: `claude-sonnet-4-6` (set in `.env` / `CLAUDE_MODEL`)
+- **Extended thinking enabled** (10k token budget) — improves confidence calibration
 - Response must be JSON — the parser in `claude_analyst.py` depends on this
 
 ### Perplexity Sonar
-- **One query per match** = 13 calls per run
+- **One query per match** = 13 calls per run (parallelized, 4 workers)
+- Rate limited: 2s between calls with thread-safe lock
 - Use `sonar` model (cheapest tier) — do not upgrade without cost analysis
 - Results are NOT cached (must be fresh each run)
+- Focused on: injuries, rotation risk, press conferences (xG now from Understat)
 
-### Gmail API
-- Scope: `gmail.send` only — do not expand scopes
-- Token is auto-refreshed from `gmail_token.json`
+### Gmail
+- SMTP via App Password (no Google Cloud Console needed)
+- Sender: dedicated Gmail account with 2-Step Verification + App Password
 
 ---
 
@@ -97,7 +129,7 @@ python main.py --improve
 All dataclasses live in `models/match.py`. Before modifying any fetcher or analyser, read this file — every field is documented.
 
 Key classes:
-- `Match` — one game, populated in 3 stages (Svenska Spel → API-Football → Perplexity)
+- `Match` — one game, populated in 5 stages (Svenska Spel → API-Football → Football-Data.org → Understat → Perplexity)
 - `TeamStats` — form, standings, xG, injuries, schedule for one team
 - `PlayerAbsence` — injured/suspended player with impact assessment and `MatchupRisk`
 - `MatchPrediction` — Claude's output for one game
@@ -198,11 +230,21 @@ Add these to repo Settings → Secrets and variables → Actions:
 ANTHROPIC_API_KEY
 PERPLEXITY_API_KEY
 API_FOOTBALL_KEY
+FOOTBALL_DATA_API_KEY
 GMAIL_SENDER
 GMAIL_APP_PASSWORD
 NEWSLETTER_RECIPIENTS
 ```
-The workflow (`.github/workflows/newsletter.yml`) runs every Saturday 07:00 UTC
-and commits prediction data back to the repo automatically.
+
+**Workflows:**
+| Workflow | Schedule | What it does |
+|---|---|---|
+| `newsletter.yml` | Saturday 07:00 UTC | Full pipeline → send newsletter → commit predictions |
+| `xg-collector.yml` | Tue + Fri 20:00 UTC | Collect xG data for Championship/League One/Allsvenskan |
+
+Both workflows commit data back to the repo automatically.
+Both support `workflow_dispatch` for manual triggering.
+
+**Detailed API docs:** See `docs/api-reference.md`
 
 Secrets that must never be committed: `.env`

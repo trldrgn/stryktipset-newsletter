@@ -1,0 +1,80 @@
+name: xG Data Collector
+
+on:
+  # Run Tuesday and Friday at 23:30 UTC to capture late games (21:00 CET kickoffs finish ~22:50).
+  # Friday run ensures fresh data for Saturday's newsletter pipeline.
+  # Tuesday run catches weekend fixtures before they fall off the free-tier date window.
+  schedule:
+    - cron: "30 23 * * 2"   # Tuesday 23:30 UTC
+    - cron: "30 23 * * 5"   # Friday 23:30 UTC
+
+  # Manual trigger for backfill or ad-hoc collection
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Days to look back (default: 7, backfill: 35)"
+        required: false
+        type: string
+        default: "7"
+      backfill:
+        description: "Backfill mode — collect last 5 weeks"
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  collect-xg:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit xG data back to repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run xG collector
+        run: |
+          if [ "${{ github.event.inputs.backfill }}" = "true" ]; then
+            python main.py --backfill-xg
+          else
+            DAYS="${{ github.event.inputs.days }}"
+            python main.py --collect-xg
+          fi
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          # These are required by config.py on import but not used by xG collector
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NEWSLETTER_RECIPIENTS: ${{ secrets.NEWSLETTER_RECIPIENTS }}
+
+      - name: Commit xG data
+        run: |
+          git config user.name "stryktipset-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/xg/
+          if git diff --staged --quiet; then
+            echo "No new xG data to commit."
+          else
+            git commit -m "data: xG collection $(date -u '+%Y-%m-%d')"
+            git push
+          fi

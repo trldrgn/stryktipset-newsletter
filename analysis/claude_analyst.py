@@ -18,7 +18,7 @@ from datetime import datetime, timezone
 
 import anthropic
 
-from config import ANTHROPIC_API_KEY, CLAUDE_MODEL, CLAUDE_MAX_TOKENS
+from config import ANTHROPIC_API_KEY, CLAUDE_MODEL, CLAUDE_MAX_TOKENS, CLAUDE_THINKING_BUDGET
 from models.match import (
     Match,
     MatchPrediction,
@@ -97,8 +97,21 @@ def _format_match_block(match: Match) -> str:
     home_form_home = _format_form(h.form_last5_home_only) if h else "N/A"
     away_form_away = _format_form(a.form_last5_away_only) if a else "N/A"
 
-    home_xg = f"xGF:{h.xg_for_avg:.2f} xGA:{h.xg_against_avg:.2f}" if h and h.xg_for_avg else ""
-    away_xg = f"xGF:{a.xg_for_avg:.2f} xGA:{a.xg_against_avg:.2f}" if a and a.xg_for_avg else ""
+    def _fmt_xg_line(ts) -> str:
+        """Format xG line — prefer rich profile if available, fall back to simple averages."""
+        if ts is None:
+            return ""
+        # Check for rich xG profile from collector
+        profile = getattr(ts, '_xg_profile', None)
+        if profile and profile.format_for_prompt():
+            return profile.format_for_prompt()
+        # Fall back to simple Understat averages
+        if ts.xg_for_avg is not None:
+            return f"xGF:{ts.xg_for_avg:.2f} xGA:{ts.xg_against_avg:.2f}"
+        return ""
+
+    home_xg = _fmt_xg_line(h)
+    away_xg = _fmt_xg_line(a)
 
     def _fmt_shot_stats(ts) -> str:
         parts = []
@@ -114,15 +127,6 @@ def _format_match_block(match: Match) -> str:
 
     home_shot_stats = _fmt_shot_stats(h)
     away_shot_stats = _fmt_shot_stats(a)
-
-    def _fmt_lineup(ts) -> str:
-        if not ts or not ts.starting_xi:
-            return ""
-        xi = ", ".join(ts.starting_xi[:11])
-        return f"Formation:{ts.formation} | XI: {xi}" if ts.formation else f"XI: {xi}"
-
-    home_lineup = _fmt_lineup(h)
-    away_lineup = _fmt_lineup(a)
 
     home_fatigue = " ⚠️FATIGUE" if h and h.fatigue_flag else ""
     away_fatigue = " ⚠️FATIGUE" if a and a.fatigue_flag else ""
@@ -156,14 +160,12 @@ Odds: {odds_str} | {dist_str} | {tips_str}
 HOME — {match.home_team} ({home_pos}){home_fatigue}{home_manager}
   Form (all): {home_form} | Form (home): {home_form_home}
   {home_stats_line if home_stats_line else 'Stats: N/A'}
-  {'Lineup: ' + home_lineup if home_lineup else ''}
   Injuries/Suspensions: {home_injuries}
   Intl call-ups missing: {home_intl}
 
 AWAY — {match.away_team} ({away_pos}){away_fatigue}{away_manager}
   Form (all): {away_form} | Form (away): {away_form_away}
   {away_stats_line if away_stats_line else 'Stats: N/A'}
-  {'Lineup: ' + away_lineup if away_lineup else ''}
   Injuries/Suspensions: {away_injuries}
   Intl call-ups missing: {away_intl}
 
@@ -207,15 +209,44 @@ INJURY ANALYSIS DEPTH:
 
 DATA QUALITY NOTES:
 - xG showing N/A is common for lower-league teams (Championship, League One) and when the stats API
-  is restricted. Do not comment on the absence of xG — just use form, odds, and news instead.
+  is restricted. Mention it once if relevant, then rely on form, odds, and news instead.
 - "Form: N/A" means the stats API had no data. Use market signals and news to compensate.
 - When structured stats are sparse, weight the LATEST NEWS and market odds more heavily.
+- Do NOT write filler like "unfortunately no xG data available for this match" — just use what you have.
 {feedback}
+ANALYTICAL DEPTH — go beyond surface stats:
+- MOTIVATION ASYMMETRY: title race vs mid-table complacency, relegation desperation vs nothing-to-play-for.
+  Relegation-threatened teams often park the bus → inflated draw probability.
+- FIXTURE CONGESTION: If only ONE team played midweek (especially European competition), expect rotation
+  and fatigue. Weight the fatigue flag heavily — it's one of the strongest predictive signals.
+- xG REGRESSION: This is one of the STRONGEST signals. If xGF >> actual goals, the team has been unlucky
+  and is due to score more (regression up). If actual goals >> xGF, they've been clinical/lucky and may
+  regress down. Same logic for xGA (defence). A team with xGA 1.8 but conceding 1.0 has been bailed out
+  by goalkeeper heroics — that's fragile. Weight xG differences of >0.3 per game heavily.
+- FORM vs STRENGTH: A strong team on a 3-game losing streak is different from a weak team on a 3-game
+  losing streak. Use league position + points to anchor your assessment, then adjust with recent form.
+- HOME/AWAY SPLITS: Some teams are dramatically different at home vs away. Always check both form lines.
+- PUBLIC vs SHARP: When newspaper tips and public % strongly favour one side but odds don't move,
+  the market may see something the public doesn't. Look for contrarian value.
+
+CONFIDENCE CALIBRATION — use this scale precisely:
+  0.90–1.00: Multiple strong, independent signals align (form + odds + H2H + news all point same way).
+             Reserve for genuinely clear-cut games. These become SINGLES on the coupon.
+  0.75–0.89: 2–3 signals support the outcome, manageable risk. One contrary signal is acceptable.
+  0.60–0.74: Mixed signals OR one key uncertainty (injury doubt, motivation unclear, form divergence).
+             These are natural DOUBLES territory.
+  0.45–0.59: Too many unknowns, genuine toss-up, or data gaps preventing confident assessment.
+             The lowest game here becomes the FULL on the coupon.
+  Important: Your top 4 confidence scores become singles. If you cannot find 4 games worthy of
+  >0.80 confidence, that's fine — but flag it in executive_summary as a volatile week.
+
 CRITICAL RULES:
 - You MUST return valid JSON exactly as specified — the system depends on it for parsing
-- Confidence scores: 0.9+ = single candidate, 0.5 = full candidate
+- predicted_outcomes MUST be listed in descending order of your confidence (most likely first)
 - Be honest about uncertainty — it's better to double a game than single a 50/50
-- Do not invent statistics — if data says N/A, say so in your analysis"""
+- Do not invent statistics — if data says N/A, acknowledge it briefly and rely on other signals
+- When structured stats show N/A: mention it once, then move on to market odds and news. Do not
+  editorialize about the absence of data."""
 
 
 def _build_user_prompt(matches: list[Match], draw_number: int) -> str:
@@ -246,9 +277,10 @@ Return ONLY valid JSON in this exact structure (no markdown, no extra text):
   ]
 }}
 
-For predicted_outcomes use only "1", "X", "2".
-Confidence is 0.0-1.0. Higher = more certain.
-Include all 13 matches in the matches array, numbered 1-13."""
+For predicted_outcomes use only "1", "X", "2". List them in descending order of likelihood.
+Confidence is 0.0-1.0. Use the calibration scale from your instructions — 0.9+ means genuinely clear-cut.
+Include all 13 matches in the matches array, numbered 1-13.
+If fewer than 4 games deserve >0.80 confidence, note this in executive_summary."""
 
 
 # ---------------------------------------------------------------------------
@@ -328,14 +360,35 @@ def analyse_matches(
     logger.debug("System prompt length: %d chars", len(system_prompt))
     logger.debug("User prompt length: %d chars", len(user_prompt))
 
-    message = _client.messages.create(
-        model=CLAUDE_MODEL,
-        max_tokens=CLAUDE_MAX_TOKENS,
-        system=system_prompt,
-        messages=[{"role": "user", "content": user_prompt}],
-    )
+    # Build API call params — enable extended thinking if budget > 0
+    api_params: dict = {
+        "model": CLAUDE_MODEL,
+        "max_tokens": CLAUDE_MAX_TOKENS,
+        "system": system_prompt,
+        "messages": [{"role": "user", "content": user_prompt}],
+    }
 
-    raw_response = message.content[0].text
+    if CLAUDE_THINKING_BUDGET > 0:
+        api_params["thinking"] = {
+            "type": "enabled",
+            "budget_tokens": CLAUDE_THINKING_BUDGET,
+        }
+        # Extended thinking requires temperature=1 (Anthropic constraint)
+        api_params["temperature"] = 1
+        logger.info("Extended thinking enabled (budget: %d tokens)", CLAUDE_THINKING_BUDGET)
+
+    message = _client.messages.create(**api_params)
+
+    # With extended thinking, text block may not be first (thinking blocks precede it)
+    raw_response = ""
+    for block in message.content:
+        if block.type == "text":
+            raw_response = block.text
+            break
+
+    if not raw_response:
+        raise ValueError("Claude response contained no text block")
+
     logger.info(
         "Claude response received. Input tokens: %d, Output tokens: %d",
         message.usage.input_tokens,

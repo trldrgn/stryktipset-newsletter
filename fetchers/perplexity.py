@@ -6,17 +6,21 @@ Cost efficiency:
   - Uses the cheapest 'sonar' model
   - Structured prompt ensures compact, useful responses
   - Results are NOT cached (news must be fresh each run)
+  - Rate limited: 2s between calls to avoid throttling
+  - Parallelized: 4 concurrent workers for speed
 
-What we ask per match:
-  - Latest injury and availability news for both teams
-  - xG stats from recent games (FBref context)
-  - Rotation/fatigue risk (upcoming fixtures, cup games)
-  - Manager press conference quotes on team selection
-  - Any relevant tactical or morale context
+What we ask per match (in priority order):
+  1. INJURIES — confirmed absences for both teams (critical)
+  2. xG stats from recent games (important)
+  3. Rotation/fatigue risk (important)
+  4. Manager press conference quotes (nice-to-have)
+  5. Tactical/morale context (nice-to-have)
 """
 
 from __future__ import annotations
 
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 
 import requests
@@ -27,11 +31,18 @@ from utils.logger import get_logger
 
 logger = get_logger(__name__)
 
+# Rate limiter — 2s between calls (conservative safety margin)
+_last_call_at: float = 0.0
+_MIN_CALL_INTERVAL = 2.0
+
+# Parallelization — 4 workers keeps us well within any rate limit
+_MAX_WORKERS = 4
+
 
 def _build_query(match: Match) -> str:
     """
     Build a single focused query for one match covering both teams.
-    Compact and specific to minimise token cost while maximising signal.
+    Structured with PRIORITY levels so truncation loses low-value data first.
     """
     kickoff_str = ""
     if match.kickoff:
@@ -43,20 +54,40 @@ def _build_query(match: Match) -> str:
         f"Football match preview: {match.home_team} vs {match.away_team} "
         f"({match.league}{', ' + kickoff_str if kickoff_str else ''}). "
         f"Today is {today}. Provide concise factual updates — ONLY use information from the last 14 days. "
-        f"1) INJURIES (confirmed as of this week): list injured/suspended/doubtful players for BOTH teams. "
+        f"\n\nPRIORITY 1 (MUST HAVE): "
+        f"INJURIES & SUSPENSIONS confirmed as of this week for BOTH teams. "
+        f"List each player, their status (out/doubt/50-50), and position. "
         f"State 'no recent injury news found' if nothing current. Do NOT list players who have already returned. "
-        f"2) Recent xG (last 3-5 games) — cite FBref or similar. If unavailable for this league level, say so. "
-        f"3) Rotation/fatigue: did either team play midweek? Key fixture coming up causing likely rotation? "
-        f"4) Manager press conference (this week only): quotes on team selection or absences. "
-        f"5) Any unusual context: new manager, morale issues, relegation/promotion pressure. "
-        f"Be factual and brief. Explicitly state when data is unavailable rather than speculating."
+        f"\n\nPRIORITY 2 (IMPORTANT): "
+        f"Rotation/fatigue: did either team play midweek? How many days rest? "
+        f"Any upcoming big fixture within 7 days that could cause rotation? "
+        f"\n\nPRIORITY 3 (NICE TO HAVE): "
+        f"Manager press conference (this week only): quotes on team selection or absences. "
+        f"\n\nPRIORITY 4 (NICE TO HAVE): "
+        f"Any unusual context: new manager, morale issues, relegation/promotion pressure. "
+        f"Only include if explicitly from this week's news. "
+        f"\n\nBe factual and brief. Explicitly state when data is unavailable rather than speculating."
     )
 
 
-def _call_perplexity(query: str) -> str:
+def _rate_limited_call(query: str) -> str:
     """
-    Single Perplexity Sonar API call. Returns the response text.
+    Single Perplexity Sonar API call with rate limiting.
+    Returns the response text.
     """
+    global _last_call_at
+
+    # Enforce minimum interval between calls
+    import threading
+    _lock = getattr(_rate_limited_call, '_lock', threading.Lock())
+    _rate_limited_call._lock = _lock
+
+    with _lock:
+        elapsed = time.time() - _last_call_at
+        if elapsed < _MIN_CALL_INTERVAL:
+            time.sleep(_MIN_CALL_INTERVAL - elapsed)
+        _last_call_at = time.time()
+
     headers = {
         "Authorization": f"Bearer {PERPLEXITY_API_KEY}",
         "Content-Type": "application/json",
@@ -76,9 +107,8 @@ def _call_perplexity(query: str) -> str:
             },
             {"role": "user", "content": query},
         ],
-        "max_tokens": 600,
+        "max_tokens": 800,
         "temperature": 0.1,   # low temperature for factual retrieval
-        "return_citations": True,
     }
 
     resp = requests.post(
@@ -118,7 +148,7 @@ def fetch_match_news(match: Match) -> Match:
     query = _build_query(match)
 
     try:
-        raw_response = _call_perplexity(query)
+        raw_response = _rate_limited_call(query)
         logger.debug("Perplexity response for %s vs %s: %s...", match.home_team, match.away_team, raw_response[:120])
 
         # Both home_news and away_news hold the combined response —
@@ -140,11 +170,25 @@ def fetch_match_news(match: Match) -> Match:
 
 def fetch_all_match_news(matches: list[Match]) -> list[Match]:
     """
-    Fetch news for all 13 matches. One Perplexity call per match = 13 total.
+    Fetch news for all 13 matches using parallel workers.
+    Rate limiting is enforced per-call via a thread lock.
     """
-    logger.info("Fetching Perplexity news for %d matches", len(matches))
-    for i, match in enumerate(matches, 1):
-        logger.info("Perplexity query %d/%d", i, len(matches))
-        fetch_match_news(match)
+    logger.info("Fetching Perplexity news for %d matches (%d workers)", len(matches), _MAX_WORKERS)
+
+    with ThreadPoolExecutor(max_workers=_MAX_WORKERS) as executor:
+        futures = {
+            executor.submit(fetch_match_news, match): match
+            for match in matches
+        }
+        for i, future in enumerate(as_completed(futures), 1):
+            match = futures[future]
+            try:
+                future.result()
+                logger.info("Perplexity %d/%d complete: %s vs %s",
+                            i, len(matches), match.home_team, match.away_team)
+            except Exception as e:
+                logger.error("Perplexity worker failed for %s vs %s: %s",
+                             match.home_team, match.away_team, e)
+
     logger.info("Perplexity news fetch complete")
     return matches

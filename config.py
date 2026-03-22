@@ -29,6 +29,7 @@ load_dotenv(ROOT_DIR / ".env")
 ANTHROPIC_API_KEY: str = os.environ["ANTHROPIC_API_KEY"]
 PERPLEXITY_API_KEY: str = os.environ["PERPLEXITY_API_KEY"]
 API_FOOTBALL_KEY: str = os.environ["API_FOOTBALL_KEY"]
+FOOTBALL_DATA_API_KEY: str = os.getenv("FOOTBALL_DATA_API_KEY", "")
 
 # Gmail SMTP — App Password auth (no Google Cloud Console needed)
 GMAIL_SENDER: str = os.environ["GMAIL_SENDER"]           # e.g. stryktipset.tips@gmail.com
@@ -60,8 +61,9 @@ SCHEDULE_TIMEZONE: str = os.getenv("SCHEDULE_TIMEZONE", "Europe/Stockholm")
 # Claude
 # ---------------------------------------------------------------------------
 
-CLAUDE_MODEL: str = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-5")
+CLAUDE_MODEL: str = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-6")
 CLAUDE_MAX_TOKENS: int = int(os.getenv("CLAUDE_MAX_TOKENS", "16000"))
+CLAUDE_THINKING_BUDGET: int = int(os.getenv("CLAUDE_THINKING_BUDGET", "10000"))
 
 
 # ---------------------------------------------------------------------------

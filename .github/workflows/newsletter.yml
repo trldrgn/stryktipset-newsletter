@@ -71,6 +71,7 @@ jobs:
           GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           NEWSLETTER_RECIPIENTS: ${{ secrets.NEWSLETTER_RECIPIENTS }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
 
       # Upload the dry-run HTML as a downloadable artifact (useful for previewing)
       - name: Upload dry-run HTML
@@ -89,7 +90,7 @@ jobs:
         run: |
           git config user.name "stryktipset-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/predictions/ data/results/ data/performance/
+          git add data/predictions/ data/results/ data/performance/ data/xg/
           # Only commit if there are staged changes
           if git diff --staged --quiet; then
             echo "No new prediction data to commit."
