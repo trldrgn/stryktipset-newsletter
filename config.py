@@ -2,6 +2,8 @@
 Central configuration. All env vars loaded here — nothing else imports dotenv.
 """
 
+from __future__ import annotations
+
 import os
 from pathlib import Path
 from dotenv import load_dotenv

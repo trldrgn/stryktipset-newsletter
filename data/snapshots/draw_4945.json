@@ -1,0 +1,4988 @@
+{
+  "draw_number": 4945,
+  "saved_at": "2026-03-22T10:55:20.354076+00:00",
+  "executive_summary": "A coupon shaped by injury crises and motivation asymmetry. Brentford travel to Leeds missing both first-choice fullbacks, Chelsea arrive at Everton on three days rest after a PSG beating, and the Championship's bottom clubs are uniformly decimated. Three games stand out as genuinely clear: Fulham hosting a crippled Burnley side, Southampton's relentless home record against the Championship's basement club, and Championship leaders Coventry's formidable away machine visiting an inconsistent Swansea. Elsewhere, there is genuine uncertainty — QPR's top scorer is absent, Sheffield United are alarmingly depleted, and the Leeds-Brentford clash is a collision of two teams playing well below expected levels. Only three games comfortably exceed 0.80 confidence; this is a volatile week that rewards caution.",
+  "value_radar": [
+    "Game 2 Everton: At 3.65 the home win looks attractive given Chelsea's midweek PSG fixture (3 days rest), a defensive injury crisis, and a three-match losing streak. The xG regression story is real for Chelsea but execution requires rest they don't have.",
+    "Game 7 Wrexham: Sheffield United are missing six players including two central midfielders and their goalkeeper, while Wrexham sit 7th and have won the last two H2H meetings emphatically. The 4.25 is generous for a side with this form and fitness advantage.",
+    "Game 9 Coventry: The 2.17 for the Championship leaders with only two minor injuries and four away wins in their last five is solid value — the public at 54% for Coventry barely moves the needle on what should be a shorter price.",
+    "Game 13 Wimbledon: Peterborough's top scorer Kwame Poku is doubtful alongside two other starters and a suspension. Wimbledon at 2.28 with a full squad looks underpriced versus a Posh side potentially stripped of its most dangerous player."
+  ],
+  "matches": [
+    {
+      "game_number": 1,
+      "draw_number": 4945,
+      "home_team": "Leeds",
+      "away_team": "Brentford",
+      "league": "Premier League",
+      "country": "England",
+      "kickoff": "2026-03-21T20:00:00+00:00",
+      "market": {
+        "odds_home": 2.55,
+        "odds_draw": 3.5,
+        "odds_away": 2.88,
+        "public_pct_home": 41,
+        "public_pct_draw": 27,
+        "public_pct_away": 32,
+        "newspaper_tips_home": 8,
+        "newspaper_tips_draw": 2,
+        "newspaper_tips_away": 0
+      },
+      "home_stats": {
+        "team_name": "Leeds",
+        "team_id": 63,
+        "league_position": 15,
+        "league_points": 33,
+        "form_last5": [
+          {
+            "opponent": "Brentford FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Crystal Palace FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sunderland AFC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Manchester City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Aston Villa FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Brentford FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sunderland AFC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Manchester City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Nottingham Forest FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Arsenal FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 4,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Crystal Palace FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Aston Villa FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Chelsea FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Everton FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Newcastle United FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 4,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": 1.02,
+        "xg_against_avg": 1.08,
+        "injuries": [
+          {
+            "player_name": "G. Gudmundsson",
+            "position": "Missing Fixture",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Premier League",
+          "matches_last_14_days": 2
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "away_stats": {
+        "team_name": "Brentford",
+        "team_id": 55,
+        "league_position": 7,
+        "league_points": 46,
+        "form_last5": [
+          {
+            "opponent": "Leeds United FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Wolverhampton Wanderers FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "AFC Bournemouth",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Burnley FC",
+            "home_or_away": "A",
+            "goals_for": 4,
+            "goals_against": 3,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Brighton & Hove Albion FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Wolverhampton Wanderers FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Brighton & Hove Albion FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Arsenal FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Nottingham Forest FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sunderland AFC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Leeds United FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "AFC Bournemouth",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Burnley FC",
+            "home_or_away": "A",
+            "goals_for": 4,
+            "goals_against": 3,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Newcastle United FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Aston Villa FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": 1.58,
+        "xg_against_avg": 1.35,
+        "injuries": [
+          {
+            "player_name": "F. Carvalho",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Dasilva",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "R. Henry",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "A. Hickey",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "V. Janelt",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "A. Milambo",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "M. Damsgaard",
+            "position": "Questionable",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Premier League",
+          "matches_last_14_days": 2
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2020-02-11",
+          "home_team": "Brentford",
+          "away_team": "Leeds",
+          "home_goals": 1,
+          "away_goals": 1,
+          "venue": "Griffin Park"
+        },
+        {
+          "date": "2022-05-22",
+          "home_team": "Brentford",
+          "away_team": "Leeds",
+          "home_goals": 1,
+          "away_goals": 2,
+          "venue": "Brentford Community Stadium"
+        },
+        {
+          "date": "2022-09-03",
+          "home_team": "Brentford",
+          "away_team": "Leeds",
+          "home_goals": 5,
+          "away_goals": 2,
+          "venue": "Gtech Community Stadium"
+        },
+        {
+          "date": "2025-12-14",
+          "home_team": "Brentford",
+          "away_team": "Leeds",
+          "home_goals": 1,
+          "away_goals": 1,
+          "venue": "Brentford Community Stadium"
+        },
+        {
+          "date": "2021-12-05",
+          "home_team": "Leeds",
+          "away_team": "Brentford",
+          "home_goals": 2,
+          "away_goals": 2,
+          "venue": "Elland Road"
+        },
+        {
+          "date": "2023-01-22",
+          "home_team": "Leeds",
+          "away_team": "Brentford",
+          "home_goals": 0,
+          "away_goals": 0,
+          "venue": "Elland Road"
+        },
+        {
+          "date": "2026-03-21",
+          "home_team": "Leeds",
+          "away_team": "Brentford",
+          "home_goals": 0,
+          "away_goals": 0,
+          "venue": "Elland Road"
+        }
+      ]
+    },
+    {
+      "game_number": 2,
+      "draw_number": 4945,
+      "home_team": "Everton",
+      "away_team": "Chelsea",
+      "league": "Premier League",
+      "country": "England",
+      "kickoff": "2026-03-21T17:30:00+00:00",
+      "market": {
+        "odds_home": 3.65,
+        "odds_draw": 3.8,
+        "odds_away": 2.04,
+        "public_pct_home": 29,
+        "public_pct_draw": 26,
+        "public_pct_away": 45,
+        "newspaper_tips_home": 3,
+        "newspaper_tips_draw": 1,
+        "newspaper_tips_away": 6
+      },
+      "home_stats": {
+        "team_name": "Everton",
+        "team_id": 45,
+        "league_position": 8,
+        "league_points": 46,
+        "form_last5": [
+          {
+            "opponent": "Chelsea FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Arsenal FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Burnley FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Newcastle United FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Manchester United FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Chelsea FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Burnley FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Manchester United FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "AFC Bournemouth",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Leeds United FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Arsenal FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Newcastle United FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Fulham FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Brighton & Hove Albion FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Aston Villa FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": 1.35,
+        "xg_against_avg": 1.32,
+        "injuries": [
+          {
+            "player_name": "C. Alcaraz",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "T. George",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Grealish",
+            "position": "Missing Fixture",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Premier League",
+          "matches_last_14_days": 2
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "away_stats": {
+        "team_name": "Chelsea",
+        "team_id": 49,
+        "league_position": 6,
+        "league_points": 48,
+        "form_last5": [
+          {
+            "opponent": "Everton FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Paris Saint-Germain FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Newcastle United FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Paris Saint-Germain FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 5,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Aston Villa FC",
+            "home_or_away": "A",
+            "goals_for": 4,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Paris Saint-Germain FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Newcastle United FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Burnley FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Leeds United FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Ham United FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Everton FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Paris Saint-Germain FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 5,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Aston Villa FC",
+            "home_or_away": "A",
+            "goals_for": 4,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Arsenal FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Wolverhampton Wanderers FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": 2.07,
+        "xg_against_avg": 1.25,
+        "injuries": [
+          {
+            "player_name": "T. Chalobah",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "L. Colwill",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "R. James",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "F. Jorgensen",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "M. Mudryk",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Gittens",
+            "position": "Questionable",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Premier League",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2020-03-08",
+          "home_team": "Chelsea",
+          "away_team": "Everton",
+          "home_goals": 4,
+          "away_goals": 0,
+          "venue": "Stamford Bridge"
+        },
+        {
+          "date": "2021-03-08",
+          "home_team": "Chelsea",
+          "away_team": "Everton",
+          "home_goals": 2,
+          "away_goals": 0,
+          "venue": "Stamford Bridge"
+        },
+        {
+          "date": "2021-12-16",
+          "home_team": "Chelsea",
+          "away_team": "Everton",
+          "home_goals": 1,
+          "away_goals": 1,
+          "venue": "Stamford Bridge"
+        },
+        {
+          "date": "2023-03-18",
+          "home_team": "Chelsea",
+          "away_team": "Everton",
+          "home_goals": 2,
+          "away_goals": 2,
+          "venue": "Stamford Bridge"
+        },
+        {
+          "date": "2024-04-15",
+          "home_team": "Chelsea",
+          "away_team": "Everton",
+          "home_goals": 6,
+          "away_goals": 0,
+          "venue": "Stamford Bridge"
+        },
+        {
+          "date": "2025-04-26",
+          "home_team": "Chelsea",
+          "away_team": "Everton",
+          "home_goals": 1,
+          "away_goals": 0,
+          "venue": "Stamford Bridge"
+        },
+        {
+          "date": "2025-12-13",
+          "home_team": "Chelsea",
+          "away_team": "Everton",
+          "home_goals": 2,
+          "away_goals": 0,
+          "venue": "Stamford Bridge"
+        },
+        {
+          "date": "2020-12-12",
+          "home_team": "Everton",
+          "away_team": "Chelsea",
+          "home_goals": 1,
+          "away_goals": 0,
+          "venue": "Goodison Park"
+        },
+        {
+          "date": "2022-05-01",
+          "home_team": "Everton",
+          "away_team": "Chelsea",
+          "home_goals": 1,
+          "away_goals": 0,
+          "venue": "Goodison Park"
+        },
+        {
+          "date": "2022-08-06",
+          "home_team": "Everton",
+          "away_team": "Chelsea",
+          "home_goals": 0,
+          "away_goals": 1,
+          "venue": "Goodison Park"
+        },
+        {
+          "date": "2023-12-10",
+          "home_team": "Everton",
+          "away_team": "Chelsea",
+          "home_goals": 2,
+          "away_goals": 0,
+          "venue": "Goodison Park"
+        },
+        {
+          "date": "2024-12-22",
+          "home_team": "Everton",
+          "away_team": "Chelsea",
+          "home_goals": 0,
+          "away_goals": 0,
+          "venue": "Goodison Park"
+        },
+        {
+          "date": "2026-03-21",
+          "home_team": "Everton",
+          "away_team": "Chelsea",
+          "home_goals": 3,
+          "away_goals": 0,
+          "venue": "Hill Dickinson Stadium"
+        }
+      ]
+    },
+    {
+      "game_number": 3,
+      "draw_number": 4945,
+      "home_team": "Fulham",
+      "away_team": "Burnley",
+      "league": "Premier League",
+      "country": "England",
+      "kickoff": "2026-03-21T15:00:00+00:00",
+      "market": {
+        "odds_home": 1.58,
+        "odds_draw": 4.2,
+        "odds_away": 6.4,
+        "public_pct_home": 76,
+        "public_pct_draw": 15,
+        "public_pct_away": 9,
+        "newspaper_tips_home": 10,
+        "newspaper_tips_draw": 0,
+        "newspaper_tips_away": 0
+      },
+      "home_stats": {
+        "team_name": "Fulham",
+        "team_id": 36,
+        "league_position": 9,
+        "league_points": 44,
+        "form_last5": [
+          {
+            "opponent": "Burnley FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Nottingham Forest FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Ham United FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Tottenham Hotspur FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sunderland AFC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Burnley FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Ham United FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Tottenham Hotspur FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Everton FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Brighton & Hove Albion FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Nottingham Forest FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sunderland AFC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Manchester City FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Manchester United FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Leeds United FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": 1.91,
+        "xg_against_avg": 1.39,
+        "injuries": [
+          {
+            "player_name": "Kevin",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "K. Tete",
+            "position": "Questionable",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Premier League",
+          "matches_last_14_days": 2
+        },
+        "manager_name": "Marco Silva",
+        "manager_weeks_in_post": 6
+      },
+      "away_stats": {
+        "team_name": "Burnley",
+        "team_id": 44,
+        "league_position": 19,
+        "league_points": 20,
+        "form_last5": [
+          {
+            "opponent": "Fulham FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "AFC Bournemouth",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Everton FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Brentford FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 4,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Chelsea FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "AFC Bournemouth",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Brentford FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 4,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Ham United FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Tottenham Hotspur FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Manchester United FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Fulham FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Everton FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Chelsea FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Crystal Palace FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sunderland AFC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": 1.24,
+        "xg_against_avg": 2.39,
+        "injuries": [
+          {
+            "player_name": "Z. Amdouni",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Beyer",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Cullen",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "C. Roberts",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "M. Tresor Ndayishimiye",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "A. Tuanzebe",
+            "position": "Missing Fixture",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Premier League",
+          "matches_last_14_days": 2
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2021-05-10",
+          "home_team": "Fulham",
+          "away_team": "Burnley",
+          "home_goals": 0,
+          "away_goals": 2,
+          "venue": "Craven Cottage"
+        },
+        {
+          "date": "2021-01-24",
+          "home_team": "Fulham",
+          "away_team": "Burnley",
+          "home_goals": 0,
+          "away_goals": 3,
+          "venue": "Craven Cottage"
+        },
+        {
+          "date": "2023-12-23",
+          "home_team": "Fulham",
+          "away_team": "Burnley",
+          "home_goals": 0,
+          "away_goals": 2,
+          "venue": "Craven Cottage"
+        },
+        {
+          "date": "2026-03-21",
+          "home_team": "Fulham",
+          "away_team": "Burnley",
+          "home_goals": 3,
+          "away_goals": 1,
+          "venue": "Craven Cottage"
+        },
+        {
+          "date": "2021-02-17",
+          "home_team": "Burnley",
+          "away_team": "Fulham",
+          "home_goals": 1,
+          "away_goals": 1,
+          "venue": "Turf Moor"
+        },
+        {
+          "date": "2024-02-03",
+          "home_team": "Burnley",
+          "away_team": "Fulham",
+          "home_goals": 2,
+          "away_goals": 2,
+          "venue": "Turf Moor"
+        },
+        {
+          "date": "2025-12-13",
+          "home_team": "Burnley",
+          "away_team": "Fulham",
+          "home_goals": 2,
+          "away_goals": 3,
+          "venue": "Turf Moor"
+        }
+      ]
+    },
+    {
+      "game_number": 4,
+      "draw_number": 4945,
+      "home_team": "Bristol City",
+      "away_team": "West Bromwich",
+      "league": "Championship",
+      "country": "England",
+      "kickoff": "2026-03-21T15:00:00+00:00",
+      "market": {
+        "odds_home": 2.38,
+        "odds_draw": 3.4,
+        "odds_away": 3.05,
+        "public_pct_home": 37,
+        "public_pct_draw": 26,
+        "public_pct_away": 37,
+        "newspaper_tips_home": 6,
+        "newspaper_tips_draw": 1,
+        "newspaper_tips_away": 3
+      },
+      "home_stats": {
+        "team_name": "Bristol City",
+        "team_id": 56,
+        "league_position": 16,
+        "league_points": 51,
+        "form_last5": [
+          {
+            "opponent": "West Bromwich Albion FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Middlesbrough FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Leicester City FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Coventry City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Watford FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "West Bromwich Albion FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Coventry City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Watford FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Wrexham AFC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Derby County FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 5,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Middlesbrough FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Leicester City FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Blackburn Rovers FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Swansea City AFC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Hull City AFC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "R. Atkinson",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "R. Dickie",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "L. McNally",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "G. Tanner",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Williams",
+            "position": "Missing Fixture",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "away_stats": {
+        "team_name": "West Bromwich",
+        "team_id": 60,
+        "league_position": 20,
+        "league_points": 43,
+        "form_last5": [
+          {
+            "opponent": "Bristol City FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Hull City AFC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield United FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Oxford United FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Hull City AFC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Charlton Athletic FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Coventry City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Stoke City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Bristol City FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield United FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Oxford United FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Birmingham City FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Portsmouth FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "T. Bany",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "K. Grant",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "M. Johnston",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "C. Mepham",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "K. Bielik",
+            "position": "Questionable",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2021-10-23",
+          "home_team": "West Brom",
+          "away_team": "Bristol City",
+          "home_goals": 3,
+          "away_goals": 0,
+          "venue": "The Hawthorns"
+        },
+        {
+          "date": "2022-10-18",
+          "home_team": "West Brom",
+          "away_team": "Bristol City",
+          "home_goals": 0,
+          "away_goals": 2,
+          "venue": "The Hawthorns"
+        },
+        {
+          "date": "2024-03-16",
+          "home_team": "West Brom",
+          "away_team": "Bristol City",
+          "home_goals": 2,
+          "away_goals": 0,
+          "venue": "The Hawthorns"
+        },
+        {
+          "date": "2024-12-22",
+          "home_team": "West Brom",
+          "away_team": "Bristol City",
+          "home_goals": 2,
+          "away_goals": 0,
+          "venue": "The Hawthorns"
+        },
+        {
+          "date": "2025-12-26",
+          "home_team": "West Brom",
+          "away_team": "Bristol City",
+          "home_goals": 1,
+          "away_goals": 2,
+          "venue": "The Hawthorns"
+        },
+        {
+          "date": "2020-02-22",
+          "home_team": "Bristol City",
+          "away_team": "West Brom",
+          "home_goals": 0,
+          "away_goals": 3,
+          "venue": "Ashton Gate"
+        },
+        {
+          "date": "2022-03-19",
+          "home_team": "Bristol City",
+          "away_team": "West Brom",
+          "home_goals": 2,
+          "away_goals": 2,
+          "venue": "Ashton Gate"
+        },
+        {
+          "date": "2022-12-26",
+          "home_team": "Bristol City",
+          "away_team": "West Brom",
+          "home_goals": 0,
+          "away_goals": 2,
+          "venue": "Ashton Gate"
+        },
+        {
+          "date": "2023-01-28",
+          "home_team": "Bristol City",
+          "away_team": "West Brom",
+          "home_goals": 3,
+          "away_goals": 0,
+          "venue": "Ashton Gate"
+        },
+        {
+          "date": "2023-09-16",
+          "home_team": "Bristol City",
+          "away_team": "West Brom",
+          "home_goals": 0,
+          "away_goals": 0,
+          "venue": "Ashton Gate Stadium"
+        },
+        {
+          "date": "2025-04-08",
+          "home_team": "Bristol City",
+          "away_team": "West Brom",
+          "home_goals": 2,
+          "away_goals": 1,
+          "venue": "Ashton Gate Stadium"
+        },
+        {
+          "date": "2026-03-21",
+          "home_team": "Bristol City",
+          "away_team": "West Brom",
+          "home_goals": 0,
+          "away_goals": 1,
+          "venue": "Ashton Gate Stadium"
+        }
+      ]
+    },
+    {
+      "game_number": 5,
+      "draw_number": 4945,
+      "home_team": "Charlton",
+      "away_team": "Norwich",
+      "league": "Championship",
+      "country": "England",
+      "kickoff": "2026-03-21T15:00:00+00:00",
+      "market": {
+        "odds_home": 3.05,
+        "odds_draw": 3.4,
+        "odds_away": 2.38,
+        "public_pct_home": 25,
+        "public_pct_draw": 26,
+        "public_pct_away": 49,
+        "newspaper_tips_home": 5,
+        "newspaper_tips_draw": 0,
+        "newspaper_tips_away": 5
+      },
+      "home_stats": {
+        "team_name": "Charlton",
+        "team_id": 1335,
+        "league_position": 18,
+        "league_points": 48,
+        "form_last5": [
+          {
+            "opponent": "Norwich City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Oxford United FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Middlesbrough FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Birmingham City FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Wrexham AFC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Norwich City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Birmingham City FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Wrexham AFC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Stoke City FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Queens Park Rangers FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Oxford United FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Middlesbrough FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Bromwich Albion FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Leicester City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "J. Edwards",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "M. Godden",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "H. Knibbs",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "L. Berry",
+            "position": "Questionable",
+            "status": "out"
+          },
+          {
+            "player_name": "R. Burke",
+            "position": "Questionable",
+            "status": "out"
+          },
+          {
+            "player_name": "C. Sichenje",
+            "position": "Questionable",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "away_stats": {
+        "team_name": "Norwich",
+        "team_id": 71,
+        "league_position": 10,
+        "league_points": 54,
+        "form_last5": [
+          {
+            "opponent": "Charlton Athletic FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Preston North End FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield United FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Leicester City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Preston North End FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield United FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield Wednesday FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Birmingham City FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Blackburn Rovers FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Charlton Athletic FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Leicester City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Oxford United FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Middlesbrough FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "H. Amass",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "A. Crnac",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "P. A. Diallo",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "S. Duffy",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "G. Forsyth",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "D. Grimshaw",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "M. Jurasek",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "L. Mahovo",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Makama",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Schlupp",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "O. Schwartau",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "M. Topic",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "M. Toure",
+            "position": "Missing Fixture",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2025-12-26",
+          "home_team": "Norwich",
+          "away_team": "Charlton",
+          "home_goals": 1,
+          "away_goals": 0,
+          "venue": "Carrow Road"
+        },
+        {
+          "date": "2022-01-09",
+          "home_team": "Charlton",
+          "away_team": "Norwich",
+          "home_goals": 0,
+          "away_goals": 1,
+          "venue": "The Valley"
+        },
+        {
+          "date": "2026-03-21",
+          "home_team": "Charlton",
+          "away_team": "Norwich",
+          "home_goals": 0,
+          "away_goals": 1,
+          "venue": "The Valley"
+        }
+      ]
+    },
+    {
+      "game_number": 6,
+      "draw_number": 4945,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Portsmouth",
+      "league": "Championship",
+      "country": "England",
+      "kickoff": "2026-03-21T15:00:00+00:00",
+      "market": {
+        "odds_home": 2.45,
+        "odds_draw": 3.35,
+        "odds_away": 3.0,
+        "public_pct_home": 44,
+        "public_pct_draw": 25,
+        "public_pct_away": 31,
+        "newspaper_tips_home": 7,
+        "newspaper_tips_draw": 1,
+        "newspaper_tips_away": 2
+      },
+      "home_stats": {
+        "team_name": "Queens Park Rangers",
+        "team_id": null,
+        "league_position": 12,
+        "league_points": 53,
+        "form_last5": [
+          {
+            "opponent": "Portsmouth FC",
+            "home_or_away": "H",
+            "goals_for": 6,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Leicester City FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Birmingham City FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Middlesbrough FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 4,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield United FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Portsmouth FC",
+            "home_or_away": "H",
+            "goals_for": 6,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Middlesbrough FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 4,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield United FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Blackburn Rovers FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Coventry City FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Leicester City FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Birmingham City FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 5,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Hull City AFC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Charlton Athletic FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "away_stats": {
+        "team_name": "Portsmouth",
+        "team_id": null,
+        "league_position": 21,
+        "league_points": 40,
+        "form_last5": [
+          {
+            "opponent": "Queens Park Rangers FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 6,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Derby County FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Swansea City AFC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Blackburn Rovers FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Hull City AFC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Derby County FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Swansea City AFC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Hull City AFC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield United FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Bromwich Albion FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Queens Park Rangers FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 6,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Blackburn Rovers FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Wrexham AFC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Millwall FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Preston North End FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": []
+    },
+    {
+      "game_number": 7,
+      "draw_number": 4945,
+      "home_team": "Sheffield U",
+      "away_team": "Wrexham",
+      "league": "Championship",
+      "country": "England",
+      "kickoff": "2026-03-21T15:00:00+00:00",
+      "market": {
+        "odds_home": 1.82,
+        "odds_draw": 3.9,
+        "odds_away": 4.25,
+        "public_pct_home": 59,
+        "public_pct_draw": 20,
+        "public_pct_away": 21,
+        "newspaper_tips_home": 9,
+        "newspaper_tips_draw": 0,
+        "newspaper_tips_away": 1
+      },
+      "home_stats": {
+        "team_name": "Sheffield U",
+        "team_id": 62,
+        "league_position": 17,
+        "league_points": 50,
+        "form_last5": [
+          {
+            "opponent": "Wrexham AFC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Birmingham City FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Norwich City FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Bromwich Albion FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Queens Park Rangers FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Wrexham AFC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Bromwich Albion FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Coventry City FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield Wednesday FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Middlesbrough FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Birmingham City FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Norwich City FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Queens Park Rangers FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Portsmouth FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Millwall FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "M. Cooper",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "S. McCallum",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "F. Seriki",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Shackleton",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "K. Phillips",
+            "position": "Questionable",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "away_stats": {
+        "team_name": "Wrexham",
+        "team_id": 1837,
+        "league_position": 7,
+        "league_points": 63,
+        "form_last5": [
+          {
+            "opponent": "Sheffield United FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Watford FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Swansea City AFC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Hull City AFC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Charlton Athletic FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Swansea City AFC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Hull City AFC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Portsmouth FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Ipswich Town FC",
+            "home_or_away": "H",
+            "goals_for": 5,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Millwall FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Sheffield United FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Watford FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Charlton Athletic FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Bristol City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield Wednesday FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "L. Cacace",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "A. James",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "M. James",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "K. Moore",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "T. O'Connor",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "B. Sheaf",
+            "position": "Missing Fixture",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2023-02-07",
+          "home_team": "Sheffield Utd",
+          "away_team": "Wrexham",
+          "home_goals": 3,
+          "away_goals": 1,
+          "venue": "Bramall Lane"
+        },
+        {
+          "date": "2024-08-13",
+          "home_team": "Sheffield Utd",
+          "away_team": "Wrexham",
+          "home_goals": 4,
+          "away_goals": 2,
+          "venue": "Bramall Lane"
+        },
+        {
+          "date": "2026-03-21",
+          "home_team": "Sheffield Utd",
+          "away_team": "Wrexham",
+          "home_goals": 1,
+          "away_goals": 2,
+          "venue": "Bramall Lane"
+        },
+        {
+          "date": "2023-01-29",
+          "home_team": "Wrexham",
+          "away_team": "Sheffield Utd",
+          "home_goals": 3,
+          "away_goals": 3,
+          "venue": "Racecourse Ground"
+        },
+        {
+          "date": "2025-12-26",
+          "home_team": "Wrexham",
+          "away_team": "Sheffield Utd",
+          "home_goals": 5,
+          "away_goals": 3,
+          "venue": "Racecourse Ground"
+        }
+      ]
+    },
+    {
+      "game_number": 8,
+      "draw_number": 4945,
+      "home_team": "Southampton",
+      "away_team": "Oxford",
+      "league": "Championship",
+      "country": "England",
+      "kickoff": "2026-03-21T15:00:00+00:00",
+      "market": {
+        "odds_home": 1.5,
+        "odds_draw": 4.4,
+        "odds_away": 6.5,
+        "public_pct_home": 76,
+        "public_pct_draw": 15,
+        "public_pct_away": 9,
+        "newspaper_tips_home": 10,
+        "newspaper_tips_draw": 0,
+        "newspaper_tips_away": 0
+      },
+      "home_stats": {
+        "team_name": "Southampton",
+        "team_id": 41,
+        "league_position": 6,
+        "league_points": 63,
+        "form_last5": [
+          {
+            "opponent": "Oxford United FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Norwich City FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Coventry City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Bromwich Albion FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield Wednesday FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Oxford United FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Norwich City FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Queens Park Rangers FC",
+            "home_or_away": "H",
+            "goals_for": 5,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Charlton Athletic FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Watford FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Coventry City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Bromwich Albion FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield Wednesday FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Leicester City FC",
+            "home_or_away": "A",
+            "goals_for": 4,
+            "goals_against": 3,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Stoke City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "M. Roerslev Rasmussen",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "Welington",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Robinson",
+            "position": "Questionable",
+            "status": "out"
+          },
+          {
+            "player_name": "L. Scienza",
+            "position": "Questionable",
+            "status": "out"
+          },
+          {
+            "player_name": "R. Stewart",
+            "position": "Questionable",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "away_stats": {
+        "team_name": "Oxford",
+        "team_id": 1338,
+        "league_position": 23,
+        "league_points": 39,
+        "form_last5": [
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Charlton Athletic FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Blackburn Rovers FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Preston North End FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Bromwich Albion FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Charlton Athletic FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Blackburn Rovers FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Bromwich Albion FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Norwich City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Birmingham City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Preston North End FC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Stoke City FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Middlesbrough FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Coventry City FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "B. De Keersmaecker",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "T. Goodrham",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "G. Leigh",
+            "position": "Missing Fixture",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 3
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2026-03-21",
+          "home_team": "Southampton",
+          "away_team": "Oxford United",
+          "home_goals": 2,
+          "away_goals": 0,
+          "venue": "St. Mary's Stadium"
+        },
+        {
+          "date": "2024-07-31",
+          "home_team": "Oxford United",
+          "away_team": "Southampton",
+          "home_goals": 2,
+          "away_goals": 0,
+          "venue": "The Kassam Stadium"
+        },
+        {
+          "date": "2025-12-26",
+          "home_team": "Oxford United",
+          "away_team": "Southampton",
+          "home_goals": 2,
+          "away_goals": 1,
+          "venue": "Kassam Stadium"
+        }
+      ]
+    },
+    {
+      "game_number": 9,
+      "draw_number": 4945,
+      "home_team": "Swansea",
+      "away_team": "Coventry",
+      "league": "Championship",
+      "country": "England",
+      "kickoff": "2026-03-21T17:15:00+00:00",
+      "market": {
+        "odds_home": 3.25,
+        "odds_draw": 3.65,
+        "odds_away": 2.17,
+        "public_pct_home": 21,
+        "public_pct_draw": 25,
+        "public_pct_away": 54,
+        "newspaper_tips_home": 0,
+        "newspaper_tips_draw": 1,
+        "newspaper_tips_away": 9
+      },
+      "home_stats": {
+        "team_name": "Swansea",
+        "team_id": 76,
+        "league_position": 14,
+        "league_points": 52,
+        "form_last5": [
+          {
+            "opponent": "Coventry City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Wrexham AFC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Portsmouth FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Stoke City FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Ipswich Town FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Coventry City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Stoke City FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Preston North End FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Bristol City FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield Wednesday FC",
+            "home_or_away": "H",
+            "goals_for": 4,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Wrexham AFC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Portsmouth FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Ipswich Town FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Derby County FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Watford FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "Z. Inoussa",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "A. Idah",
+            "position": "Questionable",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "Luke Williams",
+        "manager_weeks_in_post": 3
+      },
+      "away_stats": {
+        "team_name": "Coventry",
+        "team_id": 1346,
+        "league_position": 1,
+        "league_points": 80,
+        "form_last5": [
+          {
+            "opponent": "Swansea City AFC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Preston North End FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Bristol City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Stoke City FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Preston North End FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Stoke City FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Middlesbrough FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Oxford United FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Swansea City AFC",
+            "home_or_away": "A",
+            "goals_for": 3,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Bristol City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield United FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "West Bromwich Albion FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Queens Park Rangers FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "M. Brau",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "O. Dovin",
+            "position": "Missing Fixture",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2021-02-24",
+          "home_team": "Swansea",
+          "away_team": "Coventry",
+          "home_goals": 1,
+          "away_goals": 0,
+          "venue": "Liberty Stadium"
+        },
+        {
+          "date": "2022-03-05",
+          "home_team": "Swansea",
+          "away_team": "Coventry",
+          "home_goals": 3,
+          "away_goals": 1,
+          "venue": "Swansea.com Stadium"
+        },
+        {
+          "date": "2023-04-07",
+          "home_team": "Swansea",
+          "away_team": "Coventry",
+          "home_goals": 0,
+          "away_goals": 0,
+          "venue": "Swansea.com Stadium"
+        },
+        {
+          "date": "2023-08-19",
+          "home_team": "Swansea",
+          "away_team": "Coventry",
+          "home_goals": 1,
+          "away_goals": 1,
+          "venue": "Swansea.com Stadium"
+        },
+        {
+          "date": "2025-02-01",
+          "home_team": "Swansea",
+          "away_team": "Coventry",
+          "home_goals": 0,
+          "away_goals": 2,
+          "venue": "Swansea.com Stadium"
+        },
+        {
+          "date": "2026-03-21",
+          "home_team": "Swansea",
+          "away_team": "Coventry",
+          "home_goals": 0,
+          "away_goals": 3,
+          "venue": "Swansea.com Stadium"
+        },
+        {
+          "date": "2020-10-20",
+          "home_team": "Coventry",
+          "away_team": "Swansea",
+          "home_goals": 1,
+          "away_goals": 1,
+          "venue": "St Andrew's Trillion Trophy Stadium"
+        },
+        {
+          "date": "2021-11-02",
+          "home_team": "Coventry",
+          "away_team": "Swansea",
+          "home_goals": 1,
+          "away_goals": 2,
+          "venue": "The Coventry Building Society Arena"
+        },
+        {
+          "date": "2022-12-17",
+          "home_team": "Coventry",
+          "away_team": "Swansea",
+          "home_goals": 3,
+          "away_goals": 3,
+          "venue": "The Coventry Building Society Arena"
+        },
+        {
+          "date": "2023-12-29",
+          "home_team": "Coventry",
+          "away_team": "Swansea",
+          "home_goals": 2,
+          "away_goals": 2,
+          "venue": "The Coventry Building Society Arena"
+        },
+        {
+          "date": "2024-09-21",
+          "home_team": "Coventry",
+          "away_team": "Swansea",
+          "home_goals": 1,
+          "away_goals": 2,
+          "venue": "The Coventry Building Society Arena"
+        },
+        {
+          "date": "2025-12-26",
+          "home_team": "Coventry",
+          "away_team": "Swansea",
+          "home_goals": 1,
+          "away_goals": 0,
+          "venue": "Coventry Building Society Arena"
+        }
+      ]
+    },
+    {
+      "game_number": 10,
+      "draw_number": 4945,
+      "home_team": "Watford",
+      "away_team": "Leicester",
+      "league": "Championship",
+      "country": "England",
+      "kickoff": "2026-03-21T15:00:00+00:00",
+      "market": {
+        "odds_home": 2.0,
+        "odds_draw": 3.7,
+        "odds_away": 3.65,
+        "public_pct_home": 61,
+        "public_pct_draw": 20,
+        "public_pct_away": 19,
+        "newspaper_tips_home": 9,
+        "newspaper_tips_draw": 0,
+        "newspaper_tips_away": 1
+      },
+      "home_stats": {
+        "team_name": "Watford",
+        "team_id": 38,
+        "league_position": 9,
+        "league_points": 56,
+        "form_last5": [
+          {
+            "opponent": "Leicester City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Wrexham AFC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Stoke City FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield Wednesday FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Bristol City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Leicester City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Wrexham AFC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Ipswich Town FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Derby County FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Swansea City AFC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Stoke City FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Sheffield Wednesday FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Bristol City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 1,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Preston North End FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 1,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "K. Baah",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "H. Kyprianou",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "O. Maamma",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Ngakia",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Petris",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "R. Vata",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "S. Goglichidze",
+            "position": "Questionable",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "away_stats": {
+        "team_name": "Leicester",
+        "team_id": 46,
+        "league_position": 22,
+        "league_points": 39,
+        "form_last5": [
+          {
+            "opponent": "Watford FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Queens Park Rangers FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Bristol City FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Ipswich Town FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Norwich City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_home_only": [
+          {
+            "opponent": "Queens Park Rangers FC",
+            "home_or_away": "H",
+            "goals_for": 1,
+            "goals_against": 3,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Bristol City FC",
+            "home_or_away": "H",
+            "goals_for": 2,
+            "goals_against": 0,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Norwich City FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Southampton FC",
+            "home_or_away": "H",
+            "goals_for": 3,
+            "goals_against": 4,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Charlton Athletic FC",
+            "home_or_away": "H",
+            "goals_for": 0,
+            "goals_against": 2,
+            "result": "2",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "form_last5_away_only": [
+          {
+            "opponent": "Watford FC",
+            "home_or_away": "A",
+            "goals_for": 0,
+            "goals_against": 0,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Ipswich Town FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Middlesbrough FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 1,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Stoke City FC",
+            "home_or_away": "A",
+            "goals_for": 2,
+            "goals_against": 2,
+            "result": "X",
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "opponent": "Birmingham City FC",
+            "home_or_away": "A",
+            "goals_for": 1,
+            "goals_against": 2,
+            "result": "1",
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [
+          {
+            "player_name": "A. Begovic",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "V. Kristiansen",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "A. Ramsey",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "H. Souttar",
+            "position": "Missing Fixture",
+            "status": "out"
+          },
+          {
+            "player_name": "J. Vestergaard",
+            "position": "Missing Fixture",
+            "status": "out"
+          }
+        ],
+        "schedule": {
+          "days_since_last_match": 0,
+          "last_match_competition": "Championship",
+          "matches_last_14_days": 4
+        },
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2020-06-20",
+          "home_team": "Watford",
+          "away_team": "Leicester",
+          "home_goals": 1,
+          "away_goals": 1,
+          "venue": "Vicarage Road"
+        },
+        {
+          "date": "2022-05-15",
+          "home_team": "Watford",
+          "away_team": "Leicester",
+          "home_goals": 1,
+          "away_goals": 5,
+          "venue": "Vicarage Road"
+        },
+        {
+          "date": "2024-02-10",
+          "home_team": "Watford",
+          "away_team": "Leicester",
+          "home_goals": 1,
+          "away_goals": 2,
+          "venue": "Vicarage Road"
+        },
+        {
+          "date": "2026-03-21",
+          "home_team": "Watford",
+          "away_team": "Leicester",
+          "home_goals": 0,
+          "away_goals": 0,
+          "venue": "Vicarage Road"
+        },
+        {
+          "date": "2021-11-28",
+          "home_team": "Leicester",
+          "away_team": "Watford",
+          "home_goals": 4,
+          "away_goals": 2,
+          "venue": "King Power Stadium"
+        },
+        {
+          "date": "2022-01-08",
+          "home_team": "Leicester",
+          "away_team": "Watford",
+          "home_goals": 4,
+          "away_goals": 1,
+          "venue": "King Power Stadium"
+        },
+        {
+          "date": "2023-11-25",
+          "home_team": "Leicester",
+          "away_team": "Watford",
+          "home_goals": 2,
+          "away_goals": 0,
+          "venue": "King Power Stadium"
+        },
+        {
+          "date": "2025-12-26",
+          "home_team": "Leicester",
+          "away_team": "Watford",
+          "home_goals": 1,
+          "away_goals": 2,
+          "venue": "King Power Stadium"
+        }
+      ]
+    },
+    {
+      "game_number": 11,
+      "draw_number": 4945,
+      "home_team": "Plymouth",
+      "away_team": "Huddersfield",
+      "league": "League One",
+      "country": "England",
+      "kickoff": "2026-03-21T15:00:00+00:00",
+      "market": {
+        "odds_home": 2.38,
+        "odds_draw": 3.5,
+        "odds_away": 2.75,
+        "public_pct_home": 54,
+        "public_pct_draw": 24,
+        "public_pct_away": 22,
+        "newspaper_tips_home": 9,
+        "newspaper_tips_draw": 0,
+        "newspaper_tips_away": 1
+      },
+      "home_stats": {
+        "team_name": "Plymouth",
+        "team_id": 1357,
+        "league_position": null,
+        "league_points": null,
+        "form_last5": [],
+        "form_last5_home_only": [],
+        "form_last5_away_only": [],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [],
+        "schedule": null,
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "away_stats": {
+        "team_name": "Huddersfield",
+        "team_id": 37,
+        "league_position": null,
+        "league_points": null,
+        "form_last5": [],
+        "form_last5_home_only": [],
+        "form_last5_away_only": [],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [],
+        "schedule": null,
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2021-01-09",
+          "home_team": "Huddersfield",
+          "away_team": "Plymouth",
+          "home_goals": 2,
+          "away_goals": 3,
+          "venue": "John Smith's Stadium"
+        },
+        {
+          "date": "2024-01-13",
+          "home_team": "Huddersfield",
+          "away_team": "Plymouth",
+          "home_goals": 1,
+          "away_goals": 1,
+          "venue": "John Smith's Stadium"
+        },
+        {
+          "date": "2025-11-08",
+          "home_team": "Huddersfield",
+          "away_team": "Plymouth",
+          "home_goals": 3,
+          "away_goals": 1,
+          "venue": "John Smit"
+        },
+        {
+          "date": "2023-08-05",
+          "home_team": "Plymouth",
+          "away_team": "Huddersfield",
+          "home_goals": 3,
+          "away_goals": 1,
+          "venue": "Home Park"
+        },
+        {
+          "date": "2026-03-21",
+          "home_team": "Plymouth",
+          "away_team": "Huddersfield",
+          "home_goals": 3,
+          "away_goals": 1,
+          "venue": "Home Park"
+        }
+      ]
+    },
+    {
+      "game_number": 12,
+      "draw_number": 4945,
+      "home_team": "Stevenage",
+      "away_team": "Reading",
+      "league": "League One",
+      "country": "England",
+      "kickoff": "2026-03-21T15:00:00+00:00",
+      "market": {
+        "odds_home": 2.17,
+        "odds_draw": 3.2,
+        "odds_away": 3.45,
+        "public_pct_home": 55,
+        "public_pct_draw": 24,
+        "public_pct_away": 21,
+        "newspaper_tips_home": 9,
+        "newspaper_tips_draw": 0,
+        "newspaper_tips_away": 1
+      },
+      "home_stats": {
+        "team_name": "Stevenage",
+        "team_id": 1368,
+        "league_position": null,
+        "league_points": null,
+        "form_last5": [],
+        "form_last5_home_only": [],
+        "form_last5_away_only": [],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [],
+        "schedule": null,
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "away_stats": {
+        "team_name": "Reading",
+        "team_id": 53,
+        "league_position": null,
+        "league_points": null,
+        "form_last5": [],
+        "form_last5_home_only": [],
+        "form_last5_away_only": [],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [],
+        "schedule": null,
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2024-02-06",
+          "home_team": "Stevenage",
+          "away_team": "Reading",
+          "home_goals": 0,
+          "away_goals": 1,
+          "venue": "The Lamex Stadium"
+        },
+        {
+          "date": "2024-11-09",
+          "home_team": "Stevenage",
+          "away_team": "Reading",
+          "home_goals": 1,
+          "away_goals": 1,
+          "venue": "Lamex Stadium"
+        },
+        {
+          "date": "2026-03-21",
+          "home_team": "Stevenage",
+          "away_team": "Reading",
+          "home_goals": 1,
+          "away_goals": 0,
+          "venue": "Lamex Stadium"
+        },
+        {
+          "date": "2022-08-09",
+          "home_team": "Reading",
+          "away_team": "Stevenage",
+          "home_goals": 1,
+          "away_goals": 2,
+          "venue": "Select Car Leasing Stadium"
+        },
+        {
+          "date": "2023-08-19",
+          "home_team": "Reading",
+          "away_team": "Stevenage",
+          "home_goals": 2,
+          "away_goals": 0,
+          "venue": "Select Car Leasing Stadium"
+        },
+        {
+          "date": "2025-03-15",
+          "home_team": "Reading",
+          "away_team": "Stevenage",
+          "home_goals": 1,
+          "away_goals": 1,
+          "venue": "Select Car Leasing Stadium"
+        },
+        {
+          "date": "2025-11-06",
+          "home_team": "Reading",
+          "away_team": "Stevenage",
+          "home_goals": 1,
+          "away_goals": 0,
+          "venue": "Select Car Leasing Stadium"
+        }
+      ]
+    },
+    {
+      "game_number": 13,
+      "draw_number": 4945,
+      "home_team": "Wimbledon",
+      "away_team": "Peterborough ",
+      "league": "League One",
+      "country": "England",
+      "kickoff": "2026-03-21T15:00:00+00:00",
+      "market": {
+        "odds_home": 2.28,
+        "odds_draw": 3.5,
+        "odds_away": 2.95,
+        "public_pct_home": 47,
+        "public_pct_draw": 25,
+        "public_pct_away": 28,
+        "newspaper_tips_home": 8,
+        "newspaper_tips_draw": 2,
+        "newspaper_tips_away": 0
+      },
+      "home_stats": {
+        "team_name": "Wimbledon",
+        "team_id": 1333,
+        "league_position": null,
+        "league_points": null,
+        "form_last5": [],
+        "form_last5_home_only": [],
+        "form_last5_away_only": [],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [],
+        "schedule": null,
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "away_stats": {
+        "team_name": "Peterborough ",
+        "team_id": 1350,
+        "league_position": null,
+        "league_points": null,
+        "form_last5": [],
+        "form_last5_home_only": [],
+        "form_last5_away_only": [],
+        "xg_for_avg": null,
+        "xg_against_avg": null,
+        "injuries": [],
+        "schedule": null,
+        "manager_name": "",
+        "manager_weeks_in_post": null
+      },
+      "h2h": [
+        {
+          "date": "2020-01-18",
+          "home_team": "AFC Wimbledon",
+          "away_team": "Peterborough",
+          "home_goals": 1,
+          "away_goals": 0,
+          "venue": "The Cherry Red Records Stadium"
+        },
+        {
+          "date": "2020-12-02",
+          "home_team": "AFC Wimbledon",
+          "away_team": "Peterborough",
+          "home_goals": 2,
+          "away_goals": 1,
+          "venue": "Plough Lane"
+        },
+        {
+          "date": "2026-03-21",
+          "home_team": "AFC Wimbledon",
+          "away_team": "Peterborough",
+          "home_goals": 1,
+          "away_goals": 1,
+          "venue": "The Cherry Red Records Stadium"
+        },
+        {
+          "date": "2021-02-20",
+          "home_team": "Peterborough",
+          "away_team": "AFC Wimbledon",
+          "home_goals": 3,
+          "away_goals": 0,
+          "venue": "Weston Homes Stadium"
+        },
+        {
+          "date": "2024-01-30",
+          "home_team": "Peterborough",
+          "away_team": "AFC Wimbledon",
+          "home_goals": 3,
+          "away_goals": 1,
+          "venue": "Weston Homes Stadium"
+        },
+        {
+          "date": "2024-07-12",
+          "home_team": "Peterborough",
+          "away_team": "AFC Wimbledon",
+          "home_goals": 0,
+          "away_goals": 1,
+          "venue": "La Nucia Football Center Campo 01"
+        },
+        {
+          "date": "2025-11-08",
+          "home_team": "Peterborough",
+          "away_team": "AFC Wimbledon",
+          "home_goals": 5,
+          "away_goals": 0,
+          "venue": "Weston Homes Stadium"
+        }
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Leeds",
+      "away_team": "Brentford",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.62,
+      "analysis": "This is a match where the statistics paint a fascinating picture of two teams wildly divergent from expectation. Leeds have produced an xGF of just 1.02 over their last five matches but scored a remarkable 0.2 goals per game — the most severe underperformance on the coupon. Regression theory screams that this squad is due a significant upturn in output, and Daniel Farke's only confirmed absentee is the suspended Gabriel Gudmundsson, with Noah Okafor returning to training. Against a side as injury-hit as Brentford currently are, Leeds have the platform to finally convert their expected chances.\n\nBrentford's injury crisis is the dominant story here. Both natural fullbacks — Rico Henry and Aaron Hickey — are out with thigh injuries simultaneously, while the midfield engine room is gutted: Janelt, Dasilva, Carvalho, and Milambo are all missing, and Mikkel Damsgaard is doubtful with a knee problem. Thomas Frank will need to field a patchwork team in several positions, and the absence of both wide defenders is particularly dangerous against a team that needs to generate width to attack.\n\nThe context, though, cuts both ways. Leeds are battling relegation and their home form has been wretched — one win in their last five at Elland Road and a recurring inability to close out matches. Brentford, despite the personnel losses, are chasing European football and will be motivated. The H2H is largely inconclusive, with three draws and mixed results in competitive meetings.\n\nThe newspaper consensus (8 of 10 backing Leeds) aligns with the logic of Brentford's absences, and the market also has Leeds as narrow favourites. Given the xG regression case for Leeds and Brentford's hollowed-out squad, a home win is the likeliest outcome — but Leeds' own brittle form means this is far from a banker.",
+      "key_factors": [
+        "Brentford missing both first-choice fullbacks simultaneously — a structural weakness against any wide attack",
+        "Leeds' catastrophic xG underperformance (GF 0.2 vs xGF 1.02 over last 5) — regression due",
+        "Leeds' relegation desperation providing strong motivation asymmetry at home"
+      ],
+      "risk_flags": [
+        "Leeds home form is genuinely poor — one win in last 5 at Elland Road",
+        "Brentford's European motivation and squad depth may offset individual absences"
+      ],
+      "value_note": "Leeds at 2.55 is acceptable given the injury context, but not compelling enough to single on its own."
+    },
+    {
+      "game_number": 2,
+      "home_team": "Everton",
+      "away_team": "Chelsea",
+      "predicted_outcomes": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.55,
+      "analysis": "The headline story here is fixture congestion meeting an injury crisis. Chelsea played PSG in the Champions League on Tuesday evening — losing 3-0 — and arrive at Goodison Park on just three days' rest. Manager Liam Rosenior must now navigate a match with both starting fullbacks (Reece James, Trevoh Chalobah) out, goalkeeper Filip Jørgensen sidelined with a groin injury, Levi Colwill still not match-ready despite returning to training, and Mudryk serving a doping suspension. Gusto and Badiashile were assessed before the match after illness, adding further uncertainty to the backline.\n\nYet the xG data delivers a powerful counterpoint. Chelsea's xGF over the last five games was 2.07 against actual output of just 1.2 goals — the largest underperformance on the Premier League portion of this coupon. Their squad, whatever its fitness deficiencies this week, is generating more than two expected goals per match, and the law of averages will eventually catch up. The danger for Everton is that Chelsea pick this exact game to fire.\n\nEverton are themselves slightly overperforming their xGF (1.6 goals scored vs 1.35 expected over five games), suggesting some fortune in their recent outputs. Jack Grealish is out with a foot injury, while Tarkowski and Branthwaite are both rated as doubtful — two centre-backs who are pivotal to the Toffees' defensive structure. The H2H record is utterly dominated by Chelsea, who have won four of the last five meetings, including a 6-0 demolition in 2024.\n\nBalancing fatigue, Chelsea's defensive injury crisis, and the structural H2H advantage, this feels like an X or 1 scenario rather than Chelsea winning comfortably. The Everton home win at 3.65 looks the most value-laden outcome on the coupon this week, but the quality differential and eventual xG regression make a confident call impossible.",
+      "key_factors": [
+        "Chelsea's midweek PSG fixture — only 3 days rest, fatigue is a genuine handicap",
+        "Chelsea's defensive injury crisis: both fullbacks out, goalkeeper out, Colwill not fit",
+        "Everton's Tarkowski and Branthwaite both doubtful — home side also compromised at the back"
+      ],
+      "risk_flags": [
+        "Chelsea's xGF underperformance (2.07 vs 1.2 actual) is the strongest regression signal on the coupon — they are due a goal-fest",
+        "H2H record is brutally one-sided in Chelsea's favour (4-0, 2-0, 6-0 in recent editions)"
+      ],
+      "value_note": "Everton at 3.65 is the standout value bet on the whole coupon given Chelsea's fatigue and injury context. Small stake recommended."
+    },
+    {
+      "game_number": 3,
+      "home_team": "Fulham",
+      "away_team": "Burnley",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.85,
+      "analysis": "This is as close to a banker as the coupon offers. Burnley travel to Craven Cottage as a relegation-threatened Championship visitor to a comfortable Premier League mid-table side — and they do so missing six confirmed first-team players. Josh Cullen (midfield engine), Jordan Beyer and Axel Tuanzebe (central defensive cover), Zeki Amdouni (striker), Connor Roberts (right-back), and Mike Tresor (dangerous winger) are all absent. Maxime Esteve, another centre-back, is doubtful. This is not peripheral squad depth that is missing — these are core players, and their loss compresses Scott Parker's options severely.\n\nFulham's xG data supports the optimism. Their xGF over the last five games sits at 1.91 against an actual GF of 1.6, meaning they have slightly underperformed their creation. Against a defence leaking 2.0 goals per game with a defensive xGA of 2.39, Fulham should find ample space. The Cottagers' home form shows genuine quality — wins over Wolves and Manchester United feature in their recent run, even if they have dropped points against lesser opposition.\n\nThe only wrinkle is Emile Smith Rowe's doubtful status and Kenny Tete remaining questionable, but these are not the kind of absences that shift a match result against a team as undermanned as Burnley. The H2H record is historically kind to Burnley — they won the last three meetings before this season — but the quality and injury differential this time renders historical precedent almost irrelevant.\n\nTen of ten newspaper tips, 76% public backing, short 1.58 odds — all the signals converge. Marco Silva's side should win this comfortably, and Burnley's defensive vulnerabilities make a goal-laden home win the most likely shape of the game.",
+      "key_factors": [
+        "Burnley missing six confirmed starters including both defensive cover and their most dangerous winger Tresor",
+        "Fulham's xGF underperformance suggests more goals are coming — they face a leaky Burnley defence",
+        "Burnley bottom-three and defending desperately away from home — likely to sit deep and concede on the counter"
+      ],
+      "risk_flags": [
+        "Burnley's historical H2H record (won three consecutive meetings) shows they can disrupt Fulham",
+        "Emile Smith Rowe doubtful — Fulham's creative spark may be reduced"
+      ],
+      "value_note": "Odds of 1.58 are fair for the weight of evidence. No value in the price, but this is a high-confidence selection for the system."
+    },
+    {
+      "game_number": 4,
+      "home_team": "Bristol City",
+      "away_team": "West Bromwich",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.55,
+      "analysis": "Championship data is sparse here — xG unavailable for both sides — but the narrative is compelling enough to work with. Bristol City are 16th in the Championship and their home form has been alarming: four defeats and one draw in their last five at Ashton Gate, including a 0-5 capitulation. The structured injury data lists five confirmed absentees including Dickie, Atkinson, and Tanner, though more recent news confirms these are older injuries without updates.\n\nWest Brom have arrived at this fixture under James Morrison with a timely 3-0 win over Hull City, their best result of the 2026 calendar year. Morrison confirmed the team would be largely unchanged bar goalkeeper O'Leary, who picked up a calf injury. That enforced change in goal is notable but not necessarily decisive. West Brom's away form shows genuine resilience — a draw, a loss, another draw, and a win in their last five away days — and they are in a relegation scrap that demands maximum effort from every fixture.\n\nThe H2H record actually skews heavily towards West Brom at The Hawthorns, but this is a Bristol City home game where West Brom have won previously (3-0, 2-0 at West Brom). Interestingly, the reverse fixture this season saw Bristol City win 2-1 at The Hawthorns. The newspaper tips lean 6-1-3 to Bristol City, but given the hosts' dreadful home form, that consensus feels based more on reputation than reality.\n\nThis is a match where the draw or even a West Brom win deserves genuine consideration. Bristol City desperately need points too — 16th is precarious — but their inability to win at home makes this far from straightforward. A tight, low-scoring game feels most probable, with the draw a genuine possibility.",
+      "key_factors": [
+        "Bristol City's catastrophic home form — four losses in last five at Ashton Gate",
+        "West Brom momentum under Morrison after Hull win, players reportedly confidence-high",
+        "West Brom goalkeeper O'Leary out (calf) — replacement quality unknown"
+      ],
+      "risk_flags": [
+        "Both teams in poor form overall — match quality and unpredictability likely high",
+        "No xG data for either team limits analytical depth significantly"
+      ],
+      "value_note": "The draw at 3.40 looks underpriced given both teams' unconvincing recent form and Bristol City's particular home struggles."
+    },
+    {
+      "game_number": 5,
+      "home_team": "Charlton",
+      "away_team": "Norwich",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.75,
+      "analysis": "Norwich City arrived at The Valley as the form team in the fixture, and the broader context heavily favoured Philippe Clement's side. Charlton entered the match in a precarious position — 18th in the Championship — with captain Nathan Jones suspended after picking up his third booking against Oxford United, a significant blow given his leadership role and influence in midfield. Matt Godden, Harvey Knibbs, and Josh Edwards were also confirmed absentees, stripping Charlton of their most experienced forward options. A 19-year-old full debutant in Keenan Gough, filling in for the injured Kayne Ramsay, was among those asked to step up.\n\nNorwich, meanwhile, were enjoying a productive run — four wins in their last five across all competitions — and their away record was particularly strong. Shane Duffy's absence was the only significant personnel concern, and the Canaries have the defensive depth to cover a centre-back. Philippe Clement's side had been winning away from home with some regularity, and the Championship top-half ambitions created clear motivational contrast with a Charlton side fighting for survival.\n\nThe H2H tells a consistent story: Norwich have won all three recent meetings between these clubs, including a 1-0 away win at The Valley earlier in 2025-26 and another 1-0 victory at Carrow Road in December 2025. That pattern of tight wins on the road reflects Norwich's organisational competence. With Charlton so badly depleted in their attacking line, a narrow Norwich victory was always the most likely script, and the 2.38 price for the away win offered reasonable value given the weight of evidence.",
+      "key_factors": [
+        "Charlton's captain Jones suspended, Godden and Knibbs also absent — attacking and midfield resources severely compromised",
+        "Norwich's strong recent form (4W in last 5) and excellent away record",
+        "H2H: Norwich have won all three recent meetings, all by a single goal on the road"
+      ],
+      "risk_flags": [
+        "Charlton's home ground advantage and relegation desperation can make them compact and hard to break down",
+        "Norwich's own injury list is long — 13 players in the structured data — though many may be longer-term absentees"
+      ],
+      "value_note": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Portsmouth",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "analysis": "This match pitches two injury-ravaged Championship clubs against each other, which somewhat neutralises the advantage QPR might ordinarily enjoy at home. The headline injury for the home side is Rumarn Burrell — ten league goals this season, QPR's top scorer — confirmed out alongside Steve Cook, Illias Chair, Karamoko Dembélé, and at least three others. Losing your leading scorer is always a significant handicap, and QPR's clinical edge will be blunted without him. Kwame Poku is also out on the other side of the pitch, adding further attacking absence.\n\nPortsmouth are fighting relegation from a position of 21st and are themselves carrying a lengthy injury list: Dozzell, Segecic, Keshi Anderson, and Josh Murphy are all absent, with several defenders unavailable. John Mousinho's side are in genuine danger of dropping out of the division, which paradoxically can produce either desperate, organised defending or porous, anxious defending — and away from home it tends to be the latter.\n\nQPR's recent form has been erratic in the extreme — a 6-1 thrashing of one side, then three consecutive heavy defeats (0-4, 0-2, 0-4 aggregated), before a 3-1 win over Leicester. It's the kind of volatility that makes prediction difficult. The newspapers back QPR 7-1-2, and the home odds of 2.45 reflect moderate confidence from the market. With Portsmouth unlikely to come and dominate, and QPR needing points to stay comfortable, a home win seems most probable — but Burrell's absence tempers the conviction significantly.",
+      "key_factors": [
+        "QPR missing top scorer Burrell (10 goals) — attacking output likely to drop sharply",
+        "Portsmouth's 21st-place desperation — they will be organised and hard to break down away from home",
+        "QPR's extreme form volatility — capable of 6-1 wins and 0-4 losses in the same month"
+      ],
+      "risk_flags": [
+        "QPR's leaky defence (described as 'systemic' issues) could gift Portsmouth on the counter",
+        "No H2H data available — cannot draw on historical patterns"
+      ],
+      "value_note": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Sheffield U",
+      "away_team": "Wrexham",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.68,
+      "analysis": "The newspapers back Sheffield United 9-1-0, but the structural evidence points firmly in the other direction, and this may be the most significant contrarian opportunity on the coupon. Sheffield United enter this fixture missing at minimum six confirmed players: goalkeeper Michael Cooper, midfielder Kalvin Phillips, midfielder Jamie Shackleton, midfielder Gustavo Hamer (knock), midfielder Tom Davies (hamstring), and defender Sam McCallum, while Femi Seriki is suspended and Kevin Phillips is questionable. Their midfield is essentially rebuilt from scratch, and their first-choice goalkeeper is out. This is a team stripped of significant quality across multiple lines.\n\nWraxham sit seventh in the Championship, two points off the playoff places, and while Kieffer Moore is absent through injury, their squad has the depth to absorb that loss. The Welsh club have won two of the last three meetings between these sides by emphatic margins — a 5-3 at Wrexham and a 1-2 at Bramall Lane — and are travelling with genuine promotion ambitions. Away form shows real composure: competitive results in all their recent away days, conceding without panic.\n\nThe motivation asymmetry is telling. Sheffield United are mid-table in the Championship without clear direction, while Wrexham are pushing for history — a third consecutive promotion would take them to the Premier League in six years. That kind of ambition produces a different calibre of performance on the road. The newspapers' consensus is puzzling given the injury data, and the 4.25 on Wrexham looks too generous for a side of this calibre against such a depleted opponent.",
+      "key_factors": [
+        "Sheffield United missing six confirmed players including goalkeeper, two midfielders, and defenders — structural depletion across the pitch",
+        "Wrexham's promotion motivation and strong away form versus a team with nothing obvious to play for",
+        "H2H: Wrexham have won two of the last three meetings including a recent 5-3 at Wrexham"
+      ],
+      "risk_flags": [
+        "Newspaper consensus 9-1-0 for Sheffield United — contrarian picks carry execution risk",
+        "Sheffield United's home crowd and potential for a siege mentality when under pressure"
+      ],
+      "value_note": "Wrexham at 4.25 is the single best value price on the coupon. The scale of Sheffield United's injury crisis versus Wrexham's quality and motivation is being ignored by the newspaper consensus."
+    },
+    {
+      "game_number": 8,
+      "home_team": "Southampton",
+      "away_team": "Oxford",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.86,
+      "analysis": "Southampton's home record this season is one of the strongest in the Championship — and it underpins what is the clearest match prediction on the coupon alongside Fulham vs Burnley. The Saints sit sixth, firmly in playoff contention, and their recent home form reads: win, win, win (5-0), draw, win — four wins from five at St Mary's, with that exceptional 5-0 suggesting they can destroy lower-level opposition when in full flow. Their form away has been patchier, but this is a home match and the incentive to push for a top-six finish is acute.\n\nOxford United are bottom of the Championship — 23rd — and have struggled to consistently defend or attack at this level all season. Their away form shows two home-away reversals, a defeat, and two goalless draws, suggesting limited capacity to win on the road. The absences of Brian De Keersmaecker and Tyler Goodrham, both season-ending injuries, are felt in the creative and attacking third. Greg Leigh and Przemysław Płacheta are also doubtful.\n\nSouthampton's own injury concerns — Welington and Mads Roerslev confirmed out — affect fullback options, but this is the level where squad depth can be tested by Championship clubs. Léo Scienza and Jay Robinson as doubts could limit attacking flair, but the talent differential between these squads is substantial. All ten newspapers back Southampton, the public is 76% in their favour, and the odds of 1.50 reflect a market that sees this as close to certain.\n\nThe only real discussion is whether to worry about the draw or away win — neither feels likely. Southampton need the three points and Oxford lack the quality to frustrate at the level required for an away point.",
+      "key_factors": [
+        "Southampton's exceptional home form (4W in last 5 at St Mary's, including a 5-0) versus the Championship's bottom club",
+        "Oxford missing two players to season-ending injuries — attacking threat severely diminished",
+        "Southampton's play-off push providing maximum motivation to win at home"
+      ],
+      "risk_flags": [
+        "Southampton missing both fullbacks (Welington out, Roerslev out) — potential vulnerability on flanks",
+        "Scienza and Robinson doubts could blunt Southampton's best attacking combinations"
+      ],
+      "value_note": "No value at 1.50, but this is among the highest-confidence selections on the coupon for system purposes."
+    },
+    {
+      "game_number": 9,
+      "home_team": "Swansea",
+      "away_team": "Coventry",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.82,
+      "analysis": "Coventry City are the Championship leaders, and their numbers away from home have been outstanding. In their last five away fixtures, they have won four and lost one — a record that would do credit to many Premier League sides. The Midlands club have conceded minimally, won comprehensively (2-0, 2-1, 2-0 in three of those away victories), and arrive with two key defenders — Bobby Thomas and Joel Latibeaudiere — returning from injury and suspension respectively. The only confirmed absences are Massimo Brau and Oscar Dovin, both peripheral squad members.\n\nSwansea's form is deeply inconsistent. They sit 14th, with recent results alternating between impressive wins and heavy defeats — a 0-3 loss to the league's stronger sides followed by comfortable home victories over weaker opposition. Adam Idah is doubtful, which matters in their attacking third. Vitor Matos was reportedly hopeful of an 'injury boost' before the game, suggesting there was some concern about squad depth. The club's home H2H record against Coventry is historical strong — three wins in the first three of the last five meetings — but Coventry have won the most recent encounter 2-0 and the dynamic has shifted as the Sky Blues have climbed.\n\nNine of ten newspapers back Coventry, the public is 54% in their favour, and the 2.17 odds represent a fair-to-slightly-generous price for the Championship leaders with this form and fitness advantage. The motivational contrast is stark: Coventry are chasing automatic promotion, Swansea are mid-table with little at stake. That gap in urgency, combined with Coventry's superior fitness and form, makes this one of the more reliable predictions on the coupon.",
+      "key_factors": [
+        "Coventry top of the Championship with four away wins in their last five — elite away form",
+        "Latibeaudiere and Thomas both returning, reducing Coventry's personnel concerns to near zero",
+        "Motivation asymmetry: Coventry chasing promotion, Swansea comfortable in mid-table"
+      ],
+      "risk_flags": [
+        "Swansea's historically competitive home record against Coventry (won 3 of first 3 in H2H sample)",
+        "Coventry's only away defeat came this season — they can be beaten on the road"
+      ],
+      "value_note": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "Watford",
+      "away_team": "Leicester",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "analysis": "Two Championship clubs with elongated injury lists collide here, but Watford's home advantage and the market's confidence in them (2.0 odds, 9 of 10 newspaper tips) makes them the selection despite a roster that is meaningfully weakened. The Hornets are missing goalkeeper Daniel Bachmann, winger Rocco Vata, midfielder Pierre Dwomoh, midfielder Hector Kyprianou, and forward Kwadwo Baah, plus Jeremy Petris and Jeremy Ngakia in the defensive unit. That is significant depth depletion, but the key first-team regulars appear available.\n\nLeicester sit 22nd — a club that was in the Premier League just months ago now fighting for Championship survival. Their injury list runs deep too: Aaron Ramsey, Jannik Vestergaard, Harry Souttar, and Victor Kristiansen are all absent, stripping them of experienced Championship-level players in central positions. The five players confirmed out for this fixture (per the 19 March update) represent meaningful quality loss. Leicester's away form is simultaneously striking: four consecutive away draws in their last five Championship road games. This is a team that parks the bus rather than imposes itself.\n\nThat draw tendency from Leicester is the primary risk flag for anyone backing Watford. A team that draws four away games in a row is not being beaten on the road — they are frustrating opponents and picking up points. The 3.70 on the draw is arguably the most interesting price in this match, and the H2H shows a 0-0 draw in a recent meeting. But Watford's home form (3-1 win, 3-1 win in recent home games) and motivational edge — they are pushing for the top six — ultimately tips the balance toward a narrow home win.",
+      "key_factors": [
+        "Leicester's four consecutive away draws — extreme tendency to frustrate rather than lose on the road",
+        "Watford missing eight players but key first-team names appear available",
+        "Leicester missing Vestergaard, Souttar, Ramsey — significant quality loss at both ends"
+      ],
+      "risk_flags": [
+        "Leicester's draw-heavy away record makes the X a genuine threat at 3.70",
+        "Watford's own injury depth could limit their ability to break down a stubborn visiting side"
+      ],
+      "value_note": "The draw at 3.70 offers genuine value — Leicester draw away games at a remarkable rate and their approach suits holding a point against a weakened Watford."
+    },
+    {
+      "game_number": 11,
+      "home_team": "Plymouth",
+      "away_team": "Huddersfield",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.68,
+      "analysis": "League One form data is unavailable here, so this analysis relies on the market, the news, and the contextual signals. Plymouth played midweek on Tuesday — beating Stevenage 1-0 — and return to Home Park four days later. Huddersfield also played midweek, drawing 2-2 with Lincoln City, and arrive on similarly brief recovery time. The fatigue element is neutralised for both sides.\n\nThe significant personnel story for Plymouth is the ineligibility of Herbie Kane against his parent club Huddersfield — a rule that removes a key midfield player from the hosts. Plymouth are also managing long-term absences across multiple positions. Huddersfield's Ryan Hardie is 50-50 with a knock from the midweek game and could be rested, which would blunt their forward line. The visiting club carry poor away form — one win in their last seven on the road — which is the dominant tactical signal here.\n\nPlymouth's home advantage, Huddersfield's wretched away record, and the Kane ineligibility story roughly cancelling the home side's best midfielder against the away side's potential absence of Hardie make this a tricky call. Nine of ten newspapers back Plymouth and the 2.38 odds reflect reasonable home favouritism. The Kane ineligibility is unfortunate timing but Huddersfield's inability to win away from home is the more decisive factor.",
+      "key_factors": [
+        "Huddersfield's poor away form — one win in last seven on the road",
+        "Herbie Kane ineligible to face parent club Huddersfield — significant midfield loss for Plymouth",
+        "Both teams four days from midweek fixtures — fatigue neutralised"
+      ],
+      "risk_flags": [
+        "Kane's ineligibility removes Plymouth's key midfielder in a fixture where they need creativity at home",
+        "Ryan Hardie 50-50 — if he plays, Huddersfield's goal threat improves substantially"
+      ],
+      "value_note": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "Stevenage",
+      "away_team": "Reading",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.64,
+      "analysis": "League One data is limited here — no form, no xG, no H2H — which forces reliance on the market and the sparse injury news available. Stevenage have confirmed Harry Cornick as doubtful and Tyreece Simpson as out; both are attacking players, and their loss reduces the hosts' ability to create and finish in the final third. However, the scale of the injury news is not catastrophic — these are not central defensive or goalkeeping losses.\n\nFor Reading, no recent injury news has emerged in the last fortnight, which the latest news source attributes to a genuine absence of confirmed absentees rather than a data gap. Nine of ten newspapers back Stevenage, and the 2.17 home odds reflect clear market favouritism. Without H2H data or form to interrogate, the newspaper consensus and market pricing become the primary signal, and both point decisively to a Stevenage home win.\n\nThe loss of Simpson as a striker is notable, and Cornick's doubtful status adds attacking uncertainty. But without Reading injury concerns to offset this, and with the market and press firmly aligned, the home win is the prediction — albeit at modest confidence given the data limitations.",
+      "key_factors": [
+        "Nine of ten newspaper tipsters back Stevenage — strong consensus without obvious contrary signal",
+        "Stevenage missing striker Simpson, Cornick doubtful — attacking options reduced",
+        "No Reading injury concerns identified — they arrive in better health than the hosts"
+      ],
+      "risk_flags": [
+        "Minimal data — no form, no xG, no H2H — makes this one of the coupon's genuine uncertainty spots",
+        "Reading's clean bill of health means they could exploit Stevenage's attacking limitations"
+      ],
+      "value_note": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Wimbledon",
+      "away_team": "Peterborough",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.74,
+      "analysis": "Peterborough United arrive at Plough Lane in a state of personnel disruption that significantly undermines their chances. Kwame Poku — their top scorer with ten goals in 17 appearances — is listed as doubtful, alongside Gustav Lindgren and Carl Johnston. Emmanuel Fernandez, their most experienced centre-back, is suspended. Rio Adebisi is also unavailable. Losing a player of Poku's quality (10 goals, creative spark, 17 appearances) is the kind of absence that shifts match probability substantially, and the additional suspense around Johnston and Lindgren means Peterborough could be badly compromised in multiple areas simultaneously.\n\nWimbledon, by contrast, appear in reasonable health. The news confirms Callum Maycock and Matty Stevens returning to the starting XI — positive injury news for the hosts. Without meaningful form data for either side, we lean on the market (Wimbledon 2.28, eight of ten newspaper tips), the personnel asymmetry, and the structural advantage of playing at home. The 2.28 is a moderate price that implies Wimbledon are favourites without being overwhelming.\n\nPeterborough's injury situation — particularly if Poku is ruled out — makes this a match where Wimbledon's home advantage should assert itself. Eight of ten newspapers agree. The suspended Fernandez at centre-back also leaves Peterborough defensively exposed against any direct attacking approach from the hosts. A home win here is the clearest prediction available from the League One tier of the coupon.",
+      "key_factors": [
+        "Kwame Poku (10 goals) doubtful for Peterborough — losing top scorer is the most significant injury signal on the coupon",
+        "Fernandez suspended — Peterborough missing their most experienced centre-back",
+        "Wimbledon with Maycock and Stevens returning — full-strength hosts against depleted visitors"
+      ],
+      "risk_flags": [
+        "Poku may ultimately play — his doubtful status is not confirmed absence, and if fit he transforms Peterborough's attack",
+        "No form data available — cannot verify whether Wimbledon's home record is actually strong"
+      ],
+      "value_note": "If Poku is confirmed absent before kick-off, Wimbledon at 2.28 becomes a strong single. Monitor team news closely."
+    }
+  ]
+}

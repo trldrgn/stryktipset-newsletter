@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 
 import pytz
 from apscheduler.schedulers.blocking import BlockingScheduler
@@ -144,9 +145,16 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
         sent = send_newsletter(subject, html_body)
         logger.info("Newsletter sent to %d recipients", sent)
 
-    # --- Step 9: Save predictions for next week's evaluation ---
-    logger.info("[9/9] Saving predictions...")
-    save_predictions(current_draw, draw_date, report.predictions)
+    # --- Step 9: Save predictions + snapshot for next week's evaluation ---
+    logger.info("[9/9] Saving predictions and snapshot...")
+    save_predictions(
+        current_draw, draw_date, report.predictions,
+        executive_summary=report.executive_summary,
+        value_radar=report.value_radar,
+    )
+    # Save full pipeline snapshot for template preview (preview.py)
+    from preview import save_snapshot
+    save_snapshot(current_draw, report, matches)
 
     elapsed = (datetime.now(timezone.utc) - start_time).total_seconds()
     logger.info("=" * 60)
@@ -242,7 +250,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.collect_xg or args.backfill_xg:
-        from fetchers.xg_collector import collect_xg, _load_history, _request_count, _DAILY_LIMIT
+        from fetchers.xg_collector import collect_xg, _load_history
         days = 35 if args.backfill_xg else 7
         logger.info("Collecting xG data for last %d days...", days)
         new = collect_xg(days=days)
@@ -273,7 +281,6 @@ def main() -> None:
         html_files = sorted(NEWSLETTERS_DIR.glob("draw_*.html"))
         if not html_files:
             # Fall back to project root dry-run files
-            from pathlib import Path
             html_files = sorted(Path(".").glob("newsletter_draw_*.html"))
         if not html_files:
             print("No newsletter HTML found. Run --dry-run first.")

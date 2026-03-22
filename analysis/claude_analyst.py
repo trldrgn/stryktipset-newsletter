@@ -131,6 +131,18 @@ def _format_match_block(match: Match) -> str:
     home_fatigue = " ⚠️FATIGUE" if h and h.fatigue_flag else ""
     away_fatigue = " ⚠️FATIGUE" if a and a.fatigue_flag else ""
 
+    home_form_flag = ""
+    if h and h.form_points_last5 >= 10:
+        home_form_flag = " 🔥UP-FORM"
+    elif h and len(h.form_last5) >= 3 and h.form_points_last5 <= 4:
+        home_form_flag = " 📉DOWN-FORM"
+
+    away_form_flag = ""
+    if a and a.form_points_last5 >= 10:
+        away_form_flag = " 🔥UP-FORM"
+    elif a and len(a.form_last5) >= 3 and a.form_points_last5 <= 4:
+        away_form_flag = " 📉DOWN-FORM"
+
     home_injuries = _format_absences(h.injuries + h.suspensions) if h else "N/A"
     away_injuries = _format_absences(a.injuries + a.suspensions) if a else "N/A"
 
@@ -157,13 +169,13 @@ GAME {match.game_number}: {match.home_team} vs {match.away_team}
 League: {match.league} ({match.country}) | Kickoff: {match.kickoff.strftime('%a %d %b %H:%M') if match.kickoff else 'TBD'}
 Odds: {odds_str} | {dist_str} | {tips_str}
 
-HOME — {match.home_team} ({home_pos}){home_fatigue}{home_manager}
+HOME — {match.home_team} ({home_pos}){home_form_flag}{home_fatigue}{home_manager}
   Form (all): {home_form} | Form (home): {home_form_home}
   {home_stats_line if home_stats_line else 'Stats: N/A'}
   Injuries/Suspensions: {home_injuries}
   Intl call-ups missing: {home_intl}
 
-AWAY — {match.away_team} ({away_pos}){away_fatigue}{away_manager}
+AWAY — {match.away_team} ({away_pos}){away_form_flag}{away_fatigue}{away_manager}
   Form (all): {away_form} | Form (away): {away_form_away}
   {away_stats_line if away_stats_line else 'Stats: N/A'}
   Injuries/Suspensions: {away_injuries}
@@ -191,7 +203,7 @@ Your role:
 - Analyse each of the 13 matches using ALL provided data (form, xG, injuries, H2H, market signals, news)
 - Write editorial-quality analysis — not bullet points. Real narrative, like a respected football journalist.
 - Give a clear, reasoned prediction for each match
-- Be especially alert to: fatigue/rotation flags, matchup risks from injuries, new manager effects,
+- Be especially alert to: UP-FORM/DOWN-FORM flags, fatigue/rotation flags, matchup risks from injuries, new manager effects,
   motivation differences, xG over/underperformance, and contrarian signals vs the public betting %
 
 INJURY ANALYSIS DEPTH:

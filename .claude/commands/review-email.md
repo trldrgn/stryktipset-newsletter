@@ -1,4 +1,4 @@
-Review the HTML email template and/or Jinja2 rendering code for this project.
+Review the HTML email template and Jinja2 rendering code for this project.
 
 If $ARGUMENTS is provided, read that specific file. Otherwise read both:
 - `email_sender/templates/report.html`
@@ -25,24 +25,29 @@ Email clients are hostile to modern CSS. Check for these specific issues:
 - Is `autoescape=True` set in the Environment? (it is — verify it's not been changed)
 - Are any raw user-generated strings (Claude analysis text) safely escaped?
 
-## Responsive / Mobile
+## Mobile Responsiveness (critical — most readers open on phone)
 - Is there a `<meta name="viewport">` tag?
-- Does the layout degrade gracefully on 320px wide screens?
+- Does the layout work on 320px screens without horizontal scrolling?
 - Are font sizes readable on mobile (minimum 13px body, 16px for match teams)?
-- Are touch targets large enough (minimum 44px for any interactive element)?
+- **Coupon table**: On mobile, can someone read all 13 picks without scrolling horizontally? Consider hiding or abbreviating less important columns (Type, Confidence) on small screens.
+- **Team names**: Do long team names (e.g. "Queens Park Rangers", "Sheffield Wednesday") display without truncation on mobile?
+- **Section headers**: Are letter-spaced uppercase headers readable on small screens or do they get cut off?
+
+## Language
+- All user-facing text must be in English (not Swedish)
+- The `<html lang="...">` attribute should be `lang="en"`
+- Check for any remaining Swedish words in headers, labels, legends, or footer
 
 ## Accessibility
 - Do images (if any) have `alt` attributes?
-- Is colour contrast sufficient? (The dark theme uses `#e8eaf0` text on `#0f1117` — check the grey text colours like `#5a6478` for sufficient contrast)
-- Is the language `lang="sv"` set correctly on `<html>`?
+- Is colour contrast sufficient? (The dark theme uses `#e8eaf0` text on `#0f1117` — check grey text colours like `#5a6478` for sufficient contrast ratio of at least 4.5:1)
 
 ## Content / UX Review
 - Is the coupon table easy to read at a glance? Can someone extract their 13 picks in under 10 seconds?
-- Is the last-week evaluation section emotionally engaging (not just stats, but narrative)?
 - Is the most important information (the coupon picks) visible without heavy scrolling?
 - Are the single/double/full selections clearly visually differentiated?
 - Is the responsible gambling footer present?
 
-## Suggestions
+## Output
 For each issue: show the problematic code, explain the risk, and provide a fixed version.
 Separate into: **Breaks in major clients** (Gmail, Apple Mail, Outlook) vs **Minor improvements**.

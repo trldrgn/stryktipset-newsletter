@@ -4,10 +4,13 @@ Renders the Jinja2 HTML template with the weekly report data.
 
 from __future__ import annotations
 
+import json
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from jinja2 import Environment, FileSystemLoader
+from premailer import Premailer
 
 from models.match import Match, WeeklyReport, WeeklyEvaluation
 from utils.logger import get_logger
@@ -15,6 +18,17 @@ from utils.logger import get_logger
 logger = get_logger(__name__)
 
 _TEMPLATE_DIR = Path(__file__).parent / "templates"
+_BADGES_DIR = Path(__file__).resolve().parent.parent / "static" / "badges"
+_BADGES_BASE_URL = "https://trldrgn.github.io/stryktipset-newsletter/static/badges"
+
+
+def _load_badge_mapping() -> dict[str, str]:
+    """Load team/competition name -> badge URL mapping."""
+    mapping_path = _BADGES_DIR / "mapping.json"
+    if not mapping_path.exists():
+        return {}
+    raw: dict[str, str] = json.loads(mapping_path.read_text(encoding="utf-8"))
+    return {name: f"{_BADGES_BASE_URL}/{slug}.png" for name, slug in raw.items()}
 
 
 def render_newsletter(
@@ -32,24 +46,54 @@ def render_newsletter(
     )
     template = env.get_template("report.html")
 
-    now = datetime.now(timezone.utc)
-    # ISO week number
+    stockholm = ZoneInfo("Europe/Stockholm")
+    now = datetime.now(stockholm)
     week_number = now.isocalendar()[1]
 
     matches_by_game: dict[int, Match] = {m.game_number: m for m in matches}
+    badge_urls = _load_badge_mapping()
 
-    html = template.render(
+    tpl_vars = dict(
         report=report,
         predictions=sorted(report.predictions, key=lambda p: p.game_number),
         draw_number=report.draw_number,
         week_number=week_number,
         year=now.year,
-        generated_date=now.strftime("%d %b %Y, %H:%M UTC"),
+        generated_date=now.strftime("%d %b %Y, %H:%M CET"),
         executive_summary=report.executive_summary,
         value_radar=report.value_radar,
         evaluation=evaluation,
         matches_by_game=matches_by_game,
+        badge_urls=badge_urls,
+        analysis_max_chars=200,
     )
+    html = template.render(**tpl_vars)
+
+    # Gmail clips emails > 102,400 bytes. If we're over, progressively truncate
+    # analysis text until we fit (with 5KB safety margin).
+    _GMAIL_CLIP_LIMIT = 102_400
+    _SAFE_LIMIT = _GMAIL_CLIP_LIMIT - 5_000  # 97,400 bytes
+
+    if len(html.encode("utf-8")) > _SAFE_LIMIT:
+        for max_chars in (150, 100, 60):
+            html = template.render(
+                report=report,
+                predictions=sorted(report.predictions, key=lambda p: p.game_number),
+                draw_number=report.draw_number,
+                week_number=week_number,
+                year=now.year,
+                generated_date=now.strftime("%d %b %Y, %H:%M CET"),
+                executive_summary=report.executive_summary,
+                value_radar=report.value_radar,
+                evaluation=evaluation,
+                matches_by_game=matches_by_game,
+                badge_urls=badge_urls,
+                analysis_max_chars=max_chars,
+            )
+            size = len(html.encode("utf-8"))
+            logger.info("Re-rendered with analysis_max_chars=%d → %dKB", max_chars, size // 1024)
+            if size <= _SAFE_LIMIT:
+                break
 
     subject = (
         f"Stryktipset v.{week_number} #{report.draw_number} — "

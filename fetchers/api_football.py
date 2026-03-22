@@ -4,12 +4,12 @@ Fetches structured football statistics from API-Football (free tier: 100 req/day
 CALL BUDGET per weekly run (13 matches):
   - Fixture search (find IDs for our 13 games):  ~5 calls  (batch by date)
   - H2H (per match):                             13 calls
-  - Team fixtures/form (per team, cached):       ~13 calls (cache same team across games)
-  - Standings (per league, cached):              ~5 calls  (multiple matches share leagues)
   - Injuries (per fixture):                      13 calls
-  - Player stats for absent players:             ~10 calls (only for flagged absences)
   ─────────────────────────────────────────────────────────
-  Total (worst case):                            ~59 calls  ← well within 100/day
+  Total (worst case):                            ~31 calls  ← well within 100/day
+
+NOTE: Standings, top scorers/assists, and player stats endpoints require a paid
+plan for current seasons (2025+). That data comes from Football-Data.org instead.
 
 All responses cached to disk for 7 days — re-runs won't double-spend.
 
@@ -184,35 +184,10 @@ def _fetch_h2h(home_team_id: int, away_team_id: int) -> dict:
     })
 
 
-@cached(lambda league_id, season: f"standings_{league_id}_{season}")
-def _fetch_standings(league_id: int, season: int) -> dict:
-    # The free tier blocks season=2025. Try without explicit season first
-    # (API defaults to current season), then fall back to explicit if needed.
-    try:
-        return _api_get("standings", {"league": league_id})
-    except Exception:
-        return _api_get("standings", {"league": league_id, "season": season})
-
-
 @cached(lambda fixture_id: f"injuries_{fixture_id}")
 def _fetch_injuries(fixture_id: int) -> dict:
     return _api_get("injuries", {"fixture": fixture_id})
 
-
-
-@cached(lambda player_id, season: f"player_stats_{player_id}_{season}")
-def _fetch_player_stats(player_id: int, season: int) -> dict:
-    return _api_get("players", {"id": player_id, "season": season})
-
-
-@cached(lambda league_id, season: f"topscorers_{league_id}_{season}")
-def _fetch_topscorers(league_id: int, season: int) -> dict:
-    return _api_get("players/topscorers", {"league": league_id, "season": season})
-
-
-@cached(lambda league_id, season: f"topassists_{league_id}_{season}")
-def _fetch_topassists(league_id: int, season: int) -> dict:
-    return _api_get("players/topassists", {"league": league_id, "season": season})
 
 
 # ---------------------------------------------------------------------------
@@ -250,30 +225,6 @@ def find_fixture_id(match: Match, season: int) -> Optional[int]:
     return None
 
 
-# ---------------------------------------------------------------------------
-# Top scorer / assister sets (cached per league)
-# ---------------------------------------------------------------------------
-
-_topscorer_ids: dict[int, set[int]] = {}   # league_id → set of top 10 player IDs
-_topassist_ids: dict[int, set[int]] = {}
-
-
-def _load_league_leaders(league_id: int, season: int) -> None:
-    if league_id in _topscorer_ids:
-        return
-    try:
-        sc = _fetch_topscorers(league_id, season)
-        _topscorer_ids[league_id] = {
-            p["player"]["id"] for p in sc.get("response", [])[:10]
-        }
-        ast = _fetch_topassists(league_id, season)
-        _topassist_ids[league_id] = {
-            p["player"]["id"] for p in ast.get("response", [])[:10]
-        }
-    except Exception as e:
-        logger.warning("Could not load league leaders for league %d: %s", league_id, e)
-        _topscorer_ids.setdefault(league_id, set())
-        _topassist_ids.setdefault(league_id, set())
 
 
 # ---------------------------------------------------------------------------
@@ -356,42 +307,25 @@ def _assess_matchup_risk(
 
 def _build_absences(
     injury_data: dict,
-    league_id: int,
-    season: int,
     opponent_squad: Optional[list[dict]] = None,
 ) -> list[PlayerAbsence]:
     """
     Build PlayerAbsence objects from raw injury API response,
     with matchup risk analysis where possible.
+
+    Note: Player stats (goals/assists) and league leader flags are not available
+    on the free tier. Perplexity news provides richer injury significance context
+    (goalkeepers, defensive anchors, set-piece specialists — not just scorers).
     """
-    _load_league_leaders(league_id, season)
     absences: list[PlayerAbsence] = []
 
     for entry in injury_data.get("response", []):
         player_info = entry.get("player", {})
-        player_id = player_info.get("id")
         player_name = player_info.get("name", "Unknown")
         reason = entry.get("type", "")
         position = player_info.get("type", "")  # API uses "type" for position in injuries
 
         status = _parse_injury_status(reason)
-
-        # Fetch player stats to evaluate their value
-        goals, assists = 0, 0
-        is_top_scorer = player_id in _topscorer_ids.get(league_id, set())
-        is_top_assister = player_id in _topassist_ids.get(league_id, set())
-
-        if player_id:
-            try:
-                ps = _fetch_player_stats(player_id, season)
-                player_stats_list = ps.get("response", [{}])
-                if player_stats_list:
-                    s = player_stats_list[0].get("statistics", [{}])
-                    if s:
-                        goals = s[0].get("goals", {}).get("total") or 0
-                        assists = s[0].get("goals", {}).get("assists") or 0
-            except Exception as e:
-                logger.debug("Could not fetch player stats for %s: %s", player_name, e)
 
         matchup_risk = None
         if opponent_squad:
@@ -401,10 +335,6 @@ def _build_absences(
             player_name=player_name,
             position=position,
             status=status,
-            season_goals=goals,
-            season_assists=assists,
-            is_top_scorer=is_top_scorer,
-            is_top_assister=is_top_assister,
             matchup_risk=matchup_risk,
         )
         absences.append(absence)
@@ -420,20 +350,12 @@ def _build_team_stats(
     team_id: int,
     team_name: str,
     season: int,
-    league_id: int,
-    standings_data: dict,
     league_fixtures: list | None = None,
 ) -> TeamStats:
     stats = TeamStats(team_name=team_name, team_id=team_id)
 
-    # --- Standing (from pre-fetched standings) ---
-    for league_entry in standings_data.get("response", []):
-        for group in league_entry.get("league", {}).get("standings", []):
-            for row in group:
-                if row.get("team", {}).get("id") == team_id:
-                    stats.league_position = row.get("rank")
-                    stats.league_points = row.get("points")
-                    break
+    # Note: Standings (league_position, league_points) come from Football-Data.org,
+    # not API-Football — the free tier blocks the /standings endpoint.
 
     # --- Form from league fixtures (shared across all teams, no season param needed) ---
     # Filter league-wide fixtures to only this team's games
@@ -561,18 +483,8 @@ def enrich_match(match: Match, season: int) -> Match:
 
     league_id = _resolve_league_id(match.league, match.country)
 
-    # --- Standings (shared across matches in same league — cache saves calls) ---
-    standings_data: dict = {"response": []}
-    if league_id:
-        try:
-            standings_data = _fetch_standings(league_id, season)
-        except Exception as e:
-            logger.warning("Could not fetch standings for %s: %s", match.league, e)
-
-    # --- League fixtures for form (requires season param — blocked on free tier) ---
-    # API-Football free tier blocks season=2025 AND requires season for all fixture queries.
-    # Form data is therefore unavailable on the free tier. Perplexity news compensates.
-    # TODO: Add Football-Data.org as secondary source for standings + form (free, current season).
+    # League fixtures for form — blocked on free tier (requires season param).
+    # Form + standings come from Football-Data.org instead.
     league_fixtures: list = []
 
     # --- Team stats ---
@@ -595,7 +507,7 @@ def enrich_match(match: Match, season: int) -> Match:
     if home_team_id and away_team_id:
         try:
             match.home_stats = _build_team_stats(
-                home_team_id, match.home_team, season, league_id or 0, standings_data, league_fixtures
+                home_team_id, match.home_team, season, league_fixtures
             )
         except Exception as e:
             logger.error("Failed to build home stats for %s: %s", match.home_team, e)
@@ -603,7 +515,7 @@ def enrich_match(match: Match, season: int) -> Match:
 
         try:
             match.away_stats = _build_team_stats(
-                away_team_id, match.away_team, season, league_id or 0, standings_data, league_fixtures
+                away_team_id, match.away_team, season, league_fixtures
             )
         except Exception as e:
             logger.error("Failed to build away stats for %s: %s", match.away_team, e)
@@ -619,7 +531,7 @@ def enrich_match(match: Match, season: int) -> Match:
         if fixture_id:
             try:
                 injury_data = _fetch_injuries(fixture_id)
-                all_absences = _build_absences(injury_data, league_id or 0, season)
+                all_absences = _build_absences(injury_data)
 
                 home_absences = [
                     a for a in all_absences
@@ -655,8 +567,8 @@ def enrich_match(match: Match, season: int) -> Match:
 
 def enrich_all_matches(matches: list[Match], season: int) -> list[Match]:
     """
-    Enrich all 13 matches. Standings are cached per league so multiple
-    matches in the same league only cost 1 extra API call.
+    Enrich all 13 matches with H2H and injury data from API-Football.
+    Standings and form come from Football-Data.org (separate step).
     """
     logger.info("Enriching %d matches (API-Football budget: %d/day)", len(matches), API_FOOTBALL_DAILY_LIMIT)
     for match in matches:

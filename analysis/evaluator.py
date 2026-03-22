@@ -46,7 +46,13 @@ HISTORY_FILE = PERFORMANCE_DIR / "history.json"
 # Persistence helpers
 # ---------------------------------------------------------------------------
 
-def save_predictions(draw_number: int, draw_date: str, predictions: list[MatchPrediction]) -> Path:
+def save_predictions(
+    draw_number: int,
+    draw_date: str,
+    predictions: list[MatchPrediction],
+    executive_summary: str = "",
+    value_radar: list[str] | None = None,
+) -> Path:
     """
     Persist this week's predictions to disk before results come in.
     Called at the end of the newsletter run.
@@ -56,6 +62,8 @@ def save_predictions(draw_number: int, draw_date: str, predictions: list[MatchPr
         "draw_number": draw_number,
         "draw_date": draw_date,
         "saved_at": datetime.now(timezone.utc).isoformat(),
+        "executive_summary": executive_summary,
+        "value_radar": value_radar or [],
         "predictions": [
             {
                 "game_number": p.game_number,

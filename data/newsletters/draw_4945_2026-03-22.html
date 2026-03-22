@@ -1,0 +1,3077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stryktipset v.12 · #4945</title>
+<style>
+  /* ── Reset ─────────────────────────────────────────── */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  img { border:0; display:block; }
+
+  /* ── Base ───────────────────────────────────────────── */
+  body {
+    background: #080d18;
+    color: #e2e8f4;
+    font-family: 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .email-wrap {
+    max-width: 660px;
+    margin: 0 auto;
+    background: #080d18;
+  }
+
+  /* ── Header / Logo ──────────────────────────────────── */
+  .header {
+    background: linear-gradient(160deg, #0d1526 0%, #111c35 60%, #0d1526 100%);
+    border-bottom: 2px solid #e8b84b;
+    padding: 36px 40px 28px;
+    text-align: center;
+  }
+
+  .logo-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .logo-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    text-align: left;
+  }
+
+  .logo-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e8b84b;
+    line-height: 1;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #5a7090;
+    margin-top: 4px;
+  }
+
+  .header-meta {
+    font-size: 13px;
+    color: #4a6080;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .header-meta strong {
+    color: #8ba4c4;
+  }
+
+  /* ── Section labels ─────────────────────────────────── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 40px 12px;
+  }
+
+  .section-label-line {
+    flex: 1;
+    height: 1px;
+    background: #1a2540;
+  }
+
+  .section-label-text {
+    font-size: 9px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: #e8b84b;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  /* ── Last week card ─────────────────────────────────── */
+  .last-week {
+    margin: 0 40px 8px;
+    background: #0d1526;
+    border: 1px solid #1a2540;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .last-week-header {
+    background: #111c35;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #1a2540;
+  }
+
+  .score-ring {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 3px solid #e8b84b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .score-ring .score-num {
+    font-size: 18px;
+    font-weight: 900;
+    color: #e8b84b;
+    line-height: 1;
+  }
+
+  .score-ring .score-denom {
+    font-size: 10px;
+    color: #4a6080;
+    line-height: 1;
+    margin-top: 1px;
+  }
+
+  .last-week-title h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #e2e8f4;
+  }
+
+  .last-week-title p {
+    font-size: 12px;
+    color: #4a6080;
+    margin-top: 2px;
+  }
+
+  .stats-chips {
+    display: flex;
+    gap: 8px;
+    padding: 12px 20px;
+    border-bottom: 1px solid #1a2540;
+  }
+
+  .chip {
+    background: #111c35;
+    border: 1px solid #1a2540;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: #8ba4c4;
+  }
+
+  .chip strong { color: #e2e8f4; }
+
+  .chip.good strong { color: #4ade80; }
+  .chip.bad strong  { color: #f87171; }
+
+  .wrong-picks {
+    padding: 12px 20px 16px;
+  }
+
+  .wrong-pick-row {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    padding: 6px 0;
+    border-bottom: 1px solid #0d1526;
+    font-size: 13px;
+  }
+
+  .wrong-pick-row:last-child { border-bottom: none; }
+
+  .wrong-num {
+    width: 22px;
+    height: 22px;
+    background: #1a2540;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #4a6080;
+    flex-shrink: 0;
+  }
+
+  .wrong-match { color: #8ba4c4; font-weight: 600; }
+
+  .wrong-detail {
+    color: #4a6080;
+    font-size: 12px;
+    margin-top: 1px;
+  }
+
+  .wrong-arrow { color: #f87171; }
+
+  .lessons-box {
+    margin: 0 20px 16px;
+    background: #0a1220;
+    border-left: 3px solid #e8b84b;
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #8ba4c4;
+  }
+
+  .lessons-box strong { color: #e8b84b; display: block; margin-bottom: 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* ── Executive summary ──────────────────────────────── */
+  .exec-summary {
+    padding: 8px 40px 20px;
+    font-size: 15px;
+    color: #8ba4c4;
+    font-style: italic;
+    line-height: 1.7;
+    border-bottom: 1px solid #1a2540;
+  }
+
+  /* ── Value radar ────────────────────────────────────── */
+  .value-radar {
+    padding: 12px 40px 16px;
+    border-bottom: 1px solid #1a2540;
+  }
+
+  .value-item {
+    font-size: 13px;
+    color: #5a7090;
+    padding: 3px 0;
+  }
+
+  .value-item::before { content: "⚡ "; color: #e8b84b; }
+
+  /* ── Match cards ────────────────────────────────────── */
+  .match-cards { padding: 0 40px; }
+
+  .match-card {
+    background: #0d1526;
+    border: 1px solid #1a2540;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  /* Top accent bar by selection type */
+  .match-card.type-single { border-top: 3px solid #4ade80; }
+  .match-card.type-double { border-top: 3px solid #60a5fa; }
+  .match-card.type-full   { border-top: 3px solid #fb923c; }
+
+  /* ── Card header ── */
+  .card-head {
+    padding: 16px 20px 14px;
+    background: #111c35;
+    border-bottom: 1px solid #1a2540;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .card-head-left { flex: 1; min-width: 0; }
+
+  .game-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .game-num {
+    width: 24px;
+    height: 24px;
+    background: #1a2540;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #4a6080;
+    flex-shrink: 0;
+  }
+
+  .league-pill {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4a6080;
+    font-weight: 600;
+  }
+
+  .kickoff-time {
+    font-size: 10px;
+    color: #2a3a54;
+  }
+
+  .teams-row {
+    font-size: 18px;
+    font-weight: 800;
+    color: #e2e8f4;
+    letter-spacing: -0.3px;
+  }
+
+  .teams-vs { color: #2a3a54; font-weight: 400; font-size: 14px; margin: 0 6px; }
+
+  .card-head-flags {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 4px;
+  }
+
+  .flag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .flag-fatigue { background: #2a1a0a; color: #fb923c; }
+  .flag-injury  { background: #1a0a0a; color: #f87171; }
+  .flag-newmgr  { background: #1a0a2a; color: #c084fc; }
+
+  /* ── Selection badge ── */
+  .selection-badge {
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .sel-type {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  .sel-single { background: #14532d; color: #4ade80; }
+  .sel-double { background: #1e3a5f; color: #60a5fa; }
+  .sel-full   { background: #431407; color: #fb923c; }
+
+  .sel-picks {
+    margin-top: 8px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .pick-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  .pick-box.single { background: #14532d; color: #4ade80; }
+  .pick-box.double { background: #1e3a5f; color: #60a5fa; }
+  .pick-box.full   { background: #431407; color: #fb923c; }
+
+  .confidence-bar {
+    margin-top: 6px;
+    height: 3px;
+    background: #1a2540;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .confidence-fill { height: 100%; border-radius: 2px; background: #e8b84b; }
+
+  /* ── Stats strip ── */
+  .stats-strip {
+    display: flex;
+    border-bottom: 1px solid #1a2540;
+  }
+
+  .stat-col {
+    flex: 1;
+    padding: 9px 12px;
+    border-right: 1px solid #1a2540;
+    font-size: 11px;
+  }
+
+  .stat-col:last-child { border-right: none; }
+
+  .stat-lbl {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #2a3a54;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .stat-val {
+    color: #8ba4c4;
+    font-weight: 600;
+    font-size: 12px;
+    display: block;
+  }
+
+  .stat-val.warn { color: #fb923c; }
+  .stat-val.danger { color: #f87171; }
+
+  /* ── Injury strip ── */
+  .injury-strip {
+    padding: 8px 16px;
+    border-bottom: 1px solid #1a2540;
+    background: #0a0f1e;
+    font-size: 12px;
+  }
+
+  .injury-item {
+    padding: 3px 0;
+    color: #5a7090;
+  }
+
+  .injury-item .inj-name { color: #f87171; font-weight: 600; }
+  .injury-item .inj-risk { color: #fb923c; }
+  .injury-item .inj-badge { color: #fbbf24; font-size: 10px; }
+
+  /* ── Odds row ── */
+  .odds-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 6px;
+    border-bottom: 1px solid #1a2540;
+    background: #080d18;
+  }
+
+  .odds-lbl { font-size: 10px; color: #2a3a54; font-weight: 700; }
+
+  .odds-val {
+    background: #111c35;
+    border: 1px solid #1a2540;
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #8ba4c4;
+    min-width: 44px;
+    text-align: center;
+  }
+
+  .odds-spacer { flex: 1; }
+
+  .dist-wrap { display: flex; flex-direction: column; gap: 2px; }
+
+  .dist-bar {
+    height: 4px;
+    width: 80px;
+    background: #1a2540;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .dist-h { background: #4ade80; }
+  .dist-d { background: #e8b84b; }
+  .dist-a { background: #60a5fa; }
+
+  .dist-pcts {
+    font-size: 10px;
+    color: #2a3a54;
+    letter-spacing: 0.5px;
+  }
+
+  .papers {
+    font-size: 11px;
+    color: #2a3a54;
+    padding: 0 8px;
+  }
+
+  /* ── Analysis text ── */
+  .analysis-text {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #8ba4c4;
+    line-height: 1.8;
+    border-bottom: 1px solid #1a2540;
+  }
+
+  .analysis-text p + p { margin-top: 10px; }
+
+  /* ── Factors + risks ── */
+  .card-footer {
+    display: flex;
+    border-bottom: 0;
+  }
+
+  .factors-col {
+    flex: 1;
+    padding: 12px 16px;
+    border-right: 1px solid #1a2540;
+  }
+
+  .risks-col {
+    flex: 1;
+    padding: 12px 16px;
+  }
+
+  .col-title {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .factors-col .col-title { color: #4ade80; }
+  .risks-col   .col-title { color: #fb923c; }
+
+  .factor-item, .risk-item {
+    font-size: 12px;
+    color: #5a7090;
+    padding: 2px 0;
+    line-height: 1.5;
+  }
+
+  .factor-item::before { content: "→ "; color: #4ade80; }
+  .risk-item::before   { content: "⚠ "; color: #fb923c; }
+
+  /* ── Coupon section ─────────────────────────────────── */
+  .coupon-wrap {
+    margin: 0 40px 32px;
+    background: #0d1526;
+    border: 1px solid #1a2540;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .coupon-head {
+    background: #111c35;
+    padding: 14px 20px;
+    border-bottom: 2px solid #e8b84b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .coupon-head h2 {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #e8b84b;
+  }
+
+  .coupon-cost {
+    font-size: 20px;
+    font-weight: 900;
+    color: #e2e8f4;
+  }
+
+  .coupon-cost span { font-size: 12px; color: #4a6080; font-weight: 400; }
+
+  .coupon-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .coupon-table th {
+    padding: 8px 14px;
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #2a3a54;
+    font-weight: 700;
+    border-bottom: 1px solid #1a2540;
+    background: #0a0f1e;
+  }
+
+  .coupon-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #0d1526;
+    vertical-align: middle;
+  }
+
+  .coupon-table tr:last-child td { border-bottom: none; }
+  .coupon-table tr.row-single td { background: rgba(74,222,128,0.03); }
+  .coupon-table tr.row-full   td { background: rgba(251,146,60,0.03); }
+
+  .row-num { color: #2a3a54; font-size: 11px; }
+  .row-match { color: #8ba4c4; }
+
+  .row-picks {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 3px;
+  }
+
+  .picks-single { color: #4ade80; }
+  .picks-double { color: #60a5fa; }
+  .picks-full   { color: #fb923c; }
+
+  .row-type {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .type-single-badge { background: #14532d; color: #4ade80; }
+  .type-double-badge { background: #1e3a5f; color: #60a5fa; }
+  .type-full-badge   { background: #431407; color: #fb923c; }
+
+  .row-conf { color: #2a3a54; font-size: 11px; }
+  .conf-covered { color: #fb923c; font-weight: 800; font-size: 10px; letter-spacing: 1px; }
+
+  .coupon-legend {
+    display: flex;
+    gap: 16px;
+    padding: 12px 20px;
+    border-top: 1px solid #1a2540;
+    background: #0a0f1e;
+  }
+
+  .legend-item {
+    font-size: 11px;
+    color: #4a6080;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── Footer ─────────────────────────────────────────── */
+  .footer {
+    padding: 24px 40px;
+    text-align: center;
+    border-top: 1px solid #111c35;
+  }
+
+  .footer p {
+    font-size: 11px;
+    color: #1e2a40;
+    line-height: 1.8;
+  }
+
+  .footer a { color: #2a3a54; text-decoration: none; }
+
+  .spacer { height: 20px; }
+
+  /* ── Mobile responsive ───────────────────────────────── */
+  @media only screen and (max-width: 480px) {
+    /* Reduce side padding globally */
+    .header { padding: 24px 16px 20px; }
+    .section-label { padding: 20px 16px 10px; }
+    .exec-summary { padding: 8px 16px 16px; }
+    .value-radar { padding: 10px 16px 14px; }
+    .match-cards { padding: 0 12px; }
+    .coupon-wrap { margin: 0 12px 24px; }
+    .footer { padding: 20px 16px; }
+    .last-week { margin: 0 12px 8px; }
+
+    /* Section labels — reduce letter-spacing to fit */
+    .section-label-text { font-size: 8px; letter-spacing: 2px; }
+
+    /* Coupon table — hide Type column, tighten padding */
+    .col-type { display: none; }
+    .coupon-table th { padding: 6px 8px; font-size: 8px; letter-spacing: 1.5px; }
+    .coupon-table td { padding: 8px 8px; }
+    .coupon-head h2 { font-size: 11px; letter-spacing: 1.5px; }
+    .coupon-cost { font-size: 18px; }
+    .row-picks { font-size: 14px; letter-spacing: 2px; }
+
+    /* Coupon legend — stack vertically */
+    .coupon-legend { flex-direction: column; gap: 6px; padding: 10px 14px; }
+    .legend-item { font-size: 10px; }
+
+    /* Match card headers — allow team names to wrap */
+    .teams-row { font-size: 16px; }
+    .card-head { padding: 12px 14px 10px; flex-wrap: wrap; }
+
+    /* Stats strip — smaller text */
+    .stat-col { padding: 7px 8px; }
+    .stat-lbl { font-size: 8px; letter-spacing: 1px; }
+
+    /* Factors/risks columns — stack on very narrow screens */
+    .card-footer { flex-direction: column; }
+    .factors-col { border-right: none; border-bottom: 1px solid #1a2540; }
+
+    /* Analysis text */
+    .analysis-text { padding: 12px 14px; font-size: 13px; }
+
+    /* Odds row */
+    .odds-row { padding: 8px 10px; gap: 4px; flex-wrap: wrap; }
+    .dist-bar { width: 60px; }
+  }
+</style>
+</head>
+<body style="background-color:#080d18; color:#e2e8f4; font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif; font-size:15px; line-height:1.65; margin:0; padding:0;">
+<div class="email-wrap" style="max-width:660px; margin:0 auto; background-color:#080d18;">
+
+  <!-- ═══════════════════════════════════════ HEADER -->
+  <div class="header" style="background-color:#111c35; border-bottom:2px solid #e8b84b; padding:36px 40px 28px; text-align:center;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto 14px; text-align:center;">
+      <tr>
+        <td style="vertical-align:middle; padding-right:14px;">
+          <!-- SVG Football Logo -->
+          <svg class="logo-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:52px; height:52px;">
+            <circle cx="26" cy="26" r="24" stroke="#e8b84b" stroke-width="2" fill="#0d1526"/>
+            <circle cx="26" cy="26" r="24" stroke="#e8b84b20" stroke-width="8" fill="none"/>
+            <!-- Football pentagon patches -->
+            <polygon points="26,14 31,18 29,24 23,24 21,18" fill="#e8b84b" opacity="0.9"/>
+            <polygon points="14,22 19,20 21,26 17,30 12,27" fill="#e8b84b" opacity="0.6"/>
+            <polygon points="38,22 43,25 41,30 36,30 33,26 35,20" fill="#e8b84b" opacity="0.6"/>
+            <polygon points="17,34 21,30 27,32 27,38 22,40" fill="#e8b84b" opacity="0.5"/>
+            <polygon points="35,34 30,38 25,38 27,32 33,30" fill="#e8b84b" opacity="0.5"/>
+            <!-- Seam lines -->
+            <line x1="26" y1="14" x2="21" y2="18" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="26" y1="14" x2="31" y2="18" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="21" y1="18" x2="19" y2="20" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="31" y1="18" x2="33" y2="20" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="23" y1="24" x2="21" y2="26" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="29" y1="24" x2="31" y2="26" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="21" y1="26" x2="17" y2="30" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="31" y1="26" x2="35" y2="30" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="17" y1="30" x2="17" y2="34" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="35" y1="30" x2="35" y2="34" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="17" y1="34" x2="21" y2="34" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="35" y1="34" x2="30" y2="38" stroke="#080d18" stroke-width="1.2"/>
+            <line x1="27" y1="32" x2="27" y2="38" stroke="#080d18" stroke-width="1.2"/>
+          </svg>
+        </td>
+        <td style="vertical-align:middle; text-align:left;">
+          <div class="logo-title" style="font-size:22px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#e8b84b; line-height:1;">Stryktipset</div>
+          <div class="logo-sub" style="font-size:10px; letter-spacing:4px; text-transform:uppercase; color:#5a7090; margin-top:4px;">Weekly Analysis</div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="header-meta" style="font-size:13px; color:#4a6080; margin-top:10px; letter-spacing:0.5px;">
+      Week <strong style="color:#8ba4c4;">12</strong> &nbsp;·&nbsp;
+      Draw <strong style="color:#8ba4c4;">#4945</strong> &nbsp;·&nbsp;
+      22 Mar 2026, 10:29 UTC
+      &nbsp;·&nbsp; 768 SEK system
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════ LAST WEEK -->
+  
+
+
+  <!-- ══════════════════════════════ EXECUTIVE SUMMARY -->
+  
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="section-label" style="padding:24px 40px 12px;">
+    <tr>
+      <td style="border-bottom:1px solid #1a2540; width:40%;"></td>
+      <td style="text-align:center; padding:0 12px;"><span class="section-label-text" style="font-size:9px; letter-spacing:3.5px; text-transform:uppercase; color:#e8b84b; font-weight:700; white-space:nowrap;">This Week's Coupon</span></td>
+      <td style="border-bottom:1px solid #1a2540; width:40%;"></td>
+    </tr>
+  </table>
+  <div class="exec-summary" style="padding:8px 40px 20px; font-size:15px; color:#8ba4c4; font-style:italic; line-height:1.7; border-bottom:1px solid #1a2540;">A coupon shaped by injury crises and motivation asymmetry. Brentford travel to Leeds missing both first-choice fullbacks, Chelsea arrive at Everton on three days rest after a PSG beating, and the Championship&#39;s bottom clubs are uniformly decimated. Three games stand out as genuinely clear: Fulham hosting a crippled Burnley side, Southampton&#39;s relentless home record against the Championship&#39;s basement club, and Championship leaders Coventry&#39;s formidable away machine visiting an inconsistent Swansea. Elsewhere, there is genuine uncertainty — QPR&#39;s top scorer is absent, Sheffield United are alarmingly depleted, and the Leeds-Brentford clash is a collision of two teams playing well below expected levels. Only three games comfortably exceed 0.80 confidence; this is a volatile week that rewards caution.</div>
+  
+
+  
+  <div class="value-radar" style="padding:12px 40px 16px; border-bottom:1px solid #1a2540;">
+    <div style="font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#e8b84b; font-weight:700; margin-bottom:8px;">Value Picks</div>
+    
+    <div class="value-item" style="font-size:13px; color:#8ba4c4; padding:3px 0;">Game 2 Everton: At 3.65 the home win looks attractive given Chelsea&#39;s midweek PSG fixture (3 days rest), a defensive injury crisis, and a three-match losing streak. The xG regression story is real for Chelsea but execution requires rest they don&#39;t have.</div>
+    
+    <div class="value-item" style="font-size:13px; color:#8ba4c4; padding:3px 0;">Game 7 Wrexham: Sheffield United are missing six players including two central midfielders and their goalkeeper, while Wrexham sit 7th and have won the last two H2H meetings emphatically. The 4.25 is generous for a side with this form and fitness advantage.</div>
+    
+    <div class="value-item" style="font-size:13px; color:#8ba4c4; padding:3px 0;">Game 9 Coventry: The 2.17 for the Championship leaders with only two minor injuries and four away wins in their last five is solid value — the public at 54% for Coventry barely moves the needle on what should be a shorter price.</div>
+    
+    <div class="value-item" style="font-size:13px; color:#8ba4c4; padding:3px 0;">Game 13 Wimbledon: Peterborough&#39;s top scorer Kwame Poku is doubtful alongside two other starters and a suspension. Wimbledon at 2.28 with a full squad looks underpriced versus a Posh side potentially stripped of its most dangerous player.</div>
+    
+  </div>
+  
+
+  <div class="spacer" style="height:20px;"></div>
+
+  <!-- ════════════════════════════════════════ COUPON -->
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="section-label" style="padding:24px 40px 12px;">
+    <tr>
+      <td style="border-bottom:1px solid #1a2540; width:40%;"></td>
+      <td style="text-align:center; padding:0 12px;"><span class="section-label-text" style="font-size:9px; letter-spacing:3.5px; text-transform:uppercase; color:#e8b84b; font-weight:700; white-space:nowrap;">Coupon Summary</span></td>
+      <td style="border-bottom:1px solid #1a2540; width:40%;"></td>
+    </tr>
+  </table>
+
+  <div class="coupon-wrap" style="margin:0 40px 32px; background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="coupon-head" style="background-color:#111c35; border-bottom:2px solid #e8b84b;">
+      <tr>
+        <td style="padding:14px 20px;">
+          <h2 style="font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#e8b84b; margin:0;">Draw #4945 · System</h2>
+        </td>
+        <td style="padding:14px 20px; text-align:right;">
+          <div class="coupon-cost" style="font-size:20px; font-weight:900; color:#e2e8f4;">768 SEK <span style="font-size:12px; color:#4a6080; font-weight:400;">/ 768 rows</span></div>
+        </td>
+      </tr>
+    </table>
+
+    <table class="coupon-table" style="width:100%; border-collapse:collapse; font-size:13px;">
+      <thead>
+        <tr>
+          <th style="padding:8px 14px; text-align:left; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:#2a3a54; font-weight:700; border-bottom:1px solid #1a2540; background-color:#0a0f1e;">#</th>
+          <th style="padding:8px 14px; text-align:left; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:#2a3a54; font-weight:700; border-bottom:1px solid #1a2540; background-color:#0a0f1e;">Match</th>
+          <th style="padding:8px 14px; text-align:left; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:#2a3a54; font-weight:700; border-bottom:1px solid #1a2540; background-color:#0a0f1e;">Tips</th>
+          <th class="col-type" style="padding:8px 14px; text-align:left; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:#2a3a54; font-weight:700; border-bottom:1px solid #1a2540; background-color:#0a0f1e;">Type</th>
+          <th style="padding:8px 14px; text-align:left; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:#2a3a54; font-weight:700; border-bottom:1px solid #1a2540; background-color:#0a0f1e;">Conf</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr class="row-double">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">1</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4;">Leeds – Brentford</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-picks picks-double" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#60a5fa;">
+              1 X
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-type type-double-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">
+              DOUBLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">
+            
+            62%
+            
+          </td>
+        </tr>
+        
+        <tr class="row-double">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">2</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4;">Everton – Chelsea</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-picks picks-double" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#60a5fa;">
+              X 1
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-type type-double-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">
+              DOUBLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">
+            
+            55%
+            
+          </td>
+        </tr>
+        
+        <tr class="row-single">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px; background-color:rgba(74,222,128,0.06);">3</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4; background-color:rgba(74,222,128,0.06);">Fulham – Burnley</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; background-color:rgba(74,222,128,0.06);">
+            <span class="row-picks picks-single" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#4ade80;">
+              1
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; background-color:rgba(74,222,128,0.06);">
+            <span class="row-type type-single-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#14532d; color:#4ade80;">
+              SINGLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px; background-color:rgba(74,222,128,0.06);">
+            
+            85%
+            
+          </td>
+        </tr>
+        
+        <tr class="row-full">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px; background-color:rgba(251,146,60,0.06);">4</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4; background-color:rgba(251,146,60,0.06);">Bristol City – West Bromwich</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; background-color:rgba(251,146,60,0.06);">
+            <span class="row-picks picks-full" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#fb923c;">
+              1 X 2
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; background-color:rgba(251,146,60,0.06);">
+            <span class="row-type type-full-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#431407; color:#fb923c;">
+              FULL
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px; background-color:rgba(251,146,60,0.06);">
+            
+            <span class="conf-covered" style="color:#fb923c; font-weight:800; font-size:10px; letter-spacing:1px;">✓ COVERED</span>
+            
+          </td>
+        </tr>
+        
+        <tr class="row-single">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px; background-color:rgba(74,222,128,0.06);">5</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4; background-color:rgba(74,222,128,0.06);">Charlton – Norwich</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; background-color:rgba(74,222,128,0.06);">
+            <span class="row-picks picks-single" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#4ade80;">
+              2
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; background-color:rgba(74,222,128,0.06);">
+            <span class="row-type type-single-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#14532d; color:#4ade80;">
+              SINGLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px; background-color:rgba(74,222,128,0.06);">
+            
+            75%
+            
+          </td>
+        </tr>
+        
+        <tr class="row-double">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">6</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4;">Queens Park Rangers – Portsmouth</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-picks picks-double" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#60a5fa;">
+              1 X
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-type type-double-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">
+              DOUBLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">
+            
+            63%
+            
+          </td>
+        </tr>
+        
+        <tr class="row-double">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">7</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4;">Sheffield U – Wrexham</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-picks picks-double" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#60a5fa;">
+              2 X
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-type type-double-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">
+              DOUBLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">
+            
+            68%
+            
+          </td>
+        </tr>
+        
+        <tr class="row-single">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px; background-color:rgba(74,222,128,0.06);">8</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4; background-color:rgba(74,222,128,0.06);">Southampton – Oxford</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; background-color:rgba(74,222,128,0.06);">
+            <span class="row-picks picks-single" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#4ade80;">
+              1
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; background-color:rgba(74,222,128,0.06);">
+            <span class="row-type type-single-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#14532d; color:#4ade80;">
+              SINGLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px; background-color:rgba(74,222,128,0.06);">
+            
+            86%
+            
+          </td>
+        </tr>
+        
+        <tr class="row-single">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px; background-color:rgba(74,222,128,0.06);">9</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4; background-color:rgba(74,222,128,0.06);">Swansea – Coventry</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; background-color:rgba(74,222,128,0.06);">
+            <span class="row-picks picks-single" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#4ade80;">
+              2
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; background-color:rgba(74,222,128,0.06);">
+            <span class="row-type type-single-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#14532d; color:#4ade80;">
+              SINGLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px; background-color:rgba(74,222,128,0.06);">
+            
+            82%
+            
+          </td>
+        </tr>
+        
+        <tr class="row-double">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">10</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4;">Watford – Leicester</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-picks picks-double" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#60a5fa;">
+              1 X
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-type type-double-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">
+              DOUBLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">
+            
+            65%
+            
+          </td>
+        </tr>
+        
+        <tr class="row-double">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">11</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4;">Plymouth – Huddersfield</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-picks picks-double" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#60a5fa;">
+              1 X
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-type type-double-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">
+              DOUBLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">
+            
+            68%
+            
+          </td>
+        </tr>
+        
+        <tr class="row-double">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">12</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4;">Stevenage – Reading</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-picks picks-double" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#60a5fa;">
+              1 X
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-type type-double-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">
+              DOUBLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">
+            
+            64%
+            
+          </td>
+        </tr>
+        
+        <tr class="row-double">
+          <td class="row-num" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">13</td>
+          <td class="row-match" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#8ba4c4;">Wimbledon – Peterborough</td>
+          <td style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-picks picks-double" style="font-size:16px; font-weight:900; letter-spacing:3px; color:#60a5fa;">
+              1 X
+            </span>
+          </td>
+          <td class="col-type" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle;">
+            <span class="row-type type-double-badge" style="font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:4px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">
+              DOUBLE
+            </span>
+          </td>
+          <td class="row-conf" style="padding:10px 14px; border-bottom:1px solid #0d1526; vertical-align:middle; color:#2a3a54; font-size:11px;">
+            
+            74%
+            
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <div class="coupon-legend" style="padding:12px 20px; border-top:1px solid #1a2540; background-color:#0a0f1e; font-size:11px; color:#4a6080;">
+      <span class="legend-item" style="font-size:11px; color:#4a6080; display:inline-block; margin-right:16px;">
+        <span class="legend-dot" style="width:8px; height:8px; border-radius:2px; display:inline-block; background-color:#4ade80; vertical-align:middle; margin-right:5px;"></span>
+        SINGLE — 1 outcome, highest confidence
+      </span>
+      <span class="legend-item" style="font-size:11px; color:#4a6080; display:inline-block; margin-right:16px;">
+        <span class="legend-dot" style="width:8px; height:8px; border-radius:2px; display:inline-block; background-color:#60a5fa; vertical-align:middle; margin-right:5px;"></span>
+        DOUBLE — 2 outcomes
+      </span>
+      <span class="legend-item" style="font-size:11px; color:#4a6080; display:inline-block; margin-right:16px;">
+        <span class="legend-dot" style="width:8px; height:8px; border-radius:2px; display:inline-block; background-color:#fb923c; vertical-align:middle; margin-right:5px;"></span>
+        FULL — all 3 outcomes covered (guaranteed row)
+      </span>
+      <span class="legend-item" style="font-size:11px; color:#2a3a54; display:inline-block; font-style:italic;">
+        Confidence = model prediction certainty
+      </span>
+    </div>
+  </div>
+
+  <div class="spacer" style="height:20px;"></div>
+
+  <!-- ══════════════════════════════════ DETAILED ANALYSIS -->
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="section-label" style="padding:24px 40px 12px;">
+    <tr>
+      <td style="border-bottom:1px solid #1a2540; width:40%;"></td>
+      <td style="text-align:center; padding:0 12px;"><span class="section-label-text" style="font-size:9px; letter-spacing:3.5px; text-transform:uppercase; color:#e8b84b; font-weight:700; white-space:nowrap;">Detailed Analysis</span></td>
+      <td style="border-bottom:1px solid #1a2540; width:40%;"></td>
+    </tr>
+  </table>
+
+  <!-- ═══════════════════════════════════ MATCH CARDS -->
+  <div class="match-cards" style="padding:0 40px;">
+  
+  
+
+  <div class="match-card type-double" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #60a5fa;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">1</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">Premier League</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 20:00 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Leeds
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Brentford
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Leeds fatigue risk</span>
+            
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Brentford fatigue risk</span>
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-double" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">double</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">1</span>
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">X</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:62%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">XX22X</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">XXX22</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">1.02</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">1.58</span>
+        </td>
+        
+        
+        
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Position</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">
+            P15
+            vs
+            P7
+          </span>
+        </td>
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.55</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.5</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.88</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">41% · 27% · 32%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 8-2-0</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">This is a match where the statistics paint a fascinating picture of two teams wildly divergent from expectation. Leeds have produced an xGF of just 1.02 over their last five matches but scored a remarkable 0.2 goals per game — the most severe underperformance on the coupon. Regression theory screams that this squad is due a significant upturn in output, and Daniel Farke&#39;s only confirmed absentee is the suspended Gabriel Gudmundsson, with Noah Okafor returning to training. Against a side as injury-hit as Brentford currently are, Leeds have the platform to finally convert their expected chances.</p>
+      
+      <p style="margin:0; margin-top:10px;">Brentford&#39;s injury crisis is the dominant story here. Both natural fullbacks — Rico Henry and Aaron Hickey — are out with thigh injuries simultaneously, while the midfield engine room is gutted: Janelt, Dasilva, Carvalho, and Milambo are all missing, and Mikkel Damsgaard is doubtful with a knee problem. Thomas Frank will need to field a patchwork team in several positions, and the absence of both wide defenders is particularly dangerous against a team that needs to generate width to attack.</p>
+      
+      <p style="margin:0; margin-top:10px;">The context, though, cuts both ways. Leeds are battling relegation and their home form has been wretched — one win in their last five at Elland Road and a recurring inability to close out matches. Brentford, despite the personnel losses, are chasing European football and will be motivated. The H2H is largely inconclusive, with three draws and mixed results in competitive meetings.</p>
+      
+      <p style="margin:0; margin-top:10px;">The newspaper consensus (8 of 10 backing Leeds) aligns with the logic of Brentford&#39;s absences, and the market also has Leeds as narrow favourites. Given the xG regression case for Leeds and Brentford&#39;s hollowed-out squad, a home win is the likeliest outcome — but Leeds&#39; own brittle form means this is far from a banker.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Brentford missing both first-choice fullbacks simultaneously — a structural weakness against any wide attack</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Leeds&#39; catastrophic xG underperformance (GF 0.2 vs xGF 1.02 over last 5) — regression due</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Leeds&#39; relegation desperation providing strong motivation asymmetry at home</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Leeds home form is genuinely poor — one win in last 5 at Elland Road</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Brentford&#39;s European motivation and squad depth may offset individual absences</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-double" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #60a5fa;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">2</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">Premier League</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 17:30 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Everton
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Chelsea
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Everton fatigue risk</span>
+            
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Chelsea fatigue risk</span>
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-double" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">double</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">X</span>
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">1</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:55%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">11122</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">12212</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">1.35</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">2.07</span>
+        </td>
+        
+        
+        
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Position</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">
+            P8
+            vs
+            P6
+          </span>
+        </td>
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.65</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.8</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.04</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">29% · 26% · 45%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 3-1-6</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">The headline story here is fixture congestion meeting an injury crisis. Chelsea played PSG in the Champions League on Tuesday evening — losing 3-0 — and arrive at Goodison Park on just three days&#39; rest. Manager Liam Rosenior must now navigate a match with both starting fullbacks (Reece James, Trevoh Chalobah) out, goalkeeper Filip Jørgensen sidelined with a groin injury, Levi Colwill still not match-ready despite returning to training, and Mudryk serving a doping suspension. Gusto and Badiashile were assessed before the match after illness, adding further uncertainty to the backline.</p>
+      
+      <p style="margin:0; margin-top:10px;">Yet the xG data delivers a powerful counterpoint. Chelsea&#39;s xGF over the last five games was 2.07 against actual output of just 1.2 goals — the largest underperformance on the Premier League portion of this coupon. Their squad, whatever its fitness deficiencies this week, is generating more than two expected goals per match, and the law of averages will eventually catch up. The danger for Everton is that Chelsea pick this exact game to fire.</p>
+      
+      <p style="margin:0; margin-top:10px;">Everton are themselves slightly overperforming their xGF (1.6 goals scored vs 1.35 expected over five games), suggesting some fortune in their recent outputs. Jack Grealish is out with a foot injury, while Tarkowski and Branthwaite are both rated as doubtful — two centre-backs who are pivotal to the Toffees&#39; defensive structure. The H2H record is utterly dominated by Chelsea, who have won four of the last five meetings, including a 6-0 demolition in 2024.</p>
+      
+      <p style="margin:0; margin-top:10px;">Balancing fatigue, Chelsea&#39;s defensive injury crisis, and the structural H2H advantage, this feels like an X or 1 scenario rather than Chelsea winning comfortably. The Everton home win at 3.65 looks the most value-laden outcome on the coupon this week, but the quality differential and eventual xG regression make a confident call impossible.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Chelsea&#39;s midweek PSG fixture — only 3 days rest, fatigue is a genuine handicap</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Chelsea&#39;s defensive injury crisis: both fullbacks out, goalkeeper out, Colwill not fit</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Everton&#39;s Tarkowski and Branthwaite both doubtful — home side also compromised at the back</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Chelsea&#39;s xGF underperformance (2.07 vs 1.2 actual) is the strongest regression signal on the coupon — they are due a goal-fest</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">H2H record is brutally one-sided in Chelsea&#39;s favour (4-0, 2-0, 6-0 in recent editions)</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-single" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #4ade80;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">3</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">Premier League</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 15:00 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Fulham
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Burnley
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Fulham fatigue risk</span>
+            
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Burnley fatigue risk</span>
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-single" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#14532d; color:#4ade80;">single</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box single" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#14532d; color:#4ade80;">1</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:85%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">1X212</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">1X12X</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">1.91</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">1.24</span>
+        </td>
+        
+        
+        
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Position</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">
+            P9
+            vs
+            P19
+          </span>
+        </td>
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">1.58</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">4.2</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">6.4</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">76% · 15% · 9%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 10-0-0</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">This is as close to a banker as the coupon offers. Burnley travel to Craven Cottage as a relegation-threatened Championship visitor to a comfortable Premier League mid-table side — and they do so missing six confirmed first-team players. Josh Cullen (midfield engine), Jordan Beyer and Axel Tuanzebe (central defensive cover), Zeki Amdouni (striker), Connor Roberts (right-back), and Mike Tresor (dangerous winger) are all absent. Maxime Esteve, another centre-back, is doubtful. This is not peripheral squad depth that is missing — these are core players, and their loss compresses Scott Parker&#39;s options severely.</p>
+      
+      <p style="margin:0; margin-top:10px;">Fulham&#39;s xG data supports the optimism. Their xGF over the last five games sits at 1.91 against an actual GF of 1.6, meaning they have slightly underperformed their creation. Against a defence leaking 2.0 goals per game with a defensive xGA of 2.39, Fulham should find ample space. The Cottagers&#39; home form shows genuine quality — wins over Wolves and Manchester United feature in their recent run, even if they have dropped points against lesser opposition.</p>
+      
+      <p style="margin:0; margin-top:10px;">The only wrinkle is Emile Smith Rowe&#39;s doubtful status and Kenny Tete remaining questionable, but these are not the kind of absences that shift a match result against a team as undermanned as Burnley. The H2H record is historically kind to Burnley — they won the last three meetings before this season — but the quality and injury differential this time renders historical precedent almost irrelevant.</p>
+      
+      <p style="margin:0; margin-top:10px;">Ten of ten newspaper tips, 76% public backing, short 1.58 odds — all the signals converge. Marco Silva&#39;s side should win this comfortably, and Burnley&#39;s defensive vulnerabilities make a goal-laden home win the most likely shape of the game.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Burnley missing six confirmed starters including both defensive cover and their most dangerous winger Tresor</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Fulham&#39;s xGF underperformance suggests more goals are coming — they face a leaky Burnley defence</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Burnley bottom-three and defending desperately away from home — likely to sit deep and concede on the counter</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Burnley&#39;s historical H2H record (won three consecutive meetings) shows they can disrupt Fulham</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Emile Smith Rowe doubtful — Fulham&#39;s creative spark may be reduced</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-full" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #fb923c;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">4</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">Championship</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 15:00 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Bristol City
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            West Bromwich
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Bristol City fatigue risk</span>
+            
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ West Bromwich fatigue risk</span>
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-full" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#431407; color:#fb923c;">full</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box full" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#431407; color:#fb923c;">1</span>
+            
+            <span class="pick-box full" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#431407; color:#fb923c;">X</span>
+            
+            <span class="pick-box full" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#431407; color:#fb923c;">2</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:55%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">2X122</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">21XX1</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        
+        
+        
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Position</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">
+            P16
+            vs
+            P20
+          </span>
+        </td>
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.38</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.4</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.05</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">37% · 26% · 37%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 6-1-3</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">Championship data is sparse here — xG unavailable for both sides — but the narrative is compelling enough to work with. Bristol City are 16th in the Championship and their home form has been alarming: four defeats and one draw in their last five at Ashton Gate, including a 0-5 capitulation. The structured injury data lists five confirmed absentees including Dickie, Atkinson, and Tanner, though more recent news confirms these are older injuries without updates.</p>
+      
+      <p style="margin:0; margin-top:10px;">West Brom have arrived at this fixture under James Morrison with a timely 3-0 win over Hull City, their best result of the 2026 calendar year. Morrison confirmed the team would be largely unchanged bar goalkeeper O&#39;Leary, who picked up a calf injury. That enforced change in goal is notable but not necessarily decisive. West Brom&#39;s away form shows genuine resilience — a draw, a loss, another draw, and a win in their last five away days — and they are in a relegation scrap that demands maximum effort from every fixture.</p>
+      
+      <p style="margin:0; margin-top:10px;">The H2H record actually skews heavily towards West Brom at The Hawthorns, but this is a Bristol City home game where West Brom have won previously (3-0, 2-0 at West Brom). Interestingly, the reverse fixture this season saw Bristol City win 2-1 at The Hawthorns. The newspaper tips lean 6-1-3 to Bristol City, but given the hosts&#39; dreadful home form, that consensus feels based more on reputation than reality.</p>
+      
+      <p style="margin:0; margin-top:10px;">This is a match where the draw or even a West Brom win deserves genuine consideration. Bristol City desperately need points too — 16th is precarious — but their inability to win at home makes this far from straightforward. A tight, low-scoring game feels most probable, with the draw a genuine possibility.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Bristol City&#39;s catastrophic home form — four losses in last five at Ashton Gate</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">West Brom momentum under Morrison after Hull win, players reportedly confidence-high</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">West Brom goalkeeper O&#39;Leary out (calf) — replacement quality unknown</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Both teams in poor form overall — match quality and unpredictability likely high</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">No xG data for either team limits analytical depth significantly</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-single" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #4ade80;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">5</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">Championship</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 15:00 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Charlton
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Norwich
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Charlton fatigue risk</span>
+            
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Norwich fatigue risk</span>
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-single" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#14532d; color:#4ade80;">single</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box single" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#14532d; color:#4ade80;">2</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:75%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">2X212</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">21112</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        
+        
+        
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Position</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">
+            P18
+            vs
+            P10
+          </span>
+        </td>
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.05</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.4</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.38</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">25% · 26% · 49%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 5-0-5</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">Norwich City arrived at The Valley as the form team in the fixture, and the broader context heavily favoured Philippe Clement&#39;s side. Charlton entered the match in a precarious position — 18th in the Championship — with captain Nathan Jones suspended after picking up his third booking against Oxford United, a significant blow given his leadership role and influence in midfield. Matt Godden, Harvey Knibbs, and Josh Edwards were also confirmed absentees, stripping Charlton of their most experienced forward options. A 19-year-old full debutant in Keenan Gough, filling in for the injured Kayne Ramsay, was among those asked to step up.</p>
+      
+      <p style="margin:0; margin-top:10px;">Norwich, meanwhile, were enjoying a productive run — four wins in their last five across all competitions — and their away record was particularly strong. Shane Duffy&#39;s absence was the only significant personnel concern, and the Canaries have the defensive depth to cover a centre-back. Philippe Clement&#39;s side had been winning away from home with some regularity, and the Championship top-half ambitions created clear motivational contrast with a Charlton side fighting for survival.</p>
+      
+      <p style="margin:0; margin-top:10px;">The H2H tells a consistent story: Norwich have won all three recent meetings between these clubs, including a 1-0 away win at The Valley earlier in 2025-26 and another 1-0 victory at Carrow Road in December 2025. That pattern of tight wins on the road reflects Norwich&#39;s organisational competence. With Charlton so badly depleted in their attacking line, a narrow Norwich victory was always the most likely script, and the 2.38 price for the away win offered reasonable value given the weight of evidence.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Charlton&#39;s captain Jones suspended, Godden and Knibbs also absent — attacking and midfield resources severely compromised</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Norwich&#39;s strong recent form (4W in last 5) and excellent away record</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">H2H: Norwich have won all three recent meetings, all by a single goal on the road</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Charlton&#39;s home ground advantage and relegation desperation can make them compact and hard to break down</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Norwich&#39;s own injury list is long — 13 players in the structured data — though many may be longer-term absentees</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-double" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #60a5fa;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">6</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">Championship</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 15:00 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Queens Park Rangers
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Portsmouth
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Queens Park Rangers fatigue risk</span>
+            
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Portsmouth fatigue risk</span>
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-double" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">double</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">1</span>
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">X</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:63%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">12122</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">122X2</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        
+        
+        
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Position</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">
+            P12
+            vs
+            P21
+          </span>
+        </td>
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.45</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.35</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.0</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">44% · 25% · 31%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 7-1-2</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">This match pitches two injury-ravaged Championship clubs against each other, which somewhat neutralises the advantage QPR might ordinarily enjoy at home. The headline injury for the home side is Rumarn Burrell — ten league goals this season, QPR&#39;s top scorer — confirmed out alongside Steve Cook, Illias Chair, Karamoko Dembélé, and at least three others. Losing your leading scorer is always a significant handicap, and QPR&#39;s clinical edge will be blunted without him. Kwame Poku is also out on the other side of the pitch, adding further attacking absence.</p>
+      
+      <p style="margin:0; margin-top:10px;">Portsmouth are fighting relegation from a position of 21st and are themselves carrying a lengthy injury list: Dozzell, Segecic, Keshi Anderson, and Josh Murphy are all absent, with several defenders unavailable. John Mousinho&#39;s side are in genuine danger of dropping out of the division, which paradoxically can produce either desperate, organised defending or porous, anxious defending — and away from home it tends to be the latter.</p>
+      
+      <p style="margin:0; margin-top:10px;">QPR&#39;s recent form has been erratic in the extreme — a 6-1 thrashing of one side, then three consecutive heavy defeats (0-4, 0-2, 0-4 aggregated), before a 3-1 win over Leicester. It&#39;s the kind of volatility that makes prediction difficult. The newspapers back QPR 7-1-2, and the home odds of 2.45 reflect moderate confidence from the market. With Portsmouth unlikely to come and dominate, and QPR needing points to stay comfortable, a home win seems most probable — but Burrell&#39;s absence tempers the conviction significantly.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">QPR missing top scorer Burrell (10 goals) — attacking output likely to drop sharply</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Portsmouth&#39;s 21st-place desperation — they will be organised and hard to break down away from home</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">QPR&#39;s extreme form volatility — capable of 6-1 wins and 0-4 losses in the same month</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">QPR&#39;s leaky defence (described as &#39;systemic&#39; issues) could gift Portsmouth on the counter</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">No H2H data available — cannot draw on historical patterns</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-double" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #60a5fa;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">7</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">Championship</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 15:00 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Sheffield U
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Wrexham
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Sheffield U fatigue risk</span>
+            
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Wrexham fatigue risk</span>
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-double" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">double</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">2</span>
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">X</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:68%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">2X1X2</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">21122</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        
+        
+        
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Position</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">
+            P17
+            vs
+            P7
+          </span>
+        </td>
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">1.82</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.9</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">4.25</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">59% · 20% · 21%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 9-0-1</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">The newspapers back Sheffield United 9-1-0, but the structural evidence points firmly in the other direction, and this may be the most significant contrarian opportunity on the coupon. Sheffield United enter this fixture missing at minimum six confirmed players: goalkeeper Michael Cooper, midfielder Kalvin Phillips, midfielder Jamie Shackleton, midfielder Gustavo Hamer (knock), midfielder Tom Davies (hamstring), and defender Sam McCallum, while Femi Seriki is suspended and Kevin Phillips is questionable. Their midfield is essentially rebuilt from scratch, and their first-choice goalkeeper is out. This is a team stripped of significant quality across multiple lines.</p>
+      
+      <p style="margin:0; margin-top:10px;">Wraxham sit seventh in the Championship, two points off the playoff places, and while Kieffer Moore is absent through injury, their squad has the depth to absorb that loss. The Welsh club have won two of the last three meetings between these sides by emphatic margins — a 5-3 at Wrexham and a 1-2 at Bramall Lane — and are travelling with genuine promotion ambitions. Away form shows real composure: competitive results in all their recent away days, conceding without panic.</p>
+      
+      <p style="margin:0; margin-top:10px;">The motivation asymmetry is telling. Sheffield United are mid-table in the Championship without clear direction, while Wrexham are pushing for history — a third consecutive promotion would take them to the Premier League in six years. That kind of ambition produces a different calibre of performance on the road. The newspapers&#39; consensus is puzzling given the injury data, and the 4.25 on Wrexham looks too generous for a side of this calibre against such a depleted opponent.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Sheffield United missing six confirmed players including goalkeeper, two midfielders, and defenders — structural depletion across the pitch</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Wrexham&#39;s promotion motivation and strong away form versus a team with nothing obvious to play for</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">H2H: Wrexham have won two of the last three meetings including a recent 5-3 at Wrexham</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Newspaper consensus 9-1-0 for Sheffield United — contrarian picks carry execution risk</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Sheffield United&#39;s home crowd and potential for a siege mentality when under pressure</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-single" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #4ade80;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">8</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">Championship</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 15:00 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Southampton
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Oxford
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Southampton fatigue risk</span>
+            
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Oxford fatigue risk</span>
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-single" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#14532d; color:#4ade80;">single</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box single" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#14532d; color:#4ade80;">1</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:86%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">112X2</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">1X121</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        
+        
+        
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Position</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">
+            P6
+            vs
+            P23
+          </span>
+        </td>
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">1.5</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">4.4</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">6.5</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">76% · 15% · 9%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 10-0-0</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">Southampton&#39;s home record this season is one of the strongest in the Championship — and it underpins what is the clearest match prediction on the coupon alongside Fulham vs Burnley. The Saints sit sixth, firmly in playoff contention, and their recent home form reads: win, win, win (5-0), draw, win — four wins from five at St Mary&#39;s, with that exceptional 5-0 suggesting they can destroy lower-level opposition when in full flow. Their form away has been patchier, but this is a home match and the incentive to push for a top-six finish is acute.</p>
+      
+      <p style="margin:0; margin-top:10px;">Oxford United are bottom of the Championship — 23rd — and have struggled to consistently defend or attack at this level all season. Their away form shows two home-away reversals, a defeat, and two goalless draws, suggesting limited capacity to win on the road. The absences of Brian De Keersmaecker and Tyler Goodrham, both season-ending injuries, are felt in the creative and attacking third. Greg Leigh and Przemysław Płacheta are also doubtful.</p>
+      
+      <p style="margin:0; margin-top:10px;">Southampton&#39;s own injury concerns — Welington and Mads Roerslev confirmed out — affect fullback options, but this is the level where squad depth can be tested by Championship clubs. Léo Scienza and Jay Robinson as doubts could limit attacking flair, but the talent differential between these squads is substantial. All ten newspapers back Southampton, the public is 76% in their favour, and the odds of 1.50 reflect a market that sees this as close to certain.</p>
+      
+      <p style="margin:0; margin-top:10px;">The only real discussion is whether to worry about the draw or away win — neither feels likely. Southampton need the three points and Oxford lack the quality to frustrate at the level required for an away point.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Southampton&#39;s exceptional home form (4W in last 5 at St Mary&#39;s, including a 5-0) versus the Championship&#39;s bottom club</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Oxford missing two players to season-ending injuries — attacking threat severely diminished</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Southampton&#39;s play-off push providing maximum motivation to win at home</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Southampton missing both fullbacks (Welington out, Roerslev out) — potential vulnerability on flanks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Scienza and Robinson doubts could blunt Southampton&#39;s best attacking combinations</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-single" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #4ade80;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">9</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">Championship</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 17:15 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Swansea
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Coventry
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Swansea fatigue risk</span>
+            
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Coventry fatigue risk</span>
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-single" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#14532d; color:#4ade80;">single</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box single" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#14532d; color:#4ade80;">2</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:82%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">21211</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">22121</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        
+        
+        
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Position</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">
+            P14
+            vs
+            P1
+          </span>
+        </td>
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.25</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.65</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.17</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">21% · 25% · 54%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 0-1-9</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">Coventry City are the Championship leaders, and their numbers away from home have been outstanding. In their last five away fixtures, they have won four and lost one — a record that would do credit to many Premier League sides. The Midlands club have conceded minimally, won comprehensively (2-0, 2-1, 2-0 in three of those away victories), and arrive with two key defenders — Bobby Thomas and Joel Latibeaudiere — returning from injury and suspension respectively. The only confirmed absences are Massimo Brau and Oscar Dovin, both peripheral squad members.</p>
+      
+      <p style="margin:0; margin-top:10px;">Swansea&#39;s form is deeply inconsistent. They sit 14th, with recent results alternating between impressive wins and heavy defeats — a 0-3 loss to the league&#39;s stronger sides followed by comfortable home victories over weaker opposition. Adam Idah is doubtful, which matters in their attacking third. Vitor Matos was reportedly hopeful of an &#39;injury boost&#39; before the game, suggesting there was some concern about squad depth. The club&#39;s home H2H record against Coventry is historical strong — three wins in the first three of the last five meetings — but Coventry have won the most recent encounter 2-0 and the dynamic has shifted as the Sky Blues have climbed.</p>
+      
+      <p style="margin:0; margin-top:10px;">Nine of ten newspapers back Coventry, the public is 54% in their favour, and the 2.17 odds represent a fair-to-slightly-generous price for the Championship leaders with this form and fitness advantage. The motivational contrast is stark: Coventry are chasing automatic promotion, Swansea are mid-table with little at stake. That gap in urgency, combined with Coventry&#39;s superior fitness and form, makes this one of the more reliable predictions on the coupon.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Coventry top of the Championship with four away wins in their last five — elite away form</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Latibeaudiere and Thomas both returning, reducing Coventry&#39;s personnel concerns to near zero</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Motivation asymmetry: Coventry chasing promotion, Swansea comfortable in mid-table</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Swansea&#39;s historically competitive home record against Coventry (won 3 of first 3 in H2H sample)</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Coventry&#39;s only away defeat came this season — they can be beaten on the road</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-double" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #60a5fa;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">10</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">Championship</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 15:00 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Watford
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Leicester
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Watford fatigue risk</span>
+            
+            
+            <span class="flag flag-fatigue" style="background-color:#2a1a0a; color:#fb923c; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; display:inline-block; white-space:nowrap;">⚡ Leicester fatigue risk</span>
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-double" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">double</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">1</span>
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">X</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:65%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">X11X2</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">X21X2</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        
+        
+        
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Position</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">
+            P9
+            vs
+            P22
+          </span>
+        </td>
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.0</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.7</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.65</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">61% · 20% · 19%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 9-0-1</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">Two Championship clubs with elongated injury lists collide here, but Watford&#39;s home advantage and the market&#39;s confidence in them (2.0 odds, 9 of 10 newspaper tips) makes them the selection despite a roster that is meaningfully weakened. The Hornets are missing goalkeeper Daniel Bachmann, winger Rocco Vata, midfielder Pierre Dwomoh, midfielder Hector Kyprianou, and forward Kwadwo Baah, plus Jeremy Petris and Jeremy Ngakia in the defensive unit. That is significant depth depletion, but the key first-team regulars appear available.</p>
+      
+      <p style="margin:0; margin-top:10px;">Leicester sit 22nd — a club that was in the Premier League just months ago now fighting for Championship survival. Their injury list runs deep too: Aaron Ramsey, Jannik Vestergaard, Harry Souttar, and Victor Kristiansen are all absent, stripping them of experienced Championship-level players in central positions. The five players confirmed out for this fixture (per the 19 March update) represent meaningful quality loss. Leicester&#39;s away form is simultaneously striking: four consecutive away draws in their last five Championship road games. This is a team that parks the bus rather than imposes itself.</p>
+      
+      <p style="margin:0; margin-top:10px;">That draw tendency from Leicester is the primary risk flag for anyone backing Watford. A team that draws four away games in a row is not being beaten on the road — they are frustrating opponents and picking up points. The 3.70 on the draw is arguably the most interesting price in this match, and the H2H shows a 0-0 draw in a recent meeting. But Watford&#39;s home form (3-1 win, 3-1 win in recent home games) and motivational edge — they are pushing for the top six — ultimately tips the balance toward a narrow home win.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Leicester&#39;s four consecutive away draws — extreme tendency to frustrate rather than lose on the road</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Watford missing eight players but key first-team names appear available</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Leicester missing Vestergaard, Souttar, Ramsey — significant quality loss at both ends</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Leicester&#39;s draw-heavy away record makes the X a genuine threat at 3.70</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Watford&#39;s own injury depth could limit their ability to break down a stubborn visiting side</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-double" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #60a5fa;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">11</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">League One</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 15:00 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Plymouth
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Huddersfield
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-double" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">double</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">1</span>
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">X</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:68%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;"></span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;"></span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        
+        
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.38</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.5</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.75</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">54% · 24% · 22%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 9-0-1</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">League One form data is unavailable here, so this analysis relies on the market, the news, and the contextual signals. Plymouth played midweek on Tuesday — beating Stevenage 1-0 — and return to Home Park four days later. Huddersfield also played midweek, drawing 2-2 with Lincoln City, and arrive on similarly brief recovery time. The fatigue element is neutralised for both sides.</p>
+      
+      <p style="margin:0; margin-top:10px;">The significant personnel story for Plymouth is the ineligibility of Herbie Kane against his parent club Huddersfield — a rule that removes a key midfield player from the hosts. Plymouth are also managing long-term absences across multiple positions. Huddersfield&#39;s Ryan Hardie is 50-50 with a knock from the midweek game and could be rested, which would blunt their forward line. The visiting club carry poor away form — one win in their last seven on the road — which is the dominant tactical signal here.</p>
+      
+      <p style="margin:0; margin-top:10px;">Plymouth&#39;s home advantage, Huddersfield&#39;s wretched away record, and the Kane ineligibility story roughly cancelling the home side&#39;s best midfielder against the away side&#39;s potential absence of Hardie make this a tricky call. Nine of ten newspapers back Plymouth and the 2.38 odds reflect reasonable home favouritism. The Kane ineligibility is unfortunate timing but Huddersfield&#39;s inability to win away from home is the more decisive factor.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Huddersfield&#39;s poor away form — one win in last seven on the road</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Herbie Kane ineligible to face parent club Huddersfield — significant midfield loss for Plymouth</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Both teams four days from midweek fixtures — fatigue neutralised</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Kane&#39;s ineligibility removes Plymouth&#39;s key midfielder in a fixture where they need creativity at home</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Ryan Hardie 50-50 — if he plays, Huddersfield&#39;s goal threat improves substantially</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-double" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #60a5fa;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">12</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">League One</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 15:00 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Stevenage
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Reading
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-double" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">double</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">1</span>
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">X</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:64%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;"></span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;"></span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        
+        
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.17</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.2</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.45</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">55% · 24% · 21%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 9-0-1</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">League One data is limited here — no form, no xG, no H2H — which forces reliance on the market and the sparse injury news available. Stevenage have confirmed Harry Cornick as doubtful and Tyreece Simpson as out; both are attacking players, and their loss reduces the hosts&#39; ability to create and finish in the final third. However, the scale of the injury news is not catastrophic — these are not central defensive or goalkeeping losses.</p>
+      
+      <p style="margin:0; margin-top:10px;">For Reading, no recent injury news has emerged in the last fortnight, which the latest news source attributes to a genuine absence of confirmed absentees rather than a data gap. Nine of ten newspapers back Stevenage, and the 2.17 home odds reflect clear market favouritism. Without H2H data or form to interrogate, the newspaper consensus and market pricing become the primary signal, and both point decisively to a Stevenage home win.</p>
+      
+      <p style="margin:0; margin-top:10px;">The loss of Simpson as a striker is notable, and Cornick&#39;s doubtful status adds attacking uncertainty. But without Reading injury concerns to offset this, and with the market and press firmly aligned, the home win is the prediction — albeit at modest confidence given the data limitations.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Nine of ten newspaper tipsters back Stevenage — strong consensus without obvious contrary signal</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Stevenage missing striker Simpson, Cornick doubtful — attacking options reduced</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">No Reading injury concerns identified — they arrive in better health than the hosts</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Minimal data — no form, no xG, no H2H — makes this one of the coupon&#39;s genuine uncertainty spots</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Reading&#39;s clean bill of health means they could exploit Stevenage&#39;s attacking limitations</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  
+
+  <div class="match-card type-double" style="background-color:#0d1526; border:1px solid #1a2540; border-radius:12px; overflow:hidden; margin-bottom:20px; border-top:3px solid #60a5fa;">
+
+    <!-- Card head -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-head" style="background-color:#111c35; border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px 14px; vertical-align:top;">
+          <div class="game-meta" style="margin-bottom:6px;">
+            <span class="game-num" style="width:24px; height:24px; background-color:#1a2540; border-radius:5px; display:inline-block; text-align:center; line-height:24px; font-size:11px; font-weight:700; color:#4a6080; vertical-align:middle;">13</span>
+            <span class="league-pill" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#4a6080; font-weight:600; vertical-align:middle; margin-left:8px;">League One</span>
+            
+            <span class="kickoff-time" style="font-size:10px; color:#2a3a54; vertical-align:middle; margin-left:8px;">Sat 21 Mar · 15:00 CET</span>
+            
+          </div>
+          <div class="teams-row" style="font-size:18px; font-weight:800; color:#e2e8f4; letter-spacing:-0.3px;">
+            Wimbledon
+            <span class="teams-vs" style="color:#2a3a54; font-weight:400; font-size:14px; margin:0 6px;">vs</span>
+            Peterborough
+          </div>
+          <div class="card-head-flags" style="margin-top:4px;">
+            
+            
+            
+          </div>
+        </td>
+
+        <!-- Selection badge -->
+        <td style="padding:16px 20px 14px; vertical-align:top; text-align:center; white-space:nowrap;">
+          <span class="sel-type sel-double" style="font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; background-color:#1e3a5f; color:#60a5fa;">double</span>
+          <div class="sel-picks" style="margin-top:8px; text-align:center;">
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">1</span>
+            
+            <span class="pick-box double" style="width:32px; height:32px; border-radius:7px; display:inline-block; text-align:center; line-height:32px; font-size:14px; font-weight:900; margin:0 2px; background-color:#1e3a5f; color:#60a5fa;">X</span>
+            
+          </div>
+          <div class="confidence-bar" style="margin-top:6px; height:3px; background-color:#1a2540; border-radius:2px; overflow:hidden;">
+            <div class="confidence-fill" style="height:3px; border-radius:2px; background-color:#e8b84b; width:74%;"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Stats strip -->
+    
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="stats-strip" style="border-bottom:1px solid #1a2540;">
+      <tr>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Home form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;"></span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">Away form (5)</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;"></span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; border-right:1px solid #1a2540; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG home</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        <td class="stat-col" style="padding:9px 12px; font-size:11px; vertical-align:top;">
+          <span class="stat-lbl" style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#2a3a54; font-weight:700; display:block; margin-bottom:3px;">xG away</span>
+          <span class="stat-val" style="color:#8ba4c4; font-weight:600; font-size:12px; display:block;">—</span>
+        </td>
+        
+        
+        
+      </tr>
+    </table>
+
+    <!-- Critical injuries -->
+    
+    
+    
+    
+
+    <!-- Odds + distribution -->
+    
+    <div class="odds-row" style="padding:10px 16px; border-bottom:1px solid #1a2540; background-color:#080d18;">
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">1</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.28</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">X</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">3.5</span>
+      <span class="odds-lbl" style="font-size:10px; color:#2a3a54; font-weight:700;">2</span>
+      <span class="odds-val" style="background-color:#111c35; border:1px solid #1a2540; border-radius:5px; padding:4px 10px; font-size:13px; font-weight:700; color:#8ba4c4; min-width:44px; text-align:center; display:inline-block; margin:0 3px;">2.95</span>
+      
+      <span style="display:inline-block; vertical-align:middle; margin-left:12px;">
+        <span class="dist-pcts" style="font-size:10px; color:#2a3a54; letter-spacing:0.5px;">47% · 25% · 28%</span>
+      </span>
+      
+      
+      <span class="papers" style="font-size:11px; color:#2a3a54; padding:0 8px; display:inline-block;">📰 8-2-0</span>
+      
+    </div>
+    
+
+    <!-- Analysis -->
+    <div class="analysis-text" style="padding:16px 20px; font-size:14px; color:#8ba4c4; line-height:1.8; border-bottom:1px solid #1a2540;">
+      
+      <p style="margin:0;">Peterborough United arrive at Plough Lane in a state of personnel disruption that significantly undermines their chances. Kwame Poku — their top scorer with ten goals in 17 appearances — is listed as doubtful, alongside Gustav Lindgren and Carl Johnston. Emmanuel Fernandez, their most experienced centre-back, is suspended. Rio Adebisi is also unavailable. Losing a player of Poku&#39;s quality (10 goals, creative spark, 17 appearances) is the kind of absence that shifts match probability substantially, and the additional suspense around Johnston and Lindgren means Peterborough could be badly compromised in multiple areas simultaneously.</p>
+      
+      <p style="margin:0; margin-top:10px;">Wimbledon, by contrast, appear in reasonable health. The news confirms Callum Maycock and Matty Stevens returning to the starting XI — positive injury news for the hosts. Without meaningful form data for either side, we lean on the market (Wimbledon 2.28, eight of ten newspaper tips), the personnel asymmetry, and the structural advantage of playing at home. The 2.28 is a moderate price that implies Wimbledon are favourites without being overwhelming.</p>
+      
+      <p style="margin:0; margin-top:10px;">Peterborough&#39;s injury situation — particularly if Poku is ruled out — makes this a match where Wimbledon&#39;s home advantage should assert itself. Eight of ten newspapers agree. The suspended Fernandez at centre-back also leaves Peterborough defensively exposed against any direct attacking approach from the hosts. A home win here is the clearest prediction available from the League One tier of the coupon.</p>
+      
+    </div>
+
+    <!-- Factors + risks -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="card-footer" style="border-bottom:0;">
+      <tr>
+        
+        <td class="factors-col" style="padding:12px 16px; vertical-align:top; border-right:1px solid #1a2540; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#4ade80;">Key Factors</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Kwame Poku (10 goals) doubtful for Peterborough — losing top scorer is the most significant injury signal on the coupon</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Fernandez suspended — Peterborough missing their most experienced centre-back</div>
+          
+          <div class="factor-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Wimbledon with Maycock and Stevens returning — full-strength hosts against depleted visitors</div>
+          
+        </td>
+        
+        
+        <td class="risks-col" style="padding:12px 16px; vertical-align:top; width:50%;">
+          <div class="col-title" style="font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; color:#fb923c;">Risks</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">Poku may ultimately play — his doubtful status is not confirmed absence, and if fit he transforms Peterborough&#39;s attack</div>
+          
+          <div class="risk-item" style="font-size:12px; color:#5a7090; padding:2px 0; line-height:1.5;">No form data available — cannot verify whether Wimbledon&#39;s home record is actually strong</div>
+          
+        </td>
+        
+      </tr>
+    </table>
+
+  </div><!-- /match-card -->
+  
+  </div><!-- /match-cards -->
+
+
+  <!-- ══════════════════════════════════════ FOOTER -->
+  <div class="footer" style="padding:24px 40px; text-align:center; border-top:1px solid #111c35;">
+    <p style="font-size:11px; color:#1e2a40; line-height:1.8; margin:0;">
+      Generated 22 Mar 2026, 10:29 UTC &nbsp;·&nbsp; Draw #4945
+    </p>
+    <p style="font-size:11px; color:#1e2a40; line-height:1.8; margin-top:8px;">
+      Please gamble responsibly.
+      Help available at <a href="https://www.stodlinjen.se" style="color:#2a3a54; text-decoration:none;">stodlinjen.se</a> &nbsp;·&nbsp; 020-81 91 00
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
