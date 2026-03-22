@@ -1,0 +1,264 @@
+{
+  "draw_number": 4945,
+  "draw_date": "2026-03-21",
+  "saved_at": "2026-03-21T21:21:30.437441+00:00",
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Leeds",
+      "away_team": "Brentford",
+      "predicted_outcomes": [
+        "X",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.55,
+      "key_factors": [
+        "Brentford's exceptional away record (5 wins in last 7 PL away games) versus Leeds' relegation anxiety",
+        "Gudmundsson suspension forces Leeds into compromised left-side setup with half-fit Okafer",
+        "Psychological edge to confident Brentford squad with no pressure versus survival-threatened hosts"
+      ],
+      "risk_flags": [
+        "Brentford's extensive injury list could catch up with them in squad depth during the match",
+        "Leeds' desperation at home in a relegation fight can produce unexpected intensity and results"
+      ]
+    },
+    {
+      "game_number": 2,
+      "home_team": "Everton",
+      "away_team": "Chelsea",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Chelsea's defensive injury apocalypse (Chalobah, James, Colwill, plus illness doubts) leaves them dangerously exposed",
+        "Three-day turnaround from Champions League elimination creates mental and physical fatigue",
+        "Everton fully rested with week's preparation to exploit Chelsea's vulnerable state"
+      ],
+      "risk_flags": [
+        "Chelsea's technical quality may still prevail despite injuries if Everton fail to capitalize",
+        "Psychological response from humiliated top teams can sometimes produce siege mentality performances"
+      ]
+    },
+    {
+      "game_number": 3,
+      "home_team": "Fulham",
+      "away_team": "Burnley",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.9,
+      "key_factors": [
+        "Burnley's injury apocalypse removes six first-team players plus Esteve doubt, crippling their options",
+        "Fulham chasing top-half finish with full-strength squad and home advantage",
+        "3-2 victory in December's reverse fixture came when Burnley were healthier"
+      ],
+      "risk_flags": [
+        "Overwhelming favourite syndrome can breed complacency in home team",
+        "Desperate relegation battlers occasionally produce shock rearguard actions"
+      ]
+    },
+    {
+      "game_number": 4,
+      "home_team": "Bristol City",
+      "away_team": "West Bromwich",
+      "predicted_outcomes": [
+        "1",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.5,
+      "key_factors": [
+        "Bristol City's dreadful form (1 win in 8) versus West Brom's momentum from Hull victory",
+        "Josh Griffiths debuts after 5-0 humiliation in last start, potential vulnerability",
+        "West Brom's poor historical record at Ashton Gate creates psychological barrier"
+      ],
+      "risk_flags": [
+        "Home advantage can paper over poor form in tight Championship fixtures",
+        "Griffiths' nervousness after previous disaster could prove costly under pressure"
+      ]
+    },
+    {
+      "game_number": 5,
+      "home_team": "Charlton",
+      "away_team": "Norwich",
+      "predicted_outcomes": [
+        "X",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.55,
+      "key_factors": [
+        "Norwich's catastrophic injury crisis (12+ players out) severely limits options and depth",
+        "Championship home advantage historically neutralizes form differentials",
+        "Charlton's own injuries less severe but still problematic for squad rotation"
+      ],
+      "risk_flags": [
+        "Norwich's superior quality when fit may still overwhelm weakened Charlton",
+        "Home side could be further demoralized if early Norwich goal exposes quality gap"
+      ]
+    },
+    {
+      "game_number": 6,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Portsmouth",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.7,
+      "key_factors": [
+        "Portsmouth's unprecedented injury crisis (14 players out) removes all squad depth and flexibility",
+        "QPR's recent Leicester victory suggests improved form and confidence",
+        "Mousinho's tactical options crippled by sheer lack of available personnel"
+      ],
+      "risk_flags": [
+        "Desperate relegation battlers occasionally produce unlikely results when backs against wall",
+        "QPR's own injury uncertainties could still impact performance quality"
+      ]
+    },
+    {
+      "game_number": 7,
+      "home_team": "Sheffield U",
+      "away_team": "Wrexham",
+      "predicted_outcomes": [
+        "1",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.55,
+      "key_factors": [
+        "Wrexham's recent 2-1 victory over Sheffield United provides psychological edge and tactical blueprint",
+        "Sheffield United's mid-table drift and winless run suggests motivational vacuum",
+        "Moore's tendon injury removes Wrexham's aerial threat but squad depth can compensate"
+      ],
+      "risk_flags": [
+        "Tuesday's Watford fixture creates fatigue risk for Wrexham despite strong morale",
+        "Home advantage can override form in Championship when quality differential is marginal"
+      ]
+    },
+    {
+      "game_number": 8,
+      "home_team": "Southampton",
+      "away_team": "Oxford",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.92,
+      "key_factors": [
+        "Southampton's remarkable 14-game unbeaten run (9 wins in last 12) shows dominant form",
+        "Oxford's survival fight and injury-depleted squad leaves them outgunned in all areas",
+        "Midweek rotation suggests Southampton can maintain freshness despite fixture congestion"
+      ],
+      "risk_flags": [
+        "Wednesday's Norwich fixture creates marginal fatigue risk for key Southampton players",
+        "Desperate relegation teams occasionally produce shock defensive performances"
+      ]
+    },
+    {
+      "game_number": 9,
+      "home_team": "Swansea",
+      "away_team": "Coventry",
+      "predicted_outcomes": [
+        "X",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Frank Lampard's tactical evolution at Coventry and lineup changes suggest improved organization",
+        "Bobby Thomas's potential return from calf injury would restore defensive solidity",
+        "Away price of 2.17 undervalues Coventry's promotion push and improving structure"
+      ],
+      "risk_flags": [
+        "Swansea's home advantage and potential injury boost could neutralize Coventry's quality edge",
+        "Lampard's lineup shake-up is reactive rather than proactive, suggesting ongoing issues"
+      ]
+    },
+    {
+      "game_number": 10,
+      "home_team": "Watford",
+      "away_team": "Leicester",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.5,
+      "key_factors": [
+        "Watford's play-off pursuit provides clear motivation and home advantage",
+        "Recent goalless draw suggests Leicester possess defensive organization",
+        "Severe data limitations make confident prediction impossible"
+      ],
+      "risk_flags": [
+        "Complete absence of Leicester injury and form data creates analytical blind spot",
+        "In-game injuries to Chakvetadze and Louza may impact Watford's attacking effectiveness"
+      ]
+    },
+    {
+      "game_number": 11,
+      "home_team": "Plymouth",
+      "away_team": "Huddersfield",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.65,
+      "key_factors": [
+        "Plymouth's home defensive improvement (seeking consecutive clean sheets for first time since January)",
+        "Huddersfield's dreadful away form (1 win in last 7 road games) suggests structural problems",
+        "Herbie Kane's ineligibility removes Plymouth's midfield control against parent club"
+      ],
+      "risk_flags": [
+        "Both teams' extensive injury lists create unpredictability in performance levels",
+        "Midweek fixtures for both sides create equal fatigue concerns"
+      ]
+    },
+    {
+      "game_number": 12,
+      "home_team": "Stevenage",
+      "away_team": "Reading",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "Reading's catastrophic injury crisis and fan revolt ('pathetic', 'Playoffs Over') signals complete collapse",
+        "Stevenage's home advantage and less severe morale damage makes them favourites",
+        "Both teams' extensive absentee lists create potential for scrappy, low-quality stalemate"
+      ],
+      "risk_flags": [
+        "Stevenage's own extensive injury list limits their ability to capitalize on Reading's chaos",
+        "Desperate teams in full crisis mode occasionally produce unexpected rearguard performances"
+      ]
+    },
+    {
+      "game_number": 13,
+      "home_team": "Wimbledon",
+      "away_team": "Peterborough",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.45,
+      "key_factors": [
+        "Complete absence of current injury, form, or tactical data makes analysis impossible",
+        "League One home advantage provides marginal statistical edge to Wimbledon",
+        "Market pricing suggests narrow home preference but appears speculative"
+      ],
+      "risk_flags": [
+        "Outdated injury data (January 2025) is useless for March 2026 fixture",
+        "Peterborough's historical top-scorer absence may or may not still apply 14 months later"
+      ]
+    }
+  ]
+}

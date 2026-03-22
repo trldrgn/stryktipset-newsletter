@@ -23,6 +23,12 @@ logs/
 # data/results/
 # data/performance/
 
+# Dry-run HTML output
+newsletter_draw_*.html
+
+# Claude Code local config
+.claude/settings.local.json
+
 # IDE
 .vscode/
 .idea/

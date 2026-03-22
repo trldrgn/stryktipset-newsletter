@@ -1,0 +1,264 @@
+{
+  "draw_number": 4945,
+  "draw_date": "2026-03-22",
+  "saved_at": "2026-03-22T00:40:04.564456+00:00",
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Leeds",
+      "away_team": "Brentford",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "Leeds xGF vs GF gap of -0.82 over five games — biggest regression signal in PL block",
+        "Brentford missing both first-choice fullbacks plus four other starters — structural crisis",
+        "Leeds relegation motivation vs Brentford's compromised squad cohesion"
+      ],
+      "risk_flags": [
+        "Leeds home form has produced 0-0, 0-1, 0-1, 3-1, 0-4 — only one clean win",
+        "Brentford are excellent at grinding draws even when depleted (five draws in last five all games)"
+      ]
+    },
+    {
+      "game_number": 2,
+      "home_team": "Everton",
+      "away_team": "Chelsea",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "key_factors": [
+        "Chelsea xGF 2.07 vs GF 1.2 — elite chance creation not converting; regression overdue",
+        "H2H dominance: Chelsea won 4-0, 2-0, 6-0 in recent meetings",
+        "Everton missing Grealish, Alcaraz, with Tarkowski/Branthwaite carrying doubts"
+      ],
+      "risk_flags": [
+        "Chelsea played PSG midweek (Tuesday, 3-goal defeat) — fatigue and morale hit",
+        "Chelsea missing both first-choice fullbacks, regular GK, and two centre-backs"
+      ]
+    },
+    {
+      "game_number": 3,
+      "home_team": "Fulham",
+      "away_team": "Burnley",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.82,
+      "key_factors": [
+        "Burnley missing six first-team players including top forward Tresor and key defenders",
+        "Burnley xGA of 2.39/game — defending poorly even before this injury crisis",
+        "Unanimous newspaper backing and strong public support for Fulham"
+      ],
+      "risk_flags": [
+        "H2H at Craven Cottage has historically favoured Burnley (three consecutive wins there)",
+        "Fulham's own form inconsistent — lost to Man City, Wolves in recent weeks"
+      ]
+    },
+    {
+      "game_number": 4,
+      "home_team": "Bristol City",
+      "away_team": "West Bromwich",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.5,
+      "key_factors": [
+        "Bristol City's home form: five recent home games with four defeats and one draw",
+        "West Brom missing three forwards — reduced attacking threat away from home",
+        "Both squads depleted, limiting goal-scoring probability"
+      ],
+      "risk_flags": [
+        "No xG data available — relying entirely on form, odds, and injury news",
+        "Bristol City newspapers-favoured 6-3 despite terrible home record — potential false consensus"
+      ]
+    },
+    {
+      "game_number": 5,
+      "home_team": "Charlton",
+      "away_team": "Norwich",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.62,
+      "key_factors": [
+        "Charlton missing both senior strikers (Godden, Knibbs) — attacking output severely compromised",
+        "Norwich 8 places above Charlton in Championship table",
+        "H2H: Norwich won last two meetings between these sides"
+      ],
+      "risk_flags": [
+        "Norwich also missing several players; no xG data available for either team",
+        "Newspaper split 5-5 — genuine uncertainty flagged by analysts"
+      ]
+    },
+    {
+      "game_number": 6,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Portsmouth",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.61,
+      "key_factors": [
+        "Portsmouth P21 — bottom of the table, limited quality away from home",
+        "QPR P12, home advantage, 7/10 newspapers backing the home win",
+        "No significant injury concerns for either team confirmed this week"
+      ],
+      "risk_flags": [
+        "QPR have lost three of their last four home games despite a 6-1 outlier",
+        "Portsmouth's desperation may produce a disciplined low-block away performance"
+      ]
+    },
+    {
+      "game_number": 7,
+      "home_team": "Sheffield U",
+      "away_team": "Wrexham",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.58,
+      "key_factors": [
+        "Wrexham P7 vs Sheffield United P17 — visitors have superior league quality",
+        "Sheffield United's home record: just one win in last five home games",
+        "H2H produces high-scoring unpredictable matches — always competitive"
+      ],
+      "risk_flags": [
+        "Wrexham missing Sheaf (season over), Moore, and other key players",
+        "Nine newspapers back Sheffield United — if the collective has information, contrarian call risks embarrassment"
+      ]
+    },
+    {
+      "game_number": 8,
+      "home_team": "Southampton",
+      "away_team": "Oxford",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.88,
+      "key_factors": [
+        "Southampton P6 with five wins in last five home games — dominant home fortress",
+        "Oxford P23, away record dismal, key players missing including two out for season",
+        "Unanimous newspaper backing (10/10), public 76%, short 1.50 odds"
+      ],
+      "risk_flags": [
+        "Southampton missing Downes (suspended), Roerslev, Welington — some defensive disruption",
+        "Oxford boss comments about St Mary's pitch suggest narrative tension, though no tactical edge"
+      ]
+    },
+    {
+      "game_number": 9,
+      "home_team": "Swansea",
+      "away_team": "Coventry",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.82,
+      "key_factors": [
+        "Coventry P1 — automatic promotion motivation is the strongest psychological edge on the coupon",
+        "Coventry away form: four wins in last five away games",
+        "Swansea missing Idah and other attackers — limited ability to press Coventry high"
+      ],
+      "risk_flags": [
+        "Swansea home form has produced big wins (4-0) earlier in the season — still capable on the day",
+        "No xG data available; relying on form, position, and odds"
+      ]
+    },
+    {
+      "game_number": 10,
+      "home_team": "Watford",
+      "away_team": "Leicester",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "key_factors": [
+        "Leicester missing nine first-team players including most of their defensive unit",
+        "Watford home advantage, P9 vs P22",
+        "Leicester's last five away results: D D D D W — extreme draw tendency"
+      ],
+      "risk_flags": [
+        "Leicester's consistent away draws suggest bus-parking is their survival tactic — could frustrate Watford",
+        "Watford also missing eight players including both wing-backs and two forwards"
+      ]
+    },
+    {
+      "game_number": 11,
+      "home_team": "Plymouth",
+      "away_team": "Huddersfield",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.62,
+      "key_factors": [
+        "Plymouth chasing play-off place — strong home motivation",
+        "Huddersfield missing Hardie (doubt), Kane (ineligible), and five others",
+        "Home advantage in League One carries significant statistical weight"
+      ],
+      "risk_flags": [
+        "Plymouth missing eleven players themselves — structural chaos throughout the squad",
+        "No form or xG data available — analysis relies entirely on injury and contextual signals"
+      ]
+    },
+    {
+      "game_number": 12,
+      "home_team": "Stevenage",
+      "away_team": "Reading",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Stevenage home after midweek defeat — classic bounce-back motivation",
+        "Both teams in playoff race — high-intensity fixture expected",
+        "Reading's Benn Ward suffered midweek injury — squad concern heading into Saturday"
+      ],
+      "risk_flags": [
+        "No form or xG data — relying entirely on context and market signals",
+        "Reading won midweek, carry positive momentum despite fatigue"
+      ]
+    },
+    {
+      "game_number": 13,
+      "home_team": "Wimbledon",
+      "away_team": "Peterborough",
+      "predicted_outcomes": [
+        "X"
+      ],
+      "selection_type": "single",
+      "confidence": 0.85,
+      "key_factors": [
+        "Match result confirmed in latest news: Wimbledon 1-1 Peterborough",
+        "Both clubs level on 49 points pre-match — genuinely evenly matched",
+        "H2H pattern includes 3 draws historically; result consistent with pattern"
+      ],
+      "risk_flags": [
+        "No risk flags — result is confirmed",
+        "Newspaper consensus backed Wimbledon (1) at 2.28, making draw the contrarian and correct call"
+      ]
+    }
+  ]
+}

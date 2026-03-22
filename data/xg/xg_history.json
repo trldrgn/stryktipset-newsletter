@@ -1,5 +1,50 @@
 {
   "fixtures": {
+    "1388851": {
+      "date": "2026-03-21",
+      "league": "2. Bundesliga",
+      "league_id": 79,
+      "country": "Germany",
+      "home_team": "SV Elversberg",
+      "away_team": "Arminia Bielefeld",
+      "home_team_id": 1660,
+      "away_team_id": 188,
+      "home_goals": 3,
+      "away_goals": 1,
+      "home_xg": 3.28,
+      "away_xg": 0.44,
+      "collected_at": "2026-03-21T23:29:59.270652+00:00"
+    },
+    "1388854": {
+      "date": "2026-03-21",
+      "league": "2. Bundesliga",
+      "league_id": 79,
+      "country": "Germany",
+      "home_team": "1. FC Nürnberg",
+      "away_team": "1. FC Kaiserslautern",
+      "home_team_id": 171,
+      "away_team_id": 745,
+      "home_goals": 3,
+      "away_goals": 0,
+      "home_xg": 2.96,
+      "away_xg": 0.52,
+      "collected_at": "2026-03-21T23:30:06.437842+00:00"
+    },
+    "1388855": {
+      "date": "2026-03-21",
+      "league": "2. Bundesliga",
+      "league_id": 79,
+      "country": "Germany",
+      "home_team": "SC Paderborn 07",
+      "away_team": "Dynamo Dresden",
+      "home_team_id": 185,
+      "away_team_id": 183,
+      "home_goals": 2,
+      "away_goals": 1,
+      "home_xg": 2.44,
+      "away_xg": 1.19,
+      "collected_at": "2026-03-21T23:30:13.368650+00:00"
+    },
     "1387010": {
       "date": "2026-03-21",
       "league": "Championship",
@@ -13,7 +58,7 @@
       "away_goals": 1,
       "home_xg": 1.38,
       "away_xg": 1.67,
-      "collected_at": "2026-03-22T00:22:36.909517+00:00"
+      "collected_at": "2026-03-21T23:30:34.102184+00:00"
     },
     "1387012": {
       "date": "2026-03-21",
@@ -28,7 +73,7 @@
       "away_goals": 0,
       "home_xg": 1.11,
       "away_xg": 0.06,
-      "collected_at": "2026-03-22T00:22:43.644019+00:00"
+      "collected_at": "2026-03-21T23:30:41.012901+00:00"
     },
     "1387014": {
       "date": "2026-03-21",
@@ -43,7 +88,7 @@
       "away_goals": 0,
       "home_xg": 0.32,
       "away_xg": 1.5,
-      "collected_at": "2026-03-22T00:22:50.358737+00:00"
+      "collected_at": "2026-03-21T23:30:47.916408+00:00"
     },
     "1387007": {
       "date": "2026-03-21",
@@ -58,7 +103,7 @@
       "away_goals": 1,
       "home_xg": 1.36,
       "away_xg": 1.44,
-      "collected_at": "2026-03-22T00:23:10.594945+00:00"
+      "collected_at": "2026-03-21T23:32:17.685105+00:00"
     },
     "1387009": {
       "date": "2026-03-21",
@@ -73,7 +118,7 @@
       "away_goals": 0,
       "home_xg": 2.15,
       "away_xg": 1.07,
-      "collected_at": "2026-03-22T00:23:17.332267+00:00"
+      "collected_at": "2026-03-21T23:32:24.576783+00:00"
     },
     "1387011": {
       "date": "2026-03-21",
@@ -88,7 +133,7 @@
       "away_goals": 0,
       "home_xg": 0.27,
       "away_xg": 2.11,
-      "collected_at": "2026-03-22T00:23:24.080967+00:00"
+      "collected_at": "2026-03-21T23:32:31.465061+00:00"
     },
     "1387013": {
       "date": "2026-03-21",
@@ -103,7 +148,7 @@
       "away_goals": 1,
       "home_xg": 2.57,
       "away_xg": 0.71,
-      "collected_at": "2026-03-22T00:23:30.809751+00:00"
+      "collected_at": "2026-03-21T23:32:38.372854+00:00"
     },
     "1387015": {
       "date": "2026-03-21",
@@ -118,7 +163,7 @@
       "away_goals": 1,
       "home_xg": 1.63,
       "away_xg": 1.52,
-      "collected_at": "2026-03-22T00:23:37.521467+00:00"
+      "collected_at": "2026-03-21T23:32:45.262341+00:00"
     },
     "1387016": {
       "date": "2026-03-21",
@@ -133,7 +178,7 @@
       "away_goals": 2,
       "home_xg": 2.8,
       "away_xg": 1.29,
-      "collected_at": "2026-03-22T00:23:44.374538+00:00"
+      "collected_at": "2026-03-21T23:32:52.159508+00:00"
     },
     "1387018": {
       "date": "2026-03-21",
@@ -148,7 +193,52 @@
       "away_goals": 1,
       "home_xg": 0.18,
       "away_xg": 2.47,
-      "collected_at": "2026-03-22T00:23:51.108725+00:00"
+      "collected_at": "2026-03-21T23:32:59.061087+00:00"
+    },
+    "1381114": {
+      "date": "2026-03-21",
+      "league": "Eredivisie",
+      "league_id": 88,
+      "country": "Netherlands",
+      "home_team": "Fortuna Sittard",
+      "away_team": "Twente",
+      "home_team_id": 205,
+      "away_team_id": 415,
+      "home_goals": 1,
+      "away_goals": 2,
+      "home_xg": 1.25,
+      "away_xg": 1.85,
+      "collected_at": "2026-03-21T23:34:15.050293+00:00"
+    },
+    "1396476": {
+      "date": "2026-03-21",
+      "league": "Primeira Liga",
+      "league_id": 94,
+      "country": "Portugal",
+      "home_team": "Famalicao",
+      "away_team": "Nacional",
+      "home_team_id": 242,
+      "away_team_id": 225,
+      "home_goals": 1,
+      "away_goals": 0,
+      "home_xg": 1.74,
+      "away_xg": 0.43,
+      "collected_at": "2026-03-21T23:34:21.943505+00:00"
+    },
+    "1396477": {
+      "date": "2026-03-21",
+      "league": "Primeira Liga",
+      "league_id": 94,
+      "country": "Portugal",
+      "home_team": "Moreirense",
+      "away_team": "Arouca",
+      "home_team_id": 215,
+      "away_team_id": 240,
+      "home_goals": 0,
+      "away_goals": 1,
+      "home_xg": 0.59,
+      "away_xg": 1.69,
+      "collected_at": "2026-03-21T23:34:28.844110+00:00"
     },
     "1387008": {
       "date": "2026-03-21",
@@ -163,8 +253,173 @@
       "away_goals": 3,
       "home_xg": 1.72,
       "away_xg": 2.26,
-      "collected_at": "2026-03-22T00:25:05.159521+00:00"
+      "collected_at": "2026-03-21T23:34:35.749551+00:00"
+    },
+    "1381115": {
+      "date": "2026-03-21",
+      "league": "Eredivisie",
+      "league_id": 88,
+      "country": "Netherlands",
+      "home_team": "Sparta Rotterdam",
+      "away_team": "FC Volendam",
+      "home_team_id": 426,
+      "away_team_id": 416,
+      "home_goals": 2,
+      "away_goals": 0,
+      "home_xg": 1.33,
+      "away_xg": 0.33,
+      "collected_at": "2026-03-21T23:34:42.644310+00:00"
+    },
+    "1396472": {
+      "date": "2026-03-21",
+      "league": "Primeira Liga",
+      "league_id": 94,
+      "country": "Portugal",
+      "home_team": "Benfica",
+      "away_team": "Guimaraes",
+      "home_team_id": 211,
+      "away_team_id": 224,
+      "home_goals": 3,
+      "away_goals": 0,
+      "home_xg": 2.02,
+      "away_xg": 0.77,
+      "collected_at": "2026-03-21T23:34:49.544299+00:00"
+    },
+    "1396478": {
+      "date": "2026-03-21",
+      "league": "Primeira Liga",
+      "league_id": 94,
+      "country": "Portugal",
+      "home_team": "Santa Clara",
+      "away_team": "GIL Vicente",
+      "home_team_id": 227,
+      "away_team_id": 762,
+      "home_goals": 1,
+      "away_goals": 0,
+      "home_xg": 0.3,
+      "away_xg": 0.79,
+      "collected_at": "2026-03-21T23:34:56.433629+00:00"
+    },
+    "1388849": {
+      "date": "2026-03-21",
+      "league": "2. Bundesliga",
+      "league_id": 79,
+      "country": "Germany",
+      "home_team": "SV Darmstadt 98",
+      "away_team": "FC Schalke 04",
+      "home_team_id": 181,
+      "away_team_id": 174,
+      "home_goals": 1,
+      "away_goals": 1,
+      "home_xg": 1.34,
+      "away_xg": 2.31,
+      "collected_at": "2026-03-21T23:35:03.354278+00:00"
+    },
+    "1381118": {
+      "date": "2026-03-21",
+      "league": "Eredivisie",
+      "league_id": 88,
+      "country": "Netherlands",
+      "home_team": "PEC Zwolle",
+      "away_team": "NAC Breda",
+      "home_team_id": 193,
+      "away_team_id": 203,
+      "home_goals": 2,
+      "away_goals": 1,
+      "home_xg": 0.82,
+      "away_xg": 1.08,
+      "collected_at": "2026-03-21T23:35:10.288107+00:00"
+    },
+    "1396479": {
+      "date": "2026-03-21",
+      "league": "Primeira Liga",
+      "league_id": 94,
+      "country": "Portugal",
+      "home_team": "Tondela",
+      "away_team": "AVS",
+      "home_team_id": 218,
+      "away_team_id": 21595,
+      "home_goals": 0,
+      "away_goals": 0,
+      "home_xg": 0.64,
+      "away_xg": 0.8,
+      "collected_at": "2026-03-21T23:35:17.191098+00:00"
+    },
+    "1388852": {
+      "date": "2026-03-20",
+      "league": "2. Bundesliga",
+      "league_id": 79,
+      "country": "Germany",
+      "home_team": "Hannover 96",
+      "away_team": "Eintracht Braunschweig",
+      "home_team_id": 166,
+      "away_team_id": 744,
+      "home_goals": 1,
+      "away_goals": 0,
+      "home_xg": 0.96,
+      "away_xg": 1.17,
+      "collected_at": "2026-03-21T23:35:24.100359+00:00"
+    },
+    "1388853": {
+      "date": "2026-03-20",
+      "league": "2. Bundesliga",
+      "league_id": 79,
+      "country": "Germany",
+      "home_team": "Karlsruher SC",
+      "away_team": "SpVgg Greuther Fürth",
+      "home_team_id": 785,
+      "away_team_id": 178,
+      "home_goals": 3,
+      "away_goals": 1,
+      "home_xg": 2.41,
+      "away_xg": 1.45,
+      "collected_at": "2026-03-21T23:35:31.007218+00:00"
+    },
+    "1381112": {
+      "date": "2026-03-20",
+      "league": "Eredivisie",
+      "league_id": 88,
+      "country": "Netherlands",
+      "home_team": "Heracles",
+      "away_team": "Excelsior",
+      "home_team_id": 206,
+      "away_team_id": 196,
+      "home_goals": 1,
+      "away_goals": 1,
+      "home_xg": 1.52,
+      "away_xg": 1.03,
+      "collected_at": "2026-03-21T23:35:37.890821+00:00"
+    },
+    "1387017": {
+      "date": "2026-03-20",
+      "league": "Championship",
+      "league_id": 40,
+      "country": "England",
+      "home_team": "Preston",
+      "away_team": "Stoke City",
+      "home_team_id": 59,
+      "away_team_id": 75,
+      "home_goals": 3,
+      "away_goals": 1,
+      "home_xg": 2.81,
+      "away_xg": 0.99,
+      "collected_at": "2026-03-21T23:35:44.801225+00:00"
+    },
+    "1396475": {
+      "date": "2026-03-20",
+      "league": "Primeira Liga",
+      "league_id": 94,
+      "country": "Portugal",
+      "home_team": "Estrela",
+      "away_team": "Casa Pia",
+      "home_team_id": 15130,
+      "away_team_id": 4716,
+      "home_goals": 4,
+      "away_goals": 0,
+      "home_xg": 4.4,
+      "away_xg": 0.65,
+      "collected_at": "2026-03-21T23:35:51.685946+00:00"
     }
   },
-  "last_updated": "2026-03-22T00:25:05.159675+00:00"
+  "last_updated": "2026-03-21T23:35:51.685946+00:00"
 }
