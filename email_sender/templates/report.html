@@ -53,6 +53,7 @@
   .at { padding:16px 20px; font-size:14px; line-height:1.7; border-bottom:1px solid #1a2540; }
   .at p { margin:0; }
 
+
   /* Footer columns */
   .fc td { padding:12px 16px; vertical-align:top; }
   .fc td:first-child { border-right:1px solid #1a2540; width:50%; }
@@ -112,7 +113,7 @@
 {% if evaluation %}
 <tr><td>
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
-    <tr><td style="background:#1a2540;">&nbsp;</td><td style="color:#e8b84b;">Previous Round</td><td style="background:#1a2540;">&nbsp;</td></tr>
+    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">Previous Round</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
   </table>
   <div style="margin:0 40px 8px;background:#0d1526;border:1px solid #1a2540;overflow:hidden;" class="cw sp2">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
@@ -164,7 +165,7 @@
 {% if executive_summary %}
 <tr><td>
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
-    <tr><td style="background:#1a2540;">&nbsp;</td><td style="color:#e8b84b;">This Week's Coupon</td><td style="background:#1a2540;">&nbsp;</td></tr>
+    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">This Week's Coupon</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
   </table>
   <div style="padding:8px 40px 20px;font-size:15px;color:#8ba4c4;font-style:italic;line-height:1.7;border-bottom:1px solid #1a2540;" class="sp2">{{ executive_summary }}</div>
 </td></tr>
@@ -185,7 +186,7 @@
 
 <tr><td>
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
-    <tr><td style="background:#1a2540;">&nbsp;</td><td style="color:#e8b84b;">Coupon Summary</td><td style="background:#1a2540;">&nbsp;</td></tr>
+    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">Coupon Summary</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
   </table>
   <div style="margin:0 40px 24px;background:#0d1526;border:1px solid #1a2540;overflow:hidden;" class="co sp2">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#111c35;border-bottom:2px solid #e8b84b;">
@@ -229,7 +230,7 @@
 
 <tr><td>
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
-    <tr><td style="background:#1a2540;">&nbsp;</td><td style="color:#e8b84b;">Detailed Analysis</td><td style="background:#1a2540;">&nbsp;</td></tr>
+    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">Detailed Analysis</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
   </table>
 </td></tr>
 
@@ -251,21 +252,42 @@
         <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
           <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">{{ pred.game_number }}</td>
           {% if match and match.league and badge_urls[match.league] is defined %}<td style="padding-left:8px;vertical-align:middle;"><img src="{{ badge_urls[match.league] }}" width="18" height="18" alt="{{ match.league }}" style="vertical-align:middle;"></td>{% endif %}
-          <td style="padding-left:{% if match and match.league and badge_urls[match.league] is defined %}4{% else %}8{% endif %}px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">{{ match.league if match else '' }}</td>
-          {% if match and match.kickoff %}<td style="padding-left:8px;font-size:10px;color:#2a3a54;vertical-align:middle;">{{ match.kickoff.astimezone(tz).strftime('%a %d %b · %H:%M') }}</td>{% endif %}
+          <td style="padding-left:{% if match and match.league and badge_urls[match.league] is defined %}4{% else %}8{% endif %}px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">{{ match.league if match else '' }}</td>
         </tr></table>
-        <div style="margin-top:6px;line-height:24px;">
-          {% if badge_urls[pred.home_team] is defined %}<img src="{{ badge_urls[pred.home_team] }}" width="22" height="22" alt="{{ pred.home_team }}" style="vertical-align:middle;margin-right:5px;">{% endif %}<span class="tt" style="color:#e2e8f4;vertical-align:middle;">{{ pred.home_team }}</span>
-          {%- if match and match.home_stats %}{% if match.home_stats.form_points_last5 >= 10 %} <span class="fp" style="background:#0a2a0a;color:#4ade80;vertical-align:middle;">&#9650;</span>{% endif %}{% if match.home_stats.form_points_last5 <= 4 and match.home_stats.form_last5|length >= 3 %} <span class="fp" style="background:#2a1a0a;color:#fb923c;vertical-align:middle;">&#9660;</span>{% endif %}{% if match.home_stats.fatigue_flag %} <span class="fp" style="background:#2a0a0a;color:#f87171;vertical-align:middle;">&#9889;</span>{% endif %}{% if match.home_stats.new_manager_bounce %} <span class="fp" style="background:#1a0a2a;color:#c084fc;vertical-align:middle;">&#9733;</span>{% endif %}{% if match.home_stats.injuries|length >= 5 %} <span class="fp" style="background:#ffffff;color:#dc2626;vertical-align:middle;">&#10010;</span>{% endif %}{% endif %}
-          <span style="color:#2a3a54;font-weight:400;font-size:14px;vertical-align:middle;"> vs </span>
-          {% if badge_urls[pred.away_team] is defined %}<img src="{{ badge_urls[pred.away_team] }}" width="22" height="22" alt="{{ pred.away_team }}" style="vertical-align:middle;margin-right:5px;">{% endif %}<span class="tt" style="color:#e2e8f4;vertical-align:middle;">{{ pred.away_team }}</span>
-          {%- if match and match.away_stats %}{% if match.away_stats.form_points_last5 >= 10 %} <span class="fp" style="background:#0a2a0a;color:#4ade80;vertical-align:middle;">&#9650;</span>{% endif %}{% if match.away_stats.form_points_last5 <= 4 and match.away_stats.form_last5|length >= 3 %} <span class="fp" style="background:#2a1a0a;color:#fb923c;vertical-align:middle;">&#9660;</span>{% endif %}{% if match.away_stats.fatigue_flag %} <span class="fp" style="background:#2a0a0a;color:#f87171;vertical-align:middle;">&#9889;</span>{% endif %}{% if match.away_stats.new_manager_bounce %} <span class="fp" style="background:#1a0a2a;color:#c084fc;vertical-align:middle;">&#9733;</span>{% endif %}{% if match.away_stats.injuries|length >= 5 %} <span class="fp" style="background:#ffffff;color:#dc2626;vertical-align:middle;">&#10010;</span>{% endif %}{% endif %}
-        </div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              {% if badge_urls[pred.home_team] is defined %}<img src="{{ badge_urls[pred.home_team] }}" width="22" height="22" alt="{{ pred.home_team }}" style="vertical-align:middle;margin-right:4px;">{% endif %}<span class="tt" style="color:#e2e8f4;vertical-align:middle;">{{ pred.home_team }}</span>
+              {%- if match and match.home_stats %}
+              <div style="margin-top:3px;">
+                {%- if match.home_stats.form_points_last5 >= 10 %}<span class="fp" style="background:#0a2a0a;color:#4ade80;">&#9650;</span> {% endif -%}
+                {%- if match.home_stats.form_points_last5 <= 4 and match.home_stats.form_last5|length >= 3 %}<span class="fp" style="background:#2a1a0a;color:#fb923c;">&#9660;</span> {% endif -%}
+                {%- if match.home_stats.fatigue_flag %}<span class="fp" style="background:#2a0a0a;color:#f87171;">&#9889;</span> {% endif -%}
+                {%- if match.home_stats.new_manager_bounce %}<span class="fp" style="background:#1a0a2a;color:#c084fc;">&#9733;</span> {% endif -%}
+                {%- if match.home_stats.injuries|length >= 5 %}<span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> {% endif -%}
+              </div>
+              {%- endif %}
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              {% if badge_urls[pred.away_team] is defined %}<img src="{{ badge_urls[pred.away_team] }}" width="22" height="22" alt="{{ pred.away_team }}" style="vertical-align:middle;margin-right:4px;">{% endif %}<span class="tt" style="color:#e2e8f4;vertical-align:middle;">{{ pred.away_team }}</span>
+              {%- if match and match.away_stats %}
+              <div style="margin-top:3px;">
+                {%- if match.away_stats.form_points_last5 >= 10 %}<span class="fp" style="background:#0a2a0a;color:#4ade80;">&#9650;</span> {% endif -%}
+                {%- if match.away_stats.form_points_last5 <= 4 and match.away_stats.form_last5|length >= 3 %}<span class="fp" style="background:#2a1a0a;color:#fb923c;">&#9660;</span> {% endif -%}
+                {%- if match.away_stats.fatigue_flag %}<span class="fp" style="background:#2a0a0a;color:#f87171;">&#9889;</span> {% endif -%}
+                {%- if match.away_stats.new_manager_bounce %}<span class="fp" style="background:#1a0a2a;color:#c084fc;">&#9733;</span> {% endif -%}
+                {%- if match.away_stats.injuries|length >= 5 %}<span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> {% endif -%}
+              </div>
+              {%- endif %}
+            </td>
+          </tr>
+        </table>
       </td>
       <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
-        <span class="sp" style="background:{{ tbg }};color:{{ tc }};">{{ type }}</span>
+        {% if match and match.kickoff %}<div style="font-size:18px;font-weight:700;color:{{ tc }};letter-spacing:1px;">{{ match.kickoff.astimezone(tz).strftime('%H:%M') }}</div>{% endif %}
         <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
-          {% for o in pred.predicted_outcomes %}<td class="pb" style="background:{{ tbg }};color:{{ tc }};{% if not loop.first %}padding-left:5px;{% endif %}">{{ o.value }}</td>{% endfor %}
+          {% for o in pred.predicted_outcomes %}<td class="pb" style="background:{{ tbg }};color:{{ tc }};{% if not loop.first %}margin-left:5px;{% endif %}">{{ o.value }}</td>{% endfor %}
         </tr></table>
         <div class="cb" style="background:#1a2540;"><div class="cf" style="width:{{ (pred.confidence*100)|int }}%;background:#e8b84b;"></div></div>
         <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">{{ (pred.confidence*100)|int }}%</span>
@@ -275,18 +297,13 @@
   {% if match and match.home_stats and match.away_stats %}
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
     <tr>
-      <td><span class="sl2" style="color:#2a3a54;">Home form</span><span class="sv" style="color:#8ba4c4;">{% for r in match.home_stats.form_last5 %}{{ wdl[r.result.value] }}{% endfor %}</span></td>
-      <td><span class="sl2" style="color:#2a3a54;">Away form</span><span class="sv" style="color:#8ba4c4;">{% for r in match.away_stats.form_last5 %}{{ wdl[r.result.value] }}{% endfor %}</span></td>
-      <td{% if match.home_stats.league_position or match.away_stats.league_position %}{% else %} style="border-right:none;"{% endif %}>
-        <span class="sl2" style="color:#2a3a54;">xG for</span>
-        <span class="sv" style="color:#8ba4c4;">{% if match.home_stats.xg_for_avg %}{{ "%.2f"|format(match.home_stats.xg_for_avg) }}{% else %}—{% endif %} v {% if match.away_stats.xg_for_avg %}{{ "%.2f"|format(match.away_stats.xg_for_avg) }}{% else %}—{% endif %}</span>
-      </td>
-      <td{% if match.home_stats.league_position or match.away_stats.league_position %}{% else %} style="border-right:none;"{% endif %}>
-        <span class="sl2" style="color:#2a3a54;">xG against</span>
-        <span class="sv" style="color:#8ba4c4;">{% if match.home_stats.xg_against_avg %}{{ "%.2f"|format(match.home_stats.xg_against_avg) }}{% else %}—{% endif %} v {% if match.away_stats.xg_against_avg %}{{ "%.2f"|format(match.away_stats.xg_against_avg) }}{% else %}—{% endif %}</span>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">{% for r in match.home_stats.form_last5 %}{{ wdl[r.result.value] }}{% endfor %} <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> {% for r in match.away_stats.form_last5 %}{{ wdl[r.result.value] }}{% endfor %}</span></td>
+      <td{% if not (match.home_stats.league_position or match.away_stats.league_position) %} style="border-right:none;"{% endif %}>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">{% if match.home_stats.xg_for_avg %}{{ "%.1f"|format(match.home_stats.xg_for_avg) }}{% else %}—{% endif %}/{% if match.home_stats.xg_against_avg %}{{ "%.1f"|format(match.home_stats.xg_against_avg) }}{% else %}—{% endif %} <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> {% if match.away_stats.xg_for_avg %}{{ "%.1f"|format(match.away_stats.xg_for_avg) }}{% else %}—{% endif %}/{% if match.away_stats.xg_against_avg %}{{ "%.1f"|format(match.away_stats.xg_against_avg) }}{% else %}—{% endif %}</span>
       </td>
       {% if match.home_stats.league_position or match.away_stats.league_position %}
-      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">{% if match.home_stats.league_position %}P{{ match.home_stats.league_position }}{% else %}—{% endif %} v {% if match.away_stats.league_position %}P{{ match.away_stats.league_position }}{% else %}—{% endif %}</span></td>
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">{{ match.home_stats.league_position or '—' }} <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> {{ match.away_stats.league_position or '—' }}</span></td>
       {% endif %}
     </tr>
   </table>
@@ -309,36 +326,48 @@
           <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">{{ match.market.odds_away or '—' }}</td>
         </tr></table>
       </td>
-      {% if match.market.public_pct_home is not none %}
-      <td style="padding:8px 10px;vertical-align:middle;">
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:140px;font-size:9px;font-weight:700;color:#080d18;"><tr>
-          <td style="background:#4ade80;width:{{ match.market.public_pct_home }}%;text-align:center;padding:2px 0;">{{ match.market.public_pct_home }}%</td>
-          <td style="background:#e8b84b;width:{{ match.market.public_pct_draw }}%;text-align:center;padding:2px 0;">{{ match.market.public_pct_draw }}%</td>
-          <td style="background:#60a5fa;width:{{ match.market.public_pct_away }}%;text-align:center;padding:2px 0;">{{ match.market.public_pct_away }}%</td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        {% if match.market.public_pct_home is not none %}
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:{{ [match.market.public_pct_home, 8]|max }}%;text-align:center;padding:2px 0;">{{ match.market.public_pct_home }}%</td>
+            <td style="background:#e8b84b;width:{{ [match.market.public_pct_draw, 8]|max }}%;text-align:center;padding:2px 0;">{{ match.market.public_pct_draw }}%</td>
+            <td style="background:#60a5fa;width:{{ [match.market.public_pct_away, 8]|max }}%;text-align:center;padding:2px 0;">{{ match.market.public_pct_away }}%</td>
+          </tr></table></td>
         </tr></table>
+        {% endif %}
+        {% set tips_total = match.market.newspaper_tips_home + match.market.newspaper_tips_draw + match.market.newspaper_tips_away %}
+        {% if tips_total > 0 %}
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            {% set ph = (match.market.newspaper_tips_home / tips_total * 100)|int %}
+            {% set pd = (match.market.newspaper_tips_draw / tips_total * 100)|int %}
+            {% set pa = (match.market.newspaper_tips_away / tips_total * 100)|int %}
+            <td style="background:#4ade80;width:{{ [ph, 12]|max }}%;text-align:center;padding:2px 0;">{{ match.market.newspaper_tips_home }}</td>
+            <td style="background:#e8b84b;width:{{ [pd, 12]|max }}%;text-align:center;padding:2px 0;">{{ match.market.newspaper_tips_draw }}</td>
+            <td style="background:#60a5fa;width:{{ [pa, 12]|max }}%;text-align:center;padding:2px 0;">{{ match.market.newspaper_tips_away }}</td>
+          </tr></table></td>
+        </tr></table>
+        {% endif %}
       </td>
-      {% endif %}
-      {% if match.market.newspaper_tips_home + match.market.newspaper_tips_draw + match.market.newspaper_tips_away > 0 %}
-      <td style="padding:8px 16px 8px 10px;vertical-align:middle;text-align:right;">
-        <span style="font-size:11px;color:#8ba4c4;font-weight:700;">&#9998; {{ match.market.newspaper_tips_home }}-{{ match.market.newspaper_tips_draw }}-{{ match.market.newspaper_tips_away }}</span>
-      </td>
-      {% endif %}
     </tr>
   </table>
   {% endif %}
   <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
     {% set paras = pred.analysis.split('\n\n') %}
-    <p>{{ paras[0]|truncate(analysis_max_chars|default(200)) }}</p>
+    <p>{{ paras[0] }}</p>
   </div>
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
     <tr>
       {% if pred.key_factors %}<td>
         <div class="ct" style="color:#4ade80;">Key Factors</div>
-        {% for f in pred.key_factors[:1] %}<div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> {{ f|truncate(80) }}</div>{% endfor %}
+        {% for f in pred.key_factors[:2] %}<div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> {{ f }}</div>{% endfor %}
       </td>{% endif %}
       {% if pred.risk_flags %}<td{% if not pred.key_factors %} style="border-right:none;"{% endif %}>
         <div class="ct" style="color:#fb923c;">Risks</div>
-        {% for r in pred.risk_flags[:1] %}<div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> {{ r|truncate(80) }}</div>{% endfor %}
+        {% for r in pred.risk_flags[:2] %}<div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> {{ r }}</div>{% endfor %}
       </td>{% endif %}
     </tr>
   </table>

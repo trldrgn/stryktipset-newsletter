@@ -65,23 +65,8 @@ def render_newsletter(
         matches_by_game=matches_by_game,
         badge_urls=badge_urls,
         tz=stockholm,
-        analysis_max_chars=200,
     )
     html = template.render(**tpl_vars)
-
-    # Gmail clips emails > 102,400 bytes. If we're over, progressively truncate
-    # analysis text until we fit (with 5KB safety margin).
-    _GMAIL_CLIP_LIMIT = 102_400
-    _SAFE_LIMIT = _GMAIL_CLIP_LIMIT - 2_000  # 100,400 bytes
-
-    if len(html.encode("utf-8")) > _SAFE_LIMIT:
-        for max_chars in (150, 100, 60):
-            tpl_vars["analysis_max_chars"] = max_chars
-            html = template.render(**tpl_vars)
-            size = len(html.encode("utf-8"))
-            logger.info("Re-rendered with analysis_max_chars=%d → %dKB", max_chars, size // 1024)
-            if size <= _SAFE_LIMIT:
-                break
 
     subject = (
         f"Stryktipset v.{week_number} #{report.draw_number} — "
