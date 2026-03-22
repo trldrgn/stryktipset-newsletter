@@ -66,6 +66,8 @@ def save_predictions(draw_number: int, draw_date: str, predictions: list[MatchPr
                 "confidence": p.confidence,
                 "key_factors": p.key_factors,
                 "risk_flags": p.risk_flags,
+                "analysis": p.analysis,
+                "value_note": p.value_note,
             }
             for p in predictions
         ],

@@ -11,12 +11,13 @@ ROOT_DIR = Path(__file__).parent
 DATA_DIR = ROOT_DIR / "data"
 PREDICTIONS_DIR = DATA_DIR / "predictions"
 RESULTS_DIR = DATA_DIR / "results"
+NEWSLETTERS_DIR = DATA_DIR / "newsletters"
 PERFORMANCE_DIR = DATA_DIR / "performance"
 CACHE_DIR = DATA_DIR / "cache"
 LOGS_DIR = ROOT_DIR / "logs"
 
 # Create dirs on import so nothing else has to
-for _d in (PREDICTIONS_DIR, RESULTS_DIR, PERFORMANCE_DIR, CACHE_DIR, LOGS_DIR):
+for _d in (PREDICTIONS_DIR, RESULTS_DIR, NEWSLETTERS_DIR, PERFORMANCE_DIR, CACHE_DIR, LOGS_DIR):
     _d.mkdir(parents=True, exist_ok=True)
 
 load_dotenv(ROOT_DIR / ".env")
@@ -52,8 +53,8 @@ NEWSLETTER_RECIPIENTS: list[str] = _parse_recipients()
 # ---------------------------------------------------------------------------
 
 SCHEDULE_DAY: str = os.getenv("SCHEDULE_DAY", "sat")           # sat = Saturday
-SCHEDULE_HOUR: int = int(os.getenv("SCHEDULE_HOUR", "8"))
-SCHEDULE_MINUTE: int = int(os.getenv("SCHEDULE_MINUTE", "0"))
+SCHEDULE_HOUR: int = int(os.getenv("SCHEDULE_HOUR", "7"))
+SCHEDULE_MINUTE: int = int(os.getenv("SCHEDULE_MINUTE", "30"))
 SCHEDULE_TIMEZONE: str = os.getenv("SCHEDULE_TIMEZONE", "Europe/Stockholm")
 
 
@@ -62,7 +63,7 @@ SCHEDULE_TIMEZONE: str = os.getenv("SCHEDULE_TIMEZONE", "Europe/Stockholm")
 # ---------------------------------------------------------------------------
 
 CLAUDE_MODEL: str = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-6")
-CLAUDE_MAX_TOKENS: int = int(os.getenv("CLAUDE_MAX_TOKENS", "16000"))
+CLAUDE_MAX_TOKENS: int = int(os.getenv("CLAUDE_MAX_TOKENS", "32000"))
 CLAUDE_THINKING_BUDGET: int = int(os.getenv("CLAUDE_THINKING_BUDGET", "10000"))
 
 

@@ -2,10 +2,11 @@
 Stryktipset Newsletter — main entry point.
 
 Usage:
-  python main.py                  # Start the scheduler (runs every Saturday 08:00 Stockholm)
+  python main.py                  # Start the scheduler (runs every Saturday 07:30 Stockholm)
   python main.py --run            # Run the newsletter pipeline immediately (for testing)
   python main.py --dry-run        # Run pipeline but don't send email (saves HTML locally)
   python main.py --draw 4945      # Run for a specific draw number
+  python main.py --test-email     # Send the most recent newsletter HTML via email (test delivery)
   python main.py --improve        # Print model improvement analysis prompt (monthly use)
   python main.py --collect-xg     # Collect xG data for last 7 days (run Fridays)
   python main.py --backfill-xg    # Backfill xG data for last 5 weeks (first-time setup)
@@ -28,6 +29,7 @@ from analysis.evaluator import (
     save_predictions,
 )
 from config import (
+    NEWSLETTERS_DIR,
     SCHEDULE_DAY,
     SCHEDULE_HOUR,
     SCHEDULE_MINUTE,
@@ -123,21 +125,27 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
     logger.info("[7/9] Rendering HTML email...")
     subject, html_body = render_newsletter(report, matches, evaluation)
 
-    # --- Step 8: Send ---
-    logger.info("[8/9] Sending newsletter...")
+    # --- Step 8: Save & send ---
+    logger.info("[8/9] Saving and sending newsletter...")
+    draw_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    archive_path = NEWSLETTERS_DIR / f"draw_{current_draw}_{draw_date}.html"
+    archive_path.write_text(html_body, encoding="utf-8")
+    logger.info("Newsletter archived to %s", archive_path)
+
     if dry_run:
-        output_path = f"newsletter_draw_{current_draw}.html"
-        with open(output_path, "w", encoding="utf-8") as f:
+        # Also save a convenient copy in project root for quick preview
+        local_path = f"newsletter_draw_{current_draw}.html"
+        with open(local_path, "w", encoding="utf-8") as f:
             f.write(html_body)
-        logger.info("DRY RUN: HTML saved to %s", output_path)
-        print(f"\nDry run complete. Newsletter saved to: {output_path}")
+        logger.info("DRY RUN: HTML also saved to %s", local_path)
+        print(f"\nDry run complete. Newsletter saved to: {local_path}")
+        print(f"Archived copy: {archive_path}")
     else:
         sent = send_newsletter(subject, html_body)
         logger.info("Newsletter sent to %d recipients", sent)
 
     # --- Step 9: Save predictions for next week's evaluation ---
     logger.info("[9/9] Saving predictions...")
-    draw_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     save_predictions(current_draw, draw_date, report.predictions)
 
     elapsed = (datetime.now(timezone.utc) - start_time).total_seconds()
@@ -225,6 +233,11 @@ def main() -> None:
         action="store_true",
         help="Backfill xG data for last 5 weeks",
     )
+    parser.add_argument(
+        "--test-email",
+        action="store_true",
+        help="Send the most recent newsletter HTML to configured recipients (test delivery)",
+    )
 
     args = parser.parse_args()
 
@@ -253,6 +266,24 @@ def main() -> None:
         print(prompt)
         print("=" * 60)
         print("\nCopy the above and paste it into a Claude conversation to get model improvement recommendations.")
+        return
+
+    if args.test_email:
+        # Find the most recent archived newsletter
+        html_files = sorted(NEWSLETTERS_DIR.glob("draw_*.html"))
+        if not html_files:
+            # Fall back to project root dry-run files
+            from pathlib import Path
+            html_files = sorted(Path(".").glob("newsletter_draw_*.html"))
+        if not html_files:
+            print("No newsletter HTML found. Run --dry-run first.")
+            sys.exit(1)
+        latest = html_files[-1]
+        html_body = latest.read_text(encoding="utf-8")
+        subject = f"[TEST] Stryktipset Newsletter — {latest.stem}"
+        print(f"Sending test email using: {latest}")
+        sent = send_newsletter(subject, html_body)
+        print(f"Test email sent to {sent} recipient(s).")
         return
 
     if args.run or args.dry_run or args.draw:

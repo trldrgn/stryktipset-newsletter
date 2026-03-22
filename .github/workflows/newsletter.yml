@@ -1,10 +1,10 @@
 name: Stryktipset Newsletter
 
 on:
-  # Every Saturday at 07:00 UTC = 08:00 Stockholm (CET) / 09:00 (CEST in summer)
-  # Stryktipset coupon closes ~15:59 Saturday so this runs well before
+  # Every Saturday at 06:30 UTC = 07:30 Stockholm (CET) / 08:30 (CEST in summer)
+  # Pipeline takes ~20 min; newsletter arrives by ~08:00. Coupon closes ~15:59.
   schedule:
-    - cron: "0 7 * * 6"
+    - cron: "30 6 * * 6"
 
   # Manual trigger — also lets you specify a draw number for testing/backfill
   workflow_dispatch:
@@ -90,7 +90,7 @@ jobs:
         run: |
           git config user.name "stryktipset-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/predictions/ data/results/ data/performance/ data/xg/
+          git add data/predictions/ data/results/ data/performance/ data/xg/ data/newsletters/
           # Only commit if there are staged changes
           if git diff --staged --quiet; then
             echo "No new prediction data to commit."
