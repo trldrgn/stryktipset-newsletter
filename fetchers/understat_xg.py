@@ -4,10 +4,10 @@ Fetches per-match xG data from Understat (free, no API key needed).
 Covers Big 5 leagues: EPL, La Liga, Bundesliga, Serie A, Ligue 1.
 Does NOT cover: Championship, League One, Eredivisie, Primeira Liga.
 
-For each team, fetches last 5 completed matches and computes:
-  - xG for average (expected goals scored)
-  - xG against average (expected goals conceded)
-  - xG overperformance (actual goals - xG total → luck indicator)
+For each team, fetches last 10 completed matches and computes:
+  - 5-game and 10-game averages for xG for/against AND actual goals for/against
+  - Overperformance (actual goals - xG) for both attack and defence
+  - Returns a TeamXGProfile identical to the xG collector output
 
 Data freshness: updated within hours of match completion.
 Rate: ~1 HTTP request per team (web scraping, not official API).
@@ -20,6 +20,7 @@ from typing import Optional
 
 from understatapi import UnderstatClient
 
+from fetchers.xg_collector import TeamXGProfile
 from models.match import Match, TeamStats
 from utils.cache import cached
 from utils.logger import get_logger
@@ -110,20 +111,20 @@ def _fetch_team_matches(team_title: str, season: str) -> list[dict]:
     return _client.team(team=team_title).get_match_data(season=season)
 
 
-def _compute_xg(team_title: str, season: str) -> tuple[Optional[float], Optional[float], Optional[float]]:
+def _compute_xg_profile(team_title: str, season: str) -> Optional[TeamXGProfile]:
     """
-    Compute average xG for/against from last 5 completed matches.
-    Returns (xg_for_avg, xg_against_avg, xg_overperformance) or (None, None, None).
-
-    xg_overperformance = (actual goals - xG) averaged over last 5.
-    Positive = scoring more than expected (lucky or clinical).
-    Negative = scoring less than expected (unlucky or wasteful).
+    Compute full xG profile from last 10 completed matches.
+    Returns TeamXGProfile with 5-game and 10-game averages for:
+      - xG for/against (expected goals created/conceded)
+      - Actual goals for/against
+      - Overperformance (actual - xG) for both attack and defence
+    Returns None if no completed matches found.
     """
     try:
         all_matches = _fetch_team_matches(team_title, season)
     except Exception as e:
         logger.warning("Understat match fetch failed for '%s': %s", team_title, e)
-        return None, None, None
+        return None
 
     # Filter completed matches, sort by date descending
     completed = [
@@ -133,47 +134,62 @@ def _compute_xg(team_title: str, season: str) -> tuple[Optional[float], Optional
     completed.sort(key=lambda m: m.get("datetime", ""), reverse=True)
 
     if not completed:
-        return None, None, None
+        return None
 
-    last_5 = completed[:5]
-
-    xg_for_vals = []
-    xg_against_vals = []
-    overperf_vals = []
-
-    for m in last_5:
+    # Extract per-match data for up to 10 games
+    match_data: list[dict] = []
+    for m in completed[:10]:
         side = m.get("side", "")  # "h" or "a"
         xg = m.get("xG", {})
         goals = m.get("goals", {})
 
         if side == "h":
-            xg_f = xg.get("h")
-            xg_a = xg.get("a")
-            g_f = goals.get("h")
+            xg_f, xg_a = xg.get("h"), xg.get("a")
+            g_f, g_a = goals.get("h"), goals.get("a")
         elif side == "a":
-            xg_f = xg.get("a")
-            xg_a = xg.get("h")
-            g_f = goals.get("a")
+            xg_f, xg_a = xg.get("a"), xg.get("h")
+            g_f, g_a = goals.get("a"), goals.get("h")
         else:
             continue
 
-        if xg_f is not None and xg_a is not None:
-            try:
-                xg_for_vals.append(float(xg_f))
-                xg_against_vals.append(float(xg_a))
-                if g_f is not None:
-                    overperf_vals.append(float(g_f) - float(xg_f))
-            except (ValueError, TypeError):
-                continue
+        if xg_f is None or xg_a is None:
+            continue
 
-    if not xg_for_vals:
-        return None, None, None
+        try:
+            match_data.append({
+                "xg_for": float(xg_f),
+                "xg_against": float(xg_a),
+                "goals_for": float(g_f) if g_f is not None else None,
+                "goals_against": float(g_a) if g_a is not None else None,
+            })
+        except (ValueError, TypeError):
+            continue
 
-    xg_for_avg = round(sum(xg_for_vals) / len(xg_for_vals), 2)
-    xg_against_avg = round(sum(xg_against_vals) / len(xg_against_vals), 2)
-    xg_overperf = round(sum(overperf_vals) / len(overperf_vals), 2) if overperf_vals else None
+    if not match_data:
+        return None
 
-    return xg_for_avg, xg_against_avg, xg_overperf
+    def _avg(data: list[dict], key: str, n: int) -> Optional[float]:
+        subset = data[:n]
+        vals = [m[key] for m in subset if m.get(key) is not None]
+        return round(sum(vals) / len(vals), 2) if vals else None
+
+    profile = TeamXGProfile(
+        team_name=team_title,
+        matches_available=len(match_data),
+        xg_for_5g=_avg(match_data, "xg_for", 5),
+        xg_against_5g=_avg(match_data, "xg_against", 5),
+        goals_for_5g=_avg(match_data, "goals_for", 5),
+        goals_against_5g=_avg(match_data, "goals_against", 5),
+    )
+
+    # 10-game averages (only if we have enough data)
+    if len(match_data) >= 5:
+        profile.xg_for_10g = _avg(match_data, "xg_for", 10)
+        profile.xg_against_10g = _avg(match_data, "xg_against", 10)
+        profile.goals_for_10g = _avg(match_data, "goals_for", 10)
+        profile.goals_against_10g = _avg(match_data, "goals_against", 10)
+
+    return profile
 
 
 # ---------------------------------------------------------------------------
@@ -229,16 +245,16 @@ def enrich_with_understat_xg(matches: list[Match]) -> list[Match]:
             if not team_title:
                 continue
 
-            xg_for, xg_against, xg_overperf = _compute_xg(team_title, season)
+            profile = _compute_xg_profile(team_title, season)
 
-            if xg_for is not None:
-                stats.xg_for_avg = xg_for
-                stats.xg_against_avg = xg_against
+            if profile and profile.xg_for_5g is not None:
+                stats.xg_for_avg = profile.xg_for_5g
+                stats.xg_against_avg = profile.xg_against_5g
+                stats._xg_profile = profile
                 enriched_count += 1
                 logger.info(
-                    "Understat xG for %s: xGF=%.2f, xGA=%.2f, overperf=%s",
-                    team_name, xg_for, xg_against,
-                    f"{xg_overperf:+.2f}" if xg_overperf is not None else "N/A",
+                    "Understat xG for %s: %s",
+                    team_name, profile.format_for_prompt(),
                 )
 
     logger.info("Understat xG enrichment complete: %d teams enriched", enriched_count)
