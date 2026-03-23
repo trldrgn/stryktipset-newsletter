@@ -4,14 +4,17 @@ Standalone xG data collector that runs separately from the newsletter pipeline.
 Fetches fixture statistics (including xG) from API-Football for leagues that
 Understat doesn't cover: Championship, League One, 2. Bundesliga, Eredivisie, etc.
 
-Run schedule:
-  - Friday evening: collect last 7 days of fixtures → ready for Saturday newsletter
-  - Backfill: run with --backfill to fetch last 5 weeks of data
+Run schedule (GitHub Actions, 4x/week — avoids Saturday):
+  - Sunday  23:30 UTC → covers Saturday + Sunday
+  - Tuesday 23:30 UTC → covers Monday + Tuesday
+  - Thursday 23:30 UTC → covers Wednesday + Thursday
+  - Friday  23:30 UTC → covers Thursday + Friday (overlap is fine)
 
-Budget per weekly run:
-  - ~7 date queries (one per day of the past week)
-  - ~24 fixture stat calls (Championship + League One matchday)
-  - Total: ~31 calls — well within the 100/day free-tier limit
+Free tier constraint: API-Football only allows today ± 1 day (3-day window).
+Default --days 3 matches this. Backfill only works on paid tier.
+
+Budget per run:
+  - ~3 date queries + ~12 fixture stat calls ≈ 15 calls — well within 100/day limit
 
 Data is stored in data/xg/xg_history.json and grows over time.
 The Saturday pipeline reads from this file to populate xG fields.
@@ -96,6 +99,10 @@ def _api_get(endpoint: str, params: dict) -> dict:
     data = resp.json()
     errors = data.get("errors", {})
     if errors:
+        # Free tier date restriction — raise so caller can stop early
+        err_str = str(errors)
+        if "Free plans" in err_str or "do not have access" in err_str:
+            raise ValueError(f"Free tier access denied: {err_str}")
         logger.warning("API-Football error on /%s: %s", endpoint, errors)
         return {"response": []}
 
@@ -133,7 +140,7 @@ def _fetch_fixtures_by_date(date_str: str, league_ids: list[int]) -> list[dict]:
     """
     try:
         data = _api_get("fixtures", {"date": date_str})
-    except RuntimeError:
+    except (RuntimeError, ValueError):
         raise
     except Exception as e:
         logger.warning("Fixture search failed for %s: %s", date_str, e)
@@ -200,7 +207,7 @@ def _fetch_fixture_xg(fixture_id: int) -> Optional[dict]:
 # Main collection logic
 # ---------------------------------------------------------------------------
 
-def collect_xg(days: int = 7, include_big5: bool = False) -> int:
+def collect_xg(days: int = 3, include_big5: bool = False) -> int:
     """
     Collect xG data for the last N days.
     Returns the number of new fixtures collected.
@@ -215,8 +222,7 @@ def collect_xg(days: int = 7, include_big5: bool = False) -> int:
     today = datetime.now(timezone.utc).date()
 
     # Phase 1: Discover fixtures by date
-    # Free tier only allows last 2-3 days, so we try each date and skip errors gracefully.
-    # For best coverage: run this collector daily (or every 2 days).
+    # Free tier allows today ± 1 day only. We run 4x/week (Sun/Tue/Thu/Fri) to cover all days.
     all_fixtures = []
     dates_searched = 0
     for day_offset in range(days):
@@ -465,7 +471,7 @@ def get_team_xg(team_name: str, n_matches: int = 5) -> Optional[tuple[float, flo
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Collect xG data from API-Football")
-    parser.add_argument("--days", type=int, default=7, help="Number of days to look back (default: 7)")
+    parser.add_argument("--days", type=int, default=3, help="Number of days to look back (default: 3, free tier max)")
     parser.add_argument("--backfill", action="store_true", help="Backfill last 5 weeks (35 days)")
     parser.add_argument("--include-big5", action="store_true", help="Also collect Big 5 leagues (normally covered by Understat)")
 

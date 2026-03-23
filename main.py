@@ -234,7 +234,7 @@ def main() -> None:
     parser.add_argument(
         "--collect-xg",
         action="store_true",
-        help="Collect xG data from API-Football (run on Fridays)",
+        help="Collect xG data from API-Football (free tier: last 3 days)",
     )
     parser.add_argument(
         "--backfill-xg",
@@ -251,7 +251,7 @@ def main() -> None:
 
     if args.collect_xg or args.backfill_xg:
         from fetchers.xg_collector import collect_xg, _load_history
-        days = 35 if args.backfill_xg else 7
+        days = 35 if args.backfill_xg else 3
         logger.info("Collecting xG data for last %d days...", days)
         new = collect_xg(days=days)
         print(f"\nCollected {new} new fixtures.")
