@@ -54,16 +54,32 @@ _DAILY_LIMIT = 100
 
 
 # ---------------------------------------------------------------------------
-# Leagues to collect xG for (ones NOT covered by Understat)
+# Leagues and cups to collect xG for
 # ---------------------------------------------------------------------------
 
-# API-Football league IDs for leagues we want xG data for.
-# Understat covers Big 5: EPL (39), La Liga (140), Bundesliga (78), Serie A (135), Ligue 1 (61)
-# We collect for the English lower leagues + Allsvenskan that appear on Stryktipset coupons:
+# Understat covers Big 5 league matches: EPL (39), La Liga (140), Bundesliga (78),
+# Serie A (135), Ligue 1 (61). But NOT their cup games or European competitions.
+# We collect everything that can appear on a Stryktipset coupon.
+
 _TARGET_LEAGUES: dict[int, str] = {
+    # Lower leagues (no Understat coverage at all)
     40: "Championship",
     41: "League One",
     113: "Allsvenskan",
+    # Domestic cups (one per country)
+    45: "FA Cup",
+    48: "League Cup",
+    529: "DFB Pokal",
+    143: "Copa del Rey",
+    137: "Coppa Italia",
+    66: "Coupe de France",
+    100: "KNVB Beker",
+    96: "Taça de Portugal",
+    115: "Svenska Cupen",
+    # European competitions
+    2: "Champions League",
+    3: "Europa League",
+    848: "Conference League",
 }
 
 # Big 5 as fallback (in case Understat is down) — only used with --include-big5 flag
