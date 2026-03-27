@@ -419,7 +419,22 @@
       "home_xg": 4.4,
       "away_xg": 0.65,
       "collected_at": "2026-03-21T23:35:51.685946+00:00"
+    },
+    "1518728": {
+      "date": "2026-03-22",
+      "league": "League Cup",
+      "league_id": 48,
+      "country": "England",
+      "home_team": "Arsenal",
+      "away_team": "Manchester City",
+      "home_team_id": 42,
+      "away_team_id": 50,
+      "home_goals": 0,
+      "away_goals": 2,
+      "home_xg": 1.12,
+      "away_xg": 2.29,
+      "collected_at": "2026-03-23T19:46:05.001918+00:00"
     }
   },
-  "last_updated": "2026-03-27T05:27:33.242841+00:00"
+  "last_updated": "2026-03-23T19:46:05.002434+00:00"
 }

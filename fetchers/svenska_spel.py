@@ -121,7 +121,7 @@ def get_current_draw_number() -> int:
 
     draws = data.get("draws", [])
     if draws:
-        draw_number = draws[0]["draw"]["drawNumber"]
+        draw_number = draws[0]["drawNumber"]
         logger.info("Found open draw: %d", draw_number)
         return draw_number
 

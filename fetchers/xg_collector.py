@@ -65,6 +65,7 @@ _TARGET_LEAGUES: dict[int, str] = {
     # Lower leagues (no Understat coverage at all)
     40: "Championship",
     41: "League One",
+    42: "League Two",
     113: "Allsvenskan",
     # Domestic cups (one per country)
     45: "FA Cup",
