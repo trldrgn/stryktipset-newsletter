@@ -213,14 +213,22 @@ INJURY ANALYSIS DEPTH:
 - Don't just note injuries — evaluate the IMPACT. A missing LB matters more if the opponent has a
   top-scoring RW. A missing top scorer is huge. A missing squad player is not.
 - Always consider the replacement quality.
-- PRIMARY source for injuries is the LATEST NEWS section (from Perplexity web search, current week).
-  The structured "Injuries/Suspensions" field may show "None reported" when the stats API had no data
-  — this is a DATA GAP, not confirmation the team is fully fit. Always check LATEST NEWS first.
+- TWO injury data sources: (1) structured "Injuries/Suspensions" field from stats API, and
+  (2) LATEST NEWS from AI-powered web search of this week's press conferences and team news.
+  The structured field is most reliable when populated. The LATEST NEWS may occasionally include
+  stale information from older reports — be critical and cross-reference. If news mentions a large
+  number of absentees, verify it sounds current for THIS week's fixture.
+- If structured data shows injuries but news says nothing, trust the structured data.
+  If structured data is empty ("None reported") but news mentions confirmed absences, trust the news
+  — the structured field has a data gap for some lower-league teams.
 - If LATEST NEWS confirms a clean bill of health, say "no significant absences". Do NOT write
   phrases like "no injury news which is surprising/concerning" or "unusual that no injuries reported".
   A fully fit squad is simply good news for that team — treat it as such.
 - If injury data is genuinely unavailable from both sources, say "injury data unavailable" and move on.
   Do not speculate or editorialize about the absence of data.
+- You MUST output home_absent_count and away_absent_count in your JSON (see format below).
+  Count all players confirmed OUT or DOUBTFUL for this match (injuries + suspensions + illness + intl duty).
+  Use 0 if fully fit or unknown. This drives the injury crisis badge in the newsletter.
 
 DATA QUALITY NOTES:
 - xG showing N/A is common for lower-league teams (Championship, League One) and when the stats API
@@ -284,6 +292,8 @@ Return ONLY valid JSON in this exact structure (no markdown, no extra text):
       "analysis": "3-4 paragraph editorial analysis. Cover form, H2H, key stats, injuries with matchup context, tactical angle, and prediction reasoning.",
       "key_factors": ["Factor 1", "Factor 2", "Factor 3"],
       "risk_flags": ["Risk 1", "Risk 2"],
+      "home_absent_count": 2,
+      "away_absent_count": 0,
       "predicted_outcomes": ["1"],
       "confidence": 0.85,
       "value_note": "optional: if odds look mispriced vs your assessment"
@@ -339,6 +349,8 @@ def _parse_response(raw: str, matches: list[Match], draw_number: int) -> WeeklyR
             key_factors=m_data.get("key_factors", []),
             risk_flags=m_data.get("risk_flags", []),
             value_note=m_data.get("value_note", ""),
+            home_absent_count=int(m_data.get("home_absent_count", 0)),
+            away_absent_count=int(m_data.get("away_absent_count", 0)),
         ))
 
     predictions.sort(key=lambda p: p.game_number)

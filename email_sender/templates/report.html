@@ -264,7 +264,7 @@
                 {%- if match.home_stats.form_points_last5 <= 4 and match.home_stats.form_last5|length >= 3 %}<span class="fp" style="background:#2a1a0a;color:#fb923c;">&#9660;</span> {% endif -%}
                 {%- if match.home_stats.fatigue_flag %}<span class="fp" style="background:#2a0a0a;color:#f87171;">&#9889;</span> {% endif -%}
                 {%- if match.home_stats.new_manager_bounce %}<span class="fp" style="background:#1a0a2a;color:#c084fc;">&#9733;</span> {% endif -%}
-                {%- if match.home_stats.injuries|length >= 5 %}<span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> {% endif -%}
+                {%- if match.home_stats.injuries|length >= 5 or pred.home_absent_count >= 5 %}<span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> {% endif -%}
               </div>
               {%- endif %}
             </td>
@@ -277,7 +277,7 @@
                 {%- if match.away_stats.form_points_last5 <= 4 and match.away_stats.form_last5|length >= 3 %}<span class="fp" style="background:#2a1a0a;color:#fb923c;">&#9660;</span> {% endif -%}
                 {%- if match.away_stats.fatigue_flag %}<span class="fp" style="background:#2a0a0a;color:#f87171;">&#9889;</span> {% endif -%}
                 {%- if match.away_stats.new_manager_bounce %}<span class="fp" style="background:#1a0a2a;color:#c084fc;">&#9733;</span> {% endif -%}
-                {%- if match.away_stats.injuries|length >= 5 %}<span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> {% endif -%}
+                {%- if match.away_stats.injuries|length >= 5 or pred.away_absent_count >= 5 %}<span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> {% endif -%}
               </div>
               {%- endif %}
             </td>

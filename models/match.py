@@ -351,6 +351,10 @@ class MatchPrediction:
     risk_flags: list[str] = field(default_factory=list)    # reasons this could go wrong
     value_note: str = ""    # if odds look mispriced vs our model
 
+    # Absent player counts (from Claude's analysis of all sources)
+    home_absent_count: int = 0              # total confirmed out/doubtful for home team
+    away_absent_count: int = 0              # total confirmed out/doubtful for away team
+
     # For evaluation later
     actual_result: Optional[Outcome] = None
     correct: Optional[bool] = None
