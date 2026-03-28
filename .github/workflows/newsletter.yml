@@ -102,9 +102,9 @@ jobs:
       # Ping Healthchecks.io — if this ping doesn't arrive by the grace deadline,
       # Healthchecks.io emails an alert. Dead man's switch pattern.
       - name: Ping health check (success)
-        if: success() && secrets.HC_NEWSLETTER_PING_URL != ''
+        if: ${{ success() && secrets.HC_NEWSLETTER_PING_URL != '' }}
         run: curl -fsS -m 10 --retry 3 "${{ secrets.HC_NEWSLETTER_PING_URL }}"
 
       - name: Ping health check (failure)
-        if: failure() && secrets.HC_NEWSLETTER_PING_URL != ''
+        if: ${{ failure() && secrets.HC_NEWSLETTER_PING_URL != '' }}
         run: curl -fsS -m 10 --retry 3 "${{ secrets.HC_NEWSLETTER_PING_URL }}/fail"
