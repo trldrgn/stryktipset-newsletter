@@ -395,6 +395,7 @@ def enrich_with_sofascore_xg(matches: list[Match]) -> list[Match]:
                     from fetchers.xg_collector import TeamXGProfile
                     profile = TeamXGProfile(
                         team_name=team_name,
+                        matches_available=5,
                         xg_for_5g=result.xg_for_avg,
                         xg_against_5g=result.xg_against_avg,
                         goals_for_5g=result.goals_for_avg,
