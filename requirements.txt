@@ -22,6 +22,9 @@ understatapi>=0.7.0
 # Caching
 diskcache>=5.6.0
 
+# Sofascore xG (TLS fingerprint impersonation for gap leagues)
+curl_cffi>=0.7.0
+
 # Dev / testing
 pytest>=8.3.0
 pytest-mock>=3.14.0

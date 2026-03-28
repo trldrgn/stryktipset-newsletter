@@ -40,7 +40,9 @@ from email_sender.gmail import send_newsletter
 from email_sender.renderer import render_newsletter
 from fetchers.api_football import enrich_all_matches
 from fetchers.football_data import enrich_with_football_data
+from fetchers.football_data_csv import enrich_with_csv_stats
 from fetchers.perplexity import fetch_all_match_news
+from fetchers.sofascore import enrich_with_sofascore_xg
 from fetchers.understat_xg import enrich_with_understat_xg
 from fetchers.svenska_spel import fetch_current_coupon, fetch_coupon
 from utils.logger import get_logger
@@ -102,13 +104,21 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
     logger.info("[3/9] Enriching matches with API-Football stats...")
     matches = enrich_all_matches(matches, season)
 
-    # --- Step 3b: Football-Data.org enrichment (form + standings for PL/Championship/etc.) ---
-    logger.info("[3b] Enriching with Football-Data.org (form + standings)...")
+    # --- Step 3b: CSV stats enrichment (standings, form, shots — all leagues) ---
+    logger.info("[3b] Enriching with football-data.co.uk CSV stats...")
+    matches = enrich_with_csv_stats(matches)
+
+    # --- Step 3c: Football-Data.org enrichment (fallback for gaps) ---
+    logger.info("[3c] Enriching with Football-Data.org (fallback)...")
     matches = enrich_with_football_data(matches)
 
-    # --- Step 3c: Understat xG enrichment (Big 5 leagues) ---
-    logger.info("[3c] Enriching with Understat xG data...")
+    # --- Step 3d: Understat xG enrichment (Big 5 leagues) ---
+    logger.info("[3d] Enriching with Understat xG data...")
     matches = enrich_with_understat_xg(matches)
+
+    # --- Step 3e: Sofascore xG enrichment (gap leagues) ---
+    logger.info("[3e] Enriching with Sofascore xG (gap leagues)...")
+    matches = enrich_with_sofascore_xg(matches)
 
     # --- Step 4: Perplexity news ---
     logger.info("[4/9] Fetching Perplexity news context...")
