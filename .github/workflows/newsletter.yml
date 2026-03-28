@@ -100,6 +100,8 @@ jobs:
         run: |
           git config user.name "stryktipset-bot"
           git config user.email "bot@users.noreply.github.com"
+          # Pull any commits pushed while the pipeline was running
+          git pull --rebase origin main
           git add data/predictions/ data/results/ data/performance/ data/xg/ data/newsletters/
           # Only commit if there are staged changes
           if git diff --staged --quiet; then
