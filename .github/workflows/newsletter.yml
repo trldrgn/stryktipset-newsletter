@@ -1,8 +1,8 @@
 name: Stryktipset Newsletter
 
 on:
-  # Every Saturday at 06:30 UTC = 07:30 Stockholm (CET) / 08:30 (CEST in summer)
-  # Pipeline takes ~20 min; newsletter arrives by ~08:00. Coupon closes ~15:59.
+  # Every Saturday at 06:30 UTC = 07:30 Stockholm (CET, winter) / 08:30 (CEST, summer)
+  # CEST runs late March–late October. Pipeline takes ~20 min. Coupon closes ~15:59.
   schedule:
     - cron: "30 6 * * 6"
 
@@ -98,3 +98,13 @@ jobs:
             git commit -m "data: weekly predictions and evaluations $(date -u '+%Y-%m-%d')"
             git push
           fi
+
+      # Ping Healthchecks.io — if this ping doesn't arrive by the grace deadline,
+      # Healthchecks.io emails an alert. Dead man's switch pattern.
+      - name: Ping health check (success)
+        if: success() && secrets.HC_NEWSLETTER_PING_URL != ''
+        run: curl -fsS -m 10 --retry 3 "${{ secrets.HC_NEWSLETTER_PING_URL }}"
+
+      - name: Ping health check (failure)
+        if: failure() && secrets.HC_NEWSLETTER_PING_URL != ''
+        run: curl -fsS -m 10 --retry 3 "${{ secrets.HC_NEWSLETTER_PING_URL }}/fail"

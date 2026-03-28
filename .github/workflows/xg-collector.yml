@@ -83,3 +83,12 @@ jobs:
             git commit -m "data: xG collection $(date -u '+%Y-%m-%d')"
             git push
           fi
+
+      # Ping Healthchecks.io — dead man's switch for xG collection
+      - name: Ping health check (success)
+        if: success() && secrets.HC_XG_PING_URL != ''
+        run: curl -fsS -m 10 --retry 3 "${{ secrets.HC_XG_PING_URL }}"
+
+      - name: Ping health check (failure)
+        if: failure() && secrets.HC_XG_PING_URL != ''
+        run: curl -fsS -m 10 --retry 3 "${{ secrets.HC_XG_PING_URL }}/fail"
