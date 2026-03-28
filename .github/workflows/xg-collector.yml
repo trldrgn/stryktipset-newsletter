@@ -86,9 +86,13 @@ jobs:
 
       # Ping Healthchecks.io — dead man's switch for xG collection
       - name: Ping health check (success)
-        if: ${{ success() && secrets.HC_XG_PING_URL != '' }}
-        run: curl -fsS -m 10 --retry 3 "${{ secrets.HC_XG_PING_URL }}"
+        if: success()
+        run: '[ -n "$HC_PING" ] && curl -fsS -m 10 --retry 3 "$HC_PING" || true'
+        env:
+          HC_PING: ${{ secrets.HC_XG_PING_URL }}
 
       - name: Ping health check (failure)
-        if: ${{ failure() && secrets.HC_XG_PING_URL != '' }}
-        run: curl -fsS -m 10 --retry 3 "${{ secrets.HC_XG_PING_URL }}/fail"
+        if: failure()
+        run: '[ -n "$HC_PING" ] && curl -fsS -m 10 --retry 3 "$HC_PING/fail" || true'
+        env:
+          HC_PING: ${{ secrets.HC_XG_PING_URL }}
