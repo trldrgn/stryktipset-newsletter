@@ -1,0 +1,296 @@
+{
+  "draw_number": 4946,
+  "draw_date": "2026-03-28",
+  "saved_at": "2026-03-28T08:32:47.657805+00:00",
+  "executive_summary": "A coupon dominated by League One and League Two fixtures, with four games earning single-worthy confidence: Leyton Orient's brilliant away form against a shipwrecked Exeter side, Bristol Rovers at home against a toothless Accrington, Wycombe's fortress home record against League One's bottom club, and Stockport's outstanding home numbers despite a rough patch in overall form. The theme of the week is xG regression — multiple teams are significantly outperforming or underperforming expected goals, and those mismatches are priced into the odds in interesting ways. Games 6, 8, and 10 are genuinely difficult to call and warrant caution on the coupon.",
+  "value_radar": [
+    "Game 10 (Crewe vs Oldham): Oldham's X odds at 2.85 look mispriced given five consecutive wins, elite xG stats (xGF 1.83, xGA 0.81), and four wins in their last five away games. The market still prices them as an away underdog when their form and stats suggest parity or better.",
+    "Game 12 (Salford vs MK Dons): MK Dons at 2.43 is interesting — they sit 2nd, are on a strong run of away wins (four away victories in last five), and carry promotion motivation. Salford's home form has dipped (two losses in last four home games). The public is 48% MK Dons but the newspapers also lean their way. Mild value on the away win.",
+    "Game 6 (Barnet vs Cambridge): The draw at 3.10 looks appealing. Cambridge have four confirmed absentees including a forward (Kouassi) and a key defender (Bradshaw), their xG profile is excellent but they've drawn three of their last five, and Barnet are capable of the low-block at home. The market has this nearly 50/50 between the sides."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Blackpool",
+      "away_team": "Burton",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "Burton xGF massively outstrips actual goals (1.51 vs 1.0) — a regression-up warning",
+        "Blackpool hold home advantage in a vital relegation six-pointer",
+        "All 10 newspaper tips for Blackpool; Burton missing Cannon"
+      ],
+      "risk_flags": [
+        "Burton's underlying chance creation suggests they are better than their results show — regression risk",
+        "Relegation six-pointers frequently end in draws as both sides prioritise not losing"
+      ],
+      "analysis": "This is the most unambiguous newspaper consensus of the entire coupon — all ten tipsters back Blackpool — yet the underlying data tells a more complicated story. Blackpool sit 21st in League One with 42 points from 39 games and are in genuine relegation danger, but they hold the home advantage and the market agrees with a 2.28 price. Their xGA of 1.90 over five games is concerning, and they have actually conceded at that rate (1.8 per game), but equally their own actual GA is close to expected, meaning there is no defensive mirage to puncture here — they are simply a leaky side.\n\nBurton present a fascinating xG case. Their xGF over five games sits at 1.51 but actual goals scored is just 1.0 — an underperformance of 0.51 per game, the largest such gap on this coupon. Regression theory would suggest Burton are due a goal-scoring uptick, and that makes them genuinely dangerous. Their shots on target per game (3.6) and total shots (10.8) are both superior to Blackpool's, and their xGA of 1.12 suggests a defence that should hold up reasonably well.\n\nThe H2H is delightfully even — Burton won 1-0 twice in 2025, Blackpool won 4-0 in August 2024. The most recent meeting in February 2025 ended 1-1, underlining how competitive this fixture tends to be. Burton's only confirmed absence is Andy Cannon in midfield — a noticeable loss in terms of engine room quality, but not a catastrophic one, and Blackpool are fully fit.\n\nRelegation dogfights between sides this close in the table often produce tight, nervy affairs where the home side's crowd advantage tips the balance. With Blackpool needing the points even more (21st vs 18th), and all ten newspapers in agreement, the home win is the call — but with significant respect paid to Burton's xG regression signal. A narrow 1-0 or 2-1 feels most likely.",
+      "value_note": "Blackpool at 2.28 is fair but not exceptional value given Burton's underlying xG signals. The draw at 3.40 is arguably more interesting."
+    },
+    {
+      "game_number": 2,
+      "home_team": "Exeter",
+      "away_team": "Leyton Orient",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.83,
+      "key_factors": [
+        "Exeter have lost all 5 last matches with dreadful xGA (2.58) and actual GA (3.2)",
+        "Leyton Orient on a 4-win streak, dominant in H2H (6-2 in Jan 2025)",
+        "Orient seeking 5th straight League One win with strong away form"
+      ],
+      "risk_flags": [
+        "Orient's actual goals (2.0/g) outpace xGF (1.50) — slight regression risk on output",
+        "Desperate home sides can be unpredictable — Exeter may fight harder with relegation looming"
+      ],
+      "analysis": "This is one of the clearest calls on the entire coupon, and remarkably it is the away side generating the confidence. Exeter City have lost all five of their last league matches — not simply a form blip but a full-scale collapse. Their home record in that stretch reads: 0-4, 0-1, 1-5 and two draws, a picture of a side that has stopped defending and can barely score. Their xGA of 2.58 per game over five matches is catastrophic, and their actual GA of 3.2 suggests the goalkeeper is not even bailing them out. Exeter are in freefall.\n\nLeyton Orient arrive carrying a five-game win streak in all competitions and are chasing a fifth consecutive League One win. They have been efficient in front of goal — actual GF of 2.0 per game significantly outstrips their xGF of 1.50, which raises a small flag about sustainability, but even if they regress to expected levels they are still a dangerous, well-organised attacking unit. Their away form is particularly striking: four wins in their last five away games, with that solitary defeat to the only top-half side on the schedule.\n\nThe H2H seals the argument: Orient beat Exeter 2-6 in January 2025 and won at Exeter the season before too. The reverse fixture earlier this season also went Orient's way. This is a team that simply has Exeter's number. Both squads are reported fully fit, which removes any mitigating factor for the home side.\n\nAt 2.88, the away win represents genuine value. The newspapers lean 7-1-2 in Orient's favour, the public is 48% on the away side, and every analytical signal points the same direction. The only caveat is that Exeter might sneak a consolation goal — but the winner here is not in doubt.",
+      "value_note": "Orient at 2.88 is attractive given the form, H2H, and Exeter's collapse. Worth considering as a single."
+    },
+    {
+      "game_number": 3,
+      "home_team": "Reading",
+      "away_team": "Wigan",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.77,
+      "key_factors": [
+        "Reading unbeaten in 9 home games — fortress status",
+        "Wigan's away record is dire: just 2 wins in 19 away (xGA 2.13 per game)",
+        "Reading had full week's rest; Wigan played midweek (fatigue factor)"
+      ],
+      "risk_flags": [
+        "Reading overperforming xGF by 0.58 — regression in output is possible",
+        "Wigan actually conceding less than xGA suggests — possible goalkeeper heroics to come"
+      ],
+      "analysis": "Reading come into this fixture with genuine playoff ambitions — they sit 8th and are just two points off the top six — and their home fortress is the centrepiece of their season. They have reportedly not lost at home in nine games, a remarkable run that speaks to their identity as a team that knows how to control and close out matches at the Select Car Leasing Stadium. The home side are rightly favourites at 2.15, and nine of ten newspapers back them.\n\nThe one significant caveat in Reading's profile is an xG overperformance on the attacking side: their xGF of 1.22 per game contrasts with actual GF of 1.8, a gap of +0.58. That means Reading have been more clinical than their underlying chance quality suggests, and a regression to expected levels is not implausible. However, Wigan's away profile is so poor that even a regressed Reading should win — Wigan have managed just two away victories in nineteen attempts this season, with an away form sequence reading X, X, 2(2-4), 2(1-6), 2(0-2) in their last five on the road.\n\nWigan's xGA of 2.13 per game — though their actual GA is only 1.2 — suggests they have been bailed out defensively beyond what their underlying numbers warrant. That defensive fragility is likely to be exposed by a motivated Reading side who are in the playoff hunt. Wigan's own xGF of 0.93 signals they are not creating enough to win away games, and while they picked up two wins and two draws in their last five overall, that form was largely built at home or against weaker opposition.\n\nWigan played midweek (a win over Exeter, per the news), adding a fatigue element that Reading — who had a full week of rest — do not share. Wigan's Callum Wright returns from suspension, which is a positive, but it does not change the fundamental mismatch of a mid-table playoff contender hosting a relegation-threatened side with one of the worst away records in the division.",
+      "value_note": "Reading at 2.15 is fair. The fatigue edge and away form differential justify the favourite tag."
+    },
+    {
+      "game_number": 4,
+      "home_team": "Stockport",
+      "away_team": "Wimbledon",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.78,
+      "key_factors": [
+        "Stockport's home form is excellent (4W 1D in last 5 at home) despite overall DOWN-FORM flag",
+        "xGF underperformance of -0.75 per game — major regression-up signal at home",
+        "Wimbledon have no meaningful agenda; poor away form in League One"
+      ],
+      "risk_flags": [
+        "H2H has consistently produced 1-0 margins — Wimbledon capable of nicking a result",
+        "Stockport's overall form slide could reflect squad depth or morale issues not captured in stats"
+      ],
+      "analysis": "The headline story here is the disconnect between Stockport's overall form flag (DOWN-FORM) and their home record, which tells an entirely different story. Their last five overall games contain three defeats, but crucially two of those defeats came away from home. At Edgeley Park, Stockport's home form over five games reads: 1(2-1), 1(4-2), X(0-0), 1(2-1), 1(3-2) — four wins and a draw. The DOWN-FORM label applies to their away performances, not to their home fortress, and Wimbledon are travelling here.\n\nThe xG regression signal at Stockport is also significant and points upward. Their xGF of 1.95 per game contrasts with actual GF of just 1.2 — an underperformance of 0.75, the largest such gap in their favour on this coupon. That means Stockport have been creating genuinely good chances and converting far fewer than expected. Regression to the mean at home, where their confidence is highest, sets up a potentially high-scoring performance this weekend.\n\nWimbledon are mid-table at 14th with no particular agenda. Their own form is mixed — they have won and lost twice in their last five — and their away sequence is uninspiring: one win, two draws and two defeats. Crucially, their shots on target per game (5.4) and total shots (14.4) do suggest they can be dangerous in transition, and the H2H (all four games ending 1-0 either way) suggests these are tight affairs. At 5.6, Wimbledon's upset price is tempting but unsupported by the weight of evidence.\n\nNine of ten newspapers back Stockport, the public is 75% behind them, and the market price of 1.58 reflects a near-certainty. In a playoff-chasing side with this home record and the largest positive xG regression signal on the coupon, the confidence is well-founded.",
+      "value_note": "At 1.58 the margin for error is slim. The home xG regression signal is the key differentiator."
+    },
+    {
+      "game_number": 5,
+      "home_team": "Wycombe",
+      "away_team": "Port Vale",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.8,
+      "key_factors": [
+        "Wycombe's home form: 4 wins in 5, scoring 3+ in multiple recent home fixtures",
+        "Port Vale bottom of League One with DOWN-FORM and xGA of 2.11 per game",
+        "Wycombe xGF 2.08 vs GF 1.6 — regression-up signal due at home"
+      ],
+      "risk_flags": [
+        "Wycombe missing two players (Allen suspended, Mullins international duty)",
+        "Port Vale have stolen results away from home occasionally — xGA fragility"
+      ],
+      "analysis": "Wycombe's home record this season has been one of the most commanding in League One. Their last five at Adams Park reads 2(1-2), 1(3-0), 1(3-1), 1(4-0), 1(2-0) — four home wins from five, conceding only two goals in those four victories and scoring at will. That 0-2 loss is the lone blemish on an otherwise dominant home run, and context matters: it comes against a better opponent in a sequence surrounded by heavy wins. This is an established home fortress.\n\nPort Vale are propping up the League One table at 24th and are in clear Down Form — a side that has won just once in five, with an xGA of 2.11 suggesting the defence is structurally weak regardless of scorelines. Their actual GA of 1.2 hints at goalkeepers doing more than expected, but that is a fragile foundation when visiting a side as prolific at home as Wycombe. Port Vale away have won just once in their last five away matches, and when they do lose away from home, they concede freely.\n\nWycombe's own xGF of 2.08 per game outstrips their actual GF of 1.6 — a regression upward is overdue, and playing at home against a porous Port Vale defence seems like the natural moment for it to arrive. The absence of Taylor Allen (suspended) in Wycombe's defence and Jamie Mullins (international duty) in midfield adds two absences, but Port Vale are missing Ben Heneghan at the back and the important George Byers in midfield — losses that hurt a struggling side more proportionally. Cauley Woodrow is reportedly in line to play for Wycombe, adding attacking quality.\n\nThe momentum, the venue, the league position gap and the xG regression signal all point to Wycombe. Nine of ten newspapers agree. At 1.60 the price is short, but the confidence level justifies treating this as a single.",
+      "value_note": "Short price at 1.60 but the evidence base is strong. Worth including as part of an accumulator rather than a standalone single given the price compression."
+    },
+    {
+      "game_number": 6,
+      "home_team": "Barnet",
+      "away_team": "Cambridge",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.57,
+      "key_factors": [
+        "Cambridge missing 4 players including forward Kouassi and key defender Bradshaw",
+        "Cambridge's xGA of 0.73 — elite defensive structure — but key personnel absent",
+        "Draw at 3.10 represents value given injury disruption and Cambridge's draw-heavy recent form (3 draws in last 5)"
+      ],
+      "risk_flags": [
+        "Cambridge's quality gap over Barnet is significant even with injuries",
+        "Barnet's home xGA (1.86) suggests they can be got at — Cambridge may still create enough"
+      ],
+      "analysis": "Cambridge United arrive at the Hive chasing promotion from League Two — they sit 3rd with 72 points from 38 games — but do so carrying the most significant injury crisis on this week's coupon. Zak Bradshaw, George Hoddle and Kylian Kouassi are confirmed out (defender, midfielder, forward respectively), while Michael Morrison — an experienced centre-back and leadership figure — is doubtful. Losing a forward and two midfield-defensive players simultaneously represents a genuine structural problem for a side that relies on defensive solidity (xGA 0.73) as its identity.\n\nBarnet are mid-table and have two doubts of their own (Kane Smith and Emmanuel Osadebe), but a 12th-place side without major stakes has a degree of freedom that an injury-hit Cambridge side does not. Barnet's home form has been inconsistent — 2, 1, 2, X, X in their last five at home — suggesting they are capable of taking points but equally capable of dropping them. Their xGA of 1.86 is a concern, but they have actually conceded only 1.2 per game, implying some level of defensive competence not fully captured in expected goals.\n\nCambridge's xGF of 1.85 and xGA of 0.73 are both excellent and speak to a well-coached side with genuine quality, but with Kouassi up front missing and Hoddle in midfield absent, their chance creation architecture may be disrupted. The H2H is thin (Cambridge won 3-2 at Barnet in October 2025, drew 0-0 at home in November 2025), giving little clear steer. The draw price at 3.10 looks genuinely interesting here — promotion-chasing sides carrying injuries against motivated mid-table opponents in tight stadiums tend to produce drawn results more often than the market implies.",
+      "value_note": "The draw at 3.10 is the value pick here given Cambridge's injury disruption. Backing the outright Cambridge win at 2.70 with four absentees feels like paying for quality you may not get on the day."
+    },
+    {
+      "game_number": 7,
+      "home_team": "Bristol Rovers",
+      "away_team": "Accrington",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.83,
+      "key_factors": [
+        "Bristol Rovers UP-FORM: 4 wins in 5, including 4 from last 5 at home",
+        "Accrington's xGF of just 0.58 per game — the lowest on the coupon. Cannot score",
+        "All signals align: form, xG, market, newspaper tips (9/10)"
+      ],
+      "risk_flags": [
+        "H2H: Accrington beat Rovers 3-1 in November 2025 — historical capacity for upsets",
+        "Rovers' xGF (1.16) is modest — a tight match is plausible if Accrington defend deep"
+      ],
+      "analysis": "Bristol Rovers are in the form of their season. Four wins from five overall, with three home wins in their last four at the Memorial Stadium — it is precisely the kind of momentum that carries sides into play-off contention in the lower half of League Two. Their home sequence reads 1(1-0), 1(2-1), 1(3-1), 2(2-3), 1(2-0): four victories and a solitary home defeat, making them one of the more reliable home sides at this level. Their xG profile is honest — xGF 1.16, actual GF 1.2, a near-perfect alignment suggesting the performance level is sustainable, not a statistical mirage.\n\nAccrington are the worst-performing team on this coupon by most measures. Their xGF of just 0.58 per game is the lowest in this week's 13 games by some distance, and their actual GF of 0.4 per game is a figure that speaks for itself — they simply cannot score. Their xGA of 1.66 confirms a porous defence, and their overall form sequence of 2, 2, X, X, 2 means they have not won in five league games. The DOWN-FORM flag is well deserved. Nine of ten newspapers back Bristol Rovers — an unusually unified consensus — and the public is 67% behind the home side.\n\nThe H2H is the one note of caution: Accrington beat Bristol Rovers 3-1 in November 2025, and they have historically enjoyed success in this fixture, including a 6-1 thrashing in 2021. But context changes — that was a different Accrington and a different Rovers. This season's data strongly favours the home side. Both squads are fully fit, removing any mitigating factors. The 1.92 home win price reflects a clear market favourite, and the underlying evidence fully supports that position. A clean, controlled Bristol Rovers home win is the strong probability.",
+      "value_note": "Bristol Rovers at 1.92 offers solid value as a single — four independent signals align without contradiction."
+    },
+    {
+      "game_number": 8,
+      "home_team": "Colchester",
+      "away_team": "Walsall",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.55,
+      "key_factors": [
+        "Walsall's xGA of 0.63 — elite defensive expected goals profile",
+        "Colchester's H2H advantage at home (3 wins from 5 home meetings)",
+        "Colchester DOWN-FORM; Ben Perry confirmed absent"
+      ],
+      "risk_flags": [
+        "Colchester's overall form is poor — only one win in five",
+        "Walsall's away form is inconsistent despite strong xG numbers"
+      ],
+      "analysis": "This is one of the genuinely difficult calls on the coupon, and it is worth explaining why before landing on a conclusion. On paper, Walsall's underlying numbers are quietly excellent: their xGA of just 0.63 per game is the second-best defensive expected-goals number among all 26 teams on this week's coupon, and they have turned that into respectable actual results. Their overall sequence of 1, X, 1, 2, 2 is mixed but their xG profile suggests a team with real defensive substance.\n\nColchester, however, have the H2H. They have won three of the last five home meetings against Walsall, including a 2-1 victory in February 2025. Their own xGF of 1.50 suggests they create chances, and their actual GF of 1.2 is a mild underperformance that points to potential upside. The difficulty is Colchester's DOWN-FORM flag and a very poor recent sequence (2, 2, X, 1, 2 — just one win in five) combined with a home form that has produced more draws and losses than wins in the last five at the JobServe Community Stadium.\n\nWalsall's away form is genuinely mixed — one big win (3-0), one decent result (2-1), but also a 0-1 defeat and a 0-2 loss in recent away trips. Ben Perry is confirmed out for Colchester (a structural absence depending on his position). The newspaper split of 6 Colchester to 3 Walsall reflects genuine analytical uncertainty. The draw at 3.05 is tempting given the tight H2H history (three of five ended level or very close), and neither side's form inspires conviction either way. This sits firmly in doubling territory.",
+      "value_note": "The draw at 3.05 carries genuine value given the tight H2H history and both sides' mixed form. Neither looks convincingly capable of winning this."
+    },
+    {
+      "game_number": 9,
+      "home_team": "Crawley Town",
+      "away_team": "Gillingham",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.61,
+      "key_factors": [
+        "Gillingham's away form: 4 defeats in 5 away, scoring just once in last 4 away games",
+        "Crawley's xGF regression signal: creating chances but converting at only 0.6 per game (xGF 1.32)",
+        "Relegation pressure motivates Crawley more than a mid-table Gillingham side"
+      ],
+      "risk_flags": [
+        "Crawley have not won at home in their last 5 home games",
+        "Upcoming fixture congestion may prompt Crawley rotation"
+      ],
+      "analysis": "Both sides arrive in poor form, making this one of the harder matches to read analytically. Crawley are 21st in League Two and DOWN-FORM: their home sequence reads X, X, X, 2, 2 in their last five at the Broadfield Stadium — not a single win in five home games, and an actual goal output of just 0.6 per game. Yet their xGF of 1.32 suggests they are creating chances and converting at a woeful rate — an underperformance of 0.72 per game that represents the second-largest positive regression signal in their favour on the coupon. If they finally start finishing, this is the week.\n\nGillingham have been in catastrophic form away from home — 0-5, 0-1, 0-1, 0-1 in their last four away games, conceding while failing to score. Their xGF of 0.84 confirms they cannot generate genuine threats on the road, and their xGA of 1.69 means the defence is also being carved open. The away form reads: 2(0-5), 1(1-0), 2(0-1), 2(0-1), 2(0-1) — four defeats in five away, scoring once. Even against a struggling home side, Gillingham's away record makes them deeply unreliable.\n\nSeven of ten newspapers back Crawley despite their home struggles, reflecting a belief that Gillingham's away form is simply too poor to bet against. The xG regression signal for Crawley's attack aligns with that view. Crawley's upcoming fixture congestion (Newport in six days, Grimsby in nine) may prompt some rotation, but for a relegation-threatened side this game is crucial. The home win is the call, though the draw remains a genuine possibility given Crawley's recent inability to win at home.",
+      "value_note": "Crawley at 2.35 is reasonable given Gillingham's dreadful away form, but the home form concern keeps this from being higher confidence."
+    },
+    {
+      "game_number": 10,
+      "home_team": "Crewe",
+      "away_team": "Oldham",
+      "predicted_outcomes": [
+        "2",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "Oldham UP-FORM: 5 consecutive wins, xGF 1.83, xGA 0.81 — best form on the coupon",
+        "Oldham away: 4 wins in last 5 away games with dominant scorelines",
+        "Crewe overperforming xGF (+0.41) — regression risk for the home side"
+      ],
+      "risk_flags": [
+        "Crewe hold home advantage in a fixture where table positions are near-identical",
+        "Oldham's actual goals (2.4/g, GA 0.2/g) likely to regress toward xG levels — still excellent but not this extreme"
+      ],
+      "analysis": "Oldham Athletic are the form team of this entire coupon. Five consecutive wins in all competitions, xGF of 1.83, xGA of 0.81 — numbers that place them among the best-performing sides in League Two over the past month. Their actual GF of 2.4 per game and GA of just 0.2 per game in their last five is a truly extraordinary run, and while some regression from those actual numbers is inevitable, the underlying xG suggests the fundamentals are genuinely excellent, not just a hot streak of finishing.\n\nOldham's away form reinforces the point: 1(3-0), 1(3-1), X(0-0), 1(3-0), 2(0-3) — four wins in five away, only derailed by a heavy defeat to what appears to be a notably stronger side. They are 9th in League Two with 61 points, just one point above Crewe in 10th. This is an evenly matched fixture by league position, but the form divergence is significant. Crewe have won two of their last five at home, but also suffered a 0-3 thrashing away and a 0-1 home defeat to an apparently inferior side recently.\n\nThe market prices Oldham as underdogs at 2.85, which is where the value lies. Newspapers are split 6-4 in Crewe's favour, suggesting analytical uncertainty, but Crewe's xGF of 1.19 against their actual GF of 1.6 (overperformance of +0.41) is a mild regression warning — they may be finishing above their expected level, and a fully focused Oldham side could expose them. With both squads reported fully fit, this comes down to form and quality, and on both counts Oldham hold the edge.",
+      "value_note": "Oldham at 2.85 looks mispriced given their form metrics. The market still treats them as road underdogs when their underlying data says otherwise. Best value pick on the coupon."
+    },
+    {
+      "game_number": 11,
+      "home_team": "Newport",
+      "away_team": "Shrewsbury",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Newport's relegation desperation (22nd) provides strong home motivation",
+        "Shrewsbury DOWN-FORM with xGF of just 0.72 — minimal attacking threat",
+        "9 of 10 newspapers back Newport; near-even odds represent mild value on the home side"
+      ],
+      "risk_flags": [
+        "Newport's xGA (1.73) suggests defensive vulnerability — Shrewsbury may sneak a goal",
+        "Shrewsbury's actual goals scored (1.2/g) outpace xGF (0.72) — danger of clinical counter-attack"
+      ],
+      "analysis": "Newport County are in genuine relegation trouble at 22nd in League Two, and that desperation is the first analytical hook for this match. Relegation-threatened sides at home often show remarkable defensive determination, making draws a frequent outcome — but Newport have actually shown the capacity to win at home recently, with a 3-1 home victory in their recent sequence and the crowd behind them.\n\nShrewsbury arrive in DOWN-FORM, having won just once in five matches and lost three, including a damaging 0-4 defeat. Their xGF of just 0.72 per game is alarmingly low — only Accrington (0.58) creates fewer genuine chances on this week's coupon. Their actual GF of 1.2 is better than that, which means Shrewsbury have been converting above their expected rate — a fragile foundation. Their xGA of 0.95 suggests a defensively solid side, but actual GA of 1.8 tells a different story: they have been conceding far more than their expected goals against would predict, which is a sign of systemic defensive errors rather than bad luck.\n\nNine of ten newspapers back Newport in a near-unanimous consensus that feels justified given Shrewsbury's form and goal-scoring issues. The odds are nearly even (Newport 2.63 vs Shrewsbury 2.55), which reflects uncertainty about Newport's quality, but the motivation asymmetry — a desperate relegation-fighter at home versus a team with limited upside — tips the balance. Newport's home crowd and six-pointer mentality make this the preferred call, though both squads' injury-free status removes any easy mitigating factor for either side.",
+      "value_note": "Newport at 2.63 offers slight value given the weight of newspaper opinion and Shrewsbury's attacking weakness."
+    },
+    {
+      "game_number": 12,
+      "home_team": "Salford",
+      "away_team": "Milton Keynes Dons",
+      "predicted_outcomes": [
+        "2",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.67,
+      "key_factors": [
+        "MK Dons 2nd in League Two, UP-FORM, outstanding away record (4W in last 5 away)",
+        "Salford's home form has dipped — consecutive home defeats before this fixture",
+        "MK Dons' promotion motivation vs Salford's comfortable 6th-place position"
+      ],
+      "risk_flags": [
+        "Salford are also UP-FORM overall and have home advantage — not to be dismissed",
+        "Injury data unavailable for either side from this week's news search"
+      ],
+      "analysis": "MK Dons occupy 2nd place in League Two with 88 points — a remarkable haul that places them firmly in automatic promotion contention — and they are UP-FORM to boot. Their away form is the most impressive visiting record on this coupon: 1(2-1), 1(5-1), X(1-1), 1(2-0), 1(3-2) — four wins in five away, scoring freely and conceding acceptably. Their xGF of 1.89 and xGA of 1.21 are both strong metrics, and unlike some teams on this coupon whose actual output wildly diverges from expected, MK Dons are performing almost exactly to their xG profile, suggesting a consistent, well-drilled team rather than one riding fortune.\n\nSalford are also UP-FORM and sit 6th, but their home form has quietly deteriorated. Their recent home sequence reads 1(3-1), 1(1-0), 1(2-0), 2(1-2), 2(1-3) — three successive home wins were followed by back-to-back home defeats. That detail matters. Salford's xGF of 1.11 is modest, and while they have slightly outperformed it in actual goals (1.4), their defensive record at home includes two recent games where they conceded two and three. MK Dons, scoring at will away, could expose that.\n\nThe newspaper consensus of 5 for MK Dons against 2 for Salford is striking given the home advantage factor, and the public split of 48% to 29% in MK Dons' favour is equally telling. The H2H is balanced — one win each in 2025, with MK Dons winning 2-0 in November 2025. The promotion-chasing MK Dons have everything to play for and the away form to back it up. At 2.43, the away win carries value.",
+      "value_note": "MK Dons at 2.43 looks underpriced for a 2nd-placed side in outstanding away form visiting a team that has lost its last two at home."
+    },
+    {
+      "game_number": 13,
+      "home_team": "Swindon",
+      "away_team": "Fleetwood",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.72,
+      "key_factors": [
+        "H2H dominance: Swindon 4-0 and 3-1 in last two meetings",
+        "Swindon 5th, promotion-chasing with strong motivation",
+        "Fleetwood's xGF (1.70) vs actual GF (0.4) — regression risk cuts both ways"
+      ],
+      "risk_flags": [
+        "Fleetwood's xGF regression could finally arrive here — they are badly overdue goals",
+        "Possible Fleetwood injury crisis reported by Ian Holloway (unconfirmed for this week)"
+      ],
+      "analysis": "Swindon Town sit 5th in League Two and are firmly in the promotion race, providing exactly the kind of motivation that drives teams to strong home performances in the run-in. Their xGF of 1.51 and actual GF of 1.4 are near-perfectly aligned, suggesting a consistent attacking output with no regression concerns either way. Their home record has been somewhat volatile — two recent home defeats interrupt an otherwise productive run — but they bounce back with conviction, winning 2-0 and 3-0 in the preceding home games.\n\nFleetwood present one of the most intriguing xG anomalies on the coupon. Their xGF of 1.70 per game is genuinely impressive — suggesting they are creating quality chances — but their actual GF of just 0.4 per game represents a massive underperformance of 1.30 goals per game. That is the largest such gap on this entire coupon. In theory, massive regression upward is overdue, and that could make Fleetwood dangerous. However, one important counterpoint: their xGA of 0.84 and actual GA of 0.4 both suggest a defensively resilient side, and the recent results (1-0 win, 0-1 loss, 0-0, 2-2, 1-1) show a team grinding results without conceding freely.\n\nThe H2H strongly favours Swindon: 4-0 away in April 2025, 3-1 at home in December 2024, 2-0 away in 2021 — this is a fixture where Swindon have routinely dominated, with only a 1-0 Fleetwood win in 2020 interrupting the pattern. Nine of ten newspapers back Swindon, and at 1.98 they are fairly priced as modest favourites. There is a scenario where Fleetwood's xG regression finally arrives in this game, but Swindon's promotion ambition and H2H dominance make the home win the clear preferred outcome. The news references a potential Fleetwood injury crisis under Ian Holloway, though specific details are unconfirmed for this week — treat as a possible additional tailwind for Swindon.",
+      "value_note": "Swindon at 1.98 is fair. The H2H is the strongest factor here and it has been consistently one-sided."
+    }
+  ]
+}
