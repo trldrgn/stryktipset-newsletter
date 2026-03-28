@@ -403,7 +403,9 @@ def analyse_matches(
         api_params["temperature"] = 1
         logger.info("Extended thinking enabled (budget: %d tokens)", CLAUDE_THINKING_BUDGET)
 
-    message = _client.messages.create(**api_params)
+    # Use streaming to avoid timeout on long-running requests (extended thinking)
+    with _client.messages.stream(**api_params) as stream:
+        message = stream.get_final_message()
 
     # With extended thinking, text block may not be first (thinking blocks precede it)
     raw_response = ""
