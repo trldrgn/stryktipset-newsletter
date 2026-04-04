@@ -54,6 +54,12 @@ _COMPETITION_MAP: dict[tuple[str, str], str] = {
     ("Primeira Liga", "Portugal"): "PPL",
 }
 
+# Cup teams play in a league — map cup competitions to the league(s) to look up
+# standings/form for. We try each league in order until the team is found.
+_CUP_FALLBACK_LEAGUES: dict[tuple[str, str], list[str]] = {
+    ("FA Cup", "England"): ["PL", "ELC", "EL1", "EL2"],
+}
+
 
 # ---------------------------------------------------------------------------
 # HTTP layer
@@ -268,21 +274,20 @@ def enrich_with_football_data(matches: list[Match]) -> list[Match]:
 
     for match in matches:
         comp_code = _COMPETITION_MAP.get((match.league, match.country))
-        if not comp_code:
+        # For cup competitions, try fallback league lookups per team
+        cup_fallbacks = _CUP_FALLBACK_LEAGUES.get((match.league, match.country))
+        if not comp_code and not cup_fallbacks:
             logger.debug("No Football-Data.org mapping for %s (%s)", match.league, match.country)
             continue
 
-        if comp_code not in standings_cache:
+        # For league matches, fetch standings once
+        if comp_code and comp_code not in standings_cache:
             try:
                 standings_cache[comp_code] = _fetch_standings(comp_code)
                 logger.info("Football-Data standings fetched for %s", comp_code)
             except Exception as e:
                 logger.warning("Football-Data standings failed for %s: %s", comp_code, e)
                 standings_cache[comp_code] = {}
-
-        standings = standings_cache[comp_code]
-        if not standings:
-            continue
 
         for team_name, stats_attr in [(match.home_team, "home_stats"), (match.away_team, "away_stats")]:
             stats: Optional[TeamStats] = getattr(match, stats_attr)
@@ -294,7 +299,26 @@ def enrich_with_football_data(matches: list[Match]) -> list[Match]:
             if stats.league_position is not None and stats.form_last5:
                 continue
 
-            row = _resolve_team(team_name, standings)
+            # For cup matches, search through fallback leagues until team is found
+            if cup_fallbacks:
+                row = None
+                for fallback_code in cup_fallbacks:
+                    if fallback_code not in standings_cache:
+                        try:
+                            standings_cache[fallback_code] = _fetch_standings(fallback_code)
+                            logger.info("Football-Data standings fetched for %s", fallback_code)
+                        except Exception as e:
+                            logger.warning("Football-Data standings failed for %s: %s", fallback_code, e)
+                            standings_cache[fallback_code] = {}
+                    standings = standings_cache[fallback_code]
+                    if standings:
+                        row = _resolve_team(team_name, standings)
+                        if row:
+                            break
+            else:
+                standings = standings_cache.get(comp_code, {})
+                row = _resolve_team(team_name, standings) if standings else None
+
             if row is None:
                 continue
 

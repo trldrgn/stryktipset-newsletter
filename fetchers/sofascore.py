@@ -50,6 +50,8 @@ _TOURNAMENT_MAP: dict[tuple[str, str], int] = {
     ("Allsvenskan", "Sweden"): 40,
     ("Eredivisie", "Netherlands"): 37,
     ("Primeira Liga", "Portugal"): 238,
+    ("Pro League", "Belgium"): 38,
+    ("Premiership", "Scotland"): 36,
 }
 
 # Hardcoded season IDs (updated each season; fallback fetches dynamically)
@@ -60,6 +62,8 @@ _SEASON_MAP: dict[int, int] = {
     40: 87925,   # Allsvenskan 2026
     37: 77012,   # Eredivisie 2025-26
     238: 77806,  # Primeira Liga 2025-26
+    38: 77040,   # Pro League (Belgium) 2025-26
+    36: 77128,   # Premiership (Scotland) 2025-26
 }
 
 

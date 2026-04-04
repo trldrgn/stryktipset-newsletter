@@ -36,6 +36,54 @@ _SESSION.headers.update({
 
 
 # ---------------------------------------------------------------------------
+# Swedish → English country name translation
+# Svenska Spel returns country names in Swedish; all downstream enrichment
+# maps (Football-Data.org, Understat, API-Football) expect English names.
+# ---------------------------------------------------------------------------
+
+_COUNTRY_SV_TO_EN: dict[str, str] = {
+    "England": "England",
+    "Spanien": "Spain",
+    "Italien": "Italy",
+    "Tyskland": "Germany",
+    "Frankrike": "France",
+    "Nederländerna": "Netherlands",
+    "Belgien": "Belgium",
+    "Skottland": "Scotland",
+    "Portugal": "Portugal",
+    "Sverige": "Sweden",
+    "Norge": "Norway",
+    "Danmark": "Denmark",
+    "Österrike": "Austria",
+    "Schweiz": "Switzerland",
+    "Turkiet": "Turkey",
+    "Grekland": "Greece",
+    "Polen": "Poland",
+    "Tjeckien": "Czech Republic",
+    "Kroatien": "Croatia",
+    "Serbien": "Serbia",
+    "Rumänien": "Romania",
+    "Ungern": "Hungary",
+    "Finland": "Finland",
+    "Irland": "Ireland",
+    "Nordirland": "Northern Ireland",
+    "Wales": "Wales",
+    "Cypern": "Cyprus",
+    "Bulgarien": "Bulgaria",
+    "Ukraina": "Ukraine",
+    "Ryssland": "Russia",
+}
+
+
+def _translate_country(sv_name: str) -> str:
+    """Translate a Swedish country name to English. Pass through if unknown."""
+    en = _COUNTRY_SV_TO_EN.get(sv_name)
+    if en is None and sv_name:
+        logger.warning("Unknown Swedish country name '%s' — passing through untranslated", sv_name)
+    return en or sv_name
+
+
+# ---------------------------------------------------------------------------
 # Internal helpers
 # ---------------------------------------------------------------------------
 
@@ -95,7 +143,7 @@ def _parse_event(event: dict, draw_number: int) -> Match:
         home_team=home.get("name", event.get("eventDescription", "").split(" - ")[0]),
         away_team=away.get("name", event.get("eventDescription", "").split(" - ")[-1]),
         league=league.get("name", ""),
-        country=league.get("country", {}).get("name", ""),
+        country=_translate_country(league.get("country", {}).get("name", "")),
         kickoff=_parse_kickoff(match_data.get("matchStart")),
         market=_parse_market(event),
     )

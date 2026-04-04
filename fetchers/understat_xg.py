@@ -39,6 +39,11 @@ _LEAGUE_MAP: dict[tuple[str, str], str] = {
     ("Ligue 1", "France"): "Ligue_1",
 }
 
+# Cup teams play in a league — try each until the team is found
+_CUP_FALLBACK_LEAGUES: dict[tuple[str, str], list[str]] = {
+    ("FA Cup", "England"): ["EPL"],
+}
+
 # Polite rate limiting — 1.5s between requests (web scraping, not an API)
 _last_call_at: float = 0.0
 _MIN_CALL_INTERVAL = 1.5
@@ -215,19 +220,28 @@ def enrich_with_understat_xg(matches: list[Match]) -> list[Match]:
 
     for match in matches:
         league_code = _LEAGUE_MAP.get((match.league, match.country))
-        if not league_code:
+        cup_fallbacks = _CUP_FALLBACK_LEAGUES.get((match.league, match.country))
+
+        # Collect candidate league codes to try
+        codes_to_try = [league_code] if league_code else (cup_fallbacks or [])
+        if not codes_to_try:
             continue
 
-        if league_code not in league_teams_cache:
-            try:
-                league_teams_cache[league_code] = _fetch_league_teams(league_code, season)
-                logger.info("Understat teams fetched for %s (%d teams)",
-                            league_code, len(league_teams_cache[league_code]))
-            except Exception as e:
-                logger.warning("Understat team fetch failed for %s: %s", league_code, e)
-                league_teams_cache[league_code] = {}
+        # Fetch team lists for all candidate leagues
+        for code in codes_to_try:
+            if code not in league_teams_cache:
+                try:
+                    league_teams_cache[code] = _fetch_league_teams(code, season)
+                    logger.info("Understat teams fetched for %s (%d teams)",
+                                code, len(league_teams_cache[code]))
+                except Exception as e:
+                    logger.warning("Understat team fetch failed for %s: %s", code, e)
+                    league_teams_cache[code] = {}
 
-        league_teams = league_teams_cache[league_code]
+        # Merge all candidate league teams (for cup matches, a team could be in any league)
+        league_teams: dict = {}
+        for code in codes_to_try:
+            league_teams.update(league_teams_cache.get(code, {}))
         if not league_teams:
             continue
 
