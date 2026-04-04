@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stryktipset v.14 · #4947</title>
+<style>
+  /* Gmail mobile strips this block. Critical bg/color styles are inline.
+     Desktop Gmail, Apple Mail, Outlook get these enhancement rules. */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { -webkit-text-size-adjust:100%; }
+
+  /* Layout */
+  .ew { max-width:660px; width:100%; margin:0 auto; }
+  .hdr { padding:36px 40px 28px; text-align:center; border-bottom:2px solid #e8b84b; }
+  .sl td:first-child, .sl td:last-child { height:1px; font-size:0; line-height:0; }
+  .sl td:nth-child(2) { padding:0 12px; white-space:nowrap; font-size:9px; letter-spacing:3.5px; text-transform:uppercase; font-weight:700; }
+
+  /* Card */
+  .cw { border:1px solid #1a2540; overflow:hidden; border-radius:12px; }
+  .cw.ts { border-top:3px solid #4ade80; }
+  .cw.td { border-top:3px solid #60a5fa; }
+  .cw.tf { border-top:3px solid #fb923c; }
+  .ch { border-bottom:1px solid #1a2540; }
+  .gb { width:24px; height:24px; text-align:center; line-height:24px; font-size:11px; font-weight:700; border-radius:5px; }
+  .tt { font-size:18px; font-weight:800; margin-top:6px; letter-spacing:-0.3px; }
+  .fp { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; margin-top:4px; }
+  .sp { font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; display:inline-block; border-radius:20px; }
+  .pb { width:32px; height:32px; text-align:center; line-height:32px; font-size:14px; font-weight:900; border-radius:7px; }
+  .cb { margin-top:6px; height:3px; overflow:hidden; border-radius:2px; }
+  .cf { height:100%; border-radius:2px; }
+
+  /* Stats */
+  .ss { border-bottom:1px solid #1a2540; }
+  .ss td { padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540; }
+  .ss td:last-child { border-right:none; }
+  .sl2 { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; display:block; margin-bottom:3px; }
+  .sv { font-weight:600; font-size:12px; display:block; }
+  .ssub { font-size:9px; display:block; margin-top:2px; }
+
+  /* Injuries */
+  .is { padding:8px 16px; border-bottom:1px solid #1a2540; font-size:12px; }
+  .ii { padding:3px 0; }
+
+  /* Odds */
+  .or { border-bottom:1px solid #1a2540; }
+  .ob { border:1px solid #1a2540; padding:4px 10px; font-size:13px; font-weight:700; text-align:center; min-width:44px; border-radius:5px; }
+  .ol { font-size:10px; font-weight:700; padding-right:4px; }
+  .ml { font-size:9px; letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:3px; font-weight:700; }
+  .db td { height:4px; font-size:0; line-height:0; }
+
+  /* Analysis */
+  .at { padding:16px 20px; font-size:14px; line-height:1.7; border-bottom:1px solid #1a2540; }
+  .at p { margin:0; }
+
+
+  /* Footer columns */
+  .fc td { padding:12px 16px; vertical-align:top; }
+  .fc td:first-child { border-right:1px solid #1a2540; width:50%; }
+  .ct { font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; }
+  .fi, .ri { font-size:12px; padding:2px 0; line-height:1.5; }
+
+  /* Coupon */
+  .co { border:1px solid #1a2540; overflow:hidden; border-radius:12px; }
+  .ctb { border-collapse:collapse; font-size:13px; }
+  .ctb th { padding:8px 10px; text-align:left; font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:700; border-bottom:1px solid #1a2540; }
+  .ctb td { padding:10px 10px; border-bottom:1px solid #0d1526; vertical-align:middle; }
+  .rp { font-size:16px; font-weight:900; letter-spacing:3px; }
+  .rt { font-size:8px; font-weight:800; letter-spacing:1px; text-transform:uppercase; }
+
+  /* Score ring */
+  .sr { width:58px; height:58px; border:3px solid #e8b84b; text-align:center; padding-top:12px; border-radius:50%; }
+  .chip { border:1px solid #1a2540; padding:5px 12px; font-size:12px; border-radius:6px; }
+
+  /* Lessons */
+  .lw { margin:0 20px 16px; border-left:3px solid #e8b84b; padding:10px 14px; font-size:13px; border-radius:0 6px 6px 0; }
+
+  /* Misc */
+  .ld { display:inline-block; width:8px; height:8px; vertical-align:middle; border-radius:2px; }
+
+  @media screen and (max-width:480px) {
+    .ew { width:100% !important; }
+    .sp2 { padding-left:12px !important; padding-right:12px !important; }
+    .tt { font-size:15px !important; }
+  }
+</style>
+</head>
+<body style="background:#080d18;color:#e2e8f4;font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;margin:0;padding:0;">
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#080d18;">
+<tr><td align="center">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="660" class="ew" style="max-width:660px;width:100%;background:#080d18;">
+
+
+
+<tr><td class="hdr sp2" style="background:#111c35;border-bottom:2px solid #e8b84b;padding:36px 40px 28px;text-align:center;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 14px;">
+    <tr>
+      <td style="vertical-align:middle;padding-right:14px;">
+        <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/logo-stryktipset.svg" width="52" height="52" alt="Stryktipset" style="vertical-align:middle;">
+      </td>
+      <td style="vertical-align:middle;text-align:left;">
+        <div style="font-size:22px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#e8b84b;line-height:1;">Stryktipset</div>
+        <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#5a7090;margin-top:4px;">Weekly Analysis</div>
+      </td>
+    </tr>
+  </table>
+  <div style="font-size:13px;color:#4a6080;">Week <strong style="color:#8ba4c4;">14</strong> · Draw <strong style="color:#8ba4c4;">#4947</strong> · 04 Apr 2026, 08:58 CEST · 768 SEK system</div>
+</td></tr>
+
+
+
+
+
+
+
+
+<tr><td>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
+    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">This Week's Coupon</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
+  </table>
+  <div style="padding:8px 40px 20px;font-size:15px;color:#8ba4c4;font-style:italic;line-height:1.7;border-bottom:1px solid #1a2540;" class="sp2">This week&#39;s coupon is anchored by two near-certainties — Chelsea vs Port Vale and Arsenal vs Southampton — which provide solid singles. Beyond those, the card is shaped by a cluster of fascinating mid-tier decisions: Atlético Madrid are severely depleted for the visit of a fresh Barcelona side, Real Madrid travel to Mallorca with their own notable absentees, and Fiorentina face fatigue questions despite being clear class above relegated-threatened Verona. With xG unavailable across all 13 games due to API limitations, analysis leans heavily on structural data, market signals, injury depth, and contextual reasoning. Outside the top two, few games exceed 0.78 confidence, making this a coupon that rewards careful doubling over aggressive singling.</div>
+</td></tr>
+
+
+
+<tr><td style="padding:12px 40px 16px;border-bottom:1px solid #1a2540;" class="sp2">
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e8b84b;font-weight:700;margin-bottom:8px;">Value Picks</div>
+  
+  <div style="font-size:13px;color:#5a7090;padding:3px 0;"><span style="color:#e8b84b;">&#9670;</span> Game 3 (Barcelona at Atlético): At 2.2, Barcelona may be underpriced. Atlético are missing 7 players including two key central midfielders on suspension, their keeper is doubtful, and they played 90 minutes in Europe just three days prior with rotation almost certain. Barcelona arrive fresh with a full squad and a La Liga title to protect.</div>
+  
+  <div style="font-size:13px;color:#5a7090;padding:3px 0;"><span style="color:#e8b84b;">&#9670;</span> Game 7 (Fiorentina at Verona): The 1.9 on Fiorentina is fair on paper but the fatigue signal is real — they played Conference League midweek before a 1-1 draw with Inter. The draw at 3.6 carries some value if Fiorentina rotate significantly and Verona&#39;s new-manager intensity holds at home.</div>
+  
+  <div style="font-size:13px;color:#5a7090;padding:3px 0;"><span style="color:#e8b84b;">&#9670;</span> Game 9 (Strasbourg vs Nice): Nice are 15th, perilously close to relegation, missing five players, and just conceded four to PSG. Strasbourg at 1.87 looks solid value for a home side with European aspirations and a settled squad.</div>
+  
+</td></tr>
+
+
+<tr><td style="height:20px;"></td></tr>
+
+
+
+<tr><td>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
+    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">Coupon Summary</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
+  </table>
+  <div style="margin:0 40px 24px;background:#0d1526;border:1px solid #1a2540;overflow:hidden;" class="co sp2">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#111c35;border-bottom:2px solid #e8b84b;">
+      <tr>
+        <td style="padding:14px 20px;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#e8b84b;">Draw #4947 · System</td>
+        <td style="padding:14px 20px;text-align:right;font-size:20px;font-weight:900;color:#e2e8f4;">768 SEK <span style="font-size:12px;color:#4a6080;font-weight:400;">/ 768 rows</span></td>
+      </tr>
+    </table>
+    <table class="ctb" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+      <thead><tr>
+        <th style="width:30px;background:#0a0f1e;color:#2a3a54;">#</th>
+        <th style="background:#0a0f1e;color:#2a3a54;">Match</th>
+        <th style="width:90px;text-align:center;background:#0a0f1e;color:#2a3a54;">Tips</th>
+        <th style="width:50px;text-align:center;background:#0a0f1e;color:#2a3a54;">Conf</th>
+      </tr></thead>
+      <tbody>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">1</td>
+          <td style="color:#8ba4c4;">Southampton – Arsenal</td>
+          <td style="text-align:center;"><span class="rt" style="color:#4ade80;">SINGLE</span><br><span class="rp" style="color:#4ade80;">2</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">88%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">2</td>
+          <td style="color:#8ba4c4;">Chelsea – Port Vale</td>
+          <td style="text-align:center;"><span class="rt" style="color:#4ade80;">SINGLE</span><br><span class="rp" style="color:#4ade80;">1</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">95%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">3</td>
+          <td style="color:#8ba4c4;">Atlético Madrid – Barcelona</td>
+          <td style="text-align:center;"><span class="rt" style="color:#4ade80;">SINGLE</span><br><span class="rp" style="color:#4ade80;">2</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">78%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">4</td>
+          <td style="color:#8ba4c4;">Mallorca – Real Madrid</td>
+          <td style="text-align:center;"><span class="rt" style="color:#4ade80;">SINGLE</span><br><span class="rp" style="color:#4ade80;">2</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">75%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">5</td>
+          <td style="color:#8ba4c4;">Real Betis – Espanyol</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">1 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">74%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">6</td>
+          <td style="color:#8ba4c4;">Lazio – Parma</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">1 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">70%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">7</td>
+          <td style="color:#8ba4c4;">Verona – Fiorentina</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">2 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">67%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">8</td>
+          <td style="color:#8ba4c4;">Stuttgart – Dortmund</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">1 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">70%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">9</td>
+          <td style="color:#8ba4c4;">Strasbourg – Nice</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">1 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">72%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">10</td>
+          <td style="color:#8ba4c4;">Brest – Rennes</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">2 1</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">64%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">11</td>
+          <td style="color:#8ba4c4;">Lille – Lens</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">1 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">66%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">12</td>
+          <td style="color:#8ba4c4;">OH Leuven – Standard Liege</td>
+          <td style="text-align:center;"><span class="rt" style="color:#fb923c;">FULL</span><br><span class="rp" style="color:#fb923c;">1 X 2</span></td>
+          <td style="text-align:center;"><span style="color:#fb923c;font-weight:800;font-size:10px;">&#10003; ALL</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">13</td>
+          <td style="color:#8ba4c4;">Ajax – Twente</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">1 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">67%</span></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-top:1px solid #1a2540;background:#0a0f1e;">
+      <tr>
+        <td style="padding:12px 16px;font-size:11px;color:#4a6080;"><span class="ld" style="background:#4ade80;"></span> Single</td>
+        <td style="padding:12px 8px;font-size:11px;color:#4a6080;"><span class="ld" style="background:#60a5fa;"></span> Double</td>
+        <td style="padding:12px 8px;font-size:11px;color:#4a6080;"><span class="ld" style="background:#fb923c;"></span> Full</td>
+        <td style="padding:12px 16px;font-size:10px;color:#2a3a54;font-style:italic;text-align:right;">Conf = model certainty</td>
+      </tr>
+    </table>
+  </div>
+</td></tr>
+
+<tr><td style="height:20px;"></td></tr>
+
+
+<tr><td>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
+    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">Detailed Analysis</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
+  </table>
+</td></tr>
+
+
+
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw ts" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #4ade80;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">1</td>
+          
+          <td style="padding-left:8px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">FA Cup</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/southampton.png" width="22" height="22" alt="Southampton" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Southampton</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/arsenal.png" width="22" height="22" alt="Arsenal" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Arsenal</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#4ade80;letter-spacing:1px;">21:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#14532d;color:#4ade80;">2</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:88%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">88%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">12.5</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">6.4</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">1.26</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:13%;text-align:center;padding:2px 0;">13%</td>
+            <td style="background:#e8b84b;width:17%;text-align:center;padding:2px 0;">17%</td>
+            <td style="background:#60a5fa;width:70%;text-align:center;padding:2px 0;">70%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#60a5fa;width:100%;text-align:center;padding:2px 0;">10</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>This FA Cup quarter-final pits a resurgent Championship side against one of England&#39;s elite, and the gap in quality — despite Southampton&#39;s 14-game unbeaten run — remains substantial. Southampton are operating in the second tier of English football, and while momentum matters, Arsenal bring Premier League quality that is simply a level above. The Saints do arrive with genuine confidence and a &#39;nothing to lose&#39; mentality, which can produce dangerous cup performances, but they will do so without key personnel. Flynn Downes and Kuryu Matsuki, both suspended following yellow card accumulations in the previous round, rob Southampton of two midfield operators, and captain Jack Stephens is doubtful with a training ground injury. That is three potential absentees from a squad that is already stretched by the quality differential.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Arsenal fully fit vs Southampton missing 3 players including two suspended midfielders</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Arsenal motivated for trophy after League Cup final defeat to Man City</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Southampton&#39;s 14-game unbeaten streak brings real momentum and home atmosphere</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Cup ties can produce upsets when top-tier sides underestimate lower-league opponents</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw ts" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #4ade80;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">2</td>
+          
+          <td style="padding-left:8px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">FA Cup</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/chelsea.png" width="22" height="22" alt="Chelsea" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Chelsea</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#1a0a2a;color:#c084fc;">&#9733;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/port-vale.png" width="22" height="22" alt="Port Vale" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Port Vale</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#4ade80;letter-spacing:1px;">18:15</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#14532d;color:#4ade80;">1</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:95%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">95%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">1.09</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">14.0</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">31.0</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:86%;text-align:center;padding:2px 0;">86%</td>
+            <td style="background:#e8b84b;width:8%;text-align:center;padding:2px 0;">8%</td>
+            <td style="background:#60a5fa;width:8%;text-align:center;padding:2px 0;">6%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:100%;text-align:center;padding:2px 0;">10</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">0</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>This FA Cup quarter-final is about as close to a foregone conclusion as the coupon offers. Chelsea are a Premier League club with a squad assembled at extraordinary cost; Port Vale are bottom of League One, fourteen points from safety with eight matches remaining, and staring at the trapdoor of the fourth tier. The chasm in quality here is not just one division — it is three, and the context of Port Vale&#39;s season makes it even starker. A club fighting for survival in the third tier, playing with nothing but pride against a Chelsea side with their last remaining silverware on the line.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Three-division quality gap — Premier League vs bottom of League One</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Port Vale practically relegated, 14 points from safety with 8 games remaining</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Chelsea lost 3-0 to Everton recently — confidence may be fragile</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Cup complacency possible if Chelsea underestimate the occasion</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw ts" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #4ade80;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">3</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_la-liga.png" width="18" height="18" alt="La Liga" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">La Liga</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <span class="tt" style="color:#e2e8f4;vertical-align:middle;">Atlético Madrid</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/barcelona.png" width="22" height="22" alt="Barcelona" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Barcelona</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#4ade80;letter-spacing:1px;">21:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#14532d;color:#4ade80;">2</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:78%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">78%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.2</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.8</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.2</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:29%;text-align:center;padding:2px 0;">29%</td>
+            <td style="background:#e8b84b;width:26%;text-align:center;padding:2px 0;">26%</td>
+            <td style="background:#60a5fa;width:45%;text-align:center;padding:2px 0;">45%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:30%;text-align:center;padding:2px 0;">3</td>
+            <td style="background:#e8b84b;width:20%;text-align:center;padding:2px 0;">2</td>
+            <td style="background:#60a5fa;width:50%;text-align:center;padding:2px 0;">5</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>This is one of the most analytically compelling games on the coupon, and the signals are unusually one-directional for a fixture of this magnitude. Atlético Madrid arrive at this La Liga clash carrying the weight of a Europa League midweek (a 3-3 draw with Club Brugge), seven confirmed or doubtful absentees, and the looming shadow of two more enormous fixtures within the fortnight — a Champions League quarter-final against Barcelona next week and a Copa del Rey final against Real Sociedad on April 18th. Diego Simeone, one of European football&#39;s most pragmatic tacticians, faces a near-impossible scheduling puzzle. With the club&#39;s genuine silverware ambitions riding on those cup competitions, La Liga may serve as secondary currency this weekend.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Atlético missing 7 players including Llorente, Cardoso (suspended), Barrios, Sorloth (doubtful)</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Atlético played midweek Europa League with only 3 days rest — rotation near-certain</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Simeone&#39;s tactical pragmatism often squeezes results from depleted squads</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Atlético at home — the Metropolitano fortress remains a factor even with rotation</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw ts" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #4ade80;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">4</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_la-liga.png" width="18" height="18" alt="La Liga" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">La Liga</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/mallorca.png" width="22" height="22" alt="Mallorca" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Mallorca</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#1a0a2a;color:#c084fc;">&#9733;</span> <span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/real-madrid.png" width="22" height="22" alt="Real Madrid" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Real Madrid</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#4ade80;letter-spacing:1px;">16:15</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#14532d;color:#4ade80;">2</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:75%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">75%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">5.6</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">4.4</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">1.6</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:15%;text-align:center;padding:2px 0;">15%</td>
+            <td style="background:#e8b84b;width:19%;text-align:center;padding:2px 0;">19%</td>
+            <td style="background:#60a5fa;width:66%;text-align:center;padding:2px 0;">66%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#60a5fa;width:90%;text-align:center;padding:2px 0;">9</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Mallorca enter this La Liga fixture under the watch of Martin Demichelis, their new manager of approximately eight weeks. While the bounce effect from a managerial change is real, particularly in the early weeks, eight weeks represents the outer edge of that phenomenon&#39;s potency — the initial tactical disruption has settled and opponents have had time to analyse the new setup. Still, Demichelis will have had a full international break to prepare, and Mallorca at home under a motivated new boss is no trivial proposition.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Real Madrid&#39;s H2H dominance — won all 5 recent meetings, including heavy scorelines</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Madrid missing Courtois, Mendy, Rodrygo, Valverde — significant but replaceable quality</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Madrid missing 4 significant players including their world-class goalkeeper</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Mallorca&#39;s new manager Demichelis may have siege mentality tactically set for this fixture</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">5</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_la-liga.png" width="18" height="18" alt="La Liga" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">La Liga</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/real-betis.png" width="22" height="22" alt="Real Betis" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Real Betis</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/espanyol.png" width="22" height="22" alt="Espanyol" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Espanyol</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">18:30</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">1</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:74%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">74%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">1.77</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.95</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">4.7</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:66%;text-align:center;padding:2px 0;">66%</td>
+            <td style="background:#e8b84b;width:23%;text-align:center;padding:2px 0;">23%</td>
+            <td style="background:#60a5fa;width:11%;text-align:center;padding:2px 0;">11%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:90%;text-align:center;padding:2px 0;">9</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">0</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Real Betis host Espanyol in what looks, on paper, a relatively comfortable home assignment — but the injury list for the hosts requires scrutiny. Betis are missing four players confirmed out: Juan Miranda / Firpo at left back, the talismanic Isco in central midfield, Giovanni Lo Celso (a key creative presence), and Andres Ortiz. Losing both Isco and Lo Celso from the midfield engine simultaneously is a meaningful blow — these are not fringe contributors but regular starters who shape how Betis play. The news source, however, confirmed no absences this week, creating a discrepancy with the structured data. The structured data is weighted more heavily here per analytical protocol, so Betis should be considered somewhat weakened.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Betis dominant in H2H — 4 wins in last 5 meetings with Espanyol</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Betis missing Isco and Lo Celso from midfield — significant creative loss</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Betis missing two key creative midfielders simultaneously weakens their attack</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Europa League QF next week in Braga may prompt cautious selection vs Espanyol</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">6</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_serie-a.png" width="18" height="18" alt="Serie A" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Serie A</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/lazio.png" width="22" height="22" alt="Lazio" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Lazio</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/parma.png" width="22" height="22" alt="Parma" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Parma</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">20:45</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">1</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:70%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">70%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">1.78</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.55</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">5.3</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:60%;text-align:center;padding:2px 0;">60%</td>
+            <td style="background:#e8b84b;width:24%;text-align:center;padding:2px 0;">24%</td>
+            <td style="background:#60a5fa;width:16%;text-align:center;padding:2px 0;">16%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:90%;text-align:center;padding:2px 0;">9</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">1</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Lazio&#39;s injury situation makes this more complicated than the 1.78 home price suggests. The structured data lists six players as out or questionable for the hosts: Samuel Gigot in defence, goalkeeper Ivan Provedel, central midfielder Nicolò Rovella, and attacking threat Mattia Zaccagni, with Toma Basic and Mario Gila also rated as questionable. Losing Provedel — their first-choice goalkeeper — is a genuine concern, as is the absence of Rovella, who provides midfield structure, and Zaccagni, who provides the attacking spark on the left. The latest news contradicted this, suggesting no confirmed Lazio absences; the structured data is prioritised and Lazio should be considered depleted to a meaningful degree.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Lazio chasing European spots — motivation is genuine and high</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> H2H strongly favours Lazio — 4 wins in last 5 vs Parma</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Lazio potentially without first-choice GK and two key starters — weakens structure</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Discrepancy between structured injury data and latest news creates uncertainty</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">7</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_serie-a.png" width="18" height="18" alt="Serie A" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Serie A</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/verona.png" width="22" height="22" alt="Verona" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Verona</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#1a0a2a;color:#c084fc;">&#9733;</span> <span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/fiorentina.png" width="22" height="22" alt="Fiorentina" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Fiorentina</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">18:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">2</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:67%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">67%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">4.5</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.6</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">1.9</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:22%;text-align:center;padding:2px 0;">22%</td>
+            <td style="background:#e8b84b;width:29%;text-align:center;padding:2px 0;">29%</td>
+            <td style="background:#60a5fa;width:49%;text-align:center;padding:2px 0;">49%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:20%;text-align:center;padding:2px 0;">2</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#60a5fa;width:80%;text-align:center;padding:2px 0;">8</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Verona are deep in a relegation crisis — second from bottom with just one home win all season. Paolo Sammarco has taken charge as the new manager within the past eight weeks, and while the bounce effect is real, it is fading at this point and Verona&#39;s wider structural issues are severe. The structured data lists four absentees including Lovric and Bella-Kotchap, though news sources confirmed no specific absences — the discrepancy suggests at least some of these may be borderline cases. Regardless, Verona are a team fighting for their lives and have shown little capacity to pick up points at the Bentegodi this season.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Fiorentina fatigue: Conference League midweek + Serie A draw vs Inter before this fixture</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Verona&#39;s relegation desperation — every home point is critical</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Fiorentina played midweek Europe plus 1-1 vs Inter — 3-4 days recovery is limited</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Verona&#39;s new manager bounce and home desperation can produce cup-tie intensity</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">8</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_bundesliga.png" width="18" height="18" alt="Bundesliga" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Bundesliga</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/vfb-stuttgart.png" width="22" height="22" alt="Stuttgart" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Stuttgart</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/borussia-dortmund.png" width="22" height="22" alt="Dortmund" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Dortmund</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">18:30</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">1</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:70%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">70%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.4</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">4.0</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.75</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:45%;text-align:center;padding:2px 0;">45%</td>
+            <td style="background:#e8b84b;width:25%;text-align:center;padding:2px 0;">25%</td>
+            <td style="background:#60a5fa;width:30%;text-align:center;padding:2px 0;">30%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:60%;text-align:center;padding:2px 0;">6</td>
+            <td style="background:#e8b84b;width:30%;text-align:center;padding:2px 0;">3</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">1</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>This Bundesliga contest carries a fascinating recent H2H narrative that cuts against what you might assume about the relative standing of these clubs. While Borussia Dortmund remain the larger brand, Stuttgart have emerged as the dominant force in this specific matchup: Stuttgart won at Dortmund in April 2024 (1-0) and again in February 2025 (2-1), and the five-year H2H record shows the balance has definitively shifted. These are not lucky results — they represent a tactical superiority that Stuttgart appear to have established over their opponents.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Stuttgart have beaten Dortmund in their last two meetings (1-0 and 2-1) — recent H2H dominance</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Dortmund missing Emre Can and Nmecha — midfield disruption at a critical fixture</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Stuttgart themselves missing Zagadou (defensive solidity concern)</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Dortmund&#39;s squad depth means replacements, while weaker, are still professional quality</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">9</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_ligue-1.png" width="18" height="18" alt="Ligue 1" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Ligue 1</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/rc-strasbourg-alsace.png" width="22" height="22" alt="Strasbourg" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Strasbourg</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/nice.png" width="22" height="22" alt="Nice" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Nice</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">17:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">1</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:72%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">72%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">1.87</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.65</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">4.4</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:64%;text-align:center;padding:2px 0;">64%</td>
+            <td style="background:#e8b84b;width:22%;text-align:center;padding:2px 0;">22%</td>
+            <td style="background:#60a5fa;width:14%;text-align:center;padding:2px 0;">14%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:90%;text-align:center;padding:2px 0;">9</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">1</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>This Ligue 1 fixture is one where the motivation asymmetry argument cuts strongly in one direction — but perhaps not the one you might initially assume. Nice are in the relegation zone (15th, 27 points) and desperately need points. Relegation-threatened teams can galvanise and produce heroic away performances, but they also tend to concede more goals as they push forward, and they arrive in Strasbourg with a brutally depleted squad — five players confirmed out in Abdelmonem, Bombito, Ndayishimiye, Peprah, and Pereira. That is a significant chunk of their matchday squad unavailable.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Nice missing 5 players and conceded 4 goals to PSG last time out — structural fragility</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Strasbourg 8th with European ambitions — home motivation is consistent and genuine</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Relegation fights can produce unexpected resilience and counter-threat</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Strasbourg&#39;s upcoming European QF may result in minor rotation or mental bandwidth split</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">10</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_ligue-1.png" width="18" height="18" alt="Ligue 1" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Ligue 1</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/brest.png" width="22" height="22" alt="Brest" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Brest</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/rennes.png" width="22" height="22" alt="Rennes" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Rennes</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#1a0a2a;color:#c084fc;">&#9733;</span> <span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">19:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">2</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">1</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:64%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">64%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.25</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.6</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.2</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:33%;text-align:center;padding:2px 0;">33%</td>
+            <td style="background:#e8b84b;width:29%;text-align:center;padding:2px 0;">29%</td>
+            <td style="background:#60a5fa;width:38%;text-align:center;padding:2px 0;">38%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:30%;text-align:center;padding:2px 0;">3</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#60a5fa;width:60%;text-align:center;padding:2px 0;">6</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Rennes travel to Brest under the management of Franck Haise, who has been in post for approximately eight weeks. At this stage, the new manager bounce is at its tail end, but Haise is a well-respected Ligue 1 tactician from his time at Lens and may already have introduced structural changes that are showing dividends. The difficulty is that Rennes arrive with a strikingly long injury list: Frankowski, Jacquet, Rosier, and Rouault are confirmed out, with Nagida and Szymanski also questionable. That is potentially six unavailable players, which is a significant constraint for any squad, particularly in an away fixture at a technically capable side.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Rennes H2H dominance — won or drew all 5 recent meetings with Brest</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Franck Haise&#39;s managerial quality adds tactical edge despite late-stage bounce effect</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Rennes&#39;s 6-player absence list is the week&#39;s most damaging relative injury disadvantage</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Haise&#39;s bounce effect fading at 8 weeks — less structural advantage than weeks 1-3</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">11</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_ligue-1.png" width="18" height="18" alt="Ligue 1" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Ligue 1</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/lille.png" width="22" height="22" alt="Lille" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Lille</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/rc-lens.png" width="22" height="22" alt="Lens" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Lens</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">21:05</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">1</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:66%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">66%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.6</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.4</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.8</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:38%;text-align:center;padding:2px 0;">38%</td>
+            <td style="background:#e8b84b;width:26%;text-align:center;padding:2px 0;">26%</td>
+            <td style="background:#60a5fa;width:36%;text-align:center;padding:2px 0;">36%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:60%;text-align:center;padding:2px 0;">6</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#60a5fa;width:30%;text-align:center;padding:2px 0;">3</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>The Nord Derby is one of French football&#39;s most emotionally charged fixtures, and prediction confidence in derbies is always compressed — both sides lift, tactical plans are disrupted by intensity, and form often takes a back seat to adrenaline. That caveat stated, the structural signals lean toward Lille this weekend. The hosts are missing four players — Caillard, Igamane, Mbemba, and Toure — but Lens arrive in a significantly worse shape, with six confirmed absentees: Aguilar, Antonio, Baidoo, Gradit, Gurtner, and Masuaku. Losing Gradit (an experienced defensive organiser) and Masuaku (an important left-sided outlet) strips Lens of defensive leadership and width on both sides.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Lille have won 4 of last 5 derbies vs Lens, including a very recent 1-0 victory</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Lens missing 6 players including key defensive organiser Gradit and Masuaku</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Derby volatility — form and logic often overridden by intensity</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Lille themselves missing 4 players including Mbemba (key defensive organiser)</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw tf" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #fb923c;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">12</td>
+          
+          <td style="padding-left:8px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Pro League</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <span class="tt" style="color:#e2e8f4;vertical-align:middle;">OH Leuven</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <span class="tt" style="color:#e2e8f4;vertical-align:middle;">Standard Liege</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#fb923c;letter-spacing:1px;">18:15</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#431407;color:#fb923c;">1</td><td class="pb" style="background:#431407;color:#fb923c;margin-left:5px;">X</td><td class="pb" style="background:#431407;color:#fb923c;margin-left:5px;">2</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:61%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">61%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.1</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.5</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.7</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:47%;text-align:center;padding:2px 0;">47%</td>
+            <td style="background:#e8b84b;width:27%;text-align:center;padding:2px 0;">27%</td>
+            <td style="background:#60a5fa;width:26%;text-align:center;padding:2px 0;">26%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:70%;text-align:center;padding:2px 0;">7</td>
+            <td style="background:#e8b84b;width:20%;text-align:center;padding:2px 0;">2</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">1</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>The Belgian Pro League offers limited data depth this week, with no confirmed absences from either side, no xG, no form figures, and limited contextual news. Analysis here rests primarily on the market, H2H, and the home advantage factor. OH Leuven at home are priced at 2.1 — a modest favourite price that the market has assigned them over a Standard Liege side sitting at 3.7. Seven of ten newspaper tipsters back the home side, with two calling a draw and one backing the visitors.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> OH Leuven at home — modest but consistent edge in this fixture</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> 7/10 tipsters back Leuven; public at 47% aligned</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> H2H shows the 0-0 draw at Leuven in April 2024 — draws are a realistic outcome</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Limited data availability reduces confidence significantly — Belgian Pro League gap</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">13</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_eredivisie.png" width="18" height="18" alt="Eredivisie" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Eredivisie</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/ajax.png" width="22" height="22" alt="Ajax" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Ajax</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/twente.png" width="22" height="22" alt="Twente" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Twente</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">21:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">1</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:67%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">67%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;"> <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> </span></td>
+      <td style="border-right:none;">
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.35</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.85</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.88</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:53%;text-align:center;padding:2px 0;">53%</td>
+            <td style="background:#e8b84b;width:25%;text-align:center;padding:2px 0;">25%</td>
+            <td style="background:#60a5fa;width:22%;text-align:center;padding:2px 0;">22%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:90%;text-align:center;padding:2px 0;">9</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">0</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Ajax host Twente in an Eredivisie fixture that is less straightforward than the home side&#39;s prestige might suggest. The H2H record is striking: while Ajax won 3-1 in January 2021, Twente have since beaten them 3-1 twice in 2023, with only a narrow Ajax win (1-0) sandwiched between those two Twente victories. Twente have demonstrably competed with and beaten Ajax in recent years, suggesting this is not the walkover that Ajax&#39;s name might imply.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Ajax at home — home advantage is meaningful in Eredivisie context</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Ajax missing 5 players including Zinchenko (key in possession) and Itakura</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Twente have beaten Ajax 3-1 twice in recent H2H — clear competitive capacity at this level</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Ajax&#39;s 5-player absence list, including Zinchenko, weakens their technical superiority</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+<tr><td style="padding:24px 40px;text-align:center;border-top:1px solid #111c35;" class="sp2">
+  <p style="font-size:11px;color:#1e2a40;line-height:1.8;">Generated 04 Apr 2026, 08:58 CEST · Draw #4947</p>
+  <p style="font-size:11px;color:#1e2a40;line-height:1.8;margin-top:8px;">© 2026 Stryktipset Newsletter</p>
+</td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

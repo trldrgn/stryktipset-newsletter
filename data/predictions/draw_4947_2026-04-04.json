@@ -1,0 +1,311 @@
+{
+  "draw_number": 4947,
+  "draw_date": "2026-04-04",
+  "saved_at": "2026-04-04T06:58:24.168908+00:00",
+  "executive_summary": "This week's coupon is anchored by two near-certainties — Chelsea vs Port Vale and Arsenal vs Southampton — which provide solid singles. Beyond those, the card is shaped by a cluster of fascinating mid-tier decisions: Atlético Madrid are severely depleted for the visit of a fresh Barcelona side, Real Madrid travel to Mallorca with their own notable absentees, and Fiorentina face fatigue questions despite being clear class above relegated-threatened Verona. With xG unavailable across all 13 games due to API limitations, analysis leans heavily on structural data, market signals, injury depth, and contextual reasoning. Outside the top two, few games exceed 0.78 confidence, making this a coupon that rewards careful doubling over aggressive singling.",
+  "value_radar": [
+    "Game 3 (Barcelona at Atlético): At 2.2, Barcelona may be underpriced. Atlético are missing 7 players including two key central midfielders on suspension, their keeper is doubtful, and they played 90 minutes in Europe just three days prior with rotation almost certain. Barcelona arrive fresh with a full squad and a La Liga title to protect.",
+    "Game 7 (Fiorentina at Verona): The 1.9 on Fiorentina is fair on paper but the fatigue signal is real — they played Conference League midweek before a 1-1 draw with Inter. The draw at 3.6 carries some value if Fiorentina rotate significantly and Verona's new-manager intensity holds at home.",
+    "Game 9 (Strasbourg vs Nice): Nice are 15th, perilously close to relegation, missing five players, and just conceded four to PSG. Strasbourg at 1.87 looks solid value for a home side with European aspirations and a settled squad."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Southampton",
+      "away_team": "Arsenal",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.88,
+      "key_factors": [
+        "Arsenal fully fit vs Southampton missing 3 players including two suspended midfielders",
+        "Arsenal motivated for trophy after League Cup final defeat to Man City",
+        "Class gap: Premier League leaders vs Championship play-off hopefuls",
+        "H2H: Arsenal won 4 of last 5, conceding just once in those four wins"
+      ],
+      "risk_flags": [
+        "Southampton's 14-game unbeaten streak brings real momentum and home atmosphere",
+        "Cup ties can produce upsets when top-tier sides underestimate lower-league opponents"
+      ],
+      "analysis": "This FA Cup quarter-final pits a resurgent Championship side against one of England's elite, and the gap in quality — despite Southampton's 14-game unbeaten run — remains substantial. Southampton are operating in the second tier of English football, and while momentum matters, Arsenal bring Premier League quality that is simply a level above. The Saints do arrive with genuine confidence and a 'nothing to lose' mentality, which can produce dangerous cup performances, but they will do so without key personnel. Flynn Downes and Kuryu Matsuki, both suspended following yellow card accumulations in the previous round, rob Southampton of two midfield operators, and captain Jack Stephens is doubtful with a training ground injury. That is three potential absentees from a squad that is already stretched by the quality differential.\n\nArsenal, by contrast, arrive with a clean bill of health and a point to prove. Mikel Arteta's side were beaten 2-0 by Manchester City in the Carabao Cup final and will be hungry to keep their trophy ambitions alive. With the Premier League title race presumably their primary objective, the FA Cup represents a genuine secondary prize, and Arteta is unlikely to drastically rotate in a quarter-final. Two weeks of rest since the League Cup final, followed by the international break, means Arsenal should arrive fresh and motivated.\n\nThe head-to-head record offers little hope for Southampton: Arsenal have won four of the last five meetings, including three 3-0s or better, conceding just one goal in those four victories. The one result that stands out — a 3-3 draw in April 2023 — came in the Premier League, not a knockout context where Arsenal would have more defensive structure. Arsenal's odds of 1.26 reflect near-certainty in the market, and 10 of 10 national newspaper tipsters agree. This is not a game to overthink.\n\nThe only credible upset scenario involves Southampton's intensity, home atmosphere, and a disorganised Arsenal backline in a cup tie that Arteta treats with mild rotation. That scenario exists but is a fringe probability. Arsenal to win, likely without extraordinary drama.",
+      "value_note": "No value in Arsenal at 1.26 — price is accurate, not generous."
+    },
+    {
+      "game_number": 2,
+      "home_team": "Chelsea",
+      "away_team": "Port Vale",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.95,
+      "key_factors": [
+        "Three-division quality gap — Premier League vs bottom of League One",
+        "Port Vale practically relegated, 14 points from safety with 8 games remaining",
+        "Chelsea's FA Cup is their primary remaining trophy hope — expect strong lineup",
+        "New manager Rosenior (8 weeks) has additional motivation to deliver in cups"
+      ],
+      "risk_flags": [
+        "Chelsea lost 3-0 to Everton recently — confidence may be fragile",
+        "Cup complacency possible if Chelsea underestimate the occasion"
+      ],
+      "analysis": "This FA Cup quarter-final is about as close to a foregone conclusion as the coupon offers. Chelsea are a Premier League club with a squad assembled at extraordinary cost; Port Vale are bottom of League One, fourteen points from safety with eight matches remaining, and staring at the trapdoor of the fourth tier. The chasm in quality here is not just one division — it is three, and the context of Port Vale's season makes it even starker. A club fighting for survival in the third tier, playing with nothing but pride against a Chelsea side with their last remaining silverware on the line.\n\nLiam Rosenior has been in charge at Stamford Bridge for approximately eight weeks, sitting within the window where a new manager bounce can still manifest. With Chelsea eliminated from the Champions League and slipping in the Premier League top-five race, the FA Cup has taken on elevated importance for both morale and the season's legacy. Rosenior will almost certainly field a strong lineup, motivated to deliver silverware in his early tenure. The new manager dynamic, combined with this being a genuine trophy opportunity, argues against heavy rotation.\n\nAll ten newspaper tipsters back Chelsea. The market has priced Port Vale as a 31.0 outsider — a price that even the most optimistic of Port Vale supporters would find hard to argue against. There is no H2H history between these clubs at this level to reference, but none is needed. No injury concerns of significance for either side are confirmed.\n\nThe only risk factor — minimal as it is — would be Chelsea sleepwalking into a cold FA Cup tie following their recent Premier League hammering at Everton, which could affect confidence. But the gulf in class is such that even an uninspired Chelsea performance should be sufficient. This is the coupon's safest mark.",
+      "value_note": "No value at 1.09 — accurate reflection of an almost certain outcome."
+    },
+    {
+      "game_number": 3,
+      "home_team": "Atlético Madrid",
+      "away_team": "Barcelona",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.78,
+      "key_factors": [
+        "Atlético missing 7 players including Llorente, Cardoso (suspended), Barrios, Sorloth (doubtful)",
+        "Atlético played midweek Europa League with only 3 days rest — rotation near-certain",
+        "Barcelona fully fit, fresh, and chasing the La Liga title",
+        "Two massive fixtures next week (CL QF + Copa final) will influence Atlético's lineup"
+      ],
+      "risk_flags": [
+        "Simeone's tactical pragmatism often squeezes results from depleted squads",
+        "Atlético at home — the Metropolitano fortress remains a factor even with rotation"
+      ],
+      "analysis": "This is one of the most analytically compelling games on the coupon, and the signals are unusually one-directional for a fixture of this magnitude. Atlético Madrid arrive at this La Liga clash carrying the weight of a Europa League midweek (a 3-3 draw with Club Brugge), seven confirmed or doubtful absentees, and the looming shadow of two more enormous fixtures within the fortnight — a Champions League quarter-final against Barcelona next week and a Copa del Rey final against Real Sociedad on April 18th. Diego Simeone, one of European football's most pragmatic tacticians, faces a near-impossible scheduling puzzle. With the club's genuine silverware ambitions riding on those cup competitions, La Liga may serve as secondary currency this weekend.\n\nThe absentees are not fringe players. Marcos Llorente and Johnny Cardoso — both midfielders — serve suspensions. Pablo Barrios, another midfielder, is injured. Marc Pubill is out in defence. Jan Oblak, their long-serving goalkeeper, is doubtful. Alexander Sorloth, their leading striker, is uncertain after a head knock during international duty. That is potentially six or seven contributors missing from a team that relies heavily on its collective system. The engine room of Atlético's midfield — so often the source of their defensive solidity — is badly disrupted.\n\nBarcelona, by contrast, arrive with a clean bill of health and no reported absences. They are fighting for the La Liga title, their motivation is maximal, and they have had adequate rest since their 1-0 win over Rayo Vallecano. The market prices them at 2.2 — a reflection of the general H2H equilibrium between these clubs — but the situational factors this week heavily tilt the balance in Barça's favour. Five of ten newspaper tipsters agree, while only three back the hosts. With rotation virtually certain from Atlético, Barcelona face a depleted and fatigued opponent. This is compelling value for the away side.\n\nThe wildcard is Simeone's psychological mastery — his Atlético sides frequently overperform their circumstances in high-profile contexts, and any rotated Atlético side still carries identity. A draw remains plausible, but the accumulation of disadvantage makes a Barcelona win the most logical outcome.",
+      "value_note": "Barcelona at 2.2 looks underpriced given Atlético's extraordinary injury list and midweek fatigue. This may be one of the week's genuine value marks."
+    },
+    {
+      "game_number": 4,
+      "home_team": "Mallorca",
+      "away_team": "Real Madrid",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.75,
+      "key_factors": [
+        "Real Madrid's H2H dominance — won all 5 recent meetings, including heavy scorelines",
+        "Madrid missing Courtois, Mendy, Rodrygo, Valverde — significant but replaceable quality",
+        "Mallorca missing Raillo (key defensive anchor) — will struggle to absorb Madrid pressure",
+        "9/10 newspaper tipsters back Madrid despite the absentee uncertainty"
+      ],
+      "risk_flags": [
+        "Madrid missing 4 significant players including their world-class goalkeeper",
+        "Mallorca's new manager Demichelis may have siege mentality tactically set for this fixture",
+        "Injury news source unable to confirm current-week availability — data uncertainty elevated"
+      ],
+      "analysis": "Mallorca enter this La Liga fixture under the watch of Martin Demichelis, their new manager of approximately eight weeks. While the bounce effect from a managerial change is real, particularly in the early weeks, eight weeks represents the outer edge of that phenomenon's potency — the initial tactical disruption has settled and opponents have had time to analyse the new setup. Still, Demichelis will have had a full international break to prepare, and Mallorca at home under a motivated new boss is no trivial proposition.\n\nThe structured injury data lists Bergstrom, Raillo, and Salas as missing for the hosts — losing Raillo, a central defensive anchor, is significant for a side that will be attempting to frustrate one of the world's elite attacking units. However, Real Madrid's own absentee list is notable: Thibaut Courtois (their world-class goalkeeper), Ferland Mendy (first-choice left back), Rodrygo (an important attacking option), and Federico Valverde (a key box-to-box midfielder) are all listed as missing. That is four meaningful contributors, including their No.1 goalkeeper and a central figure of their midfield control.\n\nThe news source for this match was unable to confirm specific week-by-week injury status, so some of these absences may have shifted — caution is warranted in both directions. What is clear from the H2H record is Real Madrid's historical supremacy: five wins in the last five meetings, including a 6-1 and a 4-1 in this stadium configuration. The market prices Madrid at 1.6 and newspapers back them 9-1. Despite the notable absentees, the quality disparity between these clubs is substantial enough that even a rotated, slightly depleted Real Madrid side should have sufficient firepower to handle a Mallorca team also missing key defensive personnel.\n\nMallorca's home context and Demichelis's residual bounce effect keep this from being the simplest of calls, but Madrid's structural superiority remains the dominant signal.",
+      "value_note": "Madrid at 1.6 is fair — the absences are real but so is the quality gap."
+    },
+    {
+      "game_number": 5,
+      "home_team": "Real Betis",
+      "away_team": "Espanyol",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.74,
+      "key_factors": [
+        "Betis dominant in H2H — 4 wins in last 5 meetings with Espanyol",
+        "Betis missing Isco and Lo Celso from midfield — significant creative loss",
+        "Espanyol limited quality and missing Milla and Puado",
+        "9/10 newspapers tip Betis; public consensus 66% aligned"
+      ],
+      "risk_flags": [
+        "Betis missing two key creative midfielders simultaneously weakens their attack",
+        "Europa League QF next week in Braga may prompt cautious selection vs Espanyol"
+      ],
+      "analysis": "Real Betis host Espanyol in what looks, on paper, a relatively comfortable home assignment — but the injury list for the hosts requires scrutiny. Betis are missing four players confirmed out: Juan Miranda / Firpo at left back, the talismanic Isco in central midfield, Giovanni Lo Celso (a key creative presence), and Andres Ortiz. Losing both Isco and Lo Celso from the midfield engine simultaneously is a meaningful blow — these are not fringe contributors but regular starters who shape how Betis play. The news source, however, confirmed no absences this week, creating a discrepancy with the structured data. The structured data is weighted more heavily here per analytical protocol, so Betis should be considered somewhat weakened.\n\nEspanyol travel with their own two confirmed absentees in Milla and Puado, though the impact is less dramatic given they are primarily second-half-of-table players. The H2H record strongly favours Betis: four wins in the last five meetings against Espanyol, with the visitors' only victory coming in January 2023 — since then, Betis have won the subsequent three encounters. The Seville side also face a Europa League quarter-final first leg in Braga next week, introducing a minor rotation consideration, though 16 days of rest since their last European outing suggests they have had ample time to prepare for this domestic fixture first.\n\nThe market prices Betis at 1.77 — a reasonable reflection of home advantage and recent H2H dominance even accounting for the absentees. Nine of ten tipsters back the home side, and the public is 66% with them. Espanyol were relegated from La Liga relatively recently and are still rebuilding; this is not a side equipped to exploit gaps left by Betis's missing creators in the way that European opposition might. Despite the midfield absences, Betis at home against a limited Espanyol side remains a solid proposition.",
+      "value_note": "Betis at 1.77 is fair but not generous given the Isco/Lo Celso absences."
+    },
+    {
+      "game_number": 6,
+      "home_team": "Lazio",
+      "away_team": "Parma",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.7,
+      "key_factors": [
+        "Lazio chasing European spots — motivation is genuine and high",
+        "H2H strongly favours Lazio — 4 wins in last 5 vs Parma",
+        "Lazio potentially missing Provedel (GK), Rovella, and Zaccagni — significant absentees",
+        "Parma mid-table with no particular pressure — may lack cutting edge"
+      ],
+      "risk_flags": [
+        "Lazio potentially without first-choice GK and two key starters — weakens structure",
+        "Discrepancy between structured injury data and latest news creates uncertainty"
+      ],
+      "analysis": "Lazio's injury situation makes this more complicated than the 1.78 home price suggests. The structured data lists six players as out or questionable for the hosts: Samuel Gigot in defence, goalkeeper Ivan Provedel, central midfielder Nicolò Rovella, and attacking threat Mattia Zaccagni, with Toma Basic and Mario Gila also rated as questionable. Losing Provedel — their first-choice goalkeeper — is a genuine concern, as is the absence of Rovella, who provides midfield structure, and Zaccagni, who provides the attacking spark on the left. The latest news contradicted this, suggesting no confirmed Lazio absences; the structured data is prioritised and Lazio should be considered depleted to a meaningful degree.\n\nParma arrive mid-table and with their own four confirmed absentees, though the structured data's four (Almqvist, Cremaschi, Frigan, Troilo) are less central to their team identity than Lazio's missing names. The news confirmed Troilo is out on suspension. H2H heavily favours Lazio — four wins and one defeat in the last five, and the defeat at Parma in December 2024 was an anomaly given Parma's form. Lazio are chasing European qualification (eighth in Serie A), and that motivation is meaningful.\n\nThe question is whether a Lazio side missing their keeper, a key midfielder, and a key attacker can still dominate a mid-table side at home. The answer, most likely, is yes — the quality differential and home advantage are significant enough, and a goalkeeper replacement in Serie A is rarely catastrophic. Nine of ten tipsters back Lazio, and the price reflects appropriate favouritism. This is a manageable home win, not a certainty, but a reasonably confident call.",
+      "value_note": "Lazio's price of 1.78 may be slightly generous given the volume of absentees."
+    },
+    {
+      "game_number": 7,
+      "home_team": "Verona",
+      "away_team": "Fiorentina",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.67,
+      "key_factors": [
+        "Fiorentina fatigue: Conference League midweek + Serie A draw vs Inter before this fixture",
+        "Verona's relegation desperation — every home point is critical",
+        "Fiorentina missing up to 6 players including key names — rotation probable",
+        "Fiorentina won 3 of last 5 H2H but Verona won the most recent encounter"
+      ],
+      "risk_flags": [
+        "Fiorentina played midweek Europe plus 1-1 vs Inter — 3-4 days recovery is limited",
+        "Verona's new manager bounce and home desperation can produce cup-tie intensity",
+        "Potential mass rotation from Fiorentina weakens their quality advantage significantly"
+      ],
+      "analysis": "Verona are deep in a relegation crisis — second from bottom with just one home win all season. Paolo Sammarco has taken charge as the new manager within the past eight weeks, and while the bounce effect is real, it is fading at this point and Verona's wider structural issues are severe. The structured data lists four absentees including Lovric and Bella-Kotchap, though news sources confirmed no specific absences — the discrepancy suggests at least some of these may be borderline cases. Regardless, Verona are a team fighting for their lives and have shown little capacity to pick up points at the Bentegodi this season.\n\nFiorentina arrive in good form — unbeaten in four, fresh from booking their Conference League quarter-final spot during the week — but the fatigue question is legitimate. They played European football midweek, followed by a 1-1 draw with Inter Milan, meaning they arrive having had just three or four days' recovery. Paolo Vanoli may rotate elements of his squad, and the structured data lists six potential absentees including Dodo, Mandragora, Solomon, and Lezzerini. Lamptey is confirmed out.\n\nThe H2H tells a story that slightly complicates the Fiorentina narrative: while they've won three of the last five meetings, Verona defeated them 1-0 in their most recent encounter in February 2025, and that was presumably before Sammarco's appointment. A relegated-threatened team at home, a new manager, and a fatigued opponent is a combination worth respecting. That said, the odds at 1.9 for Fiorentina suggest the market also sees this as competitive, and 8/10 tipsters still back the visitors. Fiorentina's quality — even with rotation — is likely to be decisive, but this is one of the coupon's more unpredictable fixtures.",
+      "value_note": "The draw at 3.6 has marginal value if Fiorentina rotate heavily — worth noting."
+    },
+    {
+      "game_number": 8,
+      "home_team": "Stuttgart",
+      "away_team": "Dortmund",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.7,
+      "key_factors": [
+        "Stuttgart have beaten Dortmund in their last two meetings (1-0 and 2-1) — recent H2H dominance",
+        "Dortmund missing Emre Can and Nmecha — midfield disruption at a critical fixture",
+        "6/10 tipsters back Stuttgart; public consensus aligned",
+        "Stuttgart at home at the Bundesliga's most atmospheric venues"
+      ],
+      "risk_flags": [
+        "Stuttgart themselves missing Zagadou (defensive solidity concern)",
+        "Dortmund's squad depth means replacements, while weaker, are still professional quality"
+      ],
+      "analysis": "This Bundesliga contest carries a fascinating recent H2H narrative that cuts against what you might assume about the relative standing of these clubs. While Borussia Dortmund remain the larger brand, Stuttgart have emerged as the dominant force in this specific matchup: Stuttgart won at Dortmund in April 2024 (1-0) and again in February 2025 (2-1), and the five-year H2H record shows the balance has definitively shifted. These are not lucky results — they represent a tactical superiority that Stuttgart appear to have established over their opponents.\n\nThe absentee lists are relatively contained on both sides. Stuttgart are without Luka Jovanovic and Daniel Zagadou — the latter a central defender of reasonable quality, but not irreplaceable. Dortmund are missing Emre Can, Felix Nmecha, and Fatawu Mane. Losing Can from central midfield disrupts Dortmund's balance significantly — he provides physicality and organisation in the middle, and Nmecha is another midfield option now unavailable. Dortmund's midfield engine is therefore compromised for this trip to the Mercedes-Benz Arena.\n\nSix of ten newspaper tipsters back Stuttgart, with three calling a draw and just one backing Dortmund — a notably soft-market read on the visitors. The public is 45% Stuttgart, which is roughly aligned. Stuttgart at home, with recent H2H dominance and a Dortmund side missing key midfielders, represents a reasonable home win call. The 2.4 price reflects genuine uncertainty — this is not a dominant Stuttgart side by any means — but the directional signal is clear. Home win at value odds.",
+      "value_note": "Stuttgart at 2.4 carries genuine value against a Dortmund side weakened in midfield and with poor recent H2H record here."
+    },
+    {
+      "game_number": 9,
+      "home_team": "Strasbourg",
+      "away_team": "Nice",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.72,
+      "key_factors": [
+        "Nice missing 5 players and conceded 4 goals to PSG last time out — structural fragility",
+        "Strasbourg 8th with European ambitions — home motivation is consistent and genuine",
+        "Relegation desperation makes Nice unpredictable but short of personnel",
+        "9/10 tipsters back Strasbourg; market at 1.87 reflects sound probability"
+      ],
+      "risk_flags": [
+        "Relegation fights can produce unexpected resilience and counter-threat",
+        "Strasbourg's upcoming European QF may result in minor rotation or mental bandwidth split"
+      ],
+      "analysis": "This Ligue 1 fixture is one where the motivation asymmetry argument cuts strongly in one direction — but perhaps not the one you might initially assume. Nice are in the relegation zone (15th, 27 points) and desperately need points. Relegation-threatened teams can galvanise and produce heroic away performances, but they also tend to concede more goals as they push forward, and they arrive in Strasbourg with a brutally depleted squad — five players confirmed out in Abdelmonem, Bombito, Ndayishimiye, Peprah, and Pereira. That is a significant chunk of their matchday squad unavailable.\n\nThe context of Nice's recent form only deepens the concern: their last league outing was a 0-4 thrashing at the hands of PSG, suggesting neither spirit nor defensive organisation is in good shape. Strasbourg, meanwhile, sit comfortably in eighth with European ambitions and recently beat Nantes 3-2. They do have an upcoming European quarter-final, which introduces a mild rotation question, but with ten or more days of rest between games, there is no fatigue pressure here.\n\nThe H2H across the last five is instructive: Nice have won the two most recent meetings (2-0 in 2023, 2-1 in 2024), but Strasbourg dominated the three before that (0-2, 0-3, 1-1 from Nice's perspective). The market sits at 1.87 for Strasbourg, and 9/10 tipsters agree with the home selection. At that price, the home win is the logical play — a well-organised, motivated Strasbourg side against a damaged Nice outfit fighting the drop with half their squad unavailable.",
+      "value_note": "Strasbourg at 1.87 is reasonable value — Nice's absence list and PSG capitulation make this more one-sided than a straightforward relegation battle usually is."
+    },
+    {
+      "game_number": 10,
+      "home_team": "Brest",
+      "away_team": "Rennes",
+      "predicted_outcomes": [
+        "2",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.64,
+      "key_factors": [
+        "Rennes H2H dominance — won or drew all 5 recent meetings with Brest",
+        "Franck Haise's managerial quality adds tactical edge despite late-stage bounce effect",
+        "Rennes missing up to 6 players — significant burden for an away fixture",
+        "Brest missing only 2 players — relatively intact squad at home"
+      ],
+      "risk_flags": [
+        "Rennes's 6-player absence list is the week's most damaging relative injury disadvantage",
+        "Haise's bounce effect fading at 8 weeks — less structural advantage than weeks 1-3"
+      ],
+      "analysis": "Rennes travel to Brest under the management of Franck Haise, who has been in post for approximately eight weeks. At this stage, the new manager bounce is at its tail end, but Haise is a well-respected Ligue 1 tactician from his time at Lens and may already have introduced structural changes that are showing dividends. The difficulty is that Rennes arrive with a strikingly long injury list: Frankowski, Jacquet, Rosier, and Rouault are confirmed out, with Nagida and Szymanski also questionable. That is potentially six unavailable players, which is a significant constraint for any squad, particularly in an away fixture at a technically capable side.\n\nBrest are without Balde and Doumbia — two confirmations, both manageable. The H2H record favours Rennes decisively: all five meetings in the data show either a Rennes win or a draw, with Rennes winning four of the five. That is an exceptional away record against this specific opponent. However, those historical patterns may count for less when Rennes are missing key personnel across multiple positions and travelling without their full squad cohesion under a relatively new manager.\n\nThe market prices Rennes at 2.2 as away winners — more likely than not, according to the odds — and six of ten tipsters back them. The public at 38% for Rennes suggests the market is slightly ahead of public perception. Given Haise's pedigree and the historical H2H dominance, Rennes remains the call, but the injury burden creates genuine uncertainty. The draw at 3.6 is a reasonable hedge consideration for a coupon that needs flexibility.",
+      "value_note": "Rennes at 2.2 is historically justified but their injury situation is severe — the draw at 3.6 deserves consideration."
+    },
+    {
+      "game_number": 11,
+      "home_team": "Lille",
+      "away_team": "Lens",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.66,
+      "key_factors": [
+        "Lille have won 4 of last 5 derbies vs Lens, including a very recent 1-0 victory",
+        "Lens missing 6 players including key defensive organiser Gradit and Masuaku",
+        "Lille home advantage in the Nord Derby is significant",
+        "6/10 tipsters back Lille; market price of 2.6 reflects genuine value"
+      ],
+      "risk_flags": [
+        "Derby volatility — form and logic often overridden by intensity",
+        "Lille themselves missing 4 players including Mbemba (key defensive organiser)"
+      ],
+      "analysis": "The Nord Derby is one of French football's most emotionally charged fixtures, and prediction confidence in derbies is always compressed — both sides lift, tactical plans are disrupted by intensity, and form often takes a back seat to adrenaline. That caveat stated, the structural signals lean toward Lille this weekend. The hosts are missing four players — Caillard, Igamane, Mbemba, and Toure — but Lens arrive in a significantly worse shape, with six confirmed absentees: Aguilar, Antonio, Baidoo, Gradit, Gurtner, and Masuaku. Losing Gradit (an experienced defensive organiser) and Masuaku (an important left-sided outlet) strips Lens of defensive leadership and width on both sides.\n\nThe H2H record across five recent meetings tells an increasingly clear story of Lille dominance: four wins and one loss, including a 1-0 victory in what appears to be a very recent encounter (March 30th, 2025). Six of ten tipsters back Lille, with three calling a draw and only one backing Lens outright. The market has this at 2.6 for Lille and 2.8 for Lens — almost level-pegging in price, which is interesting given the recent pattern and injury comparison.\n\nAt 2.6, Lille represent decent value in a derby context — the home advantage, the recent H2H record, and Lens's more extensive absentee list all point in the same direction. Derby volatility is a real factor and prevents high confidence, but the directional case for Lille is clear. This is a natural doubling game rather than a single, but Lille is the right side to be on.",
+      "value_note": "Lille at 2.6 carries value relative to the injury comparison and recent H2H record."
+    },
+    {
+      "game_number": 12,
+      "home_team": "OH Leuven",
+      "away_team": "Standard Liege",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.61,
+      "key_factors": [
+        "OH Leuven at home — modest but consistent edge in this fixture",
+        "7/10 tipsters back Leuven; public at 47% aligned",
+        "H2H balanced — Standard have won and drawn recent encounters at this venue",
+        "No injury concerns for either side — even contest on personnel"
+      ],
+      "risk_flags": [
+        "H2H shows the 0-0 draw at Leuven in April 2024 — draws are a realistic outcome",
+        "Limited data availability reduces confidence significantly — Belgian Pro League gap"
+      ],
+      "analysis": "The Belgian Pro League offers limited data depth this week, with no confirmed absences from either side, no xG, no form figures, and limited contextual news. Analysis here rests primarily on the market, H2H, and the home advantage factor. OH Leuven at home are priced at 2.1 — a modest favourite price that the market has assigned them over a Standard Liege side sitting at 3.7. Seven of ten newspaper tipsters back the home side, with two calling a draw and one backing the visitors.\n\nThe H2H record across five meetings is notably balanced: Standard Liege have won one (1-0 in 2024), lost one (1-3 in 2022), and drawn three (including a goalless draw in April 2024 at the same venue as this fixture). That recent 0-0 draw at Leuven is a meaningful signal — these sides are well-matched and low-scoring affairs are not unusual between them. Standard's 2024 home win shows they are capable of taking points in this fixture.\n\nWithout form data, injury context, or xG, the honest assessment is that this is a game where the home advantage is a real but not dominant edge. Leuven at 2.1 is a reasonable selection with moderate confidence. This is a natural full-row or doubling game on the coupon — not a single, and not a game to build firm strategy around. The home win is the most supported outcome across the data available.",
+      "value_note": "No strong value signal — Leuven at 2.1 is fair but not compelling."
+    },
+    {
+      "game_number": 13,
+      "home_team": "Ajax",
+      "away_team": "Twente",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.67,
+      "key_factors": [
+        "Ajax at home — home advantage is meaningful in Eredivisie context",
+        "Ajax missing 5 players including Zinchenko (key in possession) and Itakura",
+        "Twente only missing Hilgers — injury comparison favours visitors on raw number gap",
+        "9/10 tipsters back Ajax; public 53% aligned"
+      ],
+      "risk_flags": [
+        "Twente have beaten Ajax 3-1 twice in recent H2H — clear competitive capacity at this level",
+        "Ajax's 5-player absence list, including Zinchenko, weakens their technical superiority"
+      ],
+      "analysis": "Ajax host Twente in an Eredivisie fixture that is less straightforward than the home side's prestige might suggest. The H2H record is striking: while Ajax won 3-1 in January 2021, Twente have since beaten them 3-1 twice in 2023, with only a narrow Ajax win (1-0) sandwiched between those two Twente victories. Twente have demonstrably competed with and beaten Ajax in recent years, suggesting this is not the walkover that Ajax's name might imply.\n\nAjax arrive with a notable injury list: Itakura, Jaros, Regeer, and Zinchenko are confirmed out, with Tomiyasu questionable. Zinchenko is a significant loss — his intelligence in possession and positional flexibility make him an important contributor to Ajax's build-up play. Itakura in defence and Regeer in midfield are also meaningful absentees. Twente are only missing Hilgers — a captain and key defensive presence, which is impactful, but a single absence against Ajax's five represents a clear disadvantage for the visitors in injury terms.\n\nNine of ten tipsters back Ajax, and the public is 53% with the home side. The market has Ajax at 2.35 — reflecting genuine uncertainty despite the home advantage. With five absentees, Ajax's squad depth will be tested, but in the Eredivisie context, Ajax's overall squad quality should absorb those losses more comfortably than a mid-table side would. The home factor, the market consensus, and the injury comparison (five vs one, even accounting for Hilgers's importance) all support Ajax. The recent H2H competitive nature introduces enough uncertainty to keep this as a doubling game rather than a single.",
+      "value_note": "Ajax at 2.35 is reasonable value if their depth holds — but Twente's recent H2H record makes this a doubling game at best."
+    }
+  ]
+}
