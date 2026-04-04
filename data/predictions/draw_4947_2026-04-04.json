@@ -1,13 +1,13 @@
 {
   "draw_number": 4947,
   "draw_date": "2026-04-04",
-  "saved_at": "2026-04-04T07:47:26.843826+00:00",
-  "executive_summary": "A coupon dominated by heavy favourites in the cup ties and clear La Liga/Ligue 1 trends, but uncertainty lurks in the Bundesliga showpiece and the Belgian fixture where data is almost non-existent. Chelsea vs Port Vale and Southampton vs Arsenal stand out as the week's two clearest calls, with Strasbourg at home to a badly wounded Nice side emerging as the third banker. The Atlético–Barcelona heavyweight clash is muddied by Atlético's injury crisis and fatigue after a midweek European tie, tilting the analysis towards Barcelona despite the away tag. This is not a week flush with four genuine 0.90+ confidence selections — Game 2 and Game 1 qualify comfortably, Game 9 edges over 0.80, and Game 4 sits just below. Punters should treat this as a three-strong singles week with careful doubling on the rest.",
+  "saved_at": "2026-04-04T08:10:09.669574+00:00",
+  "executive_summary": "Draw #4947 is a genuinely volatile coupon with only two matches — Chelsea vs Port Vale and Southampton vs Arsenal — clearing the 0.80 confidence threshold. A chaotic fortnight of international break fixtures, an extended injury list at Atlético Madrid, and significant absentees across Lazio, Lens and Ajax make this a week to spread risk rather than stack singles. The dominant narrative is quality gap: two FA Cup quarter-finals pit Premier League giants against lower-league opposition, providing the clearest value. Elsewhere, the Atlético-Barcelona title clash demands respect for Simeone's depleted midfield and fixture congestion, while Stuttgart hosting Dortmund is the most intriguing swing match on the card. With fewer than four games warranting above-0.80 confidence, this is flagged as a volatile week.",
   "value_radar": [
-    "Game 9 (Strasbourg vs Nice): Nice at 4.4 looks completely mispriced given their DOWN-FORM tag, five confirmed absences, relegation panic, and a recent 1-5 away thrashing. Strasbourg at 1.87 represents genuine value.",
-    "Game 3 (Atlético vs Barcelona): Barcelona at 2.2 may be slight value given Atlético's injury carnage (7 absentees including potential Oblak absence) and a 3-day turnaround after Europa League. The draw at 3.8 is almost equally tempting given Simeone's defensive resilience.",
-    "Game 8 (Stuttgart vs Dortmund): Stuttgart at 2.4 looks mildly attractive given their dominant recent H2H (three consecutive wins over BVB) and strong home form — the public's 46% split suggests the market hasn't fully priced in Stuttgart's home superiority in this fixture.",
-    "Game 11 (Lille vs Lens): Lille's H2H record against Lens at home is exceptional (four wins from last four home derbies including a 4-0), yet Lens at 2.8 might attract action from those chasing the P2 side. Lille at 2.6 represents the value side of this coin."
+    "Game 3 (Atlético vs Barcelona): Atlético are missing seven players including both first-choice central midfielders through suspension, played midweek in Europe and face a CL quarter-final next week — yet are still priced at 3.2. Barcelona's value at 2.2 in this context looks generous given the opponent's crisis.",
+    "Game 9 (Strasbourg vs Nice): Nice have lost 0-4 twice in their last five, carry five absentees and are in a relegation fight away from home. Strasbourg at 1.87 represents strong value relative to the one-sided form picture.",
+    "Game 11 (Lille vs Lens): Lille have won all four home Nord derbies in the data provided, Lens are decimated with six absentees, yet Lille are still priced at 2.6. The H2H edge and home record are underpriced by the market.",
+    "Game 1 (Southampton vs Arsenal): Arsenal at 1.26 looks short on paper but with a three-player Southampton suspension and injury crisis in a cross-division FA Cup quarter-final, there is essentially no plausible route to a Southampton win against a Premier League title contender."
   ],
   "predictions": [
     {
@@ -18,19 +18,19 @@
         "2"
       ],
       "selection_type": "single",
-      "confidence": 0.87,
+      "confidence": 0.88,
       "key_factors": [
-        "Southampton missing two midfielders through suspension (Downes, Matsuki) plus captain Stephens doubtful",
-        "Arsenal fully fit, flagged UP-FORM, elite xGF/xGA metrics over last 5 and 10 games",
-        "Division gap — Championship vs Premier League leaders — is the dominant factor",
-        "Arsenal winning four of last five H2H meetings, including dominant scorelines"
+        "Southampton missing Downes and Matsuki (both suspended) plus Stephens doubtful — midfield and defensive leadership depleted",
+        "Arsenal fully fit with no absences, UP-FORM flag, xG data indicating structural quality not variance",
+        "Cross-division quality gap: Championship vs Premier League leaders in a one-off cup fixture",
+        "H2H: Arsenal won 4 of last 5 meetings including dominant scorelines"
       ],
       "risk_flags": [
-        "Southampton's 14-game unbeaten run breeds genuine confidence — upset potential exists in cup football",
-        "Arsenal's away draw-heavy record in league could reflect cautious approach, though cup context differs"
+        "Cup football is inherently unpredictable; Southampton's long unbeaten run shows real morale",
+        "Arsenal's away form in the league shows a draw tendency, though the quality comparison here is fundamentally different"
       ],
-      "analysis": "The context of this FA Cup quarter-final is unusual and demands honesty: Southampton are a Championship side riding a remarkable 14-game unbeaten run and will carry genuine momentum and belief into this tie. Their home form is exceptional — five wins from five last time out at St Mary's — and the 'no fear' mentality against elite opposition is real. But Arsenal are the Premier League leaders, flagged as UP-FORM, carrying elite-level xG numbers (xGF 1.89, xGA 0.80 over their last five) and arrive with a fully fit squad, which is a significant advantage in itself.\n\nThe injury picture tilts further toward Arsenal. Southampton lose Flynn Downes and Kuryu Matsuki to suspension — both picked up second yellows in the previous FA Cup round — and captain Jack Stephens is doubtful after a training ground knock this week. Losing two midfielders through suspension disrupts Southampton's engine room and could leave them exposed against Arsenal's pressing and transition speed. Three confirmed absentees for a Championship side facing a top-flight giant is a meaningful handicap.\n\nArsenal's away form superficially shows a lot of draws (X, 2, 2, X, X in their last five away), but those results came against Premier League opposition in a congested title race where they were managing minutes. This is a different context — a cup knockout at a lower-league venue. Historically, Arsenal have dominated this fixture: in the last five meetings they have won four and drawn once, including a 3-0, 3-1, and a 3-3 thriller. The gulf in division quality is hard to ignore, and ten of ten newspapers agree on an Arsenal win.\n\nThe odds at 1.26 offer minimal financial reward but maximum analytical clarity. Southampton's home spirit might produce a competitive first half, but Arsenal's depth, class, and full fitness should see them through comfortably. The draw at 6.4 reflects the real but modest upset potential; the home win at 12.5 is a long-shot fantasy.",
-      "value_note": "At 1.26, odds give almost no return. Arsenal win is the correct analytical call but financially unattractive as a standalone."
+      "analysis": "This is a Championship side hosting the Premier League's top side in an FA Cup quarter-final, and the gulf in class is cavernous. Southampton's excellent unbeaten run — now stretching into double figures — has been built on Championship opposition, and a completely different level of intensity awaits them here. The injury news only compounds the problem: Flynn Downes and Kuryu Matsuki are both suspended following yellow cards in the previous round, robbing Southampton of meaningful midfield industry, while Jack Stephens — their captain and defensive organiser — is doubtful with a training ground knock. Fielding a makeshift spine against Arsenal is not a recipe for a giant-killing.\n\nArsenal arrive carrying the bounce-back motivation of a side that lost the Carabao Cup final and have since had a fortnight to stew on it. They are flagged UP-FORM across their last five outings and their xG numbers are impeccable: xGF of 1.89 with actual goals of 2.2 slightly outpacing expectation, while their defensive xGA of 0.80 exactly matches actual conceded — a sign of genuine structural solidity, not luck. No injuries or call-up absences whatsoever.\n\nThe H2H is unambiguous. Arsenal have won four of the last five meetings between these clubs, including a 3-0 at Southampton and a 3-1 win at the Emirates, with only a high-scoring 3-3 draw providing any hint of Southampton competitiveness. Away form in the league shows some draws, but those were against Premier League peers, not Championship opposition — context matters enormously.\n\nTen of ten newspaper tipsters back Arsenal. The away odds of 1.26 are short but honest. Southampton's home FA Cup form has been impressive — five-goal wins against lower opposition — but Arteta's side represent a step up of a completely different order. The suspended midfield and doubtful captain leave a Southampton team already outgunned even further exposed. Arsenal to win comfortably.",
+      "value_note": "1.26 looks short but is essentially fair given the quality chasm and Southampton's suspended spine."
     },
     {
       "game_number": 2,
@@ -40,19 +40,19 @@
         "1"
       ],
       "selection_type": "single",
-      "confidence": 0.93,
+      "confidence": 0.94,
       "key_factors": [
-        "Enormous quality gap — Premier League vs League One bottom side",
-        "Chelsea massively underperforming xGF (2.07 vs 1.2 actual goals) — finishing correction due",
-        "New manager Rosenior provides motivation for fringe players to impress",
-        "Port Vale lost 4-0 midweek, morale and fitness both compromised"
+        "Chelsea xGF 2.07 vs actual GF 1.2 — massive underperformance, statistical regression strongly expected",
+        "Port Vale: League One relegation candidates, 4 confirmed absentees including starting striker",
+        "New manager bounce (Rosenior) combined with motivation to end four-game losing streak",
+        "Enormous quality differential: Premier League vs League One bottom side"
       ],
       "risk_flags": [
-        "Chelsea's profound League form (4 straight losses) raises fringe-level confidence questions",
-        "Cup rotation means Chelsea's lineup may lack cohesion, though individual quality should prevail"
+        "Chelsea on a four-game losing streak — morale and momentum concerns",
+        "Cup shocks do happen, and Port Vale have shown FA Cup resilience all season"
       ],
-      "analysis": "This is as close to a certainty as the coupon offers. Chelsea, despite their chaotic recent form in the Premier League — four straight league defeats under new manager Liam Rosenior — face a Port Vale side sitting 24th in League One, staring down the barrel of relegation from the third tier of English football. The class differential is enormous, even accounting for Chelsea's current turbulence.\n\nRosenior's situation is arguably the most interesting analytical wrinkle. At eight weeks in post, the new manager bounce effect is still theoretically present, and this cup tie against League One opposition gives his fringe players a platform to impress and stake a claim. The xG data tells a revealing story about Chelsea: their xGF of 2.07 per game over five matches against actual goals of just 1.2 represents a staggering underperformance of nearly a goal per game. They have been creating chances at a Premier League-standard rate; the finishing has simply deserted them. A match against League One's basement side is precisely the kind of fixture where that dam breaks.\n\nPort Vale arrive with their own fatigue flag after a 4-0 thrashing at Wycombe midweek, though Chelsea also lost 3-0 at Everton. Both had roughly three days' rest. But the League One side's away record is poor (wins only appearing against weaker opposition) and their xG data is unavailable — which simply means we rely on the observable: they are bottom of League One for a reason.\n\nAll ten newspapers tip Chelsea, the market prices Port Vale at 31.0 — essentially a mathematical improbability. The only real question is the margin of victory. Even with heavy rotation of Chelsea's squad, the talent gap between a Premier League club's fringe players and Port Vale's best XI is vast.",
-      "value_note": "Odds at 1.09 are essentially void of financial value, but the analytical confidence is near maximum. This is a single on any coupon."
+      "analysis": "The raw numbers tell one story, the backstory tells another, but both arrive at the same conclusion: Chelsea win this comfortably. Port Vale's FA Cup run has been genuinely remarkable — five consecutive victories to reach a quarter-final for the first time in living memory — but they arrive at Stamford Bridge as a League One side rooted to the bottom of the table, 14 points adrift of safety, with four confirmed absences including striker Jayden Stockley and defender Ben Heneghan. These are not squad fringe players; a striker and centre-back missing against a Premier League side matters.\n\nChelsea are on a four-game losing streak and find themselves in an uncomfortable moment of transition under new manager Liam Rosenior, who arrives with the eight-week new manager bounce window still theoretically open. Crucially, their xG data reveals the slump is massively cosmetic: over the last five games, Chelsea's xGF is 2.07 but actual goals are only 1.2 — a shortfall of 0.87 per game. This is one of the starkest underperformance signals in the entire coupon. The chances are being created; the finishing has been catastrophic. Against League One opposition in a must-win environment to save their season's credibility, regression upward is not just likely, it is almost certain.\n\nRosenior has a chance to stop the rot with a morale-boosting cup run. The home crowd, the quality mismatch, and the psychological need to perform combine with statistical regression signals to make this about as close to a certainty as football allows. Port Vale's five-game winning streak will not survive a motivated, full-strength (or near full-strength) Chelsea XI unleashed at home.\n\nAll ten newspaper tipsters agree, the public sits at 87%, and the odds at 1.09 reflect a near-certainty. The only risk is a Chelsea collapse of historic proportions, which even their current form does not suggest is plausible.",
+      "value_note": "1.09 is essentially breakeven price — no value, but the correct side. Useful only as a banker."
     },
     {
       "game_number": 3,
@@ -63,20 +63,19 @@
         "X"
       ],
       "selection_type": "double",
-      "confidence": 0.7,
+      "confidence": 0.68,
       "key_factors": [
-        "Atlético Madrid missing potentially 7 players including Llorente, Cardoso, Barrios (all midfield/key positions), Oblak doubtful",
-        "Barcelona had 13 days rest vs Atlético's 3 after Europa League midweek — massive fatigue asymmetry",
-        "Barcelona xGF 3.29 over 10 games, underperforming actual goals — regression toward more goals expected",
-        "First of three meetings in 10 days — Atlético may park the bus and contain for Champions League context"
+        "Atlético missing 7 players including Llorente and Cardoso (both suspended midfielders) and Barrios (injury)",
+        "Atlético played midweek (Europa League) — only 3 days rest, with CL and Copa del Rey fixtures imminent",
+        "Barcelona UP-FORM, fully fit, xGF 2.83 — prolific attacking output",
+        "Rotation risk for Atlético given the fixture pile-up ahead"
       ],
       "risk_flags": [
-        "Atlético's Metropolitano fortress — Simeone's teams consistently punch above their weight at home despite absences",
-        "Barcelona xGA 1.25 but only conceding 0.6 — defensive overperformance that could regress, especially at Atlético",
-        "Three-game series context may lead to conservative approach by both sides"
+        "Atlético's home record is formidable historically and Simeone's side have won 4 of last 5 at home",
+        "Barcelona may also manage workload ahead of CL quarter-final vs same opponent next week"
       ],
-      "analysis": "This is one of the most analytically rich and complex matches of the round, and crucially one of three meetings between these sides in the next ten days — a fact that adds significant tactical intrigue. Atlético under Simeone are always formidable at the Metropolitano, and their UP-FORM tag (four wins in last five) reflects genuine momentum. Their home record over the period is outstanding: four wins from five, including a 3-0 and a 4-2. But the week's context has dealt Atlético a punishing hand.\n\nThe injury list is nothing short of catastrophic. Marcos Llorente and Johnny Cardoso are both suspended, while Pablo Barrios — their dynamic midfield controller — is injured. Marc Pubill is out in defence. Jan Oblak's fitness is doubtful, which would be a devastating blow to their structural identity. Alexander Sorloth took a head knock on international duty and is only doubtful. That is potentially seven first-team players unavailable, gutting the midfield core that makes Simeone's system function. On top of this, Atlético played a draining 3-3 draw in the Europa League just three days before this fixture, while Barcelona had 13 days of rest following the international break.\n\nBarcelona arrive in devastating shape — five consecutive wins, an xGF of 2.83 with actual goals of 2.8 per game, and an extraordinary defensive record (only 0.6 goals conceded per game against an xGA of 1.25, suggesting some goalkeeper fortune, but the overall picture remains commanding). Raphinha is confirmed absent with a hamstring issue, which hurts, but Balde appears likely to return, and the squad depth is formidable. Their ten-game xGF of 3.29 versus actual GF of 2.5 points toward regression upward — more goals are statistically owed.\n\nThe strategic dimension complicates things further. Simeone may set up to absorb and not concede heavily, preserving legs for the Champions League quarter-final. A cagey 0-0 or 1-1 is entirely within the Atlético template. The draw at 3.8 has genuine appeal. But rationally, Barcelona's rest advantage, injury superiority, and devastating form edge them toward a win. This is the bet, with the draw acknowledged as a live alternative.",
-      "value_note": "Barcelona at 2.2 is fair value given the injury and fatigue imbalance. The draw at 3.8 is the natural hedge if you believe Simeone's defensive setup limits Barcelona's threat."
+      "analysis": "This is the standout fixture of the Spanish round and one of the most fascinating analytical puzzles of the week. Atlético arrive in a state of genuine crisis beneath their UP-FORM surface: seven players absent or doubtful, the midfield spine exposed through the suspensions of Marcos Llorente and Johnny Cardoso — two of Simeone's most important engines — while Pablo Barrios adds a third midfield absence through injury. Jan Oblak is doubtful with injury and Alexander Sorloth carries a head knock from international duty. This is not a superficial injury list; this goes to the heart of how Atlético function tactically.\n\nCompounding the personnel problems is fixture congestion. Atlético played midweek in the Europa League — a 3-3 draw with Club Brugge — and will face Barcelona again in the Champions League quarter-final first leg next week, with the Copa del Rey final against Real Sociedad on April 18. Simeone will be acutely aware of this calculus, and rotation is a realistic possibility even for a high-profile league fixture. The fatigue signal here is one of the strongest in the coupon.\n\nBarcelona, by contrast, are on a flawless five-game winning run in all competitions, carry no injury concerns, and their xGF of 2.83 over the last five games confirms the underlying quality that the scorelines suggest. Their defensive numbers are equally impressive — xGA 1.25 but actual conceded only 0.6 — though that gap does carry some regression risk over time. Away form is not pristine (two defeats in their last five away from home) but those results came against opponents of a different nature.\n\nPublic (46%) and newspaper tipsters (5/10) back Barcelona, and the 2.2 price reflects a genuinely open fixture. Given the injury crisis, fatigue, and rotation risk facing Atlético — against a team they will see again in the Champions League within seven days — Barcelona's edge is real and arguably underpriced.",
+      "value_note": "Barcelona at 2.2 is arguably the best value single on the card given the opponent's injury crisis and fatigue."
     },
     {
       "game_number": 4,
@@ -86,19 +85,19 @@
         "2"
       ],
       "selection_type": "single",
-      "confidence": 0.78,
+      "confidence": 0.72,
       "key_factors": [
-        "Real Madrid missing Valverde, Courtois, Mendy, Rodrygo — four key regulars confirmed absent",
-        "H2H is overwhelmingly Real Madrid (6-1, 4-1, 2-0 among last five meetings)",
-        "Mallorca's xGF of 1.10 and xGA of 1.97 among the league's worst attacking/defensive combinations",
-        "Mallorca in relegation danger provides motivation but their quality gap vs Madrid remains large"
+        "Mallorca's xGF of 1.10 is one of the lowest attacking outputs on the coupon — severely limited threat",
+        "Real Madrid's dominant H2H record (5 wins from last 5, aggregate scorelines emphatic)",
+        "Real Madrid excellent away form despite missing Courtois, Valverde, Rodrygo and Mendy",
+        "Mallorca's relegation anxiety may induce defensive, low-tempo approach"
       ],
       "risk_flags": [
-        "Real Madrid missing four high-profile regulars simultaneously is a non-trivial handicap",
-        "Mallorca's relegation desperation plus new manager Demichelis could produce a well-organised, low-block upset"
+        "Real Madrid missing four quality players including Valverde (midfield) and Rodrygo (attack) — reduced creative threat",
+        "Mallorca's home form with new manager has been slightly better: two recent home wins suggest some defensive resilience"
       ],
-      "analysis": "The structured injury data confirms Real Madrid are missing four significant players: Thibaut Courtois (meaning Lunin deputises in goal), Ferland Mendy (first-choice left back), Rodrygo (a key attacking outlet), and Federico Valverde (arguably their most important midfield engine). These are not peripheral figures — Valverde's absence in particular removes their press resistance and vertical threat. Mendy at left back means an improvisational solution in that flank. Yet the H2H record against Mallorca is so overwhelming — six wins from six recent meetings, including 6-1 and 4-1 drubbings — that even a weakened Real Madrid remains a formidable proposition.\n\nMallorca sit 18th, deep in relegation trouble, under new manager Martín Demichelis who is eight weeks into the job. The new manager bounce effect may still be lingering, and the DOWN-FORM tag reflects their recent struggles (three losses in last five overall). Their xGF of just 1.10 per game and xGA of 1.97 tell the story of a team that creates little and concedes generously. Missing Bergstrom, Raillo, and Salas compounds their defensive fragility. Corners per game of just 2.4 illustrates how little territory they occupy in matches.\n\nReal Madrid's away form over their last five is strong (1, 2, 1, 1, 1 — four wins away from the Bernabéu). Their xGF of 1.87 slightly understates their actual goals output of 2.0 per game, suggesting clinical finishing. The Mallorcan crowd and relegation desperation inject some energy, and Demichelis may organise a disciplined rearguard, but Real Madrid's class — even at 70% — is likely sufficient. Nine newspapers back Real Madrid, and the 1.6 odds reflect genuine probability rather than public over-enthusiasm.",
-      "value_note": "Real Madrid at 1.6 is shorter than comfort allows given their four absences, but the H2H and quality gap justify backing them."
+      "analysis": "Mallorca sit 18th in La Liga, three points from safety, and their numbers are alarming: xGF of just 1.10 over the last five games with only 2.4 corners per game and 10.4 shots — a team barely creating anything. New manager Martín Demichelis arrived eight weeks ago and the DOWN-FORM flag tells us the bounce effect has not materialised in the way hoped, though the home results have been slightly better than away. Missing Bergstrom, Raillo and Salas compounds a thin squad already stretched by relegation anxiety.\n\nReal Madrid's injury list is also notable — Courtois, Mendy, Rodrygo and Valverde are all out. Losing Valverde (midfield driving force) and Rodrygo (a key attacking threat) is genuinely significant, and starting Lunin in goal rather than Courtois is a step down. Mendy at left-back will require cover. These are not fringe players; this is Real Madrid at something less than full strength.\n\nNevertheless, the H2H record is emphatic: Real Madrid have won all five of the last five meetings, including a 6-1, a 4-1, and two 2-0 wins. Even depleted, the Madrid squad has the depth to negotiate Son Moix. Their away form is excellent — won four of their last five away — and their xGF of 1.87 translates to actual GF of 2.0, modest overperformance that looks repeatable given their quality.\n\nNine of ten newspapers back Real Madrid, the public sits at 67%, and the 1.6 price is fair. The visitor injuries introduce genuine uncertainty — especially Valverde's absence — and that is enough to keep confidence below 0.80, but the direction of play is clear.",
+      "value_note": "Real Madrid at 1.6 feels fair but not generous. Injuries to Valverde and Rodrygo are the primary caveat."
     },
     {
       "game_number": 5,
@@ -109,19 +108,19 @@
         "X"
       ],
       "selection_type": "double",
-      "confidence": 0.7,
+      "confidence": 0.65,
       "key_factors": [
-        "Espanyol's xGA of 2.04 away — one of the division's most leaky defences — plays into Betis's hands",
-        "Betis xGF 1.47 vs actual GF 1.0 — finishing regression overdue at home",
-        "Betis have won 4 of last 5 H2H meetings including the most recent two league clashes",
-        "Espanyol missing key attackers Milla and Puado, further blunting their already modest goal threat"
+        "Betis xGF 1.47 vs GF 1.0 — significant underperformance, regression upward expected",
+        "Espanyol xGA 2.04 — genuinely leaky defence, one of the poorest on the coupon",
+        "H2H: Betis won 4 of last 5 head-to-heads",
+        "Betis at home with strong home xG production advantages"
       ],
       "risk_flags": [
-        "Betis missing Isco, Lo Celso, Firpo, Ortiz — four players who would normally start or heavily feature",
-        "Betis DOWN-FORM, winless in last five overall — the malaise could continue regardless of xG patterns"
+        "Isco and Lo Celso both missing — key creative engine stripped from Betis",
+        "Betis home form pattern: 3 draws in last 5 at home suggests potential for stalemate"
       ],
-      "analysis": "Real Betis are in an unsettling period of form — flagged DOWN-FORM and winless in their last five, with three draws and two defeats. The xG picture is particularly damning: their xGF of 1.47 per game against actual goals of just 1.0 points to a team that creates decent chances but cannot finish. More alarmingly, their xGA of 1.07 but actual concession rate of 1.6 per game suggests goalkeeping or defensive lapses are betraying what the underlying numbers imply is a decent defensive structure. Four significant absences — Firpo, Isco, Lo Celso, and Ortiz — strip them of quality and creativity at both ends.\n\nHowever, their home form offers partial redemption: the last two home results were wins (2-1 and 2-0), and the run of three draws before that shows they are not being torn apart at the Benito Villamarín. The regression narrative also supports Betis — they should score more than they have been.\n\nEspanyol arrive as the away side with an xGA of 2.04 per game and an actual concession rate of 2.2 — one of Ligue 1's most vulnerable defences, in a team sitting comfortably mid-table without particular urgency. Their H2H record against Betis has been poor historically, with Betis winning four of the last five meetings (including two of the most recent league clashes). Missing Milla and Puado from their attacking options further blunts whatever threat they carry.\n\nAt 1.77, Betis represent reasonable value for a home side whose underlying numbers suggest goals are overdue. Espanyol's defensive fragility away from home should be exploited even by a Betis side not at full strength. This is a moderate-confidence home win.",
-      "value_note": "Betis at 1.77 offers modest value against a defensively vulnerable Espanyol side — regression from xGF underperformance makes this timely."
+      "analysis": "Real Betis have been maddeningly inconsistent — three draws and two defeats in their last five across all competitions — yet their underlying numbers tell a story of a team starved of luck rather than quality. Their xGF of 1.47 against actual GF of 1.0 represents a shortfall of nearly 0.5 per game: they are creating the chances but not converting. The defensive picture is the inverse concern: xGA of 1.07 but conceding 1.6 — their defence has been bailed out by the xG model but exposed on the scoreboard. Regression upward in attack and downward in defence is the statistical expectation here.\n\nThe injury situation muddies the picture, however. Missing Isco and Giovanni Lo Celso simultaneously is significant — both are central creative figures in Pellegrini's system, and their absence explains at least some of the attacking misfires. Juan Miranda Firpo and Ortiz add defensive absentees. Betis are not fielding their best XI, which somewhat undermines the regression-up argument for their attack.\n\nEspanyol are mid-table and their xGA of 2.04 (actual conceded 2.2) marks them as genuinely porous defensively — they concede freely and cannot rely on goalkeeper heroics to save them. Their own attacking numbers (xGF 1.26, GF 1.4) suggest slight overperformance that may not sustain. Missing Milla and Puado, though neither appears transformational.\n\nH2H backs Betis strongly — four wins from the last five meaningful meetings. The home advantage, opponent's leaky defence, and regression signals all align for a Betis win, though the missing Isco and Lo Celso introduce the real risk that the scoreless draw pattern continues. A 1X cover is prudent.",
+      "value_note": "Betis at 1.77 has value given Espanyol's defensive frailty, but the Isco/Lo Celso absences are a genuine caveat."
     },
     {
       "game_number": 6,
@@ -132,19 +131,19 @@
         "X"
       ],
       "selection_type": "double",
-      "confidence": 0.76,
+      "confidence": 0.67,
       "key_factors": [
-        "Parma xGF of 0.64 per game — one of Serie A's worst attacking returns, with no evidence of regression improvement",
-        "Lazio's dominant H2H record at home (five wins from five in recent meetings)",
-        "Lazio UP-FORM flag despite absences, maintaining momentum coming out of international break",
-        "Parma missing four players of their own, including Almqvist and Cremaschi"
+        "Parma's xGF of 0.64 — one of the weakest attacking outputs on the coupon, very limited threat",
+        "Lazio's H2H dominance: 4 wins from last 5 meetings including recent Serie A fixtures",
+        "Lazio xGF 1.35 vs actual GF 1.0 — regression upward in scoring expected",
+        "UP-FORM flag for Lazio despite squad disruption"
       ],
       "risk_flags": [
-        "Lazio missing Zaccagni (top scorer), Rovella (midfield controller), Provedel (GK) — three first-team regulars absent",
-        "Lazio's actual GF (1.0 per game) understates even their modest xGF — finishing has been a concern"
+        "Structured data suggests Provedel (GK), Zaccagni and Rovella all missing — significant quality drop",
+        "Lazio home form is inconsistent: only 2 wins from last 5 at home"
       ],
-      "analysis": "Lazio are carrying a significant injury list that demands careful evaluation rather than dismissal. Provedel — their first-choice goalkeeper — is out, which is a meaningful absence. Nicolò Rovella's absence from midfield removes their creative pivot. Mattia Zaccagni, their top scorer and most dangerous attacker, is also missing. These are not fringe squad players; they are regulars who shape how Lazio play. The four confirmed absentees plus two more questionable cases represent a proper injury crisis at a key moment.\n\nAnd yet: Parma's numbers are genuinely alarming. Their xGF of just 0.64 per game over five games is one of the lowest in Serie A — they simply cannot create chances. Their actual goals output of 0.6 per game reflects this accurately, with no sign of the kind of underperformance that would suggest goals are overdue. Their xGA of 1.25 shows they concede more than their position implies. Away from home, their record has been dismal (losses of 4-0 and 1-4 in recent away fixtures alongside a single 1-0 win that looks like an anomaly).\n\nLazio's home H2H record against Parma is excellent — five wins from five across all recent meetings, with only a single 3-1 defeat at Parma in December 2024 breaking the pattern. The UP-FORM flag for Lazio reflects genuine momentum, and while their xGF of 1.35 against actual GF of 1.0 suggests they have been slightly unfortunate in front of goal, Parma's defensive fragility means that even a below-par Lazio attack should find openings. Nine newspapers back the home side, and the logic supports it. The injuries temper confidence from what might otherwise be a very high-conviction call.",
-      "value_note": ""
+      "analysis": "Lazio carry an UP-FORM flag and have won three of their last five, but the structured injury data presents a more sobering picture than the news search acknowledges. Provedel (first-choice goalkeeper), Zaccagni (key attacking midfielder and set-piece threat), Rovella (central midfield anchor), and Gigot (defensive cover) are all listed as missing fixtures, with Basic and Gila also questionable. When structured API data this detailed conflicts with a news sweep that found nothing, the structured data warrants trust — these are not incidental names. Losing Provedel between the sticks and Zaccagni as an attacking weapon represents meaningful quality degradation.\n\nThat said, the underlying numbers still support Lazio. Their xGF of 1.35 versus actual GF of 1.0 means they have been slightly unlucky — regression upward is expected — and their defensive xGA of 0.96 with actual conceded of only 0.6 suggests very compact structure, even if that gap is slightly fragile. Parma, visiting in 12th, generate just 0.64 xGF per game — they simply do not create enough to threaten a home side of Lazio's calibre, even a weakened one. Their own defence concedes at 1.25 xGA which is respectable but not when your attack is so limited.\n\nH2H is overwhelmingly in Lazio's favour: four wins from the last five meetings, including a 2-0 and two further wins in the last three. Parma's one result in this dataset — a 3-1 win in December 2024 — looks like an anomaly rather than a trend. Nine of ten newspapers back Lazio, the 1.78 price offers fair but not spectacular value, and the home advantage with superior squad depth even accounting for injuries gives Lazio the edge.",
+      "value_note": "If Provedel and Zaccagni are confirmed unavailable, the 1.78 may not adequately reflect Lazio's depleted state."
     },
     {
       "game_number": 7,
@@ -155,19 +154,19 @@
         "X"
       ],
       "selection_type": "double",
-      "confidence": 0.68,
+      "confidence": 0.66,
       "key_factors": [
-        "Verona's desperate relegation motivation — every home game is must-win territory",
-        "Verona have won the last two H2H meetings against Fiorentina, suggesting they have Fiorentina's number tactically",
-        "Fiorentina's superior quality and Verona's abysmal xGF (0.81) make a Viola win the probabilistic outcome",
-        "Both sides carrying multiple injury doubts — match context becomes more unpredictable"
+        "Verona xGF 0.81 — second weakest attacking output on the coupon, lost 4 of last 5 home games",
+        "Fiorentina's away form: 3 wins from last 5 away, including a 4-1 and 2-1",
+        "H2H: Fiorentina won 3 of last 5 meetings at Verona",
+        "Verona's new manager bounce has failed to materialise (DOWN-FORM flag persists)"
       ],
       "risk_flags": [
-        "Verona's recent H2H wins (2-1 and 1-0) cannot be dismissed as coincidence — they may have a tactical blueprint",
-        "Verona's relegation desperation could produce a backs-to-the-wall 0-0 draw"
+        "Fiorentina have 6 players missing or doubtful — including Dodo and Mandragora",
+        "Relegation desperation from Verona may produce a defensive performance inflating draw probability"
       ],
-      "analysis": "Verona are in deep trouble. Sitting 19th in Serie A with just 18 points, new manager Paolo Sammarco — eight weeks into the job — has not engineered the bounce that was hoped for. The team's xGF of just 0.81 per game and their actual goals output of only 0.6 per game over five matches is statistically catastrophic. They are creating virtually nothing, and the 1.20 xGA against actual concession of 1.8 per game shows their defence has been shipping goals well above what the underlying numbers would predict. Four confirmed absences — Bella-Kotchap, Lovric, Serdar, and Bradaric — gut an already thin squad.\n\nThe new manager bounce should theoretically still be alive at eight weeks, and Verona's motivation from relegation desperation cannot be dismissed — relegated sides frequently produce stubborn home performances when their backs are to the wall. Sammarco may set up conservatively, looking to absorb and counter, and the last two H2H meetings are worth noting: Verona have actually won both (2-1 and 1-0 against Fiorentina). This is a meaningful signal against a straightforward narrative.\n\nFiorentina are listed at P16 with 29 points — a surprisingly mediocre position for a club of their resources — and carry six injury doubts of their own including Dodo and Mandragora. Their xGF of 1.22 and xGA of 1.12 are balanced but not dominant, and while their away form has produced wins, it has also included a 3-0 and 2-3 concession. The public and market both lean Fiorentina (1.9 away), which feels broadly correct given the quality differential, but the H2H trend and Verona's survival motivation create genuine uncertainty. This is a genuine double territory match.",
-      "value_note": "The draw at 3.6 has some appeal given H2H and motivation factors. Fiorentina win is still the primary call but this game warrants doubling."
+      "analysis": "Verona are in deep trouble. Second from bottom in Serie A with only 18 points, their five-game form reads four defeats and one win, and their home record is dreadful — five losses in the last five at home. Their xGF of 0.81 barely gets off the ground; they generate fewer than one expected goal per game and their actual scoring rate (0.6 per game) is even worse. The arrival of Paolo Sammarco as new manager eight weeks ago carries a nominal bounce effect, but the DOWN-FORM flag reveals it simply has not materialised — this is a team in genuine structural crisis, not a transitional dip.\n\nMissing Bella-Kotchap, Lovric, Serdar, and Bradaric — four players across positions — strips an already threadbare squad further. Fiorentina's injury list is also significant on paper (six players including Dodo, Mandragora and Lamptey listed as missing or doubtful), but the Viola carry clearly superior squad depth and their away form is positive: three wins from five away trips, conceding only 1.0 per game in away fixtures.\n\nThe H2H record backs Fiorentina — they won three of the last five meetings at Verona's ground, with only a Verona home win in February 2025 providing any counterpoint. The xG numbers for both teams are accurately calibrated (no major divergence), which means form and quality, not luck, explain the gap. A relegation-battling Verona with a new manager who has failed to spark improvement, hosting an away side that wins regularly on the road, is a straightforward analytical picture. Fiorentina win.",
+      "value_note": "Fiorentina at 1.9 is reasonable value given the quality disparity and Verona's historic home struggles this season."
     },
     {
       "game_number": 8,
@@ -178,19 +177,19 @@
         "X"
       ],
       "selection_type": "double",
-      "confidence": 0.7,
+      "confidence": 0.6,
       "key_factors": [
-        "Stuttgart have won three consecutive meetings against Dortmund, including two away wins at the Westfalenstadion",
-        "Stuttgart's strong home form (four wins in last five at home) with a highly motivated squad",
-        "Dortmund's xGF of 2.66 vs actual GF of 2.2 — regression upward suggests they will score, making this an open game",
-        "Both sides missing three players each — roughly equal impact on squad depth"
+        "H2H: Stuttgart won last 3 meetings, including two away at Dortmund",
+        "Stuttgart strong home form: 4 wins from last 5 at home",
+        "Dortmund xGF 2.66 vs GF 2.2 — underperforming, regression upward risk for Dortmund attack",
+        "Stuttgart xGF 2.39 vs GF 3.0 — overperforming, slight regression downward risk"
       ],
       "risk_flags": [
-        "Dortmund's xGF significantly higher than Stuttgart's — Dortmund are the better chance-creating team over 10 games",
-        "Stuttgart overperforming their xGF (3.0 actual vs 2.39 xGF) — finishing regression downward is a risk"
+        "Stuttgart scoring ahead of xG — regression could reduce their goals at a key moment",
+        "Both sides carry 3 confirmed absentees each, broadly neutralising each other"
       ],
-      "analysis": "This is the pick of the Bundesliga weekend — a meeting of two UP-FORM sides sitting third and second respectively, with genuine Champions League implications. Stuttgart at home have been excellent recently: four wins in their last five home fixtures, including impressive victories of 4-0 and 3-1. Their attacking output is explosive — actual GF of 3.0 per game over five matches, though their xGF of 2.39 suggests some over-performance in the finishing department. The defensive xGA of 1.86 against actual GA of 1.4 shows smart but not flawless defending; the clean xG profile suggests they can trade punches effectively.\n\nDortmund arrive in strong form themselves — three consecutive wins before a defeat and a draw — and their xGF of 2.66 against actual GF of 2.2 means regression upward is owed; they have been creating at a higher rate than they are converting. They are missing Emre Can, Mane, and Nmecha, which removes some midfield physicality and an attacking option. Stuttgart lose Jovanovic and Zagadou.\n\nThe H2H is the most compelling single data point in Stuttgart's favour: they have won three consecutive meetings with Dortmund, including a 1-5 win at Signal Iduna Park and back-to-back 1-2 and 0-1 wins at Dortmund in 2024 and early 2025. At their own ground, with this recent H2H record and buoyant form, Stuttgart at 2.4 looks like genuine value. Six newspapers agree. Dortmund's quality makes this a competitive match — the draw at 4.0 should not be dismissed — but the balance of evidence tilts toward Stuttgart.",
-      "value_note": "Stuttgart at 2.4 offers genuine value given H2H dominance. The draw at 4.0 is a reasonable hedge if you expect Dortmund's xG advantage to manifest."
+      "analysis": "This is the most genuinely contested match on the coupon and arguably the most interesting analytically. Stuttgart are third in the Bundesliga with a strong home record — four wins from their last five at home — and carry the UP-FORM flag. However, their xG numbers provide an important warning: over five games, their xGF is 2.39 but actual GF is 3.0, an overperformance of +0.61. High-scoring teams running significantly ahead of their expected output are candidates for statistical regression; Stuttgart have been clinical but perhaps not sustainably so.\n\nDortmund arrive in second place, also UP-FORM, with an inverse xG situation: xGF of 2.66 but actual goals of only 2.2 — underperforming by 0.46. This regression signal points upward for Dortmund's attack, suggesting they have been unlucky in converting. Their defensive xGA of 1.67 is manageable. Absent Emre Can, Mane and Nmecha limit Dortmund's options, but the quality depth at the club remains substantial.\n\nThe H2H record in recent years is emphatically Stuttgart's. They won the last three head-to-head meetings — including 2-1, 2-1 and 1-0 results — and famously beat Dortmund 5-1 in 2020. This is a fixture where Stuttgart have earned psychological dominance. Newspapers lean 6-3 towards Stuttgart with a draw minority. The home advantage, H2H record, and strong home form are Stuttgart's pillars. Dortmund's xG regression signal is the primary counterargument. A draw is genuinely possible — this is a 1/X/2 game — but Stuttgart at home with this H2H record justifies a slim edge.",
+      "value_note": "Stuttgart at 2.4 offers genuine value for a home side with H2H dominance in this fixture."
     },
     {
       "game_number": 9,
@@ -200,42 +199,42 @@
         "1"
       ],
       "selection_type": "single",
-      "confidence": 0.8,
+      "confidence": 0.78,
       "key_factors": [
-        "Nice DOWN-FORM with 5 confirmed absences, conceding 2.4 goals per game with leaky defensive structure",
-        "Nice's recent away results include a 1-5 thrashing — away form is genuinely poor",
-        "Strasbourg's defensive solidity at home (0.8 goals conceded per game, xGA of 1.21)",
-        "Motivation asymmetry: Nice in relegation trouble but lacking the squad quality to grind out a result"
+        "Nice DOWN-FORM: two 0-4 defeats in last 5, 15th in Ligue 1, relegation danger",
+        "Nice xGF 1.69 vs GF 1.0 — historically bad underperformance, but systemic issues likely",
+        "Nice missing 5 players — significant squad disruption for a team already in freefall",
+        "Strasbourg solid at home with compact defensive structure (GA 0.8 from xGA 1.21)"
       ],
       "risk_flags": [
-        "Nice's relegation desperation could produce an unexpected defensive performance — survival is a powerful motivator",
-        "Strasbourg's upcoming European quarter-final may prompt rotation that dilutes their home performance"
+        "H2H: Nice won the last two head-to-head meetings",
+        "Nice's xG regression signal (underperforming by 0.69) could produce a surprise attacking output"
       ],
-      "analysis": "This is arguably the most one-sided fixture on the coupon once the context is fully absorbed. Nice arrive flagged DOWN-FORM, sitting 15th in Ligue 1 with 27 points — genuine relegation proximity — having conceded 2.4 goals per game over their last five matches against an xGA of 2.02. Their xGF of 1.69 but actual goals of just 1.0 represents a team not only defensively leaky but desperately wasteful in front of goal. The psychological profile of a team in free-fall — four goals conceded in two of their last five, including a 0-4 to PSG — suggests structural problems rather than a temporary blip.\n\nFive confirmed absences for Nice compound the damage: Abdelmonem, Bombito, Ndayishimiye, Peprah, and Pereira represent significant squad holes across multiple positions. Their away form reads: 1 (2-0), 2 (0-1), 2 (0-2), 1 (4-1), 2 (1-5) — the 1-5 loss stands out as a statement of their vulnerability on the road. The motivation paradox of a relegated side theoretically playing for survival could produce one determined defensive display, but their structural data does not support any narrative of defensive solidity.\n\nStrasbourg at home are solid: three wins in their last five home fixtures, with a controlled defensive xGA of 1.21 that their actual concession rate of 0.8 per game underlines. They carry three injury absences themselves (Moreira, Ouattara, Panichelli) but these are squad players rather than key starters. The H2H shows Strasbourg won two of the earlier meetings 2-0 and 3-0 before Nice won more recently. Nine newspapers tip Strasbourg. At 1.87, this represents the week's best-value home selection outside the Cup ties.",
-      "value_note": "Strasbourg at 1.87 is the standout value play of the week — Nice's injury crisis, poor form, and defensive fragility make this more certain than the odds imply."
+      "analysis": "This is one of the cleaner analytical calls on the coupon. Nice are flagged DOWN-FORM and their recent results confirm it is no illusion: two 0-4 defeats in their last five outings, a 0-1 loss, one win, and a draw, representing a catastrophic collapse in form. Sitting 15th in Ligue 1, they are in genuine relegation danger away from home — exactly the scenario that produces defensive, desperate football that can still get beaten by a composed home side.\n\nThe xG divergence for Nice is one of the starkest on the card. Their xGF of 1.69 over five games has yielded only 1.0 actual goal — underperforming by 0.69 per game, a genuinely massive number. That might suggest they are due some regression upward, but the pattern of 0-4 scorelines suggests something more systematic than bad luck: defensive collapses have dragged their whole team downwards. Additionally, five confirmed absentees (Abdelmonem, Bombito, Ndayishimiye, Peprah, Pereira) weaken an already fragile side.\n\nStrasbourg, eighth in the table, are solid at home. Their xGF of 1.68 has yielded 1.4 actual goals — slight underperformance pointing to regression upward. Their defensive xGA (1.21) with actual goals conceded of only 0.8 shows a compact, well-organised home unit. Three absentees are noted but not transformational. The H2H is broadly split — Nice won the last two head-to-heads — but form and current personnel overwhelm historical patterns in this case.\n\nNine of ten newspapers, 65% of the public, and the 1.87 home price all align. This has the feel of one of the week's more reliable home wins.",
+      "value_note": "Strasbourg at 1.87 looks like the best value home banker on the coupon outside the FA Cup games."
     },
     {
       "game_number": 10,
       "home_team": "Brest",
       "away_team": "Rennes",
       "predicted_outcomes": [
-        "2",
-        "1"
+        "1",
+        "X"
       ],
       "selection_type": "double",
-      "confidence": 0.63,
+      "confidence": 0.57,
       "key_factors": [
-        "Rennes new manager bounce (Haise, 8 weeks), UP-FORM, three wins from three most recently",
-        "H2H: Rennes have won 4 of last 5 meetings between the sides",
-        "Brest's remarkably consistent home form — 2-0 wins in four of their last five home fixtures",
-        "Rennes missing 6 players including two suspended defenders — significant defensive disruption"
+        "Brest home form: 4 wins from last 5 home games, all 2-0",
+        "Rennes missing 5-6 players through suspension and injury",
+        "H2H: Rennes won all 5 last meetings — strong historical pattern",
+        "Rennes new manager bounce (Haise, 8 weeks) partially offset by absentees"
       ],
       "risk_flags": [
-        "Rennes xGA 1.14 but only conceding 0.4 per game — this defensive over-performance will regress, and Brest at home is a tough test",
-        "Brest's home xGA performance (1.78 xGA, 1.0 actual GA) suggests they have been somewhat fortunate defensively too"
+        "Rennes' H2H dominance is historically emphatic — all 5 recent meetings won",
+        "New manager Haise may have enough quality in reserve to overcome absences"
       ],
-      "analysis": "Rennes arrive carrying the momentum of a genuine new manager bounce under Franck Haise — eight weeks in post, UP-FORM, with three wins in their last three matches, including impressive 4-0 and 3-0 victories. Haise, who built Lens into a genuine Ligue 1 force, brings tactical clarity and organisation that is beginning to show in Rennes' numbers: their xGA of 1.14 per game but actual concession rate of just 0.4 over five games is extraordinary, even allowing for regression risk. Their xGF of 1.39 against actual GF of 1.8 shows clinical finishing to match.\n\nHowever, Rennes carry six confirmed absentees for this trip — Cash and Rou suspended, Rouault, Rosier, Jacquet missing, and Mukiele doubtful. That is a significant chunk of their squad rotated or unavailable, and the structural injuries in defence (Rosier, Rouault) could matter against a Brest side who defend well at home.\n\nBrest at home have won four of their last five home fixtures, all by a score of 2-0 — a remarkably consistent pattern suggesting a well-organised, if not spectacular, home side. Their xGF of 1.20 understates what they actually do at home, where their defensive structure (xGA 1.78 but actual GA 1.0 — significantly outperforming) remains resolute. The H2H points heavily toward Rennes — they have won four of the last five meetings — but Brest's home fortress pattern and Rennes' six absences create real uncertainty. The newspapers and market both lean Rennes, but this warrants doubling rather than singling.",
-      "value_note": "The draw at 3.60 carries some appeal given Brest's home strength and Rennes' absences. Rennes is the primary call but this is classic double territory."
+      "analysis": "Brest's home form in Ligue 1 has been remarkably consistent: four wins from their last five at home, all by a 2-0 scoreline, which is almost uncanny in its repetitiveness. Their xGF of 1.20 has produced actual goals of 1.0 — slight underperformance pointing to regression upward — but the home win habit is the dominant signal. They have carved a very reliable home identity and face a Rennes side undermined by a significant injury and suspension list.\n\nRennes, under new manager Franck Haise now eight weeks in, carry the UP-FORM flag and have won three of their last five matches including impressive performances. Haise's appointment has produced a genuine uplift — the new manager bounce is real here. However, the personnel situation is damaging: Frankowski, Rouault (both suspended according to news), Jacquet and Rosier (both missing fixture per structured data), plus doubts over Nagida, Szymanski and Mukiele. That is five to six first-team players unavailable, significantly stretching the squad for an away fixture at a team with a fortress home record.\n\nThe H2H is the clearest signal for Rennes — they have won all five of the last five meetings against Brest without a single Brest win. That is a powerful pattern. But four of those meetings were when form and personnel were more evenly matched. The absence count here tips the balance. Brest's home form is too strong and Rennes too depleted to back the visitors with confidence. The draw is a genuine possibility given Rennes' quality on paper, but the home side's record merits first billing. A cautious 1/X coverage reflects the genuine uncertainty.",
+      "value_note": "Brest at 3.25 may offer slight value given their home record, if you can accept the H2H counter-signal."
     },
     {
       "game_number": 11,
@@ -246,19 +245,19 @@
         "X"
       ],
       "selection_type": "double",
-      "confidence": 0.67,
+      "confidence": 0.64,
       "key_factors": [
-        "Lille have won four consecutive home Nord derby fixtures against Lens",
-        "Lens missing six players including key defensive and goalkeeping options — significant squad disruption",
-        "Lens xGF 2.29 and 22.6 shots per game — enormous attacking output that can overwhelm",
-        "Lille's all-competition form: UP-FORM with five games unbeaten and four wins"
+        "Lille have won 4 of last 5 home H2H meetings in this fixture, including the last three consecutively",
+        "Lens missing 6 players — one of the most severe injury crises on the coupon",
+        "Lille UP-FORM across last five games",
+        "Derby motivation and home atmosphere favour Lille"
       ],
       "risk_flags": [
-        "Lille's home form in league has been patchy (X, 1, X, 2, 2 in last five home league matches)",
-        "Lens are second in Ligue 1 for a reason — this is a top-quality side despite their absentee list"
+        "Lens are 2nd in Ligue 1 — squad depth may absorb absences better than data suggests",
+        "Lille's home form in league games has been inconsistent (only 1W from last 5 home)"
       ],
-      "analysis": "The Nord derby carries weight beyond league position, and the historical context of this fixture at Lille's ground is compelling. Lille have won four consecutive home meetings against Lens, including a 4-0 demolition, a 1-0, a 2-1, and a 1-0 just a year ago. Derby dynamics produce elevated intensity that can override form differentials, and Lille's recent form has been excellent across all competitions — five games unbeaten with four wins.\n\nLille's home form is more nuanced, however: their last five home results include two draws and two defeats before a recent win, suggesting Pierre-Mauroy is not the unassailable fortress recent all-form numbers imply. Their xGF of 1.41 with actual GF of 1.4 is accurate, and their defensive xGA of 0.78 with actual GA of 0.6 shows genuine defensive solidity — though over ten games, they have actually conceded more than their xGA, suggesting the defence has been inconsistent across the broader season. Four confirmed absences including Igamane, Mbemba, and goalkeeper Caillard are notable.\n\nLens carry one of the division's most impressive attacking profiles — xGF of 2.29, actual GF of 2.4, with 22.6 shots per game. They are relentless going forward. But they come with six confirmed absentees of their own, gutting their depth in multiple areas including Gradit (defence), Masuaku (left back), and goalkeeper Gurtner alongside others. The attacking quality of Lens should not be dismissed, and their P2 position reflects genuine quality. But four straight home H2H victories for Lille is a pattern difficult to argue against.",
-      "value_note": "Lille at 2.6 with their derby home record is the value side of the betting. Lens at 2.8 reflects their quality but ignores the H2H pattern."
+      "analysis": "The Nord derby is always emotionally charged and analytically complex, but this week's data provides a clearer-than-usual steer. Lille are flagged UP-FORM overall — four wins from their last five across all competitions — though their home record in the league is more mixed than that headline suggests (one win, two draws, two defeats from last five home). Their xGF is nearly perfectly calibrated (1.41 vs GF 1.4), suggesting consistent performances without significant lucky or unlucky variance.\n\nLens sit second in Ligue 1 and their numbers are formidable: xGF of 2.29 with actual GF of 2.4, a prolific attack. But their injury list is one of the most alarming on the coupon — six confirmed absentees in Aguilar, Antonio, Baidoo, Gradit, Gurtner and Masuaku. Losing Gradit and Masuaku defensively and Baidoo in the attacking third is material damage to a side whose league position flatters their current squad availability.\n\nThe H2H record at Lille is the decisive factor. In the last five head-to-heads at Lille's ground, the home side has won four (4-0, 1-0, 2-1, 1-0) with one Lens win. The most recent meeting, March 2025, ended 1-0 to Lille. This is a fixture where Lens simply do not perform away from home against their local rivals. Combine that pattern with six absentees and Lille's UP-FORM flag, and the analytical picture strongly favours the hosts despite Lens' superior league position and attacking xG numbers. Newspapers back Lille 6-3. The 2.6 price on a team with this H2H record at home is arguably the most undervalued outcome on the coupon.",
+      "value_note": "Lille at 2.6 looks mispriced given the H2H record — the market appears too focused on Lens' league position and not enough on the derby pattern and their absentees."
     },
     {
       "game_number": 12,
@@ -270,19 +269,18 @@
         "2"
       ],
       "selection_type": "full",
-      "confidence": 0.6,
+      "confidence": 0.54,
       "key_factors": [
-        "OH Leuven on a two-match winning run entering as home side — recent momentum matters",
-        "Seven of ten newspapers backing OH Leuven, with the market also pricing them as moderate favourites",
-        "Standard Liege have the better season-long record (20 pts vs 17 pts) but recent form tilts toward Leuven",
-        "Mixed H2H over five meetings — no dominant trend for either side"
+        "Market pricing strongly favours OH Leuven (2.1 vs 3.7 for Standard)",
+        "7 of 10 newspaper tipsters backing OH Leuven",
+        "Home advantage as a proxy in absence of form data"
       ],
       "risk_flags": [
-        "Virtually no statistical data available — xG, form, and advanced metrics all unavailable for both sides",
-        "Standard Liege's superior season-long points tally suggests they are the better team over 30 games"
+        "No form data, xG, or detailed squad news available for either team",
+        "H2H shows Standard Liege with the slight historical edge (2W vs 1W for Leuven)"
       ],
-      "analysis": "This Belgian Pro League fixture is the most data-sparse on the coupon — no form data, no xG statistics, and no structured injury information beyond confirmation that both squads appear healthy. Analysis must therefore rely on the building blocks available: market signals, newspaper tips, recent news fragments, and H2H history.\n\nThe news confirms OH Leuven won their last two Pro League matches, including a 1-0 victory over Antwerp, and are riding a brief but meaningful positive run. Standard Liege drew 0-0 with Westerlo in their last outing. League standings show Standard sit 11-7-12 (20 points) against Leuven's 9-7-14 (17 points) — Standard have the stronger season-long record, but Leuven's recent momentum is reflected in the home side's odds of 2.1 and the support of seven of ten newspapers.\n\nThe H2H is genuinely mixed across the last five meetings: Standard won in 2024, but Leuven won emphatically 3-1 in 2022 at Standard's ground. Two draws in the sequence and an even pattern overall suggest there is no runaway H2H advantage. Home advantage at this level is a meaningful factor, and Leuven's current form makes them the most reasonable analytical pick at odds that offer some return. However, the complete absence of xG data and form statistics demands intellectual honesty — this is a genuinely uncertain outcome, and the confidence must reflect that.",
-      "value_note": "Data scarcity makes this the coupon's biggest leap of faith. Back the home side on form and newspaper consensus but treat as the lowest-confidence game."
+      "analysis": "This is the most data-sparse fixture on the coupon. Form data, xG statistics, and detailed squad news are all unavailable for both Belgian Pro League clubs, meaning the analysis must lean almost entirely on market signals, odds, and the modest H2H dataset available. That is a significant limitation and honest acknowledgment is warranted — confidence will be capped accordingly.\n\nThe H2H over the last five meetings shows two Standard Liege wins, two draws, and one OH Leuven win. Standard have a slight historical edge in this fixture but the pattern is fundamentally one of close, competitive encounters. The odds tell a different story: the market prices OH Leuven at 2.1 and Standard at 3.7, representing a meaningful home advantage signal. Seven of ten newspaper tipsters back OH Leuven. The public sits at 48% for the home side.\n\nIn the absence of form or xG data, we must trust the market consensus and home advantage as proxies. The 2.1 price on OH Leuven suggests the market has assessed this as a moderate home favourite rather than a comfortable one, which aligns with the H2H pattern of competitive matches. Standard at 3.7 looks expensive given their historical record in the fixture. Without more information, a home win is the most defensible single prediction, but this game carries the highest epistemic uncertainty on the coupon.",
+      "value_note": "Data poverty makes this effectively a market-trust exercise. Treat as the weakest link on any accumulator."
     },
     {
       "game_number": 13,
@@ -293,19 +291,19 @@
         "X"
       ],
       "selection_type": "double",
-      "confidence": 0.64,
+      "confidence": 0.6,
       "key_factors": [
-        "Twente UP-FORM with 4 wins from last 5 versus Ajax's inconsistent form (1 win from last 5)",
-        "Ajax missing 5 players including Zinchenko and Tomiyasu — significant squad depth issue",
-        "Twente's xGF overperformance (+0.44 actual vs xG) suggests regression risk — their recent goalscoring may not be sustainable",
-        "Ajax home advantage in a six-pointer with both teams chasing European qualification"
+        "European qualification pressure for both sides — high motivation symmetry",
+        "Twente UP-FORM, won 4 of last 5, minimal injuries (only Hilgers out)",
+        "H2H: Twente won 3 of last 5 meetings including both most recent visits",
+        "Ajax missing 4-5 players including Zinchenko and Itakura"
       ],
       "risk_flags": [
-        "Twente's superior recent form and almost fully fit squad creates genuine upset potential",
-        "Ajax's home draw-heavy record (three draws in last five) suggests Twente could snatch a point — draw is live at 3.85"
+        "Twente xGF 1.56 vs GF 2.0 — overperforming, regression downward in scoring expected",
+        "Ajax depleted squad may underperform their home advantage in a high-stakes fixture"
       ],
-      "analysis": "With one point separating these Eredivisie rivals and European qualification at stake for both, this is a genuine six-pointer with enormous significance for the Dutch top-flight finish. The contrast in recent form is stark and honest: Twente have won four of their last five matches and arrive flagged UP-FORM, with a single absence (Hilgers). Ajax, at P4, have drawn three of their last five and lost one — their form line (X, 1, 2, X, X) tells a story of inconsistency that their home results have partially masked.\n\nAjax carry five confirmed absentees — Itakura, Jaros, Regeer, Zinchenko, and Tomiyasu doubtful — which represents a meaningful number for a squad already operating under European pressure. Zinchenko was clearly a key loan figure in their setup. Twente by comparison are almost fully fit, which is a significant squad advantage heading into a high-stakes fixture.\n\nAjax's xGF of 1.63 against actual GF of 1.4 suggests slight underperformance in attack, while their xGA of 1.19 but actual GA of 1.0 shows defensive solidity — numbers that respect their home ground advantage. Twente's xGF of 1.56 against actual GF of 2.0 is the biggest red flag for Ajax: Twente are currently massively overperforming their expected goals (by 0.44 per game), meaning regression downward in finishing quality is statistically owed. Their actual defensive output (0.4 GA against xGA of 1.31 — similarly unsustainable) points to both teams carrying some luck in their numbers.\n\nNine of ten newspapers back Ajax at home, and the home side's structural advantage at the Johan Cruyff Arena remains real. H2H recent meetings favour Twente in the wider trend (three of last five), but older home meetings in Amsterdam were more balanced. This is a close, competitive match that Ajax narrowly shade at home — but with meaningful draw risk.",
-      "value_note": "Ajax at 2.35 is fair if you trust the home advantage and newspaper consensus. The draw at 3.85 deserves consideration given Twente's form and Ajax's injury-hit squad."
+      "analysis": "Ajax and Twente are separated by a single point in the Eredivisie table (48 vs 47), both chasing the European qualification spots that a top-four finish secures. The symmetry in motivation makes this a fascinating, tightly contested match between two sides with clear European aspirations and something genuine to play for.\n\nAjax's xGF of 1.63 has yielded actual goals of only 1.4 — slight underperformance, regression upward possible — but the injury situation is a concern. Structured data confirms Itakura, Jaros, Regeer and Zinchenko as missing fixture absences, with Tomiyasu also questionable. Zinchenko is a quality international, and Itakura is a strong defensive presence; five absentees for Ajax is not trivial. Their home form, though, remains reasonable — three wins from the last five home games with two draws and no home defeats.\n\nTwente carry the UP-FORM flag and have won four of their last five across all competitions. Their scoring numbers show an interesting signal: xGF of 1.56 but actual GF of 2.0 — overperforming by 0.44 per game. Regression downward in their scoring output is a realistic expectation. Their only confirmed absence is Hilgers. Nine of ten newspapers back Ajax; public sentiment is 53% for the home side.\n\nThe H2H complicates the Ajax case: Twente have won three of the last five head-to-head meetings, including two 3-1 results. Ajax's most recent H2H win was in January 2021. The pattern of recent years favours Twente in this fixture. Ajax at home with a depleted squad against a form side who have historically troubled them in this fixture: the home advantage tips it marginally, but the draw is very much alive. A 1/X coverage reflects the genuine tension here.",
+      "value_note": "Twente at 2.88 offers some value given their UP-FORM flag and H2H record, as a contrarian play against newspaper consensus."
     }
   ]
 }
