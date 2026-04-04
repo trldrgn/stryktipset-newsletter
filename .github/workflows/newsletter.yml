@@ -97,18 +97,20 @@ jobs:
       # Only runs when not a dry run and there are actual changes to commit.
       - name: Commit prediction data
         if: github.event.inputs.dry_run != 'true'
+        continue-on-error: true
         run: |
           git config user.name "stryktipset-bot"
           git config user.email "bot@users.noreply.github.com"
           # Pull any commits pushed while the pipeline was running
-          git pull --rebase origin main
+          git pull --rebase origin main || true
           git add data/predictions/ data/results/ data/performance/ data/xg/ data/newsletters/
           # Only commit if there are staged changes
           if git diff --staged --quiet; then
             echo "No new prediction data to commit."
           else
-            git commit -m "data: weekly predictions and evaluations $(date -u '+%Y-%m-%d')"
-            git push
+            DRAW_NUM=$(ls -1 data/predictions/draw_*_$(date -u '+%Y-%m-%d').json 2>/dev/null | head -1 | grep -oP 'draw_\K[0-9]+' || echo "unknown")
+            git commit -m "data: predictions and newsletter for draw ${DRAW_NUM} ($(date -u '+%Y-%m-%d'))"
+            git push || echo "::warning::Push failed — data will be committed on next run or manually"
           fi
 
       # Ping Healthchecks.io — if this ping doesn't arrive by the grace deadline,

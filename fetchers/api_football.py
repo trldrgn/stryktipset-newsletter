@@ -5,8 +5,9 @@ CALL BUDGET per weekly run (13 matches):
   - Fixture search (find IDs for our 13 games):  ~5 calls  (batch by date)
   - H2H (per match):                             13 calls
   - Injuries (per fixture):                      13 calls
+  - Coach/manager (per unique team, cached):    ~20-26 calls
   ─────────────────────────────────────────────────────────
-  Total (worst case):                            ~31 calls  ← well within 100/day
+  Total (worst case):                            ~57 calls  ← well within 100/day
 
 NOTE: Standings, top scorers/assists, and player stats endpoints require a paid
 plan for current seasons (2025+). That data comes from Football-Data.org instead.
@@ -188,6 +189,51 @@ def _fetch_h2h(home_team_id: int, away_team_id: int) -> dict:
 def _fetch_injuries(fixture_id: int) -> dict:
     return _api_get("injuries", {"fixture": fixture_id})
 
+
+@cached(lambda team_id: f"coach_{team_id}")
+def _fetch_coach(team_id: int) -> dict:
+    return _api_get("coachs", {"team": team_id})
+
+
+def _get_current_manager(team_id: int, team_name: str) -> tuple[str, int | None]:
+    """Return (manager_name, weeks_in_post) for the current manager of a team.
+
+    Finds the coach with the most recent non-future start date whose career
+    entry for this team has end=null (i.e. still in post).
+    """
+    try:
+        data = _fetch_coach(team_id)
+    except Exception as e:
+        logger.warning("Coach fetch failed for %s (id=%d): %s", team_name, team_id, e)
+        return "", None
+
+    today = datetime.now(timezone.utc).date()
+    best_name = ""
+    best_start: datetime | None = None
+
+    for coach in data.get("response", []):
+        for entry in coach.get("career", []):
+            if entry.get("team", {}).get("id") != team_id:
+                continue
+            if entry.get("end") is not None:
+                continue
+            start_str = entry.get("start", "")
+            try:
+                start_date = datetime.fromisoformat(start_str).date()
+            except (ValueError, TypeError):
+                continue
+            # Skip future-dated entries (bad data)
+            if start_date > today:
+                continue
+            if best_start is None or start_date > best_start:
+                best_start = start_date
+                best_name = coach.get("name", "")
+
+    if best_start is None:
+        return "", None
+
+    weeks = (today - best_start).days // 7
+    return best_name, weeks
 
 
 # ---------------------------------------------------------------------------
@@ -400,6 +446,14 @@ def _build_team_stats(
             last_match_competition=last_comp,
             matches_last_14_days=matches_14d,
         )
+
+    # --- Manager / new manager bounce ---
+    try:
+        mgr_name, mgr_weeks = _get_current_manager(team_id, team_name)
+        stats.manager_name = mgr_name
+        stats.manager_weeks_in_post = mgr_weeks
+    except Exception as e:
+        logger.warning("Could not resolve manager for %s: %s", team_name, e)
 
     return stats
 
