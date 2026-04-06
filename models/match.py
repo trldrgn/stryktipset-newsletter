@@ -127,6 +127,7 @@ class FormResult:
     goals_for: int
     goals_against: int
     result: Outcome         # 1/X/2 from THIS team's perspective: 1=win, X=draw, 2=loss
+    competition: str = ""   # e.g. "Premier League", "UCL", "EFL Cup" — shown in prompt
     xg_for: Optional[float] = None
     xg_against: Optional[float] = None
 
@@ -218,10 +219,15 @@ class TeamStats:
     def fatigue_flag(self) -> bool:
         if self.schedule is None:
             return False
-        return (
-            (self.schedule.days_since_last_match is not None and self.schedule.days_since_last_match <= 3)
-            or self.schedule.matches_last_14_days >= 4
-        )
+        days = self.schedule.days_since_last_match
+        recent = self.schedule.matches_last_14_days
+        # days=0 is almost always a data bug (fixture matched itself, or wrong team)
+        # — require strong corroboration before flagging fatigue
+        if days == 0:
+            return recent >= 3
+        if days is not None and 1 <= days <= 3:
+            return True
+        return recent >= 4
 
     @property
     def form_points_last5(self) -> int:
@@ -251,6 +257,11 @@ class NewsContext:
     press_conference_notes: str = ""
     squad_morale: str = ""
     retrieved_at: Optional[datetime] = None
+    # Perplexity fixture-anchored preview metadata (Tier 2B rewrite)
+    source_domains: list[str] = field(default_factory=list)
+    perplexity_absent_count: Optional[int] = None
+    query_window_start: str = ""    # ISO date (kickoff - 7d)
+    query_window_end: str = ""      # ISO date (kickoff + 1d)
 
 
 # ---------------------------------------------------------------------------

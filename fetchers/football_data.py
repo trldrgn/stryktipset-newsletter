@@ -136,26 +136,32 @@ def _resolve_team(team_name: str, standings: dict) -> Optional[dict]:
             if name_lower == c_lower:
                 score = max(score, 100)
             elif name_lower in c_lower or c_lower in name_lower:
-                score = max(score, 70)
-            else:
-                # Word overlap — useful for "West Bromwich" vs "West Bromwich Albion"
-                name_words = set(w for w in name_lower.split() if len(w) > 3)
-                cand_words = set(w for w in c_lower.split() if len(w) > 3)
-                if name_words and name_words & cand_words:
-                    score = max(score, 50)
+                # Substring match is only strong enough when the shorter side is
+                # not a trivial fragment (e.g. "Port" matching "Portsmouth").
+                shorter = min(len(name_lower), len(c_lower))
+                if shorter >= 6:
+                    score = max(score, 85)
+                else:
+                    score = max(score, 60)
 
         if score > best_score:
             best_score = score
             best_row = row
 
-    if best_row and best_score >= 50:
+    # Fail closed: require a strong match. Previously threshold was 50, which
+    # let Port Vale (League One) fuzzy-match to a Championship team and inherit
+    # that team's fixtures + a bogus fatigue flag.
+    if best_row and best_score >= 80:
         logger.debug(
             "Matched '%s' → '%s' (score %d)",
             team_name, best_row["team"].get("name"), best_score,
         )
         return best_row
 
-    logger.warning("Could not match '%s' in Football-Data.org standings", team_name)
+    logger.warning(
+        "Could not match '%s' in Football-Data.org standings (best score %d)",
+        team_name, best_score,
+    )
     return None
 
 
@@ -181,10 +187,11 @@ def _form_result(fixture: dict, team_id: int) -> Optional[FormResult]:
     if gf is None or ga is None:
         return None
 
+    # Team-perspective Outcome: 1 = tracked team won, X = draw, 2 = tracked team lost.
     winner = fixture.get("score", {}).get("winner")
     if winner == "DRAW":
         result = Outcome.DRAW
-    elif winner == "HOME_TEAM":
+    elif (winner == "HOME_TEAM" and is_home) or (winner == "AWAY_TEAM" and not is_home):
         result = Outcome.HOME
     else:
         result = Outcome.AWAY
@@ -195,6 +202,7 @@ def _form_result(fixture: dict, team_id: int) -> Optional[FormResult]:
         goals_for=gf,
         goals_against=ga,
         result=result,
+        competition=fixture.get("competition", {}).get("name", ""),
     )
 
 

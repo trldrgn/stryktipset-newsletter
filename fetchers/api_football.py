@@ -96,36 +96,23 @@ def _api_get(endpoint: str, params: dict) -> dict:
 # Helpers
 # ---------------------------------------------------------------------------
 
-_OUTCOME_MAP = {"W": Outcome.HOME, "D": Outcome.DRAW, "L": Outcome.AWAY}
-
-
-def _result_to_outcome(result_str: str, is_home: bool) -> Outcome:
-    """Convert API result string 'W'/'D'/'L' (from the team's perspective) to Outcome."""
-    r = result_str.upper()
-    if r == "D":
-        return Outcome.DRAW
-    if (r == "W" and is_home) or (r == "L" and not is_home):
-        return Outcome.HOME
-    return Outcome.AWAY
-
-
 def _fixture_to_form(fixture: dict, team_id: int) -> FormResult:
     teams = fixture["teams"]
     goals = fixture["goals"]
-    score = fixture.get("score", {})
 
     is_home = teams["home"]["id"] == team_id
     opponent_name = teams["away"]["name"] if is_home else teams["home"]["name"]
 
     gf = goals["home"] if is_home else goals["away"]
     ga = goals["away"] if is_home else goals["home"]
-    result_str = teams["home"].get("winner") if is_home else teams["away"].get("winner")
+    winner_flag = teams["home"].get("winner") if is_home else teams["away"].get("winner")
 
-    # winner field: True=win, False=loss, None=draw
-    if result_str is True:
-        outcome = Outcome.HOME if is_home else Outcome.AWAY
-    elif result_str is False:
-        outcome = Outcome.AWAY if is_home else Outcome.HOME
+    # Team-perspective Outcome: 1 = tracked team won, X = draw, 2 = tracked team lost.
+    # API-Football's teams.{home,away}.winner is True/False/None per team.
+    if winner_flag is True:
+        outcome = Outcome.HOME
+    elif winner_flag is False:
+        outcome = Outcome.AWAY
     else:
         outcome = Outcome.DRAW
 
@@ -135,6 +122,7 @@ def _fixture_to_form(fixture: dict, team_id: int) -> FormResult:
         goals_for=gf or 0,
         goals_against=ga or 0,
         result=outcome,
+        competition=fixture.get("league", {}).get("name", ""),
     )
 
 
@@ -404,12 +392,16 @@ def _build_team_stats(
     # not API-Football — the free tier blocks the /standings endpoint.
 
     # --- Form from league fixtures (shared across all teams, no season param needed) ---
-    # Filter league-wide fixtures to only this team's games
+    # Filter league-wide fixtures to only this team's games, and drop anything not
+    # actually played — postponed ("PST") and not-started ("NS") fixtures must never
+    # be treated as "last match" when computing fatigue or form.
+    _PLAYED = {"FT", "AET", "PEN"}
     all_fixtures = league_fixtures or []
     team_fixtures = [
         f for f in all_fixtures
-        if f.get("teams", {}).get("home", {}).get("id") == team_id
-        or f.get("teams", {}).get("away", {}).get("id") == team_id
+        if (f.get("teams", {}).get("home", {}).get("id") == team_id
+            or f.get("teams", {}).get("away", {}).get("id") == team_id)
+        and f.get("fixture", {}).get("status", {}).get("short") in _PLAYED
     ]
     team_fixtures.sort(key=lambda f: f.get("fixture", {}).get("date", ""), reverse=True)
 
@@ -587,18 +579,18 @@ def enrich_match(match: Match, season: int) -> Match:
                 injury_data = _fetch_injuries(fixture_id)
                 all_absences = _build_absences(injury_data)
 
-                home_absences = [
-                    a for a in all_absences
-                    if any(
-                        entry.get("team", {}).get("id") == home_team_id
-                        for entry in injury_data.get("response", [])
-                        if entry.get("player", {}).get("name") == a.player_name
-                    )
-                ]
-                away_absences = [
-                    a for a in all_absences
-                    if a not in home_absences
-                ]
+                # _build_absences preserves the response order, so zip back to
+                # bucket by team id (avoids name collisions across sides).
+                home_absences: list[PlayerAbsence] = []
+                away_absences: list[PlayerAbsence] = []
+                for entry, absence in zip(
+                    injury_data.get("response", []), all_absences
+                ):
+                    tid = entry.get("team", {}).get("id")
+                    if tid == home_team_id:
+                        home_absences.append(absence)
+                    elif tid == away_team_id:
+                        away_absences.append(absence)
 
                 if match.home_stats:
                     match.home_stats.injuries = home_absences

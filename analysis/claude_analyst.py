@@ -38,11 +38,45 @@ _client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 # Prompt construction
 # ---------------------------------------------------------------------------
 
+_COMP_ABBR = {
+    "premier league": "PL",
+    "championship": "CHP",
+    "league one": "L1",
+    "league two": "L2",
+    "bundesliga": "BL",
+    "2. bundesliga": "BL2",
+    "la liga": "LL",
+    "primera division": "LL",
+    "serie a": "SA",
+    "ligue 1": "L1F",
+    "eredivisie": "ED",
+    "primeira liga": "PRT",
+    "uefa champions league": "UCL",
+    "uefa europa league": "UEL",
+    "uefa europa conference league": "UECL",
+    "fa cup": "FAC",
+    "efl cup": "EFLC",
+    "league cup": "EFLC",
+    "carabao cup": "EFLC",
+    "copa del rey": "CDR",
+    "dfb pokal": "DFB",
+    "coppa italia": "COP",
+    "coupe de france": "CDF",
+}
+
+
+def _abbr_competition(name: str) -> str:
+    if not name:
+        return "?"
+    return _COMP_ABBR.get(name.lower(), name[:3].upper())
+
+
 def _format_form(form_list) -> str:
     if not form_list:
         return "N/A"
     return " ".join(
-        f"{r.result.value}({r.goals_for}-{r.goals_against})" for r in form_list
+        f"{r.result.value}({r.goals_for}-{r.goals_against},{_abbr_competition(r.competition)})"
+        for r in form_list
     )
 
 
@@ -156,12 +190,31 @@ def _format_match_block(match: Match) -> str:
     if a and a.new_manager_bounce:
         away_manager = f" [NEW MANAGER {a.manager_name} — {a.manager_weeks_in_post}wks, bounce effect possible]"
 
+    # --- News section with explicit source tagging ---
     news_parts: list[str] = []
     if match.home_news and match.home_news.summary:
-        news_parts.append(match.home_news.summary)
+        tag_bits = ["source: Perplexity preview"]
+        if match.home_news.source_domains:
+            tag_bits.append("domains: " + ", ".join(match.home_news.source_domains[:4]))
+        if match.home_news.perplexity_absent_count is not None:
+            tag_bits.append(f"claimed absent: {match.home_news.perplexity_absent_count}")
+        news_parts.append(
+            f"[{match.home_team} — {' | '.join(tag_bits)}]\n{match.home_news.summary}"
+        )
     if match.away_news and match.away_news.summary:
-        news_parts.append(match.away_news.summary)
-    news = f"\nLATEST NEWS:\n" + "\n".join(news_parts) if news_parts else ""
+        tag_bits = ["source: Perplexity preview"]
+        if match.away_news.source_domains:
+            tag_bits.append("domains: " + ", ".join(match.away_news.source_domains[:4]))
+        if match.away_news.perplexity_absent_count is not None:
+            tag_bits.append(f"claimed absent: {match.away_news.perplexity_absent_count}")
+        news_parts.append(
+            f"[{match.away_team} — {' | '.join(tag_bits)}]\n{match.away_news.summary}"
+        )
+    news = f"\nLATEST NEWS:\n" + "\n\n".join(news_parts) if news_parts else ""
+
+    # --- Injury source tags — tells Claude whether absences are structured ---
+    home_inj_tag = "[source: API-Football/Sofascore]" if h and h.injuries else "[source: structured empty]"
+    away_inj_tag = "[source: API-Football/Sofascore]" if a and a.injuries else "[source: structured empty]"
 
     # Build stat lines — only include non-empty values to keep prompt compact
     home_stats_line = " | ".join(filter(None, [home_xg, home_shot_stats]))
@@ -175,13 +228,13 @@ Odds: {odds_str} | {dist_str} | {tips_str}
 HOME — {match.home_team} ({home_pos}){home_form_flag}{home_fatigue}{home_manager}
   Form (all): {home_form} | Form (home): {home_form_home}
   {home_stats_line if home_stats_line else 'Stats: N/A'}
-  Injuries/Suspensions: {home_injuries}
+  Injuries/Suspensions {home_inj_tag}: {home_injuries}
   Intl call-ups missing: {home_intl}
 
 AWAY — {match.away_team} ({away_pos}){away_form_flag}{away_fatigue}{away_manager}
   Form (all): {away_form} | Form (away): {away_form_away}
   {away_stats_line if away_stats_line else 'Stats: N/A'}
-  Injuries/Suspensions: {away_injuries}
+  Injuries/Suspensions {away_inj_tag}: {away_injuries}
   Intl call-ups missing: {away_intl}
 
 H2H (last 5): {_format_h2h(match.h2h)}
@@ -216,26 +269,33 @@ NEW MANAGER BOUNCE:
   especially when combined with a home fixture. After ~4–6 weeks the effect fades.
 - If a team has a new manager, mention it explicitly in your analysis and factor it into confidence.
 
+DATA SOURCE HIERARCHY — apply strictly when sources disagree:
+  1. API-Football (injuries/manager/H2H) — authoritative when populated.
+  2. Sofascore missing-players — authoritative when populated; equal rank to API-Football.
+     Either of these appearing in the "Injuries/Suspensions [source: API-Football/Sofascore]"
+     line is the ground truth for absences.
+  3. Football-Data.org (form/standings) — authoritative for form/standings in its covered leagues.
+  4. Understat / Sofascore xG — authoritative for xG in their covered leagues.
+  5. Perplexity preview — narrative context and media perspective ONLY. Never name a specific
+     injured player solely on a Perplexity claim. If Perplexity mentions a player who is NOT in
+     the structured injury list, describe them as "reportedly out (unverified)" and lower the
+     confidence you place on the absence. If Perplexity's total-absence count differs from the
+     structured list, prefer the structured list. If Perplexity calls a manager "new" but the
+     structured data shows manager_weeks_in_post > 8, ignore that framing entirely.
+- When the "Injuries/Suspensions" line reads "[source: structured empty]: None reported" AND
+  Perplexity's preview also has nothing to add, say "injury data unavailable" and move on. Do
+  NOT fabricate an injury crisis from silence.
+
 INJURY ANALYSIS DEPTH:
 - Don't just note injuries — evaluate the IMPACT. A missing LB matters more if the opponent has a
   top-scoring RW. A missing top scorer is huge. A missing squad player is not.
 - Always consider the replacement quality.
-- TWO injury data sources: (1) structured "Injuries/Suspensions" field from stats API, and
-  (2) LATEST NEWS from AI-powered web search of this week's press conferences and team news.
-  The structured field is most reliable when populated. The LATEST NEWS may occasionally include
-  stale information from older reports — be critical and cross-reference. If news mentions a large
-  number of absentees, verify it sounds current for THIS week's fixture.
-- If structured data shows injuries but news says nothing, trust the structured data.
-  If structured data is empty ("None reported") but news mentions confirmed absences, trust the news
-  — the structured field has a data gap for some lower-league teams.
 - If LATEST NEWS confirms a clean bill of health, say "no significant absences". Do NOT write
   phrases like "no injury news which is surprising/concerning" or "unusual that no injuries reported".
   A fully fit squad is simply good news for that team — treat it as such.
-- If injury data is genuinely unavailable from both sources, say "injury data unavailable" and move on.
-  Do not speculate or editorialize about the absence of data.
 - You MUST output home_absent_count and away_absent_count in your JSON (see format below).
-  Count all players confirmed OUT or DOUBTFUL for this match (injuries + suspensions + illness + intl duty).
-  Use 0 if fully fit or unknown. This drives the injury crisis badge in the newsletter.
+  Count all players confirmed OUT or DOUBTFUL for this match from the STRUCTURED sources
+  (API-Football + Sofascore). Use 0 if fully fit or unknown. This drives the injury crisis badge.
 
 DATA QUALITY NOTES:
 - xG showing N/A is common for lower-league teams (Championship, League One) and when the stats API
@@ -386,6 +446,17 @@ def analyse_matches(
     Send all 13 matches to Claude in one call. Returns a WeeklyReport.
     """
     logger.info("Sending %d matches to Claude (%s)", len(matches), CLAUDE_MODEL)
+
+    if evaluation is None:
+        logger.warning(
+            "No WeeklyEvaluation provided — Claude is running without last week's "
+            "feedback signal. Check data/performance/history.json is being populated."
+        )
+    elif not evaluation.feedback_summary:
+        logger.warning(
+            "WeeklyEvaluation present but feedback_summary is empty — Claude sees no "
+            "learning context from last week."
+        )
 
     system_prompt = _build_system_prompt(evaluation)
     user_prompt = _build_user_prompt(matches, draw_number)

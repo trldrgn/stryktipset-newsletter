@@ -15,6 +15,7 @@ build/
 
 # Data — predictions and results are local state
 data/cache/
+data/perplexity_traces/
 logs/
 
 # Keep the data folder structure but not contents

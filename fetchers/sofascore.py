@@ -19,7 +19,9 @@ import time
 from dataclasses import dataclass
 from typing import Optional
 
-from models.match import Match, TeamStats
+from datetime import datetime, timezone
+
+from models.match import InjuryStatus, Match, PlayerAbsence, TeamStats
 from utils.cache import cached
 from utils.logger import get_logger
 
@@ -281,8 +283,6 @@ def _compute_team_xg(
 
             xg = _fetch_match_xg(eid)
             if _blocked or xg is None:
-                if _sofa_get is None:
-                    _blocked = True
                 continue
 
             home_xg, away_xg = xg
@@ -417,4 +417,248 @@ def enrich_with_sofascore_xg(matches: list[Match]) -> list[Match]:
                     )
 
     logger.info("Sofascore xG enrichment complete: %d teams enriched", enriched_count)
+    return matches
+
+
+# ===========================================================================
+# Missing-players (structured absences) fallback
+# ===========================================================================
+#
+# Sofascore exposes per-fixture missing players inside the pre-match lineups
+# payload at `event/{id}/lineups` — under `home.missingPlayers` /
+# `away.missingPlayers`. Each entry has:
+#   player.name, player.position ("G"/"D"/"M"/"F")
+#   type        : "missing" or "doubtful"
+#   description : free text — "Calf Injury", "Yellow card accumulation
+#                 suspension", "Illness", ""
+#
+# This runs AFTER API-Football's enrich_all_matches() and only fills teams
+# whose injuries list is still empty. When API-Football's free tier silently
+# returns no injuries (the draw 4947 failure mode), Sofascore fills the gap.
+# ---------------------------------------------------------------------------
+
+
+@cached(lambda name: f"sofa_team_search_{name.lower().replace(' ', '_')}")
+def _fetch_team_search(team_name: str) -> Optional[dict]:
+    """Fuzzy team search. Returns raw JSON or None."""
+    # Sofascore's search endpoint accepts a URL-path query.
+    query = team_name.strip().replace(" ", "%20")
+    return _sofa_get(f"search/teams/{query}")
+
+
+def _resolve_team_sofa_id(team_name: str, country: str) -> Optional[int]:
+    """
+    Find a Sofascore team ID for a Svenska Spel team name + country.
+    Filters to men's teams and matches country case-insensitively.
+    """
+    data = _fetch_team_search(team_name)
+    if not data:
+        return None
+    teams = data.get("teams") or data.get("results") or []
+    name_lower = team_name.lower().strip()
+    country_lower = (country or "").lower().strip()
+
+    best = None
+    best_score = 0
+    for t in teams:
+        if t.get("gender") and t.get("gender") != "M":
+            continue
+        if t.get("national"):
+            continue
+        t_country = (t.get("country", {}) or {}).get("name", "").lower()
+        if country_lower and t_country and country_lower != t_country:
+            continue
+        t_name = (t.get("name") or "").lower()
+        if not t_name:
+            continue
+        if t_name == name_lower:
+            return t.get("id")
+        shorter = min(len(t_name), len(name_lower))
+        if (name_lower in t_name or t_name in name_lower) and shorter >= 5:
+            score = 85 + shorter  # prefer longer substring matches
+            if score > best_score:
+                best_score = score
+                best = t.get("id")
+
+    return best
+
+
+@cached(lambda tid: f"sofa_team_next_{tid}")
+def _fetch_team_next_events(team_sofa_id: int) -> Optional[list[dict]]:
+    """Upcoming fixtures for a team. Cached for 1 day via default TTL."""
+    data = _sofa_get(f"team/{team_sofa_id}/events/next/0")
+    if data is None:
+        return None
+    return data.get("events", [])
+
+
+def _resolve_event_id(
+    match: Match,
+    home_sofa_id: int,
+    away_sofa_id: Optional[int] = None,
+) -> Optional[int]:
+    """
+    Find the Sofascore event_id for this fixture.
+    Match by kickoff date and, when available, the opposing team's id.
+    """
+    if match.kickoff is None:
+        return None
+    kickoff_date = match.kickoff.date()
+    events = _fetch_team_next_events(home_sofa_id)
+    if not events:
+        return None
+
+    for ev in events:
+        ts = ev.get("startTimestamp")
+        if not ts:
+            continue
+        ev_date = datetime.fromtimestamp(ts, tz=timezone.utc).date()
+        if ev_date != kickoff_date:
+            continue
+        # Extra confidence: opponent id lines up (guards against doubleheaders)
+        if away_sofa_id is not None:
+            h_id = (ev.get("homeTeam") or {}).get("id")
+            a_id = (ev.get("awayTeam") or {}).get("id")
+            if away_sofa_id not in (h_id, a_id) and home_sofa_id not in (h_id, a_id):
+                continue
+        return ev.get("id")
+    return None
+
+
+@cached(lambda eid: f"sofa_lineups_{eid}")
+def _fetch_lineups(event_id: int) -> Optional[dict]:
+    """Pre-match lineup payload — includes missingPlayers for both sides."""
+    return _sofa_get(f"event/{event_id}/lineups")
+
+
+def _sofa_status(entry: dict) -> InjuryStatus:
+    """Map Sofascore missing-player entry to our InjuryStatus enum."""
+    if entry.get("type") == "doubtful":
+        return InjuryStatus.DOUBT
+    return InjuryStatus.OUT
+
+
+def _build_absences_from_sofa_missing(missing: list[dict]) -> list[PlayerAbsence]:
+    """Convert Sofascore missingPlayers list into PlayerAbsence objects."""
+    absences: list[PlayerAbsence] = []
+    for entry in missing:
+        player = entry.get("player") or {}
+        name = player.get("name", "Unknown")
+        position = player.get("position", "")  # "G"/"D"/"M"/"F"
+        status = _sofa_status(entry)
+        absences.append(PlayerAbsence(
+            player_name=name,
+            position=position,
+            status=status,
+        ))
+    return absences
+
+
+def enrich_with_sofascore_absences(matches: list[Match]) -> list[Match]:
+    """
+    Fill TeamStats.injuries from Sofascore for any team whose structured injury
+    list is still empty after API-Football enrichment. Runs BEFORE Perplexity so
+    its output is never the only source of absences.
+
+    Graceful degradation:
+      - If curl_cffi is missing, return matches unchanged.
+      - Any 403/429 trips the shared _blocked global and exits early.
+      - Per-match errors are logged but never raised.
+    """
+    global _blocked
+    _blocked = False
+
+    if not _HAS_CURL_CFFI:
+        logger.warning("Sofascore absences skipped (curl_cffi not installed)")
+        return matches
+
+    filled_teams = 0
+
+    for match in matches:
+        if _blocked:
+            break
+
+        # Skip only if BOTH sides already have structured injuries.
+        home_empty = not (match.home_stats and match.home_stats.injuries)
+        away_empty = not (match.away_stats and match.away_stats.injuries)
+        if not (home_empty or away_empty):
+            continue
+
+        home_id = _resolve_team_sofa_id(match.home_team, match.country)
+        if _blocked:
+            break
+        if not home_id:
+            logger.debug("Sofascore absences: no team id for %s", match.home_team)
+            continue
+
+        away_id = _resolve_team_sofa_id(match.away_team, match.country)
+        if _blocked:
+            break
+
+        event_id = _resolve_event_id(match, home_id, away_id)
+        if _blocked:
+            break
+        if not event_id:
+            logger.debug(
+                "Sofascore absences: no event id for %s vs %s",
+                match.home_team, match.away_team,
+            )
+            continue
+
+        lineups = _fetch_lineups(event_id)
+        if _blocked:
+            break
+        if not lineups:
+            continue
+
+        # Align Sofascore payload sides ("home"/"away") with our resolved
+        # home_id/away_id. If the lineups payload exposes teamId and it
+        # disagrees with positional order, swap so we never attach one team's
+        # absences to the other. If teamId is absent, trust positional order
+        # (events/next/0 returned them that way).
+        sofa_home_key, sofa_away_key = "home", "away"
+        lh_tid = (lineups.get("home") or {}).get("teamId")
+        la_tid = (lineups.get("away") or {}).get("teamId")
+        if lh_tid and la_tid and home_id and away_id:
+            if lh_tid == away_id and la_tid == home_id:
+                sofa_home_key, sofa_away_key = "away", "home"
+            elif not (lh_tid == home_id and la_tid == away_id):
+                logger.debug(
+                    "Sofascore lineups team ids (%s/%s) do not match resolved "
+                    "(%s/%s) for %s vs %s — skipping absences",
+                    lh_tid, la_tid, home_id, away_id,
+                    match.home_team, match.away_team,
+                )
+                continue
+
+        for side, stats, is_home_side in (
+            (sofa_home_key, match.home_stats, True),
+            (sofa_away_key, match.away_stats, False),
+        ):
+            if stats is None:
+                # Enrich xG path sometimes creates TeamStats; make sure we do too.
+                stats = TeamStats(
+                    team_name=match.home_team if is_home_side else match.away_team,
+                )
+                if is_home_side:
+                    match.home_stats = stats
+                else:
+                    match.away_stats = stats
+
+            # Per-side guard: don't overwrite API-Football data.
+            if stats.injuries:
+                continue
+
+            missing = (lineups.get(side) or {}).get("missingPlayers") or []
+            if not missing:
+                continue
+
+            stats.injuries = _build_absences_from_sofa_missing(missing)
+            filled_teams += 1
+            logger.info(
+                "Sofascore absences filled: %s — %d players",
+                stats.team_name, len(stats.injuries),
+            )
+
+    logger.info("Sofascore absences enrichment complete: %d teams filled", filled_teams)
     return matches
