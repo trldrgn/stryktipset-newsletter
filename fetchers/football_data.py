@@ -90,12 +90,12 @@ def _api_get(path: str) -> dict:
 # Cached API calls
 # ---------------------------------------------------------------------------
 
-@cached(lambda code: f"fd_standings_{code}")
+@cached(lambda code: f"fd_standings_{code}", ttl=86400)
 def _fetch_standings(competition_code: str) -> dict:
     return _api_get(f"competitions/{competition_code}/standings")
 
 
-@cached(lambda team_id: f"fd_team_matches_{team_id}")
+@cached(lambda team_id: f"fd_team_matches_{team_id}", ttl=86400)
 def _fetch_team_matches(team_id: int) -> dict:
     """Last 15 finished matches for a team across all competitions."""
     return _api_get(f"teams/{team_id}/matches?status=FINISHED&limit=15")

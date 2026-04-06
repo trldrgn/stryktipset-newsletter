@@ -109,7 +109,7 @@ def _resolve_team(team_name: str, league_teams: dict) -> Optional[str]:
 # xG computation
 # ---------------------------------------------------------------------------
 
-@cached(lambda team_title, season: f"understat_matches_{team_title.lower().replace(' ', '_')}_{season}")
+@cached(lambda team_title, season: f"understat_matches_{team_title.lower().replace(' ', '_')}_{season}", ttl=86400)
 def _fetch_team_matches(team_title: str, season: str) -> list[dict]:
     """Fetch all matches for a team in a season."""
     _rate_limit()

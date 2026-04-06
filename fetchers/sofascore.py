@@ -483,7 +483,7 @@ def _resolve_team_sofa_id(team_name: str, country: str) -> Optional[int]:
     return best
 
 
-@cached(lambda tid: f"sofa_team_next_{tid}")
+@cached(lambda tid: f"sofa_team_next_{tid}", ttl=86400)
 def _fetch_team_next_events(team_sofa_id: int) -> Optional[list[dict]]:
     """Upcoming fixtures for a team. Cached for 1 day via default TTL."""
     data = _sofa_get(f"team/{team_sofa_id}/events/next/0")
@@ -525,7 +525,7 @@ def _resolve_event_id(
     return None
 
 
-@cached(lambda eid: f"sofa_lineups_{eid}")
+@cached(lambda eid: f"sofa_lineups_{eid}", ttl=86400)
 def _fetch_lineups(event_id: int) -> Optional[dict]:
     """Pre-match lineup payload — includes missingPlayers for both sides."""
     return _sofa_get(f"event/{event_id}/lineups")

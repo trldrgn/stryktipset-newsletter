@@ -139,13 +139,13 @@ def _parse_injury_status(reason: str) -> InjuryStatus:
 # Cached API call wrappers
 # ---------------------------------------------------------------------------
 
-@cached(lambda date_str: f"fixtures_by_date_{date_str}")
+@cached(lambda date_str: f"fixtures_by_date_{date_str}", ttl=86400)
 def _fetch_fixtures_by_date(date_str: str) -> dict:
     """Fetch all fixtures on a given date (YYYY-MM-DD). One call covers many matches."""
     return _api_get("fixtures", {"date": date_str})
 
 
-@cached(lambda league_id, season: f"league_fixtures_{league_id}_{season}_daterange")
+@cached(lambda league_id, season: f"league_fixtures_{league_id}_{season}_daterange", ttl=86400)
 def _fetch_league_fixtures(league_id: int, season: int) -> dict:
     """
     All finished fixtures in a league for the current season using date range.
@@ -173,7 +173,7 @@ def _fetch_h2h(home_team_id: int, away_team_id: int) -> dict:
     })
 
 
-@cached(lambda fixture_id: f"injuries_{fixture_id}")
+@cached(lambda fixture_id: f"injuries_{fixture_id}", ttl=86400)
 def _fetch_injuries(fixture_id: int) -> dict:
     return _api_get("injuries", {"fixture": fixture_id})
 
