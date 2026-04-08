@@ -599,7 +599,52 @@
       "home_xg": 1.57,
       "away_xg": 2.18,
       "collected_at": "2026-04-04T05:15:27.332555+00:00"
+    },
+    "1387037": {
+      "date": "2026-04-07",
+      "league": "Championship",
+      "league_id": 40,
+      "country": "England",
+      "home_team": "Wrexham",
+      "away_team": "Southampton",
+      "home_team_id": 1837,
+      "away_team_id": 41,
+      "home_goals": 1,
+      "away_goals": 5,
+      "home_xg": 1.28,
+      "away_xg": 2.61,
+      "collected_at": "2026-04-08T05:58:44.665704+00:00"
+    },
+    "1534570": {
+      "date": "2026-04-07",
+      "league": "UEFA Champions League",
+      "league_id": 2,
+      "country": "World",
+      "home_team": "Sporting CP",
+      "away_team": "Arsenal",
+      "home_team_id": 228,
+      "away_team_id": 42,
+      "home_goals": 0,
+      "away_goals": 1,
+      "home_xg": 0.71,
+      "away_xg": 1.33,
+      "collected_at": "2026-04-08T05:58:51.303163+00:00"
+    },
+    "1534909": {
+      "date": "2026-04-07",
+      "league": "UEFA Champions League",
+      "league_id": 2,
+      "country": "World",
+      "home_team": "Real Madrid",
+      "away_team": "Bayern München",
+      "home_team_id": 541,
+      "away_team_id": 157,
+      "home_goals": 1,
+      "away_goals": 2,
+      "home_xg": 2.2,
+      "away_xg": 2.92,
+      "collected_at": "2026-04-08T05:58:57.962557+00:00"
     }
   },
-  "last_updated": "2026-04-06T06:15:45.475166+00:00"
+  "last_updated": "2026-04-08T05:58:57.962692+00:00"
 }
