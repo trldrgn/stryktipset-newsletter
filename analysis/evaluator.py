@@ -262,8 +262,13 @@ def evaluate_last_week() -> Optional[WeeklyEvaluation]:
     )
 
     # --- Build lessons for Claude's next prompt ---
+    # Per-game post-mortems are always included (they are specific and don't
+    # depend on small-sample thresholds). Rolling-window lessons that rely on
+    # singles/doubles accuracy only fire once we have ≥4 weeks of history,
+    # because a single week of n=4 singles produces at most 5 distinct
+    # accuracy values and is dominated by noise.
     wrong = [e for e in evaluations if not e.correct and e.selection_type != SelectionType.FULL]
-    lessons = []
+    lessons: list[str] = []
 
     if wrong:
         for e in wrong:
@@ -274,45 +279,7 @@ def evaluate_last_week() -> Optional[WeeklyEvaluation]:
                 f"{e.post_mortem}"
             )
 
-    # Singles accuracy thresholds
-    if singles_total > 0:
-        sa = evaluation.singles_accuracy_pct
-        if sa < 25:
-            lessons.append(
-                f"CRITICAL: Singles accuracy was {sa}% — fundamentally miscalibrated. "
-                "This week: require 3+ independent aligned signals before assigning ANY single. "
-                "Consider whether market odds disagreed with your singles picks."
-            )
-        elif sa < 50:
-            lessons.append(
-                f"Singles accuracy was {sa}% — below acceptable threshold. "
-                "This week: only assign singles to games with confidence >0.85 AND where "
-                "form, odds, and news all agree."
-            )
-        elif sa >= 75:
-            lessons.append(
-                f"Singles accuracy was strong at {sa}%. "
-                "Confidence calibration appears well-tuned — maintain current approach."
-            )
-
-    # Doubles accuracy
-    if doubles_total > 0:
-        da = evaluation.doubles_correct / doubles_total * 100
-        if da < 50:
-            lessons.append(
-                f"Doubles accuracy was {da:.0f}% — the dropped outcome was often correct. "
-                "Review whether market least-likely was truly least-likely, or if Claude's "
-                "second choice was more reliable."
-            )
-
-    # Draw-specific bias check
-    wrong_draws = [e for e in wrong if e.actual_result == Outcome.DRAW]
-    if len(wrong_draws) >= 2:
-        lessons.append(
-            f"{len(wrong_draws)} wrong predictions were draws this week. "
-            "Draws are systematically underrated — increase draw coverage in doubles "
-            "for matches with tight odds and close league positions."
-        )
+    lessons.extend(_rolling_window_lessons(evaluation))
 
     evaluation.lessons = lessons
     evaluation.feedback_summary = _build_feedback_summary(evaluation)
@@ -329,6 +296,88 @@ def evaluate_last_week() -> Optional[WeeklyEvaluation]:
     )
 
     return evaluation
+
+
+ROLLING_WINDOW_WEEKS = 4
+
+
+def _rolling_window_lessons(current: WeeklyEvaluation) -> list[str]:
+    """
+    Lessons computed over a rolling window of the last N weeks (including the
+    current one). Only fire once the window is full — below that, a single
+    week's n=4 singles is too coarse to be a real signal.
+    """
+    history = _load_all_history()
+    # history does NOT yet contain the current week — it will be appended after
+    # this function runs. Build the rolling window from the tail of history
+    # plus the current week.
+    window_past = history[-(ROLLING_WINDOW_WEEKS - 1):] if ROLLING_WINDOW_WEEKS > 1 else []
+    if len(window_past) < ROLLING_WINDOW_WEEKS - 1:
+        # Not enough prior weeks for the rolling window. Skip threshold lessons.
+        return []
+
+    # Aggregate singles / doubles / draws across the window
+    singles_correct = sum(w["singles_correct"] for w in window_past) + current.singles_correct
+    singles_total = sum(w["singles_total"] for w in window_past) + current.singles_total
+    doubles_correct = sum(w["doubles_correct"] for w in window_past) + current.doubles_correct
+    doubles_total = sum(w["doubles_total"] for w in window_past) + current.doubles_total
+
+    # Draw bias across the window
+    wrong_draw_count = 0
+    for w in window_past:
+        for g in w.get("games", []):
+            if g["actual_result"] == "X" and "X" not in g["our_prediction"] and g["selection_type"] != "full":
+                wrong_draw_count += 1
+    wrong_draw_count += sum(
+        1 for e in current.evaluations
+        if not e.correct
+        and e.actual_result == Outcome.DRAW
+        and e.selection_type != SelectionType.FULL
+    )
+
+    lessons: list[str] = []
+    window_label = f"last {ROLLING_WINDOW_WEEKS} weeks"
+
+    if singles_total > 0:
+        sa = round(singles_correct / singles_total * 100, 1)
+        if sa < 25:
+            lessons.append(
+                f"CRITICAL: Singles accuracy over {window_label} is {sa}% "
+                f"({singles_correct}/{singles_total}) — fundamentally miscalibrated. "
+                "Require 3+ independent aligned signals before assigning ANY single."
+            )
+        elif sa < 50:
+            lessons.append(
+                f"Singles accuracy over {window_label} is {sa}% "
+                f"({singles_correct}/{singles_total}) — below acceptable threshold. "
+                "Only assign singles to games where form, odds, and news all agree."
+            )
+        elif sa >= 75:
+            lessons.append(
+                f"Singles accuracy over {window_label} is strong at {sa}% "
+                f"({singles_correct}/{singles_total}). Confidence calibration "
+                "appears well-tuned — maintain current approach."
+            )
+
+    if doubles_total > 0:
+        da = doubles_correct / doubles_total * 100
+        if da < 50:
+            lessons.append(
+                f"Doubles accuracy over {window_label} is {da:.0f}% "
+                f"({doubles_correct}/{doubles_total}) — the dropped outcome has "
+                "often been correct. Review whether market least-likely is truly "
+                "least-likely or Claude's second choice is more reliable."
+            )
+
+    # Draw coverage: flag if we've been missing ≥4 draws over the rolling window
+    if wrong_draw_count >= ROLLING_WINDOW_WEEKS:
+        lessons.append(
+            f"{wrong_draw_count} predictions over {window_label} were wrong draws. "
+            "Draws are being systematically underrated — increase draw coverage "
+            "in doubles for matches with tight odds and close league positions."
+        )
+
+    return lessons
 
 
 def _build_feedback_summary(ev: WeeklyEvaluation) -> str:

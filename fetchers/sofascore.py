@@ -15,6 +15,7 @@ a warning and returns matches unmodified.
 
 from __future__ import annotations
 
+import hashlib
 import time
 from dataclasses import dataclass
 from typing import Optional
@@ -438,7 +439,14 @@ def enrich_with_sofascore_xg(matches: list[Match]) -> list[Match]:
 # ---------------------------------------------------------------------------
 
 
-@cached(lambda name: f"sofa_team_search_{name.lower().replace(' ', '_')}")
+def _team_search_cache_key(name: str) -> str:
+    # Hash the name to avoid collisions on non-ASCII team names (e.g. "FC
+    # København" and "FC Kobenhavn" would collapse under lower().replace()).
+    digest = hashlib.sha1(name.strip().lower().encode("utf-8")).hexdigest()[:16]
+    return f"sofa_team_search_{digest}"
+
+
+@cached(lambda name: _team_search_cache_key(name))
 def _fetch_team_search(team_name: str) -> Optional[dict]:
     """Fuzzy team search. Returns raw JSON or None."""
     # Sofascore's search endpoint accepts a URL-path query.
@@ -550,6 +558,7 @@ def _build_absences_from_sofa_missing(missing: list[dict]) -> list[PlayerAbsence
             player_name=name,
             position=position,
             status=status,
+            source="sofascore",
         ))
     return absences
 

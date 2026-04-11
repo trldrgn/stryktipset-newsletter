@@ -100,6 +100,11 @@ class PlayerAbsence:
     # Compound risk: does opponent exploit this gap?
     matchup_risk: Optional[MatchupRisk] = None
 
+    # Data provenance — which fetcher produced this record? Lets the analyst
+    # prompt show Claude which source each player comes from so it can weigh
+    # conflicting reports (e.g. API-Football stale vs Sofascore fresh).
+    source: str = ""                    # "api-football" / "sofascore" / ""
+
     @property
     def impact_summary(self) -> str:
         parts = []
@@ -152,6 +157,8 @@ class H2HResult:
     home_goals: int
     away_goals: int
     venue: str = ""         # stadium name if available
+    competition: str = ""   # "Premier League" / "FA Cup" / "UCL" — lets the
+                            # prompt distinguish cup meetings from league ones
 
 
 # ---------------------------------------------------------------------------

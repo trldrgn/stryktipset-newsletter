@@ -195,6 +195,17 @@ def _get_current_manager(team_id: int, team_name: str) -> tuple[str, int | None]
         logger.warning("Coach fetch failed for %s (id=%d): %s", team_name, team_id, e)
         return "", None
 
+    raw_count = len(data.get("response", []))
+    logger.info(
+        "Coach raw response for %s (id=%d): %d entries",
+        team_name, team_id, raw_count,
+    )
+    if raw_count == 0:
+        logger.info(
+            "Coach response full payload for %s (id=%d): %s",
+            team_name, team_id, data,
+        )
+
     today = datetime.now(timezone.utc).date()
     best_name = ""
     best_start: datetime | None = None
@@ -370,6 +381,7 @@ def _build_absences(
             position=position,
             status=status,
             matchup_risk=matchup_risk,
+            source="api-football",
         )
         absences.append(absence)
 
@@ -475,6 +487,7 @@ def _build_h2h(home_team_id: int, away_team_id: int, home_name: str, away_name: 
             home_goals=goals.get("home") or 0,
             away_goals=goals.get("away") or 0,
             venue=f.get("fixture", {}).get("venue", {}).get("name", ""),
+            competition=f.get("league", {}).get("name", ""),
         ))
     return results
 
@@ -577,6 +590,16 @@ def enrich_match(match: Match, season: int) -> Match:
         if fixture_id:
             try:
                 injury_data = _fetch_injuries(fixture_id)
+                raw_count = len(injury_data.get("response", []))
+                logger.info(
+                    "Injury raw response for fixture %d (%s vs %s): %d entries",
+                    fixture_id, match.home_team, match.away_team, raw_count,
+                )
+                if raw_count == 0:
+                    logger.info(
+                        "Injury response full payload for fixture %d: %s",
+                        fixture_id, injury_data,
+                    )
                 all_absences = _build_absences(injury_data)
 
                 # _build_absences preserves the response order, so zip back to

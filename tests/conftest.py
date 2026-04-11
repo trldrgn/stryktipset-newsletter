@@ -371,15 +371,24 @@ def svenska_spel_draw_response() -> dict:
 
 @pytest.fixture
 def svenska_spel_result_response() -> dict:
-    """A finalized draw with outcomes."""
+    """A finalized draw with outcomes derived from match.result[Fulltime]."""
+    # Cycle: home win, draw, away win
+    scores = [(2, 1), (1, 1), (1, 2)]
     resp = {
         "draw": {
             "drawNumber": 4944,
             "drawEvents": [
                 {
                     "eventNumber": i,
-                    "outcome": ["1", "X", "2"][(i - 1) % 3],
-                    "outcomeDescription": ["1", "X", "2"][(i - 1) % 3],
+                    "match": {
+                        "result": [
+                            {
+                                "sportEventResultType": "Fulltime",
+                                "home": str(scores[(i - 1) % 3][0]),
+                                "away": str(scores[(i - 1) % 3][1]),
+                            },
+                        ],
+                    },
                 }
                 for i in range(1, 14)
             ],

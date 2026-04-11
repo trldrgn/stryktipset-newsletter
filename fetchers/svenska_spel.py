@@ -244,9 +244,10 @@ def fetch_result(draw_number: int) -> dict[int, Outcome]:
     Fetch the outcomes for a specific finalized draw.
     Returns a dict mapping game_number → Outcome (1/X/2).
 
-    Note: the API only serves the LATEST result via /draws/result.
-    Older results must be fetched from /draws/{number} (which includes
-    outcome data once the draw is closed).
+    The outcome is derived from the full-time score in
+    event.match.result[sportEventResultType == "Fulltime"]. The top-level
+    ev["outcome"] / ev["outcomeDescription"] keys are always null for closed
+    draws so cannot be used.
     """
     url = f"{SVENSKA_SPEL_API_BASE}/draws/{draw_number}"
     logger.info("Fetching result for draw %d", draw_number)
@@ -260,12 +261,31 @@ def fetch_result(draw_number: int) -> dict[int, Outcome]:
     results: dict[int, Outcome] = {}
     for ev in events:
         game_num = ev["eventNumber"]
-        # Outcome is present once the draw is settled
-        outcome_raw = ev.get("outcome") or ev.get("outcomeDescription", "")
-        if outcome_raw in ("1", "X", "2"):
-            results[game_num] = Outcome(outcome_raw)
+        match = ev.get("match", {})
+
+        # Derive outcome from fulltime score snapshot
+        ft = next(
+            (r for r in match.get("result", []) if r.get("sportEventResultType") == "Fulltime"),
+            None,
+        )
+        if ft and ft.get("home") is not None and ft.get("away") is not None:
+            try:
+                home = int(ft["home"])
+                away = int(ft["away"])
+            except (ValueError, TypeError):
+                logger.warning(
+                    "Unparseable fulltime score for game %d in draw %d: %r-%r",
+                    game_num, draw_number, ft.get("home"), ft.get("away"),
+                )
+                continue
+            if home > away:
+                results[game_num] = Outcome.HOME
+            elif away > home:
+                results[game_num] = Outcome.AWAY
+            else:
+                results[game_num] = Outcome.DRAW
         else:
-            logger.warning("No outcome yet for game %d in draw %d", game_num, draw_number)
+            logger.warning("No fulltime result for game %d in draw %d", game_num, draw_number)
 
     logger.info(
         "Fetched %d/%d results for draw %d",

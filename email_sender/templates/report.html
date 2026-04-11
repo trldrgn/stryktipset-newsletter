@@ -297,7 +297,7 @@
   {% if match and match.home_stats and match.away_stats %}
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
     <tr>
-      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">{% for r in match.home_stats.form_last5 %}{{ wdl[r.result.value] }}{% endfor %} <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> {% for r in match.away_stats.form_last5 %}{{ wdl[r.result.value] }}{% endfor %}</span></td>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">{% for r in match.home_stats.form_last5|reverse %}{{ wdl[r.result.value] }}{% endfor %} <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> {% for r in match.away_stats.form_last5|reverse %}{{ wdl[r.result.value] }}{% endfor %}</span></td>
       <td{% if not (match.home_stats.league_position or match.away_stats.league_position) %} style="border-right:none;"{% endif %}>
         <span class="sl2" style="color:#2a3a54;">xG F/A</span>
         <span class="sv" style="color:#8ba4c4;">{% if match.home_stats.xg_for_avg %}{{ "%.1f"|format(match.home_stats.xg_for_avg) }}{% else %}—{% endif %}/{% if match.home_stats.xg_against_avg %}{{ "%.1f"|format(match.home_stats.xg_against_avg) }}{% else %}—{% endif %} <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> {% if match.away_stats.xg_for_avg %}{{ "%.1f"|format(match.away_stats.xg_for_avg) }}{% else %}—{% endif %}/{% if match.away_stats.xg_against_avg %}{{ "%.1f"|format(match.away_stats.xg_against_avg) }}{% else %}—{% endif %}</span>

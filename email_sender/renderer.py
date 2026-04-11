@@ -20,6 +20,10 @@ _TEMPLATE_DIR = Path(__file__).parent / "templates"
 _BADGES_DIR = Path(__file__).resolve().parent.parent / "static" / "badges"
 _BADGES_BASE_URL = "https://trldrgn.github.io/stryktipset-newsletter/static/badges"
 
+# Locale-independent English month abbreviations. strftime('%b') would emit
+# Swedish month names on a Swedish-locale runner and break the email header.
+_EN_MONTHS = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
 
 def _load_badge_mapping() -> dict[str, str]:
     """Load team/competition name -> badge URL mapping."""
@@ -58,7 +62,7 @@ def render_newsletter(
         draw_number=report.draw_number,
         week_number=week_number,
         year=now.year,
-        generated_date=now.strftime("%d %b %Y, %H:%M %Z"),
+        generated_date=f"{now.day:02d} {_EN_MONTHS[now.month]} {now.year}, {now.strftime('%H:%M %Z')}",
         executive_summary=report.executive_summary,
         value_radar=report.value_radar,
         evaluation=evaluation,

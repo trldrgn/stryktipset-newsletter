@@ -158,14 +158,17 @@ class TestFetchResult:
             assert outcome in (Outcome.HOME, Outcome.DRAW, Outcome.AWAY)
 
     def test_handles_missing_outcome_gracefully(self):
-        """If a game has no outcome yet (in-progress), it is skipped, not crashed."""
+        """If a game has no fulltime result yet (in-progress), it is skipped, not crashed."""
+        def _ft(h, a):
+            return {"sportEventResultType": "Fulltime", "home": str(h), "away": str(a)}
+
         response = {
             "draw": {
                 "drawNumber": 4944,
                 "drawEvents": [
-                    {"eventNumber": 1, "outcome": "1"},
-                    {"eventNumber": 2, "outcome": ""},   # no result yet
-                    {"eventNumber": 3, "outcome": "X"},
+                    {"eventNumber": 1, "match": {"result": [_ft(2, 1)]}},
+                    {"eventNumber": 2, "match": {"result": []}},   # no fulltime yet
+                    {"eventNumber": 3, "match": {"result": [_ft(1, 1)]}},
                 ],
             },
             "error": None,
@@ -179,7 +182,8 @@ class TestFetchResult:
             results = fetch_result(4944)
 
         assert 1 in results
-        assert 2 not in results   # missing outcome is skipped
+        assert results[1] == Outcome.HOME
+        assert 2 not in results   # missing fulltime is skipped
         assert 3 in results
         assert results[3] == Outcome.DRAW
 

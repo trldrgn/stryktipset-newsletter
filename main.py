@@ -85,7 +85,9 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
             evaluation.accuracy_pct,
         )
     else:
-        logger.info("No previous predictions found — skipping evaluation")
+        # evaluate_last_week() already logged the specific reason
+        # (no predictions file / no results yet / fetch error).
+        logger.info("No evaluation this run — see preceding log line for reason")
 
     # --- Step 2: Fetch this week's coupon ---
     logger.info("[2/9] Fetching Stryktipset coupon...")

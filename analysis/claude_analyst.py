@@ -38,6 +38,16 @@ _client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 # Prompt construction
 # ---------------------------------------------------------------------------
 
+# Locale-independent English day/month abbreviations. strftime('%a %b') would
+# emit Swedish names on a Swedish-locale runner and leak into Claude's prompt.
+_EN_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+_EN_MONTHS = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def _fmt_kickoff_en(dt: datetime) -> str:
+    return f"{_EN_DAYS[dt.weekday()]} {dt.day:02d} {_EN_MONTHS[dt.month]} {dt.strftime('%H:%M')}"
+
+
 _COMP_ABBR = {
     "premier league": "PL",
     "championship": "CHP",
@@ -80,13 +90,89 @@ def _format_form(form_list) -> str:
     )
 
 
-def _format_h2h(h2h_list) -> str:
+def _season_label(match_date: datetime, ref_date: datetime) -> str:
+    """
+    Compute a season label like "this season", "last season", "N seasons ago".
+    Season boundary is August 1 (European football convention).
+    """
+    def _season_year(d: datetime) -> int:
+        # A date in July belongs to the season that started the previous August.
+        return d.year if d.month >= 8 else d.year - 1
+
+    diff = _season_year(ref_date) - _season_year(match_date)
+    if diff <= 0:
+        return "this season"
+    if diff == 1:
+        return "last season"
+    return f"{diff} seasons ago"
+
+
+def _format_h2h(h2h_list, home_team: str = "", away_team: str = "") -> str:
+    """
+    Render H2H meetings with explicit season + competition + venue tags so
+    Claude can't confuse "the reverse fixture" (same season, opposite venue)
+    with "that game a year ago". Drops meetings older than 3 years.
+
+    The reverse-fixture marker is applied to the most recent same-season
+    meeting at the opposite venue, if one exists. If teams haven't met yet
+    this season, no marker is drawn.
+    """
     if not h2h_list:
         return "No H2H data"
+
+    now = datetime.now(timezone.utc)
+    cutoff_years = 3
+
+    # Parse + filter
+    parsed = []
+    for h in h2h_list:
+        try:
+            d = datetime.fromisoformat(h.date).replace(tzinfo=timezone.utc)
+        except (ValueError, TypeError):
+            continue
+        if (now - d).days > cutoff_years * 365 + 1:
+            continue
+        parsed.append((d, h))
+
+    if not parsed:
+        return "No H2H data within last 3 years"
+
+    # Sort newest first
+    parsed.sort(key=lambda x: x[0], reverse=True)
+
+    # Identify the reverse fixture: most recent SAME-SEASON meeting at the
+    # opposite venue (home_team as the away side in that meeting).
+    reverse_fixture_date = None
+    if home_team:
+        for d, h in parsed:
+            if _season_label(d, now) != "this season":
+                break  # list is newest-first, so all later items are older
+            # "Opposite venue" = the currently home team was the AWAY team then
+            if h.away_team == home_team:
+                reverse_fixture_date = d
+                break
+
     lines = []
-    for h in h2h_list[:5]:
-        lines.append(f"{h.date}: {h.home_team} {h.home_goals}-{h.away_goals} {h.away_team}")
-    return " | ".join(lines)
+    for d, h in parsed[:8]:  # cap at 8 to keep prompt compact
+        season = _season_label(d, now)
+        comp = h.competition or "?"
+        venue = f"at {h.venue}" if h.venue else ""
+        bits = [season, comp]
+        if venue:
+            bits.append(venue)
+        tag = " · ".join(bits)
+        line = (
+            f"  [{tag}] {h.date}  {h.home_team} {h.home_goals}-{h.away_goals} {h.away_team}"
+        )
+        if d == reverse_fixture_date:
+            line += "  ← reverse fixture"
+        lines.append(line)
+
+    if reverse_fixture_date is None:
+        header = "H2H (most recent first, tagged — no same-season reverse fixture yet):"
+    else:
+        header = "H2H (most recent first, tagged):"
+    return header + "\n" + "\n".join(lines)
 
 
 def _format_absences(absences) -> str:
@@ -94,7 +180,8 @@ def _format_absences(absences) -> str:
         return "None reported"
     parts = []
     for a in absences:
-        desc = f"{a.player_name} ({a.position}, {a.status.value})"
+        src_tag = f" [{a.source}]" if getattr(a, "source", "") else ""
+        desc = f"{a.player_name} ({a.position}, {a.status.value}){src_tag}"
         if a.is_top_scorer:
             desc += " ⚡TOP SCORER"
         if a.is_top_assister:
@@ -212,9 +299,11 @@ def _format_match_block(match: Match) -> str:
         )
     news = f"\nLATEST NEWS:\n" + "\n\n".join(news_parts) if news_parts else ""
 
-    # --- Injury source tags — tells Claude whether absences are structured ---
-    home_inj_tag = "[source: API-Football/Sofascore]" if h and h.injuries else "[source: structured empty]"
-    away_inj_tag = "[source: API-Football/Sofascore]" if a and a.injuries else "[source: structured empty]"
+    # --- Injury source presence flag — each player also carries its own
+    # [api-football] / [sofascore] tag via _format_absences. The outer tag
+    # only distinguishes "we have structured data" from "structured empty".
+    home_inj_tag = "" if h and h.injuries else "[structured empty]"
+    away_inj_tag = "" if a and a.injuries else "[structured empty]"
 
     # Build stat lines — only include non-empty values to keep prompt compact
     home_stats_line = " | ".join(filter(None, [home_xg, home_shot_stats]))
@@ -222,7 +311,7 @@ def _format_match_block(match: Match) -> str:
 
     return f"""
 GAME {match.game_number}: {match.home_team} vs {match.away_team}
-League: {match.league} ({match.country}) | Kickoff: {match.kickoff.strftime('%a %d %b %H:%M') if match.kickoff else 'TBD'}
+League: {match.league} ({match.country}) | Kickoff: {_fmt_kickoff_en(match.kickoff) if match.kickoff else 'TBD'}
 Odds: {odds_str} | {dist_str} | {tips_str}
 
 HOME — {match.home_team} ({home_pos}){home_form_flag}{home_fatigue}{home_manager}
@@ -237,7 +326,7 @@ AWAY — {match.away_team} ({away_pos}){away_form_flag}{away_fatigue}{away_manag
   Injuries/Suspensions {away_inj_tag}: {away_injuries}
   Intl call-ups missing: {away_intl}
 
-H2H (last 5): {_format_h2h(match.h2h)}
+{_format_h2h(match.h2h, match.home_team, match.away_team)}
 {news}
 """.strip()
 
