@@ -764,7 +764,22 @@
       "home_xg": 1.44,
       "away_xg": 1.16,
       "collected_at": "2026-04-11T05:16:45.424620+00:00"
+    },
+    "1387044": {
+      "date": "2026-04-12",
+      "league": "Championship",
+      "league_id": 40,
+      "country": "England",
+      "home_team": "Birmingham",
+      "away_team": "Wrexham",
+      "home_team_id": 54,
+      "away_team_id": 1837,
+      "home_goals": 2,
+      "away_goals": 0,
+      "home_xg": 1.55,
+      "away_xg": 0.08,
+      "collected_at": "2026-04-13T06:35:33.305815+00:00"
     }
   },
-  "last_updated": "2026-04-11T05:16:45.424724+00:00"
+  "last_updated": "2026-04-13T06:35:53.223205+00:00"
 }
