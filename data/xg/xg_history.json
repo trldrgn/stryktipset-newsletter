@@ -959,7 +959,22 @@
       "home_xg": 2.89,
       "away_xg": 0.24,
       "collected_at": "2026-04-17T06:22:44.138293+00:00"
+    },
+    "1387061": {
+      "date": "2026-04-17",
+      "league": "Championship",
+      "league_id": 40,
+      "country": "England",
+      "home_team": "Blackburn",
+      "away_team": "Coventry",
+      "home_team_id": 67,
+      "away_team_id": 1346,
+      "home_goals": 1,
+      "away_goals": 1,
+      "home_xg": 1.04,
+      "away_xg": 1.47,
+      "collected_at": "2026-04-18T05:27:19.802255+00:00"
     }
   },
-  "last_updated": "2026-04-17T06:22:44.138408+00:00"
+  "last_updated": "2026-04-18T05:27:19.802361+00:00"
 }
