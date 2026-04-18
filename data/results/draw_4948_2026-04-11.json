@@ -1,0 +1,173 @@
+{
+  "draw_number": 4948,
+  "draw_date": "2026-04-11",
+  "evaluated_at": "2026-04-18T09:07:29.890299+00:00",
+  "results": [
+    {
+      "game_number": 1,
+      "home_team": "Liverpool",
+      "away_team": "Fulham",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 2,
+      "home_team": "Brentford",
+      "away_team": "Everton",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 3,
+      "home_team": "Burnley",
+      "away_team": "Brighton",
+      "our_prediction": [
+        "2"
+      ],
+      "selection_type": "single",
+      "actual_result": "2",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Charlton",
+      "away_team": "Preston",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "post_mortem": "Predicted 1/X (double, conf=0.62) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Charlton's home record is genuinely poor (L L W L L in last 5 at home) despite the xG regression argument; Both sides have four players absent — relatively balanced injury picture removes any advantage there. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 5,
+      "home_team": "Leicester",
+      "away_team": "Swansea",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "post_mortem": "Predicted 1/X (double, conf=0.72) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Leicester's persistent draw tendency (three consecutive draws, D D D in form) may mean the regression takes time; Leicester's actual league position (19th) carries psychological weight that may affect performance levels. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 6,
+      "home_team": "Middlesbrough",
+      "away_team": "Portsmouth",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "2",
+      "correct": false,
+      "post_mortem": "Predicted 1 (single, conf=0.82) but result was 2. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: H2H has gone against Boro in recent meetings — Portsmouth have beaten them in both legs this season and last year; Boro's eight absentees dilute their own depth, though far less severely than Portsmouth's ten."
+    },
+    {
+      "game_number": 7,
+      "home_team": "Oxford",
+      "away_team": "Watford",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Sheffield U",
+      "away_team": "Hull",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Southampton",
+      "away_team": "Derby",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "Stoke",
+      "away_team": "Blackburn",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 11,
+      "home_team": "Bradford",
+      "away_team": "Stevenage",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "post_mortem": "Predicted 1/X (double, conf=0.72) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Stevenage are UP-FORM and carried themselves to a draw in the reverse fixture — they will not be passive opponents; Bradford's overall form (W W L D L) has been inconsistent outside of home games — no momentum concerns but not imperious. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 12,
+      "home_team": "Doncaster",
+      "away_team": "Reading",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Huddersfield",
+      "away_team": "Wycombe",
+      "our_prediction": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "actual_result": "X",
+      "correct": true,
+      "post_mortem": ""
+    }
+  ]
+}

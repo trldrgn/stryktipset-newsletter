@@ -1,0 +1,296 @@
+{
+  "draw_number": 4949,
+  "draw_date": "2026-04-18",
+  "saved_at": "2026-04-18T09:22:13.756338+00:00",
+  "executive_summary": "Draw #4949 is headlined by two compelling singles — Southampton's relentless away form and Cardiff's xG-driven promotion push offer the sharpest edges. A further two singles emerge in Brighton away and Leeds at home against a bottom-of-the-table Wolves side. Several matches carry genuine uncertainty: Newcastle are badly injury-hit, Luton carry a fatigue flag, and West Brom's remarkable H2H record over Preston at Deepdale cuts against a team sitting 22nd. Applying last week's lessons, we resist overconfidence in home teams with soft form and give sharper credit to UP-FORM away sides and xG regression signals.",
+  "value_radar": [
+    "Game 7 (Preston vs West Brom): West Brom's price of 2.2 looks reasonable or even generous given their extraordinary H2H record at Deepdale (W 4-0, W 3-0, W 3-1, W 2-1) and an xGF-to-goals gap of -0.84 signalling sharp regression upward. The public's 43% backing hasn't collapsed the price.",
+    "Game 9 (Watford vs Sheffield Utd): Watford's xGF of 0.31 over five games is one of the most alarming creative drought readings on the coupon. Sheffield Utd have won all three H2H meetings this season and last, and at 2.6 represent value for a team generating 1.92 xGF per game.",
+    "Game 11 (Mansfield vs Luton): Newspapers are unanimous for Luton (10-0-0) yet the odds price it as a near coin-flip at 2.63 vs 2.60. The market's scepticism — combined with Luton's fatigue flag and Mansfield's reverse-fixture 2-0 win — makes Mansfield a contrarian value play at 2.6."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Chelsea",
+      "away_team": "Manchester United",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "key_factors": [
+        "Chelsea xGF -0.81 underperformance over 5 games — regression upward overdue",
+        "Manchester United missing effectively their entire first-choice CB unit (de Ligt, Martinez, Maguire, Yoro)",
+        "Chelsea also without Colwill, R. James, Mudryk, Jorgensen — both defences patchwork"
+      ],
+      "risk_flags": [
+        "Chelsea's genuine poor recent form (3 defeats in last 5) — xG regression not guaranteed to arrive now",
+        "United's away record is solid and they won the reverse fixture 2-1; do not underestimate them even patched up"
+      ],
+      "analysis": "Two wounded giants meet at Stamford Bridge in a match defined less by ambition and more by attrition. Chelsea carry the DOWN-FORM tag and have shipped two or more goals in three of their last five, yet their underlying xG numbers tell a more sympathetic story: 1.81 xGF over the last five games against just 1.0 actual goals scored, a -0.81 underperformance that signals clinical misfiring rather than structural collapse. That regression ought eventually to arrive, but the fixture brings no guarantee. Absences are significant: Reece James and Levi Colwill strip Chelsea of their first-choice full-back pairing, Mudryk is out on the left, and goalkeeper Jorgensen is unavailable. Six confirmed absentees in structured data is a substantial blow.\n\nManchester United's defensive crisis is arguably more acute in positional terms. Maguire, de Ligt, Lisandro Martinez, Yoro, and Dorgu are all out — that is effectively United's entire first-choice central defensive unit and one full-back. Their back four for this match will be stitched together from depth reserves, and at Stamford Bridge that is a frightening prospect regardless of Chelsea's own wobbles. United's away form is admittedly respectable (D L W D W) and their overall xG is broadly neutral at +0.01 overperformance over five games, but their 10-game overperformance of +0.32 hints at finishing quality that may not be sustainable.\n\nThe H2H is evenly contested: United won the reverse fixture 2-1 at Old Trafford, Chelsea won here last season 1-0, and the previous meeting at the Bridge ended 4-3 in a thriller. There is no dominant trend to anchor on. The public leans Chelsea at 45%, newspapers favour them 6-3-1, and the odds imply a reasonably open contest. Drawing is a natural equilibrium when both sides are patchwork defensively and neither side has consistent clinical output.\n\nGiven Chelsea's regression signal and the home ground advantage set against United's completely restructured back line, Chelsea edge this — but the sheer volume of absentees on both sides and Chelsea's genuine poor form make a draw perfectly plausible. This is a double.",
+      "value_note": "United at 3.1 has some appeal given their patchwork defence — if regression comes for Chelsea it should arrive here, making 1 the primary call."
+    },
+    {
+      "game_number": 2,
+      "home_team": "Tottenham",
+      "away_team": "Brighton",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.82,
+      "key_factors": [
+        "Brighton UP-FORM with three consecutive away clean sheet wins; xGA 0.75 in last 5",
+        "Tottenham winless in 14 PL games, bottom three, missing Vicario, Maddison, Kulusevski, Kudus",
+        "De Zerbi faces his former club — Brighton players know his methods, potential preparatory edge for away side"
+      ],
+      "risk_flags": [
+        "New manager home debut effect could galvanise Spurs for one game",
+        "Brighton missing Lewis Dunk and Webster in central defence — aerial threat from a physical Spurs set-piece side"
+      ],
+      "analysis": "This fixture borders on a mismatch. Tottenham sit 18th, marooned in the relegation zone and winless across 14 league matches. Their home record is wretched — four defeats in the last four home games — and the underlying numbers offer no comfort: xGF of 1.21 per game against an xGA of 1.77, with actual goals conceded running at 2.0 per home game. Roberto De Zerbi takes charge of his first home match at Spurs — a factor worth noting but not overweighting given the structural problems he has inherited, and the absence of a formal [NEW MANAGER] tag means we treat him as still bedding in rather than benefiting from a peak-bounce. Crucially, Tottenham are without goalkeeper Vicario, creative midfielder Maddison, Mohamed Kudus, and Dejan Kulusevski — their most dangerous outlet. That is four meaningful absences in key positions.\n\nBrighton, by contrast, are in excellent health and outstanding form. Four wins from five across all competitions, three consecutive away clean sheet victories, and xGA numbers of just 0.75 per game over five matches. Their xGF of 1.55 per game is a little below their potential but they have been converting efficiently. The meeting against De Zerbi's former club adds a narrative edge; Brighton's players know his system intimately, which could be an advantage in exploiting his early Spurs imprint. They do miss Lewis Dunk and Adam Webster at the back, but their defensive solidity has been a collective effort and the numbers suggest the system is functioning well without a fixed partnership.\n\nThe market has already moved to price this correctly: Brighton at 2.48 with 42% of public money despite being the away side reflects their form. Newspapers back them 6-1-3. The contrast in trajectories — relegation danger vs. top-half momentum — is as clear as it gets on this coupon. Motivation may even be asymmetric: Brighton have European ambitions and something to chase; Spurs are demoralised.\n\nBrighton to win away is the clearest selection on the ticket after Southampton. The risk is De Zerbi's tactical disruption effect and the small chance of a Spurs galvanised home debut, but with a squad this depleted and a 14-game winless run, that bounce has limited runway. Single confidence.",
+      "value_note": ""
+    },
+    {
+      "game_number": 3,
+      "home_team": "Newcastle",
+      "away_team": "Bournemouth",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.58,
+      "key_factors": [
+        "Newcastle without Bruno Guimaraes and Joelinton — both are irreplaceable in their system",
+        "Bournemouth xGF 1.93 vs GF 1.0 — sharp regression upward in goals due",
+        "H2H: Bournemouth won 4-1 at SJP last season; draw in reverse fixture this term"
+      ],
+      "risk_flags": [
+        "Bournemouth's defensive overperformance (xGA 1.67 vs GA 0.8) is potentially fragile",
+        "Kluivert absent — Bournemouth's main goal threat missing; they may struggle to convert their chances"
+      ],
+      "analysis": "On paper Newcastle are the home favourites and newspapers back them 7-0-3. But the devil is in the absentees: Bruno Guimaraes and Joelinton are the spine of this midfield, and both are out. Schar and Krafth compound the defensive and width problems. These are not fringe players — Bruno and Joelinton are first-team mainstays whose absence fundamentally changes Newcastle's energy levels and ball-winning capacity. Their xGF of 1.33 versus an xGA of 2.35 tells a team leaking quality chances against them, and home form over the last five games reads W at only one point (L W L L L if we parse the form correctly — actually one W and three Ls with a fifth).\n\nBournemouth present a tricky puzzle. Their form shows four consecutive draws after winning at home, and their recent all-competitions record is unbeaten in 13 when draws count. Their xGF of 1.93 per game but only 1.0 actual goals highlights significant underperformance in front of goal — a regression upward is pending. Defensively they have been overperforming their xGA (1.67 xGA vs 0.8 GA) which is fragile and may not sustain. Key absentee Justin Kluivert is a real loss given his goal output this season. Overall, Bournemouth are not at full strength but their defensive solidity is genuine.\n\nThe H2H is illuminating: Bournemouth won 4-1 at St. James' Park last season, and the reverse fixture this term ended 0-0 at Vitality. There is no trend suggesting Newcastle enjoy any dominance in this matchup. Given Newcastle's devastating injury list to their engine room, the draw is highly plausible — Bournemouth are the type of team to grind out a point even without Kluivert. Newcastle without Bruno simply lack the dynamism to break down an organised Bournemouth defensive structure.\n\nThe draw or Bournemouth feels more honest than a confident Newcastle home win. This is a double, weighting X and 2.",
+      "value_note": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Leeds",
+      "away_team": "Wolverhampton",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.82,
+      "key_factors": [
+        "Leeds xGF 1.35 vs GF 0.4 over 5 games — extreme negative overperformance, regression imminent",
+        "Wolves bottom of the table (P20), five of five away games lost or drawn, goalkeeper Johnstone absent",
+        "No contrarian market signal — odds and public rightly align with Leeds"
+      ],
+      "risk_flags": [
+        "Leeds missing Stach (midfield), Daniel James, and Rodon — some creative and defensive depth lost",
+        "xG regression does not guarantee it arrives in one specific game — Leeds could draw blank again"
+      ],
+      "analysis": "The xG signal here is one of the sharpest on the coupon. Leeds have generated 1.35 xGF per game over five matches but scored only 0.4 goals per game — a staggering -0.95 underperformance that is not sustainable. Whether through poor finishing, outstanding opposing goalkeeping, or bad luck in front of goal, the regression will come, and it could easily come in this fixture. Over ten games the underperformance extends to -0.56, confirming this is a structural pattern rather than a one-week blip. Leeds have been generating chances; they simply have not converted them.\n\nWolves, by contrast, are bottom of the Premier League at 20th and bring a catastrophic away record: L D L D L in their last five away games. Their xGF of 1.24 against an xGA of 2.17 shows they concede quality chances freely. Goalkeeper Sam Johnstone is confirmed out, meaning a reserve shot-stopper steps in — precisely the moment when Leeds' regression could hurt most. Yerson Mosquera is also absent in defence. Wolves at the bottom of the table, with a makeshift goalkeeper and a losing away record, at a Leeds side overdue a scoring breakout, is about as favourable a setup as a home team can hope for.\n\nThree absences for Leeds (Stach, Daniel James, Rodon) provide marginal concern, but none of these are the goalscorers whose arrival is overdue. The market has priced Leeds at 1.64 — a clear favourite — with 80% of public money and a unanimous 9-1-0 newspaper verdict. That public lean is justified by the data here rather than contrarian. The xG regression, Wolves' league position, their away form, and their goalkeeping disruption all point in the same direction.\n\nThis is one of the clearest single selections on the coupon. Confidence is high enough to stand as a single.",
+      "value_note": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Bristol City",
+      "away_team": "Norwich",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.68,
+      "key_factors": [
+        "Norwich carrying ten confirmed absentees — squad depth severely compromised",
+        "Bristol City have won last three competitive meetings including 1-0 in reverse fixture",
+        "Bristol City xGF 1.39 vs only 1.0 GA — defensively solid against Norwich specifically"
+      ],
+      "risk_flags": [
+        "Bristol City's own home form is poor (W L L L D in last five at home)",
+        "Bristol City xGA 2.02 suggests defensive fragility — Norwich may still create chances even depleted"
+      ],
+      "analysis": "The headline number here is Norwich's injury list: ten confirmed absentees including Amass, Diallo, Duffy, Forsyth, Jurasek, Mahovo, Makama, Topic, Crnac, and Schlupp. That is not a squad — that is a skeleton. Several of these players represent meaningful defensive and midfield cover, and assembling a coherent unit from what remains will be a significant challenge for Norwich's management. Their excellent away form this season (W W L W W in last five away) was built on a fuller complement of players, and the applicability of that record to this occasion is genuinely questionable.\n\nBristol City have their own casualty list — five absentees including Atkinson, McNally, Bird, Dickie, and Williams — but their H2H record over Norwich in recent seasons is commanding. They won the reverse fixture 1-0 at Carrow Road this term, won 2-1 in March last year, and won 2-0 in November 2024. Three consecutive competitive wins against this opponent provides a meaningful psychological and tactical edge. Bristol City's home form is imperfect (W L L L D in last five home games) and their xGF of 1.39 against an xGA of 2.02 shows defensive vulnerability, but their ability to keep clean sheets against Norwich — as the H2H suggests — may be a specific matchup advantage.\n\nNewspaper consensus runs 8-0-2 for Bristol City, odds price them at 2.7. Norwich's injury crisis is the overriding factor. Even a Norwich side with good xG numbers and respectable away form cannot confidently project that output with ten players unavailable. Bristol City at home, with the H2H strongly in their favour and facing a decimated opponent, is a clear enough call to add to the doubles.\n\nThe draw remains live given Bristol City's own recent home inconsistency.",
+      "value_note": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Hull",
+      "away_team": "Birmingham",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.68,
+      "key_factors": [
+        "Birmingham DOWN-FORM, terrible away record (L L L L W in last five away)",
+        "H2H: Hull won reverse fixture 3-2, have won three of four recent competitive meetings",
+        "Birmingham xGF just 0.89 — minimal creative threat"
+      ],
+      "risk_flags": [
+        "Hull missing six players including Lundstram and Matazo — meaningful depth loss",
+        "Hull's xGA 2.08 shows defensive vulnerability; a point-and-defend Birmingham could grab something"
+      ],
+      "analysis": "This is a clean matchup signal. Birmingham carry the DOWN-FORM flag and their away record over the last five reads L L L L W — the sole win being a positive outlier in an otherwise dire run on the road. In Championship football, teams conceding on the road while struggling to attack (Birmingham's xGF sits at just 0.89 per game) rarely turn that record around without a meaningful catalyst. The two absentees (Buchanan, Cochrane) are manageable but the pattern is entrenched.\n\nHull are positioned sixth in the Championship, have won recent home games and sit on a reasonable if inconsistent form run. Their xGF of 1.69 per game is solid, and while their GF of 2.0 per game shows a slight overperformance (+0.31), that does not represent an alarming regression risk — they are creating and converting at a reasonable rate. Six absentees (Famewo, Giles, Hirakawa, Lundstram, Matazo, Slater) adds genuine uncertainty and is worth noting, particularly Lundstram's experience and Matazo's midfield contribution, but their depth in the Championship should absorb these losses better than a Premier League side.\n\nThe H2H further supports Hull. They won 3-2 away at Birmingham in the reverse fixture this season, beat them 2-0 earlier in the H2H record, and won at St. Andrew's 2-0 the season before. Birmingham have never convincingly matched Hull in recent meetings. Newspapers back Hull 9-0-1, odds at 2.63 are not overly short.\n\nThe main concern is Hull's own six absentees, which could leave them unbalanced. But against a Birmingham side with poor away form and a low offensive output, the home advantage should carry. Hull win or draw is the sensible double.",
+      "value_note": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Preston",
+      "away_team": "West Bromwich",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "West Brom H2H dominance at Deepdale: W 4-0, W 3-0, W 3-1, W 2-1 in last four visits",
+        "West Brom xGF 1.84 vs GF 1.0 — severe negative overperformance, regression upward due",
+        "Preston overperforming xGF (GF 2.5 vs xGF 1.61) — downward regression risk"
+      ],
+      "risk_flags": [
+        "West Brom missing six players including Mepham and Johnston — squad depth stretched",
+        "West Brom's league position (22nd) carries psychological pressure as a bottom-club despite recent form"
+      ],
+      "analysis": "The historical record between these sides at Deepdale is one of the most striking H2H signals on this coupon. West Brom have won 4-0, 3-0, 3-1, and 2-1 in their last four visits — a streak of dominance that transcends any single tactical or personnel explanation. In the Championship, where margins are tight, that kind of consistent H2H supremacy at a specific venue carries real predictive weight. This term's reverse fixture also went West Brom's way 2-1 at The Hawthorns.\n\nWest Brom's underlying numbers add to the case. Their xGF of 1.84 per game against actual goals of just 1.0 per game — a -0.84 underperformance — is one of the stronger xG regression signals on this coupon. They have been creating substantially more than they have been converting, and their recent form (W W D D D) suggests underlying momentum is building. Six confirmed absentees (Bany, Grant, Johnston, Mepham, Wallace, Bielik) is a concern and may explain why the market prices them as 2.2 favourites rather than shorter — but their xG profile is genuinely promising.\n\nPreston sit 13th and are overperforming their xGF (1.61 vs GF 2.5, +0.89) — a significant regression risk downward. They may not continue scoring at their current rate. Their four absentees (Lang, Lewis, McCann, Hughes) impact their attacking and midfield options. The home advantage is worth something but history suggests Deepdale has not been a fortress against West Brom specifically.\n\nNewspapers back West Brom 7-2-1, public money at 43%. Odds of 2.2 for an away win is short but arguably supported by the weight of evidence. The draw remains a credible outcome given West Brom's absentees and their tendency to draw (D D D in last three). West Brom to win or draw is the call.",
+      "value_note": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Swansea",
+      "away_team": "Southampton",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.88,
+      "key_factors": [
+        "Southampton UP-FORM: W W W W W in last five, 3.3 GF per game, xGF 2.43, xGA 0.86",
+        "H2H overwhelmingly in Southampton's favour: 5-0, 3-1, 3-0 FA Cup in recent meetings",
+        "Swansea's defence leaking (GA 3.0 in five games, xGA only 1.65 — unsustainable fragility)"
+      ],
+      "risk_flags": [
+        "Southampton's GA overperformance (+0.90) is at the edge of sustainable — law of averages says they will concede more eventually",
+        "Reverse fixture this term ended 0-0 — Swansea can frustrate on their day"
+      ],
+      "analysis": "Southampton are the form team of this coupon. Five consecutive wins across all competitions. Their recent scoring output — 3.3 goals per game over the last five, conceding just 0.3 — is exceptional by any standard, and the underlying xG numbers validate it: xGF 2.43 per game, xGA 0.86. Unlike some teams riding a fortuitous wave, Southampton's output is broadly supported by their expected goals. They are genuinely the best attacking unit across these 13 matches right now. Away form mirrors it: W W D W W in their last five away games, 5-1 and 4-3 scorelines showing they can win ugly and comfortable alike.\n\nSwansea present a welcoming fixture on paper for a team in this form. The Swans sit 14th, have leaked goals (GA 3.0 in last five despite xGA of only 1.65 — their defensive overperformance has gone in the wrong direction), and have recently lost to Portsmouth and Derby. Their home form this term reads D L W D W which is mixed at best. The H2H provides no refuge: Southampton beat Swansea 3-0 in the FA Cup this season, 3-1 in the Championship the previous season, and 5-0 the campaign before. The reverse fixture this term ended 0-0, which is the sole exception to Southampton dominance in recent encounters.\n\nSouthampton are missing only Roerslev Rasmussen and a doubtful Matsuki — essentially at full strength. Swansea lose Galbraith, Key, Eom, and Inoussa. The matchup is one-sided across every meaningful dimension: form, xG, H2H, injury picture, squad depth. This is the single pick of the week alongside Brighton. Southampton to win away is the standout confidence selection of draw #4949.",
+      "value_note": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Watford",
+      "away_team": "Sheffield U",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.62,
+      "key_factors": [
+        "Watford xGF just 0.31 per game — near-total creative drought",
+        "Watford xGA 2.25 but GA 1.0 — defensive overperformance is fragile and likely to correct",
+        "Sheffield Utd have won all three H2H meetings this and last season, including at Vicarage Road"
+      ],
+      "risk_flags": [
+        "Sheffield Utd missing five players — could disrupt their away momentum",
+        "Watford's defensive resilience, however fragile, could produce another scrappy low-scoring draw"
+      ],
+      "analysis": "Watford's xGF of 0.31 per game over five matches is one of the most alarming creative output numbers on this coupon. They are barely registering as an attacking threat and yet have kept their goals conceded low (1.0 per game) relative to an xGA of 2.25 — which tells us their defence has been dramatically overperforming, essentially bailed out by good goalkeeping and fortune. That combination — near-zero attack, fragile defence — is a recipe for eventual implosion, and the regression on both ends is overdue. Five absences (Bola, Grieves, Kyprianou, Ngakia, Vata) thin an already stretched squad.\n\nSheffield United generate 1.92 xGF per game and their actual scoring output of 2.0 goals per game is in line — they are not riding unsustainable luck, they are genuinely creating and converting. Their away record (L D L W W in last five away) shows upward trajectory, with back-to-back away wins the most recent results. The H2H could not be clearer: Sheffield United won all three meetings across this and last season, including the reverse fixture 1-0 and a 2-1 win at Vicarage Road in January. Five Sheffield United absentees (Campbell, Cooper, McCallum, Phillips, Shackleton) is a concern and may explain why newspapers only go 5-2-3 rather than decisively for the Blades.\n\nWatford's xGF fragility is the dominant factor here. A team barely creating against an opposition with genuine xG output and H2H dominance at this venue is in trouble. The draw price at 3.55 has appeal as a backup, since Watford's defensive overperformance can produce low-scoring stalemates. Sheffield United to win or draw is the call, with the away win favoured.",
+      "value_note": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "Wrexham",
+      "away_team": "Stoke",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.7,
+      "key_factors": [
+        "Stoke missing nine players including their goalkeeper — severe squad crisis",
+        "Stoke's away form: five consecutive defeats, zero wins or draws away from home in last five",
+        "Wrexham home advantage with injured but available core squad"
+      ],
+      "risk_flags": [
+        "Wrexham themselves DOWN-FORM (L L D W L overall) and missing Cacace, James, O'Connor, Sheaf",
+        "Stoke won the reverse fixture 1-0 this season — some H2H credibility at least"
+      ],
+      "analysis": "Stoke City arrive at Wrexham in the most weakened state of any away side across this coupon. Nine confirmed absentees — Ampah, Johansson (goalkeeper), Phillips, Rigo, Talovierov, Tchamadeu, Wilmot, and doubts Bozenik and Gibson — strips them of their goalkeeper, multiple defenders, midfielders, and their main striker option. This is a crisis-level availability problem for a team travelling away from home. To compound matters, Stoke's away form reads L L L L L in their last five — five consecutive away defeats, failing to win or draw on the road at any point. Their xGF of 1.77 away suggests they can create, but the conversion (1.5 GF per game) and conceding (1.5 GA per game, xGA 2.10) pattern shows they are fragile in both phases.\n\nWraxham are DOWN-FORM with their own four absentees (Cacace, James, O'Connor, Sheaf) and form that reads L L D W L in last five overall — not convincing. Their xGF of 1.09 per game is modest, though actual goals are slightly ahead at 1.2. The home form is more encouraging if you look further back (W W in the last two home games), and their SJP — sorry, Racecourse Ground — crowd factor adds weight. Stoke won the reverse fixture 1-0, which is the one H2H data point available.\n\nThe reverse result tempers confidence but cannot outweigh Stoke's structural implosion: no goalkeeper, five consecutive away defeats, and nine players unavailable. Wrexham to win or draw at home against this version of Stoke is the logical outcome. The draw is kept in as insurance against Wrexham's own inconsistency.",
+      "value_note": ""
+    },
+    {
+      "game_number": 11,
+      "home_team": "Mansfield",
+      "away_team": "Luton",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.62,
+      "key_factors": [
+        "Market prices this as near coin-flip despite unanimous newspaper support for Luton — sharp money may see something",
+        "Mansfield won the reverse fixture 2-0 at Kenilworth Road — meaningful H2H data point",
+        "Luton FATIGUE flag — heavy programme may blunt their UP-FORM momentum"
+      ],
+      "risk_flags": [
+        "Luton are UP-FORM (W W W D W last five) and away form (W W D D L) is strong — do not dismiss them",
+        "Mansfield P14 in League One — limited quality ceiling and home form not dominant"
+      ],
+      "analysis": "This is the coupon's sharpest market puzzle. Newspapers are unanimous — all ten tip Luton — yet the odds price this fixture at near-parity: Mansfield 2.6, Luton 2.63. When the public narrative and press consensus stack up firmly one way but the market refuses to follow, it pays to listen to the bookmakers. The FATIGUE flag on Luton is a material signal: they have been carrying a heavy programme and that workload can blunt even the sharpest upward form trajectory. Luton's away form (W W D D L in last five) is excellent but contains the seeds of inconsistency, with the most recent away result a defeat.\n\nMansfield's home form deserves credit. D W D W D in last five home games shows consistency, and they hold a 2-0 H2H win over Luton in the reverse fixture at Kenilworth Road this season — a meaningful data point. Their xGF of 2.29 per game at home is genuinely impressive for League One, suggesting they create real chances. Luton's xGF of 2.18 and xGA of 1.59 reflect their quality but also shows they are not impenetrable defensively. No injury news from structured data on either side, which is an equal playing field in terms of availability.\n\nThe contrarian signal is worth following here. Mansfield at home, having beaten Luton already this season on their ground, with fatigue weighing on the visitors and a market that refuses to agree with press consensus, makes this a credible home win or draw scenario. Last week's lessons remind us to respect the visiting UP-FORM side — but they also remind us to check whether the dropped outcome (home win) had genuine justification. Here it does.",
+      "value_note": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "Reading",
+      "away_team": "Cardiff",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.82,
+      "key_factors": [
+        "Cardiff xGF 2.33 vs GF 1.2 — massive -1.13 underperformance, strong regression upward pending",
+        "Cardiff P2 chasing promotion — maximum motivation; Reading mid-table with nothing significant at stake",
+        "Reading's shot volume of 8.0 per game is very low — passive attacking approach unlikely to trouble Cardiff"
+      ],
+      "risk_flags": [
+        "Cardiff's defensive overperformance (xGA 1.78 vs GA 0.8) may correct, making this a more open game",
+        "Cardiff's recent form includes a defeat (0-2) — not entirely secure despite promotion push"
+      ],
+      "analysis": "Cardiff are chasing promotion from League One at P2 and their xG numbers scream of goals being held back. An xGF of 2.33 per game over five matches against actual goals of just 1.2 — a -1.13 underperformance — is one of the two or three most extreme negative regression signals on the entire coupon. Cardiff have been creating in vast quantities and simply not converting. Their xGA of 1.78 but GA of only 0.8 shows defensive overperformance on the other end, which is more sustainable in a side with their structure. But the critical point is: Cardiff are due goals, and a lot of them, by xG logic.\n\nReading are DOWN-FORM at P10, with a shot volume of just 8.0 per game — extremely low, suggesting a passive or compact setup that has been containing but not threatening. Their GF/GA balance (1.0/1.0) makes them appear even but the underlying volume of chances (xGF 1.01, xGA 1.52) hints at defensive fragility that Cardiff's xG-rich attack could exploit. Reading's home form (L W D W D in last five home) is inconsistent rather than threatening.\n\nThe H2H confirms Cardiff's superiority: they won the reverse fixture 2-1 at Cardiff City Stadium, and the only other recent H2H data point (a friendly) also went Cardiff's way. Newspapers back Cardiff 9-0-1, public money 63%, odds 1.94. The price reflects a clear away favourite, and the xG regression signal provides fundamental justification for that favouritism beyond just headline form. Cardiff to win away is a strong single.",
+      "value_note": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Wimbledon",
+      "away_team": "Plymouth",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.78,
+      "key_factors": [
+        "Wimbledon DOWN-FORM (5 consecutive defeats), FATIGUE flag, P20 — structurally dire",
+        "Plymouth UP-FORM: xGF 2.58, away form W D W L W, efficient defensively",
+        "Plymouth's xGF dominance (2.58) should eventually overcome Wimbledon's defensive regression"
+      ],
+      "risk_flags": [
+        "Wimbledon won the reverse fixture 2-1 at Plymouth — they have capacity to compete in this specific matchup",
+        "Wimbledon's xGF of 1.59 vs GF 0.2 — if regression arrives, this scoreline tightens rapidly"
+      ],
+      "analysis": "Wimbledon's situation is stark. Five consecutive defeats, a DOWN-FORM tag, a FATIGUE flag, and a league position of 20th. Their recent scoring record is almost non-existent — 0.2 goals per game over five matches — though their xGF of 1.59 represents a -1.39 overperformance suggesting considerable misfortune. The regression argument is mathematically real, but five consecutive defeats and a goals output that borders on zero raises the question of whether something systemic is wrong rather than just bad luck. For a team this deep into a losing run, confidence, team cohesion, and opposition scouting all conspire to perpetuate the drought.\n\nPlymouth arrive UP-FORM with a 2.58 xGF per game, solid away form (W D W L W in last five away), and a defending mode that concedes just 1.0 GA per game against an xGA of 1.27. They are efficient defensively and potent offensively. Their form reads D W L W W in all competitions — three wins from last four. The H2H throws up one interesting counter-note: Wimbledon won the reverse fixture 2-1 at Plymouth this season, demonstrating that they can compete and win against this specific opponent. That is not to be entirely dismissed.\n\nHowever, a team at P20 with five straight losses and playing at home but flagged as fatigue-affected has almost no structural argument on their side. Plymouth's quality advantage across xG, form, and position is overwhelming. The draw has mild appeal as insurance given Wimbledon's regression potential and the reverse-fixture result, but Plymouth to win is the primary selection. Confidence sits at 0.78 — strong double territory rather than a single, given the reverse-fixture caveat.",
+      "value_note": ""
+    }
+  ]
+}
