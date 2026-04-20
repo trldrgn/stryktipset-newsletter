@@ -974,7 +974,22 @@
       "home_xg": 1.04,
       "away_xg": 1.47,
       "collected_at": "2026-04-18T05:27:19.802255+00:00"
+    },
+    "1387057": {
+      "date": "2026-04-19",
+      "league": "Championship",
+      "league_id": 40,
+      "country": "England",
+      "home_team": "Ipswich",
+      "away_team": "Middlesbrough",
+      "home_team_id": 57,
+      "away_team_id": 70,
+      "home_goals": 2,
+      "away_goals": 2,
+      "home_xg": 2.03,
+      "away_xg": 2.69,
+      "collected_at": "2026-04-20T07:25:30.678003+00:00"
     }
   },
-  "last_updated": "2026-04-18T05:27:19.802361+00:00"
+  "last_updated": "2026-04-20T07:25:57.243588+00:00"
 }
