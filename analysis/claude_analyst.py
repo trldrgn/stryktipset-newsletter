@@ -345,16 +345,6 @@ AWAY — {match.away_team} ({away_pos}){away_form_flag}{away_fatigue}{away_manag
 
 
 def _build_system_prompt(evaluation: WeeklyEvaluation | None) -> str:
-    feedback = ""
-    if evaluation and evaluation.feedback_summary:
-        feedback = f"""
-LAST WEEK'S PERFORMANCE — USE THIS TO CALIBRATE:
-{evaluation.feedback_summary}
-
-Key lessons to apply this week:
-{chr(10).join(f'- {l}' for l in evaluation.lessons)}
-"""
-
     return f"""You are an expert football analyst producing a weekly Stryktipset betting newsletter.
 
 Your role:
@@ -405,7 +395,7 @@ DATA QUALITY NOTES:
 - "Form: N/A" means the stats API had no data. Use market signals and news to compensate.
 - When structured stats are sparse, weight the LATEST NEWS and market odds more heavily.
 - Do NOT write filler like "unfortunately no xG data available for this match" — just use what you have.
-{feedback}
+
 ANALYTICAL DEPTH — go beyond surface stats:
 - MOTIVATION ASYMMETRY: title race vs mid-table complacency, relegation desperation vs nothing-to-play-for.
   Relegation-threatened teams often park the bus → inflated draw probability.
@@ -548,17 +538,6 @@ def analyse_matches(
     Send all 13 matches to Claude in one call. Returns a WeeklyReport.
     """
     logger.info("Sending %d matches to Claude (%s)", len(matches), CLAUDE_MODEL)
-
-    if evaluation is None:
-        logger.warning(
-            "No WeeklyEvaluation provided — Claude is running without last week's "
-            "feedback signal. Check data/performance/history.json is being populated."
-        )
-    elif not evaluation.feedback_summary:
-        logger.warning(
-            "WeeklyEvaluation present but feedback_summary is empty — Claude sees no "
-            "learning context from last week."
-        )
 
     system_prompt = _build_system_prompt(evaluation)
     user_prompt = _build_user_prompt(matches, draw_number)
