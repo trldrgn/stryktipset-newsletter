@@ -262,26 +262,12 @@ def evaluate_last_week() -> Optional[WeeklyEvaluation]:
     )
 
     # --- Build lessons for Claude's next prompt ---
-    # Per-game post-mortems are always included (they are specific and don't
-    # depend on small-sample thresholds). Rolling-window lessons that rely on
-    # singles/doubles accuracy only fire once we have ≥4 weeks of history,
-    # because a single week of n=4 singles produces at most 5 distinct
-    # accuracy values and is dominated by noise.
-    wrong = [e for e in evaluations if not e.correct and e.selection_type != SelectionType.FULL]
-    lessons: list[str] = []
+    # Per-game post-mortems are stored in data/results/ (via _save_results) for
+    # the monthly --improve analysis. They are NOT injected into the weekly
+    # Claude prompt — one-shot per-game corrections cause over-fitting to noise.
+    # Rolling-window lessons only fire once ≥4 weeks of history exist.
 
-    if wrong:
-        for e in wrong:
-            lessons.append(
-                f"Game {e.game_number} ({e.home_team} vs {e.away_team}): "
-                f"predicted {'/'.join(o.value for o in e.our_prediction)} "
-                f"({e.selection_type.value}), actual was {e.actual_result.value}. "
-                f"{e.post_mortem}"
-            )
-
-    lessons.extend(_rolling_window_lessons(evaluation))
-
-    evaluation.lessons = lessons
+    evaluation.lessons = _rolling_window_lessons(evaluation)
     evaluation.feedback_summary = _build_feedback_summary(evaluation)
 
     # --- Persist results ---
@@ -382,27 +368,16 @@ def _rolling_window_lessons(current: WeeklyEvaluation) -> list[str]:
 
 def _build_feedback_summary(ev: WeeklyEvaluation) -> str:
     """
-    Compact summary injected into Claude's system prompt this week.
+    Compact scorecard injected into Claude's system prompt this week.
+    Per-game post-mortems are omitted — they live in data/results/ for the
+    monthly --improve analysis only.
     """
-    lines = [
-        f"LAST WEEK (Draw {ev.draw_number}): {ev.total_correct}/{len(ev.evaluations)} correct "
+    return (
+        f"Draw {ev.draw_number}: {ev.total_correct}/{len(ev.evaluations)} correct "
         f"({ev.accuracy_pct}%). "
         f"Singles: {ev.singles_correct}/{ev.singles_total}. "
-        f"Doubles: {ev.doubles_correct}/{ev.doubles_total}. "
-        f"Full: covered ({'yes' if ev.full_covered else 'no'}).",
-    ]
-
-    wrong = [e for e in ev.evaluations if not e.correct and e.selection_type != SelectionType.FULL]
-    if wrong:
-        lines.append("Missed predictions:")
-        for e in wrong:
-            lines.append(
-                f"  - Game {e.game_number} {e.home_team} vs {e.away_team}: "
-                f"tipped {'/'.join(o.value for o in e.our_prediction)}, "
-                f"result was {e.actual_result.value}. {e.post_mortem}"
-            )
-
-    return "\n".join(lines)
+        f"Doubles: {ev.doubles_correct}/{ev.doubles_total}."
+    )
 
 
 # ---------------------------------------------------------------------------
