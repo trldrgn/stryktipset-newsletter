@@ -348,6 +348,73 @@ def _build_shot_stats(
 
 
 # ---------------------------------------------------------------------------
+# Card / disciplinary stats
+# ---------------------------------------------------------------------------
+
+def _build_card_stats(
+    team_csv: str, rows: list[dict],
+) -> tuple[Optional[float], Optional[float]]:
+    """
+    Compute season-to-date average yellows/game for a team split by home/away.
+    Returns (avg_yellows_home, avg_yellows_away). Returns (None, None) if the
+    HY/AY columns are absent (e.g. Allsvenskan CSV).
+    """
+    if not rows or "HY" not in rows[0]:
+        return None, None
+
+    home_yellows, home_games = 0.0, 0
+    away_yellows, away_games = 0.0, 0
+
+    for row in rows:
+        home = row.get("HomeTeam", "").strip()
+        away = row.get("AwayTeam", "").strip()
+        try:
+            if home == team_csv:
+                home_yellows += int(row.get("HY", 0) or 0)
+                home_games += 1
+            elif away == team_csv:
+                away_yellows += int(row.get("AY", 0) or 0)
+                away_games += 1
+        except (ValueError, TypeError):
+            continue
+
+    avg_home = round(home_yellows / home_games, 1) if home_games else None
+    avg_away = round(away_yellows / away_games, 1) if away_games else None
+    return avg_home, avg_away
+
+
+def _build_referee_stats(rows: list[dict]) -> dict[str, float]:
+    """
+    Compute per-referee average total cards/game (Y + R for both sides)
+    from season CSV data. Returns {referee_name: avg_cards}.
+    """
+    if not rows or "Referee" not in rows[0]:
+        return {}
+
+    ref_cards: dict[str, list[int]] = {}
+    for row in rows:
+        ref = row.get("Referee", "").strip()
+        if not ref:
+            continue
+        try:
+            total = (
+                int(row.get("HY", 0) or 0)
+                + int(row.get("HR", 0) or 0)
+                + int(row.get("AY", 0) or 0)
+                + int(row.get("AR", 0) or 0)
+            )
+        except (ValueError, TypeError):
+            continue
+        ref_cards.setdefault(ref, []).append(total)
+
+    return {
+        ref: round(sum(games) / len(games), 1)
+        for ref, games in ref_cards.items()
+        if games
+    }
+
+
+# ---------------------------------------------------------------------------
 # Schedule computation
 # ---------------------------------------------------------------------------
 
@@ -404,6 +471,7 @@ def enrich_with_csv_stats(matches: list[Match]) -> list[Match]:
     csv_data: dict[str, list[dict]] = {}
     tables: dict[str, list[dict]] = {}
     team_sets: dict[str, set[str]] = {}
+    referee_stats: dict[str, dict[str, float]] = {}  # code → {referee: avg_cards}
 
     for code, league_name in leagues_needed.items():
         try:
@@ -412,6 +480,7 @@ def enrich_with_csv_stats(matches: list[Match]) -> list[Match]:
                 csv_data[code] = rows
                 tables[code] = _build_league_table(rows)
                 team_sets[code] = _get_unique_teams(rows)
+                referee_stats[code] = _build_referee_stats(rows)
                 logger.info("  %s: %d matches, %d teams", league_name, len(rows), len(team_sets[code]))
         except Exception as e:
             logger.warning("CSV fetch failed for %s (%s): %s", code, league_name, e)
@@ -483,8 +552,30 @@ def enrich_with_csv_stats(matches: list[Match]) -> list[Match]:
                     stats.schedule = sched
                     did_enrich = True
 
+            # --- Card / disciplinary averages ---
+            if stats.avg_yellows_home is None:
+                yh, ya = _build_card_stats(csv_name, rows)
+                if yh is not None:
+                    stats.avg_yellows_home = yh
+                    stats.avg_yellows_away = ya
+                    did_enrich = True
+
             if did_enrich:
                 enriched_count += 1
+
+        # --- Referee stats (per match, not per team) ---
+        if match.referee and match.referee_avg_cards is None:
+            ref_lookup = referee_stats.get(code, {})
+            # Fuzzy: try exact then partial match on referee name
+            avg = ref_lookup.get(match.referee)
+            if avg is None:
+                ref_lower = match.referee.lower()
+                for ref_name, ref_avg in ref_lookup.items():
+                    if ref_lower in ref_name.lower() or ref_name.lower() in ref_lower:
+                        avg = ref_avg
+                        break
+            if avg is not None:
+                match.referee_avg_cards = avg
 
     logger.info("CSV enrichment complete: %d teams enriched", enriched_count)
     return matches

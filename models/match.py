@@ -214,6 +214,10 @@ class TeamStats:
     possession_avg: Optional[float] = None        # avg ball possession %
     corners_avg: Optional[float] = None
 
+    # Disciplinary averages (season-to-date from football-data.co.uk CSV)
+    avg_yellows_home: Optional[float] = None      # avg yellows when playing at home
+    avg_yellows_away: Optional[float] = None      # avg yellows when playing away
+
     # Lineup context (published ~1h before kickoff)
     formation: str = ""                           # e.g. "4-3-3"
     starting_xi: list[str] = field(default_factory=list)  # player names
@@ -338,6 +342,8 @@ class Match:
     country: str
     kickoff: Optional[datetime] = None
     api_football_fixture_id: Optional[int] = None   # resolved during stats fetch
+    referee: str = ""                               # assigned referee name
+    referee_avg_cards: Optional[float] = None       # referee's avg total cards/game this season
 
     # Populated progressively
     market: Optional[MarketSignals] = None

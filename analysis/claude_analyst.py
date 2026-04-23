@@ -309,10 +309,23 @@ def _format_match_block(match: Match) -> str:
     home_stats_line = " | ".join(filter(None, [home_xg, home_shot_stats]))
     away_stats_line = " | ".join(filter(None, [away_xg, away_shot_stats]))
 
+    # --- Referee + disciplinary context ---
+    ref_parts = []
+    if match.referee:
+        ref_str = match.referee
+        if match.referee_avg_cards is not None:
+            ref_str += f" (avg {match.referee_avg_cards:.1f} cards/game)"
+        ref_parts.append(f"Referee: {ref_str}")
+    h_yel = f"{h.avg_yellows_home:.1f}Y/g(H)" if h and h.avg_yellows_home is not None else None
+    a_yel = f"{a.avg_yellows_away:.1f}Y/g(A)" if a and a.avg_yellows_away is not None else None
+    if h_yel or a_yel:
+        ref_parts.append(f"Cards: Home {h_yel or '?'} | Away {a_yel or '?'}")
+    ref_line = " | ".join(ref_parts)
+
     return f"""
 GAME {match.game_number}: {match.home_team} vs {match.away_team}
 League: {match.league} ({match.country}) | Kickoff: {_fmt_kickoff_en(match.kickoff) if match.kickoff else 'TBD'}
-Odds: {odds_str} | {dist_str} | {tips_str}
+Odds: {odds_str} | {dist_str} | {tips_str}{f" | {ref_line}" if ref_line else ""}
 
 HOME — {match.home_team} ({home_pos}){home_form_flag}{home_fatigue}{home_manager}
   Form (all): {home_form} | Form (home): {home_form_home}

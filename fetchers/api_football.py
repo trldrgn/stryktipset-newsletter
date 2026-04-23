@@ -264,6 +264,12 @@ def find_fixture_id(match: Match, season: int) -> Optional[int]:
             if away_lower in a or a in away_lower:
                 fixture_id = f["fixture"]["id"]
                 logger.info("Resolved fixture ID %d for %s vs %s", fixture_id, match.home_team, match.away_team)
+                # Capture referee while we have the fixture data
+                referee = f.get("fixture", {}).get("referee") or ""
+                if referee and not match.referee:
+                    # API sometimes returns "Name, Country" — keep name only
+                    match.referee = referee.split(",")[0].strip()
+                    logger.info("Referee for %s vs %s: %s", match.home_team, match.away_team, match.referee)
                 return fixture_id
 
     logger.warning("Could not resolve fixture ID for %s vs %s on %s", match.home_team, match.away_team, date_str)
