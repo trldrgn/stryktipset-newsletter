@@ -1,22 +1,13 @@
 """
 Evaluates last week's predictions against the actual Stryktipset results.
 
-Two purposes:
-  1. SHORT-TERM: Build a feedback_summary fed into Claude's prompt this week
-     so the model adjusts based on recent mistakes.
+Scores each prediction, saves annotated results to data/results/, and
+appends a summary to data/performance/history.json for long-term analysis.
 
-  2. LONG-TERM: Append to data/performance/history.json — a growing dataset
-     of every prediction, all signals used, and the outcome. This can be fed
-     to a monthly "model improvement" prompt to identify systematic biases.
-
-Run flow:
-  - Load last week's saved prediction file (data/predictions/*.json)
-  - Fetch actual results from Svenska Spel API
-  - Score: correct / wrong per game
-  - Annotate each wrong prediction with what signal may have caused the error
-  - Save annotated results to data/results/
-  - Append summary to data/performance/history.json
-  - Return WeeklyEvaluation for the newsletter and Claude context
+The returned WeeklyEvaluation is used only for the newsletter scorecard.
+Claude's prompt does not receive evaluation feedback — n=13/week is too
+small to produce meaningful signal. Use `python main.py --improve` once
+10+ weeks of history exist to find systematic patterns.
 """
 
 from __future__ import annotations
@@ -261,15 +252,6 @@ def evaluate_last_week() -> Optional[WeeklyEvaluation]:
         full_covered=full_covered,
     )
 
-    # --- Build lessons for Claude's next prompt ---
-    # Per-game post-mortems are stored in data/results/ (via _save_results) for
-    # the monthly --improve analysis. They are NOT injected into the weekly
-    # Claude prompt — one-shot per-game corrections cause over-fitting to noise.
-    # Rolling-window lessons only fire once ≥4 weeks of history exist.
-
-    evaluation.lessons = _rolling_window_lessons(evaluation)
-    evaluation.feedback_summary = _build_feedback_summary(evaluation)
-
     # --- Persist results ---
     _save_results(draw_number, draw_date, evaluations)
     _append_to_history(draw_number, draw_date, evaluations, evaluation)
@@ -282,102 +264,6 @@ def evaluate_last_week() -> Optional[WeeklyEvaluation]:
     )
 
     return evaluation
-
-
-ROLLING_WINDOW_WEEKS = 4
-
-
-def _rolling_window_lessons(current: WeeklyEvaluation) -> list[str]:
-    """
-    Lessons computed over a rolling window of the last N weeks (including the
-    current one). Only fire once the window is full — below that, a single
-    week's n=4 singles is too coarse to be a real signal.
-    """
-    history = _load_all_history()
-    # history does NOT yet contain the current week — it will be appended after
-    # this function runs. Build the rolling window from the tail of history
-    # plus the current week.
-    window_past = history[-(ROLLING_WINDOW_WEEKS - 1):] if ROLLING_WINDOW_WEEKS > 1 else []
-    if len(window_past) < ROLLING_WINDOW_WEEKS - 1:
-        # Not enough prior weeks for the rolling window. Skip threshold lessons.
-        return []
-
-    # Aggregate singles / doubles / draws across the window
-    singles_correct = sum(w["singles_correct"] for w in window_past) + current.singles_correct
-    singles_total = sum(w["singles_total"] for w in window_past) + current.singles_total
-    doubles_correct = sum(w["doubles_correct"] for w in window_past) + current.doubles_correct
-    doubles_total = sum(w["doubles_total"] for w in window_past) + current.doubles_total
-
-    # Draw bias across the window
-    wrong_draw_count = 0
-    for w in window_past:
-        for g in w.get("games", []):
-            if g["actual_result"] == "X" and "X" not in g["our_prediction"] and g["selection_type"] != "full":
-                wrong_draw_count += 1
-    wrong_draw_count += sum(
-        1 for e in current.evaluations
-        if not e.correct
-        and e.actual_result == Outcome.DRAW
-        and e.selection_type != SelectionType.FULL
-    )
-
-    lessons: list[str] = []
-    window_label = f"last {ROLLING_WINDOW_WEEKS} weeks"
-
-    if singles_total > 0:
-        sa = round(singles_correct / singles_total * 100, 1)
-        if sa < 25:
-            lessons.append(
-                f"CRITICAL: Singles accuracy over {window_label} is {sa}% "
-                f"({singles_correct}/{singles_total}) — fundamentally miscalibrated. "
-                "Require 3+ independent aligned signals before assigning ANY single."
-            )
-        elif sa < 50:
-            lessons.append(
-                f"Singles accuracy over {window_label} is {sa}% "
-                f"({singles_correct}/{singles_total}) — below acceptable threshold. "
-                "Only assign singles to games where form, odds, and news all agree."
-            )
-        elif sa >= 75:
-            lessons.append(
-                f"Singles accuracy over {window_label} is strong at {sa}% "
-                f"({singles_correct}/{singles_total}). Confidence calibration "
-                "appears well-tuned — maintain current approach."
-            )
-
-    if doubles_total > 0:
-        da = doubles_correct / doubles_total * 100
-        if da < 50:
-            lessons.append(
-                f"Doubles accuracy over {window_label} is {da:.0f}% "
-                f"({doubles_correct}/{doubles_total}) — the dropped outcome has "
-                "often been correct. Review whether market least-likely is truly "
-                "least-likely or Claude's second choice is more reliable."
-            )
-
-    # Draw coverage: flag if we've been missing ≥4 draws over the rolling window
-    if wrong_draw_count >= ROLLING_WINDOW_WEEKS:
-        lessons.append(
-            f"{wrong_draw_count} predictions over {window_label} were wrong draws. "
-            "Draws are being systematically underrated — increase draw coverage "
-            "in doubles for matches with tight odds and close league positions."
-        )
-
-    return lessons
-
-
-def _build_feedback_summary(ev: WeeklyEvaluation) -> str:
-    """
-    Compact scorecard injected into Claude's system prompt this week.
-    Per-game post-mortems are omitted — they live in data/results/ for the
-    monthly --improve analysis only.
-    """
-    return (
-        f"Draw {ev.draw_number}: {ev.total_correct}/{len(ev.evaluations)} correct "
-        f"({ev.accuracy_pct}%). "
-        f"Singles: {ev.singles_correct}/{ev.singles_total}. "
-        f"Doubles: {ev.doubles_correct}/{ev.doubles_total}."
-    )
 
 
 # ---------------------------------------------------------------------------

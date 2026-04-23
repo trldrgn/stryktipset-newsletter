@@ -441,10 +441,6 @@ class WeeklyEvaluation:
     doubles_total: int = 0
     full_covered: bool = False       # did full selection cover the actual result (always True)
 
-    # Narrative summary fed back into next week's Claude prompt
-    feedback_summary: str = ""
-    lessons: list[str] = field(default_factory=list)   # bullet points for Claude context
-
     @property
     def accuracy_pct(self) -> float:
         if not self.evaluations:

@@ -315,8 +315,6 @@ def sample_evaluation() -> WeeklyEvaluation:
         doubles_correct=0,
         doubles_total=0,
         full_covered=True,
-        lessons=["Consider rotation risk before assigning singles to midweek-fatigued teams."],
-        feedback_summary="Last week: 2/3 correct (66.7%). Singles: 1/2. Full: covered.",
     )
 
 
