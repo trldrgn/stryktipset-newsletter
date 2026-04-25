@@ -1109,7 +1109,22 @@
       "home_xg": 3.18,
       "away_xg": 1.38,
       "collected_at": "2026-04-22T06:21:18.739102+00:00"
+    },
+    "1387080": {
+      "date": "2026-04-24",
+      "league": "Championship",
+      "league_id": 40,
+      "country": "England",
+      "home_team": "Leicester",
+      "away_team": "Millwall",
+      "home_team_id": 46,
+      "away_team_id": 58,
+      "home_goals": 1,
+      "away_goals": 1,
+      "home_xg": 0.92,
+      "away_xg": 1.99,
+      "collected_at": "2026-04-25T05:59:44.150424+00:00"
     }
   },
-  "last_updated": "2026-04-24T06:29:03.395178+00:00"
+  "last_updated": "2026-04-25T05:59:44.150533+00:00"
 }
