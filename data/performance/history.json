@@ -179,5 +179,186 @@
         "post_mortem": ""
       }
     ]
+  },
+  {
+    "draw_number": 4949,
+    "draw_date": "2026-04-18",
+    "appended_at": "2026-04-25T07:23:20.981858+00:00",
+    "total_correct": 10,
+    "total_games": 13,
+    "accuracy_pct": 76.9,
+    "singles_correct": 3,
+    "singles_total": 4,
+    "doubles_correct": 6,
+    "doubles_total": 8,
+    "full_covered": true,
+    "games": [
+      {
+        "game_number": 1,
+        "home_team": "Chelsea",
+        "away_team": "Manchester United",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "post_mortem": "Predicted 1/X (double, conf=0.63) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Chelsea's genuine poor recent form (3 defeats in last 5) — xG regression not guaranteed to arrive now; United's away record is solid and they won the reverse fixture 2-1; do not underestimate them even patched up. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 2,
+        "home_team": "Tottenham",
+        "away_team": "Brighton",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "post_mortem": "Predicted 2 (single, conf=0.82) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: New manager home debut effect could galvanise Spurs for one game; Brighton missing Lewis Dunk and Webster in central defence — aerial threat from a physical Spurs set-piece side. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      },
+      {
+        "game_number": 3,
+        "home_team": "Newcastle",
+        "away_team": "Bournemouth",
+        "our_prediction": [
+          "1",
+          "X",
+          "2"
+        ],
+        "selection_type": "full",
+        "actual_result": "2",
+        "correct": true,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 4,
+        "home_team": "Leeds",
+        "away_team": "Wolverhampton",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 5,
+        "home_team": "Bristol City",
+        "away_team": "Norwich",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "post_mortem": "Predicted 1/X (double, conf=0.68) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Bristol City's own home form is poor (W L L L D in last five at home); Bristol City xGA 2.02 suggests defensive fragility — Norwich may still create chances even depleted. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 6,
+        "home_team": "Hull",
+        "away_team": "Birmingham",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 7,
+        "home_team": "Preston",
+        "away_team": "West Bromwich",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 8,
+        "home_team": "Swansea",
+        "away_team": "Southampton",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "2",
+        "correct": true,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 9,
+        "home_team": "Watford",
+        "away_team": "Sheffield U",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 10,
+        "home_team": "Wrexham",
+        "away_team": "Stoke",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 11,
+        "home_team": "Mansfield",
+        "away_team": "Luton",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 12,
+        "home_team": "Reading",
+        "away_team": "Cardiff",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "2",
+        "correct": true,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 13,
+        "home_team": "Wimbledon",
+        "away_team": "Plymouth",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "post_mortem": ""
+      }
+    ]
   }
 ]
