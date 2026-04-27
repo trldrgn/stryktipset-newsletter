@@ -1124,7 +1124,22 @@
       "home_xg": 0.92,
       "away_xg": 1.99,
       "collected_at": "2026-04-25T05:59:44.150424+00:00"
+    },
+    "1387083": {
+      "date": "2026-04-26",
+      "league": "Championship",
+      "league_id": 40,
+      "country": "England",
+      "home_team": "Coventry",
+      "away_team": "Wrexham",
+      "home_team_id": 1346,
+      "away_team_id": 1837,
+      "home_goals": 3,
+      "away_goals": 1,
+      "home_xg": 1.19,
+      "away_xg": 1.06,
+      "collected_at": "2026-04-27T07:56:27.513944+00:00"
     }
   },
-  "last_updated": "2026-04-25T05:59:44.150533+00:00"
+  "last_updated": "2026-04-27T07:56:54.347297+00:00"
 }
