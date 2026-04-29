@@ -1139,7 +1139,37 @@
       "home_xg": 1.19,
       "away_xg": 1.06,
       "collected_at": "2026-04-27T07:56:27.513944+00:00"
+    },
+    "1387028": {
+      "date": "2026-04-28",
+      "league": "Championship",
+      "league_id": 40,
+      "country": "England",
+      "home_team": "Southampton",
+      "away_team": "Ipswich",
+      "home_team_id": 41,
+      "away_team_id": 57,
+      "home_goals": 2,
+      "away_goals": 2,
+      "home_xg": 1.01,
+      "away_xg": 1.77,
+      "collected_at": "2026-04-29T00:12:20.101189+00:00"
+    },
+    "1540841": {
+      "date": "2026-04-28",
+      "league": "UEFA Champions League",
+      "league_id": 2,
+      "country": "World",
+      "home_team": "Paris Saint Germain",
+      "away_team": "Bayern München",
+      "home_team_id": 85,
+      "away_team_id": 157,
+      "home_goals": 5,
+      "away_goals": 4,
+      "home_xg": 1.91,
+      "away_xg": 2.51,
+      "collected_at": "2026-04-29T00:12:46.892631+00:00"
     }
   },
-  "last_updated": "2026-04-27T07:56:54.347297+00:00"
+  "last_updated": "2026-04-29T00:12:46.892742+00:00"
 }
