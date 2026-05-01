@@ -1169,7 +1169,67 @@
       "home_xg": 1.91,
       "away_xg": 2.51,
       "collected_at": "2026-04-29T00:12:46.892631+00:00"
+    },
+    "1540871": {
+      "date": "2026-04-30",
+      "league": "UEFA Europa League",
+      "league_id": 3,
+      "country": "World",
+      "home_team": "SC Braga",
+      "away_team": "SC Freiburg",
+      "home_team_id": 217,
+      "away_team_id": 160,
+      "home_goals": 2,
+      "away_goals": 1,
+      "home_xg": 2.37,
+      "away_xg": 1.11,
+      "collected_at": "2026-05-01T00:12:47.105329+00:00"
+    },
+    "1540872": {
+      "date": "2026-04-30",
+      "league": "UEFA Europa League",
+      "league_id": 3,
+      "country": "World",
+      "home_team": "Nottingham Forest",
+      "away_team": "Aston Villa",
+      "home_team_id": 65,
+      "away_team_id": 66,
+      "home_goals": 1,
+      "away_goals": 0,
+      "home_xg": 1.46,
+      "away_xg": 0.77,
+      "collected_at": "2026-05-01T00:12:53.754941+00:00"
+    },
+    "1540879": {
+      "date": "2026-04-30",
+      "league": "UEFA Europa Conference League",
+      "league_id": 848,
+      "country": "World",
+      "home_team": "Rayo Vallecano",
+      "away_team": "Strasbourg",
+      "home_team_id": 728,
+      "away_team_id": 95,
+      "home_goals": 1,
+      "away_goals": 0,
+      "home_xg": 1.4,
+      "away_xg": 0.21,
+      "collected_at": "2026-05-01T00:13:00.578634+00:00"
+    },
+    "1540880": {
+      "date": "2026-04-30",
+      "league": "UEFA Europa Conference League",
+      "league_id": 848,
+      "country": "World",
+      "home_team": "Shakhtar Donetsk",
+      "away_team": "Crystal Palace",
+      "home_team_id": 550,
+      "away_team_id": 52,
+      "home_goals": 1,
+      "away_goals": 3,
+      "home_xg": 1.01,
+      "away_xg": 2.11,
+      "collected_at": "2026-05-01T00:13:07.237888+00:00"
     }
   },
-  "last_updated": "2026-04-29T00:12:46.892742+00:00"
+  "last_updated": "2026-05-01T00:13:07.238015+00:00"
 }
