@@ -1,0 +1,173 @@
+{
+  "draw_number": 4950,
+  "draw_date": "2026-04-25",
+  "evaluated_at": "2026-05-02T08:02:54.571679+00:00",
+  "results": [
+    {
+      "game_number": 1,
+      "home_team": "Manchester City",
+      "away_team": "Southampton",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 2,
+      "home_team": "Arsenal",
+      "away_team": "Newcastle",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 3,
+      "home_team": "Liverpool",
+      "away_team": "Crystal Palace",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "West Ham",
+      "away_team": "Everton",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Wolverhampton",
+      "away_team": "Tottenham",
+      "our_prediction": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "actual_result": "2",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Birmingham",
+      "away_team": "Bristol City",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Norwich",
+      "away_team": "Swansea",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Derby",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Sheffield United",
+      "away_team": "Preston",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "post_mortem": "Predicted 1/X (double, conf=0.67) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Sheffield United missing five confirmed players across multiple positions — squad depth tested; Both teams carry FATIGUE flags — quality likely to dip as the match progresses. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 10,
+      "home_team": "Stoke",
+      "away_team": "Portsmouth",
+      "our_prediction": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "post_mortem": "Predicted X/1 (double, conf=0.54) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Stoke carrying nine confirmed absentees — historically severe injury crisis affecting every department; Portsmouth conceding 3.0 GA/g over five games — but Stoke's own attack (2.6 SoT/g) may not exploit this. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 11,
+      "home_team": "Blackpool",
+      "away_team": "Leyton Orient",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "Bradford",
+      "away_team": "Bolton",
+      "our_prediction": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Burton",
+      "away_team": "Exeter",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "X",
+      "correct": false,
+      "post_mortem": "Predicted 1 (single, conf=0.68) but result was X. IGNORED RISKS: Risk flags were noted but not weighted enough: H2H has historically favoured Exeter — won last two meetings at the Pirelli Stadium; Injury data unavailable for both sides; Burton's attacking output (2.8 SoT/g) is limited. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+    }
+  ]
+}

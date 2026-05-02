@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stryktipset v.18 · #4951</title>
+<style>
+  /* Gmail mobile strips this block. Critical bg/color styles are inline.
+     Desktop Gmail, Apple Mail, Outlook get these enhancement rules. */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { -webkit-text-size-adjust:100%; }
+
+  /* Layout */
+  .ew { max-width:660px; width:100%; margin:0 auto; }
+  .hdr { padding:36px 40px 28px; text-align:center; border-bottom:2px solid #e8b84b; }
+  .sl td:first-child, .sl td:last-child { height:1px; font-size:0; line-height:0; }
+  .sl td:nth-child(2) { padding:0 12px; white-space:nowrap; font-size:9px; letter-spacing:3.5px; text-transform:uppercase; font-weight:700; }
+
+  /* Card */
+  .cw { border:1px solid #1a2540; overflow:hidden; border-radius:12px; }
+  .cw.ts { border-top:3px solid #4ade80; }
+  .cw.td { border-top:3px solid #60a5fa; }
+  .cw.tf { border-top:3px solid #fb923c; }
+  .ch { border-bottom:1px solid #1a2540; }
+  .gb { width:24px; height:24px; text-align:center; line-height:24px; font-size:11px; font-weight:700; border-radius:5px; }
+  .tt { font-size:18px; font-weight:800; margin-top:6px; letter-spacing:-0.3px; }
+  .fp { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; margin-top:4px; }
+  .sp { font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; display:inline-block; border-radius:20px; }
+  .pb { width:32px; height:32px; text-align:center; line-height:32px; font-size:14px; font-weight:900; border-radius:7px; }
+  .cb { margin-top:6px; height:3px; overflow:hidden; border-radius:2px; }
+  .cf { height:100%; border-radius:2px; }
+
+  /* Stats */
+  .ss { border-bottom:1px solid #1a2540; }
+  .ss td { padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540; }
+  .ss td:last-child { border-right:none; }
+  .sl2 { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; display:block; margin-bottom:3px; }
+  .sv { font-weight:600; font-size:12px; display:block; }
+  .ssub { font-size:9px; display:block; margin-top:2px; }
+
+  /* Injuries */
+  .is { padding:8px 16px; border-bottom:1px solid #1a2540; font-size:12px; }
+  .ii { padding:3px 0; }
+
+  /* Odds */
+  .or { border-bottom:1px solid #1a2540; }
+  .ob { border:1px solid #1a2540; padding:4px 10px; font-size:13px; font-weight:700; text-align:center; min-width:44px; border-radius:5px; }
+  .ol { font-size:10px; font-weight:700; padding-right:4px; }
+  .ml { font-size:9px; letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:3px; font-weight:700; }
+  .db td { height:4px; font-size:0; line-height:0; }
+
+  /* Analysis */
+  .at { padding:16px 20px; font-size:14px; line-height:1.7; border-bottom:1px solid #1a2540; }
+  .at p { margin:0; }
+
+
+  /* Footer columns */
+  .fc td { padding:12px 16px; vertical-align:top; }
+  .fc td:first-child { border-right:1px solid #1a2540; width:50%; }
+  .ct { font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; }
+  .fi, .ri { font-size:12px; padding:2px 0; line-height:1.5; }
+
+  /* Coupon */
+  .co { border:1px solid #1a2540; overflow:hidden; border-radius:12px; }
+  .ctb { border-collapse:collapse; font-size:13px; }
+  .ctb th { padding:8px 10px; text-align:left; font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:700; border-bottom:1px solid #1a2540; }
+  .ctb td { padding:10px 10px; border-bottom:1px solid #0d1526; vertical-align:middle; }
+  .rp { font-size:16px; font-weight:900; letter-spacing:3px; }
+  .rt { font-size:8px; font-weight:800; letter-spacing:1px; text-transform:uppercase; }
+
+  /* Score ring */
+  .sr { width:58px; height:58px; border:3px solid #e8b84b; text-align:center; padding-top:12px; border-radius:50%; }
+  .chip { border:1px solid #1a2540; padding:5px 12px; font-size:12px; border-radius:6px; }
+
+  /* Lessons */
+  .lw { margin:0 20px 16px; border-left:3px solid #e8b84b; padding:10px 14px; font-size:13px; border-radius:0 6px 6px 0; }
+
+  /* Misc */
+  .ld { display:inline-block; width:8px; height:8px; vertical-align:middle; border-radius:2px; }
+
+  @media screen and (max-width:480px) {
+    .ew { width:100% !important; }
+    .sp2 { padding-left:12px !important; padding-right:12px !important; }
+    .tt { font-size:15px !important; }
+  }
+</style>
+</head>
+<body style="background:#080d18;color:#e2e8f4;font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;margin:0;padding:0;">
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#080d18;">
+<tr><td align="center">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="660" class="ew" style="max-width:660px;width:100%;background:#080d18;">
+
+
+
+<tr><td class="hdr sp2" style="background:#111c35;border-bottom:2px solid #e8b84b;padding:36px 40px 28px;text-align:center;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 14px;">
+    <tr>
+      <td style="vertical-align:middle;padding-right:14px;">
+        <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/logo-stryktipset.svg" width="52" height="52" alt="Stryktipset" style="vertical-align:middle;">
+      </td>
+      <td style="vertical-align:middle;text-align:left;">
+        <div style="font-size:22px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#e8b84b;line-height:1;">Stryktipset</div>
+        <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#5a7090;margin-top:4px;">Weekly Analysis</div>
+      </td>
+    </tr>
+  </table>
+  <div style="font-size:13px;color:#4a6080;">Week <strong style="color:#8ba4c4;">18</strong> · Draw <strong style="color:#8ba4c4;">#4951</strong> · 02 May 2026, 10:09 CEST · 768 SEK system</div>
+</td></tr>
+
+
+
+
+<tr><td>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
+    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">Previous Round</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
+  </table>
+  <div style="margin:0 40px 8px;background:#0d1526;border:1px solid #1a2540;overflow:hidden;" class="cw sp2">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+      <tr>
+        <td style="padding:16px 20px;width:70px;vertical-align:middle;">
+          <div class="sr" style="background:#0d1526;"><span style="font-size:18px;font-weight:900;color:#e8b84b;display:block;line-height:1;">10</span><span style="font-size:10px;color:#4a6080;">/ 13</span></div>
+        </td>
+        <td style="padding:16px 0;vertical-align:middle;">
+          <div style="font-size:15px;font-weight:700;color:#e2e8f4;">Draw #4950 — 76.9% correct</div>
+          <div style="font-size:12px;color:#4a6080;margin-top:2px;">2026-04-25</div>
+        </td>
+      </tr>
+    </table>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="padding:12px 20px;">
+      <tr>
+        <td class="chip" style="background:#111c35;color:#8ba4c4;">Singles <strong style="color:#e2e8f4">3/4</strong></td>
+        <td style="width:8px;"></td>
+        <td class="chip" style="background:#111c35;color:#8ba4c4;">Doubles <strong style="color:#4ade80">6/8</strong></td>
+        <td style="width:8px;"></td>
+        <td class="chip" style="background:#111c35;color:#8ba4c4;">Full <strong style="color:#4ade80;">&#10003;</strong></td>
+      </tr>
+    </table>
+  </div>
+</td></tr>
+
+
+
+
+
+<tr><td>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
+    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">This Week's Coupon</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
+  </table>
+  <div style="padding:8px 40px 20px;font-size:15px;color:#8ba4c4;font-style:italic;line-height:1.7;border-bottom:1px solid #1a2540;" class="sp2">A coupon dominated by sharp form divergences and motivational contrasts. The standout themes are Brighton&#39;s electric UP-FORM run against a defensively porous Newcastle, Grimsby&#39;s relentless winning streak travelling to a Tranmere side that has not won at home in five, and Wolves&#39; capitulation making Sunderland a near-certain selection. Four games clear the 0.80 threshold — Arsenal, Sunderland, Stevenage and Grimsby — making for a solid singles base. The most intriguing value lies with Luton and Barnet, both UP-FORM sides offered at prices that underestimate their current trajectory.</div>
+</td></tr>
+
+
+
+<tr><td style="padding:12px 40px 16px;border-bottom:1px solid #1a2540;" class="sp2">
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e8b84b;font-weight:700;margin-bottom:8px;">Value Picks</div>
+  
+  <div style="font-size:13px;color:#5a7090;padding:3px 0;"><span style="color:#e8b84b;">&#9670;</span> Game 6 — Luton at 2.60 looks generous: they arrive with four wins from five, 20 shots per game, and an away record of W-D-W-W-D. Bolton&#39;s home form features three draws in five and their SoT output is a modest 4.2. The market has this as a coin-flip; the form book says Luton are considerably better right now.</div>
+  
+  <div style="font-size:13px;color:#5a7090;padding:3px 0;"><span style="color:#e8b84b;">&#9670;</span> Game 11 — Barnet at 2.55 is arguably mispriced. They carry an UP-FORM flag, have won four of their last five with an average of 3.6 goals, and post 18.6 shots per game — more than double Harrogate&#39;s output. The public and seven of ten newspapers inexplicably lean Harrogate, creating a mild contrarian opportunity on the visitors.</div>
+  
+  <div style="font-size:13px;color:#5a7090;padding:3px 0;"><span style="color:#e8b84b;">&#9670;</span> Game 3 — Brighton at 2.75 against an out-of-form Newcastle should be closer to 2.20–2.30. Newcastle&#39;s xGA of 2.31 over five games is alarming; Brighton&#39;s xGA is a pristine 0.86. The newspaper lean of 6/10 Brighton despite the generous price suggests the market has not fully adjusted.</div>
+  
+  <div style="font-size:13px;color:#5a7090;padding:3px 0;"><span style="color:#e8b84b;">&#9670;</span> Game 8 — The draw at 3.75 in Leyton Orient vs Burton offers quiet value. Orient are DOWN-FORM and P19; Burton are P18 and have drawn four of their last five away. All ten newspapers back Orient, inflating public money on a side that has lost three of their last five — classic line-fade setup.</div>
+  
+</td></tr>
+
+
+<tr><td style="height:20px;"></td></tr>
+
+
+
+<tr><td>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
+    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">Coupon Summary</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
+  </table>
+  <div style="margin:0 40px 24px;background:#0d1526;border:1px solid #1a2540;overflow:hidden;" class="co sp2">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#111c35;border-bottom:2px solid #e8b84b;">
+      <tr>
+        <td style="padding:14px 20px;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#e8b84b;">Draw #4951 · System</td>
+        <td style="padding:14px 20px;text-align:right;font-size:20px;font-weight:900;color:#e2e8f4;">768 SEK <span style="font-size:12px;color:#4a6080;font-weight:400;">/ 768 rows</span></td>
+      </tr>
+    </table>
+    <table class="ctb" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+      <thead><tr>
+        <th style="width:30px;background:#0a0f1e;color:#2a3a54;">#</th>
+        <th style="background:#0a0f1e;color:#2a3a54;">Match</th>
+        <th style="width:90px;text-align:center;background:#0a0f1e;color:#2a3a54;">Tips</th>
+        <th style="width:50px;text-align:center;background:#0a0f1e;color:#2a3a54;">Conf</th>
+      </tr></thead>
+      <tbody>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">1</td>
+          <td style="color:#8ba4c4;">Arsenal – Fulham</td>
+          <td style="text-align:center;"><span class="rt" style="color:#4ade80;">SINGLE</span><br><span class="rp" style="color:#4ade80;">1</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">85%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">2</td>
+          <td style="color:#8ba4c4;">Brentford – West Ham</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">1 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">68%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">3</td>
+          <td style="color:#8ba4c4;">Newcastle – Brighton</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">2 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">75%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">4</td>
+          <td style="color:#8ba4c4;">Wolverhampton – Sunderland</td>
+          <td style="text-align:center;"><span class="rt" style="color:#4ade80;">SINGLE</span><br><span class="rp" style="color:#4ade80;">2</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">82%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">5</td>
+          <td style="color:#8ba4c4;">Barnsley – Stockport</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">2 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">72%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">6</td>
+          <td style="color:#8ba4c4;">Bolton – Luton</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">2 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">72%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">7</td>
+          <td style="color:#8ba4c4;">Exeter – Bradford</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">2 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">68%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">8</td>
+          <td style="color:#8ba4c4;">Leyton Orient – Burton</td>
+          <td style="text-align:center;"><span class="rt" style="color:#fb923c;">FULL</span><br><span class="rp" style="color:#fb923c;">1 X 2</span></td>
+          <td style="text-align:center;"><span style="color:#fb923c;font-weight:800;font-size:10px;">&#10003; ALL</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">9</td>
+          <td style="color:#8ba4c4;">Stevenage – Wigan</td>
+          <td style="text-align:center;"><span class="rt" style="color:#4ade80;">SINGLE</span><br><span class="rp" style="color:#4ade80;">1</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">80%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">10</td>
+          <td style="color:#8ba4c4;">Wimbledon – Huddersfield</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">2 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">70%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">11</td>
+          <td style="color:#8ba4c4;">Harrogate – Barnet</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">2 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">72%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">12</td>
+          <td style="color:#8ba4c4;">Swindon – Chesterfield</td>
+          <td style="text-align:center;"><span class="rt" style="color:#60a5fa;">DOUBLE</span><br><span class="rp" style="color:#60a5fa;">2 X</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">65%</span></td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:#2a3a54;font-size:11px;">13</td>
+          <td style="color:#8ba4c4;">Tranmere – Grimsby</td>
+          <td style="text-align:center;"><span class="rt" style="color:#4ade80;">SINGLE</span><br><span class="rp" style="color:#4ade80;">2</span></td>
+          <td style="text-align:center;"><span style="color:#2a3a54;font-size:11px;">80%</span></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-top:1px solid #1a2540;background:#0a0f1e;">
+      <tr>
+        <td style="padding:12px 16px;font-size:11px;color:#4a6080;"><span class="ld" style="background:#4ade80;"></span> Single</td>
+        <td style="padding:12px 8px;font-size:11px;color:#4a6080;"><span class="ld" style="background:#60a5fa;"></span> Double</td>
+        <td style="padding:12px 8px;font-size:11px;color:#4a6080;"><span class="ld" style="background:#fb923c;"></span> Full</td>
+        <td style="padding:12px 16px;font-size:10px;color:#2a3a54;font-style:italic;text-align:right;">Conf = model certainty</td>
+      </tr>
+    </table>
+  </div>
+</td></tr>
+
+<tr><td style="height:20px;"></td></tr>
+
+
+<tr><td>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
+    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">Detailed Analysis</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
+  </table>
+</td></tr>
+
+
+
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw ts" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #4ade80;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">1</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_english-premier-league.png" width="18" height="18" alt="Premier League" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Premier League</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/arsenal.png" width="22" height="22" alt="Arsenal" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Arsenal</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/fulham.png" width="22" height="22" alt="Fulham" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Fulham</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#4ade80;letter-spacing:1px;">18:30</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#14532d;color:#4ade80;">1</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:85%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">85%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">WWWLL <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> LDWLD</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">1.7/1.4 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 1.6/1.6</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">2 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 12</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">1.48</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">4.7</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">7.5</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:77%;text-align:center;padding:2px 0;">77%</td>
+            <td style="background:#e8b84b;width:15%;text-align:center;padding:2px 0;">15%</td>
+            <td style="background:#60a5fa;width:8%;text-align:center;padding:2px 0;">8%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:90%;text-align:center;padding:2px 0;">9</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">0</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Arsenal arrive at this fixture with the title race as their backdrop, sitting second and knowing that a win keeps the pressure on the leaders. That context alone cranks up the intensity and focus inside the Emirates — a team playing for a championship does not sleepwalk through a home fixture against mid-table opposition. Their underlying numbers bear out a team in solid health: 1.75 xGF per game over ten games, a 1.8 actual goals-per-game average, and a defence that has been performing fractionally above its xGA. Viktor Gyökeres with 12 league goals adds a lethal edge to a unit already buzzing with motivation.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Arsenal&#39;s title race motivation creates maximum home intensity</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Fulham&#39;s -0.77 xG underperformance over 5 games — poor conversion, limited threat</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Arsenal have lost two of their last five across all competitions — form not immaculate</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Fulham&#39;s xGF of 1.57 per game means they create chances; Arsenal&#39;s recent xGA of 1.40 has been somewhat leaky</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">2</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_english-premier-league.png" width="18" height="18" alt="Premier League" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Premier League</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/brentford.png" width="22" height="22" alt="Brentford" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Brentford</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/west-ham.png" width="22" height="22" alt="West Ham" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">West Ham</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">1</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:68%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">68%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">DDDDD <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> WDLWD</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">1.8/1.3 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 1.2/1.4</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">9 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 17</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.05</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.8</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.6</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:50%;text-align:center;padding:2px 0;">50%</td>
+            <td style="background:#e8b84b;width:26%;text-align:center;padding:2px 0;">26%</td>
+            <td style="background:#60a5fa;width:24%;text-align:center;padding:2px 0;">24%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:80%;text-align:center;padding:2px 0;">8</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">1</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>One of the most analytically fascinating games on the coupon. Brentford have drawn every single one of their last five matches — a streak so statistically unusual it almost defies probability. Yet their underlying numbers scream regression: an xGF of 1.80 over five games with only 1.0 actual goals per game is a -0.80 underperformance, one of the worst conversion shortfalls in this entire round of fixtures. Thomas Frank&#39;s side is creating the chances; they are simply failing to put them away. Sooner or later that has to correct.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Brentford&#39;s -0.80 xG underperformance over 5 games: regression to scoring form is overdue</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> West Ham&#39;s relegation fight creates a determined, defensive visiting side</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Brentford&#39;s extraordinary draw streak (5 in a row) suggests structural issues going forward</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> West Ham&#39;s relegation desperation inflates draw probability significantly</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">3</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_english-premier-league.png" width="18" height="18" alt="Premier League" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Premier League</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/newcastle.png" width="22" height="22" alt="Newcastle" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Newcastle</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/brighton.png" width="22" height="22" alt="Brighton" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Brighton</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#0a2a0a;color:#4ade80;">&#9650;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">2</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:75%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">75%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">WWLLL <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> WWWDW</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">1.2/2.3 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 1.9/0.9</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">14 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 6</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.5</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.8</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.75</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:38%;text-align:center;padding:2px 0;">38%</td>
+            <td style="background:#e8b84b;width:23%;text-align:center;padding:2px 0;">23%</td>
+            <td style="background:#60a5fa;width:39%;text-align:center;padding:2px 0;">39%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:30%;text-align:center;padding:2px 0;">3</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#60a5fa;width:60%;text-align:center;padding:2px 0;">6</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Brighton arrive at St James&#39; Park flying the UP-FORM flag, and it is richly deserved. Four wins from their last five, with an xGF of 1.86 and an xGA of just 0.86 over the same period — they are creating chances freely and shutting the door at the back. Their away form is equally compelling: D-W-W-W-L in the last five road trips, three consecutive away wins before the solitary defeat. With 5.8 shots on target per game they are comfortably the most dangerous side in this fixture.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Brighton&#39;s UP-FORM flag with 4W in last 5 and an outstanding xGA of 0.86</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Newcastle&#39;s xGA of 2.31 over 5 games and three straight home defeats</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Home advantage at St James&#39; can galvanise Newcastle regardless of form</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Gordon reportedly doubtful (unverified) — any attacking boost for Newcastle changes the dynamic slightly</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw ts" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #4ade80;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">4</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_english-premier-league.png" width="18" height="18" alt="Premier League" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">Premier League</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/wolves.png" width="22" height="22" alt="Wolverhampton" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Wolverhampton</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#2a1a0a;color:#fb923c;">&#9660;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/sunderland.png" width="22" height="22" alt="Sunderland" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Sunderland</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#4ade80;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#14532d;color:#4ade80;">2</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:82%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">82%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">WDLLL <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> WLWWL</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">0.9/2.4 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 1.5/1.8</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">20 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 11</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.25</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.4</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.35</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:25%;text-align:center;padding:2px 0;">25%</td>
+            <td style="background:#e8b84b;width:23%;text-align:center;padding:2px 0;">23%</td>
+            <td style="background:#60a5fa;width:52%;text-align:center;padding:2px 0;">52%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#60a5fa;width:100%;text-align:center;padding:2px 0;">10</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>This is the closest thing to a formality on this week&#39;s coupon. Wolverhampton are flagged DOWN-FORM and it is entirely warranted: three consecutive Premier League defeats by scores of 0-1, 0-3, and 0-4, with an xGF of just 0.87 and an xGA of 2.43 over five games. That is not bad luck — that is a fundamentally poor team being exposed repeatedly. Even their slightly better home run (wins against weaker opposition) does not mask the structural weakness; they sit P20 and their Premier League survival looks bleak.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Wolves DOWN-FORM: three straight league losses by 0-1, 0-3, 0-4 — structural collapse, not blip</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Sunderland P11 vs Wolves P20 — position gap underpins the selection</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Sunderland&#39;s xG underperformance (-0.26 over 5g) suggests goals may not flow freely</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Relegated or near-relegated sides can produce shock home results fuelled by crowd desperation</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">5</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-league-one.png" width="18" height="18" alt="League One" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">League One</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <span class="tt" style="color:#e2e8f4;vertical-align:middle;">Barnsley</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/stockport-county.png" width="22" height="22" alt="Stockport" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Stockport</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">2</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:72%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">72%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">LWDDL <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> WDWDL</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">13 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 5</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.65</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">4.0</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">1.85</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:20%;text-align:center;padding:2px 0;">20%</td>
+            <td style="background:#e8b84b;width:23%;text-align:center;padding:2px 0;">23%</td>
+            <td style="background:#60a5fa;width:57%;text-align:center;padding:2px 0;">57%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#60a5fa;width:80%;text-align:center;padding:2px 0;">8</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Stockport&#39;s League One campaign has them pushing from fifth place with genuine promotion aspirations, and their underlying output supports the optimism: 7.0 shots on target per game and 15.6 shots overall completely eclipse Barnsley&#39;s 4.0 and 11.6 respectively. When you outgun the opposition at that rate, away results tend to follow in League One.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Stockport&#39;s significant shot dominance: 7.0 SoT/g and 15.6 shots/g vs Barnsley&#39;s 4.0/11.6</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Barnsley&#39;s home form: D-L-L-D-D — only one win in last five at home</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Stockport&#39;s away form includes draws — a share of the points is plausible</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> League One data depth limited; no xG available to verify efficiency signals</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">6</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-league-one.png" width="18" height="18" alt="League One" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">League One</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <span class="tt" style="color:#e2e8f4;vertical-align:middle;">Bolton</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/luton-town.png" width="22" height="22" alt="Luton" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Luton</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#0a2a0a;color:#4ade80;">&#9650;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">2</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:72%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">72%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">WDLWD <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> WWWDW</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">3 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 7</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.5</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.6</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.6</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:42%;text-align:center;padding:2px 0;">42%</td>
+            <td style="background:#e8b84b;width:24%;text-align:center;padding:2px 0;">24%</td>
+            <td style="background:#60a5fa;width:34%;text-align:center;padding:2px 0;">34%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:30%;text-align:center;padding:2px 0;">3</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#60a5fa;width:70%;text-align:center;padding:2px 0;">7</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Luton carry the UP-FORM flag into Bolton and it is strikingly well-earned: four wins from their last five across all competitions, with their away record even more impressive at W-D-W-W-D — one dropped set of points in five road trips. What makes this particularly striking is the volume of attacking output: 6.2 shots on target per game and a remarkable 20.0 shots per game overall. Bolton generate a respectable 15.2 shots per game, but they are being significantly outgunned by their visitors.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Luton&#39;s UP-FORM: W-D-W-W-W in last 5, with away record W-D-W-W-D</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Luton&#39;s shot dominance: 20.0 shots/g and 6.2 SoT/g vs Bolton&#39;s 15.2/4.2</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Bolton P3 with promotion motivation — they will not capitulate easily at home</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Bolton&#39;s 5-1 home win is a reminder they can produce big performances</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">7</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-league-one.png" width="18" height="18" alt="League One" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">League One</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/exeter.png" width="22" height="22" alt="Exeter" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Exeter</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <span class="tt" style="color:#e2e8f4;vertical-align:middle;">Bradford</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">2</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:68%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">68%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">DLWDD <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> WWLDD</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">21 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 4</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.4</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.4</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.1</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:26%;text-align:center;padding:2px 0;">26%</td>
+            <td style="background:#e8b84b;width:25%;text-align:center;padding:2px 0;">25%</td>
+            <td style="background:#60a5fa;width:49%;text-align:center;padding:2px 0;">49%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#60a5fa;width:80%;text-align:center;padding:2px 0;">8</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Exeter sit P21 — squarely in relegation territory — and their home form reflects the pressure: D-W-D-L-L in their last five at home, with only one victory in the last five. A team fighting for survival plays with a different kind of urgency, but it cuts both ways: they also defend deeper and are less likely to open the game up, which elevates the draw probability.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Bradford P4 (promotion push) vs Exeter P21 (relegation battle) — clear structural advantage</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Eight of ten newspapers aligned on Bradford</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Exeter&#39;s relegation desperation typically inflates draw probability significantly</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Bradford&#39;s away form is inconsistent: L-L before the W — not settled on the road</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw tf" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #fb923c;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">8</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-league-one.png" width="18" height="18" alt="League One" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">League One</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/leyton-orient.png" width="22" height="22" alt="Leyton Orient" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Leyton Orient</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#2a1a0a;color:#fb923c;">&#9660;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/burton.png" width="22" height="22" alt="Burton" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Burton</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#fb923c;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#431407;color:#fb923c;">1</td><td class="pb" style="background:#431407;color:#fb923c;margin-left:5px;">X</td><td class="pb" style="background:#431407;color:#fb923c;margin-left:5px;">2</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:50%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">50%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">DLLDL <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> LDDWD</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">19 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 18</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">1.77</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.75</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">4.35</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:65%;text-align:center;padding:2px 0;">65%</td>
+            <td style="background:#e8b84b;width:20%;text-align:center;padding:2px 0;">20%</td>
+            <td style="background:#60a5fa;width:15%;text-align:center;padding:2px 0;">15%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:100%;text-align:center;padding:2px 0;">10</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">0</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>This is the most contrarian game on the card, and the one where public consensus most deserves to be questioned. All ten newspapers and 65% of the public back Leyton Orient, yet Orient are explicitly tagged DOWN-FORM, sit P19, and their recent record reads L-D-L-L-D — three losses and two draws in their last five, with only two wins in the last ten home games across their broader form sequence. The odds of 1.77 reflect the consensus, not the form.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Leyton Orient DOWN-FORM: L-D-L-L-D in last 5 — three defeats at P19</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Burton&#39;s away record: D-D-L-W-D — four unbeaten in five road trips</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> All 10 newspapers and 65% of the public on Orient create false confidence in a DOWN-FORM side</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Orient&#39;s P19 status means relegation pressure could produce a poor performance under stress</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw ts" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #4ade80;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">9</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-league-one.png" width="18" height="18" alt="League One" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">League One</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/stevenage.png" width="22" height="22" alt="Stevenage" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Stevenage</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#0a2a0a;color:#4ade80;">&#9650;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/wigan.png" width="22" height="22" alt="Wigan" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Wigan</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#0a2a0a;color:#4ade80;">&#9650;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#4ade80;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#14532d;color:#4ade80;">1</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:80%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">80%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">WWLDW <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> DWWWD</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">6 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 14</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">1.58</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.8</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">6.0</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:74%;text-align:center;padding:2px 0;">74%</td>
+            <td style="background:#e8b84b;width:15%;text-align:center;padding:2px 0;">15%</td>
+            <td style="background:#60a5fa;width:11%;text-align:center;padding:2px 0;">11%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:100%;text-align:center;padding:2px 0;">10</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">0</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Stevenage&#39;s home record in recent weeks is immaculate: W-D-W-W-W in their last five at home, with only one dropped game. They sit P6 in League One with genuine play-off aspirations and carry the UP-FORM flag with a deserved 1-0, 1-0, 1-0 run of home wins — tight, controlled, professional. They do not blow teams away (3.2 SoT per game and only 8.6 shots) but they win the matches that matter through organisation and efficiency.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Stevenage&#39;s UP-FORM home record: W-D-W-W-W in last five at home</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Wigan&#39;s away form is poor despite strong overall numbers: D-W-L-D-D on the road</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Wigan also flagged UP-FORM — they have genuine quality and will not be passive visitors</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Stevenage&#39;s low SoT (3.2) means tight margins; one error can derail a home win</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">10</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-league-one.png" width="18" height="18" alt="League One" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">League One</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/afc-wimbledon.png" width="22" height="22" alt="Wimbledon" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Wimbledon</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#2a1a0a;color:#fb923c;">&#9660;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/huddersfield.png" width="22" height="22" alt="Huddersfield" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Huddersfield</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">2</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:70%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">70%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">LLLLL <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> DWDDD</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">20 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 9</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.88</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.6</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.28</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:33%;text-align:center;padding:2px 0;">33%</td>
+            <td style="background:#e8b84b;width:28%;text-align:center;padding:2px 0;">28%</td>
+            <td style="background:#60a5fa;width:39%;text-align:center;padding:2px 0;">39%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:50%;text-align:center;padding:2px 0;">5</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">0</td>
+            <td style="background:#60a5fa;width:50%;text-align:center;padding:2px 0;">5</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>AFC Wimbledon&#39;s form is nothing short of catastrophic. They are tagged DOWN-FORM and their last five results across all competitions read L-L-L-L-L — five consecutive defeats. At home specifically the picture is just as bleak: L-L-L-D-L, with one solitary point from their last five Plough Lane outings. They sit P20 in League One and are scoring almost nothing — a SoT average of just 2.2 per game and 9.6 shots overall, both among the lowest outputs in this set of fixtures.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Wimbledon DOWN-FORM: five consecutive defeats, only 2.2 SoT/g</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Huddersfield&#39;s shot dominance: 5.2 SoT/g and 14.6 shots/g — significant edge</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Huddersfield&#39;s draw habit (4 draws in last 5) is persistent — they may not press for a win</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Relegation desperation can produce organised, difficult-to-break-down home displays</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">11</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-league-two.png" width="18" height="18" alt="League Two" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">League Two</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <span class="tt" style="color:#e2e8f4;vertical-align:middle;">Harrogate</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/barnet.png" width="22" height="22" alt="Barnet" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Barnet</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#0a2a0a;color:#4ade80;">&#9650;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">2</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:72%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">72%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">WLLWW <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> DWWWW</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">23 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 9</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.63</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.25</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.55</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:48%;text-align:center;padding:2px 0;">48%</td>
+            <td style="background:#e8b84b;width:21%;text-align:center;padding:2px 0;">21%</td>
+            <td style="background:#60a5fa;width:31%;text-align:center;padding:2px 0;">31%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:70%;text-align:center;padding:2px 0;">7</td>
+            <td style="background:#e8b84b;width:30%;text-align:center;padding:2px 0;">3</td>
+            <td style="background:#60a5fa;width:12%;text-align:center;padding:2px 0;">0</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Barnet travel to Harrogate in extraordinary form. Their last five results: W-W-W-W-D — four consecutive wins, including a 6-2 and a 5-2 victory, with goal tallies of 18 scored and only 9 conceded. The UP-FORM tag is a massive understatement. Their attacking numbers are dominant: 6.8 shots on target per game and 18.6 total shots — the highest shot volume of any away side on this entire coupon. Their away record reads W-W-W-D-L, with three consecutive away wins preceding the draw.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Barnet&#39;s UP-FORM: W-W-W-W-D with 18.6 shots/g and 6.8 SoT/g</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Harrogate P23 with W-L-L-L-D home form — no attacking threat at 3.2 SoT/g</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Harrogate&#39;s relegation desperation may produce a stubborn defensive performance</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Barnet at 2.55 could be slightly shorter — any regression from their goal-fest form is possible</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw td" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #60a5fa;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">12</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-league-two.png" width="18" height="18" alt="League Two" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">League Two</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/swindon-town.png" width="22" height="22" alt="Swindon" style="vertical-align:middle;margin-right:4px;"><span class="tt" style="color:#e2e8f4;vertical-align:middle;">Swindon</span>
+              <div style="margin-top:3px;"></div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <span class="tt" style="color:#e2e8f4;vertical-align:middle;">Chesterfield</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#0a2a0a;color:#4ade80;">&#9650;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#60a5fa;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#1e3a5f;color:#60a5fa;">2</td><td class="pb" style="background:#1e3a5f;color:#60a5fa;margin-left:5px;">X</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:65%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">65%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">DWLDL <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> WDWDW</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">8 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 7</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.65</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.4</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.38</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:37%;text-align:center;padding:2px 0;">37%</td>
+            <td style="background:#e8b84b;width:29%;text-align:center;padding:2px 0;">29%</td>
+            <td style="background:#60a5fa;width:34%;text-align:center;padding:2px 0;">34%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:30%;text-align:center;padding:2px 0;">3</td>
+            <td style="background:#e8b84b;width:30%;text-align:center;padding:2px 0;">3</td>
+            <td style="background:#60a5fa;width:40%;text-align:center;padding:2px 0;">4</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>Swindon are a team built around draws. Their last five home results: D-W-D-L-D — three draws, one win, one loss. Their overall form — L-D-L-W-D — continues the theme. More tellingly, their attacking output is among the weakest on this coupon: 2.4 shots on target per game and only 6.8 total shots. That is an exceptionally low volume for a League Two home side and suggests a team that is defensively minded and struggles to impose itself.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Chesterfield&#39;s UP-FORM: W-D-W-D-W with strong away record D-W-W-W-L</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Swindon&#39;s extremely low attacking output: 2.4 SoT/g and 6.8 shots/g</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Swindon&#39;s draw habit at home (3 draws in last 5) is persistent and may frustrate Chesterfield</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Three-way newspaper split reflects genuine uncertainty — no clear market consensus</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+
+
+
+
+<tr><td style="padding:0 40px 20px;" class="sp2">
+<div class="cw ts" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid #4ade80;overflow:hidden;">
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:16px 20px 14px;vertical-align:top;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">13</td>
+          <td style="padding-left:8px;vertical-align:middle;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-league-two.png" width="18" height="18" alt="League Two" style="vertical-align:middle;"></td>
+          <td style="padding-left:4px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">League Two</td>
+        </tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr>
+            <td style="vertical-align:top;">
+              <span class="tt" style="color:#e2e8f4;vertical-align:middle;">Tranmere</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#2a1a0a;color:#fb923c;">&#9660;</span> </div>
+            </td>
+            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
+            <td style="vertical-align:top;">
+              <span class="tt" style="color:#e2e8f4;vertical-align:middle;">Grimsby</span>
+              <div style="margin-top:3px;"><span class="fp" style="background:#0a2a0a;color:#4ade80;">&#9650;</span> </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
+        <div style="font-size:18px;font-weight:700;color:#4ade80;letter-spacing:1px;">16:00</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
+          <td class="pb" style="background:#14532d;color:#4ade80;">2</td>
+        </tr></table>
+        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:80%;background:#e8b84b;"></div></div>
+        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">80%</span>
+      </td>
+    </tr>
+  </table>
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
+    <tr>
+      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">LDLWL <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> WLWWW</span></td>
+      <td>
+        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
+        <span class="sv" style="color:#8ba4c4;">—/— <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> —/—</span>
+      </td>
+      
+      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">20 <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> 6</span></td>
+      
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
+    <tr>
+      <td style="padding:8px 16px;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.35</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">3.4</td><td style="width:6px;"></td>
+          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">2.02</td>
+        </tr></table>
+      </td>
+      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            <td style="background:#4ade80;width:25%;text-align:center;padding:2px 0;">25%</td>
+            <td style="background:#e8b84b;width:26%;text-align:center;padding:2px 0;">26%</td>
+            <td style="background:#60a5fa;width:49%;text-align:center;padding:2px 0;">49%</td>
+          </tr></table></td>
+        </tr></table>
+        
+        
+        
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
+          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
+          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
+            
+            
+            
+            <td style="background:#4ade80;width:30%;text-align:center;padding:2px 0;">3</td>
+            <td style="background:#e8b84b;width:12%;text-align:center;padding:2px 0;">1</td>
+            <td style="background:#60a5fa;width:60%;text-align:center;padding:2px 0;">6</td>
+          </tr></table></td>
+        </tr></table>
+        
+      </td>
+    </tr>
+  </table>
+  
+  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
+    
+    <p>This fixture has one of the starkest form contrasts on the entire coupon. Tranmere are flagged DOWN-FORM and it is emphatically justified: their home record over the last five reads L-L-L-L-L — five consecutive home defeats. That is not a blip; that is a team that has stopped winning at Prenton Park entirely. They sit P20, in League Two relegation territory, and their overall form of L-W-L-D-L across all competitions confirms a side in deep trouble.</p>
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
+    <tr>
+      <td>
+        <div class="ct" style="color:#4ade80;">Key Factors</div>
+        <div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Tranmere DOWN-FORM: five consecutive home defeats — home fortress has collapsed entirely</div><div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> Grimsby UP-FORM: W-W-W-L-W with 4-0 and 4-1 wins demonstrating genuine goal threat</div>
+      </td>
+      <td>
+        <div class="ct" style="color:#fb923c;">Risks</div>
+        <div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Tranmere&#39;s relegation pressure can occasionally produce desperate, committed performances</div><div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> Grimsby&#39;s two away defeats in five show vulnerability on the road — not impervious</div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+</td></tr>
+
+
+
+<tr><td style="padding:24px 40px;text-align:center;border-top:1px solid #111c35;" class="sp2">
+  <p style="font-size:11px;color:#1e2a40;line-height:1.8;">Generated 02 May 2026, 10:09 CEST · Draw #4951</p>
+  <p style="font-size:11px;color:#1e2a40;line-height:1.8;margin-top:8px;">© 2026 Stryktipset Newsletter</p>
+</td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

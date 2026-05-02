@@ -1,0 +1,297 @@
+{
+  "draw_number": 4951,
+  "draw_date": "2026-05-02",
+  "saved_at": "2026-05-02T08:10:04.230196+00:00",
+  "executive_summary": "A coupon dominated by sharp form divergences and motivational contrasts. The standout themes are Brighton's electric UP-FORM run against a defensively porous Newcastle, Grimsby's relentless winning streak travelling to a Tranmere side that has not won at home in five, and Wolves' capitulation making Sunderland a near-certain selection. Four games clear the 0.80 threshold — Arsenal, Sunderland, Stevenage and Grimsby — making for a solid singles base. The most intriguing value lies with Luton and Barnet, both UP-FORM sides offered at prices that underestimate their current trajectory.",
+  "value_radar": [
+    "Game 6 — Luton at 2.60 looks generous: they arrive with four wins from five, 20 shots per game, and an away record of W-D-W-W-D. Bolton's home form features three draws in five and their SoT output is a modest 4.2. The market has this as a coin-flip; the form book says Luton are considerably better right now.",
+    "Game 11 — Barnet at 2.55 is arguably mispriced. They carry an UP-FORM flag, have won four of their last five with an average of 3.6 goals, and post 18.6 shots per game — more than double Harrogate's output. The public and seven of ten newspapers inexplicably lean Harrogate, creating a mild contrarian opportunity on the visitors.",
+    "Game 3 — Brighton at 2.75 against an out-of-form Newcastle should be closer to 2.20–2.30. Newcastle's xGA of 2.31 over five games is alarming; Brighton's xGA is a pristine 0.86. The newspaper lean of 6/10 Brighton despite the generous price suggests the market has not fully adjusted.",
+    "Game 8 — The draw at 3.75 in Leyton Orient vs Burton offers quiet value. Orient are DOWN-FORM and P19; Burton are P18 and have drawn four of their last five away. All ten newspapers back Orient, inflating public money on a side that has lost three of their last five — classic line-fade setup."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Arsenal",
+      "away_team": "Fulham",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.85,
+      "key_factors": [
+        "Arsenal's title race motivation creates maximum home intensity",
+        "Fulham's -0.77 xG underperformance over 5 games — poor conversion, limited threat",
+        "Nine of ten newspaper tips and 77% public backing align with comfortable home odds of 1.48"
+      ],
+      "risk_flags": [
+        "Arsenal have lost two of their last five across all competitions — form not immaculate",
+        "Fulham's xGF of 1.57 per game means they create chances; Arsenal's recent xGA of 1.40 has been somewhat leaky"
+      ],
+      "analysis": "Arsenal arrive at this fixture with the title race as their backdrop, sitting second and knowing that a win keeps the pressure on the leaders. That context alone cranks up the intensity and focus inside the Emirates — a team playing for a championship does not sleepwalk through a home fixture against mid-table opposition. Their underlying numbers bear out a team in solid health: 1.75 xGF per game over ten games, a 1.8 actual goals-per-game average, and a defence that has been performing fractionally above its xGA. Viktor Gyökeres with 12 league goals adds a lethal edge to a unit already buzzing with motivation.\n\nFulham's situation is the polar opposite in motivational terms. A 12th-place finish is already essentially confirmed, so Marco Silva's men arrive without any tangible prize to play for. Their xG numbers are genuinely troubling: a -0.77 underperformance on expected goals over the last five games and -0.62 over ten signals a team that creates decent volume but can barely convert. Harry Wilson's ten goals are a bright spot, but an xGF of 1.57 being converted at only 0.8 actual goals per game tells a story of fragile finishing.\n\nThe only real risk here is Arsenal's modest recent blip — two losses in the last five across all competitions suggest they are not entirely bulletproof, and their home form includes a 2-3 reverse. But the xG gap is meaningful, the motivational asymmetry is enormous, and nine of ten newspapers are aligned. No injury concerns for either side.\n\nFulham's away form is also patchy: X-2-X-1-2 in their last five road trips, with three of those ending in defeat. Arsenal need three points and will play like it. Back the home side with confidence.",
+      "value_note": "Odds of 1.48 are short but justified given the context; the draw at 4.70 is the only credible alternative and has minimal pull here."
+    },
+    {
+      "game_number": 2,
+      "home_team": "Brentford",
+      "away_team": "West Ham",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.68,
+      "key_factors": [
+        "Brentford's -0.80 xG underperformance over 5 games: regression to scoring form is overdue",
+        "West Ham's relegation fight creates a determined, defensive visiting side",
+        "Five consecutive draws for Brentford — streak eventually breaks, home fixture the likely catalyst"
+      ],
+      "risk_flags": [
+        "Brentford's extraordinary draw streak (5 in a row) suggests structural issues going forward",
+        "West Ham's relegation desperation inflates draw probability significantly"
+      ],
+      "analysis": "One of the most analytically fascinating games on the coupon. Brentford have drawn every single one of their last five matches — a streak so statistically unusual it almost defies probability. Yet their underlying numbers scream regression: an xGF of 1.80 over five games with only 1.0 actual goals per game is a -0.80 underperformance, one of the worst conversion shortfalls in this entire round of fixtures. Thomas Frank's side is creating the chances; they are simply failing to put them away. Sooner or later that has to correct.\n\nWest Ham arrive as a relegation-threatened side — P17 is deep in the danger zone — which introduces a fascinating motivational counter-current. Teams fighting for survival tend to defend with a tenacity that mid-table sides cannot match. Their own recent form shows some fight: a 4-0 win appears in the last five, and they have actually overperformed their xGF (1.4 actual vs 1.25 xGF over five games). That is fragile form of a different kind — slightly overperforming on conversion — but it points to a committed, hard-working side.\n\nEight of ten newspapers still back Brentford, and with home advantage and the xG regression story compelling, that is a reasonable lean. But this match carries a genuine draw risk, given Brentford's recent draw addiction and West Ham's defensive desperation. The market prices the draw at 3.8, which acknowledges that risk.\n\nThe rational call is Brentford to finally convert their dominance into a win, especially at home where their crowd should help lift them out of the funk. But this is firmly doubles territory — do not single it.",
+      "value_note": "Brentford at 2.05 reflects reasonable value if the xG regression fires; draw at 3.80 is the main hedge worth considering."
+    },
+    {
+      "game_number": 3,
+      "home_team": "Newcastle",
+      "away_team": "Brighton",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.75,
+      "key_factors": [
+        "Brighton's UP-FORM flag with 4W in last 5 and an outstanding xGA of 0.86",
+        "Newcastle's xGA of 2.31 over 5 games and three straight home defeats",
+        "Brighton's away form: D-W-W-W-L with consistent goal threat"
+      ],
+      "risk_flags": [
+        "Home advantage at St James' can galvanise Newcastle regardless of form",
+        "Gordon reportedly doubtful (unverified) — any attacking boost for Newcastle changes the dynamic slightly"
+      ],
+      "analysis": "Brighton arrive at St James' Park flying the UP-FORM flag, and it is richly deserved. Four wins from their last five, with an xGF of 1.86 and an xGA of just 0.86 over the same period — they are creating chances freely and shutting the door at the back. Their away form is equally compelling: D-W-W-W-L in the last five road trips, three consecutive away wins before the solitary defeat. With 5.8 shots on target per game they are comfortably the most dangerous side in this fixture.\n\nNewcastle's numbers are alarming in the opposite direction. An xGA of 2.31 over five games indicates a defence that is genuinely broken rather than just temporarily unlucky. Their home form has produced three consecutive defeats — 1-2, 1-2, and back to 2-3 — and their broader recent run of five losses in their last five Premier League games makes them about as poor a home side as the top flight currently has. P14 suggests mid-table stagnation with nothing meaningful riding on the result.\n\nJoelinton has reportedly returned from suspension, and Anthony Gordon is described as a possible return from a hip flexor issue (unverified by structured sources). Even if Gordon does feature, the defensive frailties Newcastle have displayed cannot be papered over by individual returns in attack.\n\nSix of ten newspapers back Brighton despite the available odds of 2.75, which is an unusually sharp alignment in favour of the away side. The market may be slightly slow to price this — 2.75 is generous for a team this in-form against a side this leaky.",
+      "value_note": "Brighton at 2.75 looks mispriced given the form gap — expected closer to 2.20 based on underlying metrics."
+    },
+    {
+      "game_number": 4,
+      "home_team": "Wolverhampton",
+      "away_team": "Sunderland",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.82,
+      "key_factors": [
+        "Wolves DOWN-FORM: three straight league losses by 0-1, 0-3, 0-4 — structural collapse, not blip",
+        "Sunderland P11 vs Wolves P20 — position gap underpins the selection",
+        "All 10 newspapers and 52% public backing aligned on Sunderland"
+      ],
+      "risk_flags": [
+        "Sunderland's xG underperformance (-0.26 over 5g) suggests goals may not flow freely",
+        "Relegated or near-relegated sides can produce shock home results fuelled by crowd desperation"
+      ],
+      "analysis": "This is the closest thing to a formality on this week's coupon. Wolverhampton are flagged DOWN-FORM and it is entirely warranted: three consecutive Premier League defeats by scores of 0-1, 0-3, and 0-4, with an xGF of just 0.87 and an xGA of 2.43 over five games. That is not bad luck — that is a fundamentally poor team being exposed repeatedly. Even their slightly better home run (wins against weaker opposition) does not mask the structural weakness; they sit P20 and their Premier League survival looks bleak.\n\nSunderland, by contrast, are settled mid-table — P11 — with a recent form of W-W-D-L-W showing resilience. Their away record reads W-W-W-D-L across the last five road trips (reading in most recent order), reflecting a team comfortable picking up points away from home. The SoT differential is modest given League One-era stats are not directly applicable here, but Wolves' domestic numbers tell the full story.\n\nThe all-ten newspapers call for Sunderland is about as emphatic a media consensus as you will find. The odds of 2.35 for the away side against a bottom-of-the-table home team in wretched form represent fair market pricing, not value mispricing — simply a justified reflection of the gap between these teams.\n\nSunderland's slight xG underperformance (-0.26 to -0.31 over five and ten games) means they may not always run up the score, but they will almost certainly avoid losing here. Back the visitors with confidence.",
+      "value_note": "Sunderland at 2.35 is fair but justified — this is a top-four confidence selection, not a value play."
+    },
+    {
+      "game_number": 5,
+      "home_team": "Barnsley",
+      "away_team": "Stockport",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.72,
+      "key_factors": [
+        "Stockport's significant shot dominance: 7.0 SoT/g and 15.6 shots/g vs Barnsley's 4.0/11.6",
+        "Barnsley's home form: D-L-L-D-D — only one win in last five at home",
+        "Stockport P5 with promotion motivation; Barnsley P13 with nothing riding on it"
+      ],
+      "risk_flags": [
+        "Stockport's away form includes draws — a share of the points is plausible",
+        "League One data depth limited; no xG available to verify efficiency signals"
+      ],
+      "analysis": "Stockport's League One campaign has them pushing from fifth place with genuine promotion aspirations, and their underlying output supports the optimism: 7.0 shots on target per game and 15.6 shots overall completely eclipse Barnsley's 4.0 and 11.6 respectively. When you outgun the opposition at that rate, away results tend to follow in League One.\n\nBarnsley sit P13 and have little to play for in either direction — not threatened by relegation, not pushing for the play-offs. Their home form tells a concerning story: D-L-L-D-D, with only one win in the last five at Oakwell. A team that draws and loses at home against promotion-chasing opposition is not a side you want to back blindly for the home win.\n\nEight of ten newspapers and 57% of the public back Stockport, and the odds of 1.85 suggest the market agrees this is the most likely outcome. Stockport's overall recent form — W-D-W after a shaky start to the last five — points to a side capable of winning away but one that also has a tendency to share points (multiple draws in their away sequence: D-D in last five away trips).\n\nThe away win remains the primary selection, but Barnsley's ability to grind out draws at home should keep the X in play. This is doubles territory — Stockport are the right call but not at a level to single on a League One clash with limited data depth.",
+      "value_note": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Bolton",
+      "away_team": "Luton",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.72,
+      "key_factors": [
+        "Luton's UP-FORM: W-D-W-W-W in last 5, with away record W-D-W-W-D",
+        "Luton's shot dominance: 20.0 shots/g and 6.2 SoT/g vs Bolton's 15.2/4.2",
+        "Seven of ten newspapers back Luton despite away tag — rare alignment"
+      ],
+      "risk_flags": [
+        "Bolton P3 with promotion motivation — they will not capitulate easily at home",
+        "Bolton's 5-1 home win is a reminder they can produce big performances"
+      ],
+      "analysis": "Luton carry the UP-FORM flag into Bolton and it is strikingly well-earned: four wins from their last five across all competitions, with their away record even more impressive at W-D-W-W-D — one dropped set of points in five road trips. What makes this particularly striking is the volume of attacking output: 6.2 shots on target per game and a remarkable 20.0 shots per game overall. Bolton generate a respectable 15.2 shots per game, but they are being significantly outgunned by their visitors.\n\nBolton sit P3 — they have their own promotion push to consider — and their home record has produced results: wins over weaker sides. But their home form in recent weeks includes three draws and a loss in five, which is far from a fortress. Their 5-1 demolition is a bright data point, but the surrounding form (D-D-L in the other fixtures) creates ambiguity about whether that scoreline is truly representative.\n\nThe remarkable thing about the odds here is how close they are: 2.50 Bolton, 2.60 Luton. The market is essentially calling it a coin-flip. But Luton's superior shot metrics, their UP-FORM designation, and their superior recent record suggest this is anything but a coin-flip — it is a game where the away side enters with structural advantages the odds fail to fully capture.\n\nSeven of ten newspapers have gone with Luton, a rare majority newspaper call for the away side that aligns with the form evidence. Luton are the primary selection, with the draw retained as a secondary given Bolton's home resilience.",
+      "value_note": "Luton at 2.60 is genuine value against a home side with three draws in their last five home fixtures — the form gap is wider than the odds imply."
+    },
+    {
+      "game_number": 7,
+      "home_team": "Exeter",
+      "away_team": "Bradford",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.68,
+      "key_factors": [
+        "Bradford P4 (promotion push) vs Exeter P21 (relegation battle) — clear structural advantage",
+        "Eight of ten newspapers aligned on Bradford",
+        "Bradford's recent form improvement: two wins in their last two overall games"
+      ],
+      "risk_flags": [
+        "Exeter's relegation desperation typically inflates draw probability significantly",
+        "Bradford's away form is inconsistent: L-L before the W — not settled on the road"
+      ],
+      "analysis": "Exeter sit P21 — squarely in relegation territory — and their home form reflects the pressure: D-W-D-L-L in their last five at home, with only one victory in the last five. A team fighting for survival plays with a different kind of urgency, but it cuts both ways: they also defend deeper and are less likely to open the game up, which elevates the draw probability.\n\nBradford occupy fourth place in League One, right in the promotion play-off positions, and they travel with genuine purpose. Their overall form — D-D-L-W-W — shows them coming into form at the right time of the season, and their away record of D-W-L-L-W suggests capacity to win on the road. With 4.6 shots on target per game to Exeter's 4.2, this is a more even shot contest than several other games on the coupon.\n\nEight of ten newspapers back Bradford, and the 2.10 price is the most crowded number in this game's market. The position gap is stark: P4 vs P21 in the same division. But the motivation asymmetry cuts both ways — Bradford need points for automatic promotion positioning; Exeter need points to survive. That combination produces more competitive matches than the position gap implies.\n\nBradford win is the primary selection but this game carries the broadest uncertainty on the coupon after Game 8. The draw at 3.40 is not without appeal if you are weighting the relegation-side resilience factor.",
+      "value_note": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Leyton Orient",
+      "away_team": "Burton",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.5,
+      "key_factors": [
+        "Leyton Orient DOWN-FORM: L-D-L-L-D in last 5 — three defeats at P19",
+        "Burton's away record: D-D-L-W-D — four unbeaten in five road trips",
+        "Both sides post nearly identical SoT (3.0 vs 2.8) — low-scoring draw profile"
+      ],
+      "risk_flags": [
+        "All 10 newspapers and 65% of the public on Orient create false confidence in a DOWN-FORM side",
+        "Orient's P19 status means relegation pressure could produce a poor performance under stress"
+      ],
+      "analysis": "This is the most contrarian game on the card, and the one where public consensus most deserves to be questioned. All ten newspapers and 65% of the public back Leyton Orient, yet Orient are explicitly tagged DOWN-FORM, sit P19, and their recent record reads L-D-L-L-D — three losses and two draws in their last five, with only two wins in the last ten home games across their broader form sequence. The odds of 1.77 reflect the consensus, not the form.\n\nBurton, the visitors, sit at P18 — one place above Orient — and their recent form is markedly better: D-W-D-D-L, with three draws and a win in their last four. More tellingly, their away form reads D-D-L-W-D — four draws and a win in five away trips. Burton are a team that does not lose easily on the road. Their SoT average of 2.8 per game is only marginally below Orient's 3.0 — these are two defensively cautious, low-output sides that grind results.\n\nThe narrative here is obvious: media and public backing a home side purely on the basis of the home tag, ignoring that this home side is genuinely poor right now. The draw at 3.75 carries meaningful value given the comparable league positions, Burton's draw-heavy away record, and Orient's woeful recent output.\n\nForcing an Orient win feels like following the crowd off a cliff. This is classified as the lowest-confidence game on the coupon — a genuine toss-up — with the draw carrying significant pull. If selecting one outcome, Orient by virtue of home advantage only, but the draw is the value bet.",
+      "value_note": "Draw at 3.75 is the outstanding value selection here — Burton's draw-heavy away form meets a DOWN-FORM home side at a price that the public is not pricing correctly."
+    },
+    {
+      "game_number": 9,
+      "home_team": "Stevenage",
+      "away_team": "Wigan",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.8,
+      "key_factors": [
+        "Stevenage's UP-FORM home record: W-D-W-W-W in last five at home",
+        "Wigan's away form is poor despite strong overall numbers: D-W-L-D-D on the road",
+        "Ten of ten newspapers and 74% public aligned — maximum consensus"
+      ],
+      "risk_flags": [
+        "Wigan also flagged UP-FORM — they have genuine quality and will not be passive visitors",
+        "Stevenage's low SoT (3.2) means tight margins; one error can derail a home win"
+      ],
+      "analysis": "Stevenage's home record in recent weeks is immaculate: W-D-W-W-W in their last five at home, with only one dropped game. They sit P6 in League One with genuine play-off aspirations and carry the UP-FORM flag with a deserved 1-0, 1-0, 1-0 run of home wins — tight, controlled, professional. They do not blow teams away (3.2 SoT per game and only 8.6 shots) but they win the matches that matter through organisation and efficiency.\n\nWigan also carry an UP-FORM tag, and that complicates the picture slightly. Their overall recent form — D-W-W-W-D — is excellent in isolation, but their away record tells a different story: D-W-L-D-D. Three draws and a loss in their last five road trips. The excellent overall form is built largely on home results; away from Wigan, they are not the force the global numbers suggest.\n\nThe odds of 1.58 for Stevenage reflect the market's confidence in the home side, and with ten of ten newspapers aligned and 74% of the public backing them, this is the heaviest consensus game on the lower-league portion of the coupon. The 6.0 available on Wigan tells you even the bookmakers barely entertain a Wigan win.\n\nStevenage's home fortress record, play-off motivation, and Wigan's patchy away form all point in one direction. This clears the 0.80 threshold and earns single status on the coupon.",
+      "value_note": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "Wimbledon",
+      "away_team": "Huddersfield",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.7,
+      "key_factors": [
+        "Wimbledon DOWN-FORM: five consecutive defeats, only 2.2 SoT/g",
+        "Huddersfield's shot dominance: 5.2 SoT/g and 14.6 shots/g — significant edge",
+        "Wimbledon P20 with no attacking threat — hard to see where their goal comes from"
+      ],
+      "risk_flags": [
+        "Huddersfield's draw habit (4 draws in last 5) is persistent — they may not press for a win",
+        "Relegation desperation can produce organised, difficult-to-break-down home displays"
+      ],
+      "analysis": "AFC Wimbledon's form is nothing short of catastrophic. They are tagged DOWN-FORM and their last five results across all competitions read L-L-L-L-L — five consecutive defeats. At home specifically the picture is just as bleak: L-L-L-D-L, with one solitary point from their last five Plough Lane outings. They sit P20 in League One and are scoring almost nothing — a SoT average of just 2.2 per game and 9.6 shots overall, both among the lowest outputs in this set of fixtures.\n\nHuddersfield offer a contrasting profile: P9, mid-table comfort, and a recent run that is draw-heavy but not losing — D-D-D-W-D in their last five. Their away record contains wins, draws and only one loss. They produce 5.2 shots on target per game, more than double Wimbledon's output. The concern with Huddersfield is that four draws in five could follow them to Wimbledon, particularly as relegation-threatened sides park the bus with discipline borne of desperation.\n\nThe newspapers split 5-5 between home and away, which is surprising given the form gap. That split likely reflects awareness of Huddersfield's draw tendency against compact, deep-sitting teams. The odds of 2.28 for Huddersfield seem reasonable given the context.\n\nHuddersfield win is the right selection, but the draw is a live alternative. Wimbledon's lack of output means they are unlikely to win, but they might absorb enough to force a share.",
+      "value_note": ""
+    },
+    {
+      "game_number": 11,
+      "home_team": "Harrogate",
+      "away_team": "Barnet",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.72,
+      "key_factors": [
+        "Barnet's UP-FORM: W-W-W-W-D with 18.6 shots/g and 6.8 SoT/g",
+        "Harrogate P23 with W-L-L-L-D home form — no attacking threat at 3.2 SoT/g",
+        "Contrarian value: public and newspapers lean Harrogate despite Barnet's superior form and stats"
+      ],
+      "risk_flags": [
+        "Harrogate's relegation desperation may produce a stubborn defensive performance",
+        "Barnet at 2.55 could be slightly shorter — any regression from their goal-fest form is possible"
+      ],
+      "analysis": "Barnet travel to Harrogate in extraordinary form. Their last five results: W-W-W-W-D — four consecutive wins, including a 6-2 and a 5-2 victory, with goal tallies of 18 scored and only 9 conceded. The UP-FORM tag is a massive understatement. Their attacking numbers are dominant: 6.8 shots on target per game and 18.6 total shots — the highest shot volume of any away side on this entire coupon. Their away record reads W-W-W-D-L, with three consecutive away wins preceding the draw.\n\nHarrogate sit P23 — in serious relegation danger — and their home form reads W-L-L-L-D: one home win in their last five. They produce 3.2 shots on target per game, less than half Barnet's output. This is not a tight matchup on the metrics.\n\nWhat makes this game analytically interesting is the market and public positioning. Seven of ten newspapers back Harrogate and 48% of the public lean home, yet Barnet are the in-form side with superior output and a positive away record. The odds of 2.55 for Barnet vs 2.63 for Harrogate make this effectively a coin-flip in the bookmakers' eyes — but the form and stats say it emphatically is not.\n\nThis is one of the cleaner contrarian plays on the coupon: back the UP-FORM away side at slightly better odds while the public money follows the home team out of inertia. Barnet should win this convincingly.",
+      "value_note": "Barnet at 2.55 represents genuine contrarian value — market underrates an UP-FORM side due to public bias toward the home team."
+    },
+    {
+      "game_number": 12,
+      "home_team": "Swindon",
+      "away_team": "Chesterfield",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "Chesterfield's UP-FORM: W-D-W-D-W with strong away record D-W-W-W-L",
+        "Swindon's extremely low attacking output: 2.4 SoT/g and 6.8 shots/g",
+        "Chesterfield nearly double Swindon's shots (12.2 vs 6.8) — structural output advantage"
+      ],
+      "risk_flags": [
+        "Swindon's draw habit at home (3 draws in last 5) is persistent and may frustrate Chesterfield",
+        "Three-way newspaper split reflects genuine uncertainty — no clear market consensus"
+      ],
+      "analysis": "Swindon are a team built around draws. Their last five home results: D-W-D-L-D — three draws, one win, one loss. Their overall form — L-D-L-W-D — continues the theme. More tellingly, their attacking output is among the weakest on this coupon: 2.4 shots on target per game and only 6.8 total shots. That is an exceptionally low volume for a League Two home side and suggests a team that is defensively minded and struggles to impose itself.\n\nChesterfield carry the UP-FORM flag and deserve it: W-D-W-D-W in their last five, with a particularly strong away record of D-W-W-W-L — three consecutive away wins before the defeat. They post 3.4 SoT and 12.2 shots per game — nearly double Swindon's output. The difference in attacking ambition between these sides is stark.\n\nThe newspapers split roughly three for Chesterfield, three for the draw, and three for Swindon — a rare three-way split reflecting genuine uncertainty. The odds (2.65 home, 3.40 draw, 2.38 Chesterfield) confirm the close nature of the contest in the bookmakers' view.\n\nChesterfield's UP-FORM designation, their superior shot output, and a strong away record all point to the visitors as the logical primary selection. But Swindon's draw habit is a real factor, and a low-scoring draw is entirely plausible given Swindon's defensive frugality. This sits comfortably in doubles territory.",
+      "value_note": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Tranmere",
+      "away_team": "Grimsby",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.8,
+      "key_factors": [
+        "Tranmere DOWN-FORM: five consecutive home defeats — home fortress has collapsed entirely",
+        "Grimsby UP-FORM: W-W-W-L-W with 4-0 and 4-1 wins demonstrating genuine goal threat",
+        "Grimsby's away record: W-W-L-W-L — three wins in five road trips"
+      ],
+      "risk_flags": [
+        "Tranmere's relegation pressure can occasionally produce desperate, committed performances",
+        "Grimsby's two away defeats in five show vulnerability on the road — not impervious"
+      ],
+      "analysis": "This fixture has one of the starkest form contrasts on the entire coupon. Tranmere are flagged DOWN-FORM and it is emphatically justified: their home record over the last five reads L-L-L-L-L — five consecutive home defeats. That is not a blip; that is a team that has stopped winning at Prenton Park entirely. They sit P20, in League Two relegation territory, and their overall form of L-W-L-D-L across all competitions confirms a side in deep trouble.\n\nGrimsby could hardly be in more different form. UP-FORM flagged, P6, with a run of W-W-W-L-W in their last five — four wins including a 4-0 and a 4-1 result. Their away form reads W-W-L-W-L — three wins in their last five away trips, with goals flowing freely. They post 4.2 shots on target and 12.8 shots per game, figures that compare favourably with Tranmere's 4.0/13.0 — essentially parity in volume but with Grimsby's finishing far superior in recent weeks.\n\nSix of ten newspapers select Grimsby, and the odds of 2.02 reflect the sizeable gap between these sides at this stage of the season. The motivation equation also favours the visitors: Grimsby in sixth may be pushing for a play-off place; Tranmere in twentieth are fighting to avoid the drop.\n\nThis is a clean selection. Grimsby's UP-FORM designation, their scoring record, their superior away wins, and Tranmere's catastrophic home run all point to the same outcome. This clears the 0.80 confidence bar and earns single status alongside Arsenal, Sunderland, and Stevenage.",
+      "value_note": "Grimsby at 2.02 is fair given the context — not generous odds but correctly priced for a clear singles-level selection."
+    }
+  ]
+}
