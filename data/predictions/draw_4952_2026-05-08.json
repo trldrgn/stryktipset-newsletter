@@ -1,0 +1,309 @@
+{
+  "draw_number": 4952,
+  "draw_date": "2026-05-08",
+  "saved_at": "2026-05-08T19:12:10.002356+00:00",
+  "executive_summary": "Draw #4952 is anchored by four clear singles — Manchester City, Brighton, Juventus and Manchester United all carry strong multi-signal conviction — but the mid-tier games are genuinely murky, with sparse xG data in the Scandinavian fixtures and a fascinating play-off semi-final context at Stevenage making this a challenging coupon. Inter's extraordinary 5-game xG overperformance (+1.44 per game vs xGF) is the week's most glaring regression warning, and Fulham's defensive fragility (xGA 2.25 conceding only 1.2) screams a collapse is overdue.",
+  "value_radar": [
+    "Game 2 — Manchester United at 1.88 looks generous given Sunderland's wretched home form (1W in last 5 at home) and United's UP-FORM tag with P3 quality",
+    "Game 4 — Bournemouth at 2.48 is attractive: UP-FORM, 3W 2D in last 5 away, facing a Fulham side whose xGA of 2.25 has been dramatically bailed out (actual 1.2). That gap is unsustainable",
+    "Game 10 — Sevilla at 2.12 has modest value given relegation desperation vs a DOWN-FORM Espanyol side who have scored only 0.2 actual goals per game in their last 5 despite an xGF of 0.98 — they simply cannot finish"
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Manchester City",
+      "away_team": "Brentford",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.87,
+      "key_factors": [
+        "City UP-FORM with 4W 1D in last 5 home games",
+        "Massive volume advantage: 21.2 shots/g and 11 corners/g vs Brentford's 12.4 and 4.6",
+        "Brentford xGF 1.70 with only 4.0 SoT/g — limited threat away from home",
+        "No injuries on either side; City motivated in title/CL race"
+      ],
+      "risk_flags": [
+        "City slightly underperforming xGF (-0.36 over 5g) — not fully converting dominance into goals",
+        "Brentford's away record contains two wins (4-3, 3-2) which shows they can score in high-tempo games"
+      ],
+      "analysis": "Manchester City arrive at this fixture in UP-FORM and with the best home record of the last five games in this data set — four wins and a draw at the Etihad, including victories over 2-1, 3-0 and 2-0. Their xGF of 2.36 over the last five games is elite, and while they are slightly underperforming that figure (actual 2.0 goals), the underlying creation is legitimate and the defence has been even better than the clean numbers suggest (xGA 1.33, actual 1.0). City are generating 21.2 shots per game with 11 corners — they are dominating games entirely.\n\nBrentford sit seventh but their away data is concerning for this fixture. An actual average of 1.2 goals scored away from home, xGF of just 1.70, and a recent away sequence that includes two draws and a defeat is hardly the profile of a team who will test City across 90 minutes at the Etihad. Their SoT rate of just 4.0 per game is roughly a third of City's 6.4. On volume alone, Brentford are massively outgunned.\n\nBoth squads carry no injury concerns from structured sources and Perplexity confirms a clean bill of health on both sides. The motivation picture is clear: City at P2 will be pushing hard in the final weeks, whether chasing a title or securing a Champions League berth. Brentford at seventh have mid-table comfort but no particular urgency.\n\nAt 1.34, the market is essentially offering a heavily discounted insurance policy on a City win. All ten newspaper columnists back the home side. The only risk here is a catastrophic off-day of the kind elite teams occasionally produce when the title is either won or lost — but that context is absent here. City are live, motivated and producing excellent underlying numbers. Back them with confidence.",
+      "value_note": "At 1.34 this is a near-certainty price; use as a singles anchor rather than a value play"
+    },
+    {
+      "game_number": 2,
+      "home_team": "Sunderland",
+      "away_team": "Manchester United",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.83,
+      "key_factors": [
+        "Sunderland dreadful home form: 4L 1W in last 5 home fixtures",
+        "Manchester United UP-FORM, P3, outperforming xGF",
+        "10/10 newspaper tips and market consensus strongly behind United",
+        "Sunderland's xGA of 1.94 per game reflects a genuinely leaky defence"
+      ],
+      "risk_flags": [
+        "United's xGA of 1.67 suggests they can be opened up — Sunderland may create chances",
+        "DROPPED [X]: No structural case for a draw — Sunderland losing at home repeatedly, United on winning run"
+      ],
+      "analysis": "Sunderland's home record is one of the most alarming in the division. Looking at their last five fixtures at home: four defeats and one win. Their xGA of 1.94 per game reflects a side that is structurally vulnerable, and the actual conceding rate of 2.2 goals per game confirms that no goalkeeper heroics are papering over the cracks — this defence is genuinely porous. With a shots-on-target rate of 4.4, they are not creating enough at the other end to compensate.\n\nManchester United arrive labelled UP-FORM and sitting third in the table. Their recent sequence of three wins from five, combined with an xGF that is being modestly outperformed (actual 1.8 vs xGF 1.59), suggests a team in good rhythm that is converting efficiently. Their away form over the last five reads: 1-0 win, 2-2 draw, 1-2 defeat, 1-0 win, 1-1 draw — a record that combines solidity with enough punch to trouble anyone.\n\nEvery single newspaper columnist in the ten surveyed backs United, and the market at 1.88 reflects a comfortable favourite against a struggling home side. The public is 57% behind United, which is entirely rational given the data. No injuries are confirmed on either side, so United name a full squad away from home.\n\nThe one note of caution is that Sunderland — despite their dreadful home form — did manage two consecutive wins in their last five overall (1-0, 2-1) before dropping to United. Motivation is present. But the structural mismatch is too large to ignore. United travel here in form, with quality, against a home side who simply cannot defend. The away win is the right call.",
+      "value_note": ""
+    },
+    {
+      "game_number": 3,
+      "home_team": "Brighton",
+      "away_team": "Wolverhampton",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.88,
+      "key_factors": [
+        "Wolves DOWN-FORM, bottom of the table (P20), with just 0.6 goals per game in last 5",
+        "Brighton UP-FORM, xGF 2.01 matching actual output — sustainable form",
+        "Wolves' away record: two heavy defeats (0-3, 0-4) in last 5 away games",
+        "10/10 newspaper tips unanimous; market at 1.33 reflects near-certainty"
+      ],
+      "risk_flags": [
+        "Relegation desperation from Wolves could produce a disciplined low-block draw",
+        "Brighton's recent 1-3 defeat to Newcastle shows they can be caught on a bad day"
+      ],
+      "analysis": "Wolverhampton arrive at the Amex Stadium as the division's twentieth-placed side in DOWN-FORM, and the data paints a deeply troubling picture. In their last five matches they have scored an average of just 0.6 goals while conceding 2.2. Their xGF of 1.13 suggests they are not creating enough to threaten most teams, yet that figure is actually being massively underperformed — actual goals are 0.6 against an xGF of 1.13. They are generating chances but failing to convert. Their away record in this five-game sequence reads: two defeats, two draws and one away win — but the defeats were 0-3 and 0-4, suggesting a team that can capitulate badly.\n\nBrighton are UP-FORM and playing increasingly well. Their xGF over the last five games is 2.01 — the best it has been across the ten-game window — and their actual goal output matches (2.0 per game). Home form reads three wins, a draw and a defeat, with the defeat being a blip rather than a pattern. Their 5.8 shots on target per game against Wolves' 13.4 shots per game overall reflects significant positional superiority in this fixture context.\n\nThe Sky Sports preview noted Brighton's 1-3 defeat to Newcastle on May 2, which is the recent blip referenced in the UP-FORM context. That result may have been the anomaly; the xG trend shows Brighton creating quality chances consistently. Wolves have been bottom of the table and are fighting relegation, but their away record shows they tend to sit deep and get overwhelmed against quality opposition.\n\nWith no injuries on either side and all ten newspaper columnists backing Brighton, this is one of the cleaner calls on the coupon. The only genuine risk is that Wolves — in a survival situation — park the bus and frustrate for a point. But their xGA of 2.18 over five games shows they cannot hold firm defensively, and Brighton at home with this momentum should find a way through.",
+      "value_note": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Fulham",
+      "away_team": "Bournemouth",
+      "predicted_outcomes": [
+        "2",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.68,
+      "key_factors": [
+        "Bournemouth UP-FORM with 3W 2D in last 5 away games — outstanding away record",
+        "Fulham's xGA of 2.25 vs actual 1.2 — defensive performance is unsustainably fortunate",
+        "Fulham also underperforming xGF (1.53 vs 0.8 actual) — cannot score despite creating",
+        "Bournemouth xGF 2.15 matching actual output 2.2 — sustainable and efficient"
+      ],
+      "risk_flags": [
+        "Fulham's three home wins in last 5 show they can perform at Craven Cottage",
+        "DROPPED [X]: Both teams have offensive intent; Bournemouth's away threat and Fulham's defensive fragility make a low-scoring stalemate unlikely"
+      ],
+      "analysis": "This is one of the most analytically interesting matches on the coupon, and the data strongly favours the visitors. Bournemouth carry an UP-FORM flag, sit sixth, and have been outstanding away from home: three wins and two draws in their last five away games. Their xGF of 2.15 per game is being matched by an actual goal output of 2.2 — they are creating and converting at a high level. This is a team playing with real confidence and efficiency.\n\nFulham, meanwhile, are sitting on a structural time bomb. Their xGA of 2.25 per game is being undercut dramatically by an actual conceding rate of just 1.2 — a gap of over a full goal per game. That kind of divergence almost always means a goalkeeper or defensive unit that has been bailed out repeatedly by fortune or exceptional individual saves. It is fragile, and it is likely to normalise at the worst possible time. Fulham are also massively underperforming their xGF: they are generating a 1.53 xGF but only actually scoring 0.8 goals. They are creating chances and wasting them while their defence is living on borrowed time.\n\nSix of ten newspaper tips back Bournemouth, reflecting this analysis. The public is split more evenly (40% away, 33% home), so there is no groupthink to fade here — the smart money and the data point in the same direction. Bournemouth at 2.48 represents genuine value against the backdrop of Fulham's underlying vulnerability.\n\nWith no injuries to factor in, this is a market that seems to be underweighting Bournemouth's consistent away quality. A draw cannot be entirely ruled out — Fulham do have a usable home record with three wins in the last five home games — but the direction of travel in the xG data makes the away win the most logical prediction.",
+      "value_note": "Bournemouth 2.48 looks underpriced given Fulham's xGA fragility and Bournemouth's exceptional away form"
+    },
+    {
+      "game_number": 5,
+      "home_team": "Bolton",
+      "away_team": "Bradford",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.62,
+      "key_factors": [
+        "Bolton shots on target (6.2/g) nearly double Bradford's away (3.6/g) — territorial dominance",
+        "9/10 newspaper tips behind Bolton as home favourites",
+        "Bradford's away form: 2W 1D 2L — competitive but inconsistent",
+        "Bolton's home form weighted toward draws rather than wins"
+      ],
+      "risk_flags": [
+        "Bolton's last five home results: 1W 3D 1L — not a convincing home fortress",
+        "DROPPED [2]: Bradford's SoT rate of 3.6/g means very limited threat; Bolton volume advantage makes away win the least supported outcome"
+      ],
+      "analysis": "This League One fixture pits two well-matched sides against each other — Bolton fifth against Bradford fourth — in what the data and newspaper consensus suggests is a home win, though the underlying numbers counsel some caution. Bolton's home form in the last five reads: one win, one defeat and three draws. That is not the platform of a dominant home side, and their two consecutive home draws (3-3, 2-2) before a win suggests they frequently share points at their own ground.\n\nBradford's away record carries more solidity: two wins in the last five away, one draw and two defeats. They are coming from fourth place and have momentum. However, Bolton's shooting volume advantage is significant — 6.2 shots on target per game against Bradford's 3.6 — and 19.0 shots per game overall dwarfs Bradford's 12.8. In League One, that kind of territorial superiority tends to tell over the course of a match.\n\nNo xG data is available for this League One fixture, which is standard at this level. With no injury information and no tactical previews from local outlets, the market and shot statistics become the primary signals. Nine of ten newspaper columnists back Bolton, and the 1.90 odds reflect a modest home advantage rather than a banker.\n\nThis feels like a 1X game — Bolton have the volume and the home crowd, but Bradford are not a side to dismiss, and the home form's reliance on draws rather than wins suggests a repeat stalemate is a live outcome. The away win feels the least likely outcome given Bradford's limited shot creation away from home.",
+      "value_note": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Stevenage",
+      "away_team": "Stockport",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.62,
+      "key_factors": [
+        "PLAY-OFF SEMI-FINAL first leg — tactical caution inflates draw probability significantly",
+        "Stevenage's outstanding home form: 4W 1D in last 5 home games, tight defensive record",
+        "Stockport's superior firepower: 7.2 SoT/g and 18.2 shots/g vs Stevenage's 4.0 and 10.2",
+        "Stockport's away record: 2W 3D in last 5 away — difficult to beat"
+      ],
+      "risk_flags": [
+        "Play-off dynamics could produce either a cagey draw or a high-scoring thriller",
+        "DROPPED [2]: Stevenage's home fortress and play-off first-leg caution make away win least likely; Stockport more likely to settle for a draw they can build on"
+      ],
+      "analysis": "Context transforms this fixture entirely: this is the first leg of the League One play-off semi-final, played at Stevenage's Lamex Stadium. That framing changes everything. Both sides are under extreme pressure to manage the tie across two legs, which typically produces more cautious, tactically conservative football than a standard league fixture. The first leg is often about not losing rather than attacking freely.\n\nStevenage's home form in regular league competition has been exceptional — four wins and a draw in the last five home games, with clean sheets visible throughout the low-scoring results (1-0, 1-0, 1-0). They have built a fortress at the Lamex on the back of defensive organisation and set-piece efficiency. Their SoT rate of 4.0 per game is modest, but in a one-nil culture that may be entirely intentional.\n\nStockport, sitting third in the table, are the higher-quality side by league position and by shot statistics — an outstanding 7.2 shots on target per game with 18.2 shots overall, nearly double Stevenage's attacking output. Their away form reads two wins, three draws in the last five — they do not lose away from home easily. That combination of firepower and away resilience makes them genuinely dangerous even in this cauldron.\n\nThe play-off atmosphere and Stevenage's fortress home record make the draw a genuinely attractive live outcome here — first legs between evenly matched play-off sides frequently end level. Seven of ten newspaper tips back Stevenage, partly reflecting home advantage. Stockport's quality is too high to dismiss, but their attacking superiority may be partially neutralised by the tactical caution that defines semi-final football.",
+      "value_note": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Lazio",
+      "away_team": "Inter",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.75,
+      "key_factors": [
+        "Inter P1, UP-FORM, title race motivation — maximum incentive",
+        "Inter's 5g xG overperformance of +1.44/game is the biggest regression risk on the coupon",
+        "Lazio's xGA of 0.83 suggests they can defend well — Inter may not score freely",
+        "9/10 newspapers and market consensus firmly behind Inter"
+      ],
+      "risk_flags": [
+        "Inter's extreme goal-to-xG divergence (+1.44 over 5g) screams regression — a lower-scoring Inter performance expected",
+        "DROPPED [1]: Lazio are home underdogs at 4.70 with mixed home form and inferior quality — no positive case for them winning"
+      ],
+      "analysis": "Inter arrive as Serie A leaders in UP-FORM — but there is one data point that demands attention before reaching any conclusion. Their five-game xG overperformance is the most extreme on this entire coupon: an xGF of 1.76 per game producing actual goals of 3.2 — an overperformance of +1.44 per game. That is not sustainable. Over ten games the number narrows but remains significant (+0.35 per game at 2.2 actual vs 1.85 xGF). Inter have been scoring vastly more than their underlying creation warrants, and regression is statistically inevitable.\n\nHowever, the counter-argument is equally strong. Inter are title leaders for a reason. Their xGA of 1.52 over five games being held to 1.4 actual shows the defence is operating close to expected levels. Their away form over five games reads a draw, two wins, a draw and a defeat — hardly dominant but sufficient for a team chasing a title. And Lazio, despite sitting eighth, have a home form that is genuinely mixed: two draws and a loss in recent home outings, with a 0-2 defeat at home visible in the sequence.\n\nLazio's underlying numbers are actually respectable — xGA of 0.83 is excellent, though they are conceding more (1.2 actual) which suggests some defensive fragility. Their xGF of 1.50 suggests they can threaten Inter, particularly if Inter's shooting efficiency regresses toward their xG.\n\nNine of ten newspapers back Inter, the market at 1.78 is confident, and the quality differential is real. But the xG regression signal adds meaningful uncertainty and Lazio at home is never trivial. This is a confident away win selection with a draw live.",
+      "value_note": "Inter's massive xG overperformance makes the draw worth including — the X at 3.90 has regression value"
+    },
+    {
+      "game_number": 8,
+      "home_team": "Lecce",
+      "away_team": "Juventus",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.84,
+      "key_factors": [
+        "Lecce scoring just 0.6 goals/game with only 2.2 SoT/g — one of the worst attacking records on the coupon",
+        "Juventus UP-FORM, underperforming xGF by -0.50/game — positive regression signal incoming",
+        "Juventus' defensive record: xGA 1.01, actual 0.2 conceded in last 5 — extraordinary defensive solidity",
+        "10/10 newspapers unanimous; European race motivation for Juventus"
+      ],
+      "risk_flags": [
+        "Juventus away form includes a 2-3 defeat — they can be caught on a bad day",
+        "Odds at 1.52 leave very little margin for error if Lecce find unexpected resilience"
+      ],
+      "analysis": "Lecce come into this as a relegation-threatened side in deep trouble. They are seventeenth, their attacking output is among the worst in this coupon — just 2.2 shots on target per game, xGF of only 1.05 — and their actual scoring rate of 0.6 goals per game over the last five matches is genuinely alarming. They are not creating chances and they are not converting the few they do create. The defensive picture is similarly grim: xGA 1.80, actual 1.4, meaning they have been marginally fortunate at the back without any real structural improvement.\n\nJuventus arrive UP-FORM and in fourth place, fighting hard in Serie A's upper tier. The critical xG signal here is the opposite of Inter — Juventus are underperforming their xGF. Over five games their xGF is 1.70 but actual goals are only 1.2 (-0.50 per game). Over ten games the gap persists at -0.50. This means Juventus have been creating good chances that have not been going in — regression toward their xGF suggests more goals are coming. Their defensive xGA of 1.01 over five games, producing just 0.2 actual goals conceded, is extraordinary and shows a team that has been both defensively disciplined and fortunate.\n\nAway from home Juventus have won two, drawn two and lost one in the last five — a competent record. The goalless draw and back-to-back 1-0 wins demonstrate their ability to win low-scoring affairs on the road. Against a Lecce side who can barely score, this profile is perfectly suited.\n\nAll ten newspapers back Juventus. The market at 1.52 is short but justified. This is a singles candidate.",
+      "value_note": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Atlético Madrid",
+      "away_team": "Celta de Vigo",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.72,
+      "key_factors": [
+        "Atlético title race motivation — maximum intensity at home",
+        "Home form: 3W 1D 1L in last 5, with only one defeat",
+        "Atlético's xGA of 1.94 over 5g — defensively exposed, not the Simeone fortress of old",
+        "Celta have two away wins in last 5 — they can punish defensive mistakes"
+      ],
+      "risk_flags": [
+        "Atlético overperforming xGF (+0.42/5g) — offensive efficiency may not hold",
+        "DROPPED [2]: Atlético's home advantage plus title race motivation outweighs Celta's away quality; odds of 3.65 reflect correct underdog status"
+      ],
+      "analysis": "Atlético Madrid's position in the La Liga title race — sitting second — provides the maximum motivational backdrop for a home fixture. Diego Simeone's side are playing for the championship, and that urgency translates into intensity at the Wanda Metropolitano. Their home form reads three wins and a draw in the last five, with the one defeat being a 0-1 result that appears isolated.\n\nHowever, the xG data introduces a complication. Atlético's five-game xGF of 1.38 is being outperformed by actual goals of 1.8 (+0.42 per game). More troublingly, their xGA has ballooned to 1.94 over five games while they have conceded 1.8 actual — the defence is creating genuine exposure at a rate that should worry anyone picking them as a banker. This is not the fortress Atletico were in previous seasons. The ten-game xGA of 1.71 confirms this is structural, not a blip.\n\nCelta de Vigo sit sixth and are not without quality. Their away form: two defeats, a draw and two wins in last five away games — they can beat teams on the road. Their xGF of 1.44 is honest, matching their actual 1.4. They do not overperform but they do not underperform either. Their low SoT rate of 4.2 and shots per game of just 7.8 suggests they are likely to be a counter-attacking threat rather than a dominant force.\n\nEight of ten newspapers back Atlético, and the 2.14 odds feel right for a motivated home side in a title fight. The defensive xG concern tempers full confidence, making this a double rather than a single. Celta's away wins show they can pick off a big team, so the draw is kept in.",
+      "value_note": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "Sevilla",
+      "away_team": "Espanyol",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.67,
+      "key_factors": [
+        "Sevilla relegation desperation — maximum motivation at home",
+        "Espanyol DOWN-FORM with 0.2 actual goals/game in last 5 (vs xGF of 0.98) — cannot score",
+        "Espanyol away form: 0W in last 5 away games",
+        "AS confirms both full XIs — no late injury disruption to factor in"
+      ],
+      "risk_flags": [
+        "Sevilla's xGF of only 0.96/game — they struggle to score regardless of motivation",
+        "DROPPED [2]: Espanyol 0 away wins in 5, scoring 0.2 goals/game away — no positive case for an away win"
+      ],
+      "analysis": "This is the relegation battle within La Liga, and the data creates a compelling case for Sevilla at home. Sitting seventeenth, Sevilla are in survival mode — the desperation of a team staring at the drop creates exactly the kind of focused, emotional performance that can overcome mediocre underlying numbers. Their xGF of 0.96 per game is worryingly low, and their actual scoring rate of 0.8 per game is barely better. But their home form includes two recent wins (1-0, 2-1) and two draws — that is seven points from their last five home games.\n\nEspanyol arrive in DOWN-FORM and with the most alarming attacking statistics on this coupon. An xGF of 0.98 per game producing actual goals of just 0.2 per game represents a catastrophic finishing failure — a gap of -0.78 per game over five games. They are creating marginal chances and converting none of them. Their five away results: four defeats and a draw, with multiple heavy scorelines (0-1, 1-4). They simply do not score away from home.\n\nThe AS-confirmed lineups for this fixture provide an unusual level of match-day certainty. Both teams name full squads, Sevilla with a 4-4-2 built around Maupay and Ejuke, Espanyol with a 4-2-3-1. Sevilla's high yellow card rate at home (3.0 per game) reflects the intensity they bring to survival battles.\n\nAll ten newspaper tips back Sevilla. The motivation asymmetry here is stark: Sevilla fighting for their top-flight existence, Espanyol mid-table with nothing concrete to play for. The draw is a live outcome given both teams' limited scoring, but Espanyol's catastrophic attacking form away from home makes an Espanyol win almost unthinkable.",
+      "value_note": "Sevilla 2.12 reasonable for a relegation fighter at home against a side that cannot score away"
+    },
+    {
+      "game_number": 11,
+      "home_team": "Real Sociedad",
+      "away_team": "Real Betis",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.58,
+      "key_factors": [
+        "Five of ten newspapers back Betis — unusual majority tip for an away side at 3.35",
+        "Real Sociedad volatile home form: win, draw, win, draw, loss in last 5 home — no dominance",
+        "Betis P5 vs Sociedad P9 — quality advantage with the away side",
+        "Both teams' xG data balanced and accurate — no strong regression signal either way"
+      ],
+      "risk_flags": [
+        "Sociedad xGA actual (1.6) exceeding xGA (1.25) suggests defensive fragility, but both ways in an open match",
+        "DROPPED [1]: Away team is better-placed in the table, has majority newspaper support, and Sociedad's home record shows regular draws and defeats"
+      ],
+      "analysis": "This is the most evenly contested match on the La Liga section of the coupon, and the newspaper tips reflect that unusual split — five backing Betis, three favouring a draw, and only two backing the home side. That kind of expert disagreement, combined with odds of 2.28 versus 3.35, makes this genuinely difficult to call with conviction.\n\nReal Sociedad at home have been inconsistent. Their last five home results: a defeat, a 3-3 draw, a win, a win and another draw — reflecting a volatile home record that can produce anything. Their xGF of 1.74 per game is honest, almost matching their actual 1.6, but xGA of 1.25 producing an actual 1.6 conceded suggests they have been shipping more than they deserved. Over ten games this picture is symmetrical — both attacking and defensive performances are balanced around the xG midpoint.\n\nReal Betis sit fifth and carry momentum. Their away form over five games: a win, a draw, two defeats and a win — mixed, but they can win away from home. Their xGF of 1.31 per game is being outperformed slightly (actual 1.6 over 5g), and their xGA of 1.13 producing actual 0.8 suggests their defence has been performing better than expected. Betis recently had good results (3-0 and 3-2 wins) in their last five overall.\n\nThe majority newspaper view backs Betis, and with Betis sitting higher in the table at fifth versus Sociedad's ninth, there is a quality argument for the away side. The draw is the outcome that splits the analytical community most clearly. Given the home form instability and Betis's credentials, this is a genuine X2 situation.",
+      "value_note": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "GIF Sundsvall",
+      "away_team": "IFK Norrköping",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "10/10 newspaper tips unanimous for Norrköping — clean editorial sweep",
+        "Market prices Norrköping at 1.85 as away favourite — bookmaker models support this",
+        "56% public support for away team despite home advantage",
+        "Sundsvall priced at 3.95 — heavy home underdog"
+      ],
+      "risk_flags": [
+        "No structured form, xG or injury data available — all analysis is market/consensus-based",
+        "Home advantage in Superettan is meaningful but cannot be quantified without data"
+      ],
+      "analysis": "This Superettan fixture arrives with a near-complete absence of structured statistical data — no form, no xG, no injury information. In such circumstances, the market signal and editorial consensus become the primary tools of analysis. Both point unambiguously in one direction: IFK Norrköping.\n\nAll ten newspaper columnists back Norrköping, a clean sweep that carries weight even in the absence of underlying data. The market prices them at 1.85 — a modest away favourite price that suggests the bookmakers' models, which incorporate Superettan team data from multiple sources, see them as significantly the better side. GIF Sundsvall at 3.95 are priced as substantial home underdogs, which in the context of home advantage in Scandinavian football is telling.\n\nIFK Norrköping are a historically significant Swedish club with regular Allsvenskan heritage; if they are operating at Superettan level currently, they likely possess the quality to dominate a fixture against a less established side. The 56% public backing for the away team despite home advantage further reinforces the direction of the consensus.\n\nWith no data to challenge this consensus and multiple independent signals aligned on Norrköping, the away win is the rational prediction. Confidence is modestly held given the data vacuum — there could be team news, form or contextual factors invisible from this position.",
+      "value_note": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Bodö/Glimt",
+      "away_team": "Brann",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.72,
+      "key_factors": [
+        "10/10 newspaper tips unanimous for Bodö/Glimt — complete editorial agreement",
+        "Market at 1.72 reflects confident home favourite status",
+        "Bodö/Glimt's historical home dominance in Norwegian football — Bodø environment advantage",
+        "62% public support reinforces consensus"
+      ],
+      "risk_flags": [
+        "Cup football produces upsets; rotation by either side cannot be assessed without lineup data",
+        "No structured form, xG or injury data — analysis entirely market/reputation/consensus-based"
+      ],
+      "analysis": "Bodö/Glimt versus Brann in the Norwegian Cup brings together two of the Eliteserien's most prominent clubs, and again the structured data is entirely absent. This is a cup fixture rather than a league match, which introduces potential rotation and squad management considerations that are impossible to assess without confirmed lineups.\n\nDespite this, the signals are consistently strong for the home side. Every single newspaper columnist — ten of ten — backs Bodö/Glimt. The market at 1.72 reflects a confident home favourite, though the proximity to even money (Brann at 4.10) suggests this is genuinely competitive rather than a foregone conclusion. The 62% public backing for Bodö/Glimt across the betting market aligns with the editorial consensus.\n\nBodö/Glimt's reputation as arguably Norway's most consistently excellent club side over the past several years — Europa Conference League winners, Eliteserien dynasts — gives meaningful contextual weight even without current-season statistics. Their home record in Bodø is historically exceptional, with the altitude and surface conditions providing a genuine edge against visiting opponents unfamiliar with the environment. Brann from Bergen are a quality side but are typically priced as underdogs against Glimt on their own turf.\n\nCup football does create upsets, and without injury information or rotation confirmation, some humility is appropriate. But the unified signal across market, editorial consensus and club reputation points clearly at Bodö/Glimt.",
+      "value_note": ""
+    }
+  ]
+}

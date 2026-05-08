@@ -1136,5 +1136,199 @@
         "post_mortem": "Predicted 1 (single, conf=0.68) but result was X. IGNORED RISKS: Risk flags were noted but not weighted enough: H2H has historically favoured Exeter — won last two meetings at the Pirelli Stadium; Injury data unavailable for both sides; Burton's attacking output (2.8 SoT/g) is limited. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
       }
     ]
+  },
+  {
+    "draw_number": 4951,
+    "draw_date": "2026-05-02",
+    "appended_at": "2026-05-08T19:04:22.129276+00:00",
+    "total_correct": 10,
+    "total_games": 13,
+    "accuracy_pct": 76.9,
+    "singles_correct": 2,
+    "singles_total": 4,
+    "doubles_correct": 7,
+    "doubles_total": 8,
+    "full_covered": true,
+    "games": [
+      {
+        "game_number": 1,
+        "home_team": "Arsenal",
+        "away_team": "Fulham",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.85,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 2,
+        "home_team": "Brentford",
+        "away_team": "West Ham",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.68,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 3,
+        "home_team": "Newcastle",
+        "away_team": "Brighton",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": false,
+        "confidence": 0.75,
+        "post_mortem": "Predicted 2/X (double, conf=0.75) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: Home advantage at St James' can galvanise Newcastle regardless of form; Gordon reportedly doubtful (unverified) — any attacking boost for Newcastle changes the dynamic slightly. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 4,
+        "home_team": "Wolverhampton",
+        "away_team": "Sunderland",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "confidence": 0.82,
+        "post_mortem": "Predicted 2 (single, conf=0.82) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Sunderland's xG underperformance (-0.26 over 5g) suggests goals may not flow freely; Relegated or near-relegated sides can produce shock home results fuelled by crowd desperation. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      },
+      {
+        "game_number": 5,
+        "home_team": "Barnsley",
+        "away_team": "Stockport",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.72,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 6,
+        "home_team": "Bolton",
+        "away_team": "Luton",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.72,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 7,
+        "home_team": "Exeter",
+        "away_team": "Bradford",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.68,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 8,
+        "home_team": "Leyton Orient",
+        "away_team": "Burton",
+        "our_prediction": [
+          "1",
+          "X",
+          "2"
+        ],
+        "selection_type": "full",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.5,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 9,
+        "home_team": "Stevenage",
+        "away_team": "Wigan",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.8,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 10,
+        "home_team": "Wimbledon",
+        "away_team": "Huddersfield",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.7,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 11,
+        "home_team": "Harrogate",
+        "away_team": "Barnet",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.72,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 12,
+        "home_team": "Swindon",
+        "away_team": "Chesterfield",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.65,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 13,
+        "home_team": "Tranmere",
+        "away_team": "Grimsby",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "confidence": 0.8,
+        "post_mortem": "Predicted 2 (single, conf=0.80) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Tranmere's relegation pressure can occasionally produce desperate, committed performances; Grimsby's two away defeats in five show vulnerability on the road — not impervious. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      }
+    ]
   }
 ]
