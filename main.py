@@ -32,6 +32,7 @@ from analysis.evaluator import (
 )
 from config import (
     NEWSLETTERS_DIR,
+    PREDICTIONS_DIR,
     SCHEDULE_DAY,
     SCHEDULE_HOUR,
     SCHEDULE_MINUTE,
@@ -45,7 +46,7 @@ from fetchers.football_data_csv import enrich_with_csv_stats
 from fetchers.perplexity import fetch_all_match_news
 from fetchers.sofascore import enrich_with_sofascore_absences, enrich_with_sofascore_xg
 from fetchers.understat_xg import enrich_with_understat_xg
-from fetchers.svenska_spel import fetch_current_coupon, fetch_coupon
+from fetchers.svenska_spel import fetch_current_coupon, fetch_coupon, get_current_draw_number
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -74,6 +75,19 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
     if dry_run:
         logger.info("DRY RUN — email will not be sent")
     logger.info("=" * 60)
+
+    # --- Already-run guard (skips duplicate runs for the same draw) ---
+    # Applies to real runs only — dry runs always proceed so you can test freely.
+    if not dry_run:
+        check_draw = draw_number or get_current_draw_number()
+        existing = list(PREDICTIONS_DIR.glob(f"draw_{check_draw}_*.json"))
+        if existing:
+            logger.info(
+                "Predictions already exist for draw %d (%s) — skipping. "
+                "Delete the file to force a re-run.",
+                check_draw, existing[0].name,
+            )
+            return
 
     # --- Step 1: Evaluate last week ---
     logger.info("[1/9] Evaluating last week's predictions...")
