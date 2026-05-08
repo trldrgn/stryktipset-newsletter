@@ -236,6 +236,7 @@ def evaluate_last_week() -> Optional[WeeklyEvaluation]:
             selection_type=selection,
             actual_result=actual,
             correct=correct,
+            confidence=pred.get("confidence", 0.0),
             post_mortem=post_mortem,
         ))
 
@@ -285,6 +286,7 @@ def _save_results(draw_number: int, draw_date: str, evaluations: list[MatchEvalu
                 "selection_type": e.selection_type.value,
                 "actual_result": e.actual_result.value,
                 "correct": e.correct,
+                "confidence": e.confidence,
                 "post_mortem": e.post_mortem,
             }
             for e in evaluations
@@ -322,6 +324,7 @@ def _append_to_history(
                 "selection_type": e.selection_type.value,
                 "actual_result": e.actual_result.value,
                 "correct": e.correct,
+                "confidence": e.confidence,
                 "post_mortem": e.post_mortem,
             }
             for e in evaluations
@@ -334,6 +337,137 @@ def _append_to_history(
 # ---------------------------------------------------------------------------
 # Monthly model improvement prompt (run manually: python main.py --improve)
 # ---------------------------------------------------------------------------
+
+def backfill_evaluations() -> int:
+    """
+    Evaluate all prediction files whose draw number is not yet in history.json.
+    Returns the number of draws newly evaluated.
+    """
+    history = _load_all_history()
+    evaluated_draws = {w["draw_number"] for w in history}
+
+    # Group prediction files by draw_number; keep the earliest saved_at per draw
+    # (the first run is the genuine blind prediction; re-runs are post-result)
+    draw_files: dict[int, Path] = {}
+    draw_saved_at: dict[int, str] = {}
+    for f in sorted(PREDICTIONS_DIR.glob("draw_*.json")):
+        try:
+            data = json.loads(f.read_text(encoding="utf-8"))
+            dn = data["draw_number"]
+            saved = data.get("saved_at", "")
+            if dn not in draw_files or saved < draw_saved_at[dn]:
+                draw_files[dn] = f
+                draw_saved_at[dn] = saved
+        except Exception as e:
+            logger.warning("Could not read %s: %s", f.name, e)
+
+    # Skip predictions saved after 10:00 UTC on draw day — those are post-result re-runs
+    # where Perplexity would return match scores and Claude would effectively predict known results.
+    clean: dict[int, Path] = {}
+    for dn, f in draw_files.items():
+        try:
+            data = json.loads(f.read_text(encoding="utf-8"))
+            saved = data.get("saved_at", "")
+            draw_date = data.get("draw_date", "")
+            if saved and draw_date and saved[:10] == draw_date:
+                hour_utc = int(saved[11:13])
+                if hour_utc >= 10:
+                    logger.warning(
+                        "Skipping draw %d (%s): saved at %s UTC — likely post-result run",
+                        dn, f.name, saved,
+                    )
+                    continue
+        except Exception:
+            pass
+        clean[dn] = f
+    draw_files = clean
+
+    missing = sorted(dn for dn in draw_files if dn not in evaluated_draws)
+    if not missing:
+        logger.info("No missing draws to backfill")
+        return 0
+
+    logger.info("Backfilling %d draw(s): %s", len(missing), missing)
+    backfilled = 0
+
+    for draw_number in missing:
+        f = draw_files[draw_number]
+        data = json.loads(f.read_text(encoding="utf-8"))
+        draw_date = data["draw_date"]
+        raw_predictions = data["predictions"]
+
+        try:
+            results = fetch_result(draw_number)
+        except Exception as e:
+            logger.error("Could not fetch results for draw %d: %s", draw_number, e)
+            continue
+
+        if not results:
+            logger.warning("Draw %d has no results yet — skipping", draw_number)
+            continue
+
+        evaluations: list[MatchEvaluation] = []
+        singles_correct = singles_total = doubles_correct = doubles_total = total_correct = 0
+        full_covered = False
+
+        for pred in raw_predictions:
+            game_num = pred["game_number"]
+            actual = results.get(game_num)
+            if actual is None:
+                continue
+
+            predicted_raw = pred["predicted_outcomes"]
+            selection = SelectionType(pred["selection_type"])
+            correct = _is_correct(predicted_raw, actual.value)
+
+            if correct:
+                total_correct += 1
+            if selection == SelectionType.SINGLE:
+                singles_total += 1
+                if correct:
+                    singles_correct += 1
+            elif selection == SelectionType.DOUBLE:
+                doubles_total += 1
+                if correct:
+                    doubles_correct += 1
+            elif selection == SelectionType.FULL:
+                full_covered = True
+
+            post_mortem = "" if correct else _post_mortem_hint(pred, actual)
+            evaluations.append(MatchEvaluation(
+                game_number=game_num,
+                home_team=pred["home_team"],
+                away_team=pred["away_team"],
+                our_prediction=[Outcome(o) for o in predicted_raw],
+                selection_type=selection,
+                actual_result=actual,
+                correct=correct,
+                confidence=pred.get("confidence", 0.0),
+                post_mortem=post_mortem,
+            ))
+
+        evaluation = WeeklyEvaluation(
+            draw_number=draw_number,
+            draw_date=draw_date,
+            evaluations=evaluations,
+            total_correct=total_correct,
+            singles_correct=singles_correct,
+            singles_total=singles_total,
+            doubles_correct=doubles_correct,
+            doubles_total=doubles_total,
+            full_covered=full_covered,
+        )
+
+        _save_results(draw_number, draw_date, evaluations)
+        _append_to_history(draw_number, draw_date, evaluations, evaluation)
+        logger.info(
+            "Backfilled draw %d: %d/%d correct (%.1f%%)",
+            draw_number, total_correct, len(evaluations), evaluation.accuracy_pct,
+        )
+        backfilled += 1
+
+    return backfilled
+
 
 def build_improvement_prompt() -> str:
     """

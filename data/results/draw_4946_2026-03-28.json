@@ -1,0 +1,186 @@
+{
+  "draw_number": 4946,
+  "draw_date": "2026-03-28",
+  "evaluated_at": "2026-05-08T18:34:04.586023+00:00",
+  "results": [
+    {
+      "game_number": 1,
+      "home_team": "Blackpool",
+      "away_team": "Burton",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.65,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 2,
+      "home_team": "Exeter",
+      "away_team": "Leyton Orient",
+      "our_prediction": [
+        "2"
+      ],
+      "selection_type": "single",
+      "actual_result": "X",
+      "correct": false,
+      "confidence": 0.83,
+      "post_mortem": "Predicted 2 (single, conf=0.83) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Orient's actual goals (2.0/g) outpace xGF (1.50) — slight regression risk on output; Desperate home sides can be unpredictable — Exeter may fight harder with relegation looming. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+    },
+    {
+      "game_number": 3,
+      "home_team": "Reading",
+      "away_team": "Wigan",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.77,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Stockport",
+      "away_team": "Wimbledon",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.78,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Wycombe",
+      "away_team": "Port Vale",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.8,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Barnet",
+      "away_team": "Cambridge",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": false,
+      "confidence": 0.57,
+      "post_mortem": "Predicted 2/X (double, conf=0.57) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: Cambridge's quality gap over Barnet is significant even with injuries; Barnet's home xGA (1.86) suggests they can be got at — Cambridge may still create enough. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 7,
+      "home_team": "Bristol Rovers",
+      "away_team": "Accrington",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.83,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Colchester",
+      "away_team": "Walsall",
+      "our_prediction": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.55,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Crawley Town",
+      "away_team": "Gillingham",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.61,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "Crewe",
+      "away_team": "Oldham",
+      "our_prediction": [
+        "2",
+        "1"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.65,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 11,
+      "home_team": "Newport",
+      "away_team": "Shrewsbury",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.6,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "Salford",
+      "away_team": "Milton Keynes Dons",
+      "our_prediction": [
+        "2",
+        "1"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.67,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Swindon",
+      "away_team": "Fleetwood",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.72,
+      "post_mortem": ""
+    }
+  ]
+}

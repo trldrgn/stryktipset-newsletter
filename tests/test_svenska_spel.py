@@ -192,7 +192,7 @@ class TestGetCurrentDrawNumber:
     def test_returns_draw_number_from_open_draws(self):
         open_draws_resp = MagicMock()
         open_draws_resp.json.return_value = {
-            "draws": [{"draw": {"drawNumber": 4946}}]
+            "draws": [{"drawNumber": 4946}]
         }
         open_draws_resp.raise_for_status.return_value = None
 

@@ -1,0 +1,173 @@
+{
+  "draw_number": 4945,
+  "draw_date": "2026-03-22",
+  "evaluated_at": "2026-05-08T18:18:28.649248+00:00",
+  "results": [
+    {
+      "game_number": 1,
+      "home_team": "Leeds",
+      "away_team": "Brentford",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 2,
+      "home_team": "Everton",
+      "away_team": "Chelsea",
+      "our_prediction": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 3,
+      "home_team": "Fulham",
+      "away_team": "Burnley",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Bristol City",
+      "away_team": "West Bromwich",
+      "our_prediction": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "actual_result": "2",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Charlton",
+      "away_team": "Norwich",
+      "our_prediction": [
+        "2"
+      ],
+      "selection_type": "single",
+      "actual_result": "2",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Portsmouth",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Sheffield U",
+      "away_team": "Wrexham",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Southampton",
+      "away_team": "Oxford",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Swansea",
+      "away_team": "Coventry",
+      "our_prediction": [
+        "2"
+      ],
+      "selection_type": "single",
+      "actual_result": "2",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "Watford",
+      "away_team": "Leicester",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 11,
+      "home_team": "Plymouth",
+      "away_team": "Huddersfield",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "Stevenage",
+      "away_team": "Reading",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Wimbledon",
+      "away_team": "Peterborough",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "post_mortem": ""
+    }
+  ]
+}

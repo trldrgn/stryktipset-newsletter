@@ -25,6 +25,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from analysis.claude_analyst import analyse_matches
 from analysis.coupon_optimizer import optimise_coupon
 from analysis.evaluator import (
+    backfill_evaluations,
     build_improvement_prompt,
     evaluate_last_week,
     save_predictions,
@@ -258,6 +259,11 @@ def main() -> None:
         help="Backfill xG data for last 5 weeks",
     )
     parser.add_argument(
+        "--backfill-eval",
+        action="store_true",
+        help="Evaluate all prediction files not yet in history.json (backfill)",
+    )
+    parser.add_argument(
         "--test-email",
         action="store_true",
         help="Send the most recent newsletter HTML to configured recipients (test delivery)",
@@ -280,6 +286,11 @@ def main() -> None:
             print("\nxG database:")
             for league, count in sorted(leagues.items(), key=lambda x: -x[1]):
                 print(f"  {league}: {count} fixtures")
+        return
+
+    if args.backfill_eval:
+        n = backfill_evaluations()
+        print(f"\nBackfilled {n} draw(s) into history.json.")
         return
 
     if args.improve:

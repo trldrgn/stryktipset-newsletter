@@ -425,6 +425,7 @@ class MatchEvaluation:
     selection_type: SelectionType
     actual_result: Outcome
     correct: bool
+    confidence: float = 0.0
     post_mortem: str = ""           # Claude-generated explanation of what we missed
 
 

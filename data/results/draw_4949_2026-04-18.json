@@ -1,7 +1,7 @@
 {
   "draw_number": 4949,
   "draw_date": "2026-04-18",
-  "evaluated_at": "2026-04-25T07:23:20.981246+00:00",
+  "evaluated_at": "2026-05-08T18:34:04.724203+00:00",
   "results": [
     {
       "game_number": 1,
@@ -14,6 +14,7 @@
       "selection_type": "double",
       "actual_result": "2",
       "correct": false,
+      "confidence": 0.63,
       "post_mortem": "Predicted 1/X (double, conf=0.63) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Chelsea's genuine poor recent form (3 defeats in last 5) — xG regression not guaranteed to arrive now; United's away record is solid and they won the reverse fixture 2-1; do not underestimate them even patched up. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
     },
     {
@@ -26,6 +27,7 @@
       "selection_type": "single",
       "actual_result": "X",
       "correct": false,
+      "confidence": 0.82,
       "post_mortem": "Predicted 2 (single, conf=0.82) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: New manager home debut effect could galvanise Spurs for one game; Brighton missing Lewis Dunk and Webster in central defence — aerial threat from a physical Spurs set-piece side. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
     },
     {
@@ -40,6 +42,7 @@
       "selection_type": "full",
       "actual_result": "2",
       "correct": true,
+      "confidence": 0.58,
       "post_mortem": ""
     },
     {
@@ -52,6 +55,7 @@
       "selection_type": "single",
       "actual_result": "1",
       "correct": true,
+      "confidence": 0.82,
       "post_mortem": ""
     },
     {
@@ -65,6 +69,7 @@
       "selection_type": "double",
       "actual_result": "2",
       "correct": false,
+      "confidence": 0.68,
       "post_mortem": "Predicted 1/X (double, conf=0.68) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Bristol City's own home form is poor (W L L L D in last five at home); Bristol City xGA 2.02 suggests defensive fragility — Norwich may still create chances even depleted. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
     },
     {
@@ -78,6 +83,7 @@
       "selection_type": "double",
       "actual_result": "X",
       "correct": true,
+      "confidence": 0.68,
       "post_mortem": ""
     },
     {
@@ -91,6 +97,7 @@
       "selection_type": "double",
       "actual_result": "2",
       "correct": true,
+      "confidence": 0.65,
       "post_mortem": ""
     },
     {
@@ -103,6 +110,7 @@
       "selection_type": "single",
       "actual_result": "2",
       "correct": true,
+      "confidence": 0.88,
       "post_mortem": ""
     },
     {
@@ -116,6 +124,7 @@
       "selection_type": "double",
       "actual_result": "2",
       "correct": true,
+      "confidence": 0.62,
       "post_mortem": ""
     },
     {
@@ -129,6 +138,7 @@
       "selection_type": "double",
       "actual_result": "1",
       "correct": true,
+      "confidence": 0.7,
       "post_mortem": ""
     },
     {
@@ -142,6 +152,7 @@
       "selection_type": "double",
       "actual_result": "X",
       "correct": true,
+      "confidence": 0.62,
       "post_mortem": ""
     },
     {
@@ -154,6 +165,7 @@
       "selection_type": "single",
       "actual_result": "2",
       "correct": true,
+      "confidence": 0.82,
       "post_mortem": ""
     },
     {
@@ -167,6 +179,7 @@
       "selection_type": "double",
       "actual_result": "2",
       "correct": true,
+      "confidence": 0.78,
       "post_mortem": ""
     }
   ]

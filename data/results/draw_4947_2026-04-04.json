@@ -1,0 +1,186 @@
+{
+  "draw_number": 4947,
+  "draw_date": "2026-04-04",
+  "evaluated_at": "2026-05-08T18:34:04.637515+00:00",
+  "results": [
+    {
+      "game_number": 1,
+      "home_team": "Southampton",
+      "away_team": "Arsenal",
+      "our_prediction": [
+        "2"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": false,
+      "confidence": 0.88,
+      "post_mortem": "Predicted 2 (single, conf=0.88) but result was 1. OVERCONFIDENCE: High-confidence single failed. Were multiple independent signals truly aligned, or were they correlated? IGNORED RISKS: Risk flags were noted but not weighted enough: Cup football is inherently unpredictable; Southampton's long unbeaten run shows real morale; Arsenal's away form in the league shows a draw tendency, though the quality comparison here is fundamentally different."
+    },
+    {
+      "game_number": 2,
+      "home_team": "Chelsea",
+      "away_team": "Port Vale",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.94,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 3,
+      "home_team": "Atlético Madrid",
+      "away_team": "Barcelona",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.68,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Mallorca",
+      "away_team": "Real Madrid",
+      "our_prediction": [
+        "2"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": false,
+      "confidence": 0.72,
+      "post_mortem": "Predicted 2 (single, conf=0.72) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: Real Madrid missing four quality players including Valverde (midfield) and Rodrygo (attack) — reduced creative threat; Mallorca's home form with new manager has been slightly better: two recent home wins suggest some defensive resilience."
+    },
+    {
+      "game_number": 5,
+      "home_team": "Real Betis",
+      "away_team": "Espanyol",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.65,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Lazio",
+      "away_team": "Parma",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.67,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Verona",
+      "away_team": "Fiorentina",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.66,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Stuttgart",
+      "away_team": "Dortmund",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.6,
+      "post_mortem": "Predicted 1/X (double, conf=0.60) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Stuttgart scoring ahead of xG — regression could reduce their goals at a key moment; Both sides carry 3 confirmed absentees each, broadly neutralising each other. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 9,
+      "home_team": "Strasbourg",
+      "away_team": "Nice",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.78,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "Brest",
+      "away_team": "Rennes",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.57,
+      "post_mortem": "Predicted 1/X (double, conf=0.57) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Rennes' H2H dominance is historically emphatic — all 5 recent meetings won; New manager Haise may have enough quality in reserve to overcome absences. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 11,
+      "home_team": "Lille",
+      "away_team": "Lens",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.64,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "OH Leuven",
+      "away_team": "Standard Liege",
+      "our_prediction": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.54,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Ajax",
+      "away_team": "Twente",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.6,
+      "post_mortem": "Predicted 1/X (double, conf=0.60) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Twente xGF 1.56 vs GF 2.0 — overperforming, regression downward in scoring expected; Ajax depleted squad may underperform their home advantage in a high-stakes fixture. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    }
+  ]
+}

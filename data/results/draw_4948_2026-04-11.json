@@ -1,7 +1,7 @@
 {
   "draw_number": 4948,
   "draw_date": "2026-04-11",
-  "evaluated_at": "2026-04-18T09:07:29.890299+00:00",
+  "evaluated_at": "2026-05-08T18:34:04.683146+00:00",
   "results": [
     {
       "game_number": 1,
@@ -13,6 +13,7 @@
       "selection_type": "single",
       "actual_result": "1",
       "correct": true,
+      "confidence": 0.76,
       "post_mortem": ""
     },
     {
@@ -26,6 +27,7 @@
       "selection_type": "double",
       "actual_result": "X",
       "correct": true,
+      "confidence": 0.62,
       "post_mortem": ""
     },
     {
@@ -38,6 +40,7 @@
       "selection_type": "single",
       "actual_result": "2",
       "correct": true,
+      "confidence": 0.82,
       "post_mortem": ""
     },
     {
@@ -51,6 +54,7 @@
       "selection_type": "double",
       "actual_result": "2",
       "correct": false,
+      "confidence": 0.62,
       "post_mortem": "Predicted 1/X (double, conf=0.62) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Charlton's home record is genuinely poor (L L W L L in last 5 at home) despite the xG regression argument; Both sides have four players absent — relatively balanced injury picture removes any advantage there. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
     },
     {
@@ -64,6 +68,7 @@
       "selection_type": "double",
       "actual_result": "2",
       "correct": false,
+      "confidence": 0.72,
       "post_mortem": "Predicted 1/X (double, conf=0.72) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Leicester's persistent draw tendency (three consecutive draws, D D D in form) may mean the regression takes time; Leicester's actual league position (19th) carries psychological weight that may affect performance levels. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
     },
     {
@@ -76,6 +81,7 @@
       "selection_type": "single",
       "actual_result": "2",
       "correct": false,
+      "confidence": 0.82,
       "post_mortem": "Predicted 1 (single, conf=0.82) but result was 2. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: H2H has gone against Boro in recent meetings — Portsmouth have beaten them in both legs this season and last year; Boro's eight absentees dilute their own depth, though far less severely than Portsmouth's ten."
     },
     {
@@ -89,6 +95,7 @@
       "selection_type": "double",
       "actual_result": "1",
       "correct": true,
+      "confidence": 0.63,
       "post_mortem": ""
     },
     {
@@ -102,6 +109,7 @@
       "selection_type": "double",
       "actual_result": "1",
       "correct": true,
+      "confidence": 0.63,
       "post_mortem": ""
     },
     {
@@ -114,6 +122,7 @@
       "selection_type": "single",
       "actual_result": "1",
       "correct": true,
+      "confidence": 0.87,
       "post_mortem": ""
     },
     {
@@ -127,6 +136,7 @@
       "selection_type": "double",
       "actual_result": "X",
       "correct": true,
+      "confidence": 0.7,
       "post_mortem": ""
     },
     {
@@ -140,6 +150,7 @@
       "selection_type": "double",
       "actual_result": "2",
       "correct": false,
+      "confidence": 0.72,
       "post_mortem": "Predicted 1/X (double, conf=0.72) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Stevenage are UP-FORM and carried themselves to a draw in the reverse fixture — they will not be passive opponents; Bradford's overall form (W W L D L) has been inconsistent outside of home games — no momentum concerns but not imperious. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
     },
     {
@@ -153,6 +164,7 @@
       "selection_type": "double",
       "actual_result": "1",
       "correct": true,
+      "confidence": 0.55,
       "post_mortem": ""
     },
     {
@@ -167,6 +179,7 @@
       "selection_type": "full",
       "actual_result": "X",
       "correct": true,
+      "confidence": 0.55,
       "post_mortem": ""
     }
   ]

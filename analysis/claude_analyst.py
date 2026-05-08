@@ -422,6 +422,29 @@ CONFIDENCE CALIBRATION — use this scale precisely:
   Important: Your top 4 confidence scores become singles. If you cannot find 4 games worthy of
   >0.80 confidence, that's fine — but flag it in executive_summary as a volatile week.
 
+SELECTION STRATEGY — choosing which outcome to drop in doubles:
+When you play a double (2 outcomes) you are EXCLUDING one outcome. That excluded outcome must
+be the one with the weakest supporting case — it does NOT have to be the longest-odds outcome,
+and it must NOT reflexively be "2" (away win).
+
+Away teams win roughly 28–35% of matches across European leagues. "2" earns its place in a
+double unless you have concrete positive evidence against it — e.g.:
+  • Away team's recent away form is poor (e.g., 0 wins in last 5 away)
+  • Away team missing multiple key players
+  • H2H strongly favours the home team at this specific venue
+  • Market prices the away team as a heavy outsider (odds >= 4.00)
+If none of those apply, keep "2" in the double and drop whichever of "1" or "X" has the
+weaker case instead.
+
+The same discipline applies to dropping "1" or "X" — always ask:
+  "What positive evidence do I have AGAINST this outcome?"
+not "What evidence do I have FOR the other two?"
+
+For every double, add one entry to risk_flags stating which outcome you dropped and why:
+  "DROPPED [2]: away form 0W in last 5 away + missing top scorer"
+  "DROPPED [1]: home team DOWN-FORM, lost 4 of last 5 at home"
+  "DROPPED [X]: both teams need a win, top-of-table vs relegation battle"
+
 CRITICAL RULES:
 - You MUST return valid JSON exactly as specified — the system depends on it for parsing
 - predicted_outcomes MUST be listed in descending order of your confidence (most likely first)
