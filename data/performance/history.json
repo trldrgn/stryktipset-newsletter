@@ -1330,5 +1330,199 @@
         "post_mortem": "Predicted 2 (single, conf=0.80) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Tranmere's relegation pressure can occasionally produce desperate, committed performances; Grimsby's two away defeats in five show vulnerability on the road — not impervious. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
       }
     ]
+  },
+  {
+    "draw_number": 4952,
+    "draw_date": "2026-05-08",
+    "appended_at": "2026-05-15T08:42:40.407620+00:00",
+    "total_correct": 10,
+    "total_games": 13,
+    "accuracy_pct": 76.9,
+    "singles_correct": 3,
+    "singles_total": 4,
+    "doubles_correct": 6,
+    "doubles_total": 8,
+    "full_covered": true,
+    "games": [
+      {
+        "game_number": 1,
+        "home_team": "Manchester City",
+        "away_team": "Brentford",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.87,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 2,
+        "home_team": "Sunderland",
+        "away_team": "Manchester United",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "confidence": 0.83,
+        "post_mortem": "Predicted 2 (single, conf=0.83) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: United's xGA of 1.67 suggests they can be opened up — Sunderland may create chances; DROPPED [X]: No structural case for a draw — Sunderland losing at home repeatedly, United on winning run. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      },
+      {
+        "game_number": 3,
+        "home_team": "Brighton",
+        "away_team": "Wolverhampton",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.88,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 4,
+        "home_team": "Fulham",
+        "away_team": "Bournemouth",
+        "our_prediction": [
+          "2",
+          "1"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.68,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 5,
+        "home_team": "Bolton",
+        "away_team": "Bradford",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.62,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 6,
+        "home_team": "Stevenage",
+        "away_team": "Stockport",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.62,
+        "post_mortem": "Predicted 1/X (double, conf=0.62) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Play-off dynamics could produce either a cagey draw or a high-scoring thriller; DROPPED [2]: Stevenage's home fortress and play-off first-leg caution make away win least likely; Stockport more likely to settle for a draw they can build on. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 7,
+        "home_team": "Lazio",
+        "away_team": "Inter",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.75,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 8,
+        "home_team": "Lecce",
+        "away_team": "Juventus",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.84,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 9,
+        "home_team": "Atlético Madrid",
+        "away_team": "Celta de Vigo",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.72,
+        "post_mortem": "Predicted 1/X (double, conf=0.72) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Atlético overperforming xGF (+0.42/5g) — offensive efficiency may not hold; DROPPED [2]: Atlético's home advantage plus title race motivation outweighs Celta's away quality; odds of 3.65 reflect correct underdog status. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 10,
+        "home_team": "Sevilla",
+        "away_team": "Espanyol",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.67,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 11,
+        "home_team": "Real Sociedad",
+        "away_team": "Real Betis",
+        "our_prediction": [
+          "1",
+          "X",
+          "2"
+        ],
+        "selection_type": "full",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.58,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 12,
+        "home_team": "GIF Sundsvall",
+        "away_team": "IFK Norrköping",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.65,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 13,
+        "home_team": "Bodö/Glimt",
+        "away_team": "Brann",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.72,
+        "post_mortem": ""
+      }
+    ]
   }
 ]
