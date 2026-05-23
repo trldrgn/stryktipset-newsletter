@@ -1,0 +1,297 @@
+{
+  "draw_number": 4954,
+  "draw_date": "2026-05-23",
+  "saved_at": "2026-05-23T08:42:49.241768+00:00",
+  "executive_summary": "This is a final-day Premier League card supplemented by Serie A and La Liga closers, and the dominant theme is motivation asymmetry — relegation battles, European qualification chases, and title-positioning all collide simultaneously. Analytically, the standout signal of the week is xG regression: Nottingham Forest have been outscoring their xGF by over a goal per game for five straight matches, a deeply fragile foundation against Bournemouth who are themselves underperforming their xGF. Only three matches reach the 0.80+ confidence threshold required for singles (Man City, Cremonese-Como, Arsenal), making this a volatile week where discipline in doubles and careful coupon architecture matters more than conviction.",
+  "value_radar": [
+    "Game 9 (Nottingham vs Bournemouth): Bournemouth at 2.15 looks genuinely underpriced. Forest's xGF overperformance of +1.28 per game over five matches is one of the most extreme regression signals on the coupon; Bournemouth's excellent away form (W3 D2 in last five away) is being discounted by the public, who back the home side at only 23%.",
+    "Game 13 (Villarreal vs Atlético Madrid): The draw at 4.0 is underpriced relative to the newspaper consensus (5 of 10 tips point to a share of the spoils), the near-identical league positions (P3 vs P4), and Atlético's mixed away record. The market offers the same price for home and draw despite Villarreal's 4W-1L home form.",
+    "Game 8 (Fulham vs Newcastle): Newcastle at 2.32 away despite winning just once in their last five away matches represents poor value. The home or draw at combined implied probability looks more accurate given Fulham's xG regression potential (massively underperforming xGF over 10 games).",
+    "Game 6 (Sunderland vs Chelsea): Chelsea at 2.04 away is perhaps the most misleading headline price on the card — they are DOWN-FORM, scoring 0.8 goals per game over five matches against an xGF of 1.09, and their away record reads W1 D1 L3 in the last five. The draw and home win here represent genuine value against a side in freefall."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Crystal Palace",
+      "away_team": "Arsenal",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.87,
+      "key_factors": [
+        "Arsenal UP-FORM: four wins in last five all competitions, excellent xG profile (xGF 1.94, xGA 1.14)",
+        "Crystal Palace DOWN-FORM: conceding 2.6 GA vs 1.87 xGA — defensive exposure worse than expected",
+        "9 of 10 newspaper tipsters back Arsenal; market consensus and analytics aligned"
+      ],
+      "risk_flags": [
+        "Final-day complacency risk if Arsenal's title position is already secured — rotation possible",
+        "Palace home form slightly better than overall form (2 wins in last 5 at Selhurst); set-piece threat cannot be dismissed"
+      ],
+      "analysis": "Arsenal arrive at Selhurst Park as the dominant force on the coupon — UP-FORM, sitting top of the Premier League, and carrying a five-game sequence of four wins and one defeat. Their xG profile is persuasive: a 1.94 xGF against a miserly 1.14 xGA over five games, while their actual goals-against is a microscopic 0.4. If anything, they are slightly underperforming their own xGF (1.94 versus 1.4 scored), which points toward a regression upward in output rather than downward. Their away form in particular — three wins, one loss, one draw in the last five — confirms they are not a team that turns passive on the road.\n\nCrystal Palace sit 15th, wearing the DOWN-FORM flag with some justification: their last five all-competition results read two draws and three losses, and they have been conceding well beyond expected levels (2.6 GA versus 1.87 xGA over five games). Their home form is fractionally better — two wins in the last five — but neither of those wins came against top-half opposition in anything like Arsenal's current condition. Their 1.68 xGF suggests genuine attacking intent, but converting it into goals has been a persistent failure.\n\nWith no significant absences confirmed for either side and nine of ten newspaper tipsters calling this for Arsenal, the value of the 1.44 away price is modest but the direction is correct. Palace at 7.0 implies a 14% probability that is frankly generous to a team that has not won in five straight all-competition outings. The market, public, and analytical picture are rare in their alignment here.\n\nThis is as close to a routine away win as the Premier League produces on the final day. Arsenal's defensive structure has been exceptional and their opponents are in no position to exploit the slight xGF underperformance. Confident call for an Arsenal win.",
+      "value_note": "Arsenal at 1.44 is short but fair; the 7.0 on Palace overstates their chances given their form collapse"
+    },
+    {
+      "game_number": 2,
+      "home_team": "Manchester City",
+      "away_team": "Aston Villa",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.92,
+      "key_factors": [
+        "City UP-FORM, dominant home xG profile (xGF 2.49, xGA 1.09), 4W in last 5 at home",
+        "Aston Villa 0 wins in last 5 away: D2 L3 including 0-1 and 1-3",
+        "All 10 newspaper tipsters back City; public 71%; complete analytical consensus"
+      ],
+      "risk_flags": [
+        "Final-day fixture with a secured league position may invite rotation — though City at home rarely drop standards",
+        "Villa's higher-than-expected scoring rate (2.2 actual vs 1.94 xGF) gives them some counter-attack threat"
+      ],
+      "analysis": "Manchester City at the Etihad, UP-FORM, sitting second in the Premier League, and carrying the strongest home xG profile on the entire coupon. Their 2.49 xGF and 1.09 xGA over five home-adjacent matches underline a team operating at near-peak efficiency; they have won four of their last five at home and their corner and shot volumes (20.6 attempts, 9.0 corners per game) paint the picture of a side that completely dominates territory. The 1.33 price reflects genuine probability — City win roughly three quarters of their home matches in this form.\n\nAston Villa arrive in fourth place but carrying baggage that makes their league position misleading for this specific fixture. Their away form over five matches reads zero wins: two draws and three defeats, including a 0-1 and a 1-3. Even their overall xGA has expanded (1.44 over five games) and they have been overperforming their xGF slightly (2.2 scored versus 1.94 expected) — meaning their attacking numbers flatter them. Against City's defensive structure, the away side's margin for error is near zero.\n\nThe newspaper consensus is perfect — all ten tip City — and the public back them at 71%. When market, media, and data agree this emphatically, the appropriate analytical response is to find reasons against it, not reflexively seek contrarian value. The reasons are thin: Villa are a quality side with good individual players, but their away form is the concrete disqualifier. A team with zero wins in five road fixtures has no business being backed against a dominant home force.\n\nThis is the highest-confidence selection on the coupon. City win.",
+      "value_note": "At 1.33 the price is correct. No value to chase — this is a SINGLE play on merit, not margin"
+    },
+    {
+      "game_number": 3,
+      "home_team": "Brighton",
+      "away_team": "Manchester United",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.67,
+      "key_factors": [
+        "Brighton strong home form (W4 in last 5 at Amex) with excellent 10-game xGA of 1.00",
+        "8 of 10 newspapers back Brighton; no tipster calls United",
+        "Man United away form mixed: W1 D2 L1 W1 in last 5 road games"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Man United away record is inconsistent (W1 of last 5 away) and no newspaper backs them",
+        "Man United UP-FORM overall could mean they carry momentum into a tricky trip — draw remains live"
+      ],
+      "analysis": "Brighton's home form is legitimately impressive in isolation — four wins in their last five at the Amex, with their xGF (2.00) and xGA (1.25) over five games painting a controlled, attacking picture. They concede around a goal per game at home and create reliably. Their 10-game xGA of 1.00 is one of the tightest defensive baselines in the division, suggesting a team with real structural solidity.\n\nManchester United arrive wearing the UP-FORM flag overall, having won four of their last five all-competition matches. But unpacking their away record introduces meaningful doubt: in five recent road trips the form reads W1 D2 L1 W1 — workable but not dominant. They are creating chances (xGF 1.93 over five) and their goals-against is well managed (xGA 1.34, actual 1.0), but they haven't bullied anyone away from home this season.\n\nEight of ten newspapers back Brighton, and none tip United. The public's 47% on Brighton versus 30% on United suggests the crowd sees this clearly enough. There is no contrarian signal here that is strong enough to override: United's away form is mixed, Brighton's home fortress record is legitimate, and the quality indicators point similarly. The draw cannot be entirely dismissed given United's defensive solidity on the road, but the weight of evidence leans to the home side.\n\nDropping the away win. Brighton to win, with the draw retained as insurance against United's road resilience.",
+      "value_note": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Liverpool",
+      "away_team": "Brentford",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.68,
+      "key_factors": [
+        "Liverpool xG regression risk: scoring 2.0 goals per game vs xGF of only 1.21 — massively overperforming, due to normalise",
+        "10/10 newspapers and 68% public back Liverpool — consensus is clear but xG data is a contrarian warning",
+        "Brentford underperforming xGF (1.2 actual vs 1.63 expected) — they may score more than recent results imply"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Brentford W0 in last 4 away (2 losses, 2 draws) + Liverpool home venue advantage",
+        "Liverpool's xG overperformance is the sharpest regression warning signal on the entire coupon — scoring 65% more than expected is unsustainable"
+      ],
+      "analysis": "Liverpool host Brentford at Anfield on the final day, and the unanimous newspaper verdict (10/10 for a home win) combined with a 1.70 price reflects a strong default expectation. Florian Wirtz and Mohamed Salah feature in the reported lineup, which is a formidable attacking pairing. However, the xG data introduces a significant caution that most of those newspaper tips ignore: Liverpool's actual goals over five games (2.0) massively outstrip their xGF (1.21), an overperformance of +0.79 per game. That is the signature of a team running extremely hot in front of goal, finishing chances at an unsustainable rate. Regression to the mean would suggest their scoring rate declines.\n\nTheir defensive picture is similarly nuanced: xGA of 1.87 but conceding exactly 2.0 — broadly in line. Over ten games the pattern holds: Liverpool are consistently scoring well above their expected output. This has masked what are genuinely average underlying numbers — 12.0 shots per game and only 4.4 on target. Eventually the conversion rate normalises.\n\nBrentford are not a cupcake opposition at 4.4. Their away form (0-3, 1-2, 0-0, 0-0, 4-3) is lumpy — capable of keeping it tight or suddenly producing a big game — and their xGF (1.63) against an xGA (1.92) over five games suggests they can create but also leak. They have underperformed their xGF (1.2 actual vs 1.63 expected), meaning they may score more here than their recent results suggest.\n\nThis remains a home win lean because of Anfield's atmosphere on a final day, Liverpool's quality, and Brentford's mixed away form. But the xG regression flag tempers confidence meaningfully. The draw is retained; it cannot be discarded given Liverpool's fragile underlying numbers.",
+      "value_note": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Tottenham",
+      "away_team": "Everton",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.58,
+      "key_factors": [
+        "Tottenham's home form is dismal: W0 D2 L3 in last 5 at home — home advantage is theoretical, not proven",
+        "Everton DOWN-FORM but away record is mixed (not terrible): D L D L W in last 5 away",
+        "9/10 newspapers back Spurs, which appears to reflect home-bias over actual home form"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Everton DOWN-FORM overall and inconsistent away — not a side with the quality to win at a Premier League venue in their current state",
+        "Spurs home form (W0 in last 5) is the biggest risk to the home-win element; draw is highly live"
+      ],
+      "analysis": "Tottenham sit 17th in the Premier League, and while their overall five-game record shows some resilience (1W 2D 2L), their home record is genuinely alarming: zero wins in their last five at home, with results reading D L L L D. That is the kind of home form that turns a nominal home-field advantage into a liability. Their xGF (1.48) and xGA (1.09) over five games suggest they are not totally outclassed, but creating 1.48 expected goals at home while posting zero wins tells you about finishing and psychology as much as xG.\n\nEverton are DOWN-FORM and arrive as visitors, but their away record is more competitive than their overall form suggests: D L D L W in the last five away, which includes a win and two draws. Their xGF (1.54) is higher than Spurs' xGA allows (1.09 — so Everton will create), and their xGA (1.84) is a concern defensively but Spurs haven't been clinical enough to exploit that. Nine of ten newspapers tip Tottenham, which feels like default home-bias rather than a careful reading of Spurs' dreadful home form.\n\nThe Spurs card total (2.8 yellow cards per home game) is the highest on the coupon, hinting at a frustrated, fractious side that concedes free-kicks and loses concentration. Neither team has a compelling case to be trusted fully. The home win is the marginal lean because of home advantage and Everton's DOWN-FORM tag, but Spurs' home record is too broken to back with confidence.\n\nDropping the away win — Everton's overall form is falling and they lack the consistency to win away against a motivated Spurs side. Home win or draw.",
+      "value_note": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Sunderland",
+      "away_team": "Chelsea",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.57,
+      "key_factors": [
+        "Chelsea DOWN-FORM: 0.8 goals per game over five matches, SoT only 3.0 per game — attacking collapse",
+        "Chelsea away record: W1 D1 L3 in last five road trips — not a convincing traveller",
+        "Market prices Sunderland home (3.75) and draw (3.70) at virtually identical probability — both are live"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Chelsea DOWN-FORM, scoring 0.8 gpg, W1 in last five away — odds of 2.04 significantly overstate their chances given current form",
+        "Sunderland's home form is also poor (recent big loss 0-5) — the draw may be more likely than a home win"
+      ],
+      "analysis": "Chelsea are in a concerning state by any reasonable reading of the data. The DOWN-FORM flag is well-earned: four defeats in their last five all-competition matches, and their attacking output has collapsed — just 0.8 goals per game over five matches against an xGF of 1.09. Even their expected output is modest, suggesting the problem runs deeper than bad finishing. Their shots on target (3.0 per game) is the lowest of any away side on this coupon. Going away from home they have managed W1 D1 L3 in recent outings.\n\nSunderland at 10th aren't a bad side in their own right, and while their home form reads mostly losses and draws, they have been unlucky over five matches by xG standards (xGF 1.12 versus 1.4 actual — slightly overperforming). Their 10-game baseline is more neutral. The home odds of 3.75 are almost identical to the draw price of 3.70, which is the market telling you it genuinely cannot separate those two outcomes — and that both are more likely than the headline 2.04 implies.\n\nFour of ten newspapers back Sunderland, six back Chelsea. But when the underlying form this badly contradicts the market favourite, those tips need scrutinising. Chelsea's xGF has been declining, their goals tally is barely above half a goal per game, and their defensive numbers have also leaked (xGA 1.61, conceding 1.8 actual). A visiting team in this state at nearly even-money is hard to endorse.\n\nDropping Chelsea. Sunderland or draw.",
+      "value_note": "Draw at 3.70 looks mildly underpriced given Chelsea's attacking collapse and the market's near-identical pricing of home and draw outcomes"
+    },
+    {
+      "game_number": 7,
+      "home_team": "West Ham",
+      "away_team": "Leeds",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "West Ham P18 — relegation survival on the line, maximum home motivation at London Stadium",
+        "Leeds UP-FORM overall but 0 wins in last 5 away games — road record is the critical weakness",
+        "10/10 newspapers back West Ham; motivation asymmetry strongly favours the home side"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Leeds 0 wins in last 5 away (4 draws, 1 win) — their away record simply does not support the away win here",
+        "West Ham DOWN-FORM overall and xGF only 1.10 — they struggle to create; this could stagnate into a draw rather than produce a home win"
+      ],
+      "analysis": "This is one of the most compelling motivation asymmetry matches on the coupon. West Ham sit 18th — in or very near the relegation zone — meaning this final-day fixture is a survival battle. Relegation-threatened teams playing at home in a must-win scenario have a well-documented tendency to raise intensity, compress space, and find results that surprise. The noise of a desperate home crowd and a manager under maximum pressure turns tactical caution into all-out effort. West Ham's home form (W2 D2 L1 in the last five at home) is actually reasonable, even if their overall recent form is DOWN-FORM.\n\nLeeds are UP-FORM overall with three wins in their last five, and their xG profile over five games is solid: xGF 1.90, xGA 1.33, with GF 2.0 and GA 0.8 suggesting they have been clinical and defensively sound. However, their away form tells a sharply different story — zero wins in their last five road trips (D X D X X X pattern), with the most recent five reading draw, draw, win, draw, draw. Leeds on the road have been comfortable to play against: hard to beat but not winning. That away goalscoring drop-off (GA 0.8 away vs their xGA figures) could mean their defence has been tighter away, but the zero wins is the key fact.\n\nAll ten newspapers tip West Ham, which in a relegation battle makes emotional sense even if the xG numbers nominally favour Leeds. The combination of West Ham's home desperation and Leeds' inability to win on the road creates a clear direction: backing the draw or the home side. Dropping Leeds away.",
+      "value_note": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Fulham",
+      "away_team": "Newcastle",
+      "predicted_outcomes": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Fulham xGF regression pending: scoring 0.7 gpg vs xGF of 1.42 over 10 games — one of the largest underperformances on the coupon",
+        "Newcastle W1 D1 L3 in last 5 away — poor road form undermines their 2.32 away price",
+        "AS betting preview independently identifies the draw as value — aligns with the analytical signal"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Newcastle W1 in last 5 away games; their defensive xGA on the road (2.00 per game) is being masked by good goalkeeping — a fragile foundation",
+        "Fulham's very low shot-on-target rate (2.8 per game) may limit the home win even if they create more — draw could be the most likely resolution"
+      ],
+      "analysis": "Fulham's xG numbers are the most extreme underperformance story on the coupon for a home side. Over ten games their xGF is 1.42 but actual goals scored is just 0.7 — they have been creating chances and consistently failing to convert them. Their shots-on-target rate (2.8 per game) is low, suggesting that even the xGF figure may be generous, but over a ten-game sample a -0.72 xG overperformance on attack is significant. A team this deep in the hole is either facing a goalkeeper having an exceptional season or will see a correction. What the data does not show is a dysfunctional side — their xGA (1.70 over ten games, actual 1.0) is well controlled, meaning they have been grinding out low-scoring results despite lack of goals.\n\nNewcastle away from home have been inconsistent. Their last five away trips read D L L W L — one win in five, with losses against quality opposition but also against middling sides. Their xGA over ten games (2.00) is high for a side with European ambitions, suggesting their defence has leaked chances on the road despite conceding only 1.4 actual. That xGA overperformance (conceding less than expected) is fragile in the same way Nottingham's xGF overperformance is fragile. The AS betting preview identifies the draw as the value call here, and that matches the analytical picture: two teams with fragile underlying numbers meeting at a neutral emotional moment.\n\nDropping the away win. Newcastle's road record is too inconsistent and their defensive numbers on the road are not as solid as the concession tally suggests. Draw or home win.",
+      "value_note": "Draw at 3.75 offers genuine value; Fulham's xG regression could produce more goals but not necessarily enough to beat a Newcastle side defending adequately"
+    },
+    {
+      "game_number": 9,
+      "home_team": "Nottingham Forest",
+      "away_team": "Bournemouth",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.79,
+      "key_factors": [
+        "Forest xG regression: scoring 3.0 gpg vs xGF 1.72 over 5 games (+1.28 per game overperformance) — strongest regression signal on the coupon",
+        "Bournemouth excellent away form: W3 D2 L0 in last 5 away — unbeaten with three wins on the road",
+        "Bournemouth underperforming xGF (1.8 actual vs 2.06 expected) — attacking regression upward due"
+      ],
+      "risk_flags": [
+        "DROPPED [1]: Forest's scoring record is a statistical illusion — xGF of 1.72 cannot sustain 3.0 goals per game, especially against Bournemouth's structured defence",
+        "Forest's home form has included draws and a loss in recent home matches — the City Ground is not an impenetrable fortress"
+      ],
+      "analysis": "The strongest xG regression signal on the entire coupon sits here, and it is unambiguous in its direction. Nottingham Forest have scored 3.0 goals per game over their last five matches against an xGF of only 1.72 — an overperformance of +1.28 goals per game. Across ten matches the signal holds: +0.81 overperformance. There is virtually no analytical precedent for this rate of clinical superiority being sustained. Forest have been scoring goals that their underlying chance creation does not merit. Against a competent defence, that luck evaporates.\n\nBournemouth provide exactly that competent defence. Their xGA over five games is 1.20, and they have conceded only 0.8 actual goals per game — one of the tightest away defensive records on the coupon. Their away form in the last five is W3 D2 L0 — unbeaten, with three wins. They are UP-FORM overall (1W 1W 1X 1W 1X in the last five) and sitting sixth in the league. Their attacking numbers are equally compelling: xGF of 2.06 over five matches but actual goals of only 1.8 — underperforming by 0.26, meaning their finishing has lagged their chance creation. Against a Forest side that has been conceding fewer goals than their xGA of 1.86 suggests they should (1.2 actual), the regression could swing both ways: Forest more vulnerable, Bournemouth sharper.\n\nEight of ten newspapers back Bournemouth. The public backs them at 52%. This is not a contrarian pick — it is analytically supported, form-supported, and confirmed by independent media consensus. Forest's UP-FORM flag reflects their inflated results, not their underlying quality. Dropping the home win.",
+      "value_note": "Bournemouth at 2.15 is the best risk-adjusted bet on the coupon once the xG regression signal is fully weighted"
+    },
+    {
+      "game_number": 10,
+      "home_team": "Burnley",
+      "away_team": "Wolverhampton",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.58,
+      "key_factors": [
+        "Both sides in deep relegation trouble (P19 vs P20) — maximum home desperation for Burnley",
+        "Wolves 0 wins in last 5 away games (D4 L1 in recent road form) — cannot win on the road",
+        "Burnley xGF only 0.78 — dangerously low attacking output; draw is a genuine outcome"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Wolves 0 wins in last 5 away and scoring 0.4 gpg on the road — not a team that wins away matches",
+        "Burnley's attacking impotence (xGF 0.78, 8.4 shots per game) means this could easily stagnate into a goalless draw — 1X not a comfortable hold"
+      ],
+      "analysis": "This is the bottom-of-the-table relegation dogfight of the card — 19th versus 20th in the Premier League — and the brutal truth is that both sides are analytically broken. Burnley's xGF over five games is 0.78 — the lowest of any home side on this coupon — and their actual scoring (0.8 per game) barely moves the needle. They have no wins in their last five at home (D L L D L) and their shot volume (8.4 per game) is the weakest home total here. Their attack, quite simply, does not function.\n\nWolves are marginally more concerning on the road. Their five-game away form reads L L L D L — four defeats and a draw. Their scoring over five matches is 0.4 goals per game against an xGF of 1.06 — a massive underperformance of -0.66. They create more chances than they convert, but converting more would require goalkeeper-beating shots that have not been falling for them. Their xGA (1.85) over five away games suggests they do not defend particularly well either.\n\nThe newspapers are genuinely split: four for Burnley, three for the draw, three for Wolves. That reflects the honest uncertainty. Burnley get a marginal lean here purely on home advantage and the desperation of a relegation battle at Turf Moor — their crowd and the high-stakes nature of the game should compress Wolves, who also have nothing to play for beyond pride. The draw is a real possibility given how poor both attacks are. Dropping Wolves away — zero away wins in five is a concrete negative that cannot be ignored regardless of their xGF potential.",
+      "value_note": ""
+    },
+    {
+      "game_number": 11,
+      "home_team": "Cremonese",
+      "away_team": "Como",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.83,
+      "key_factors": [
+        "Quality gap: Como 5th vs Cremonese 18th in Serie A — significant structural advantage",
+        "Como UP-FORM: W4 in last 5, excellent away record W3 D1 L1, underperforming xGF suggesting more goals due",
+        "All 10 newspapers back Como; Cremonese's xGF of 0.77 is chronically weak"
+      ],
+      "risk_flags": [
+        "Serie A final-day matches occasionally produce home upsets when relegated/relegation-threatened sides have pride to play for",
+        "Como's xGF underperformance (1.0 actual vs 1.47 expected) could mean their finishing remains streaky — draw not impossible if they miss chances"
+      ],
+      "analysis": "The quality differential here is among the clearest of the thirteen matches. Cremonese sit 18th in Serie A — in the relegation zone — and their underlying numbers reflect their station: xGF of 0.77 over five games, with home form showing one win, two losses and two draws in recent fixtures. Their defensive work has been marginally better than their xGA (0.93) implies — conceding 1.2 actual over five — but they lack the attacking firepower to trouble a properly organised side.\n\nComo arrive in fifth place, UP-FORM, with four wins in their last five all-competition matches. Their away form is particularly compelling: W3 D1 L1 in five road trips, with wins at 1-0, 2-0, and 2-1. They have been defensively secure on the road (0.93 xGA, 0.4 goals conceded actual — another underperformance on the defensive side, meaning they may actually have been even luckier than their results show). Their xGF over five matches is 1.47 versus only 1.0 goals scored — they are underperforming their chance creation, which points toward a regression upward in output. Against a Cremonese side that concedes regularly, that is a potent combination.\n\nAll ten newspapers pick Como. The public backs them at 62%. The market prices them at 1.68. There is no realistic contrarian argument: higher league position, better form, better away record, better xG. This is one of three selections on the coupon that crosses the 0.80 confidence threshold. Como to win.",
+      "value_note": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "Torino",
+      "away_team": "Juventus",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.78,
+      "key_factors": [
+        "Juventus exceptional away form: W3 D2 in last 5 road trips — undefeated away",
+        "Juventus xGF severely underperforming (-0.93 over 5 games, -0.80 over 10) — attacking regression upward strongly expected",
+        "Torino SoT only 2.2 per game — very limited attacking threat against Juve's tight defensive structure (xGA 0.56)"
+      ],
+      "risk_flags": [
+        "DROPPED [1]: Derby wildcard aside, Torino's attacking output (2.2 SoT, 1.0 actual goals) is insufficient against Juventus' defensive quality; 8.5 home odds reflect the genuine probability",
+        "Derby volatility is the primary risk to the Juventus win — red cards, set-pieces, and crowd pressure can override xG in derby matches"
+      ],
+      "analysis": "The Turin derby is one of football's most emotionally volatile fixtures, and any analyst who ignores that context deserves the upset that occasionally follows. Derby matches routinely produce results that defy form and xG — the passion, the crowd, the red mist — but the data must still anchor the assessment. And here the data strongly favours Juventus.\n\nJuventus away from home over the last five matches: W1 D1 W1 W1 D1 — three wins and two draws without a defeat. That is arguably the best away record on the entire coupon. Their xGF over five games is 1.73 but actual goals scored is only 0.8 — an underperformance of -0.93 that stands as one of the most extreme on the card. Their defensive xGA is an extraordinarily tight 0.56 over five games, with only 0.6 actual goals conceded. Over ten games the pattern holds: xGF 2.10, xGA 0.81, with actual concession of just 0.4. This is not just a side with strong results — the underlying picture suggests they have been UNLUCKY in attack and very solid in defence. Regression in attack should mean more Juventus goals, not fewer.\n\nTorino's home form is actually decent on paper (W2 D1 L0 W1 W1 in last five at home), but their attacking output has been poor: xGF 1.56, GF 1.0 — underperforming, meaning their creativity is worse than even the expected goals model implies (only 2.2 shots on target per game). Against a Juventus defensive structure that has conceded 0.4 goals per game over ten matches, Torino will struggle to create meaningful threats.\n\nAll ten newspapers back Juventus. Derby uncertainty retains the draw in this selection, but the quality differential, Juventus' xG attack regression upward, and their exceptional away form make the Bianconeri win the primary call.",
+      "value_note": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Villarreal",
+      "away_team": "Atlético Madrid",
+      "predicted_outcomes": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.58,
+      "key_factors": [
+        "Symmetrical European motivation (P3 vs P4) — equal urgency, ideal conditions for a tactical, cautious draw",
+        "5 of 10 newspapers tip the draw — strongest media consensus for X on the coupon",
+        "Atlético away form inconsistent: W1 L1 L1 W1 L1 in recent road trips — cannot be trusted as a reliable away winner"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Atlético W2 in last 5 away including three defeats; newspaper consensus (5/10 draw) contradicts backing the away side at 2.63",
+        "Villarreal xGF overperformance (2.0 actual vs 1.50 expected) suggests they may not maintain home scoring rate — draw is the most likely resolution"
+      ],
+      "analysis": "The most genuinely open match of the entire coupon, and one of the few where the market, media, and data cannot reach consensus. Villarreal sit third in La Liga, Atlético fourth — European qualification spots are in the balance for both, which creates symmetrical motivation. No side is chasing nothing; no side is playing with the handbrake off.\n\nVillarreal's home form is strong: W4 D0 L1 in the last five at the Estadio de la Cerámica, with Gerard Moreno and Georges Mikautadze in a 4-4-2 providing genuine attacking threat. Their xGF over five games (1.50) slightly underperforms their actual output (2.0), suggesting their conversion rate has been above expected. That could indicate regression downward — or simply excellent finishing. Their xGA (1.45) is manageable but not watertight.\n\nAtlético Madrid arrive UP-FORM overall (W4 L1 in last five) but their away record has been inconsistent: W2 L1 L1 L1 in the last four away, with only two wins in five. Simeone's side in their classic 4-2-3-1 with Griezmann, Álex Baena and Lookman is formidable on paper, and their xGF (2.32) severely underperforms actual goals (1.6) — a -0.72 overperformance, suggesting strong finishing that may not be sustained but also that their underlying creation is superior to their results.\n\nFive of ten newspapers tip the draw; four tip Villarreal; only one tips Atlético. That newspaper consensus toward the share of the spoils is the strongest single media signal on the coupon. The odds (1:2.48, X:4.0, 2:2.63) are remarkably balanced — the market has not separated home and away. The draw at 4.0 looks slightly underpriced relative to that newspaper consensus and the motivational symmetry. Dropping the away win on account of Atlético's inconsistent road record and the draw's strong media backing.",
+      "value_note": "Draw at 4.0 appears underpriced given 5/10 newspaper consensus and the near-identical league positions creating motivational equilibrium"
+    }
+  ]
+}

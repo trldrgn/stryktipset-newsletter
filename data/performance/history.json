@@ -1524,5 +1524,199 @@
         "post_mortem": ""
       }
     ]
+  },
+  {
+    "draw_number": 4953,
+    "draw_date": "2026-05-15",
+    "appended_at": "2026-05-23T08:33:51.952610+00:00",
+    "total_correct": 7,
+    "total_games": 13,
+    "accuracy_pct": 53.8,
+    "singles_correct": 1,
+    "singles_total": 4,
+    "doubles_correct": 5,
+    "doubles_total": 8,
+    "full_covered": true,
+    "games": [
+      {
+        "game_number": 1,
+        "home_team": "Newcastle",
+        "away_team": "West Ham",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.68,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 2,
+        "home_team": "Brentford",
+        "away_team": "Crystal Palace",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "confidence": 0.76,
+        "post_mortem": "Predicted 1 (single, conf=0.76) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Brentford have drawn 3 of their last 5 home games — draw cannot be dismissed entirely; DROPPED [2]: Crystal Palace 0.6 goals/game in last 5, poor away form (2L from last 2 away). DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      },
+      {
+        "game_number": 3,
+        "home_team": "Everton",
+        "away_team": "Sunderland",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.7,
+        "post_mortem": "Predicted 1/X (double, conf=0.70) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Everton xGA 2.04 (5g) — conceding heavily, Sunderland could exploit; DROPPED [2]: Sunderland away form decent but xGF of 1.22 insufficient to win at Goodison. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 4,
+        "home_team": "Leeds",
+        "away_team": "Brighton",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": false,
+        "confidence": 0.78,
+        "post_mortem": "Predicted 2 (single, conf=0.78) but result was 1. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Brighton overperforming xGF by +0.44 — risk of goal output normalising; DROPPED [1]: Leeds last two home results are defeats; Brighton far superior away form."
+      },
+      {
+        "game_number": 5,
+        "home_team": "Wolverhampton",
+        "away_team": "Fulham",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "confidence": 0.72,
+        "post_mortem": "Predicted 2 (single, conf=0.72) but result was X. IGNORED RISKS: Risk flags were noted but not weighted enough: Fulham scoring only 0.2 goals/game recently — conversion crisis could persist; DROPPED [1]: Wolves P20 with 0.88 xGF per game — no credible attacking threat to beat Fulham. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      },
+      {
+        "game_number": 6,
+        "home_team": "Mjällby",
+        "away_team": "Häcken",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.55,
+        "post_mortem": "Predicted 1/X (double, conf=0.55) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Complete data absence — form, xG, standings all N/A for both sides; DROPPED [2]: Media consensus strongly against Häcken; Häcken priced at 3.95 suggesting limited away threat. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 7,
+        "home_team": "Västerås",
+        "away_team": "AIK",
+        "our_prediction": [
+          "1",
+          "X",
+          "2"
+        ],
+        "selection_type": "full",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.5,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 8,
+        "home_team": "Värnamo",
+        "away_team": "Norrby",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.62,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 9,
+        "home_team": "Athletic Bilbao",
+        "away_team": "Celta de Vigo",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.63,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 10,
+        "home_team": "Elche",
+        "away_team": "Getafe",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.72,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 11,
+        "home_team": "Real Sociedad",
+        "away_team": "Valencia",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.7,
+        "post_mortem": "Predicted 1/X (double, conf=0.70) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Real Sociedad's own form inconsistent overall — not a dominant home side; DROPPED [2]: Valencia DOWN-FORM, away record shows only 1W in last 5 away trips. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 12,
+        "home_team": "Rayo Vallecano",
+        "away_team": "Villarreal",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.62,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 13,
+        "home_team": "Marseille",
+        "away_team": "Rennes",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.67,
+        "post_mortem": ""
+      }
+    ]
   }
 ]
