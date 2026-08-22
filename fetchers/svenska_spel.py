@@ -110,9 +110,9 @@ def _parse_kickoff(raw: str | None) -> Optional[datetime]:
 
 def _parse_market(event: dict) -> MarketSignals:
     """Extract odds + public distribution + newspaper tips from one event dict."""
-    odds = event.get("startOdds", {})
-    svfolk = event.get("svenskaFolket", {})
-    tips = event.get("tioTidningarsTips", {})
+    odds = event.get("startOdds") or {}
+    svfolk = event.get("svenskaFolket") or {}
+    tips = event.get("tioTidningarsTips") or {}
 
     return MarketSignals(
         odds_home=_sv_float(odds.get("one")),

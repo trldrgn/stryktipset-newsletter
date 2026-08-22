@@ -1,0 +1,310 @@
+{
+  "draw_number": 4967,
+  "draw_date": "2026-08-22",
+  "saved_at": "2026-08-22T11:19:14.091349+00:00",
+  "executive_summary": "This is a week defined by injury asymmetry and early-season xG regression signals. Tottenham arrive at Brentford missing six key players — arguably the clearest team-news edge on the entire coupon. Southampton's underlying numbers at home against a battered Stoke side make them the most confident single of the week, while Wolverhampton's Championship class advantage at Preston is a compelling second. West Ham's short price against Charlton is justifiable but fragile given defensive overperformance signals and a depleted squad. Only two games comfortably clear the 0.80 confidence threshold; this is a volatile, early-season coupon where xG samples are thin and form lines are embryonic.",
+  "value_radar": [
+    "Game 1 Brentford (1 at 2.63): Public 42% favour Spurs away despite six confirmed absentees including van de Ven, Kulusevski, Porro, and Sarr. The market hasn't moved far enough in Brentford's favour — 2.63 represents genuine value for the home win.",
+    "Game 5 Middlesbrough (2 at 2.12): Boro's xGF of 2.41 vs 1.0 actual goals is one of the most extreme underperformance gaps on the coupon — massive positive regression incoming. The 2.12 price is reasonable but the underlying case is stronger than public perception (54%) suggests.",
+    "Game 2 Crystal Palace (2 at 3.50): Everton missing three midfielders is a significant structural blow. Palace's xG data looks strong (xGF 2.17, xGA 1.13) and 3.50 for an away team against a depleted host may be mispriced given the squad context.",
+    "Game 9 Southampton (1 at 1.74): Their xGF and defensive numbers are outstanding for Championship level, Stoke arrive with four absences and poor underlying stats. 1.74 is short but the edge is real — no value per se, but a high-conviction bet."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Brentford",
+      "away_team": "Tottenham",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.71,
+      "key_factors": [
+        "Tottenham missing six key players including van de Ven, Kulusevski, Porro, Sarr, Odobert and Simons",
+        "Brentford near-fully fit with only one defensive absence",
+        "Public 42% Spurs away despite injury crisis — market lags team news"
+      ],
+      "risk_flags": [
+        "No form data available for either side — early-season volatility elevated",
+        "Solanke doubtful could further diminish Spurs' attacking threat but his absence wouldn't change the prediction",
+        "DROPPED [2]: Tottenham missing six confirmed starters including first-choice CB, RB and two central midfielders — structurally too weakened for an away win"
+      ],
+      "analysis": "The single most significant team-news story on this coupon. Tottenham travel to Brentford missing six confirmed players: Micky van de Ven (arguably their best defender), Dejan Kulusevski (their most creative midfielder), Pedro Porro (first-choice right-back), Pape Matar Sarr, Wilson Odobert, and Xavi Simons — with Dominic Solanke additionally doubtful. That is not a depleted squad navigating a difficult fixture; it is a half-side operating well below its ceiling in week two of the season. The spine of Ange Postecoglou's best XI simply isn't available.\n\nBrentford under Keith Andrews — a manager whose appointment carries some early-tenure momentum — host with only Sepp van den Berg absent. The structural matchup is therefore dramatically lopsided: a near-full Brentford attacking unit against a Spurs defensive line pieced together from second-choice options, without van de Ven to marshal it. Brentford's home crowd and direct style are well-suited to exploiting disorganised opponents.\n\nThe market prices this as a near coin-flip (2.63 vs 2.70), which reflects early-season uncertainty and Spurs' broader reputation rather than current squad availability. The public sitting at 42% for the Spurs away win is almost certainly anchored to pre-season optimism rather than this week's injury list. With no H2H data and no form lines available, we cannot layer further, but the injury asymmetry alone is powerful.\n\nThe call here is Brentford at home. The absence of van de Ven and Porro fundamentally weakens Spurs' defensive structure against a physical, pressing Brentford side. At 2.63, this is one of the cleaner value plays on the coupon despite the early-season uncertainty.",
+      "value_note": "Brentford 1 at 2.63 represents genuine value given the injury asymmetry — public haven't priced Spurs' absences adequately"
+    },
+    {
+      "game_number": 2,
+      "home_team": "Everton",
+      "away_team": "Crystal Palace",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Everton missing three central midfielders (Nørgaard, Garner, Iroegbunam) — severe structural weakness",
+        "Crystal Palace xG profile strong: xGF 2.17, xGA 1.13, clinical conversion",
+        "New Hill Dickinson Stadium opening provides Everton home atmosphere boost"
+      ],
+      "risk_flags": [
+        "Everton's midfield depth is critically thin — replacement quality likely well below first-choice trio",
+        "Palace's Henderson doubtful adds a small goalkeeping uncertainty",
+        "DROPPED [2]: Palace away form unknown, Henderson doubt in goal — home advantage and crowd factor tilt against clean away win despite Everton's absences"
+      ],
+      "analysis": "This fixture is shaped almost entirely by Everton's midfield injury crisis. Nørgaard, Garner, and Iroegbunam — three recognised central midfielders — are all confirmed absent, with Garner not expected back until September and Iroegbunam potentially until October. For a team playing a 4-2-3-1 that depends on midfield industry and ball retention, losing all three named midfield options simultaneously is a structural problem that cannot be papered over simply by slotting in youth players or shifting others out of position.\n\nCrystal Palace under Pierre Sage, who by his own press conference admission operates with a system very similar to Everton's, should feel comfortable with this matchup. Their five-game xG data tells an encouraging story: xGF 2.17 and xGA 1.13, with actual goals of 2.3 and 1.0 respectively, showing they are genuinely clinical rather than merely fortunate. A marginal overperformance of +0.16 on xGF is sustainable. Dean Henderson is doubtful in goal, which introduces some uncertainty, but that is their only meaningful concern.\n\nThe public sitting at 60% for Everton is anchored to home advantage and name recognition at their new Hill Dickinson Stadium. But the structural deficit in Everton's midfield is real and severe. A depleted central unit facing Palace's disciplined 3-4-2-1/3-4-3 shapes risks being overrun in the engine room.\n\nThe prediction leans to Everton given home advantage and the sheer weight of public backing — home teams in opening weeks benefit from crowd energy — but Palace at 3.50 deserves serious consideration as a value play. The draw remains live given both teams' tendencies toward compactness as described by BBC's preview coverage. This is a genuine double territory at best.",
+      "value_note": "Crystal Palace at 3.50 has genuine value given Everton's midfield decimation — worth considering as a contrarian play"
+    },
+    {
+      "game_number": 3,
+      "home_team": "Ipswich",
+      "away_team": "Sunderland",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.52,
+      "key_factors": [
+        "Ipswich xGA 1.77 with GA 1.80 — genuinely porous defence with no overperformance buffer",
+        "Sunderland missing only Adingra (winger) — minimal structural damage",
+        "Ipswich three doubtful midfielders — if any miss, engine room is weakened"
+      ],
+      "risk_flags": [
+        "Zero form data for either side — early-season uncertainty maximised",
+        "No H2H data to anchor home/away tendencies at this venue",
+        "DROPPED [1]: Ipswich defensive xG vulnerability combined with potential midfield doubts tips balance against home win"
+      ],
+      "analysis": "The most genuinely balanced match on the Premier League section of this coupon, with odds, public percentages, and data all pointing in different directions. Ipswich's five-game xG profile raises immediate concerns: an xGF of 1.49 suggests modest creative output, but the more telling figure is an xGA of 1.77 against actual concessions of 1.8 goals per game — meaning their defence is performing almost exactly at expected levels, without any overperformance cushion. They're not being bailed out by their goalkeeper, but they're also genuinely vulnerable.\n\nSunderland arrive as a promoted side with recent top-flight momentum according to media previews, missing only Simon Adingra — a winger — to an ankle injury. That absence matters but is far from fatal, particularly if Sunderland's system doesn't rely solely on Adingra's width. Ipswich have three doubtfuls of their own (Issahaku, Matusiwa, Florentino Luís), all midfielders, which mirrors Everton's problem one game earlier — though 'doubtful' is less damaging than 'out'.\n\nThe market offers Sunderland as a fractional favourite at 2.63 versus Ipswich's 2.85, and the public is remarkably evenly split across all three outcomes (37/32/31). That spread itself tells you everything about the genuine uncertainty here. Without reliable form lines for either side, this falls squarely into toss-up territory.\n\nThe slight lean goes toward Sunderland given their stronger reported recent momentum and Ipswich's xGA vulnerability, but the confidence ceiling is low. The draw at 3.40 is also live in a match where both newly-promoted/Premier League sides may set up cautiously. This is a full-column game at best.",
+      "value_note": "Draw at 3.40 is the most underrated outcome in a genuinely three-way contest"
+    },
+    {
+      "game_number": 4,
+      "home_team": "Nottingham Forest",
+      "away_team": "Leeds",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.64,
+      "key_factors": [
+        "Forest xGA 1.30 but GA only 0.3 — extreme defensive overperformance, regression risk",
+        "Leeds missing Gnonto and Gudmundsson (both hamstring), Meslier doubtful in goal",
+        "Both teams' xG profiles suggest relatively low-scoring game"
+      ],
+      "risk_flags": [
+        "Forest's 'clean sheet' record built on overperforming — liable to concede more",
+        "Leeds' Meslier doubt could actually benefit them if Forest can't beat the stand-in, or hurt them if they concede more",
+        "DROPPED [2]: Leeds missing two key attackers plus potentially first-choice goalkeeper — away win requires too much to go right"
+      ],
+      "analysis": "This is a fascinating game when you dig into the underlying numbers. Nottingham Forest's xGA of 1.30 against actual concessions of just 0.3 goals per game is one of the most extreme defensive overperformance figures on the entire coupon. Conceding fewer than a third of expected goals per game suggests goalkeeper heroics or sheer fortune — and that fragility is significant heading into a home fixture where Leeds will create chances. The bank cannot keep getting bailed out.\n\nForest are also generating below xG offensively (1.36 xGF, 1.0 GF) — they're slightly unlucky in front of goal but defensively they're living dangerously. Oliver Glasner loses Ryan Yates and Nicola Savona (confirmed out per BBC's press conference report of 23 fit players remaining), but that's a manageable two-player absence given the squad depth.\n\nLeeds, meanwhile, lose Gnonto (hamstring) and Gudmundsson (hamstring) as confirmed outs, with Meslier doubtful in goal and Gruev doubtful in midfield. The Meslier doubt is particularly relevant — if Leeds' first-choice goalkeeper misses, they're asking a backup to handle a Premier League fixture atmosphere at the City Ground. Farke's tactical mirror (both teams reportedly in 3-4-2-1) should make this a relatively structured game.\n\nForest's home advantage and the quality gap over Leeds remain the primary arguments for the home win. But the defensive regression risk is real and the injury list for Leeds is significant enough to suppress their attacking threat slightly. The prediction is Forest at home, but with a live draw given the defensive fragility and low-scoring xG profiles on both sides.",
+      "value_note": "Draw at 3.45 has some appeal given Forest's defensive regression risk and the tactical mirror match shape"
+    },
+    {
+      "game_number": 5,
+      "home_team": "Blackburn",
+      "away_team": "Middlesbrough",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "Middlesbrough xGF 2.41 vs GF 1.0 — massive positive regression signal (-1.41 underperformance)",
+        "Blackburn xGF 0.78 — nearly incapable of creating chances offensively",
+        "BBC H2H: Blackburn lost just one of last six meetings, four clean sheets in five — a meaningful contrarian signal"
+      ],
+      "risk_flags": [
+        "H2H record strongly favours Blackburn — the regression case and H2H case are in direct conflict",
+        "Blackburn defensive overperformance (xGA 1.64 but GA 1.0) may sustain longer than expected",
+        "DROPPED [1]: Blackburn's xGF of 0.78 makes scoring look very difficult — hard to see how they win"
+      ],
+      "analysis": "The data on Middlesbrough in this game is extraordinary and demands to be the analytical centrepiece. Their five-game xGF of 2.41 against actual goals of just 1.0 represents an underperformance of -1.41 per game — the largest regression signal of the entire coupon by some distance. They are firing 23 shots per game, generating enormous amounts of expected goals, and somehow converting none of it. That is not a tactical problem; that is pure finishing misfortune of the most acute kind. Regression toward xG is one of the most reliable signals in football analytics, and Boro are the poster child for it this week.\n\nBlackburn, meanwhile, are producing xGF of just 0.78 — barely creating anything — with actual goals of 0.5. Their xGA is 1.64, meaning they're defensively vulnerable despite conceding only 1.0 per game so far. They're overperforming defensively but their attacking output is anemic. Lewis Miller's absence at right-back is a minor concern.\n\nThe critical counterweight is the H2H record from BBC's preview: Blackburn have lost just one of the last six league meetings and kept four clean sheets in five. That is a meaningful contrarian signal that suggests Boro have historically struggled to convert against this specific opponent — which actually fits with their current finishing woes rather than contradicting the regression argument. One would expect that head-to-head pattern to break eventually as Boro find their shooting boots.\n\nThe call is Middlesbrough away. Their xG dominance is too substantial to ignore, and Blackburn's offensive output is so low they can't rely on out-scoring anyone. The H2H caveat is noted and reduces confidence, but the regression signal from Boro's xGF is simply too powerful.",
+      "value_note": "Middlesbrough's xG regression case is one of the strongest analytical signals on the coupon despite H2H concerns"
+    },
+    {
+      "game_number": 6,
+      "home_team": "Derby",
+      "away_team": "Cardiff",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.7,
+      "key_factors": [
+        "Cardiff missing four confirmed defenders (Chambers, Lawlor, Fish, Tanner) plus Osho doubtful — defensive crisis",
+        "Derby home advantage at Pride Park against a structurally compromised away defence",
+        "Derby's actual concession rate (1.7) exceeds xGA (1.06) — own defensive fragility noted"
+      ],
+      "risk_flags": [
+        "Derby missing a striker (Agyemang) and potentially Szmodics — attacking options constrained",
+        "Derby's defensive overperformance in xGA vs actual GA could invite Cardiff counter-attacks",
+        "DROPPED [2]: Cardiff missing up to four/five defenders — winning away with that defensive injury crisis is implausible"
+      ],
+      "analysis": "Derby enter this game under some pressure — a P18 side that lost their opener (1-2) with an xGF of 1.50 suggesting moderate creativity but an actual concession rate of 1.7 per game that exceeds their expected 1.06. They are leaking more goals than their xGA suggests they should, which is a concern. Missing Matt Clarke (key centre-back), Patrick Agyemang (striker), and with Sammie Szmodics doubtful — a name with genuine Championship pedigree if this is the same player — the forward and defensive options are stretched.\n\nCardiff, however, arrive in a far worse structural condition. Their injury list across the defensive unit is severe: Calum Chambers, Dylan Lawlor, William Fish, and Ollie Tanner are all confirmed out, with Gabriel Osho doubtful. That is potentially four to five defensive absences for a side already sitting at P13 with a draw to their name. Cardiff are forced to patch together a makeshift backline against a Derby side playing at Pride Park, where home atmosphere will be a real factor.\n\nDerby's xGF of 1.50 against a Cardiff defence assembled from second and third-choice options should translate into chances. While Derby's own defensive vulnerabilities are noted, Cardiff's far greater defensive injury crisis tips the scales. The odds of 1.93 for Derby reflect the bookmaker's view of a genuinely contested game, but the team-news angle leans home.\n\nThe prediction is Derby to win at home. Cardiff's defensive decimation is the decisive factor, outweighing Derby's own concerns. This is double rather than single territory given Derby's own leaky record.",
+      "value_note": "Derby 1 at 1.93 looks fair given Cardiff's defensive injury crisis — not value per se but a solid selection"
+    },
+    {
+      "game_number": 7,
+      "home_team": "Preston",
+      "away_team": "Wolverhampton",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.76,
+      "key_factors": [
+        "Wolves' significant quality advantage as relegated Premier League side in Championship",
+        "Preston xGF 1.61 but GF 2.5 — overperformance of +0.89 per game, regression risk incoming",
+        "José Sá returning in goal for Wolves per BBC — positive news for their defensive structure"
+      ],
+      "risk_flags": [
+        "Wolves missing Trippier and Mosquera at the back — defensive vulnerabilities at right-back and CB",
+        "Preston overperformance regression may not materialise in a single game",
+        "DROPPED [1]: Preston's goal output has been built on overperformance against lower-quality opposition — Wolves' class should expose the underlying limitations"
+      ],
+      "analysis": "Wolverhampton Wanderers are a relegated Premier League side descending into the Championship, and this fixture captures the essential quality asymmetry of those early-season meetings. Preston, at P17 with a loss in their opener, are a mid-table second-tier outfit. Wolves, despite their Premier League relegation, retain significantly superior individual quality and squad depth — and their Championship record since the drop will be built on exactly this type of fixture where opponents cannot match their technical ceiling.\n\nPreston's xG data actually provides an important warning signal rather than comfort. Their five-game xGF of 1.61 against actual goals of 2.5 represents an overperformance of +0.89 per game — one of the most extreme positive overperformances on the coupon. Preston have been scoring well above what their underlying chance creation warrants. Regression downward is statistically probable, and the timing — against Wolves — is particularly inopportune. Lewis Gibson's absence at right-back is a minor concern, but the bigger issue is that Preston's goal numbers have flattered their performance level.\n\nWolves missing Kieran Trippier and Yerson Mosquera at right-back and centre-back introduces some defensive uncertainty, and José Sá returning in goal is a positive news point. Their attacking quality — even without named absentees — should comfortably exceed what Preston's defence has been tested by in their recent games.\n\nThe market has this right at 1.80 for Wolves away. The public's 67% backing is well-calibrated here. The only hesitation is early-season unpredictability, but the quality gap is substantial enough to make this one of the cleaner selections on the card.",
+      "value_note": "Wolves at 1.80 is fair value given the quality gap and Preston's overperformance regression risk"
+    },
+    {
+      "game_number": 8,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Bolton",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "QPR P1 with H2H advantage (5 wins in last 8 vs Bolton per BBC)",
+        "QPR xGF 1.14 vs GF 0.6 — scoring well below expected, and missing four players",
+        "Bolton's 15 shots/6 on target per game — genuine offensive threat against a porous QPR defence"
+      ],
+      "risk_flags": [
+        "QPR xGA 1.70 with actual GA 2.0 — defence already underperforming and now missing two defenders",
+        "Public 66% on QPR may be anchored on league position rather than squad availability and xG reality",
+        "DROPPED [2]: Bolton's away form unknown and H2H record favours QPR at home — away win requires too much against historical pattern"
+      ],
+      "analysis": "QPR sit atop the Championship table after a 3-1 opening win, and the BBC's H2H note that they have won five of the last eight league meetings against Bolton reinforces their historical edge in this fixture. That combination of early league position and head-to-head record justifies the short-ish 1.92 home price. However, the underlying xG data creates pause: QPR's xGF of 1.14 against actual GF of just 0.6 suggests they are creating very little relative to their output, and an xGA of 1.70 against actual concessions of 2.0 means their defence is actively underperforming. These are red flags beneath the surface of a promising opening day result.\n\nThe injury list compounds the concern. QPR are missing four players: Kemper (defence), Obikwu (attack), Dembélé (midfield), and Lamptey (defence). Two defensive absences alongside their already-vulnerable underlying defensive numbers create genuine exposure against a Bolton side that arrived at P3 with a 2-1 win of their own. Bolton generate 15 shots and 6 on-target per game, suggesting real offensive menace. Their own absentees — Simons and Rodrigues in midfield — are meaningful but not catastrophic.\n\nThe public's 66% backing for QPR seems anchored to league position and home advantage rather than the underlying data and injury picture. Both teams arrive with momentum after opening wins, but QPR's xG profile is the more fragile of the two.\n\nThe prediction remains QPR at home — league position, crowd, and H2H support it — but this is genuine double territory. Bolton's shooting volume and QPR's structural weaknesses make the draw very live.",
+      "value_note": "Draw at 3.70 has appeal given QPR's defensive fragility and Bolton's strong shot numbers"
+    },
+    {
+      "game_number": 9,
+      "home_team": "Southampton",
+      "away_team": "Stoke",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.83,
+      "key_factors": [
+        "Southampton xGF 2.02, GF 2.8 — genuinely dominant in creating and converting chances",
+        "Stoke xGA 1.89 with four confirmed absences including two defenders — structurally weak",
+        "Quality gap between recently relegated PL club and Championship-level opposition"
+      ],
+      "risk_flags": [
+        "Southampton's goal overperformance (+0.78 vs xGF) may not be fully sustainable",
+        "George Hirst's debut could inject unpredictability into Stoke's attacking play",
+        "DROPPED [2]: Stoke missing four players including defensive cover, xGA 1.89 points to defensive fragility — away win requires defensive improvement they cannot currently provide"
+      ],
+      "analysis": "Southampton's underlying numbers are the most impressive on the Championship section of this coupon by a considerable margin. An xGF of 2.02 and xGA of 1.02 across five games represents genuine dominance in both creating and suppressing chances. But what elevates this beyond a standard statistical advantage is that they are actually outscoring even their strong xGF — 2.8 goals per game against an expected 2.02 suggests clinical finishing on top of excellent chance creation. This level of performance, sustained over both a five-game and identical ten-game window, points to a team functioning at a high level rather than enjoying a lucky streak.\n\nStoke, by contrast, look vulnerable in every meaningful metric. Their xGA of 1.89 and actual concession rate of 2.0 per game suggests they are genuinely porous defensively, and they are shipping goals in line with what their defensive xG predicts — no luck involved. Four confirmed absences (Cresswell, Ampah, Tchamadeu, and Cissé) across defence and attack further deplete an already-struggling side. The arrival of George Hirst for his debut adds a narrative hook but does not change the structural picture.\n\nSouthampton dropped from the Premier League last season and are now recalibrating in the Championship with a squad still holding top-flight quality in key positions. Their home record at St. Mary's should be boosted by a large crowd expecting a response after both teams lost their openers — and the motivation asymmetry here is real. Both sides want a first win, but Southampton have the quality to enforce their will.\n\nThis is the highest-confidence selection on the coupon. The home win is backed by outstanding xG data, significant Stoke absences, and the quality differential between a recently relegated Premier League club and a lower-Championship side.",
+      "value_note": "No significant mispricing but 1.74 is justified — this is a high-quality single selection"
+    },
+    {
+      "game_number": 10,
+      "home_team": "Swansea",
+      "away_team": "Sheffield United",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Swansea xGF 2.10 — strong creative output for Championship level",
+        "Home opener under Vitor Matos — motivational edge for the crowd-facing fixture",
+        "Both teams defensively underperforming xGA — potential for more goals than expected"
+      ],
+      "risk_flags": [
+        "Both teams conceding significantly above xGA — unpredictable defensive performances could affect any outcome",
+        "Sheffield United's 0-0 opening result may reflect defensive compactness rather than poor quality",
+        "DROPPED [2]: Sheffield United still seeking first league win, defensive fragility (xGA 1.62 vs GA 2.5) and no away form data makes away win the weakest-case outcome"
+      ],
+      "analysis": "Swansea open their home Championship campaign under Vitor Matos after winning away at Stoke — a good early sign of their attacking intent. Their xGF of 2.10 is genuinely strong for this level, suggesting they create quality chances in decent volume, and their xGA of 1.62 is manageable. The concern is on the defensive side of actual results: they are conceding 2.3 goals per game against an expected 1.62, meaning their backline is underperforming its expected protection. A home opener with crowd support should help stabilise that.\n\nSheffield United drew 0-0 on their opening day and arrive without a league win. Their xGF of 1.92 is respectable, suggesting they can create, but their actual defensive figures (GA 2.5 against xGA 1.62) paint a picture of a side giving up far more than expected. Both teams are, interestingly, defensively overexposed relative to their xGA. This could be a match with more goals than the odds compiler expects.\n\nBoth sides report no structured injuries, giving this a clean squad slate. The tactical framing — Swansea's home opener with a new manager looking to impress the home crowd — creates a slight motivational edge for the home side. Matos will want a performance in front of his own supporters having delivered an away win already.\n\nThe prediction leans Swansea at home, where their superior xGF and home advantage combine. But Sheffield United's attacking xG numbers are decent enough to keep the draw firmly in play. This falls into natural double territory — include the draw, exclude the away win on the basis of Sheffield United's recent defensive frailty.",
+      "value_note": ""
+    },
+    {
+      "game_number": 11,
+      "home_team": "West Ham",
+      "away_team": "Charlton",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.8,
+      "key_factors": [
+        "West Ham's enormous quality gap over Charlton as relegated Premier League club",
+        "West Ham xGA 1.08 vs GA 0.4 — defensive overperformance, regression risk",
+        "Charlton xGF 1.46 vs GF 0.5 — massive positive regression signal (-0.96), due to score more"
+      ],
+      "risk_flags": [
+        "West Ham missing Souček, Todibo, Magassa, and Pablo Felipe — four key players from their best XI",
+        "Charlton's xG regression means they could score — West Ham not as clean-sheet certain as odds suggest",
+        "DROPPED [2]: Even accounting for West Ham's absences and Charlton's xG regression, the quality gap is too significant to back an 8.50 away win"
+      ],
+      "analysis": "West Ham at 1.38 to beat Championship opponents Charlton is one of the shorter prices on the coupon, and the quality gap between a recently relegated Premier League club and a League One promotion to the Championship is real. BBC frames this as the first league meeting between these clubs in 19 years, with the London Stadium expected to be at capacity — and the occasion itself will lift West Ham's performance level.\n\nHowever, the structural analysis reveals some nuance worth noting. West Ham's xGA of 1.08 against actual concessions of just 0.4 is another extreme defensive overperformance figure — similar to Nottingham Forest's situation in Game 4. Their goalkeeping or defensive fortune has been exceptional, and that tends to normalise over time. Four confirmed absences (Todibo, Souček, Magassa, Pablo Felipe) are notable for a Championship side — Souček in particular would be missed — though the aggregate quality advantage over Charlton remains enormous.\n\nCharlton's underlying numbers offer the most interesting analytical wrinkle. Their xGF of 1.46 sits well above their actual output of 0.5 goals per game — an underperformance of -0.96 per game. That is the second-largest regression-upward signal on the coupon after Middlesbrough. Charlton have been generating chances and not converting; their xGA of 2.01 is poor, but combined with a positive goal regression, they may score more here than the 8.50 away odds suggest.\n\nThe prediction is West Ham, and it is the right call at 1.38. But punters should be aware this is not as formality-level as the odds imply. Charlton's xG regression and West Ham's defensive fragility create a genuine scenario where this gets closer than expected.",
+      "value_note": "Draw at 5.00 is an interesting alternative given West Ham's defensive overperformance vulnerability and Charlton's xG regression — more cautious bettors may prefer 1X"
+    },
+    {
+      "game_number": 12,
+      "home_team": "Wrexham",
+      "away_team": "Watford",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.62,
+      "key_factors": [
+        "Watford xGF 0.41 — barely creating chances, their opening win is likely overperformance",
+        "Wrexham xGA 1.54 vs GA 2.4 — defensively vulnerable but generating more chances than Watford",
+        "Wrexham home advantage at Racecourse Ground for first home league game of season"
+      ],
+      "risk_flags": [
+        "Wrexham reportedly doubtful: Cacace, Sheaf, and Windass (all unverified, Perplexity only) — squad depth uncertain",
+        "Wrexham's own defensive vulnerability means even a poor Watford attack may create opportunities",
+        "DROPPED [2]: Watford's xGF of 0.41 makes an away win implausible unless their offensive underperformance is a sustained tactical approach"
+      ],
+      "analysis": "This fixture presents one of the more intriguing analytical contradictions on the coupon. Wrexham drew their opener 1-1 but their underlying numbers over five games reveal significant defensive vulnerability: xGA of 1.54 against actual concessions of 2.4 per game over the five-game window means they are shipping goals well above expected. Their ten-game sample confirms this is not noise — xGA 1.75, GA 2.2. Wrexham's backline has been consistently porous in a way their xGA doesn't fully explain. Three Perplexity-reported doubtfuls (Cacace, Sheaf, Windass) add further squad uncertainty, though these are unverified via structured sources and should be treated as 'reportedly doubtful (unverified)'.\n\nWatford's data, however, is equally striking in the opposite direction. Their xGF of just 0.41 is extraordinarily low — barely creating any clear chances — while they somehow won 2-1 on their opener. An xGA of 2.00 means their defence is also vulnerable. The market's 2.0 for Wrexham at home, with a public backing of 62%, reflects the home advantage, while Watford's 3.80 price hints at significant uncertainty about whether their win was a genuine performance or a fortuitous outlier.\n\nThe Watford xGF regression is the key concern: a team creating 0.41 expected goals per game will regress downward in actual goals. They cannot keep winning with that level of chance creation. Wrexham's defensive issues are real but they generate more chances than Watford (xGF 1.10). The home advantage at the Racecourse Ground adds further weight.\n\nOn balance, Wrexham at home is the call, with the draw included as a meaningful possibility. Watford's xGF collapse makes them the most suspicious opening-day winner on the coupon.",
+      "value_note": "Wrexham 1 at 2.0 is reasonable given Watford's xGF regression, though the draw at 3.60 also has appeal"
+    },
+    {
+      "game_number": 13,
+      "home_team": "Wimbledon",
+      "away_team": "Reading",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "Wimbledon xGF 0.65, SoT 1/game — almost incapable of creating scoring opportunities",
+        "Reading xGF 1.00, 17 shots/5 SoT per game — significantly more creative output",
+        "Wimbledon's P26 league position aligned with dreadful underlying performance data"
+      ],
+      "risk_flags": [
+        "No injury data for either side — complete unknown on squad availability",
+        "Reading lost 3-4 in their opener suggesting defensive fragility of their own",
+        "DROPPED [1]: Wimbledon's xGF of 0.65 and SoT of 1 per game makes a home win implausible — they cannot score enough to win matches at this level of output"
+      ],
+      "analysis": "This League One fixture produces the clearest negative signal in the entire coupon for one specific team. Wimbledon's five-game xGF of 0.65 is the second-lowest home team figure across all 13 games — they barely create anything — while their xGA of 2.26 and actual concession rate of 2.2 per game confirms they are genuinely and consistently defensively exposed. Their opening result of a 0-3 defeat is reflected perfectly in the underlying numbers: this is a team at the bottom of League One's quality spectrum based on current data. The league position at P26 aligns with what the xG tells us.\n\nReading are not in great shape either — P18 with a loss (a high-scoring 3-4 defeat) — but their xG profile is dramatically better than Wimbledon's. An xGF of 1.00 against Wimbledon's 0.65 represents significantly more creative output, and an xGA of 1.25 against Wimbledon's 2.26 reveals a defensive structure that is far more coherent. Reading's 17 shots and 5 on target per game against Wimbledon's 10 shots and 1 on target shows the scale of the chance-creation gap.\n\nThe public is almost perfectly split (30/33/37), and the odds are close across all three outcomes. The 3.3 for a draw and 2.55 for a Wimbledon win both feel too generous given Wimbledon's appalling underlying profile. Reading at 2.75 has genuine value in this context — they are the more functional team in every meaningful metric.\n\nNo injury data is available for either side, which removes one analytical layer, but the gap in underlying stats is clear enough to anchor a prediction. Reading away is the call.",
+      "value_note": "Reading at 2.75 has genuine value — their xG metrics are far superior to Wimbledon's, and the public's even split undervalues the away case"
+    }
+  ]
+}
