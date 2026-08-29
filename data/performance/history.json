@@ -1718,5 +1718,199 @@
         "post_mortem": ""
       }
     ]
+  },
+  {
+    "draw_number": 4967,
+    "draw_date": "2026-08-22",
+    "appended_at": "2026-08-29T09:07:30.745720+00:00",
+    "total_correct": 10,
+    "total_games": 13,
+    "accuracy_pct": 76.9,
+    "singles_correct": 3,
+    "singles_total": 4,
+    "doubles_correct": 6,
+    "doubles_total": 8,
+    "full_covered": true,
+    "games": [
+      {
+        "game_number": 1,
+        "home_team": "Brentford",
+        "away_team": "Tottenham",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.71,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 2,
+        "home_team": "Everton",
+        "away_team": "Crystal Palace",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.6,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 3,
+        "home_team": "Ipswich",
+        "away_team": "Sunderland",
+        "our_prediction": [
+          "1",
+          "X",
+          "2"
+        ],
+        "selection_type": "full",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.52,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 4,
+        "home_team": "Nottingham Forest",
+        "away_team": "Leeds",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.64,
+        "post_mortem": "Predicted 1/X (double, conf=0.64) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Forest's 'clean sheet' record built on overperforming — liable to concede more; Leeds' Meslier doubt could actually benefit them if Forest can't beat the stand-in, or hurt them if they concede more; DROPPED [2]: Leeds missing two key attackers plus potentially first-choice goalkeeper — away win requires too much to go right. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 5,
+        "home_team": "Blackburn",
+        "away_team": "Middlesbrough",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": false,
+        "confidence": 0.65,
+        "post_mortem": "Predicted 2/X (double, conf=0.65) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: H2H record strongly favours Blackburn — the regression case and H2H case are in direct conflict; Blackburn defensive overperformance (xGA 1.64 but GA 1.0) may sustain longer than expected; DROPPED [1]: Blackburn's xGF of 0.78 makes scoring look very difficult — hard to see how they win. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 6,
+        "home_team": "Derby",
+        "away_team": "Cardiff",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.7,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 7,
+        "home_team": "Preston",
+        "away_team": "Wolverhampton",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.76,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 8,
+        "home_team": "Queens Park Rangers",
+        "away_team": "Bolton",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.6,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 9,
+        "home_team": "Southampton",
+        "away_team": "Stoke",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.83,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 10,
+        "home_team": "Swansea",
+        "away_team": "Sheffield United",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.6,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 11,
+        "home_team": "West Ham",
+        "away_team": "Charlton",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.8,
+        "post_mortem": "Predicted 1 (single, conf=0.80) but result was 2. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: West Ham missing Souček, Todibo, Magassa, and Pablo Felipe — four key players from their best XI; Charlton's xG regression means they could score — West Ham not as clean-sheet certain as odds suggest; DROPPED [2]: Even accounting for West Ham's absences and Charlton's xG regression, the quality gap is too significant to back an 8.50 away win."
+      },
+      {
+        "game_number": 12,
+        "home_team": "Wrexham",
+        "away_team": "Watford",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.62,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 13,
+        "home_team": "Wimbledon",
+        "away_team": "Reading",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.65,
+        "post_mortem": ""
+      }
+    ]
   }
 ]

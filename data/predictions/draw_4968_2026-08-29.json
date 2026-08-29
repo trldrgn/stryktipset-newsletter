@@ -1,0 +1,309 @@
+{
+  "draw_number": 4968,
+  "draw_date": "2026-08-29",
+  "saved_at": "2026-08-29T09:16:03.512632+00:00",
+  "executive_summary": "This is an exceptionally volatile early-season coupon with most clubs having played only one or two league matches. Sample sizes are tiny, home/away form splits are unavailable for the majority of fixtures, and there is no H2H data anywhere. No game this week comfortably clears the 0.80 confidence threshold — this is a genuinely difficult week and bettors should treat the whole coupon with caution. The clearest signals are Bolton's home dominance over a struggling Lincoln, West Ham's class advantage at Watford, Charlton's strong start against a sinking Preston, and Hull's superior underlying numbers against a Coventry side that is creating almost nothing. Even those four feel closer to 0.65–0.72 than to 0.80+ singles.",
+  "value_radar": [
+    "Game 3 (Coventry vs Hull): Hull at 4.10 looks significantly mispriced. Coventry have the worst attacking xG on the entire coupon (0.56 per game, 0 goals scored, 1 shot on target per game) and sit P18, yet are priced as home favorites. Hull are P4 with a clean sheet and 2 goals scored in their opener. The market appears to be over-weighting home advantage against a team that is generating nothing offensively.",
+    "Game 11 (Watford vs West Ham): West Ham at 1.90 to win away at a Watford side whose xGF is just 0.41 per game looks like genuine value. Watford are creating almost nothing — 13 shots per game yielding under half a goal in expected terms — and West Ham carry vastly superior squad quality in what is almost certainly a Championship fixture after relegation. The yellow-card count at Vicarage Road (6.0 per game) adds an element of chaos but does not change the fundamental quality gap.",
+    "Game 8 (Charlton vs Preston): Charlton at 2.18 is fair rather than exceptional value, but the xG regression story is compelling. Charlton's xGF of 1.46 per game against only 0.5 actual goals suggests they have been heavily unlucky in front of goal and are due a correction. Preston, meanwhile, have scored 2.5 per game against an xGF of only 1.61 — overperforming by nearly a goal per game, which is a fragile position."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Tottenham",
+      "away_team": "Newcastle",
+      "predicted_outcomes": [
+        "X",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.52,
+      "key_factors": [
+        "Tottenham xGA of 4.04 in one game — defensive structure badly exposed in week one",
+        "De Zerbi new manager effect could produce a lift but system takes time to embed",
+        "Newcastle xGF 1.59 per game is substantially better than Spurs' 0.76 — quality gap in creation"
+      ],
+      "risk_flags": [
+        "One-game sample for both sides — any pattern could be noise",
+        "New manager bounce at Spurs is a genuine unpredictable positive signal",
+        "DROPPED [1]: Tottenham's xGF 0.76 and xGA 4.04 in their only game suggests deep structural problems that one week cannot fix"
+      ],
+      "analysis": "Tottenham's opening-day horror show — a 0-3 defeat that produced an xGA of 4.04 in a single game — sets an alarming backdrop for the first home match of what is clearly a transitional season under Roberto de Zerbi. The numbers suggest Spurs were not merely unlucky; their xGF of just 0.76 indicates they barely threatened, with only 9 shots per game and 3 corners. De Zerbi's demanding high-press system takes time to bed in, and the early evidence suggests Tottenham's defensive shape is alarmingly porous. The new manager bounce is a real phenomenon, typically strongest in weeks one through three, and De Zerbi's attacking philosophy does tend to produce more open, intent-driven performances than his predecessor's. But the underlying data from week one is not easily dismissed.\n\nNewcastle drew 2-2 in their opener, which on the surface looks modest, but their xGF of 1.59 was reasonable and — critically — they actually scored their expected goals. Their defensive xGA of 3.13 is concerning and mirrors some of the same structural fragility seen at Spurs, but they converted at the front end. Matthias Jaissle has flagged William Osula as not ready to return, but Osula is a squad forward rather than a cornerstone — the impact on Newcastle's structure should be minimal with Omar Marmoush confirmed available for Tottenham.\n\nThe market at 2.14 for Tottenham reflects the home advantage and the new-manager optimism rather than anything the numbers are telling us. Newcastle are priced at 3.45 as an away side that arguably outperformed their hosts in week one by every meaningful metric. The 25% draw price at 3.75 feels slightly generous given both defences are leaking heavily in terms of expected goals, which suggests goals rather than a tactical stalemate. A high-scoring game would suit Newcastle, who at least look coherent going forward.\n\nWithout H2H data and with the sample of exactly one league game each, certainty is impossible. But Newcastle's underlying numbers and the structural problems visible in Tottenham's defensive shape push us toward the away side or at minimum a split verdict. The De Zerbi effect could lift Spurs, but the odds assume it already has. We lean toward Newcastle or a share of the spoils.",
+      "value_note": "Newcastle at 3.45 offers genuine value relative to the underlying data — their creation numbers are substantially better than Spurs' and the market may be over-weighting new manager optimism."
+    },
+    {
+      "game_number": 2,
+      "home_team": "Bournemouth",
+      "away_team": "Everton",
+      "predicted_outcomes": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.52,
+      "key_factors": [
+        "Bournemouth xGF just 0.71 per game — severe attacking underperformance with 4 key absentees",
+        "Everton xGA 2.23 vs 0.0 goals conceded — major defensive regression signal, clean sheet was a statistical outlier",
+        "Everton missing Norgaard and Iroegbunam from midfield with Hackney doubtful — engine room depleted"
+      ],
+      "risk_flags": [
+        "Bournemouth's 4 absentees include a full-back and creative midfielder — significant depth impact",
+        "Everton's defensive performance in week one looks unsustainably fortunate — regression due",
+        "DROPPED [2]: Everton's xGA regression and missing midfielders make a clean away win unreliable"
+      ],
+      "analysis": "Bournemouth arrive into this fixture as home favourites at 2.00 despite a 1-2 opening defeat, carrying four confirmed absentees in Adli, Kroupi, Milosavljevic and Araujo. The xGF of just 0.71 per game tells the real story — Marco Rose's side are creating next to nothing, with only 5 shots per game, the lowest volume on the entire coupon by a significant margin. Losing Araujo at left-back removes an attacking outlet, and without Adli's creativity in midfield, Bournemouth's attack looks threadbare. Ryan Christie's return from suspension is a welcome boost, but it does not address the fundamental lack of attacking punch.\n\nEverton have started with a 2-0 win and sit at P5, which sounds commanding but comes with a major asterisk in the data. Their xGA of 2.23 per game against 0 goals conceded is one of the most striking regression signals on this coupon — David Moyes' side have been massively bailed out by their goalkeeper or by post-hitting fortune, and that fragility is not sustainable. Hackney is touch-and-go, and Norgaard plus Iroegbunam are confirmed out, weakening the midfield engine that powered the opening win. Their xGF of 1.45 was solid enough, and they were genuinely clinical in converting it.\n\nThe tension here is between Everton's defensive mirage — a clean sheet built on an xGA that suggests they should have conceded twice — and Bournemouth's offensive impotence. If Everton's defence regresses even slightly, a Bournemouth attack generating 0.71 xGF may not be able to exploit it. But equally, a team this defensively fragile by underlying numbers travelling to a side creating so little is not a safe away win.\n\nThis is one of the most uncertain games on the coupon. The home odds of 2.00 feel slightly generous given Bournemouth's attacking output, but Everton's defensive regression risk complicates backing the visitors. A draw — the one outcome both sets of underlying numbers seem to point toward — has some appeal at 3.80.",
+      "value_note": "The draw at 3.80 has some value — both teams have reasons to underperform their odds-implied level."
+    },
+    {
+      "game_number": 3,
+      "home_team": "Coventry",
+      "away_team": "Hull",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.65,
+      "key_factors": [
+        "Coventry xGF just 0.56 per game, 1 shot on target per game — historically low attacking output",
+        "Hull P4 with 2-0 win, xGF 1.50 — nearly three times Coventry's attacking generation",
+        "Market has Coventry as home favorites at 1.93 despite superior Hull metrics — potential misprice"
+      ],
+      "risk_flags": [
+        "Hull xGA 1.78 vs 0 conceded — some defensive fortune in week one, regression possible",
+        "Championship home advantage is a real factor — early-season crowd boost for Lampard's side",
+        "DROPPED [1]: Coventry's attacking numbers (0.56 xGF, 1 SoT/g) are the weakest on the entire coupon — insufficient to beat a Hull side performing meaningfully better"
+      ],
+      "analysis": "This is the clearest value call on the entire coupon, and the market appears to have significantly mispriced it by making Coventry home favourites. Frank Lampard's side lost their opener 0-3, and the underlying numbers are every bit as grim as the scoreline — an xGF of just 0.56 per game with a single shot on target per game and a volume of 4 shots per game is the worst attacking output on the coupon. The Premier League-era framing (P18, no recent top-flight data) suggests this may be a newly promoted side finding Championship life extremely difficult, and the numbers confirm it entirely. The Guardian's angle on Coventry's vulnerability to set pieces adds another defensive concern.\n\nHull arrive at P4 following a 2-0 opening win with an xGF of 1.50 — nearly three times Coventry's attacking output — and an xGA of 1.78 against which they conceded nothing. There is some defensive regression risk in that clean sheet, as the xGA suggests they could have been more exposed, but their attacking numbers are robust. Crucially, Hull outshot their opponents meaningfully (8 shots per game) and generated their expected goals rather than relying on clinical finishing.\n\nThe argument for Coventry rests almost entirely on home advantage and the theoretical boost Lampard's team news of no fresh injuries provides. But a fully fit Coventry attack that generates 0.56 xGF and one shot on target per game is hardly a threat. Lampard's note that Ephron-Clar and Rudoni have rejoined the matchday group is mildly encouraging, but they are working from a very low base.\n\nHull at 4.10 represents genuine overlay value. Even taking the draw into account as a meaningful possibility — which it always is in Championship football — backing Hull to at least share the spoils seems the rational approach. The X/2 combination or an outright Hull win looks like the sharpest play on the coupon.",
+      "value_note": "Hull at 4.10 is significantly mispriced given their underlying metrics versus Coventry's. The X/2 combination is the sharpest call on the coupon."
+    },
+    {
+      "game_number": 4,
+      "home_team": "Blackburn",
+      "away_team": "Queens Park Rangers",
+      "predicted_outcomes": [
+        "1",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.53,
+      "key_factors": [
+        "Blackburn unbeaten at home so far (1W in 1) — home form the primary positive signal",
+        "QPR's last away game was a 3-1 win — strong away form for a newly promoted or Championship mid-table side",
+        "Blackburn xGF 0.78 per game — moderate creation, not dominant enough to generate high confidence"
+      ],
+      "risk_flags": [
+        "No xG data for QPR — major analytical blind spot",
+        "QPR's 3-1 away win in most recent away fixture is a meaningful positive signal against the home side",
+        "DROPPED [2]: QPR's away form is strong (3-1 win away) and there is no concrete evidence against them; dropping X instead as the weakest case — both teams' results suggest decisive rather than draw outcomes"
+      ],
+      "analysis": "Two Championship sides with limited data and no xG available for QPR, which forces us to rely on market signals, form, and the one tactical insight from the pre-match coverage. Blackburn are P6 following a mixed start — a 2-1 home win and a 2-2 draw — which is a solid enough opening. Their xGF of 0.78 per game suggests they are not generating huge volumes of expected goals, but their actual output of 0.5 per game (across the two results) translates to 4 goals from 2 games, which is respectable. Their xGA of 1.64 against 1.0 conceded suggests some defensive fortune that may normalise.\n\nQPR arrive at P5 following a 0-0 draw and a 3-1 away win — the away win being particularly relevant here. The 3-1 result on the road demonstrates an ability to impose themselves in opponent territory, and Blackburn manager Julien Stephan's comment about QPR needing to handle Ewood Park's 'huge' pitch is a telling piece of psychological framing — it suggests Stephan views the surface as a genuine equaliser rather than a guaranteed home advantage. No xG data for QPR limits deeper analysis.\n\nThe absence of H2H data and QPR's xG gap leave genuine uncertainty here. Blackburn's home record (1 win in 1) supports the home case, and the odds of 2.28 are not unattractive for a team that has been relatively solid. QPR's away win last time out is the key contrarian signal.\n\nThis is a genuine coin-flip type fixture that we cannot push beyond moderate confidence. Blackburn's home advantage and solid early form give them a marginal edge, but QPR's 3-1 away win in their last away fixture commands respect. We lean home with very low conviction.",
+      "value_note": null
+    },
+    {
+      "game_number": 5,
+      "home_team": "Bolton",
+      "away_team": "Lincoln",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.72,
+      "key_factors": [
+        "Lincoln P22 with two consecutive losses — relegation pressure, poor away form (L in last away game)",
+        "Bolton unbeaten at home, P8 — strong structural position and clear motivation to push higher",
+        "Lincoln conceding 2 goals per game away from home — defensive vulnerability on the road"
+      ],
+      "risk_flags": [
+        "Relegation-threatened Lincoln may defend deep and make this uncomfortable — inflated draw risk",
+        "One-game home sample for Bolton — early season limited data caveat",
+        "DROPPED [2]: Lincoln's away record is 0W from their only away fixture, conceding 2 goals — no positive evidence for an away win"
+      ],
+      "analysis": "This is one of the clearest structural mismatches on the coupon, and Bolton's 2.48 home price feels entirely warranted. They sit P8 following an unbeaten start — a 0-0 draw and a 2-1 home win — and their home record of a 2-1 win provides direct evidence of what they can produce at Macron Stadium. The BBC's note that new signing Jayden Nelson could make his debut adds energy and freshness to a side that has managed their games sensibly so far. Bolton are not conceding freely and are winning when it matters at home.\n\nLincoln are in serious trouble at P22, having lost both of their opening fixtures — 1-3 and 1-2 — and their away form mirrors that distress: a 1-2 loss on the road. The motivation asymmetry here is notable. Lincoln desperately need points to avoid an early relegation crisis, which can sometimes produce a defensive, hard-to-beat performance — the classic 'park the bus' response from a team with nothing to lose. That slightly elevated draw probability is worth acknowledging. But the gap in league position, home advantage, and Bolton's unbeaten start all point in one direction.\n\nNeither side has xG data from the structured sources beyond shots and on-target figures, but Bolton's shot volume (8.5 per game) and their home win suggest they are generating enough to win this kind of fixture. Lincoln's away shot count of 12.5 per game is surprisingly high but has not translated into results — they are shooting but not converting, and conceding at a rate of 2 per game on the road.\n\nThe home win is the clear call here. Bolton have every incentive — they are chasing a top-six position — and Lincoln are fragile on the road. The 2.48 price does reflect genuine uncertainty in an early-season Championship environment, but the underlying logic of backing a home side with a winning record against a struggling away side is sound.",
+      "value_note": "Bolton at 2.48 is reasonable value for a home side with a winning home record against a team in real early-season distress."
+    },
+    {
+      "game_number": 6,
+      "home_team": "Bristol City",
+      "away_team": "Portsmouth",
+      "predicted_outcomes": [
+        "X",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.54,
+      "key_factors": [
+        "Bristol City P20 with a home loss already — public backing at 64% feels disconnected from form",
+        "Portsmouth's last away game was a 3-1 win — positive away form signal",
+        "Portsmouth xGA 1.45 vs 3.0 goals actually conceded — significant overperformance, defence is structurally fragile"
+      ],
+      "risk_flags": [
+        "Portsmouth's defensive regression signal (xGA 1.45, conceded 3.0) means they could leak goals",
+        "Bristol City's xGF 1.17 is adequate — they can score but haven't been doing so at home",
+        "DROPPED [1]: Bristol City are P20 with a home defeat already — the public's 64% backing is not supported by their form or league position"
+      ],
+      "analysis": "Bristol City at home present a paradox: they are the favourite at 2.23 and the public back them at 64%, but their home record shows a 0-2 defeat in their only home game. They sit P20 — in the Championship's bottom quarter — and their overall form across two games (a draw and a defeat) is uninspiring. Their xGF of 1.17 per game is actually reasonable for their level, and their xGA of 1.94 per game mirrors the 1.3 they have actually conceded, suggesting their underlying numbers are fairly honest. They are not a disaster in waiting, but they are not performing at the level of a comfortable home favourite either.\n\nPortsmouth at P11 present a more complex picture. Their most recent away game produced a 3-1 win — excellent — but their most recent home game ended in a 1-3 defeat. The statistical profile is similarly mixed: xGF 0.95 but 1.2 actual goals scored (slightly clinical), xGA 1.45 but 3.0 goals conceded — a catastrophic defensive overperformance of nearly 1.6 goals per game against their xGA. If Portsmouth's attack regresses toward that xGA line, their defence looks exposed. But a 3-1 away win is a meaningful piece of evidence that they can travel and perform.\n\nThe BBC note about Bristol City's historic clean-sheet record in this specific matchup adds some H2H flavour, but given there is no current structured H2H data, we weight that lightly. Portsmouth's potential late transfer activity adds squad uncertainty. The high public backing for Bristol City at odds of 2.23 for a P20 side with a home defeat already this season feels like a classic public-favourites trap.\n\nThe most defensible call here is either Portsmouth or the draw. Portsmouth's 3-1 away win in their last away fixture is a strong signal, and Bristol City's home defeat undermines their status as favorites. We lean toward the away side or a share of the points.",
+      "value_note": "Portsmouth at 3.35 may offer value given their 3-1 away win last time and Bristol City's P20 standing with a home loss already."
+    },
+    {
+      "game_number": 7,
+      "home_team": "Cardiff",
+      "away_team": "Sheffield U",
+      "predicted_outcomes": [
+        "X",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.58,
+      "key_factors": [
+        "Both teams have drawn both of their opening league games — empirical draw pattern is striking",
+        "Sheffield U xGF 1.92 per game is solid but only 1.5 shots on target — efficiency gap that could resolve as a draw",
+        "Cardiff's six-game losing run against Sheffield U in H2H context (unverified structured)"
+      ],
+      "risk_flags": [
+        "Sheffield U's xGF significantly exceeds their results — regression toward scoring could mean they win rather than draw",
+        "Cardiff's home form shows only draws — no evidence they can win this",
+        "DROPPED [1]: Cardiff's home record is draws not wins, and they have a six-game losing run in this matchup — weakest case for a Cardiff home win"
+      ],
+      "analysis": "Few games on the coupon are more obviously pointing toward a specific outcome than this one — and that outcome is the draw. Cardiff have drawn both of their opening games, including a 1-1 at home and a 2-2 away, while Sheffield United have also drawn both of their games, a pair of goalless 0-0 stalemates. Both teams have been playing out results of the type that suggest neither is clinical enough to impose themselves decisively on the other.\n\nSheff United's data is particularly notable. Their xGF of 1.92 per game is solid and suggests real attacking threat that their 0-0 draws have not reflected, but they are managing only 1.5 shots on target per game — a very low conversion from volume to accuracy. Their xGA of 1.62 against 2.5 goals conceded indicates they have been somewhat unlucky in front of goal from an opposition perspective — opponents are scoring more than their chances deserve. Cardiff's shotvolume is strong (13.5 per game, 5 on target) but has produced nothing more than draws.\n\nThe historical H2H context from the preview — Cardiff on a six-game losing run against Sheffield United — is worth noting but difficult to weight heavily without structured data. What we can say is that Sheffield United's market odds of 2.70 make them slight favourites, which the public (44%) also endorses. The market has edged toward Sheffield United, which may reflect their underlying xGF being almost double what their results suggest.\n\nBut the draw at 3.55 has genuine appeal given both teams' empirical pattern. If this were to be one outcome to retain on a double, the draw and Sheffield United combination makes sense — with Cardiff's home win the outcome most easily dropped given their six-game winless run in this matchup.",
+      "value_note": "The draw at 3.55 has value given both sides have drawn every game so far this season."
+    },
+    {
+      "game_number": 8,
+      "home_team": "Charlton",
+      "away_team": "Preston",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.7,
+      "key_factors": [
+        "Charlton xGF 1.46 per game vs 0.5 goals scored — extreme underperformance, regression to mean strongly indicates more goals coming",
+        "Preston xGF 1.61 per game vs 2.5 goals scored — overperforming by nearly 1 goal/game, unsustainable",
+        "League position gulf: Charlton P3 vs Preston P21, plus Charlton's unbeaten home start"
+      ],
+      "risk_flags": [
+        "Preston's six-game H2H winning streak against Charlton — long-standing psychological edge",
+        "Preston xGA 1.50 vs 1.5 conceded — accurate defensive metrics mean their defence is not as fragile as their results suggest",
+        "DROPPED [2]: Preston P21 with two away losses and xG overperformance that cannot hold — no positive case for an away win"
+      ],
+      "analysis": "Charlton's start to the Championship season has been impressive on the surface — two wins from two, P3 in the table, a 2-1 home win already on the board — but dig into the xG numbers and a fascinating regression story emerges. Their xGF of 1.46 per game against just 0.5 actual goals scored per game represents a massive underperformance of roughly one goal per game. In plain terms, Charlton have been desperately unlucky in front of goal. They are creating the right quantity and quality of chances — the xG confirms genuine attacking intent — but have not been converting. The laws of regression strongly suggest that tide is about to turn.\n\nPreston sit at the opposite end of that spectrum. They have scored 2.5 goals per game against an xGF of just 1.61 — overperforming their underlying expected goals by nearly a goal per game. That level of clinical finishing is extremely difficult to sustain over a season. They sit P21 with two consecutive losses, having conceded 3 and 2 goals respectively on the road. The motivation asymmetry — Charlton pushing for promotion, Preston scrambling for their first win — is clear.\n\nThe historical H2H angle complicates the picture: BBC note Preston's six-game winning streak against Charlton. That is a meaningful pattern in any other context, but when one team is P3 and performing well by underlying metrics while the other is P21 and losing games, form in the current campaign should carry more weight than historical patterns from what may have been significantly different squad and managerial configurations.\n\nNo injury absences are reported for either side, which means Charlton can put out their strongest XI. With xG regression pointing firmly toward more Charlton goals and Preston's clinical overperformance due to correct itself, the home win is the most defensible selection. We back Charlton at 2.18, accepting the H2H caveat as a risk flag.",
+      "value_note": "Charlton at 2.18 is fair value given the xG regression case — they have been creating significantly more than their goals suggest."
+    },
+    {
+      "game_number": 9,
+      "home_team": "Norwich",
+      "away_team": "Burnley",
+      "predicted_outcomes": [
+        "X",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.54,
+      "key_factors": [
+        "Norwich P24 but xGA only 1.02 — underlying defensive numbers suggest they are not as bad as results indicate",
+        "Burnley's last away game was a 1-3 loss — poor away form signal for the marginal market favourite",
+        "Both sides struggling in the bottom third of the Championship — motivation asymmetry is low"
+      ],
+      "risk_flags": [
+        "Norwich P24 and 0W from two home/away games — genuine form concern regardless of xGA",
+        "Burnley 1-3 loss away last time — they cannot be backed confidently on the road",
+        "DROPPED [1]: Norwich have not won a game yet this season and are bottom of the table — no positive evidence for a home win"
+      ],
+      "analysis": "Norwich occupy the bottom of the table at P24, having lost 0-3 and 1-2 in their opening two fixtures, and their home form shows a 1-2 defeat in their only home game. That is a bleak start. However, the xG numbers offer a slightly more nuanced picture than the raw results suggest. Their xGF of 1.14 per game and xGA of just 1.02 per game are remarkably modest numbers for a side that has conceded 3 goals in one game and lost both matches. The xGA of 1.02 in particular suggests their defence, on balance, has not been catastrophically leaky by expected metrics — which implies some combination of poor finishing from opponents and perhaps genuine defensive organisation beneath the surface.\n\nBurnley at P19 are hardly in rude health themselves — a 1-3 away defeat and a 2-2 draw represent a single point from two games. ESPN's market lists Burnley as the marginal favourites, and the odds of 2.85 support that, but their away loss (1-3) in their most recent road fixture is a meaningful negative signal. No structured injury data is available for either side.\n\nThis fixture is essentially two struggling sides in the bottom half of the Championship meeting at a ground where the home side has not yet won. Burnley's slight market edge reflects their presumed superior quality — they may well be a more settled second-tier side — but the data does not conclusively confirm that. The public backs Norwich at 47%, which is unusually high for a P24 side.\n\nWith both teams underperforming their respective expected positions and neither inspiring confidence from the available data, the draw is a meaningful possibility. We lean toward Burnley on marginal quality grounds but cannot push the confidence beyond the low end of the scale.",
+      "value_note": null
+    },
+    {
+      "game_number": 10,
+      "home_team": "Southampton",
+      "away_team": "Millwall",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "key_factors": [
+        "Millwall xGA 1.55 per game vs 0.8 conceded — significant defensive regression signal, fortune has shielded them",
+        "Southampton xGF 2.02 per game at home, scoring 2.8 per game — the highest home attacking output on the coupon",
+        "Millwall top of table but statistical profile suggests their record flatters their defensive solidity"
+      ],
+      "risk_flags": [
+        "Southampton 1-2 away loss shows they are not consistently strong across venues — but home form is what matters here",
+        "Millwall's attacking output (1.4 goals per game) is real — they will threaten Southampton's defence",
+        "DROPPED [2]: Millwall's xGA regression risk is the primary concern — their clean-sheet record looks unsustainable against a Southampton attack generating 2.02 xGF at home"
+      ],
+      "analysis": "This is one of the more intriguing fixtures on the coupon from an xG regression perspective. Millwall sit at P1 in the Championship with two wins from two — a perfect start — and their away record includes a 2-0 win on the road. The BBC preview tips Millwall to extend their winning run and make it three from three. On paper, Millwall are the form team and a credible away bet at 3.95. But their underlying numbers tell a story of defensive fragility masked by fortune.\n\nMillwall's xGA of 1.55 per game against just 0.8 goals conceded represents a significant overperformance — opponents have been generating 1.55 expected goals per game but scoring less than one actual goal. That gap of nearly 0.75 goals per game is the kind of statistical overhang that almost always corrects itself over time. Their attacking xGF of 1.42 against 1.4 actual is broadly accurate, so their offence is performing honestly — it is the defence that has been saved by fortune or exceptional goalkeeper performance.\n\nSouthampton at P10 have had a mixed start — a 3-1 home win and a 1-2 loss — but their home performance is the relevant data point here. At home they generated an xGF of 2.02 and scored 2.8 goals per game, which is excellent. Their xGA at home also was 1.02, suggesting solid defensive organisation when playing in front of their own crowd. Southampton have been slightly clinical at home — scoring more than their xGF — which cuts against the regression argument, but the volume (2.02 xGF) is genuinely high.\n\nThe fundamental case for Southampton is straightforward: a home side with strong home xG production against an away side whose clean-sheet record is built on a defensive foundation that is statistically fragile. At 1.97, the home odds are tight but justified.",
+      "value_note": "Southampton at 1.97 is fair given the Millwall defensive regression risk and Southampton's strong home attacking numbers."
+    },
+    {
+      "game_number": 11,
+      "home_team": "Watford",
+      "away_team": "West Ham",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.72,
+      "key_factors": [
+        "West Ham's Premier League-calibre squad vs Watford in the Championship — quality gap is structural",
+        "Watford xGF just 0.41 per game — the lowest attacking output on the entire coupon",
+        "West Ham 64% public backing and 1.90 market price reflects genuine quality superiority"
+      ],
+      "risk_flags": [
+        "Watford averaging 6.0 yellows per game at home — high disciplinary environment could create chaos or numerical advantage",
+        "West Ham only have 1 point from 2 games — slow adaptation to Championship not fully complete",
+        "DROPPED [1]: Watford xGF of 0.41 per game is insufficient to beat a West Ham side of Championship-top quality — no evidence they can win this"
+      ],
+      "analysis": "West Ham travelling to Vicarage Road are the heavy market favourites at 1.90, backed by 64% of the public, and the underlying logic is difficult to dispute. This appears to be a fixture involving a recently relegated Premier League club — West Ham, managed by Nuno Espírito Santo — adjusting to Championship football, where their superior squad quality should regularly translate into victories despite the early adaptation period. Two points from two games (a loss and a draw) is not the start they would have wanted, but the away context of that draw (2-2) is more forgivable than the home defeat.\n\nWatford sit at P7 following a draw and a home win, which is a respectable start. However, their attacking output is the lowest on the coupon by a significant margin — an xGF of just 0.41 per game with 0.3 actual goals. Watford are barely creating anything in front of goal. Their defensive xGA of 2.00 per game against 1.7 actually conceded suggests modest defensive fortune. A home xGF of 0.41 against a West Ham side with Premier League-calibre personnel is not a platform for victory.\n\nThe one complicating factor is the yellow card data: Watford are averaging an extraordinary 6.0 yellow cards per game at home, and West Ham 4.0 per game on the road. This is a match that could turn on a sending-off or a moment of indiscipline, which introduces an element of chaos that pure quality analysis cannot fully capture. Nuno's teams are typically organised and disciplined, which may suppress this risk.\n\nWatford's xGF of 0.41 is the decisive number. Generating less than half a goal's worth of expected output per game is not sufficient to trouble a West Ham side of demonstrably superior quality. We back West Ham with reasonable confidence, our second-highest pick of the coupon.",
+      "value_note": "West Ham at 1.90 is the market's most confident call on this coupon and it is supported by the underlying data."
+    },
+    {
+      "game_number": 12,
+      "home_team": "Cambridge",
+      "away_team": "Huddersfield",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.52,
+      "key_factors": [
+        "Huddersfield P2 with a 3-0 home win recently — genuine quality signal in League One context",
+        "Cambridge's last home game was a 3-2 win — they can score and win at home",
+        "Market prices this as close to a coin flip — 2.75 vs 2.43 is a thin gap"
+      ],
+      "risk_flags": [
+        "Huddersfield's only away game ended 1-1 — they have not won on the road yet",
+        "League One limited data — shots and form are the only reliable signals available",
+        "DROPPED [2]: Huddersfield's only away game was a draw; Cambridge won their last home game 3-2 — no strong positive evidence for an away win when home xG/shot data also favours Cambridge"
+      ],
+      "analysis": "League One data is the thinnest on this coupon — no xG from structured sources, no H2H data, and the preview coverage is almost non-existent for this fixture. We are working primarily from league position, form, and market signals. Huddersfield sit at P2 following a draw and a 3-0 win, suggesting genuine quality with clinical forward play. Their away form, however, shows only a 1-1 draw — they have not yet won on the road. Cambridge are P5 following a draw and a 3-2 home win, which demonstrates they can score and win in front of their own supporters.\n\nThe market prices Huddersfield as slight favourites at 2.43 against Cambridge at 2.75 — a surprisingly thin gap for a second-placed side against a fifth-placed one. The public heavily backs Huddersfield at 50%. The shot volumes are similar — both sides generate around 14 shots per game — which suggests comparable attacking intent. Cambridge's home shot-on-target count of 6.0 per game is the higher of the two, which is noteworthy for a home side.\n\nHuddersfield's 3-0 win in their most recent game is a strong signal, but it came at home. On the road they drew 1-1. Cambridge's 3-2 home win shows they can play expansive football at the Abbey Stadium. With the market seeing this as nearly a coin flip, and Cambridge having home advantage plus an active home crowd from a competitive 3-2 win, this is genuinely one of the less certain games on the coupon.\n\nWe lean marginally toward Cambridge at home given the thin gap in market pricing and their demonstrated capacity to win at home. But Huddersfield's superior league position and recent 3-0 result keep the confidence very low.",
+      "value_note": null
+    },
+    {
+      "game_number": 13,
+      "home_team": "Leyton Orient",
+      "away_team": "Barnsley",
+      "predicted_outcomes": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.53,
+      "key_factors": [
+        "Leyton Orient lost their only home game 1-2 — the home-favourite tag is not supported by home form",
+        "Barnsley drew 0-0 in their only away game — capable of being defensively solid on the road",
+        "Barnsley's goalscoring blank (0 goals in 2 games) is a major attacking concern"
+      ],
+      "risk_flags": [
+        "Orient's home loss makes the home-favourite odds of 2.28 look overpriced",
+        "Barnsley have scored 0 goals in 2 games — extreme difficulty in front of goal",
+        "DROPPED [2]: Barnsley have not scored in either of their games and have not won — no positive case for an away win when attacking output is zero"
+      ],
+      "analysis": "Leyton Orient at P10 have had a mixed opening — a 2-0 away win followed by a 1-2 home defeat, and critically their home form shows that home defeat as their only reference point. The home loss undermines their status as favourites at 2.28. They generate 9.5 shots per game and 3.0 on target, which is a relatively modest output for a home side in League One. The inconsistency between a 2-0 away win and a 1-2 home defeat in back-to-back games is a flag for erratic performance.\n\nBarnsley at P21 look like a team under real pressure — they have a 0-0 draw and a 0-1 loss to their name, producing no goals in two games and sitting near the bottom of the table. Their away form shows a 0-0 draw, which at least suggests defensive competence on the road, though they offer almost nothing going forward in that context. Their shot volume (17.5 per game, 4.5 on target) is surprisingly high for a P21 side — they are attempting the shots but not converting, which is a concern.\n\nThe preview coverage is almost absent for this League One fixture. ESPN confirms the fixture, match records show Orient at 1-0-1 and Barnsley at 0-1-1. Orient's home loss in their only home game is the single most important data point and it undermines the home-favourite narrative. Barnsley's 0-0 away draw shows they can be difficult to break down.\n\nGiven Orient's home defeat in their only home game and Barnsley's capacity to keep things tight on the road, the draw has real appeal at 3.60. We cannot back Orient with any confidence given their home loss, but cannot back Barnsley either given their goalscoring void. The draw is the most defensible call on limited data.",
+      "value_note": "The draw at 3.60 has some appeal given Orient's home defeat in their only home game and Barnsley's defensive organisation on the road."
+    }
+  ]
+}
