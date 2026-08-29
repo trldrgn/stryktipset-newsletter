@@ -581,8 +581,10 @@ def analyse_matches(
             "type": "enabled",
             "budget_tokens": CLAUDE_THINKING_BUDGET,
         }
-        # Extended thinking requires temperature=1 (Anthropic constraint)
-        api_params["temperature"] = 1
+        # Extended thinking requires temperature=1 (Anthropic constraint).
+        # Passed via extra_body since anthropic>=1.0 dropped `temperature` as a
+        # named kwarg on messages.stream() (still a valid wire-level param).
+        api_params["extra_body"] = {"temperature": 1}
         logger.info("Extended thinking enabled (budget: %d tokens)", CLAUDE_THINKING_BUDGET)
 
     # Use streaming to avoid timeout on long-running requests (extended thinking)
