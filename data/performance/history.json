@@ -1912,5 +1912,199 @@
         "post_mortem": ""
       }
     ]
+  },
+  {
+    "draw_number": 4968,
+    "draw_date": "2026-08-29",
+    "appended_at": "2026-09-05T10:46:50.797719+00:00",
+    "total_correct": 8,
+    "total_games": 13,
+    "accuracy_pct": 61.5,
+    "singles_correct": 2,
+    "singles_total": 4,
+    "doubles_correct": 5,
+    "doubles_total": 8,
+    "full_covered": true,
+    "games": [
+      {
+        "game_number": 1,
+        "home_team": "Tottenham",
+        "away_team": "Newcastle",
+        "our_prediction": [
+          "X",
+          "2"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.52,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 2,
+        "home_team": "Bournemouth",
+        "away_team": "Everton",
+        "our_prediction": [
+          "X",
+          "1"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.52,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 3,
+        "home_team": "Coventry",
+        "away_team": "Hull",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.65,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 4,
+        "home_team": "Blackburn",
+        "away_team": "Queens Park Rangers",
+        "our_prediction": [
+          "1",
+          "2"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.53,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 5,
+        "home_team": "Bolton",
+        "away_team": "Lincoln",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.72,
+        "post_mortem": "Predicted 1 (single, conf=0.72) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Relegation-threatened Lincoln may defend deep and make this uncomfortable — inflated draw risk; One-game home sample for Bolton — early season limited data caveat; DROPPED [2]: Lincoln's away record is 0W from their only away fixture, conceding 2 goals — no positive evidence for an away win."
+      },
+      {
+        "game_number": 6,
+        "home_team": "Bristol City",
+        "away_team": "Portsmouth",
+        "our_prediction": [
+          "X",
+          "2"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": false,
+        "confidence": 0.54,
+        "post_mortem": "Predicted X/2 (double, conf=0.54) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: Portsmouth's defensive regression signal (xGA 1.45, conceded 3.0) means they could leak goals; Bristol City's xGF 1.17 is adequate — they can score but haven't been doing so at home; DROPPED [1]: Bristol City are P20 with a home defeat already — the public's 64% backing is not supported by their form or league position. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 7,
+        "home_team": "Cardiff",
+        "away_team": "Sheffield U",
+        "our_prediction": [
+          "X",
+          "2"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.58,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 8,
+        "home_team": "Charlton",
+        "away_team": "Preston",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.7,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 9,
+        "home_team": "Norwich",
+        "away_team": "Burnley",
+        "our_prediction": [
+          "X",
+          "2"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": false,
+        "confidence": 0.54,
+        "post_mortem": "Predicted X/2 (double, conf=0.54) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: Norwich P24 and 0W from two home/away games — genuine form concern regardless of xGA; Burnley 1-3 loss away last time — they cannot be backed confidently on the road; DROPPED [1]: Norwich have not won a game yet this season and are bottom of the table — no positive evidence for a home win. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 10,
+        "home_team": "Southampton",
+        "away_team": "Millwall",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.63,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 11,
+        "home_team": "Watford",
+        "away_team": "West Ham",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "confidence": 0.72,
+        "post_mortem": "Predicted 2 (single, conf=0.72) but result was X. IGNORED RISKS: Risk flags were noted but not weighted enough: Watford averaging 6.0 yellows per game at home — high disciplinary environment could create chaos or numerical advantage; West Ham only have 1 point from 2 games — slow adaptation to Championship not fully complete; DROPPED [1]: Watford xGF of 0.41 per game is insufficient to beat a West Ham side of Championship-top quality — no evidence they can win this. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      },
+      {
+        "game_number": 12,
+        "home_team": "Cambridge",
+        "away_team": "Huddersfield",
+        "our_prediction": [
+          "1",
+          "X",
+          "2"
+        ],
+        "selection_type": "full",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.52,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 13,
+        "home_team": "Leyton Orient",
+        "away_team": "Barnsley",
+        "our_prediction": [
+          "X",
+          "1"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.53,
+        "post_mortem": "Predicted X/1 (double, conf=0.53) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Orient's home loss makes the home-favourite odds of 2.28 look overpriced; Barnsley have scored 0 goals in 2 games — extreme difficulty in front of goal; DROPPED [2]: Barnsley have not scored in either of their games and have not won — no positive case for an away win when attacking output is zero. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      }
+    ]
   }
 ]
