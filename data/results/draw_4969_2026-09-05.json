@@ -1,0 +1,186 @@
+{
+  "draw_number": 4969,
+  "draw_date": "2026-09-05",
+  "evaluated_at": "2026-09-12T10:59:34.382899+00:00",
+  "results": [
+    {
+      "game_number": 1,
+      "home_team": "Hull",
+      "away_team": "Aston Villa",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.62,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 2,
+      "home_team": "Brighton",
+      "away_team": "Leeds",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "X",
+      "correct": false,
+      "confidence": 0.78,
+      "post_mortem": "Predicted 1 (single, conf=0.78) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Brighton xGF overperformance (+0.60) over small sample — some regression possible, but xGF itself is already excellent; Leeds' away win (1-0) shows they can keep clean sheets on the road — not without defensive quality despite Rodon absence. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+    },
+    {
+      "game_number": 3,
+      "home_team": "Fulham",
+      "away_team": "Crystal Palace",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.61,
+      "post_mortem": "Predicted 1/X (double, conf=0.61) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Fulham's xGA of 2.07 — their defence is porous enough that even a depleted Palace could score; DROPPED [2]: Palace missing both Mateta and Sarr (the duo responsible for most Palace xGF), poor away form (2L), zero goals on the road. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 4,
+      "home_team": "Manchester City",
+      "away_team": "Coventry",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.93,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Nottingham",
+      "away_team": "Tottenham",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.65,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Brentford",
+      "away_team": "Sunderland",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "X",
+      "correct": false,
+      "confidence": 0.81,
+      "post_mortem": "Predicted 1 (single, conf=0.81) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Brentford xGF (2.83) overperforming actual GF (2.0) — finishing sharpness could be the variable on the day; Sunderland showed they can win (1-0) in the opening match — not without ability to produce a shock on their day. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+    },
+    {
+      "game_number": 7,
+      "home_team": "Burnley",
+      "away_team": "Bristol City",
+      "our_prediction": [
+        "X",
+        "2"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.6,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Millwall",
+      "away_team": "Bolton",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.65,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Portsmouth",
+      "away_team": "Cardiff",
+      "our_prediction": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.52,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Middlesbrough",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.63,
+      "post_mortem": "Predicted 1/X (double, conf=0.63) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: No QPR xG data available — cannot verify their underlying quality; the P2 standing and form are the primary evidence; DROPPED [2]: Middlesbrough away form X and L, xGF regression could help them score eventually but hasn't translated yet on the road; QPR's league position makes away win at 2.16 poor value for the home side's quality. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 11,
+      "home_team": "Sheffield U",
+      "away_team": "Norwich",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.7,
+      "post_mortem": "Predicted 1/X (double, conf=0.70) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Sheffield United scoring over their xGF (+0.08 per game) — modest overperformance but not a major concern; DROPPED [2]: Norwich DOWN-FORM, P20 in Championship, 0W away in last 2 games (conceded 3 in one), no positive evidence for away win. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 12,
+      "home_team": "West Bromwich",
+      "away_team": "Watford",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.72,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Swansea",
+      "away_team": "Wrexham",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.66,
+      "post_mortem": ""
+    }
+  ]
+}
