@@ -2300,5 +2300,199 @@
         "post_mortem": ""
       }
     ]
+  },
+  {
+    "draw_number": 4970,
+    "draw_date": "2026-09-12",
+    "appended_at": "2026-09-19T11:15:09.769541+00:00",
+    "total_correct": 8,
+    "total_games": 13,
+    "accuracy_pct": 61.5,
+    "singles_correct": 2,
+    "singles_total": 4,
+    "doubles_correct": 5,
+    "doubles_total": 8,
+    "full_covered": true,
+    "games": [
+      {
+        "game_number": 1,
+        "home_team": "Sunderland",
+        "away_team": "Arsenal",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.87,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 2,
+        "home_team": "Tottenham",
+        "away_team": "Everton",
+        "our_prediction": [
+          "X",
+          "1"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.62,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 3,
+        "home_team": "Liverpool",
+        "away_team": "Fulham",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "confidence": 0.78,
+        "post_mortem": "Predicted 1 (single, conf=0.78) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [X and 2]: Fulham's DOWN-FORM, poor away record and defensive xGA leave no credible case for anything other than a Liverpool win; Liverpool's xGA of 1.69 leaves some route for a Fulham goal, making clean sheet unlikely but not threatening the result. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      },
+      {
+        "game_number": 4,
+        "home_team": "Chelsea",
+        "away_team": "Hull",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "confidence": 0.87,
+        "post_mortem": "Predicted 1 (single, conf=0.87) but result was X. OVERCONFIDENCE: High-confidence single failed. Were multiple independent signals truly aligned, or were they correlated? IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [X and 2]: Hull's scoring overperformance and Chelsea's defensive openness could produce a goal-heavy game, but the direction of the result is not in doubt given the class gap; Caicedo absence (if confirmed) weakens Chelsea's midfield structure but not to an extent that changes the result probability significantly. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      },
+      {
+        "game_number": 5,
+        "home_team": "Crystal Palace",
+        "away_team": "Ipswich",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.58,
+        "post_mortem": "Predicted 1/X (double, conf=0.58) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [2]: Ipswich's away form includes a 2-5 drubbing; they are Down-Form on the road and missing at least one player; backing a full away win carries too much risk against a home side that should out-create them; Mateta absence (unverified) is the single biggest swing factor — if he plays, home win probability rises meaningfully. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 6,
+        "home_team": "Aston Villa",
+        "away_team": "Nottingham",
+        "our_prediction": [
+          "X",
+          "2"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.65,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 7,
+        "home_team": "Bournemouth",
+        "away_team": "Brentford",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.63,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 8,
+        "home_team": "Blackburn",
+        "away_team": "Millwall",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": false,
+        "confidence": 0.65,
+        "post_mortem": "Predicted 2/X (double, conf=0.65) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [1]: Blackburn DOWN-FORM at home with xGF of 0.78 and 4 losses in 5 — backing a home win against a stronger away side is the weakest supported outcome; Millwall's away form includes a 1-5 capitulation — form volatility means the draw remains live. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 9,
+        "home_team": "Charlton",
+        "away_team": "Portsmouth",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.62,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 10,
+        "home_team": "Middlesbrough",
+        "away_team": "Norwich",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.8,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 11,
+        "home_team": "Preston",
+        "away_team": "Lincoln",
+        "our_prediction": [
+          "1",
+          "X",
+          "2"
+        ],
+        "selection_type": "full",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.52,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 12,
+        "home_team": "Southampton",
+        "away_team": "Bristol City",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.68,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 13,
+        "home_team": "Watford",
+        "away_team": "Stoke",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.6,
+        "post_mortem": "Predicted 1/X (double, conf=0.60) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [2]: Stoke's away form (three losses/draws, conceding freely) makes a full away win the weakest supported outcome — keeping 1X; Watford's xGF of 0.41 is suspiciously low and may not reflect the full attacking picture — treat home results as more reliable signal than the xG number here. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      }
+    ]
   }
 ]
