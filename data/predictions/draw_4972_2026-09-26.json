@@ -1,0 +1,304 @@
+{
+  "draw_number": 4972,
+  "draw_date": "2026-09-26",
+  "saved_at": "2026-09-26T11:43:29.415863+00:00",
+  "executive_summary": "Draw #4972 is dominated by lower-league English football — seven League Two fixtures and four League One ties sit alongside two Nations League internationals. Two games emerge as genuinely strong signals: Stockport hosting a DOWN-FORM Peterborough and Plymouth's firepower against a toothless Burton. Rotherham vs Crewe is the standout statistical curiosity — Crewe have drawn their last five in a row and Rotherham draw constantly at home, making the X arguably the clearest single outcome on the card. No game on this coupon clears the 0.90 threshold, signalling a week of manageable rather than exceptional clarity. The Nations League fixtures carry significant data uncertainty — all injury information is Perplexity-only and unverified by structured sources — so confidence there is appropriately tempered.",
+  "value_radar": [
+    "Game 10 Rotherham vs Crewe: Draw at 3.50 looks heavily mispriced. Crewe have drawn five consecutive matches; Rotherham's home record is D-W-D. The market prices the draw as a long shot when the pattern screams X.",
+    "Game 7 Cheltenham vs Chesterfield: Chesterfield at 2.12 away looks like value given their 6.4 SoT/g and 17.0 shots/g — nearly double Cheltenham's output. The odds imply a coin-flip but the underlying numbers strongly favour the visitors.",
+    "Game 12 Swindon vs Accrington: Swindon at 2.08 appears underpriced given three consecutive home wins against an Accrington side that has lost three consecutive away games. The public are 59% Swindon yet the odds do not reflect near-certainty."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "England",
+      "away_team": "Spanien",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.67,
+      "key_factors": [
+        "England reportedly missing 5 players including Rice, Palmer and Mainoo (unverified, Perplexity-only) — hugely damaging if confirmed",
+        "Spain's absences (García, Porro, Gavi) less structurally damaging — depth covers all three positions adequately",
+        "Spain are reigning world champions with a superior technical core; Tuchel only in second competitive camp"
+      ],
+      "risk_flags": [
+        "ALL injury information is Perplexity-only — unverified by structured sources. If England's absences are overstated, home value increases significantly.",
+        "International tournament football introduces extra variance — motivation, fatigue and tactical surprises are harder to model.",
+        "DROPPED [1]: England reportedly depleted in key midfield positions; Tuchel's setup untested at this level"
+      ],
+      "analysis": "This is the flagship League A Nations League opener at Wembley, and by any reasonable measure it is Spain who arrive as clear favourites. The world champions come equipped with arguably their finest generation — Pedri, Rodri, Zubimendi and Lamine Yamal headlining a squad that blends technical mastery with relentless pressing. Thomas Tuchel faces a baptism of fire in only his second competitive camp, and the absences reportedly plaguing his squad make the task considerably harder. All injury information here is sourced from Perplexity previews and must be treated as reportedly out, unverified by structured data — but if even half the named five absentees (Declan Rice, Cole Palmer, Kobbie Mainoo, Marcus Rashford, Tino Livramento) are confirmed, England are missing their spine. Rice in particular is irreplaceable as the defensive anchor; Palmer and Mainoo gave England their Euro 2024 attacking cutting edge. Spain's absences — goalkeeper Joan García, right-back Pedro Porro, and suspended Gavi — are meaningful but far less damaging. Luis de la Fuente can call upon Unai Simón in goal and rotate wide without losing tactical identity. The tactical picture is straightforward: Spain will dominate possession through midfield overloads, expose England's makeshift midfield, and create through Yamal's runs. England will need to be disciplined and dangerous on the counter. The odds at Spain 2.55 are competitive but fair given the circumstances. The market's 47% public backing for Spain aligns with the analytical verdict. A home draw is always possible at Wembley given emotional crowd support and England's defensive resolve under Tuchel's early imprint, but Spain's quality differential is simply too pronounced — especially against a depleted English unit.",
+      "value_note": "Spain at 2.55 is borderline value given the reported injury crisis for England — if absences are confirmed, Spain are arguably worth 2.10 or shorter."
+    },
+    {
+      "game_number": 2,
+      "home_team": "Tjeckien",
+      "away_team": "Kroatien",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Croatia priced as meaningful away favourites (2.08) — market confidence in their quality over Czech Republic",
+        "No injuries confirmed for either side — fully open competition",
+        "Historical quality gap: Croatia's squad depth and tournament pedigree superior to Czech Republic's"
+      ],
+      "risk_flags": [
+        "No structured form, xG or H2H data available — analysis relies almost entirely on market signals and narrative context.",
+        "Nations League openers often produce cautious, draw-heavy results — Croatia's away record in competitive internationals is mixed.",
+        "DROPPED [1]: Czech Republic offered little evidence of being able to beat Croatia at this level without home performance uplift"
+      ],
+      "analysis": "This Nations League League A opening fixture pits two sides where form data is unavailable and all previews come solely from Perplexity. The market tells the clearest story: Croatia are priced at 2.08 as the away side, suggesting the bookmakers see them as meaningful favourites despite the Czech home advantage. Croatia's historical quality — a generation built around Modric, Kovacic and Gvardiol — provides a baseline of class that typically translates even in difficult away environments, though the golden era is clearly fading. No injuries are reported by any source for either side. The Telegraph betting preview, cited in the Perplexity coverage, tips Croatia, which provides weak corroboration. The 54% public backing for Croatia reflects a recognition of their superior pedigree at international level, and the Czech Republic — while competitive and well-organised domestically — have not reached Croatia's consistent level in recent tournaments. Playing in Prague offers some advantage, and the Czech crowd will be vocal, but the underlying quality gap is real. A draw at 3.55 is not without appeal given the pattern of Nations League openers often being cagey affairs, but the primary lean is Croatia on their class ceiling.",
+      "value_note": ""
+    },
+    {
+      "game_number": 3,
+      "home_team": "Cambridge",
+      "away_team": "Wimbledon",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.62,
+      "key_factors": [
+        "Cambridge home advantage — their last three home games include two wins and the venue suits their pressing style",
+        "Wimbledon UP-FORM flag overall but away record shows two heavy defeats in last three away trips",
+        "Teams separated by one point — genuine promotion-race intensity should produce a competitive, close contest"
+      ],
+      "risk_flags": [
+        "Wimbledon's UP-FORM flag is real and they could absolutely impose themselves — the flag should not be dismissed",
+        "No xG data for League One — analysis relies on shot counts and form only",
+        "DROPPED [X]: With both teams needing wins in a promotion battle and Cambridge having home advantage, a decisive home result has stronger backing than stalemate"
+      ],
+      "analysis": "A tight, early-season League One meeting between two sides separated by just one point in the table — Cambridge on 12, Wimbledon on 11. Cambridge come in as 1.85 home favourites, and that feels broadly correct given the venue advantage. Wimbledon carry the UP-FORM flag overall, which warrants attention: they have been playing well in aggregate and the flag is earned. However, their away form tells a more complicated story. Looking at Wimbledon's last three away results — a win, a heavy 4-1 defeat, and a 3-0 loss — there are signs of fragility on the road when the opposition has quality. Cambridge's own away record wobbles but their home environment (2-1 win, then a loss, then 3-2 win) shows they can be dangerous at the Abbey Stadium. The shot statistics are close — Cambridge averaging 10.6 shots and 3.2 on target, Wimbledon 12.6 shots and 3.0 on target — suggesting Wimbledon generate volume but Cambridge are marginally more efficient in the final third at home. The Sky Sports live billing and the early-season promotion-race framing add narrative stakes for both sides. No injury concerns for either team. This is a game where Cambridge's home advantage and Wimbledon's patchy away results tilt the scales modestly toward the hosts, but a draw is entirely plausible given the closeness in quality.",
+      "value_note": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Plymouth",
+      "away_team": "Burton",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.83,
+      "key_factors": [
+        "Plymouth UP-FORM with 4 wins in last 5, outstanding shot numbers (15.0/g, 5.8 SoT/g)",
+        "Burton generating barely half Plymouth's shot output (8.8/g, 2.8 SoT/g) — stark quality gap",
+        "Plymouth P3 vs Burton P12 — significant positional and form gap"
+      ],
+      "risk_flags": [
+        "Odds of 1.50 mean any Burton defensive performance or Plymouth off-day amplifies risk significantly",
+        "DROPPED [X]: No evidence supporting a draw — Plymouth's attacking volume makes a goalless stalemate very unlikely"
+      ],
+      "analysis": "Plymouth are one of the most compelling stories in League One right now. Sitting third with the UP-FORM flag flying, they have won four of their last five matches and their underlying numbers are exceptional for this level — 15.0 shots per game and 5.8 shots on target per game represent a genuinely dangerous attacking outfit with significant goal-scoring momentum. Their home record shows two convincing wins at Home Park before a slip, suggesting the defeat was an outlier rather than a trend. By contrast, Burton sit 12th with deeply underwhelming statistics: just 8.8 shots per game and 2.8 on target. Their away form has seen them lose two of their last three on the road, and when they do travel and lose, they lose by multiple goals (3-0 and 2-1 away in recent trips). The contrast in attacking threat is stark — Plymouth are generating roughly twice the shot quality of Burton per game. The odds price Plymouth at 1.50, which is aggressive but defensible. The 77% public backing is unusually high and might represent a small amount of steam, but there is genuine analytical substance behind the price. Plymouth's shot volume, home form and UP-FORM trajectory all converge to make this one of the clearest signals on the card. Burton's only realistic hope is a low defensive block and a set-piece on the counter — but Plymouth's 6.4 corners per game suggests they will sustain pressure throughout.",
+      "value_note": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Stockport",
+      "away_team": "Peterborough",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.84,
+      "key_factors": [
+        "Peterborough DOWN-FORM at P23 — 0 wins in last 5 matches, 0 wins in last 3 away",
+        "Peterborough's SoT average of 2.4/g is the lowest on the coupon — minimal attacking threat",
+        "Stockport generating 4.8 SoT/g and 16.0 shots/g — sustained attacking pressure expected"
+      ],
+      "risk_flags": [
+        "Odds of 1.41 are short — any surprise result is catastrophically expensive on a coupon",
+        "DROPPED [X]: Peterborough's attacking output is too poor to sustain a goalless draw; Stockport's volume makes a home win the near-certain shape of this game"
+      ],
+      "analysis": "This is the most compelling analytical case on the entire coupon. Peterborough are tagged DOWN-FORM and sitting in position 23 — deep in the relegation zone — with a five-match run that reads: loss, draw, loss, draw, loss. They have not won in five. Their away record tells the same story: a draw, a 4-0 thrashing, and a 2-0 defeat. Their shots on target average of just 2.4 per game is the lowest figure on this entire coupon — they are barely threatening opposing goalkeepers. Stockport, by contrast, average 4.8 shots on target and 16.0 shots per game, suggesting they can sustain attacking pressure for 90 minutes. Stockport's form is mixed in isolation — they lost two games recently — but the quality gap between P9 and P23 is substantial, and the contextual difference in team quality explains any surface-level wobble. The odds price Stockport at 1.41, and with 75% public backing, this is clearly a popular pick. The analytical backing is just as strong as the public sentiment here, however — this is not just a crowd favourite, it is a game where the underlying data strongly supports the home side. Peterborough's combination of poor away form, relegation-zone position, and wafer-thin attacking output makes a home win the dominant outcome. The only scenario for Peterborough would be an ultra-defensive approach scraping a 0-0, but Stockport's volume suggests that is unlikely to hold.",
+      "value_note": "Despite the short price, the analytical case is genuinely strong — this is not purely a public bandwagon."
+    },
+    {
+      "game_number": 6,
+      "home_team": "Wycombe",
+      "away_team": "Reading",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.55,
+      "key_factors": [
+        "Reading missing Rinomhota, Savage and Dorsett to international duty — midfield weakened significantly",
+        "Wycombe's home form: D-L-D in last three — not winning but competitive and hard to break down",
+        "Shot statistics almost identical — genuine 50-50 in underlying offensive output"
+      ],
+      "risk_flags": [
+        "Reading's three absences are confirmed via Perplexity only — severity depends on their squad depth which is unclear",
+        "Wycombe are not winning at home — if Reading adapt tactically, their quality should still prevail",
+        "DROPPED [1]: Wycombe have not won at home in three — while the absences are notable, Reading's overall quality should prevent a Wycombe home win"
+      ],
+      "analysis": "This is one of the more nuanced games on the card. Reading arrive with the UP-FORM flag and an impressive overall record — four wins in their last five matches including a 5-0 demolition — but their form comes with an important caveat: they are missing three players to international duty, all confirmed via Perplexity. Andy Rinomhota and Charlie Savage are midfielders, and Jeriel Dorsett is a defensive option. These are not fringe squad members — Rinomhota and Savage are likely to be key figures in Leam Richardson's setup — so their absence significantly weakens the visitors' engine room. Wycombe, sitting 14th, have not won at home in their last three (D, L, D) but they are getting a Danny Ings narrative boost and the BBC preview suggests real competitive intent at Adams Park. Reading's away form in the data is limited to just two matches (a loss and a draw), which provides insufficient signal to fully trust their road capabilities. The shot statistics are remarkably even — Wycombe 5.2/g on target, Reading 5.4/g — suggesting this is a genuine contest between two sides of similar attacking output. With Reading weakened by international absences, Wycombe's odds of 2.60 and Reading's 2.55 both reflect genuine uncertainty. The lean is toward a draw or Reading at a push, but Wycombe at home with their opponents depleted deserves more respect than the 35% public allocation suggests.",
+      "value_note": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Cheltenham",
+      "away_team": "Chesterfield",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "Chesterfield's SoT average (6.4/g) is nearly double Cheltenham's (3.8/g) — major attacking quality gap",
+        "Chesterfield's away form W-L-W shows ability to win on the road; recent away wins confirm execution",
+        "Cheltenham's form shows three draws in five — susceptible to being unlocked by a higher-quality visitor"
+      ],
+      "risk_flags": [
+        "Cheltenham are at home and ranked 5th — no pushover. Their home wins (W, W in last two home) show they can deliver.",
+        "DROPPED [1]: Cheltenham's attacking output is too low to be confident they score against Chesterfield's travel-hardened defence"
+      ],
+      "analysis": "The raw numbers here are striking. Chesterfield are generating 6.4 shots on target and 17.0 shots per game — figures that comfortably outstrip Cheltenham's 3.8 SoT and 10.2 shots per game. In any assessment of underlying quality, Chesterfield are the more dangerous attacking side by a clear margin, and this is sustained across the season rather than a single-game anomaly. Their away form of W-L-W shows they can win on the road, and their overall recent form (W, W, D, D, L) demonstrates consistency at the top end. Cheltenham sit fifth and have a decent home record (D, W, W in their last three at home), but their offensive numbers are significantly lower than Chesterfield's, and in a match where Chesterfield are likely to out-shoot them substantially, the hosts will need to be efficient and catch Chesterfield on the break. The odds price Chesterfield at 2.12 away — that feels generous given their shot statistics. The public slightly favour Chesterfield at 45%, but the odds suggest the market is not fully pricing in the attacking quality differential. Cheltenham's five-game all-form includes three draws, suggesting they have a tendency to absorb and share points — but Chesterfield's greater firepower should eventually break through. This is where Chesterfield's away confidence also matters: winning 2-1 away and 1-0 away in recent trips shows they know how to travel and execute.",
+      "value_note": "Chesterfield at 2.12 away looks like mild value given they outshoot Cheltenham nearly 2-to-1."
+    },
+    {
+      "game_number": 8,
+      "home_team": "Fleetwood",
+      "away_team": "Rochdale",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.68,
+      "key_factors": [
+        "Rochdale away form: D-L-L with just 2.8 SoT/g — limited ability to score on the road",
+        "Fleetwood 11th vs Rochdale 17th — meaningful positional and quality gap",
+        "Fleetwood's home environment is solid but draws frequently — a decisive win not guaranteed"
+      ],
+      "risk_flags": [
+        "Fleetwood draw a lot — their last three home games produced W-D-D and overall form has four draws in five",
+        "DROPPED [2]: Rochdale's shot output is the second-lowest on the coupon and their away form is poor — no grounds to back them to win"
+      ],
+      "analysis": "Fleetwood enter this fixture as modest home favourites and the analytical case supports that status, though without emphatic conviction. Their home record of W-D-D in the last three at Highbury Stadium shows a side that is difficult to beat at home but not consistently winning — a theme evident in their overall form of L-D-W-D-D. Rochdale, sitting 17th and clearly in the bottom half, have an away record of D-L-L which gives them little grounds for optimism on the road. Their shot statistics are also concerning: just 2.8 on target and 8.2 shots per game — the second-lowest attacking output among the League Two sides on this coupon. Fleetwood are not pulling up trees either at 3.4 SoT and 13.2 shots per game, but that differential is meaningful. The 3.0 yellow cards per game Rochdale average away from home (highest on the card for an away team) suggests they can get physical and disrupted when under pressure. This is not a game with strong enough signals for high confidence, but the direction — Fleetwood at home against a struggling Rochdale — is broadly correct. The 1.81 odds for Fleetwood feel marginally short given how many home games they have drawn, making 1X coverage sensible.",
+      "value_note": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Newport",
+      "away_team": "Grimsby",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "key_factors": [
+        "Grimsby P3 with superior shot stats (6.2 SoT/g vs Newport 2.8/g) — clear quality differential",
+        "Grimsby away form: D-D-D in last three away trips — consistent pattern of caution on the road",
+        "Newport DOWN-FORM at P19 but home record D-D-W shows they compete at Rodney Parade"
+      ],
+      "risk_flags": [
+        "Grimsby's three consecutive away draws is a meaningful pattern — they may settle for a point against a resolute Newport",
+        "Newport's low shot volume means if they go behind they have limited tools to respond",
+        "DROPPED [1]: Newport DOWN-FORM with minimal attacking output — a home win would require a Grimsby capitulation with no evidence to support it"
+      ],
+      "analysis": "Newport are DOWN-FORM and sitting in position 19 — deep in the relegation picture — while Grimsby sit third with genuine promotion aspirations. The statistical contrast is sharp: Grimsby generate 6.2 shots on target per game and 15.2 shots overall, with 7.8 corners — a side that consistently presses high and creates in volume. Newport manage just 2.8 on target and 9.8 shots per game. Newport manager Mullins has publicly acknowledged the difficulty of the fixture, framing Grimsby as a tough opponent. There is one important nuance here, however: Grimsby's away form reads X-X-X across their last three away trips. They are travelling well in terms of avoiding defeat, but they have not won on the road in their last three league games. This suggests they may be tactically pragmatic away from home, securing a point and not conceding rather than pushing for three. Newport's home record — D-D-W in their last three — shows they have scored and not lost at home recently. The tension between Grimsby's quality and their away draw-tendency creates a genuine X2 scenario rather than a simple away win. The market prices Grimsby at 1.87 and Newport at 3.65 — there is real value in the draw at 3.35 given Grimsby's away pattern. Nonetheless the primary prediction remains Grimsby, with the draw as the viable alternative outcome.",
+      "value_note": "Draw at 3.35 has genuine value given Grimsby's three-game away draw run — consider X2 double coverage."
+    },
+    {
+      "game_number": 10,
+      "home_team": "Rotherham",
+      "away_team": "Crewe",
+      "predicted_outcomes": [
+        "X"
+      ],
+      "selection_type": "single",
+      "confidence": 0.78,
+      "key_factors": [
+        "Crewe have drawn five consecutive matches — an extraordinary pattern suggesting structural balance",
+        "Rotherham home form: D-W-D — they share points frequently at the New York Stadium",
+        "Both teams at similar points in table with similar shot profiles — genuine equilibrium match"
+      ],
+      "risk_flags": [
+        "Motivation to push for a win in a promotion battle could break the draw pattern — both teams want three points",
+        "Rotherham 1.95 might attract some home-win backers who see their recent win as the true form — home advantage is real"
+      ],
+      "analysis": "This is the most analytically compelling game on the coupon and the standout value opportunity. Crewe's last five results read: D-D-D-D-D. Five consecutive draws. It is an extraordinary statistical pattern that signals a side finely balanced between attack and defence — capable enough to compete but unable to decisively win or sufficiently poor to lose. Their away form (D-D-W in last three) reinforces this picture: they draw games regularly on the road. Rotherham's home record mirrors this tendency: D-W-D in their last three at the New York Stadium, and their overall form of W-D-L-D-W confirms they share points frequently. When two draw-prone sides meet, the logical outcome is — a draw. The BBC's own preview framing notes Crewe are unbeaten and Rotherham are one point behind in the table, creating a genuine promotion-race encounter where neither side will be reckless. Both teams have similar shot profiles: Rotherham 4.6 SoT and 13.0 shots, Crewe 3.8 SoT and 14.0 shots — close enough that neither has a clear offensive dominance. The odds price the draw at 3.50, which is market generosity given how predictable this outcome appears statistically. With both sets of form screaming equilibrium, the draw stands as the highest-confidence outcome on the entire card — the single most underpriced result relative to the evidence.",
+      "value_note": "Draw at 3.50 is significantly mispriced. Crewe's five-draw run combined with Rotherham's draw-heavy home form makes this the strongest value play on the coupon."
+    },
+    {
+      "game_number": 11,
+      "home_team": "Shrewsbury",
+      "away_team": "Colchester",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.61,
+      "key_factors": [
+        "Shrewsbury's recent home form: W (2-0), W (1-0) — compact and difficult to beat at home despite league position",
+        "Colchester away form: L(3-1), L(2-0), D(2-2) — poor record on the road, conceding freely",
+        "Colchester boss confirmed some squad disruption from international call-ups (Perplexity-sourced)"
+      ],
+      "risk_flags": [
+        "Shrewsbury's overall form is inconsistent (D-W-L-L-W) and their P18 position reflects a team capable of poor patches",
+        "Odds making Colchester slight away favourites at 2.38 — market may know something about Shrewsbury's underlying fragility",
+        "DROPPED [2]: Colchester away form is poor and their odds as slight away favourites seem disconnected from their road record"
+      ],
+      "analysis": "A close League Two match between two mid-to-lower table sides. Shrewsbury sit 18th and have had a mixed season, but their recent home form tells a better story than their position suggests: W-W in their last two home matches before a previous defeat, with a 2-0 and 1-0 home win showing they can be compact and effective in front of their own crowd. Colchester are 15th and not dramatically better, but their away form of L-L-D across the last three trips (conceding 3 and 2 in those defeats) shows they struggle to hold firm on the road. The shot statistics are remarkably close — Shrewsbury 3.6 SoT and 13.4 shots, Colchester 3.8 SoT and 13.2 shots — reflecting a genuine match-up of equals in attacking output. Colchester boss Danny Cowley's BBC interview focused on wanting consistency, and his reference to international call-ups (including Jay Williams) suggests some squad disruption. The odds at Shrewsbury 2.75, Draw 3.10, Colchester 2.38 make Colchester slight favourites despite playing away — which feels counterintuitive given Shrewsbury's recent home form and Colchester's poor away record. The 48% public backing for Shrewsbury has some analytical merit. A home win or draw seems the more balanced outcome set here.",
+      "value_note": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "Swindon",
+      "away_team": "Accrington",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.77,
+      "key_factors": [
+        "Swindon: three consecutive home wins (3-1, 3-1, 2-1) — consistent home performer",
+        "Accrington away form: L-L-L in last three away trips — one of the worst road records on the coupon",
+        "League table gap: Swindon 13th vs Accrington 21st — meaningful quality and form differential"
+      ],
+      "risk_flags": [
+        "Swindon's overall form has three away losses mixed in — they are inconsistent, and a bad day at home remains possible",
+        "Accrington showed they can score (4.2 SoT/g) — if Swindon concede early, the dynamic can shift",
+        "DROPPED [2]: Accrington's three consecutive away defeats with P21 position provides no grounds to back them on the road"
+      ],
+      "analysis": "This is a strong case built on two converging trends. Swindon's home record shows three consecutive wins — an emphatic W(3-1), W(3-1), W(2-1) sequence — at the County Ground. Despite their mixed overall form (which includes three away losses), at home they are a different proposition: organised, clinical, and consistently converting. Their 3.6 SoT and 10.0 shots per game are modest, but they have been turning those chances into goals with regularity at home. Accrington, sitting 21st in the division, have lost three consecutive away games and their road record of L-L-L in the last three away trips makes them one of the least threatening visitors in League Two. Their SoT average of 4.2 looks higher than Swindon's but their overall record away from home is appalling. The odds for Swindon at 2.08 look significantly underpriced relative to the evidence — three consecutive home wins against an opponent on a three-game away losing streak is about as clear a signal as League Two data provides this early in the season. The 59% public backing for Swindon is actually conservative given the analytical evidence. Accrington's overall form (D-L-W-D-L) shows they can win occasionally, but that win came at home. Away from home they are simply not functioning.",
+      "value_note": "Swindon at 2.08 is clear value — their three-game home winning run against an opponent with a three-game away losing run implies shorter odds than the market offers."
+    },
+    {
+      "game_number": 13,
+      "home_team": "Tranmere",
+      "away_team": "Walsall",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.58,
+      "key_factors": [
+        "Walsall missing Pattison and Evans (both midfielders, extended absence) — confirmed by BBC/Lee Grant on 25 Sept",
+        "Tranmere home form: W-D-W in last three — genuine home strength",
+        "Walsall P2 quality vs Tranmere P10 — table gap exists but Walsall's injuries narrow the practical difference"
+      ],
+      "risk_flags": [
+        "Walsall remain a top-2 side — even without Pattison and Evans, their squad quality should provide cover",
+        "Walsall's last three away games: D-D-W — unbeaten on the road recently, which is hard to ignore",
+        "DROPPED [2]: Walsall missing two midfielders combined with Tranmere's solid home record makes a clean away win the least supported of the three outcomes"
+      ],
+      "analysis": "This is a genuinely intriguing fixture with two competing narratives. Walsall sit second in League Two — a genuine promotion side with ambition — and their overall form of W-D-D-D-W shows a consistent, hard-to-beat unit. Their away record of D-D-W across the last three trips confirms they travel well and have not lost on the road recently, including an impressive 3-0 away win. On paper, Walsall look like the stronger side. However, there is a meaningful complication: BBC Sport confirmed, via manager Lee Grant on 25 September, that midfielders Alex Pattison and Anthony Evans are expected to be out for an extended period. This is not a minor absence — losing two midfielders to long-term injuries weakens Walsall's creative engine significantly, and those are players likely central to their promotion-pushing structure. Tranmere, sitting tenth, have a creditable home record of W-D-W in their last three at Prenton Park and will draw strength from Darrell Clarke's reunion narrative with his former club. The odds are almost perfectly even (Tranmere 2.50, Draw 3.25, Walsall 2.55), and the public split (29-35-36%) reflects genuine uncertainty. With Walsall's two confirmed midfield absences, Tranmere's home record, and the psychological edge of familiarity for Clarke, the home side has a stronger case than the odds imply. A draw is also highly plausible given Walsall's recent tendency to share points.",
+      "value_note": ""
+    }
+  ]
+}

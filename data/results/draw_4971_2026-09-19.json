@@ -1,0 +1,186 @@
+{
+  "draw_number": 4971,
+  "draw_date": "2026-09-19",
+  "evaluated_at": "2026-09-26T11:36:14.506778+00:00",
+  "results": [
+    {
+      "game_number": 1,
+      "home_team": "Nottingham",
+      "away_team": "Coventry",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.82,
+      "post_mortem": "Predicted 1 (single, conf=0.82) but result was 2. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Milenkovic absent for Nottingham reduces defensive solidity — but Coventry barely threaten anyway; Nottingham's home form shows two games without a win (D, L) — but opponents' quality matters more than raw results here."
+    },
+    {
+      "game_number": 2,
+      "home_team": "Brighton",
+      "away_team": "Arsenal",
+      "our_prediction": [
+        "2"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": false,
+      "confidence": 0.78,
+      "post_mortem": "Predicted 2 (single, conf=0.78) but result was 1. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Arsenal's defensive numbers have been bailed out — regression could arrive today against a potent Brighton attack; Brighton's home form includes a 4-0 win and SoT of 6.0/g; this is not a passive home side."
+    },
+    {
+      "game_number": 3,
+      "home_team": "Everton",
+      "away_team": "Ipswich",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.62,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Newcastle",
+      "away_team": "Hull",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.6,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Birmingham",
+      "away_team": "Middlesbrough",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.65,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Burnley",
+      "away_team": "Derby",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.6,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Lincoln",
+      "away_team": "Swansea",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.63,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Portsmouth",
+      "away_team": "Blackburn",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.62,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Preston",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "X",
+      "correct": false,
+      "confidence": 0.75,
+      "post_mortem": "Predicted 1 (single, conf=0.75) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Interim manager bounce is a real but reduced effect under a caretaker — watch for a briefly motivated Preston side; QPR home form is mixed (L, W, D) — not automatic; no xG data limits structural confidence. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+    },
+    {
+      "game_number": 10,
+      "home_team": "Wrexham",
+      "away_team": "Southampton",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": false,
+      "confidence": 0.65,
+      "post_mortem": "Predicted 2/X (double, conf=0.65) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [1]: Wrexham have not won at home in last 3 games; Broadhead absent; 6-0 morale blow; quality gap is too wide; Southampton's away form (0W last 3 away) represents genuine uncertainty; the draw at 3.50 carries value if Wrexham's home organisation holds. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 11,
+      "home_team": "Luton",
+      "away_team": "Bradford",
+      "our_prediction": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.55,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "Oxford",
+      "away_team": "Cambridge",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "X",
+      "correct": false,
+      "confidence": 0.7,
+      "post_mortem": "Predicted 1 (single, conf=0.70) but result was X. IGNORED RISKS: Risk flags were noted but not weighted enough: xG regression can take multiple games to materialise — Oxford's finishing may remain cold for another fixture; Cambridge's consistent away form (D, W, D) means they are solid enough to steal a point if Oxford misfire again. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+    },
+    {
+      "game_number": 13,
+      "home_team": "Sheffield W",
+      "away_team": "Stockport",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.62,
+      "post_mortem": ""
+    }
+  ]
+}
