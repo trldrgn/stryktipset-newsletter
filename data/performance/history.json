@@ -2688,5 +2688,199 @@
         "post_mortem": ""
       }
     ]
+  },
+  {
+    "draw_number": 4972,
+    "draw_date": "2026-09-26",
+    "appended_at": "2026-10-03T11:51:24.027961+00:00",
+    "total_correct": 8,
+    "total_games": 13,
+    "accuracy_pct": 61.5,
+    "singles_correct": 2,
+    "singles_total": 4,
+    "doubles_correct": 5,
+    "doubles_total": 8,
+    "full_covered": true,
+    "games": [
+      {
+        "game_number": 1,
+        "home_team": "England",
+        "away_team": "Spanien",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.67,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 2,
+        "home_team": "Tjeckien",
+        "away_team": "Kroatien",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.6,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 3,
+        "home_team": "Cambridge",
+        "away_team": "Wimbledon",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.62,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 4,
+        "home_team": "Plymouth",
+        "away_team": "Burton",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.83,
+        "post_mortem": "Predicted 1 (single, conf=0.83) but result was 2. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Odds of 1.50 mean any Burton defensive performance or Plymouth off-day amplifies risk significantly; DROPPED [X]: No evidence supporting a draw — Plymouth's attacking volume makes a goalless stalemate very unlikely."
+      },
+      {
+        "game_number": 5,
+        "home_team": "Stockport",
+        "away_team": "Peterborough",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.84,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 6,
+        "home_team": "Wycombe",
+        "away_team": "Reading",
+        "our_prediction": [
+          "1",
+          "X",
+          "2"
+        ],
+        "selection_type": "full",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.55,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 7,
+        "home_team": "Cheltenham",
+        "away_team": "Chesterfield",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": false,
+        "confidence": 0.65,
+        "post_mortem": "Predicted 2/X (double, conf=0.65) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: Cheltenham are at home and ranked 5th — no pushover. Their home wins (W, W in last two home) show they can deliver.; DROPPED [1]: Cheltenham's attacking output is too low to be confident they score against Chesterfield's travel-hardened defence. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 8,
+        "home_team": "Fleetwood",
+        "away_team": "Rochdale",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.68,
+        "post_mortem": "Predicted 1/X (double, conf=0.68) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Fleetwood draw a lot — their last three home games produced W-D-D and overall form has four draws in five; DROPPED [2]: Rochdale's shot output is the second-lowest on the coupon and their away form is poor — no grounds to back them to win. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 9,
+        "home_team": "Newport",
+        "away_team": "Grimsby",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": false,
+        "confidence": 0.63,
+        "post_mortem": "Predicted 2/X (double, conf=0.63) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: Grimsby's three consecutive away draws is a meaningful pattern — they may settle for a point against a resolute Newport; Newport's low shot volume means if they go behind they have limited tools to respond; DROPPED [1]: Newport DOWN-FORM with minimal attacking output — a home win would require a Grimsby capitulation with no evidence to support it. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 10,
+        "home_team": "Rotherham",
+        "away_team": "Crewe",
+        "our_prediction": [
+          "X"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.78,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 11,
+        "home_team": "Shrewsbury",
+        "away_team": "Colchester",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.61,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 12,
+        "home_team": "Swindon",
+        "away_team": "Accrington",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "confidence": 0.77,
+        "post_mortem": "Predicted 1 (single, conf=0.77) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Swindon's overall form has three away losses mixed in — they are inconsistent, and a bad day at home remains possible; Accrington showed they can score (4.2 SoT/g) — if Swindon concede early, the dynamic can shift; DROPPED [2]: Accrington's three consecutive away defeats with P21 position provides no grounds to back them on the road. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      },
+      {
+        "game_number": 13,
+        "home_team": "Tranmere",
+        "away_team": "Walsall",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.58,
+        "post_mortem": ""
+      }
+    ]
   }
 ]
