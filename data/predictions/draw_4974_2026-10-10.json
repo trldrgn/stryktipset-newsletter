@@ -1,0 +1,309 @@
+{
+  "draw_number": 4974,
+  "draw_date": "2026-10-10",
+  "saved_at": "2026-10-10T12:54:37.340380+00:00",
+  "executive_summary": "Draw #4974 is a genuinely volatile coupon with no game meriting above 0.80 confidence — this should be flagged as a difficult week. The clearest signals come from xG regression (Middlesbrough massively unlucky, Preston massively lucky) and form divergence (Brentford vs a dysfunctional Aston Villa, Brighton's UP-FORM against a leaky Sunderland). The structured injury data is uniformly empty for all 13 matches, leaving us reliant on Perplexity previews throughout — that absence of verified absences adds a layer of uncertainty to every selection. The coupon's best strategy is disciplined doubling rather than hunting for singles that aren't truly there.",
+  "value_radar": [
+    "Game 9 (Middlesbrough vs Wolverhampton): Boro's xGF of 2.41 against actual goals of 1.0 per game is one of the sharpest xG regression signals on the coupon. At odds of 2.20 for the home win, with strong home form and a promotion-race atmosphere, Boro look undervalued by a market that sees only raw results.",
+    "Game 3 (Aston Villa vs Brentford): The odds are level at 2.65 each, yet Aston Villa's xGF of 1.00 per game — the lowest on the entire coupon — and back-to-back home defeats point strongly away from the home side. Brentford at 2.65 to win away represents genuine value against a Villa side that is genuinely broken in attack.",
+    "Game 11 (Sheffield United vs Lincoln): Lincoln's away record (three wins in their last four away games) is exceptional for a League One/Championship side and is completely ignored by the 3.85 away price. Sheffield United's defence has conceded 2.5 actual goals per game at home despite an xGA of only 1.62 — a dangerous combination when facing a side on a travelling winning streak."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Manchester United",
+      "away_team": "Tottenham",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.75,
+      "key_factors": [
+        "Tottenham DOWN-FORM: 0.4 goals per game in last 5, xGF only 1.16 — attacking output is at crisis levels",
+        "Manchester United xGF 2.12 vs 1.6 actual goals — finishing regression upward likely",
+        "Spurs away form: only a goalless draw and a 0-3 defeat in last two away — zero evidence of away danger"
+      ],
+      "risk_flags": [
+        "United lost their most recent home match 0-1 — home form is not bulletproof",
+        "Perplexity injury claims for both squads are largely unverifiable and include clearly incorrect player attributions for Spurs — treat all absences as unconfirmed",
+        "DROPPED [2]: Spurs' away form is dire, xGF the lowest of any side on this coupon (1.16), scoring 0.4 goals per game — no positive evidence to retain"
+      ],
+      "analysis": "Old Trafford hosts a Manchester United side that has been broadly inconsistent — a 5-2 home thrashing sandwiched between defeats and draws tells the story of a team not yet settled — but they remain a far more functional unit than the visitors right now. Their xGF of 2.12 per game versus actual goals of 1.6 hints at a team that is creating chances but not converting, a regression upward in finishing is plausible. Crucially, they face a Tottenham side wearing the DOWN-FORM banner with considerable justification: just 0.4 goals per game in the last five matches, xGF of only 1.16, and an xGA of 1.84 that confirms both attack and defence are struggling simultaneously.\n\nThe structured injury data lists neither squad as having confirmed absences, but Perplexity previews (unverified) suggest Manchester United may be without a couple of peripheral defenders and that Tottenham are potentially missing Pedro Porro, Kulusevski, and others at winger and midfield — though several named players (Mudryk, Xavi Simons, Odobert) do not belong to Tottenham's roster at all, raising serious questions about the reliability of that preview. What can be stated with confidence is that Spurs' output has been pitifully low regardless of squad selection.\n\nThe public is hammering Manchester United at 66%, and the 1.75 price reflects genuine market conviction. When public weight and market price agree, it usually means the signal is real rather than a trap. Spurs' away form — a draw against nil-nil resistance and a 0-3 defeat — offers nothing to inspire a contrarian bet. With Spurs averaging fewer than a goal a game and their xGF also well below par, the away win at 4.60 deserves no serious consideration.\n\nThe main risk is United's own inconsistency at home — they lost 0-1 in their most recent home match — and the possibility that Tottenham's experienced squad raises its game in a high-profile derby. Still, the aggregate of form, xG, and motivational signals all point toward a home win.",
+      "value_note": "At 1.75 United are a fair-to-short price given their own inconsistency, but Spurs are genuinely broken in attack — value is moderate rather than exceptional"
+    },
+    {
+      "game_number": 2,
+      "home_team": "Chelsea",
+      "away_team": "Bournemouth",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.72,
+      "key_factors": [
+        "Chelsea home advantage with key players (Palmer, Caicedo, James) confirmed fit",
+        "Bournemouth DOWN-FORM: one win in five, poor away record (D, L), Scott confirmed out",
+        "Chelsea xGA 2.06 vs 2.4 actual — defensive fragility could allow Bournemouth a foothold"
+      ],
+      "risk_flags": [
+        "Chelsea's high xGA and actual goals conceded make a draw a genuine possibility even if they dominate",
+        "Bournemouth xGF 1.62 vs 1.2 actual — due a better attacking performance on regression logic",
+        "DROPPED [2]: Bournemouth's away form is poor (D, L), they are DOWN-FORM, and their top scorer is below expected output — no positive evidence to support an away win"
+      ],
+      "analysis": "Chelsea's form over five games reads W W L D L in reverse, which encapsulates a side cycling between moments of quality and alarming frailty. The xG data reinforces that frailty: an xGA of 2.06 with actual goals conceded of 2.4 means they are defending worse than even their underlying metrics predicted. Cole Palmer's presence and Caicedo's return offer genuine quality going forward — their xGF of 1.79 versus 2.0 actual suggests they have been finishing slightly above expected, which warrants mild caution — but the home advantage at Stamford Bridge is a real factor.\n\nBournemouth carry the DOWN-FORM flag into this fixture. Their last five results contain more draws than victories, their attacking output of 1.2 goals per game is below their xGF of 1.62 (suggesting they have been unlucky in front of goal), and their only away results are a draw and a defeat. Alex Scott's confirmed absence through a thigh injury weakens their midfield options, though Bournemouth's squad depth under Marco Rose means this is not a crippling blow.\n\nThe market has Chelsea at 1.78 and the public at 71% for the home side, which is high but not unreasonable given Chelsea's home ground and Bournemouth's DOWN-FORM status. The real concern for Chelsea backers is their defensive record — conceding 2.4 per game at home too — meaning this could be a game where Chelsea win unconvincingly or even drop points despite territorial dominance. Still, the combination of home advantage, Cole Palmer fit, Caicedo available, and a struggling Bournemouth attack tips the balance toward the home side.\n\nBournemouth's xGF of 1.62 does raise the possibility they are due a better performance, but with Chelsea's set-up geared around Palmer's creativity and Reece James' overlapping runs, the Cherries' defensive unit will be under sustained pressure. A Chelsea win is the most logical outcome; the draw retains some value given Chelsea's defensive leakiness.",
+      "value_note": "Chelsea at 1.78 is short but defensible given Bournemouth's form; the draw at 4.25 carries hidden value if Chelsea's defensive vulnerabilities are exposed"
+    },
+    {
+      "game_number": 3,
+      "home_team": "Aston Villa",
+      "away_team": "Brentford",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.68,
+      "key_factors": [
+        "Aston Villa xGF of 1.00 per game — lowest attacking output on the entire coupon",
+        "Villa lost their last two home matches; Brentford unbeaten in five, xGF 2.10",
+        "Brentford 4th in Premier League; Villa 16th and in clear DOWN-FORM crisis"
+      ],
+      "risk_flags": [
+        "Brentford's last two away results are draws — they may be conservative on the road, increasing draw probability",
+        "Goretzka (Villa, reportedly out), Milambo and Dasilva (Brentford, reportedly out) all unverified by structured data",
+        "DROPPED [1]: Villa's xGF of 1.00 per game, two consecutive home defeats, and xGA of 2.17 provide no positive evidence to support a home win"
+      ],
+      "analysis": "This is arguably the most striking mismatch of the coupon when you move past the identical 2.65/2.65 odds. Aston Villa are in genuine trouble — DOWN-FORM, sitting 16th, averaging just 1.00 xGF per game (the lowest attacking output of any team across all 13 matches), and conceding at a rate of 2.17 xGA per game. Their actual home results in the last two have both been defeats, with a combined score of 1-3. This is a team that has not just lost games — it has barely created chances. An xGF of 1.00 tells you Villa are generating approximately one expected goal per game regardless of how you interpret the metric; they are genuinely difficult to back.\n\nBrentford, by contrast, are fourth in the table, unbeaten in five (two wins, three draws), generating xGF of 2.10 and conceding only 0.8 actual goals despite an xGA of 1.50. That defensive performance above their underlying metrics — conceding less than their xGA — suggests a well-organised backline with a goalkeeper performing above average, though some regression is possible over time. Their only concern is away form, where they have drawn their last two, suggesting they may sit deeper on the road and play for a clean sheet rather than going for the jugular.\n\nPerplexity reports Leon Goretzka as out for Villa (reportedly, unverified in structured data), while Brentford are said to be missing midfielders Milambo and Dasilva — both reportedly out, though again unverified by structured sources. Even at full strength, Villa's attacking output is so low that the personnel changes feel secondary to the structural problem.\n\nThe public is almost evenly split (41/27/32), and the market has correctly priced this as a coin flip, but the underlying data strongly disagrees. Brentford should be clear favourites. The draw is plausible given Brentford's cautious away approach, but backing the home side when their xGF is 1.00 per game and they have lost their last two home matches is very hard to justify analytically.",
+      "value_note": "Brentford at 2.65 is genuinely mispriced against a Villa side with the worst xGF on the coupon — they should be 1.90–2.10 favourites based on underlying data"
+    },
+    {
+      "game_number": 4,
+      "home_team": "Sunderland",
+      "away_team": "Brighton",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.72,
+      "key_factors": [
+        "Brighton UP-FORM: xGF 2.58, actual goals 3.2 per game — genuine attacking quality not just luck",
+        "Sunderland DOWN-FORM, reportedly losing key CB Ballard (unverified structurally) — defensive vulnerability exposed",
+        "Brighton reportedly missing up to five players (unverified) but squad depth remains superior to Sunderland"
+      ],
+      "risk_flags": [
+        "All five Brighton absences are Perplexity-only claims — if Mitoma, Ferguson, Minteh are genuinely out, attacking threat is significantly reduced",
+        "Sunderland's xGF 2.01 vs 1.2 actual is a regression signal — they could score more than recent results suggest",
+        "DROPPED [1]: Sunderland are DOWN-FORM, lose key defender, and are facing a side with dramatically superior quality and form — no positive evidence to back the home win"
+      ],
+      "analysis": "Brighton's UP-FORM flag is well-earned: three wins and a draw in their last four, including a 5-0 away win, with an xGF of 2.58 and actual goals of 3.2 per game — one of the few teams on this coupon where actual output exceeds expected output, reinforcing the quality of their performances rather than just their luck. Fabian Hürzeler's system has been generating genuine chances and converting them efficiently.\n\nThe reported absences are significant, however. Perplexity claims Stefanos Tzimas, Evan Ferguson, Kaoru Mitoma, Yankuba Minteh, and Mats Wieffer are all out (all unverified by structured sources, but the breadth of the list — five players across forward line and midfield — is plausible given the international break injury context). Even if only half of these are genuine, Brighton are missing meaningful attacking width and their most clinical finisher in Ferguson. The structured data returns empty for both sides, so these must be treated as unverified.\n\nSunderland are DOWN-FORM and losing their key CB Dan Ballard to a hamstring injury sustained on international duty (confirmed in Perplexity, plausible) is a genuine concern against a Brighton side that transitions quickly and attacks wide channels. Brian Brobbey is reportedly doubtful up front — though Brobbey's connection to Sunderland is itself questionable. Sunderland's xGF of 2.01 versus actual goals of 1.2 does suggest they have been unlucky and could score more, but their defensive record (xGA 1.77, actual GA 2.0) makes a clean sheet unlikely.\n\nThe away win at 2.38 is fair given Brighton's quality despite their injury concerns. Sunderland's home form (L, W in last two home games) is too inconsistent to inspire confidence. Brighton should have enough quality across the squad to win this without their full complement of forwards.",
+      "value_note": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Ipswich",
+      "away_team": "Fulham",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Fulham DOWN-FORM: zero wins in last five, xGF 1.59 vs 1.0 actual — cannot convert their chances",
+        "Ipswich missing Fatawu (confirmed suspended) — direct attacking threat removed from right flank",
+        "Fulham xGF underperformance suggests potential goals are suppressed, but Ipswich's xGA suggests vulnerability on the other end"
+      ],
+      "risk_flags": [
+        "Fatawu suspension is confirmed for Ipswich — weakens their best attacking option",
+        "Cairney (OUT) and Robinson (DOUBTFUL) for Fulham are Perplexity-only claims — structural data is empty",
+        "DROPPED [2]: Fulham are DOWN-FORM with zero wins in five, scoring 1.0 goals per game despite xGF of 1.59 — no positive evidence to back an away win on current trajectory"
+      ],
+      "analysis": "This fixture between two sides searching for consistency has the hallmarks of a tight, nervous encounter with no dominant force. Ipswich's form in all competitions over five games is a patchwork of wins, losses and draws; their xGF of 1.42 versus actual goals of 1.4 suggests they are creating and converting at roughly expected levels, while their xGA of 2.06 versus 2.2 actual confirms they are conceding slightly more than their defensive shape deserves. Neither number inspires confidence.\n\nFulham are DOWN-FORM and, perhaps more damagingly, they arrive having failed to win any of their last five league matches (three losses, two draws). Their xGF of 1.59 versus just 1.0 actual goals per game is one of the more pronounced underperformance figures on the coupon — Alvaro Arbeloa's side are creating chances but cannot find the net. Tom Cairney's confirmed absence weakens their midfield creativity further, and Antonee Robinson remains doubtful after an ankle knock, which could compromise their left flank (these are from Perplexity only, unverified structurally). Abdul Fatawu's suspension for Ipswich is confirmed and removes their most direct attacking option down the right.\n\nPublic money sits at 42% Fulham, which seems generous to an away side on a five-game winless run. The 2.63 price for Fulham reflects market indifference between the two sides. Ipswich's home record is modest (one win in two recent home matches), but they are the team with more recent positive results. Chris Sutton's 1-1 prediction (Perplexity) aligns with the draw narrative, and the draw at 3.65 carries some appeal.\n\nWith Fatawu suspended, Ipswich lose pace on the wing; with Cairney out and Robinson doubtful, Fulham lose midfield and full-back quality. Both sides are compromised, making this one of the trickiest calls on the coupon.",
+      "value_note": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Blackburn",
+      "away_team": "Cardiff",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.73,
+      "key_factors": [
+        "Cardiff DOWN-FORM: zero away wins in last four, Colwill (OUT) removes their primary creative source",
+        "Chambers also OUT for Cardiff — defensive disruption adds to their problems",
+        "Blackburn home record shows two wins in last four; Cardiff without key creative and defensive players"
+      ],
+      "risk_flags": [
+        "Blackburn's xGF of 0.78 is very low — they struggle to create and may not have enough firepower even against a depleted Cardiff",
+        "Cardiff's injury confirmations (Colwill, Chambers) come via Perplexity/BBC Sport — not verified by structured API data",
+        "DROPPED [2]: Cardiff zero away wins in last four, DOWN-FORM, missing key midfielder Colwill and defender Chambers — no positive evidence to support away win"
+      ],
+      "analysis": "Championship fare at Ewood Park, and the cleaner of the two sides by a distance is Blackburn — not because they are spectacular, but because Cardiff are DOWN-FORM, carry the worse away record, and are arriving with confirmed absences. Rubin Colwill (ankle) and Calum Chambers (knee) are confirmed out by Perplexity via BBC Sport — Colwill in particular is Cardiff's creative hub, and his absence removes their most reliable source of attacking invention. Yousef Salech and Alex Robertson are both reportedly doubtful with further physical complaints, making this a significantly weakened Cardiff travelling party.\n\nBlackburn's underlying xG numbers are modest — xGF of 0.78 versus 0.5 actual (very few goals being generated), and xGA of 1.64 versus 1.0 actual suggests their goalkeeper or defensive organisation has been bailing them out. That defensive outperformance is fragile but the fact remains they have beaten it. Their home form shows two wins in the last four home games, including a 3-1 victory.\n\nCardiff's away form is wretched: four away games with no wins, three losses, one draw, scoring just once or twice in each. DOWN-FORM and missing their main creative midfielder on the road — that combination makes backing the Cardiff away win close to indefensible at 2.55. The draw at 3.65 is a reasonable concern; Blackburn are not a high-scoring team and Cardiff may set up to frustrate. But with Cardiff this depleted in midfield quality, Blackburn should have enough to win at their own ground.\n\nThe lack of xG data for Cardiff complicates the analysis, but the form and injury picture is sufficiently clear to support the home side.",
+      "value_note": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Bolton",
+      "away_team": "Stoke",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.62,
+      "key_factors": [
+        "Stoke UP-FORM overall (5W in 5) but poor away Championship form (1W in last 4 away)",
+        "Bolton home advantage; inconsistent but with two recent wins noted in the preview",
+        "Galbraith doubtful for Stoke (Perplexity only, unverified) — potential midfield disruption away from home"
+      ],
+      "risk_flags": [
+        "Stoke's overall form is exceptional — backing against them always carries risk, even away",
+        "Bolton's own home record is inconsistent: two wins and two losses in last four home games",
+        "DROPPED [2]: Stoke's away Championship form (1W in last 4 away) directly contradicts their overall UP-FORM — insufficient positive evidence to back the away win"
+      ],
+      "analysis": "Stoke City carry the UP-FORM flag with genuine justification — five wins in their last five across all competitions is a remarkable run and speaks to a team whose confidence and tactical coherence is currently very high. However, a critical caveat applies: their away form is poor. In the Championship, Stoke's away results read W, D, L (1-4), L (1-3) in their last four away fixtures. The 5-game winning run has been built predominantly at home or in cup competitions. When they travel, a different Stoke appears.\n\nBolton are inconsistent at home — their last four home results show W (1-0), L (2-3), L (0-1), W (2-1) — and they have been active recently (two wins noted in the preview). The injury picture for both sides is clean per structured data, and Perplexity only flags Ethan Galbraith as a doubtful for Stoke (hamstring), which is unverified structurally. Galbraith's potential absence is manageable but notable.\n\nThe tension here is clear: Stoke's form is superb but their away record undermines it. Bolton's form is inconsistent but their home advantage matters in the Championship. Stoke's xGF of 1.50 versus 1.3 actual and xGA of 1.89 versus 2.0 actual — both sides of the ledger showing them slightly below expected — does not scream a team that will sweep away a home side, particularly away from home. The Bolton xG data is unavailable; relying on the form and odds context.\n\nAt current odds, Bolton at 2.55 and Stoke at 2.75 are virtually level, but the home advantage combined with Stoke's poor away form tips the balance toward Bolton or the draw. I cannot in good conscience back Stoke away when their away record is so patchy despite their headline form.",
+      "value_note": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Derby",
+      "away_team": "Wrexham",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "key_factors": [
+        "Derby DOWN-FORM: zero home wins in last four matches (L, L, L, D)",
+        "Derby xGA 1.06 but conceding 1.7 actual — defensive fragility exceeds what xG model captures",
+        "Public backing Wrexham 44% vs Derby 25% at home — unusual signal reinforcing Derby's dysfunction"
+      ],
+      "risk_flags": [
+        "Wrexham's form is volatile — a 0-6 loss is within their recent history and they can collapse",
+        "Cacace absence (Wrexham defender, Perplexity only) is unverified structurally but plausible",
+        "DROPPED [1]: Derby have no home wins in their last four Championship matches — no positive evidence to support a home win in this fixture"
+      ],
+      "analysis": "Derby County wear the DOWN-FORM badge and their home record is genuinely alarming: in their last four home Championship matches, they have lost three and drawn one. Not a single home win. This is a side that cannot win in front of their own supporters, and their xGF of 1.50 versus 1.3 actual is reasonable for the division — they are creating but not converting — while their xGA of only 1.06 against 1.7 actual goals conceded is a significant discrepancy. Derby have been conceding far more than their defensive xG suggests they should, meaning their goalkeeper is not saving them and the backline is porous in ways that the xG model does not fully capture.\n\nWrexham are more volatile — a 0-6 demolition sits in their recent form alongside a 3-0 win — but their overall trajectory is reasonable at 14th, and their away record (D, D, W, L) contains no evidence they collapse on the road in the same way Derby do at home. One confirmed absence: Liberato Cacace (defender, reportedly out with a persistent calf problem), which is plausible and noted by Perplexity.\n\nThe public are backing Wrexham at 44% despite this being a home fixture for Derby, which itself is a telling signal. When the public backs the away side in a Championship match, it often reflects genuine concerns about the home team's current state — and Derby's home record validates that concern entirely. The 44% public support for Wrexham makes the 2.65 away price look undervalued.\n\nAll data points — form, xG discrepancy, home record — converge against Derby. The draw at 3.35 is plausible if both sides cancel each other out, but Derby have not drawn at home either. The away win or draw combination makes most analytical sense.",
+      "value_note": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Middlesbrough",
+      "away_team": "Wolverhampton",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.72,
+      "key_factors": [
+        "Middlesbrough xGF 2.41 vs 1.0 actual goals — the most extreme regression-upward signal on the entire coupon",
+        "Boro strong home form (D, W, W, W in last four at Riverside) plus strong xGA of 1.05",
+        "Wolverhampton UP-FORM promotion rivals — this will be fiercely contested and the draw is a natural outcome"
+      ],
+      "risk_flags": [
+        "Wolves are UP-FORM and promotion-quality — a draw is highly plausible in top-of-table Championship fixtures",
+        "No xG data for Wolves limits depth of comparative analysis",
+        "DROPPED [2]: Wolves' away form (W, D, L, W) is mixed and they face a Boro side with massive regression potential firing at them — insufficient evidence to back the away win"
+      ],
+      "analysis": "This is the standout regression story of the entire coupon. Middlesbrough sit third in the Championship with an xGF of 2.41 per game — generating nearly two and a half expected goals every match — yet they are averaging only 1.0 actual goals scored. That is a differential of -1.41, easily the largest positive regression signal across all 13 fixtures. In plain English: Middlesbrough have been extraordinarily unlucky or profligate in front of goal, and the numbers strongly predict that their scoring rate must rise. Their xGA of 1.05 is also excellent — they are creating chances, restricting opponents, and simply not taking their own. The Riverside is their home, and their home form (D, W, W, W in last four at the Riverside) is a strong platform.\n\nWolverhampton are fourth on 14 points, UP-FORM, and have won four of their last six Championship matches. Their away form in the division is mixed — W, D, L, W across their last four away — so they are not invincible on the road, but they are very much a promotion rival rather than a visitor Boro can dismiss. No xG data for Wolves in the championship (Stats N/A) means the analysis leans more on form and the BBC preview narrative, which confirms both clubs have lost only once in the league and this is a genuine top-four clash.\n\nBoth sides are clean of confirmed injuries. This has the hallmarks of an intense, tight promotion six-pointer. Middlesbrough's regression signal is powerful and favours the home side scoring their backlog of xG-warranted goals, but the quality of the opposition means a draw is highly plausible — Wolves will defend well and look to counter. The 2.20 for a Boro home win looks genuinely undervalued given the magnitude of their xGF regression signal.",
+      "value_note": "Middlesbrough at 2.20 represents genuine value — their xGF-to-goals regression gap of -1.41 per game is the clearest betting signal on the coupon"
+    },
+    {
+      "game_number": 10,
+      "home_team": "Preston",
+      "away_team": "Millwall",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.62,
+      "key_factors": [
+        "Preston xGF 1.61 vs actual goals 2.5 — massive positive overperformance, regression downward in goals almost certain",
+        "Millwall xGA 1.55 vs 0.8 actual goals conceded — defensive unit significantly outperforming model, a sustainable edge",
+        "Preston DOWN-FORM with only one Championship win all season — underlying quality concerns are real"
+      ],
+      "risk_flags": [
+        "Millwall's away form (D, L, L, W) is inconsistent — they are not a reliable away side despite better underlying numbers",
+        "Preston's goal overperformance may partly reflect schedule-driven luck rather than pure regression — home fixture could still yield goals",
+        "DROPPED [1]: Preston are overperforming their xGF by +0.89 goals per game (unsustainable), DOWN-FORM, and have only one win all season — no positive evidence to support them winning at home"
+      ],
+      "analysis": "Preston are DOWN-FORM and bottom-half at Deepdale, and while their xGF of 1.61 per game is not terrible, the alarming figure is on the other side: they have scored 2.5 actual goals per game versus an xGF of only 1.61. That +0.89 overperformance is the largest positive xG overperformance of any team in these 13 matches — and it is not a positive signal. It means Preston have been converting at a rate they almost certainly cannot sustain. Regression downward in their goal output is expected, and given that they are already DOWN-FORM with only one Championship win all season, the underlying picture is bleak.\n\nMillwall sit 12th and are a more coherent unit, though their away form is mixed — D, L, L, W across their last four away — and the BBC preview mentions (without naming individuals) that Millwall are dealing with injuries. Their xGF of 1.42 versus 1.4 actual and xGA of 1.55 versus 0.8 actual tells an interesting story: they are conceding far fewer goals than their defensive xG predicts, suggesting their defensive unit is performing above model expectation and absorbing chances well.\n\nThe public strongly backs Millwall at 48% despite this being a home fixture for Preston. With Preston's scoring regression incoming and Millwall's defence outperforming its xGA, the away side has the more sustainable underlying position. However, their own away record is inconsistent. The draw at 3.50 has appeal given how evenly matched these sides appear when the regression factors are applied, but Millwall's superior defensive record tips the balance toward the visitors or a share of the points.",
+      "value_note": ""
+    },
+    {
+      "game_number": 11,
+      "home_team": "Sheffield U",
+      "away_team": "Lincoln",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "Lincoln away form: three wins in last four away Championship matches — exceptional travelling record",
+        "Sheffield United xGA 1.62 vs 2.5 actual goals conceded at home — defensive structure is failing badly",
+        "Lincoln potentially entering play-off positions with a win — strong motivation differential"
+      ],
+      "risk_flags": [
+        "Sheffield United are 2.02 home favourites — if they improve defensively this could be a low-scoring home win",
+        "No injury data confirmed for either side — structural data entirely empty",
+        "DROPPED [1]: Sheffield United have lost two of their last four home matches, concede 2.5 goals per game despite xGA of 1.62, and face a Lincoln side with three away wins in four — insufficient positive evidence for the home win"
+      ],
+      "analysis": "Sheffield United at Bramall Lane carry the weight of expectation under Chris Wilder, but the numbers do not support that expectation being met. Their home record over the last four Championship matches is L (0-1), L (1-3), W (3-2), D (0-0) — two home defeats in their last four, and the BBC preview explicitly frames this match as Wilder trying to avoid a third successive home league defeat. Their xGA of 1.62 versus actual goals conceded of 2.5 is a deeply concerning gap — Sheffield United's defence is giving up two and a half goals per home game while their underlying metrics suggest they should be conceding closer to one and a half. This is not a statistical blip; it represents a structural defensive issue.\n\nLincoln arrive with remarkable away form: three wins in their last four away matches, with their only away defeat a 1-2 loss. This is a side that travels well and punches above their weight on the road. The BBC preview confirms Lincoln could move into the play-off positions with a win, adding significant motivation to their travelling party. Their overall form (W, W, D, D, L in last five) is solid without being spectacular.\n\nAt 3.85, the Lincoln away win is priced as though it is unlikely, but their away record of three wins in four suggests otherwise. Sheffield United's defensive issues are real and Lincoln are direct enough to exploit gaps. The 2.02 for a Sheffield United home win is short given their two recent home defeats and the quality of the visitor. This is a match where the away price looks genuinely inflated.",
+      "value_note": "Lincoln at 3.85 away looks genuinely mispriced given their three wins in last four away matches and Sheffield United's defensive fragility at home"
+    },
+    {
+      "game_number": 12,
+      "home_team": "Watford",
+      "away_team": "Burnley",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.58,
+      "key_factors": [
+        "Watford xGF 0.41 per game — near-zero attacking output, three confirmed absences (reportedly Bove, Ngakia, Baah)",
+        "Burnley DOWN-FORM: zero away wins in last four, conceding 2.5–4 goals away from home regularly",
+        "Both teams stuck in draws and low-scoring games — the draw price of 3.50 looks undervalued"
+      ],
+      "risk_flags": [
+        "Watford's three reported absences (Bove, Ngakia, Baah) are from Perplexity/BBC Sport only — not verified by structured API data",
+        "Burnley's away record is so poor (0W, 10 GA in last 4 away) that even Watford's low-scoring attack may be enough",
+        "DROPPED [2]: Burnley zero away wins in their last four Championship away matches, conceding freely — their away record provides no positive evidence to back an away win despite the level odds"
+      ],
+      "analysis": "Two struggling Championship sides collide in a match that offers more analytical uncertainty than almost any other on this coupon. Watford are DOWN-FORM and carry the most concerning attacking numbers of any home side in these 13 fixtures outside of Aston Villa: xGF of just 0.41 per game, actual goals of 0.3. They are barely generating or converting chances at Vicarage Road, and with Perplexity reporting Edoardo Bove, Jeremy Ngakia, and Kwadwo Baah all confirmed absent until the November international break (plausible BBC Sport source), they are short of options going forward. Dionisi's caveat that returning players are 'not ready for 90 minutes' further limits what Watford can offer from their bench.\n\nBurnley are equally DOWN-FORM: their last five results are X, L, X, L, X — three draws and two losses, not a single win in five Championship outings. Their away record of L (1-3), D (1-1), L (1-4), L (1-3) in their last four away matches is abysmal. They are shipping goals heavily away from home and drawing blank at home. No injuries confirmed by structured data for Burnley.\n\nThis is the hardest call on the coupon: a team that cannot score at home against a team that cannot win away. The draw at 3.50 has strong logical support — both sides are stuck in draws and low-scoring outcomes. But the market price of 2.38 for Burnley away is difficult to defend against an away record that reads four games with zero away wins and ten goals conceded. Watford's attacking output is so low they may not score, yet Burnley cannot win on the road. The X/1 combination is the most defensible, with the draw as the primary outcome.",
+      "value_note": "The draw at 3.50 looks undervalued — both sides are genuinely low-scoring and Burnley cannot win away, making a goalless or single-goal draw the most plausible outcome"
+    },
+    {
+      "game_number": 13,
+      "home_team": "Huddersfield",
+      "away_team": "Sheffield W",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.7,
+      "key_factors": [
+        "Huddersfield lead League One in shots on target (7.2/g) and total shots (18.4/g) — overwhelming home volume",
+        "Sheffield Wednesday xGA 2.55 and actual 2.5 conceded per game — defensive structure is being opened regularly",
+        "Sheffield W UP-FORM with three consecutive away wins — cannot be dismissed, creates genuine risk"
+      ],
+      "risk_flags": [
+        "Sheffield Wednesday's three-game away winning run is a powerful UP-FORM signal that directly contradicts their defensive xG numbers — the market may be right that something is working tactically away from home",
+        "No injury data verified for either side — structural data entirely empty",
+        "DROPPED [2]: Sheffield Wednesday's xGA of 2.55 and goals conceded of 2.5 per game mean they are being breached repeatedly — facing Huddersfield's volume attack at home makes an away win the weakest outcome despite their recent away wins"
+      ],
+      "analysis": "League One's top-of-the-table contest between two promotion candidates offers one of the more intriguing analytical puzzles on the coupon. Huddersfield sit third with a strong home record — D, W, W in their last three at the John Smith's Stadium — and their attacking numbers jump off the page: 7.2 shots on target per game and 18.4 shots per game are comfortably the highest figures across all 13 fixtures. They generate volume relentlessly and their home atmosphere reflects a team built to dominate their own ground.\n\nSheffield Wednesday are UP-FORM and carry a stunning away record: three wins in their last three away matches, including a 2-1 victory that appears to be their most recent away fixture. They are fourth in League One and flying. But here is the critical counter-signal: Sheffield Wednesday's xGF of 1.05 versus actual goals of 0.5 and xGA of 2.55 versus actual 2.5 are alarming numbers. They are scoring half a goal per game despite generating over a goal of xGF, and conceding two and a half goals per game. Their recent wins may have come in low-quality opposition matchups or through heroic goalkeeper performances and counter-attacking efficiency that the model does not capture — but those wins look fragile when you see they are conceding at a rate of 2.5 per game.\n\nAgainst Huddersfield, who generate 7.2 shots on target per game, Sheffield Wednesday's leaky defence is a major vulnerability. The 1.70 home price for Huddersfield reflects their dominance in League One terms, and despite Sheffield Wednesday's impressive recent away results, the underlying xG tells a team whose defensive structure is being repeatedly breached. Huddersfield at home in a local derby with dominant shot metrics is the most logical selection, though the 1.70 is short and the draw carries appeal given Wednesday's recent winning form.",
+      "value_note": ""
+    }
+  ]
+}

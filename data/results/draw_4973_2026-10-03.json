@@ -1,0 +1,186 @@
+{
+  "draw_number": 4973,
+  "draw_date": "2026-10-03",
+  "evaluated_at": "2026-10-10T12:46:09.148226+00:00",
+  "results": [
+    {
+      "game_number": 1,
+      "home_team": "Kroatien",
+      "away_team": "England",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.62,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 2,
+      "home_team": "Nordmakedonien",
+      "away_team": "Skottland",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.64,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 3,
+      "home_team": "Schweiz",
+      "away_team": "Slovenien",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.82,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Burton",
+      "away_team": "Huddersfield",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.68,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Leyton Orient",
+      "away_team": "Plymouth",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.7,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Reading",
+      "away_team": "Bradford",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.74,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Accrington",
+      "away_team": "Cheltenham",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": false,
+      "confidence": 0.65,
+      "post_mortem": "Predicted 2/X (double, conf=0.65) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: Accrington's home draw tendency could frustrate even a good Cheltenham side; Card rates high for both sides (2.8H, 2.5A) — physical contest expected; DROPPED [1]: Accrington's attacking output too low to trust as home winners against a top-2 side. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 8,
+      "home_team": "Crewe",
+      "away_team": "Bristol Rovers",
+      "our_prediction": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.7,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Exeter",
+      "away_team": "Rotherham",
+      "our_prediction": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.58,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "Gillingham",
+      "away_team": "Newport",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.75,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 11,
+      "home_team": "Grimsby",
+      "away_team": "Shrewsbury",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.82,
+      "post_mortem": "Predicted 1 (single, conf=0.82) but result was 2. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Shrewsbury's shot volume (15.2 shots/g) suggests they do create chances — Grimsby can't switch off; At 1.67, any slip from Grimsby is costly — limited price margin for error."
+    },
+    {
+      "game_number": 12,
+      "home_team": "Rochdale",
+      "away_team": "Swindon",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.88,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Salford",
+      "away_team": "Fleetwood",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.83,
+      "post_mortem": ""
+    }
+  ]
+}
