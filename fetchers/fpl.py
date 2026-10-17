@@ -153,6 +153,7 @@ def enrich_with_fpl_absences(matches: list[Match]) -> list[Match]:
                     logger.warning("FPL: could not resolve team '%s'", team_name)
                     continue
                 stats.injuries = _build_team_absences(team_id, players)
+                stats.absences_checked_source = "fpl"
                 filled += 1
         logger.info("FPL absences complete: %d PL teams filled", filled)
     except Exception as e:

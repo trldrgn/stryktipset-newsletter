@@ -124,6 +124,18 @@ python main.py --backfill-xg
 
 ---
 
+## Data source status (2026-10-17)
+
+- **API-Football: account suspended.** Every call fails; the code degrades gracefully. The xG collector (same key) collects nothing.
+- **H2H:** football-data.co.uk past-season CSVs (`enrich_with_csv_h2h`, current + 3 seasons, all divisions).
+- **Premier League injuries:** official FPL feed (`fetchers/fpl.py`).
+- **Sofascore:** blocks GitHub runners by IP, and challenges headless sessions from home connections after a few runs. Live calls are no longer made in the pipeline. Instead `apply_sofascore_snapshot()` reads `data/sofascore/draw_{N}.json`, written locally by `python main.py --collect-sofascore` (or `scripts/collect_sofascore.ps1`; setup in `requirements-local.txt`). A missing snapshot is a warning, not an error. The collector refuses to write an empty (blocked) snapshot.
+- **Championship/League One:** no structured injuries or real xG unless a Sofascore snapshot exists.
+- `TeamStats.absences_checked_source` separates "checked, fully fit" from "no data" in the prompt.
+- **Re-sending a draw:** run the workflow with `force_rerun=true` (`--force`). It evaluates the previous draw, replaces rather than duplicates its `history.json` entry, and appends "(uppdaterad)" to the subject.
+
+---
+
 ## Data models
 
 All dataclasses live in `models/match.py`. Before modifying any fetcher or analyser, read this file — every field is documented.

@@ -76,12 +76,21 @@ def save_predictions(
     return filename
 
 
-def load_latest_predictions() -> Optional[tuple[int, str, list[dict]]]:
+def _draw_of(path: Path) -> int:
+    """draw_4975_2026-10-17.json -> 4975"""
+    return int(path.name.split("_")[1])
+
+
+def load_latest_predictions(before_draw: int | None = None) -> Optional[tuple[int, str, list[dict]]]:
     """
     Load the most recent predictions file.
+    before_draw: ignore files for this draw or later — a forced re-run of the
+    current draw must still evaluate LAST week, not itself.
     Returns (draw_number, draw_date, raw_predictions_list) or None.
     """
-    files = sorted(PREDICTIONS_DIR.glob("draw_*.json"), reverse=True)
+    files = sorted(PREDICTIONS_DIR.glob("draw_*.json"), key=_draw_of, reverse=True)
+    if before_draw is not None:
+        files = [f for f in files if _draw_of(f) < before_draw]
     if not files:
         logger.info("No previous predictions found — skipping evaluation")
         return None
@@ -172,7 +181,7 @@ def _post_mortem_hint(pred: dict, actual: Outcome) -> str:
 # Main evaluation function
 # ---------------------------------------------------------------------------
 
-def evaluate_last_week() -> Optional[WeeklyEvaluation]:
+def evaluate_last_week(before_draw: int | None = None) -> Optional[WeeklyEvaluation]:
     """
     Load last week's predictions, fetch actual results, score them,
     save to disk, and return a WeeklyEvaluation ready for:
@@ -180,7 +189,7 @@ def evaluate_last_week() -> Optional[WeeklyEvaluation]:
       - Claude's context prompt (lessons learned)
       - Long-term history.json (model improvement)
     """
-    loaded = load_latest_predictions()
+    loaded = load_latest_predictions(before_draw)
     if loaded is None:
         return None
 
@@ -302,7 +311,9 @@ def _append_to_history(
     evaluations: list[MatchEvaluation],
     summary: WeeklyEvaluation,
 ) -> None:
-    history = _load_all_history()
+    # Replace (not duplicate) an existing entry — a forced re-run evaluates
+    # the same previous draw again.
+    history = [w for w in _load_all_history() if w.get("draw_number") != draw_number]
     history.append({
         "draw_number": draw_number,
         "draw_date": draw_date,

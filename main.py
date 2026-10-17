@@ -45,7 +45,7 @@ from fetchers.football_data import enrich_with_football_data
 from fetchers.football_data_csv import enrich_with_csv_h2h, enrich_with_csv_stats
 from fetchers.fpl import enrich_with_fpl_absences
 from fetchers.perplexity import fetch_all_match_news
-from fetchers.sofascore import enrich_with_sofascore_absences, enrich_with_sofascore_xg
+from fetchers.sofascore_collector import apply_sofascore_snapshot
 from fetchers.understat_xg import enrich_with_understat_xg
 from fetchers.svenska_spel import fetch_current_coupon, fetch_coupon, get_current_draw_number
 from utils.logger import get_logger
@@ -57,7 +57,7 @@ logger = get_logger(__name__)
 # Core pipeline
 # ---------------------------------------------------------------------------
 
-def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
+def run_pipeline(draw_number: int | None = None, dry_run: bool = False, force: bool = False) -> None:
     """
     Full newsletter pipeline:
       1. Evaluate last week's predictions
@@ -79,8 +79,9 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
 
     # --- Already-run guard (skips duplicate runs for the same draw) ---
     # Applies to real runs only — dry runs always proceed so you can test freely.
-    if not dry_run:
-        check_draw = draw_number or get_current_draw_number()
+    # --force re-runs anyway (e.g. to resend with updated data).
+    check_draw = draw_number or get_current_draw_number()
+    if not dry_run and not force:
         existing = list(PREDICTIONS_DIR.glob(f"draw_{check_draw}_*.json"))
         if existing:
             logger.info(
@@ -92,7 +93,7 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
 
     # --- Step 1: Evaluate last week ---
     logger.info("[1/9] Evaluating last week's predictions...")
-    evaluation = evaluate_last_week()
+    evaluation = evaluate_last_week(before_draw=check_draw)
     if evaluation:
         logger.info(
             "Last week: %d/%d correct (%.1f%%)",
@@ -138,17 +139,15 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
     logger.info("[3d] Enriching with Understat xG data...")
     matches = enrich_with_understat_xg(matches)
 
-    # --- Step 3e: Sofascore xG enrichment (gap leagues) ---
-    logger.info("[3e] Enriching with Sofascore xG (gap leagues)...")
-    matches = enrich_with_sofascore_xg(matches)
-
-    # --- Step 3f: Sofascore structured absences (fallback when API-Football empty) ---
-    logger.info("[3f] Enriching with Sofascore missing-players...")
-    matches = enrich_with_sofascore_absences(matches)
-
-    # --- Step 3g: FPL structured absences (Premier League) ---
-    logger.info("[3g] Enriching with FPL availability (Premier League)...")
+    # --- Step 3e: FPL structured absences (Premier League, official feed) ---
+    logger.info("[3e] Enriching with FPL availability (Premier League)...")
     matches = enrich_with_fpl_absences(matches)
+
+    # --- Step 3f: Sofascore snapshot (xG + missing players, collected locally) ---
+    # Sofascore blocks GitHub runners; scripts/collect_sofascore.ps1 collects it
+    # on a local machine and commits data/sofascore/draw_{N}.json.
+    logger.info("[3f] Applying Sofascore snapshot (xG + missing players)...")
+    matches = apply_sofascore_snapshot(matches, current_draw)
 
     # --- Step 4: Perplexity news ---
     logger.info("[4/9] Fetching Perplexity news context...")
@@ -165,6 +164,8 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
     # --- Step 7: Render email ---
     logger.info("[7/9] Rendering HTML email...")
     subject, html_body = render_newsletter(report, matches, evaluation)
+    if force:
+        subject += " (uppdaterad)"
 
     # --- Step 8: Save & send ---
     logger.info("[8/9] Saving and sending newsletter...")
@@ -287,6 +288,16 @@ def main() -> None:
         help="Evaluate all prediction files not yet in history.json (backfill)",
     )
     parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Re-run even if predictions for this draw already exist (resends the newsletter)",
+    )
+    parser.add_argument(
+        "--collect-sofascore",
+        action="store_true",
+        help="LOCAL ONLY: collect Sofascore xG + missing players for the current draw via headless browser",
+    )
+    parser.add_argument(
         "--test-email",
         action="store_true",
         help="Send the most recent newsletter HTML to configured recipients (test delivery)",
@@ -309,6 +320,16 @@ def main() -> None:
             print("\nxG database:")
             for league, count in sorted(leagues.items(), key=lambda x: -x[1]):
                 print(f"  {league}: {count} fixtures")
+        return
+
+    if args.collect_sofascore:
+        from fetchers.sofascore_collector import SofascoreCollectionEmpty, collect_sofascore_snapshot
+        try:
+            path = collect_sofascore_snapshot(args.draw or None)
+        except SofascoreCollectionEmpty as e:
+            logger.error("%s", e)
+            sys.exit(2)
+        print(f"\nSofascore snapshot saved: {path}")
         return
 
     if args.backfill_eval:
@@ -345,7 +366,7 @@ def main() -> None:
 
     if args.run or args.dry_run or args.draw:
         draw_number = args.draw or None
-        run_pipeline(draw_number=draw_number, dry_run=args.dry_run)
+        run_pipeline(draw_number=draw_number, dry_run=args.dry_run, force=args.force)
         return
 
     # Default: start scheduler

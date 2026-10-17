@@ -23,6 +23,11 @@ on:
         required: false
         type: boolean
         default: false
+      force_rerun:
+        description: "Re-run even if this draw was already sent (resends as 'uppdaterad')"
+        required: false
+        type: boolean
+        default: false
 
 # Never run two pipelines at once. Don't cancel in-progress runs — a cancelled
 # run could have sent the email without committing predictions.
@@ -80,6 +85,9 @@ jobs:
           ARGS="--run"
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             ARGS="--dry-run"
+          fi
+          if [ "${{ github.event.inputs.force_rerun }}" = "true" ]; then
+            ARGS="$ARGS --force"
           fi
           if [ -n "${{ github.event.inputs.draw_number }}" ]; then
             ARGS="$ARGS --draw ${{ github.event.inputs.draw_number }}"

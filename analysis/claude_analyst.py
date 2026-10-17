@@ -194,6 +194,16 @@ def _format_absences(absences) -> str:
     return "; ".join(parts)
 
 
+def _injury_source_tag(ts) -> str:
+    """'' when structured absences exist; otherwise say whether a source confirmed 'none'."""
+    if ts and ts.injuries:
+        return ""
+    checked = getattr(ts, "absences_checked_source", "") if ts else ""
+    if checked:
+        return f"[checked: {checked} — none missing]"
+    return "[structured empty]"
+
+
 def _format_match_block(match: Match) -> str:
     """Format one match's data as a compact text block for the prompt."""
     m = match.market
@@ -302,8 +312,8 @@ def _format_match_block(match: Match) -> str:
     # --- Injury source presence flag — each player also carries its own
     # [api-football] / [sofascore] tag via _format_absences. The outer tag
     # only distinguishes "we have structured data" from "structured empty".
-    home_inj_tag = "" if h and h.injuries else "[structured empty]"
-    away_inj_tag = "" if a and a.injuries else "[structured empty]"
+    home_inj_tag = _injury_source_tag(h)
+    away_inj_tag = _injury_source_tag(a)
 
     # Build stat lines — only include non-empty values to keep prompt compact
     home_stats_line = " | ".join(filter(None, [home_xg, home_shot_stats]))
@@ -376,6 +386,8 @@ DATA SOURCE HIERARCHY — apply strictly when sources disagree:
      confidence you place on the absence. If Perplexity's total-absence count differs from the
      structured list, prefer the structured list. If Perplexity calls a manager "new" but the
      structured data shows manager_weeks_in_post > 8, ignore that framing entirely.
+- "[checked: <source> — none missing]" means a structured source confirmed the squad is fully fit —
+  treat that as reliable, not as missing data.
 - When the "Injuries/Suspensions" line reads "[source: structured empty]: None reported" AND
   Perplexity's preview also has nothing to add, say "injury data unavailable" and move on. Do
   NOT fabricate an injury crisis from silence.

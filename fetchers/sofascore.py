@@ -4,7 +4,10 @@ Fetches xG data from Sofascore's internal API for leagues NOT covered by Underst
 Covers: Championship, League One, League Two, Allsvenskan, Eredivisie, Primeira Liga.
 Understat already covers: PL, La Liga, Bundesliga, Serie A, Ligue 1.
 
-Uses curl_cffi for TLS fingerprint impersonation (bypasses Cloudflare).
+Transport: direct curl_cffi calls are now challenged (403) everywhere, so the
+real path is a headless-browser session installed via use_transport() — see
+fetchers/sofascore_browser.py and fetchers/sofascore_collector.py, which run
+this module locally and save a snapshot for the GitHub pipeline.
 No API key or authentication required.
 
 Rate limited: 2.5s between calls. All responses cached (7-day TTL).
@@ -17,6 +20,7 @@ from __future__ import annotations
 
 import hashlib
 import time
+from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Optional
 
@@ -57,17 +61,21 @@ _TOURNAMENT_MAP: dict[tuple[str, str], int] = {
     ("Premiership", "Scotland"): 36,
 }
 
-# Hardcoded season IDs (updated each season; fallback fetches dynamically)
-_SEASON_MAP: dict[int, int] = {
-    18: 77347,   # Championship 2025-26
-    24: 77352,   # League One 2025-26
-    25: 77351,   # League Two 2025-26
-    40: 87925,   # Allsvenskan 2026
-    37: 77012,   # Eredivisie 2025-26
-    238: 77806,  # Primeira Liga 2025-26
-    38: 77040,   # Pro League (Belgium) 2025-26
-    36: 77128,   # Premiership (Scotland) 2025-26
-}
+# Freshness: standings decide the "current round" and round events change as
+# matches finish; missing players change up to kickoff.
+_STANDINGS_TTL = 12 * 3600
+_ROUND_TTL = 12 * 3600
+_LINEUPS_TTL = 3600
+
+# Optional transport override (e.g. a headless-browser session). When set,
+# _sofa_get delegates to it instead of curl_cffi.
+_transport: Optional[Callable[[str], Optional[dict]]] = None
+
+
+def use_transport(fn: Optional[Callable[[str], Optional[dict]]]) -> None:
+    """Route all Sofascore calls through fn(path) -> dict | None. None restores curl_cffi."""
+    global _transport
+    _transport = fn
 
 
 # ---------------------------------------------------------------------------
@@ -78,12 +86,17 @@ def _sofa_get(path: str) -> Optional[dict]:
     """GET from Sofascore API with rate limiting and error handling."""
     global _last_call_at
 
-    if not _HAS_CURL_CFFI:
+    if _transport is None and not _HAS_CURL_CFFI:
         return None
 
     elapsed = time.time() - _last_call_at
     if elapsed < _MIN_CALL_INTERVAL:
         time.sleep(_MIN_CALL_INTERVAL - elapsed)
+
+    if _transport is not None:
+        result = _transport(path)
+        _last_call_at = time.time()
+        return result
 
     url = f"{_BASE_URL}/{path}"
     try:
@@ -124,9 +137,7 @@ def _fetch_season_id(tid: int) -> Optional[int]:
 
 
 def _get_season_id(tid: int) -> Optional[int]:
-    """Get season ID — try hardcoded first, fallback to API."""
-    if tid in _SEASON_MAP:
-        return _SEASON_MAP[tid]
+    """Current season ID (first entry of the tournament's seasons list)."""
     return _fetch_season_id(tid)
 
 
@@ -134,7 +145,7 @@ def _get_season_id(tid: int) -> Optional[int]:
 # Standings and team resolution
 # ---------------------------------------------------------------------------
 
-@cached(lambda tid, sid: f"sofa_standings_{tid}_{sid}")
+@cached(lambda tid, sid: f"sofa_standings_{tid}_{sid}", ttl=_STANDINGS_TTL)
 def _fetch_standings(tid: int, sid: int) -> Optional[list[dict]]:
     """Fetch league standings. Returns list of row dicts."""
     data = _sofa_get(f"unique-tournament/{tid}/season/{sid}/standings/total")
@@ -206,7 +217,7 @@ def _fetch_match_xg(eid: int) -> Optional[tuple[float, float]]:
     return None
 
 
-@cached(lambda tid, sid, rnd: f"sofa_round_{tid}_{sid}_{rnd}")
+@cached(lambda tid, sid, rnd: f"sofa_round_{tid}_{sid}_{rnd}", ttl=_ROUND_TTL)
 def _fetch_round_events(tid: int, sid: int, rnd: int) -> Optional[list[dict]]:
     """Fetch all events (matches) for a given round."""
     data = _sofa_get(f"unique-tournament/{tid}/season/{sid}/events/round/{rnd}")
@@ -331,7 +342,7 @@ def enrich_with_sofascore_xg(matches: list[Match]) -> list[Match]:
     global _blocked
     _blocked = False
 
-    if not _HAS_CURL_CFFI:
+    if _transport is None and not _HAS_CURL_CFFI:
         logger.warning("Sofascore xG enrichment skipped (curl_cffi not installed)")
         return matches
 
@@ -533,7 +544,7 @@ def _resolve_event_id(
     return None
 
 
-@cached(lambda eid: f"sofa_lineups_{eid}", ttl=86400)
+@cached(lambda eid: f"sofa_lineups_{eid}", ttl=_LINEUPS_TTL)
 def _fetch_lineups(event_id: int) -> Optional[dict]:
     """Pre-match lineup payload — includes missingPlayers for both sides."""
     return _sofa_get(f"event/{event_id}/lineups")
@@ -577,7 +588,7 @@ def enrich_with_sofascore_absences(matches: list[Match]) -> list[Match]:
     global _blocked
     _blocked = False
 
-    if not _HAS_CURL_CFFI:
+    if _transport is None and not _HAS_CURL_CFFI:
         logger.warning("Sofascore absences skipped (curl_cffi not installed)")
         return matches
 
@@ -658,7 +669,13 @@ def enrich_with_sofascore_absences(matches: list[Match]) -> list[Match]:
             if stats.injuries:
                 continue
 
-            missing = (lineups.get(side) or {}).get("missingPlayers") or []
+            side_payload = lineups.get(side) or {}
+            # Sofascore published a missing-players list for this side — an
+            # empty list now means "checked, fully fit", not "no data".
+            if "missingPlayers" in side_payload:
+                stats.absences_checked_source = stats.absences_checked_source or "sofascore"
+
+            missing = side_payload.get("missingPlayers") or []
             if not missing:
                 continue
 

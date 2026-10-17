@@ -200,6 +200,10 @@ class TeamStats:
     injuries: list[PlayerAbsence] = field(default_factory=list)
     suspensions: list[PlayerAbsence] = field(default_factory=list)
     intl_call_ups: list[str] = field(default_factory=list)   # player names away on intl duty
+    # Structured source that confirmed this team's absence list ("fpl" /
+    # "sofascore"). Set even when injuries is empty — that means fully fit,
+    # as opposed to "" = no structured source checked at all.
+    absences_checked_source: str = ""
 
     # Schedule
     schedule: Optional[ScheduleContext] = None
