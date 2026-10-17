@@ -286,11 +286,12 @@ def _fill_from_xg_history(matches: list[Match]) -> None:
     Also attaches the full xG profile for richer prompt formatting.
     """
     try:
-        from fetchers.xg_collector import get_team_xg_profile
+        from fetchers.xg_collector import XG_HISTORY_MAX_AGE_DAYS, get_team_xg_profile
     except ImportError:
         return
 
     filled = 0
+    missing: list[str] = []
     for match in matches:
         for team_name, stats_attr in [(match.home_team, "home_stats"), (match.away_team, "away_stats")]:
             stats: Optional[TeamStats] = getattr(match, stats_attr)
@@ -302,6 +303,8 @@ def _fill_from_xg_history(matches: list[Match]) -> None:
                 continue
 
             profile = get_team_xg_profile(team_name)
+            if profile is None or profile.xg_for_5g is None:
+                missing.append(team_name)
             if profile and profile.xg_for_5g is not None:
                 stats.xg_for_avg = profile.xg_for_5g
                 stats.xg_against_avg = profile.xg_against_5g
@@ -315,3 +318,8 @@ def _fill_from_xg_history(matches: list[Match]) -> None:
 
     if filled:
         logger.info("Filled %d teams from xG history (Championship/League One/etc.)", filled)
+    if missing:
+        logger.warning(
+            "No recent xG (last %d days) in xG history for %d teams: %s",
+            XG_HISTORY_MAX_AGE_DAYS, len(missing), ", ".join(missing),
+        )

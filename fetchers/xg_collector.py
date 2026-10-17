@@ -46,6 +46,10 @@ XG_DIR = DATA_DIR / "xg"
 XG_DIR.mkdir(parents=True, exist_ok=True)
 XG_HISTORY_FILE = XG_DIR / "xg_history.json"
 
+# Fixtures older than this are ignored when building profiles — stale xG shown
+# as "last 5" is worse than none (the collector can silently stop collecting).
+XG_HISTORY_MAX_AGE_DAYS = 45
+
 # Rate limiting — same as main API-Football module
 _request_count = 0
 _last_call_at: float = 0.0
@@ -393,6 +397,7 @@ def _find_team_matches(team_name: str, history: dict) -> list[dict]:
     """Find all fixtures for a team in the history, sorted by date descending."""
     team_lower = team_name.lower().strip()
     matches = []
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=XG_HISTORY_MAX_AGE_DAYS)).date().isoformat()
 
     sorted_fixtures = sorted(
         history["fixtures"].values(),
@@ -406,6 +411,8 @@ def _find_team_matches(team_name: str, history: dict) -> list[dict]:
 
         if f.get("home_xg") is None or f.get("away_xg") is None:
             continue
+        if f.get("date", "") < cutoff:
+            break  # sorted newest first — everything after is older
 
         # Fuzzy match
         is_home = (team_lower == home or team_lower in home or home in team_lower)

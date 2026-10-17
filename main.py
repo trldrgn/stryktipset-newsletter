@@ -42,7 +42,8 @@ from email_sender.gmail import send_newsletter
 from email_sender.renderer import render_newsletter
 from fetchers.api_football import enrich_all_matches
 from fetchers.football_data import enrich_with_football_data
-from fetchers.football_data_csv import enrich_with_csv_stats
+from fetchers.football_data_csv import enrich_with_csv_h2h, enrich_with_csv_stats
+from fetchers.fpl import enrich_with_fpl_absences
 from fetchers.perplexity import fetch_all_match_news
 from fetchers.sofascore import enrich_with_sofascore_absences, enrich_with_sofascore_xg
 from fetchers.understat_xg import enrich_with_understat_xg
@@ -125,6 +126,10 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
     logger.info("[3b] Enriching with football-data.co.uk CSV stats...")
     matches = enrich_with_csv_stats(matches)
 
+    # --- Step 3b2: CSV head-to-head (current + 3 previous seasons, all divisions) ---
+    logger.info("[3b2] Building H2H from football-data.co.uk CSVs...")
+    matches = enrich_with_csv_h2h(matches)
+
     # --- Step 3c: Football-Data.org enrichment (fallback for gaps) ---
     logger.info("[3c] Enriching with Football-Data.org (fallback)...")
     matches = enrich_with_football_data(matches)
@@ -140,6 +145,10 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False) -> None:
     # --- Step 3f: Sofascore structured absences (fallback when API-Football empty) ---
     logger.info("[3f] Enriching with Sofascore missing-players...")
     matches = enrich_with_sofascore_absences(matches)
+
+    # --- Step 3g: FPL structured absences (Premier League) ---
+    logger.info("[3g] Enriching with FPL availability (Premier League)...")
+    matches = enrich_with_fpl_absences(matches)
 
     # --- Step 4: Perplexity news ---
     logger.info("[4/9] Fetching Perplexity news context...")

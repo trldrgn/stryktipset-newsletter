@@ -25,7 +25,7 @@ from typing import Optional
 
 import requests
 
-from models.match import FormResult, Match, Outcome, ScheduleContext, TeamStats
+from models.match import FormResult, H2HResult, Match, Outcome, ScheduleContext, TeamStats
 from utils.cache import cached
 from utils.logger import get_logger
 
@@ -76,13 +76,16 @@ def _current_season_code() -> str:
 # CSV fetching and parsing
 # ---------------------------------------------------------------------------
 
-@cached(lambda code: f"csv_data_{code}")
-def _fetch_csv(code: str) -> list[dict]:
-    """Download and parse a football-data.co.uk CSV. Cached 7 days."""
+@cached(lambda code, season=None: f"csv_data_{code}" if season is None else f"csv_data_{code}_{season}")
+def _fetch_csv(code: str, season: str | None = None) -> list[dict]:
+    """
+    Download and parse a football-data.co.uk CSV. Cached 7 days.
+    season: e.g. '2425'. None = current season (Allsvenskan ignores it).
+    """
     if code == "SWE":
         url = _ALLSVENSKAN_URL
     else:
-        season = _current_season_code()
+        season = season or _current_season_code()
         url = f"{_CSV_BASE_URL}/{season}/{code}.csv"
 
     logger.info("Fetching CSV from %s", url)
@@ -196,9 +199,40 @@ def _get_unique_teams(rows: list[dict]) -> set[str]:
     return teams
 
 
+# Svenska Spel name (lower-case) -> football-data.co.uk CSV name, for names
+# that neither substring nor word-overlap matching can resolve safely.
+_TEAM_ALIASES: dict[str, str] = {
+    "manchester city": "Man City",
+    "manchester united": "Man United",
+    "queens park rangers": "QPR",
+    "nottingham forest": "Nott'm Forest",
+    "nottingham": "Nott'm Forest",
+    "wolverhampton": "Wolves",
+    "sheffield w": "Sheffield Weds",
+    "sheffield wednesday": "Sheffield Weds",
+    "sheffield u": "Sheffield United",
+    "west bromwich": "West Brom",
+    "bristol rovers": "Bristol Rvs",
+    "peterborough": "Peterboro",
+    "mk dons": "Milton Keynes Dons",
+}
+
+# Words too common to identify a club on their own — "Manchester City" must
+# never word-match "Bristol City".
+_GENERIC_NAME_WORDS = {
+    "city", "united", "town", "county", "rovers", "athletic", "wanderers",
+    "albion", "athletico", "real", "sporting",
+}
+
+
 def _resolve_team(team_name: str, csv_teams: set[str]) -> Optional[str]:
     """Fuzzy match a Svenska Spel team name to a CSV team name."""
     name_lower = team_name.lower().strip()
+
+    # Known alias
+    alias = _TEAM_ALIASES.get(name_lower)
+    if alias and alias in csv_teams:
+        return alias
 
     # Exact match
     for csv_name in csv_teams:
@@ -212,12 +246,12 @@ def _resolve_team(team_name: str, csv_teams: set[str]) -> Optional[str]:
             return csv_name
 
     # Word overlap for multi-word names
-    name_words = {w for w in name_lower.split() if len(w) > 3}
+    name_words = {w for w in name_lower.split() if len(w) > 3} - _GENERIC_NAME_WORDS
     if name_words:
         best_match = None
         best_overlap = 0
         for csv_name in csv_teams:
-            csv_words = {w for w in csv_name.lower().split() if len(w) > 3}
+            csv_words = {w for w in csv_name.lower().split() if len(w) > 3} - _GENERIC_NAME_WORDS
             overlap = len(name_words & csv_words)
             if overlap > best_overlap:
                 best_overlap = overlap
@@ -578,4 +612,126 @@ def enrich_with_csv_stats(matches: list[Match]) -> list[Match]:
                 match.referee_avg_cards = avg
 
     logger.info("CSV enrichment complete: %d teams enriched", enriched_count)
+    return matches
+
+
+# ---------------------------------------------------------------------------
+# Head-to-head from historical CSVs (replaces API-Football H2H)
+# ---------------------------------------------------------------------------
+
+# All divisions per country — teams move between divisions, so a Championship
+# fixture's last meeting may have been in the Premier League or League One.
+_COUNTRY_CSV_CODES: dict[str, list[str]] = {
+    "England": ["E0", "E1", "E2", "E3"],
+    "Germany": ["D1", "D2"],
+    "Spain": ["SP1"],
+    "Italy": ["I1"],
+    "France": ["F1"],
+    "Netherlands": ["N1"],
+    "Portugal": ["P1"],
+}
+
+_H2H_PAST_SEASONS = 3   # current + 3 previous — _format_h2h drops anything older
+
+
+def _code_to_league_name(code: str) -> str:
+    for (league, _country), c in _LEAGUE_CSV_MAP.items():
+        if c == code:
+            return league
+    return code
+
+
+def _recent_season_codes(n_previous: int) -> list[str]:
+    """['2627', '2526', ...] — current season first."""
+    start = int(_current_season_code()[:2])
+    return [f"{(start - k) % 100:02d}{(start - k + 1) % 100:02d}" for k in range(n_previous + 1)]
+
+
+def _load_country_rows(country: str) -> list[tuple[str, dict]]:
+    """All (csv_code, row) pairs for a country across recent seasons. Failures are skipped."""
+    rows: list[tuple[str, dict]] = []
+    for season in _recent_season_codes(_H2H_PAST_SEASONS):
+        for code in _COUNTRY_CSV_CODES.get(country, []):
+            try:
+                rows.extend((code, r) for r in _fetch_csv(code, season))
+            except Exception as e:
+                logger.warning("H2H: CSV fetch failed for %s %s: %s", code, season, e)
+    return rows
+
+
+def _build_csv_h2h(
+    home_team: str, away_team: str, home_csv: str, away_csv: str,
+    rows: list[tuple[str, dict]],
+) -> list[H2HResult]:
+    """Meetings between two teams in either venue, newest first, using Svenska Spel names."""
+    results: list[H2HResult] = []
+    for code, row in rows:
+        h = row.get("HomeTeam", "").strip()
+        a = row.get("AwayTeam", "").strip()
+        if {h, a} != {home_csv, away_csv}:
+            continue
+        dt = _parse_date(row.get("Date", ""))
+        try:
+            hg, ag = int(row["FTHG"]), int(row["FTAG"])
+        except (KeyError, ValueError, TypeError):
+            continue  # unplayed / malformed row
+        if dt is None:
+            continue
+        results.append(H2HResult(
+            date=dt.date().isoformat(),
+            home_team=home_team if h == home_csv else away_team,
+            away_team=away_team if a == away_csv else home_team,
+            home_goals=hg,
+            away_goals=ag,
+            competition=_code_to_league_name(code),
+        ))
+    results.sort(key=lambda r: r.date, reverse=True)
+    return results
+
+
+def enrich_with_csv_h2h(matches: list[Match]) -> list[Match]:
+    """
+    Fill Match.h2h from football-data.co.uk CSVs (current + 3 previous seasons,
+    all divisions of the match's country). Only fills matches whose h2h is
+    still empty, so API-Football stays primary when it works.
+    """
+    country_rows: dict[str, list[tuple[str, dict]]] = {}
+    country_teams: dict[str, set[str]] = {}
+    filled = 0
+
+    for match in matches:
+        if match.h2h:
+            continue
+        country = match.country or ""
+        if country not in _COUNTRY_CSV_CODES:
+            continue
+
+        try:
+            if country not in country_rows:
+                country_rows[country] = _load_country_rows(country)
+                country_teams[country] = {
+                    name
+                    for _code, r in country_rows[country]
+                    for name in (r.get("HomeTeam", "").strip(), r.get("AwayTeam", "").strip())
+                    if name
+                }
+            rows = country_rows[country]
+            teams = country_teams[country]
+
+            home_csv = _resolve_team(match.home_team, teams)
+            away_csv = _resolve_team(match.away_team, teams)
+            if not home_csv or not away_csv or home_csv == away_csv:
+                logger.debug(
+                    "H2H: could not resolve %s (%s) vs %s (%s)",
+                    match.home_team, home_csv, match.away_team, away_csv,
+                )
+                continue
+
+            match.h2h = _build_csv_h2h(match.home_team, match.away_team, home_csv, away_csv, rows)
+            if match.h2h:
+                filled += 1
+        except Exception as e:
+            logger.warning("H2H enrichment failed for %s vs %s: %s", match.home_team, match.away_team, e)
+
+    logger.info("CSV H2H complete: %d/%d matches have H2H", filled, len(matches))
     return matches

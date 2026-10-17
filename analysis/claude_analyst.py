@@ -362,9 +362,11 @@ NEW MANAGER BOUNCE:
 - If a team has a new manager, mention it explicitly in your analysis and factor it into confidence.
 
 DATA SOURCE HIERARCHY — apply strictly when sources disagree:
-  1. API-Football (injuries/manager/H2H) — authoritative when populated.
+  1. API-Football (injuries/manager/H2H) — authoritative when populated. H2H may instead come
+     from football-data.co.uk results (equally reliable).
   2. Sofascore missing-players — authoritative when populated; equal rank to API-Football.
-     Either of these appearing in the "Injuries/Suspensions [source: API-Football/Sofascore]"
+     FPL [fpl] (Premier League only, official availability feed) — equal rank to API-Football.
+     Any of these appearing in the "Injuries/Suspensions [source: API-Football/Sofascore/FPL]"
      line is the ground truth for absences.
   3. Football-Data.org (form/standings) — authoritative for form/standings in its covered leagues.
   4. Understat / Sofascore xG — authoritative for xG in their covered leagues.
