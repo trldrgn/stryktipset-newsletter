@@ -3,8 +3,13 @@ name: Stryktipset Newsletter
 on:
   # Every Saturday at 06:30 UTC = 07:30 Stockholm (CET, winter) / 08:30 (CEST, summer)
   # CEST runs late March–late October. Pipeline takes ~20 min. Coupon closes ~15:59.
+  # GitHub delays scheduled runs heavily (observed 4–6h late), so backup crons
+  # fire later in the morning. The already-run guard in main.py makes any run
+  # after the first a fast no-op (predictions file for the draw already exists).
   schedule:
     - cron: "30 6 * * 6"
+    - cron: "30 8 * * 6"
+    - cron: "30 10 * * 6"
 
   # Manual trigger — also lets you specify a draw number for testing/backfill
   workflow_dispatch:
@@ -19,6 +24,12 @@ on:
         type: boolean
         default: false
 
+# Never run two pipelines at once. Don't cancel in-progress runs — a cancelled
+# run could have sent the email without committing predictions.
+concurrency:
+  group: newsletter
+  cancel-in-progress: false
+
 jobs:
   run-newsletter:
     runs-on: ubuntu-latest
@@ -29,6 +40,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          # Always check out the latest main (not the SHA at trigger time), so a
+          # queued run sees predictions committed by the run before it.
+          ref: main
           # Fetch full history so git push works correctly
           fetch-depth: 0
 
@@ -97,21 +111,29 @@ jobs:
       # Only runs when not a dry run and there are actual changes to commit.
       - name: Commit prediction data
         if: github.event.inputs.dry_run != 'true'
-        continue-on-error: true
         run: |
           git config user.name "stryktipset-bot"
           git config user.email "bot@users.noreply.github.com"
-          # Pull any commits pushed while the pipeline was running
-          git pull --rebase origin main || true
           git add data/predictions/ data/results/ data/performance/ data/xg/ data/newsletters/
           # Only commit if there are staged changes
           if git diff --staged --quiet; then
             echo "No new prediction data to commit."
-          else
-            DRAW_NUM=$(ls -1 data/predictions/draw_*_$(date -u '+%Y-%m-%d').json 2>/dev/null | head -1 | grep -oP 'draw_\K[0-9]+' || echo "unknown")
-            git commit -m "data: predictions and newsletter for draw ${DRAW_NUM} ($(date -u '+%Y-%m-%d'))"
-            git push || echo "::warning::Push failed — data will be committed on next run or manually"
+            exit 0
           fi
+          DRAW_NUM=$(ls -1 data/predictions/draw_*_$(date -u '+%Y-%m-%d').json 2>/dev/null | head -1 | grep -oP 'draw_\K[0-9]+' || echo "unknown")
+          git commit -m "data: predictions and newsletter for draw ${DRAW_NUM} ($(date -u '+%Y-%m-%d'))"
+          # Rebase onto anything pushed meanwhile (e.g. xG collector) and retry.
+          # --autostash: untracked/unstaged pipeline files would otherwise block the rebase.
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin main && git push origin HEAD:main; then
+              echo "Prediction data pushed."
+              exit 0
+            fi
+            echo "Push attempt $i failed — retrying in 10s"
+            sleep 10
+          done
+          echo "::error::Failed to push prediction data — the next run will NOT see this draw as done and may send a duplicate"
+          exit 1
 
       # Ping Healthchecks.io — if this ping doesn't arrive by the grace deadline,
       # Healthchecks.io emails an alert. Dead man's switch pattern.
