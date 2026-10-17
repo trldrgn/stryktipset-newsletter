@@ -3076,5 +3076,199 @@
         "post_mortem": ""
       }
     ]
+  },
+  {
+    "draw_number": 4974,
+    "draw_date": "2026-10-10",
+    "appended_at": "2026-10-17T09:37:17.537952+00:00",
+    "total_correct": 10,
+    "total_games": 13,
+    "accuracy_pct": 76.9,
+    "singles_correct": 3,
+    "singles_total": 4,
+    "doubles_correct": 6,
+    "doubles_total": 8,
+    "full_covered": true,
+    "games": [
+      {
+        "game_number": 1,
+        "home_team": "Manchester United",
+        "away_team": "Tottenham",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "confidence": 0.75,
+        "post_mortem": "Predicted 1 (single, conf=0.75) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: United lost their most recent home match 0-1 — home form is not bulletproof; Perplexity injury claims for both squads are largely unverifiable and include clearly incorrect player attributions for Spurs — treat all absences as unconfirmed; DROPPED [2]: Spurs' away form is dire, xGF the lowest of any side on this coupon (1.16), scoring 0.4 goals per game — no positive evidence to retain. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      },
+      {
+        "game_number": 2,
+        "home_team": "Chelsea",
+        "away_team": "Bournemouth",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.72,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 3,
+        "home_team": "Aston Villa",
+        "away_team": "Brentford",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.68,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 4,
+        "home_team": "Sunderland",
+        "away_team": "Brighton",
+        "our_prediction": [
+          "2"
+        ],
+        "selection_type": "single",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.72,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 5,
+        "home_team": "Ipswich",
+        "away_team": "Fulham",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.6,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 6,
+        "home_team": "Blackburn",
+        "away_team": "Cardiff",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.73,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 7,
+        "home_team": "Bolton",
+        "away_team": "Stoke",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.62,
+        "post_mortem": "Predicted 1/X (double, conf=0.62) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Stoke's overall form is exceptional — backing against them always carries risk, even away; Bolton's own home record is inconsistent: two wins and two losses in last four home games; DROPPED [2]: Stoke's away Championship form (1W in last 4 away) directly contradicts their overall UP-FORM — insufficient positive evidence to back the away win. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 8,
+        "home_team": "Derby",
+        "away_team": "Wrexham",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.63,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 9,
+        "home_team": "Middlesbrough",
+        "away_team": "Wolverhampton",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.72,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 10,
+        "home_team": "Preston",
+        "away_team": "Millwall",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.62,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 11,
+        "home_team": "Sheffield U",
+        "away_team": "Lincoln",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": false,
+        "confidence": 0.65,
+        "post_mortem": "Predicted 2/X (double, conf=0.65) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: Sheffield United are 2.02 home favourites — if they improve defensively this could be a low-scoring home win; No injury data confirmed for either side — structural data entirely empty; DROPPED [1]: Sheffield United have lost two of their last four home matches, concede 2.5 goals per game despite xGA of 1.62, and face a Lincoln side with three away wins in four — insufficient positive evidence for the home win. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 12,
+        "home_team": "Watford",
+        "away_team": "Burnley",
+        "our_prediction": [
+          "1",
+          "X",
+          "2"
+        ],
+        "selection_type": "full",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.58,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 13,
+        "home_team": "Huddersfield",
+        "away_team": "Sheffield W",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "X",
+        "correct": true,
+        "confidence": 0.7,
+        "post_mortem": ""
+      }
+    ]
   }
 ]
