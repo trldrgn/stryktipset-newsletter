@@ -1,0 +1,310 @@
+{
+  "draw_number": 4976,
+  "draw_date": "2026-10-24",
+  "saved_at": "2026-10-24T11:29:05.275822+00:00",
+  "executive_summary": "A volatile week across all three English divisions. Only one match — Preston vs West Brom — clears the 0.80 confidence threshold comfortably, making this a coupon that demands careful doubling rather than aggressive singling. The dominant themes are: Chelsea and Tottenham both hobbled by injury crises in the London derby; Fulham's alarming xG underperformance screaming regression in a relegation six-pointer; Swansea arriving at QPR as league leaders against a home side reportedly missing five first-teamers; and West Ham's extraordinary attacking numbers making them a near-banker at home. Punters should treat this as a cautious, double-heavy week — fewer than four games warrant genuine single confidence.",
+  "value_radar": [
+    "Game 8 (QPR vs Swansea): QPR priced at 2.30 despite reportedly five key absentees and Swansea in five-wins-from-six away form as Championship leaders. Market has not fully corrected — Swansea 2 at 3.15 looks undervalued.",
+    "Game 3 (Coventry vs Fulham): Fulham's xGF-to-goals gap of -0.92 over five games is one of the sharpest regression signals on this coupon. With Coventry missing two central defenders, Fulham's underlying quality should eventually break through — the 2.35 is workable value.",
+    "Game 7 (Preston vs West Brom): Preston are last in the Championship with 1.8 shots on target per game, DOWN-FORM, and H2H that reads 4-1 in West Brom's favour. At 2.08 the away win is solid value versus a side that cannot score.",
+    "Game 11 (Wolves vs Watford): Watford have lost four consecutive away matches and are DOWN-FORM. Wolves at 1.45 is short but warranted — Watford are the weakest away team on this coupon."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Chelsea",
+      "away_team": "Tottenham",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.72,
+      "key_factors": [
+        "Tottenham missing 5-6 midfielders including Bergvall, Bentancur, Sávio, Odobert — midfield decimated",
+        "Chelsea dominant H2H: 5 wins from last 6 meetings in all locations",
+        "Chelsea home form solid W-D-W; Tottenham away form poor D-D-L",
+        "Chelsea xG over-performance (+0.90 per game over 5g) carries regression risk — some draw insurance warranted"
+      ],
+      "risk_flags": [
+        "Chelsea starting reserve goalkeeper Penders; Reece James and set-piece threat absent",
+        "DROPPED [2]: Tottenham's 0-1-2 record in last 3 away games, missing midfield core, H2H Chelsea dominant at Stamford Bridge"
+      ],
+      "analysis": "The Stamford Bridge derby arrives with both camps in the physio room but Tottenham's injury crisis in the engine room is the defining narrative. Rodrigo Bentancur (suspended), Lucas Bergvall, Sávio, Pierre Kalulu Odobert, and at least one further midfielder from the FPL-confirmed list are all absent, stripping Roberto De Zerbi's side of the craft and energy needed to impose themselves away from home. James Maddison and Dejan Kulusevski are both doubtful, meaning Spurs could field an almost entirely makeshift midfield on a ground where they have won just once in the last six league visits. Their away form — D, D, L in the last three away outings — reflects a side that is already cautious on the road.\n\nChelsea are not without their own headaches. Emiliano Martínez's fractured jaw forces Mike Penders into the senior role, Reece James (a key set-piece outlet) and Pep Chavarría are absent from defence, and Jamie Gittens offers no cover on the wing. That is a meaningful list. Yet Chelsea's home form — W, D, W — and the H2H record, which reads Chelsea wins in five of the last six meetings including 2-0, 1-0 twice and 2-1, paint a clear picture of home dominance in this fixture regardless of squad turbulence.\n\nThe xG data is slightly awkward for Chelsea: over five games their xGF sits at just 1.10 while they are scoring 2.0 per game — an over-performance of +0.90 that carries regression risk. Equally, Tottenham's xGF (1.39) exceeds their actual goals (1.2), meaning they have been unlucky in front of goal. Some caution about an upset is warranted, and the draw at 4.20 is not entirely without merit. However, Tottenham's hollowed-out midfield simply cannot generate enough threat to trouble even a Chelsea side missing their goalkeeper and two defenders. The public split — 62/23/15 — broadly mirrors the structural reality.\n\nPrediction: Chelsea to win. The home side's H2H dominance, Tottenham's depleted midfield, and Chelsea's reliable home results combine to favour a 1. The draw is included as protection given Tottenham's defensive solidity in recent away games (two draws in last three away) and Chelsea's own over-performance risk.",
+      "value_note": "Chelsea 1 at 1.77 is fair but not stretched given their own absences. The draw at 4.20 offers marginal insurance."
+    },
+    {
+      "game_number": 2,
+      "home_team": "Arsenal",
+      "away_team": "Everton",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.75,
+      "key_factors": [
+        "Arsenal missing Saka (top scorer, set-piece taker) and Saliba — two of their most important players",
+        "Arsenal home form W-W-W; xGF 1.85 massively outpacing actual goals 1.4 — regression due",
+        "Everton away form X-X-X in last three — draw-specialists on the road but rarely win away",
+        "H2H: Arsenal have won four of five recent meetings, conceding only once"
+      ],
+      "risk_flags": [
+        "Saka absence removes Arsenal's most creative and decisive player — upgrade to Eze/Madueke is significant but not like-for-like",
+        "Saliba missing leaves a defensive question mark; Everton's xGF 1.72 shows they do create chances"
+      ],
+      "analysis": "Arsenal are without their most important attacker in Bukayo Saka — confirmed out with a thigh injury — and William Saliba, who anchors the defensive line from the left side of a back four. These are not peripheral absences; Saka is Arsenal's top scorer and set-piece taker, and Saliba's reading of the game and aerial dominance are central to Mikel Arteta's structure. Arteta has indicated Eberechi Eze or Noni Madueke will cover the right, with Max Dowman likely to see minutes, but replacing Saka's output is a genuine challenge even at this squad depth.\n\nAnd yet the case for Arsenal to win remains compelling. Their home form is W-W-W in the last three league outings and their xG profile is arguably the most significant signal in this game. Over five and ten games, Arsenal's xGF (1.85 and 1.81) substantially exceeds their actual goal output (1.4 and 1.6), meaning they have been consistently unlucky in front of goal. Regression upward is due. Meanwhile Everton's xGF over five games is 1.72 but they are only scoring 1.0 — a -0.72 gap in a single direction that tells you Everton are generating chances and converting none of them. The flip side is that this could produce a low-scoring game rather than a goal feast.\n\nEverton's away form is the other key factor: X, X, X in their last three away outings. David Moyes' side have made a habit of grinding draws on the road, and with Saliba absent Arsenal's defensive line could be slightly more exposed. A draw at 4.80 is a long price precisely because it is unlikely — Arsenal's home authority and squad quality are considerable even without Saka — but Everton's draw tendency is a real and documented pattern.\n\nH2H is one-sided: Arsenal 2-0, 1-0, 0-0, 0-0, 2-1 in five meetings. Arsenal win this type of game. The prediction is a home win, with sufficient confidence to stand as a single.",
+      "value_note": "Arsenal win is near-certain on structure but Saka's absence and Everton's draw pattern nudge this to a double. Drop the 2 — Everton have not won away in recent memory against top-six sides."
+    },
+    {
+      "game_number": 3,
+      "home_team": "Coventry",
+      "away_team": "Fulham",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "key_factors": [
+        "Fulham xGF 1.92 vs actual 1.0 — -0.92 gap over 5 games, extreme regression candidate",
+        "Coventry missing 2 CBs (Woolfenden, Amenda) — direct vulnerability vs Fulham's volume attack",
+        "Coventry home form W-L-L in last 3 home games; conceding 2.0 per game over 5g",
+        "Fulham Sessegnon only absence — near-fully fit squad"
+      ],
+      "risk_flags": [
+        "DROPPED [1]: Coventry missing 2 centre-backs, home form W-L-L, conceding heavily — structural weaknesses against a team whose xG demands regression",
+        "Fulham's chronic underconversion could persist one more match even with regression due — X remains possible"
+      ],
+      "analysis": "This is arguably the most analytically compelling match on the coupon. Fulham's xG story over five games is stark: they are generating 1.92 expected goals per game — one of the higher figures among Championship sides — while converting only 1.0 actual goals. That -0.92 underperformance gap is extreme and historically resolves in one direction: upward regression. Over ten games the pattern is equally consistent (xGF 1.72, GF 1.0, gap -0.72). Fulham have been brutally unlucky in front of goal and their first Championship win has arrived; expect the dam to break.\n\nCoventry are simultaneously in structural difficulty at both ends. They are missing two central defenders (Woolfenden and Amenda) alongside striker Wright and midfielder Eccles — four first-team absences that stretch a squad already leaking 2.0 goals per game over their last five matches. With Fulham averaging 15.6 shots per game and 5.4 on target, those two missing centre-backs represent a direct matchup vulnerability that could be ruthlessly exploited.\n\nCoventry's home form gives pause: they beat Bristol City 4-1 here earlier this season, but that result is bracketed by two heavy home defeats (0-5, 0-1) and a loss elsewhere. The 4-1 win looks like the outlier. Their recent overall form (W-W-L-L in the last three meaningful results) is unreliable. The market has Fulham at 2.35 with 45% of the public on the away win, which appears broadly correct.\n\nCoventry at 2.95 reflects their home advantage and Fulham's poor finishing form, but given the defensive absences and Fulham's underlying xG dominance, the away side represent the better bet. Chris Sutton's 2-1 Fulham prediction aligns with the analytical picture.",
+      "value_note": "Fulham 2 at 2.35 is reasonable value given xG regression signal and Coventry's defensive absentees."
+    },
+    {
+      "game_number": 4,
+      "home_team": "Blackburn",
+      "away_team": "Wrexham",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.67,
+      "key_factors": [
+        "Blackburn UP-FORM: W-W-D-W in recent stretch, fully fit squad",
+        "Wrexham reportedly missing Windass and Cacace (confirmed per Perplexity), Broadhead doubtful — attacking threat compromised",
+        "Wrexham away form: D-L-D-W-D, conceded 6 on most recent away trip",
+        "Home advantage at Ewood Park with no structural weaknesses in Blackburn squad"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Wrexham missing key attacking players (unverified in structured data but credible), 6-0 thrashing in most recent away game, away form one win in five",
+        "H2H from last season shows Wrexham capable of winning at Ewood — Blackburn not infallible at home (L-L mid-season)"
+      ],
+      "analysis": "Blackburn arrive carrying a UP-FORM flag — L-W-W-D-W in five games — and host a Wrexham side who, per Perplexity's reporting (unverified in structured data but credible given the source specifics), are without Josh Windass and Liberato Cacace confirmed out, with Nathan Broadhead doubtful. Windass and Broadhead are both attacking players, meaning Wrexham travel to Ewood Park lacking their primary goalscoring options. That is a significant weakening of a Wrexham side who themselves sit in mid-table after a 6-0 demolition in their last away fixture.\n\nBlackburn's home form shows a split picture: W-W-L-L-W over five home matches, which is positive in the most recent runs. Their season-long UP-FORM trajectory is the key signal — three wins in four — and with a fully fit squad they carry the structural advantage. The H2H from last season is 50-50 (Blackburn 0-2 at home to Wrexham, 1-1 away), which provides little directional edge, but that result came before Wrexham's current injury situation.\n\nWraxham's away record is erratic: D-L-D-W-D — only one away win in their last five, and that comfortable 3-0 was against a weak opponent. The 6-0 thrashing they received on their most recent away trip suggests they can be taken apart on the road when missing attacking threat. Blackburn at 2.75 looks fair but slightly underestimates the home advantage plus Wrexham's reported absences. The draw is included as the away side are not without quality.\n\nPrediction: Blackburn home win with the draw as insurance. Dropping the away win given Wrexham's reported forward absentees and that catastrophic recent away result.",
+      "value_note": "Blackburn 1 at 2.75 slightly overstates the risk given Wrexham's reported attacking absences."
+    },
+    {
+      "game_number": 5,
+      "home_team": "Cardiff",
+      "away_team": "Birmingham",
+      "predicted_outcomes": [
+        "2",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "Birmingham UP-FORM: W-W-W-D-W, unbeaten in five, targeting fourth consecutive win",
+        "Birmingham away form W-W-L-W-D — taking points on the road consistently",
+        "Cardiff home form W-W-D-D-D — competitive at home but not dominant",
+        "No injuries for either side — clean tactical contest"
+      ],
+      "risk_flags": [
+        "DROPPED [X]: Birmingham's form trajectory and winning mentality make draws unlikely; Cardiff's home results also trend toward wins or losses rather than draws",
+        "Cardiff P19 with a relegation-threatened squad at home — motivation to not lose cuts both ways"
+      ],
+      "analysis": "Birmingham arrive at Cardiff City Stadium carrying one of the most impressive form lines on this entire coupon: UP-FORM, W-W-W-D-W in their last five, unbeaten across eleven games and targeting what Chris Davies' press conference framed as a fourth consecutive victory. Their away form is equally strong — W, W, L, W, D — suggesting this is a side that takes points on the road with conviction. The one away loss is bracketed by two wins, making the overall picture bullish.\n\nCardiff sit in P19 and their form is volatile: D-W-L-W-L overall, but their home record is somewhat more encouraging: W-W-D-D-D in recent home games, with no home defeats visible. That streak of draws at home reflects a side capable of frustrating opposition but not dominant enough to win consistently. Birmingham's shot statistics (6.6 SoT/g) are superior to Cardiff's (6.4), but both teams are well-matched in volume. The structured data shows no injuries for either side, making this a clean tactical contest.\n\nThe H2H is minimal and split: Birmingham 0-1 to Cardiff three seasons ago, then Cardiff 0-1 to Birmingham. Neither provides a directional signal. The public has 46% on Birmingham at 2.65, which the market has largely endorsed. The motivation differential is subtle — Birmingham are chasing promotion, Cardiff are fighting relegation — but Cardiff's home form suggests they will not capitulate without a fight.\n\nOn balance, Birmingham's form quality and consistency make them slight favourites. The drop is the X given both teams' tendencies to produce results rather than draws — Cardiff don't draw much at home in recent form, Birmingham are winning. But this is competitive enough to include a 1 in the double.",
+      "value_note": "Birmingham 2 at 2.65 appears slightly underpriced given their form. Cardiff's home record prevents a stronger call."
+    },
+    {
+      "game_number": 6,
+      "home_team": "Lincoln",
+      "away_team": "Burnley",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.57,
+      "key_factors": [
+        "Lincoln DOWN-FORM at home: L-L-D-D-L, only 2.6 SoT/g — offensively toothless",
+        "Burnley reportedly missing Vardy, Bruun Larsen, and up to 9 players total (Perplexity — unverified in structured data)",
+        "Lincoln's shot volume (9.6/game) the lowest on this coupon — structural inability to score",
+        "Burnley away form: W-D-L-D-L — inconsistent but that away win shows they can travel"
+      ],
+      "risk_flags": [
+        "DROPPED [1]: Lincoln's home form L-L-D-D-L with 2.6 SoT/g makes a home win structurally implausible; DOWN-FORM flag confirmed",
+        "Burnley's reported nine unavailabilities make this more open than odds suggest — X is genuine value at 3.55"
+      ],
+      "analysis": "This is the most difficult call on the coupon. Lincoln are DOWN-FORM — D-L-L-L-W — and their home form is alarming: L-L-D-D-L in their last five home outings, with only a single home win visible across the season. Their shot statistics are the worst on this coupon: 2.6 SoT per game and 9.6 total shots per game. A team this passive in front of goal at home is simply not generating the material to beat anyone.\n\nBurnley arrive as Championship bottom-dwellers (P22) and are themselves in poor form — L-D-W-D-L overall — but their away record contains a crucial data point: a 4-0 away win earlier this season sits within the five-game away sample, alongside two draws and two losses. Perplexity credibly reports Jacob Bruun Larsen (stress fracture, months out) and Jamie Vardy (back injury) both absent, with Burnley's manager acknowledging nine unavailable players total. That is a decimated squad, and the loss of Vardy as a striker is significant.\n\nThe collision between Lincoln's dreadful home form and Burnley's depleted squad creates genuine ambiguity. Lincoln cannot score but Burnley may struggle to capitalise. The market has split this almost evenly: 2.80/3.55/2.55, public 26/27/47. Burnley away price at 2.55 is reasonable given Lincoln's passivity, but the nine-player absence caveat is substantial.\n\nThis feels like a draw or Burnley win — Lincoln do not have the attacking machinery to beat anyone consistently at home, but Burnley's injury situation creates enough doubt to prevent a confident away call. The draw and Burnley win are retained; the Lincoln home win is dropped.",
+      "value_note": "Draw at 3.55 has value if Burnley's injury crisis is as severe as reported. Burnley 2 at 2.55 is the primary pick but the X is not to be dismissed."
+    },
+    {
+      "game_number": 7,
+      "home_team": "Preston",
+      "away_team": "West Bromwich",
+      "predicted_outcomes": [
+        "2"
+      ],
+      "selection_type": "single",
+      "confidence": 0.82,
+      "key_factors": [
+        "Preston P24 DOWN-FORM: 1 win in last 7, 1.8 SoT/g — structurally unable to score",
+        "West Brom H2H: W-W-W-D-W in last five meetings, including two wins at Deepdale",
+        "West Brom away form W-L-W-L-W — winning every other away game, motivation clear at P6",
+        "Preston home form L-L-W-L-L — the single win is the outlier, not the pattern"
+      ],
+      "risk_flags": [
+        "No structured injury data for either team — any major West Brom absentee would reduce confidence",
+        "Cup/promotion-chasing fatigue possible if West Brom have other fixtures this week — not flagged in data"
+      ],
+      "analysis": "This is the clearest bet on the coupon. Preston North End are in last place in the Championship (P24), carrying a DOWN-FORM flag, and their numbers are catastrophic: 1.8 shots on target per game — barely a shot and a half each match — with a W-L-L-L-D-L run of results and a home record that shows L-L-W-L-L in their last five at Deepdale. The single home win is the anomaly; everything else screams a side without the quality or structure to take points from a mid-table or better outfit.\n\nWest Brom sit P6, targeting the play-offs, and their H2H record against Preston is one of the most one-sided relationships on this coupon: W, W, W, D, W in the last five meetings — West Brom have won four and drawn once, including a 3-0, a 3-1, a 2-1, and a 0-2 at Deepdale last season. They are well-organised on the road, winning in their last away game, and are motivated by automatic promotion ambition.\n\nThe public have correctly identified this: 70% on West Brom at 2.08. The odds are fair given the structural disparity. Preston's 1.8 SoT/g means they are simply not testing opposition goalkeepers, and there is no evidence — in form, stats, or team news — that anything is about to change. No injury data from structured sources creates minor uncertainty, but with results this bad, the performance deficit is systemic rather than squad-related.\n\nWest Brom at 2.08 is a single. The combination of DOWN-FORM flag, last-place standing, historically poor H2H, 1.8 SoT/g, and West Brom's promotion motivation makes this the most justified single on the board.",
+      "value_note": "West Brom 2 at 2.08 is the best value single on the coupon — backed by H2H, Preston's abysmal stats, and form gap."
+    },
+    {
+      "game_number": 8,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Swansea",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.72,
+      "key_factors": [
+        "QPR reportedly missing 5 first-team players including Chair (MID) and Mbengue (ACL) — though unverified in structured data",
+        "Swansea UP-FORM: 4 wins from 5 away games, league leaders in Championship",
+        "Swansea away form W-W-L-W-W — outstanding road record this season",
+        "QPR at 2.30 appears mispriced if reported absences materialise"
+      ],
+      "risk_flags": [
+        "DROPPED [1]: QPR reportedly missing 5 key players (unverified in structured data), home form contains losses and draws — structural weakness vs league leaders",
+        "QPR injury information sourced from Perplexity only — if absences are fewer, this game tightens significantly"
+      ],
+      "analysis": "The market has not fully accounted for QPR's reported injury crisis. Perplexity — unverified in structured data but naming specific injuries with detailed confirmation context — identifies five first-team absentees: Tariq Lamptey (RB, ankle), Nicolas Madsen (MID), Rumarn Burrell (FWD), Ilias Chair (MID, six-week absence), and Amadou Mbengue (DEF, season-ending ACL). Chair and Mbengue are particularly damaging; Chair has been one of QPR's most creative players across recent seasons and Mbengue provides defensive cover. If even three of these five are confirmed, QPR are fielding a significantly depleted side against the Championship's form team.\n\nSwansea are top of the Championship (P1) with an UP-FORM flag and the kind of away record that demands respect: W-W-L-W-W in their last five away games — four wins from five, including clean sheets and multi-goal victories. Vitor Matos has built a side that counter-presses with intensity and wins on the road. The BBC report specifically notes Swansea targeting a fifth away win in six matches after their loss to West Ham. Motivation and confidence are at a seasonal peak.\n\nQPR's recent home form is not bad on paper — W-D-L-W-D — and they are priced at 2.30, which suggests the market views this as a competitive fixture. But that pricing was likely set before the full extent of QPR's absences became clear, or the market has discounted the Perplexity injury list appropriately. Swansea at 3.15 looks generous for the division leaders with this away record.\n\nThe drop is the QPR home win. Their depleted squad, Swansea's away dominance, and the leadership gap make this a Swansea win or draw. Retain both to protect against the possibility of a low-scoring draw in what could be a scrappy encounter.",
+      "value_note": "Swansea 2 at 3.15 is the standout value on the coupon — league leaders, excellent away form, versus a depleted home side. If reported QPR absences confirm, this could be the sharpest mispricing of the week."
+    },
+    {
+      "game_number": 9,
+      "home_team": "Stoke",
+      "away_team": "Bristol City",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.7,
+      "key_factors": [
+        "Stoke UP-FORM: W-L-W-W-W over 5 games, home form L-W-W-W — three consecutive home wins",
+        "Bristol City DOWN-FORM: L-L-D-W-L, acknowledged goalscoring problems",
+        "H2H at Stoke: 5-1 and 4-0 wins in recent seasons — strong home dominance in this fixture",
+        "No injuries confirmed for either team — clean tactical contest"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Bristol City's down-form, acknowledged scoring struggles, and poor recent away results (4-1 thrashing) make an away win the least likely outcome",
+        "Bristol City generate 15.0 shots/g — volume could eventually produce a goal; draw insurance reasonable"
+      ],
+      "analysis": "Stoke carry the UP-FORM flag and have won four of their last five matches, sitting P7 in the Championship. Their recent home run — L-W-W-W in four home games — is encouraging, with a rare loss to a strong side followed by three consecutive home wins. The team appears to have genuine momentum and a settled defensive structure that is conceding selectively rather than chronically.\n\nBristol City are DOWN-FORM — L-L-D-W-L — and their scoring problems are well documented: BBC Sport specifically highlighted manager Michael Skubala calling for more attacking contributions from across the squad. Their away form is mixed (D-L-W-W-D) but the two recent away wins are from an earlier window, with a 4-1 loss intervening. The return of Joe Williams and Tolaj to the squad is a modest positive but does not change the overall picture of a side lacking goals.\n\nThe H2H is balanced but Stoke's home record in this fixture stands out: 5-1 and 4-0 wins at home to Bristol City in recent seasons, compared to 2-0 and 2-0 losses away. The pattern strongly favours Stoke at home specifically. Bristol City's shot volume (15.0/g) is higher than Stoke's (11.8), but that metric needs context — Bristol City are generating volume without converting (DOWN-FORM, L-L-D-W-L).\n\nThe public at 62% on Stoke at 2.38 is reasonable. This is a home win leaning but with enough tactical uncertainty — Bristol City do create chances — to retain X as a secondary option rather than playing a straight single.",
+      "value_note": "Stoke 1 at 2.38 is fair and slightly undervalued given H2H home dominance and Bristol City's goalscoring crisis."
+    },
+    {
+      "game_number": 10,
+      "home_team": "West Ham",
+      "away_team": "Southampton",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.78,
+      "key_factors": [
+        "West Ham 7.2 SoT/g and 17.4 shots/g — dominant home attacking output, scoring 6-0 twice in 5 games",
+        "West Ham UP-FORM: W-W-D-D-W, home form D-W-W-W",
+        "Southampton away form: W-L-D-D-L — inconsistent, one win in last four away",
+        "No injuries for either team — pure quality matchup"
+      ],
+      "risk_flags": [
+        "Southampton also UP-FORM and sit P4 — this is not a straightforward mismatch; they will be competitive",
+        "West Ham's two 6-0 wins skew the perception — middle results include two draws, meaning they are not infallible"
+      ],
+      "analysis": "West Ham are producing some of the most spectacular offensive numbers in the Championship. Their 7.2 shots on target per game and 17.4 total shots per game lead the division and translate into an obvious goalscoring reality: 6-0 twice in their last five home matches, with the form reading W-W-D-D-W and UP-FORM confirmed. Sitting P2, they are automatic promotion candidates with a home record of D-W-W-W in their last four — one draw and three wins, with the draw against a competitive side.\n\nSouthampton (P4, also UP-FORM) are a credible team with D-W-W-L-W in overall form, but their away record is more cautious: W-L-D-D-L — two draws, a loss, and a win in their last four away outings. They score 4.2 SoT/g, less than half West Ham's home output, and their 13.2 shots/g is respectable but modest against a side with West Ham's attacking firepower. The H2H (two Premier League-era meetings, both West Ham results — 1-1 at home, 1-0 away) offers limited but slightly positive context for the hosts.\n\nNo injuries are confirmed for either side from structured data, making this a clean matchup of quality. West Ham at 1.71 reflects the market's justified confidence in a dominant home side against a good-but-not-dominant away team. Southampton will likely defend compact and look to counter, making a low-scoring win or a 2-1 style result plausible rather than a 6-0 repeat.\n\nThis is a single. West Ham's home attacking output is too strong, Southampton's away record too inconsistent, and the motivation (promotion race) too clear to complicate with a double.",
+      "value_note": "West Ham 1 at 1.71 is strong value for a Championship fixture given their attacking dominance — the price underestimates how one-sided they have been at home."
+    },
+    {
+      "game_number": 11,
+      "home_team": "Wolverhampton",
+      "away_team": "Watford",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.75,
+      "key_factors": [
+        "Watford DOWN-FORM: 4 consecutive away losses, away form L-L-L-L-D — cannot take points on road",
+        "Wolves 16.2 shots/game at home — volume pressure will eventually overcome a low block",
+        "Wolves reportedly missing Jiménez (confirmed out), Armstrong and Trippier (both doubtful per Perplexity)",
+        "Market at 1.45 prices in significant Wolves advantage — structural gap justifies it despite injury concerns"
+      ],
+      "risk_flags": [
+        "Wolves missing Jiménez, and potentially Armstrong and Trippier (unverified in structured data) — reduced attacking options against a parked bus",
+        "Wolves overall form D-W-L-L-W — not dominant; two recent losses show they can be got at"
+      ],
+      "analysis": "Watford arrive at Molineux in the worst form of any away side on this coupon. Their DOWN-FORM flag is supported by a run of W-L-L-L-L over five matches, and critically their away record reads L-L-L-L-D in their last five away games — four consecutive away losses and a draw before that. They are P20, and the most recent away results include conceding five goals in a single match. The tactical preview from Wolves manager Cesar Peixoto acknowledges that Watford will defend in a low block, an approach that requires considerable discipline to sustain for 90 minutes when Wolves are generating 16.2 shots per game at home.\n\nWolves are not without their own concerns. Raúl Jiménez is confirmed out until January, and both Adam Armstrong and Kieran Trippier are doubtful for this match. Losing two potential starters — one an attacking outlet, one a quality wide player — is meaningful, and Wolves' own overall form (D-W-L-L-W) is not the clean run of dominance you would expect from heavy 1.45 favourites. Their home form reads D-L-W-W-D in five games — two draws, a loss, and two wins.\n\nThe question is simply whether Wolves' structural quality advantage over a DOWN-FORM Watford side is sufficient to overcome their own injury doubts and slightly inconsistent home record. The answer is yes. Watford have taken zero points from their last four away matches and are conceding regularly. Even a diminished Wolves are significantly stronger than their opponents and are playing at home in front of what BBC Sport describes as a psychologically challenging environment for low-block defences.\n\nWolves win. The 1.45 is short but the structural gap is real. Singleton confidence is appropriate given Watford's road record, tempered only by Wolves' own injury situation.",
+      "value_note": "Wolves 1 at 1.45 is short but fair given Watford's catastrophic away record — this is a single on form and form alone."
+    },
+    {
+      "game_number": 12,
+      "home_team": "Cambridge",
+      "away_team": "Plymouth",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.58,
+      "key_factors": [
+        "Cambridge P4 with high corner rate (10.4/g) — set-piece threat could be decisive in a tight game",
+        "Plymouth two consecutive away defeats including a 0-3 thrashing — confidence dip",
+        "Cambridge home form D-W-D-W — solid but draw-prone; not a side that destroys opponents at home",
+        "No injury data from structured sources for either team"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Plymouth two consecutive losses including heavy defeat, away form recently W-W-W then sharp drop — away win the least confident call at this moment",
+        "Market split almost perfectly 3-ways — genuine toss-up; draw at 3.55 could be value if Cambridge's set-piece threat is neutralised"
+      ],
+      "analysis": "This League One encounter between two promotion candidates lacks the depth of structured data available for the Premier League matches, but the picture that emerges from form and market signals is nuanced. Cambridge sit P4 with a draw-heavy recent record: D-W-W-D-D in five games, with home form D-W-D-W-L across a longer sample. They are not a side that loses regularly at home, but they are also not dominant — three of their last five results at home have been draws. Their corners-per-game (10.4) is notably high, suggesting they create set-piece pressure but struggle to break down organised defences.\n\nPlymouth (P5) have suffered two consecutive defeats — 0-2 and 0-3 — after a run of positive results, and manager Tom Cleverley has publicly called for a return to basics. That loss of form coincides with the away fixture data: L in their last away game (0-3). However, Plymouth's prior away form was excellent: W-W-W in the three away games before that, scoring freely. The 0-3 loss looks like a dip rather than a trend.\n\nThe market is almost perfectly split: 1:2.60 X:3.55 2:2.55 with 48/26/26 public distribution, reflecting a genuine 50/50 contest. Without injury data for either team, and with both sides carrying inconsistent recent form, this is the natural double territory — too uncertain to call confidently either way. Cambridge's home advantage and Plymouth's recent dip give the home side a marginal edge, but the draw is very plausible given Cambridge's tendency to share points at home.\n\nPrediction: Home win or draw. Plymouth away win is dropped given consecutive losses and Cambridge's home solidity.",
+      "value_note": "Draw at 3.55 appears slightly overpriced given the tendency of promotion-chasing Cambridge to grind out results at home. 1-X is the bet."
+    },
+    {
+      "game_number": 13,
+      "home_team": "Oxford",
+      "away_team": "Bradford",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "key_factors": [
+        "Oxford UP-FORM: W-D-W-D-W at home, 4.8 SoT/g — consistent and productive at home",
+        "Bradford 2.0 SoT/g — lowest on the coupon, defensively cautious, likely to set up compact",
+        "Bradford away form D-D-W-W-L — draw-heavy, rarely dominant on road",
+        "Public 36% on draw at 3.25 — significant draw interest reflecting Bradford's conservative style"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Bradford's 2.0 SoT/g makes an away win against an UP-FORM home side structurally unlikely — they do not create enough to win on the road against quality opponents",
+        "Oxford's draw tendency (2 of last 4 home games were draws) means the X is genuine — Bradford will defend well and may grind out a point"
+      ],
+      "analysis": "Oxford come in with the UP-FORM flag — W-D-W-D-W across five matches, with home form W-D-W-D — and their head coach Aaron Ramsey has publicly emphasised concentration and internal focus ahead of this fixture. The positive home record is consistent: two wins and two draws in their last four, no home defeat visible. Their shot metrics are solid for League One: 4.8 SoT/g and 12.8 shots/g.\n\nBradford sit P3 and their form is functional but cautious: D-W-D-D-W — three draws in five, and their away form is D-D-W-W-L, meaning they rarely lose on the road but also rarely dominate. The most striking Bradford statistic is their 2.0 SoT/g — the lowest on this coupon by some distance. Bradford appear to be a defensively-minded side that grinds results, happy to concede very little and score only when necessary. Their away form reflects this: conservative, draw-happy, occasionally nicking wins.\n\nThe market has drawn public interest with 36% on the draw at 3.25 — the largest draw contingent in relation to the other outcomes on this game. Bradford's draw tendency and Oxford's inability to blow teams away makes that instinct understandable. Oxford's UP-FORM flag and home advantage give them the marginal edge, but Bradford's low-block approach and shot efficiency suggests they will keep this tight.\n\nThe drop is the Bradford away win. Their 2.0 SoT/g shows they are not a side that dominates opponents; they are a draw-machine with occasional counter-attack wins. Against an Oxford side in UP-FORM at home, three points for Bradford feels the least likely outcome. Home win or draw retained.",
+      "value_note": "Draw at 3.25 is not overpriced given Bradford's conservative approach. Oxford 1 at 2.55 is the primary selection but X deserves a place in the double."
+    }
+  ]
+}

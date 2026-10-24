@@ -3270,5 +3270,199 @@
         "post_mortem": ""
       }
     ]
+  },
+  {
+    "draw_number": 4975,
+    "draw_date": "2026-10-17",
+    "appended_at": "2026-10-24T11:20:24.886114+00:00",
+    "total_correct": 7,
+    "total_games": 13,
+    "accuracy_pct": 53.8,
+    "singles_correct": 2,
+    "singles_total": 4,
+    "doubles_correct": 4,
+    "doubles_total": 8,
+    "full_covered": true,
+    "games": [
+      {
+        "game_number": 1,
+        "home_team": "Newcastle",
+        "away_team": "Aston Villa",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.62,
+        "post_mortem": "Predicted 1/X (double, conf=0.62) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [2]: Villa DOWN-FORM (3 losses last 5), missing Onana + two key defenders, 0-4 away defeat recently — insufficient positive evidence for away win; Newcastle overperforming both xGF and xGA — regression on both ends is a risk to a comfortable home win. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 2,
+        "home_team": "Brentford",
+        "away_team": "Liverpool",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.72,
+        "post_mortem": "Predicted 1 (single, conf=0.72) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [2]: Liverpool missing up to 6 key players including top scorer, top assister and set-piece taker — insufficient positive evidence for depleted away side; If Isak, Gakpo and Szoboszlai all return fit, Liverpool's attacking quality changes the equation dramatically — final assessment risk."
+      },
+      {
+        "game_number": 3,
+        "home_team": "Manchester City",
+        "away_team": "Ipswich",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.85,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 4,
+        "home_team": "Fulham",
+        "away_team": "Hull",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.6,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 5,
+        "home_team": "Birmingham",
+        "away_team": "Queens Park Rangers",
+        "our_prediction": [
+          "1",
+          "X",
+          "2"
+        ],
+        "selection_type": "full",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.5,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 6,
+        "home_team": "Bristol City",
+        "away_team": "Sheffield U",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.65,
+        "post_mortem": "Predicted 1/X (double, conf=0.65) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [2]: Sheffield United's shot volume (9.0/g) and league position (P18) offer insufficient positive evidence for an away win; Bristol City's home form is mixed (W L W L in last 4 home) — home dominance not guaranteed despite underlying stats. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 7,
+        "home_team": "Derby",
+        "away_team": "Stoke",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.63,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 8,
+        "home_team": "Norwich",
+        "away_team": "Portsmouth",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.62,
+        "post_mortem": "Predicted 1/X (double, conf=0.62) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [2]: Portsmouth at 4.9 reflects genuine underdog status; despite decent form, insufficient positive evidence for away win given home advantage and only one confirmed absence; Norwich's home record is inconsistent (L W W L) — 1.71 may slightly overstate their home reliability. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      },
+      {
+        "game_number": 9,
+        "home_team": "Southampton",
+        "away_team": "Bolton",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "X",
+        "correct": false,
+        "confidence": 0.88,
+        "post_mortem": "Predicted 1 (single, conf=0.88) but result was X. OVERCONFIDENCE: High-confidence single failed. Were multiple independent signals truly aligned, or were they correlated? IGNORED RISKS: Risk flags were noted but not weighted enough: Bolton's 5.2 SoT/g is non-trivial — if they replicate their recent high-energy away performance, the scoreline could be closer than expected; No H2H data to anchor expectations — blind spot in the analysis. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+      },
+      {
+        "game_number": 10,
+        "home_team": "Swansea",
+        "away_team": "West Ham",
+        "our_prediction": [
+          "2",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": true,
+        "confidence": 0.65,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 11,
+        "home_team": "West Bromwich",
+        "away_team": "Blackburn",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.68,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 12,
+        "home_team": "Wrexham",
+        "away_team": "Preston",
+        "our_prediction": [
+          "1"
+        ],
+        "selection_type": "single",
+        "actual_result": "1",
+        "correct": true,
+        "confidence": 0.7,
+        "post_mortem": ""
+      },
+      {
+        "game_number": 13,
+        "home_team": "Plymouth",
+        "away_team": "Huddersfield",
+        "our_prediction": [
+          "1",
+          "X"
+        ],
+        "selection_type": "double",
+        "actual_result": "2",
+        "correct": false,
+        "confidence": 0.57,
+        "post_mortem": "Predicted 1/X (double, conf=0.57) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [2]: Huddersfield at 2.60 with excellent shot volume and strong away form has a genuine case — however Plymouth home advantage in a promotion battle and league-leading position gives home side the marginal edge; Plymouth's Joe Edwards absence is manageable but reduces defensive cover against Huddersfield's high-volume attack. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+      }
+    ]
   }
 ]
