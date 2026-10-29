@@ -30,7 +30,7 @@
   .v { padding: 8px; border-top: 1px solid {{ c.line }}; vertical-align: top; }
   .v2 { padding: 8px 16px 8px 8px; border-top: 1px solid {{ c.line }}; vertical-align: top; }
   .gn { width: 34px; height: 34px; line-height: 34px; text-align: center; background: {{ c.text }}; color: {{ c.card }}; font-size: 16px; }
-  .tn { font-size: 22px; line-height: 1.1; letter-spacing: -0.5px; }
+  .tn { font-size: 20px; line-height: 1.1; letter-spacing: -0.5px; }
   .l { display: inline-block; width: 19px; margin-right: 3px; text-align: center; font: 900 11px/19px Arial Black, Arial, sans-serif; }
   .bx { text-align: center; vertical-align: middle; border: 2px solid {{ c.text }}; color: {{ c.muted }}; font-family: Arial Black, Arial, sans-serif; font-weight: 900; line-height: 1; }
   .b22 { width: 22px; height: 22px; font-size: 10px; }
@@ -53,6 +53,11 @@
   .o2 { background: {{ c.o2 }}; color: {{ c.on_o2 }}; }
   .bo { box-shadow: 2px 2px 0 {{ c.text }}; }
   .b28.bo { box-shadow: 3px 3px 0 {{ c.text }}; }
+  .hb { display: block; margin-bottom: 6px; border: 0; }
+  .ab { display: block; margin: 0 0 6px auto; border: 0; }
+  .cha { margin: 0 0 6px 6px; }
+  .vs { padding-top: 42px; font-size: 13px; }
+  .sl { padding-right: 10px; }
   .bdg { vertical-align: -5px; margin-right: 8px; border: 0; }
   .lg { vertical-align: -3px; margin-right: 6px; border: 0; }
   .ob { border-right: 1px solid {{ c.line }}; }
@@ -62,7 +67,7 @@
   @media screen and (max-width: 480px) {
     .px { padding-left: 14px !important; padding-right: 14px !important; }
     .wm { font-size: 28px !important; }
-    .tn { font-size: 19px !important; }
+    .tn { font-size: 16px !important; }
     .l { width: 16px !important; margin-right: 2px !important; }
     .k { padding-right: 4px !important; }
     .stack { display: block !important; width: 100% !important; padding: 0 0 10px 0 !important; }
@@ -79,6 +84,12 @@
 {%- endmacro -%}
 {%- macro letters(s) -%}
 {%- for ch in s %}<span class="l l{{ ch|lower }}">{{ ch }}</span>{% endfor -%}
+{%- endmacro -%}
+{%- macro missing(mi) -%}
+{%- if mi.empty %}{{ mi.empty }}{% elif not mi.players %}–{% else %}{% for p in mi.players %}{% if p.key %}<b>{{ p.name }}</b>{% else %}{{ p.name }}{% endif %}{% if p.detail %} <span class="m">({{ p.detail }})</span>{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}{% if mi.more %} <span class="m">and {{ mi.more }} more</span>{% endif %}{% endif -%}
+{%- endmacro -%}
+{%- macro cell(row, side) -%}
+{%- if row.form %}{{ letters(row[side]) }}{% elif row.missing %}{{ missing(row[side]) }}{% else %}{{ row[side] or '–' }}{% endif -%}
 {%- endmacro -%}
 {%- macro heading(text, sub='') -%}
 <tr><td class="px h"><div class="d">{{ text }}</div>{% if sub %}<div class="s m" style="margin-top:4px;">{{ sub }}</div>{% endif %}</td></tr>
@@ -151,13 +162,22 @@
     </tr></table>
   </td></tr>
 
-  {# teams with badges and signal chips #}
-  {% for side in ['home', 'away'] %}
-  <tr><td style="padding:{{ '6px 16px 4px' if side == 'home' else '4px 16px 12px' }};">
-    <div>{% if card[side ~ '_badge'] %}<img src="{{ card[side ~ '_badge'] }}" width="26" height="26" alt="" class="bdg">{% endif %}<span class="tn d">{{ card[side] }}</span></div>
-    {% if card[side ~ '_chips'] %}<div style="margin-top:6px;">{% for ch in card[side ~ '_chips'] %}{{ chip(ch) }}{% endfor %}</div>{% endif %}
+  {# teams side by side, scoreboard style: home left, away right, badge on the outside #}
+  <tr><td style="padding:8px 16px 10px;">
+    <table cellpadding="0" cellspacing="0" width="100%"><tr>
+      <td width="46%" valign="top">
+        {% if card.home_badge %}<img src="{{ card.home_badge }}" width="30" height="30" alt="" class="hb">{% endif %}
+        <div class="tn d">{{ card.home }}</div>
+        {% if card.home_chips %}<div style="margin-top:8px;">{% for ch in card.home_chips %}{{ chip(ch) }}{% endfor %}</div>{% endif %}
+      </td>
+      <td width="8%" valign="top" align="center" class="d m vs">v</td>
+      <td width="46%" valign="top" align="right">
+        {% if card.away_badge %}<img src="{{ card.away_badge }}" width="30" height="30" alt="" class="ab">{% endif %}
+        <div class="tn d">{{ card.away }}</div>
+        {% if card.away_chips %}<div style="margin-top:8px;">{% for ch in card.away_chips %}<span class="ch cha k-{{ ch.kind }}"><b>{{ ch.icon }}</b> {{ ch.text }}</span>{% endfor %}</div>{% endif %}
+      </td>
+    </tr></table>
   </td></tr>
-  {% endfor %}
 
   {# stats table #}
   {% if card.rows %}
@@ -165,7 +185,7 @@
     <table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
       <tr><td width="30%"></td><td width="35%" class="d" style="padding:10px 8px 6px;">{{ card.home_short }}</td><td width="35%" class="d" style="padding:10px 16px 6px 8px;">{{ card.away_short }}</td></tr>
       {% for row in card.rows %}
-      <tr><td class="k">{{ row.label }}</td><td class="v">{% if row.form %}{{ letters(row.home) }}{% else %}{{ row.home or '–' }}{% endif %}</td><td class="v2">{% if row.form %}{{ letters(row.away) }}{% else %}{{ row.away or '–' }}{% endif %}</td></tr>
+      <tr><td class="k">{{ row.label }}</td><td class="v">{{ cell(row, 'home') }}</td><td class="v2">{{ cell(row, 'away') }}</td></tr>
       {% endfor %}
     </table>
   </td></tr>
@@ -176,7 +196,7 @@
   <tr><td class="sec in">
     <table cellpadding="0" cellspacing="0" width="100%"><tr>
       {% if card.h2h %}
-      <td class="stack" valign="top" width="50%" style="padding-right:10px;">
+      <td class="stack sl" valign="top" width="50%">
         <div class="lb">Last {{ card.h2h|length }} meetings, {{ card.home_short }} first</div>
         <div style="margin-top:4px;">{% for m in card.h2h %}{{ letters(m.letter) }}{% endfor %}</div>
         <div class="m" style="font-size:11px;">{{ card.h2h[0].year }}{% if card.h2h|length > 1 %} back to {{ card.h2h[-1].year }}{% endif %}</div>
@@ -207,14 +227,6 @@
       </td>
       {% endfor %}
     </tr></table>
-    {% if card.odds.public %}
-    <div style="padding:0 16px 14px;">
-      <table cellpadding="0" cellspacing="0" width="100%" style="border:1.5px solid {{ c.text }};"><tr>
-        {% for o in ['1', 'X', '2'] %}{% set p = card.odds.public[loop.index0] %}<td width="{{ p }}%" height="18" align="center" class="d pb o{{ o }}">{% if p >= 9 %}{{ p }}%{% endif %}</td>{% endfor %}
-      </tr></table>
-      <div class="m" style="margin-top:4px;font-size:11px;">How the public is betting</div>
-    </div>
-    {% endif %}
   </td></tr>
   {% endif %}
 
@@ -228,7 +240,7 @@
   <tr><td style="padding:0 16px 16px;">
     <table cellpadding="0" cellspacing="0" width="100%"><tr>
       {% if card.why %}
-      <td class="stack" valign="top" width="50%" style="padding-right:10px;"><div class="lb">Why</div>{% for f in card.why %}<div class="li"><b style="color:{{ c.positive }};">▸</b> {{ f }}</div>{% endfor %}</td>
+      <td class="stack sl" valign="top" width="50%"><div class="lb">Why</div>{% for f in card.why %}<div class="li"><b style="color:{{ c.positive }};">▸</b> {{ f }}</div>{% endfor %}</td>
       {% endif %}
       {% if card.risks %}
       <td class="stack" valign="top" width="50%"><div class="lb">Risks</div>{% for r in card.risks %}<div class="li"><b style="color:{{ c.caution }};">◆</b> {{ r }}</div>{% endfor %}</td>

@@ -188,13 +188,15 @@ def _format_h2h(h2h_list, home_team: str = "", away_team: str = "") -> str:
     return header + "\n" + "\n".join(lines)
 
 
-def _format_absences(absences) -> str:
-    if not absences:
+def _format_absences(absences, suspensions=()) -> str:
+    """Injured then suspended players; suspensions are labelled so a ban never reads as an injury."""
+    if not absences and not suspensions:
         return "None reported"
     parts = []
-    for a in absences:
+    for a in [*absences, *suspensions]:
         src_tag = f" [{a.source}]" if getattr(a, "source", "") else ""
-        desc = f"{a.player_name} ({a.position}, {a.status.value}){src_tag}"
+        status = "SUSPENDED" if a in suspensions else a.status.value
+        desc = f"{a.player_name} ({a.position}, {status}){src_tag}"
         if a.season_goals or a.season_assists:
             desc += f" {a.season_goals}G/{a.season_assists}A"
         ret = a.expected_return
@@ -321,8 +323,8 @@ def _format_match_block(match: Match) -> str:
     elif a and len(a.form_last5) >= 3 and a.form_points_last5 <= 4:
         away_form_flag = " 📉DOWN-FORM"
 
-    home_injuries = _format_absences(h.injuries + h.suspensions) if h else "N/A"
-    away_injuries = _format_absences(a.injuries + a.suspensions) if a else "N/A"
+    home_injuries = _format_absences(h.injuries, h.suspensions) if h else "N/A"
+    away_injuries = _format_absences(a.injuries, a.suspensions) if a else "N/A"
 
     home_intl = ", ".join(h.intl_call_ups) if h and h.intl_call_ups else "None"
     away_intl = ", ".join(a.intl_call_ups) if a and a.intl_call_ups else "None"
@@ -428,7 +430,8 @@ DATA SOURCE HIERARCHY — apply strictly when sources disagree:
      brackets, e.g. "(Expected back 8 Nov)", "(75% chance of playing)"), FotMob [fotmob] (all other
      leagues; "back: <date>" is its expected return), Sofascore [sofascore]. Any of these in the
      "Injuries/Suspensions" line is the ground truth for absences. "NG/NA" after a player is his
-     season goals/assists.
+     season goals/assists. A player marked SUSPENDED is certainly out — weigh him like a confirmed
+     injury, never as a doubt.
   2. Form, tables, H2H, referee, schedule — FotMob, with football-data.co.uk results as backup
      (equally reliable). Form is newest first: "W 2-1 Fulham(H,PL)" = won 2-1 at home vs Fulham
      in the league. "Home/Away record (season)" is the full-season record at that venue with

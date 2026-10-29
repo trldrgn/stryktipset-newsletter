@@ -60,9 +60,11 @@ def test_short_names_and_missing_text():
     assert renderer._short("Queens Park Rangers") == "QPR"
     assert renderer._short("Brighton") == "Brighton"
     m = _match()
-    assert renderer._missing(m.home_stats) == "Semenyo"
-    assert renderer._missing(m.away_stats) == "Nobody missing"        # checked by FPL, none out
-    assert renderer._missing(TeamStats(team_name="X")) == ""          # no source: show nothing
+    assert renderer._missing(m.home_stats) == {
+        "players": [{"name": "Semenyo", "detail": "RW, top assister", "key": True}], "more": 0,
+    }
+    assert renderer._missing(m.away_stats) == {"empty": "Nobody missing"}   # checked by FPL, none out
+    assert renderer._missing(TeamStats(team_name="X")) == {}                # no source: show nothing
 
 
 def test_chips_cover_form_fatigue_and_key_absence():
@@ -89,3 +91,19 @@ def test_render_shows_picks_referee_and_cards():
     assert "First paragraph." in html and "Second paragraph." not in html
     assert "Man City" in html
     assert "\n  " not in html.split("</style>")[1]                    # indentation compacted away
+
+
+def test_missing_puts_key_players_first_with_their_importance():
+    from models.match import InjuryStatus
+    ts = TeamStats(team_name="Brighton", absences_checked_source="fotmob", injuries=[
+        PlayerAbsence(player_name="Squad", position="CB", status=InjuryStatus.OUT),
+        PlayerAbsence(player_name="Doubt", position="LB", status=InjuryStatus.DOUBT, season_assists=2),
+        PlayerAbsence(player_name="Striker", position="ST", season_goals=6, is_top_scorer=True),
+        PlayerAbsence(player_name="Fourth", position="CM"),
+    ], suspensions=[PlayerAbsence(player_name="Banned", position="CDM")])
+    mi = renderer._missing(ts)
+    assert [p["name"] for p in mi["players"]] == ["Striker", "Squad", "Fourth"]
+    assert mi["players"][0] == {"name": "Striker", "detail": "ST, top scorer", "key": True}
+    assert mi["more"] == 2
+    assert renderer._absence_detail(ts.injuries[1], banned=False) == "LB, 2A, doubt"
+    assert renderer._absence_detail(ts.suspensions[0], banned=True) == "CDM, banned"

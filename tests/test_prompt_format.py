@@ -53,3 +53,12 @@ def test_suspension_only_team_is_not_tagged_fully_fit():
                    suspensions=[PlayerAbsence(player_name="Sessegnon", position="DEF", source="fpl")])
     assert _injury_source_tag(ts) == ""
     assert _injury_source_tag(TeamStats(team_name="X", absences_checked_source="fpl")) == "[checked: fpl — none missing]"
+
+
+def test_suspensions_are_labelled_for_claude():
+    injured = PlayerAbsence(player_name="Semenyo", position="RW", source="fotmob", season_goals=2)
+    banned = PlayerAbsence(player_name="Sessegnon", position="DEF", source="fpl",
+                           expected_return="Suspended until 7 Nov")
+    text = _format_absences([injured], [banned])
+    assert "Semenyo (RW, out) [fotmob] 2G/0A" in text
+    assert "Sessegnon (DEF, SUSPENDED) [fpl] (Suspended until 7 Nov)" in text

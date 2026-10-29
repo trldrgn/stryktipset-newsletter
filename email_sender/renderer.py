@@ -18,7 +18,9 @@ from zoneinfo import ZoneInfo
 
 from jinja2 import Environment, FileSystemLoader
 
-from models.match import Match, MatchPrediction, TeamStats, WeeklyEvaluation, WeeklyReport
+from models.match import (
+    InjuryStatus, Match, MatchPrediction, PlayerAbsence, TeamStats, WeeklyEvaluation, WeeklyReport,
+)
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -34,9 +36,9 @@ _FOTMOB_CREST_URL = "https://images.fotmob.com/image_resources/logo/teamlogo/{te
 _EN_MONTHS = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 _EN_WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
-# Dark Teal & Ivory (346eur) + fixed signal colours. Contrast-checked to WCAG AA.
+# Dark Teal & Ivory (346eur) on Alabaster (346eur neutral) + fixed signal colours. Contrast-checked to WCAG AA.
 THEME = {
-    "page": "#F9FEFF", "card": "#FFFFFF", "text": "#001219", "muted": "#3F555C", "line": "#D5E6E8",
+    "page": "#E6E5E0", "card": "#FFFFFF", "text": "#001219", "muted": "#3F555C", "line": "#D5E6E8",
     "accent": "#005F73", "on_accent": "#FFFFFF", "highlight": "#E9D8A6",
     "o1": "#005F73", "on_o1": "#FFFFFF", "oX": "#E9D8A6", "on_oX": "#001219", "o2": "#94D2BD", "on_o2": "#001219",
     "positive": "#1F7548", "positive_t": "#E2F2E8",
@@ -148,14 +150,43 @@ def _ordinal(n: int) -> str:
     return f"{n}{suffix}"
 
 
-def _missing(stats: Optional[TeamStats]) -> str:
+_MISSING_SHOWN = 3
+
+
+def _absence_detail(a: PlayerAbsence, banned: bool) -> str:
+    """Why the player matters, shortest form first: 'RW, top assister', 'ST, 4G', 'CB, doubt'."""
+    bits = [a.position] if a.position else []
+    if a.is_top_scorer:
+        bits.append("top scorer")
+    elif a.is_top_assister:
+        bits.append("top assister")
+    elif a.season_goals or a.season_assists:
+        bits.append(" ".join(f"{n}{k}" for n, k in ((a.season_goals, "G"), (a.season_assists, "A")) if n))
+    if a.is_set_piece_taker:
+        bits.append("set pieces")
+    if banned:
+        bits.append("banned")
+    elif a.status in (InjuryStatus.DOUBT, InjuryStatus.FIFTY_FIFTY):
+        bits.append("doubt")
+    return ", ".join(bits)
+
+
+def _missing(stats: Optional[TeamStats]) -> dict:
+    """{'players': [{name, detail, key}], 'more': n, 'empty': text} — key players first."""
     if not stats:
-        return ""
-    names = [a.player_name for a in stats.injuries] + [f"{a.player_name} (banned)" for a in stats.suspensions]
-    if not names:
-        return "Nobody missing" if stats.absences_checked_source else ""
-    shown = ", ".join(names[:3])
-    return shown + (f" and {len(names) - 3} more" if len(names) > 3 else "")
+        return {}
+    absences = [(a, False) for a in stats.injuries] + [(a, True) for a in stats.suspensions]
+    if not absences:
+        return {"empty": "Nobody missing"} if stats.absences_checked_source else {}
+    critical = {id(a) for a in stats.critical_absences}
+    absences.sort(key=lambda ab: (id(ab[0]) not in critical, ab[0].status != InjuryStatus.OUT))
+    return {
+        "players": [
+            {"name": a.player_name, "detail": _absence_detail(a, banned), "key": id(a) in critical}
+            for a, banned in absences[:_MISSING_SHOWN]
+        ],
+        "more": max(0, len(absences) - _MISSING_SHOWN),
+    }
 
 
 def _chips(stats: Optional[TeamStats], absent_count: int) -> list[dict]:
@@ -199,7 +230,7 @@ def _rows(h: Optional[TeamStats], a: Optional[TeamStats]) -> list[dict]:
         {"label": "Season at this venue", "home": _venue_record(h, "home"), "away": _venue_record(a, "away")},
         {"label": "xG last 5, for–against", "home": xg(h), "away": xg(a)},
         {"label": "Points vs expected", "home": xpts(h), "away": xpts(a)},
-        {"label": "Missing", "home": _missing(h), "away": _missing(a)},
+        {"label": "Missing", "missing": True, "home": _missing(h), "away": _missing(a)},
     ]
     return [r for r in rows if r["home"] or r["away"]]
 
