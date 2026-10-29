@@ -1,0 +1,186 @@
+{
+  "draw_number": 4976,
+  "draw_date": "2026-10-24",
+  "evaluated_at": "2026-10-29T17:20:23.092980+00:00",
+  "results": [
+    {
+      "game_number": 1,
+      "home_team": "Chelsea",
+      "away_team": "Tottenham",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.72,
+      "post_mortem": "Predicted 1/X (double, conf=0.72) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: Chelsea starting reserve goalkeeper Penders; Reece James and set-piece threat absent; DROPPED [2]: Tottenham's 0-1-2 record in last 3 away games, missing midfield core, H2H Chelsea dominant at Stamford Bridge. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 2,
+      "home_team": "Arsenal",
+      "away_team": "Everton",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.75,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 3,
+      "home_team": "Coventry",
+      "away_team": "Fulham",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.63,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Blackburn",
+      "away_team": "Wrexham",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.67,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Cardiff",
+      "away_team": "Birmingham",
+      "our_prediction": [
+        "2",
+        "1"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.65,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Lincoln",
+      "away_team": "Burnley",
+      "our_prediction": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.57,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Preston",
+      "away_team": "West Bromwich",
+      "our_prediction": [
+        "2"
+      ],
+      "selection_type": "single",
+      "actual_result": "X",
+      "correct": false,
+      "confidence": 0.82,
+      "post_mortem": "Predicted 2 (single, conf=0.82) but result was X. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: No structured injury data for either team — any major West Brom absentee would reduce confidence; Cup/promotion-chasing fatigue possible if West Brom have other fixtures this week — not flagged in data. DRAW MISSED: Draws are underrated when teams are closely matched. Check if league position differential was <5 and odds were tight."
+    },
+    {
+      "game_number": 8,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Swansea",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": false,
+      "confidence": 0.72,
+      "post_mortem": "Predicted 2/X (double, conf=0.72) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [1]: QPR reportedly missing 5 key players (unverified in structured data), home form contains losses and draws — structural weakness vs league leaders; QPR injury information sourced from Perplexity only — if absences are fewer, this game tightens significantly. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 9,
+      "home_team": "Stoke",
+      "away_team": "Bristol City",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.7,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "West Ham",
+      "away_team": "Southampton",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.78,
+      "post_mortem": "Predicted 1 (single, conf=0.78) but result was 2. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Southampton also UP-FORM and sit P4 — this is not a straightforward mismatch; they will be competitive; West Ham's two 6-0 wins skew the perception — middle results include two draws, meaning they are not infallible."
+    },
+    {
+      "game_number": 11,
+      "home_team": "Wolverhampton",
+      "away_team": "Watford",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.75,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "Cambridge",
+      "away_team": "Plymouth",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.58,
+      "post_mortem": "Predicted 1/X (double, conf=0.58) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [2]: Plymouth two consecutive losses including heavy defeat, away form recently W-W-W then sharp drop — away win the least confident call at this moment; Market split almost perfectly 3-ways — genuine toss-up; draw at 3.55 could be value if Cambridge's set-piece threat is neutralised. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 13,
+      "home_team": "Oxford",
+      "away_team": "Bradford",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.63,
+      "post_mortem": ""
+    }
+  ]
+}
