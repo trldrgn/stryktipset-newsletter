@@ -146,9 +146,6 @@ def _ordinal(n: int) -> str:
     return f"{n}{suffix}"
 
 
-_MISSING_SHOWN = 3
-
-
 def _absence_detail(a: PlayerAbsence, banned: bool) -> str:
     """Why the player matters, shortest form first: 'RW, top assister', 'ST, 4G', 'CB, doubt'."""
     bits = [a.position] if a.position else []
@@ -168,7 +165,7 @@ def _absence_detail(a: PlayerAbsence, banned: bool) -> str:
 
 
 def _missing(stats: Optional[TeamStats]) -> dict:
-    """{'players': [{name, detail, key}], 'more': n, 'empty': text} — key players first."""
+    """{'players': [{name, detail, key}], 'empty': text} — every absent player, key players first."""
     if not stats:
         return {}
     absences = [(a, False) for a in stats.injuries] + [(a, True) for a in stats.suspensions]
@@ -179,9 +176,8 @@ def _missing(stats: Optional[TeamStats]) -> dict:
     return {
         "players": [
             {"name": a.player_name, "detail": _absence_detail(a, banned), "key": id(a) in critical}
-            for a, banned in absences[:_MISSING_SHOWN]
+            for a, banned in absences
         ],
-        "more": max(0, len(absences) - _MISSING_SHOWN),
     }
 
 

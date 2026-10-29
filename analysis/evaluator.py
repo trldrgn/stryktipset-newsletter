@@ -24,6 +24,7 @@ from models.match import (
     SelectionType,
     MatchEvaluation,
     WeeklyEvaluation,
+    WeeklyReport,
     MatchPrediction,
 )
 from utils.logger import get_logger
@@ -67,6 +68,8 @@ def save_predictions(
                 "risk_flags": p.risk_flags,
                 "analysis": p.analysis,
                 "value_note": p.value_note,
+                "home_absent_count": p.home_absent_count,
+                "away_absent_count": p.away_absent_count,
             }
             for p in predictions
         ],
@@ -74,6 +77,74 @@ def save_predictions(
     filename.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     logger.info("Predictions saved to %s", filename)
     return filename
+
+
+def load_saved_report(draw_number: int) -> Optional[WeeklyReport]:
+    """
+    Rebuild the WeeklyReport a run saved for `draw_number` (picks, analysis,
+    summary) so the newsletter can be re-rendered without calling Claude again.
+    """
+    files = sorted(PREDICTIONS_DIR.glob(f"draw_{draw_number}_*.json"))
+    if not files:
+        return None
+    data = json.loads(files[-1].read_text(encoding="utf-8"))
+    preds = [
+        MatchPrediction(
+            game_number=x["game_number"], home_team=x["home_team"], away_team=x["away_team"],
+            predicted_outcomes=[Outcome(o) for o in x["predicted_outcomes"]],
+            selection_type=SelectionType(x["selection_type"]), confidence=x["confidence"],
+            analysis=x.get("analysis", ""), key_factors=x.get("key_factors", []),
+            risk_flags=x.get("risk_flags", []), value_note=x.get("value_note", ""),
+            home_absent_count=x.get("home_absent_count", 0), away_absent_count=x.get("away_absent_count", 0),
+        )
+        for x in data["predictions"]
+    ]
+    by_type = {t: [p.game_number for p in preds if p.selection_type == t] for t in SelectionType}
+    full = by_type[SelectionType.FULL]
+    rows = 2 ** len(by_type[SelectionType.DOUBLE]) * 3 ** len(full)
+    return WeeklyReport(
+        draw_number=draw_number, generated_at=datetime.fromisoformat(data["saved_at"]), predictions=preds,
+        singles=by_type[SelectionType.SINGLE], doubles=by_type[SelectionType.DOUBLE],
+        full_game=full[0] if full else None, total_rows=rows, total_cost_sek=rows,
+        executive_summary=data.get("executive_summary", ""), value_radar=data.get("value_radar", []),
+    )
+
+
+def latest_evaluated_draw_before(draw_number: int) -> Optional[int]:
+    """Most recent draw before `draw_number` that has a saved results file."""
+    draws = [_draw_of(f) for f in RESULTS_DIR.glob("draw_*.json")]
+    earlier = [d for d in draws if d < draw_number]
+    return max(earlier) if earlier else None
+
+
+def load_saved_evaluation(draw_number: int) -> Optional[WeeklyEvaluation]:
+    """The evaluation of `draw_number` as saved in results/ and history.json (no fetching)."""
+    files = sorted(RESULTS_DIR.glob(f"draw_{draw_number}_*.json"))
+    if not files:
+        return None
+    data = json.loads(files[-1].read_text(encoding="utf-8"))
+    evs = [
+        MatchEvaluation(
+            game_number=r["game_number"], home_team=r["home_team"], away_team=r["away_team"],
+            our_prediction=[Outcome(o) for o in r["our_prediction"]],
+            selection_type=SelectionType(r["selection_type"]), actual_result=Outcome(r["actual_result"]),
+            correct=r["correct"], confidence=r.get("confidence", 0.0), post_mortem=r.get("post_mortem", ""),
+        )
+        for r in data["results"]
+    ]
+    summary = next((w for w in _load_all_history() if w.get("draw_number") == draw_number), {})
+
+    def count(kind: SelectionType, hit: bool | None = None) -> int:
+        return sum(1 for e in evs if e.selection_type == kind and (hit is None or e.correct == hit))
+
+    return WeeklyEvaluation(
+        draw_number=draw_number, draw_date=data["draw_date"], evaluations=evs,
+        total_correct=sum(e.correct for e in evs),
+        singles_correct=count(SelectionType.SINGLE, True), singles_total=count(SelectionType.SINGLE),
+        doubles_correct=count(SelectionType.DOUBLE, True), doubles_total=count(SelectionType.DOUBLE),
+        full_covered=any(e.selection_type == SelectionType.FULL for e in evs),
+        market_correct=summary.get("market_correct"),
+    )
 
 
 def _draw_of(path: Path) -> int:

@@ -84,11 +84,13 @@ def test_build_absences_filters_and_flags():
     assert absences[1].status == InjuryStatus.FIFTY_FIFTY
 
 
-def test_build_absences_caps_per_team():
+def test_build_absences_keeps_every_player_up_to_safety_ceiling():
     players = [_player(f"P{i}", 1, "i", 0, cost=i) for i in range(10)]
     absences = fpl._build_team_absences(1, players)
-    assert len(absences) == fpl._MAX_PER_TEAM
-    assert absences[0].player_name == "P9"
+    assert len(absences) == 10                       # nobody hidden
+    assert absences[0].player_name == "P9"           # most important first
+    many = [_player(f"P{i}", 1, "i", 0, cost=i) for i in range(30)]
+    assert len(fpl._build_team_absences(1, many)) == fpl._MAX_PER_TEAM
 
 
 # ---------------------------------------------------------------------------

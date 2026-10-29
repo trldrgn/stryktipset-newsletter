@@ -36,6 +36,11 @@ on:
         description: "Review mode: full run (predictions saved) but email ONLY this address"
         required: false
         type: string
+      rerender:
+        description: "Rebuild this draw's newsletter from saved picks with fresh data (no Claude call)"
+        required: false
+        type: boolean
+        default: false
       send_archived:
         description: "Send the reviewed newsletter for this draw to everyone (no new analysis)"
         required: false
@@ -98,6 +103,8 @@ jobs:
           ARGS="--run"
           if [ "${{ github.event.inputs.send_archived }}" = "true" ]; then
             ARGS="--send-archived"
+          elif [ "${{ github.event.inputs.rerender }}" = "true" ]; then
+            ARGS="--rerender"
           elif [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             ARGS="--dry-run"
           fi

@@ -9,6 +9,7 @@ Usage:
   python main.py --test-email     # Send the most recent newsletter HTML via email (test delivery)
   python main.py --run --review-to me@example.com   # Full run, but email only the reviewer
   python main.py --send-archived  # Send the reviewed newsletter for the current draw to everyone
+  python main.py --rerender --review-to me@example.com   # Rebuild from saved picks (no Claude), email reviewer
   python main.py --improve        # Print model improvement analysis prompt (monthly use)
   python main.py --collect-xg     # Collect xG data for last 7 days (run Fridays)
   python main.py --backfill-xg    # Backfill xG data for last 5 weeks (first-time setup)
@@ -31,6 +32,9 @@ from analysis.evaluator import (
     backfill_evaluations,
     build_improvement_prompt,
     evaluate_last_week,
+    latest_evaluated_draw_before,
+    load_saved_evaluation,
+    load_saved_report,
     save_predictions,
 )
 from config import (
@@ -79,6 +83,53 @@ def log_data_coverage(matches: list[Match]) -> None:
     parts.append(f"H2H {sum(1 for m in matches if m.h2h)}/{len(matches)}")
     parts.append(f"referee {sum(1 for m in matches if m.referee)}/{len(matches)}")
     logger.info("DATA COVERAGE: %s", " | ".join(parts))
+
+
+def enrich_matches(matches: list[Match], current_draw: int) -> list[Match]:
+    """All data sources in order. Each later source only fills fields still empty."""
+    # Determine season (year of the draw)
+    season = matches[0].kickoff.year if matches and matches[0].kickoff else datetime.now().year
+
+    # --- Step 3: API-Football enrichment ---
+    logger.info("[3/9] Enriching matches with API-Football stats...")
+    matches = enrich_all_matches(matches, season)
+
+    # --- Step 3a: FPL structured absences (Premier League primary, official feed) ---
+    # Runs before FotMob so the official club-sourced list wins for PL teams;
+    # FotMob then only fills absences for PL teams FPL could not cover.
+    logger.info("[3a] Enriching with FPL availability (Premier League)...")
+    matches = enrich_with_fpl_absences(matches)
+
+    # --- Step 3a2: FotMob (primary: xG, absences outside PL, H2H, tables, referee, schedule) ---
+    # Runs after API-Football, which resets TeamStats when it fails. Every later
+    # step only fills fields that are still empty, so if FotMob misses a field,
+    # only that field falls back to the backup source.
+    logger.info("[3a2] Enriching with FotMob (primary source)...")
+    matches = enrich_with_fotmob(matches)
+
+    # --- Step 3b: CSV stats enrichment (standings, form, shots — all leagues) ---
+    logger.info("[3b] Enriching with football-data.co.uk CSV stats...")
+    matches = enrich_with_csv_stats(matches)
+
+    # --- Step 3b2: CSV head-to-head (current + 3 previous seasons, all divisions) ---
+    logger.info("[3b2] Building H2H from football-data.co.uk CSVs...")
+    matches = enrich_with_csv_h2h(matches)
+
+    # --- Step 3c: Football-Data.org enrichment (fallback for gaps) ---
+    logger.info("[3c] Enriching with Football-Data.org (fallback)...")
+    matches = enrich_with_football_data(matches)
+
+    # --- Step 3d: Understat xG enrichment (Big 5 leagues) ---
+    logger.info("[3d] Enriching with Understat xG data...")
+    matches = enrich_with_understat_xg(matches)
+
+    # --- Step 3f: Sofascore snapshot (xG + missing players, collected locally) ---
+    # Sofascore blocks GitHub runners; scripts/collect_sofascore.ps1 collects it
+    # on a local machine and commits data/sofascore/draw_{N}.json.
+    logger.info("[3f] Applying Sofascore snapshot (xG + missing players)...")
+    matches = apply_sofascore_snapshot(matches, current_draw)
+    log_data_coverage(matches)
+    return matches
 
 
 def run_pipeline(
@@ -143,48 +194,8 @@ def run_pipeline(
 
     logger.info("Draw #%d — %d matches fetched", current_draw, len(matches))
 
-    # Determine season (year of the draw)
-    season = matches[0].kickoff.year if matches and matches[0].kickoff else datetime.now().year
-
-    # --- Step 3: API-Football enrichment ---
-    logger.info("[3/9] Enriching matches with API-Football stats...")
-    matches = enrich_all_matches(matches, season)
-
-    # --- Step 3a: FPL structured absences (Premier League primary, official feed) ---
-    # Runs before FotMob so the official club-sourced list wins for PL teams;
-    # FotMob then only fills absences for PL teams FPL could not cover.
-    logger.info("[3a] Enriching with FPL availability (Premier League)...")
-    matches = enrich_with_fpl_absences(matches)
-
-    # --- Step 3a2: FotMob (primary: xG, absences outside PL, H2H, tables, referee, schedule) ---
-    # Runs after API-Football, which resets TeamStats when it fails. Every later
-    # step only fills fields that are still empty, so if FotMob misses a field,
-    # only that field falls back to the backup source.
-    logger.info("[3a2] Enriching with FotMob (primary source)...")
-    matches = enrich_with_fotmob(matches)
-
-    # --- Step 3b: CSV stats enrichment (standings, form, shots — all leagues) ---
-    logger.info("[3b] Enriching with football-data.co.uk CSV stats...")
-    matches = enrich_with_csv_stats(matches)
-
-    # --- Step 3b2: CSV head-to-head (current + 3 previous seasons, all divisions) ---
-    logger.info("[3b2] Building H2H from football-data.co.uk CSVs...")
-    matches = enrich_with_csv_h2h(matches)
-
-    # --- Step 3c: Football-Data.org enrichment (fallback for gaps) ---
-    logger.info("[3c] Enriching with Football-Data.org (fallback)...")
-    matches = enrich_with_football_data(matches)
-
-    # --- Step 3d: Understat xG enrichment (Big 5 leagues) ---
-    logger.info("[3d] Enriching with Understat xG data...")
-    matches = enrich_with_understat_xg(matches)
-
-    # --- Step 3f: Sofascore snapshot (xG + missing players, collected locally) ---
-    # Sofascore blocks GitHub runners; scripts/collect_sofascore.ps1 collects it
-    # on a local machine and commits data/sofascore/draw_{N}.json.
-    logger.info("[3f] Applying Sofascore snapshot (xG + missing players)...")
-    matches = apply_sofascore_snapshot(matches, current_draw)
-    log_data_coverage(matches)
+    # --- Step 3: data enrichment (all sources, per-field fallback) ---
+    matches = enrich_matches(matches, current_draw)
 
     # --- Step 4: Perplexity news ---
     logger.info("[4/9] Fetching Perplexity news context...")
@@ -245,6 +256,37 @@ def run_pipeline(
     logger.info("=" * 60)
     logger.info("PIPELINE COMPLETE in %.1f seconds", elapsed)
     logger.info("=" * 60)
+
+
+def rerender_newsletter(draw_number: int | None = None, review_to: str | None = None) -> Path | None:
+    """
+    Re-render a draw's newsletter from its saved predictions and analysis, with
+    freshly fetched data and the current template. No Claude call, so the picks
+    stay exactly as reviewed. Overwrites the archived HTML that --send-archived sends.
+    """
+    draw = draw_number or get_current_draw_number()
+    report = load_saved_report(draw)
+    if report is None:
+        logger.error("No saved predictions for draw %d — nothing to re-render", draw)
+        return None
+
+    matches = enrich_matches(fetch_coupon(draw), draw)
+    previous = latest_evaluated_draw_before(draw)
+    evaluation = load_saved_evaluation(previous) if previous else None
+    subject, html_body = render_newsletter(report, matches, evaluation)
+
+    archived = sorted(NEWSLETTERS_DIR.glob(f"draw_{draw}_*.html"))
+    archive_path = archived[-1] if archived else NEWSLETTERS_DIR / f"draw_{draw}_{datetime.now(timezone.utc):%Y-%m-%d}.html"
+    if archive_path.with_suffix(".sent").exists():
+        logger.warning("Draw %d was already sent to everyone; this only updates the archive", draw)
+    archive_path.write_text(html_body, encoding="utf-8")
+    archive_path.with_suffix(".subject.txt").write_text(subject, encoding="utf-8")
+    logger.info("Re-rendered %s from saved predictions", archive_path.name)
+
+    if review_to:
+        send_newsletter(f"[REVIEW] {subject}", html_body, recipients=[review_to])
+        logger.info("Review copy sent to %s. Approve, then run --send-archived.", review_to)
+    return archive_path
 
 
 def send_archived(draw_number: int | None = None, force: bool = False) -> int:
@@ -373,6 +415,11 @@ def main() -> None:
         help="Real run (predictions saved), but email only this address for review",
     )
     parser.add_argument(
+        "--rerender",
+        action="store_true",
+        help="Re-render the current draw (or --draw) from saved predictions with fresh data; no Claude call",
+    )
+    parser.add_argument(
         "--send-archived",
         action="store_true",
         help="Send the archived (reviewed) newsletter for the current draw (or --draw) to all recipients",
@@ -426,6 +473,10 @@ def main() -> None:
         print("=" * 60)
         print("\nCopy the above and paste it into a Claude conversation to get model improvement recommendations.")
         return
+
+    if args.rerender:
+        path = rerender_newsletter(args.draw or None, review_to=args.review_to)
+        sys.exit(0 if path else 1)
 
     if args.send_archived:
         sent = send_archived(args.draw or None, force=args.force)

@@ -57,7 +57,7 @@ _MAX_CONSECUTIVE_FAILURES = 4   # then stop calling FotMob for the rest of the r
 _TTL_LIVE = 3 * 3600            # fixtures list, pre-match details, tables, squads
 _TTL_FINISHED = 60 * 24 * 3600  # matchDetails of finished games (rolling xG)
 
-_MAX_INJURIES_PER_TEAM = 6      # keep Claude's prompt compact
+_MAX_INJURIES_PER_TEAM = 15     # safety ceiling only: every absent player reaches Claude and the reader
 _FORM_GAMES = 5
 _XG_GAMES = 5
 _H2H_MAX = 5

@@ -282,6 +282,7 @@ NEWSLETTER_RECIPIENTS
 
 **Review before sending (manual weeks):**
 1. Run `newsletter.yml` with `review_to=<your email>`. The full pipeline runs and saves predictions, but only you get the email (subject starts with "[REVIEW]"). Saved predictions make that week's scheduled runs skip.
+   To change the design or data without new picks, run with `rerender=true` (plus `review_to`). It rebuilds from the saved predictions with fresh data and makes no Claude call.
 2. When it looks right, run `newsletter.yml` with `send_archived=true`. That exact HTML goes to all subscribers. There's no new Claude call, and a `.sent` marker blocks a second send (`force_rerun` overrides).
 
 Healthchecks.io: the check's expected schedule lives on healthchecks.io and must match the Friday cron.

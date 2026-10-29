@@ -25,7 +25,7 @@ logger = get_logger(__name__)
 
 _BOOTSTRAP_URL = "https://fantasy.premierleague.com/api/bootstrap-static/"
 _TIMEOUT = 20
-_MAX_PER_TEAM = 6           # keep Claude's prompt compact
+_MAX_PER_TEAM = 15          # safety ceiling only: every absent player reaches Claude and the reader
 
 _ABSENT_STATUSES = {"i", "s", "d"}
 _POSITIONS = {1: "GK", 2: "DEF", 3: "MID", 4: "FWD"}

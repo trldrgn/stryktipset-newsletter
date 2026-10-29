@@ -62,7 +62,7 @@ def test_short_names_and_missing_text():
     assert renderer._short("Brighton") == "Brighton"
     m = _match()
     assert renderer._missing(m.home_stats) == {
-        "players": [{"name": "Semenyo", "detail": "RW, top assister", "key": True}], "more": 0,
+        "players": [{"name": "Semenyo", "detail": "RW, top assister", "key": True}],
     }
     assert renderer._missing(m.away_stats) == {"empty": "Nobody missing"}   # checked by FPL, none out
     assert renderer._missing(TeamStats(team_name="X")) == {}                # no source: show nothing
@@ -109,8 +109,9 @@ def test_missing_puts_key_players_first_with_their_importance():
         PlayerAbsence(player_name="Fourth", position="CM"),
     ], suspensions=[PlayerAbsence(player_name="Banned", position="CDM")])
     mi = renderer._missing(ts)
-    assert [p["name"] for p in mi["players"]] == ["Striker", "Squad", "Fourth"]
+    # key players first, then certain absences (injured or banned), doubts last; nobody hidden
+    assert [p["name"] for p in mi["players"]] == ["Striker", "Squad", "Fourth", "Banned", "Doubt"]
     assert mi["players"][0] == {"name": "Striker", "detail": "ST, top scorer", "key": True}
-    assert mi["more"] == 2
+    assert mi["players"][3]["detail"] == "CDM, banned"
     assert renderer._absence_detail(ts.injuries[1], banned=False) == "LB, 2A, doubt"
     assert renderer._absence_detail(ts.suspensions[0], banned=True) == "CDM, banned"
