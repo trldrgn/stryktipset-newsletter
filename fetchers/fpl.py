@@ -18,7 +18,7 @@ from typing import Optional
 
 import requests
 
-from models.match import InjuryStatus, Match, PlayerAbsence
+from models.match import InjuryStatus, Match, PlayerAbsence, TeamStats
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -96,11 +96,20 @@ def _is_set_piece_taker(player: dict) -> bool:
     )
 
 
+def _expected_return(news: str) -> str:
+    """'Hamstring injury - Expected back 8 Nov' -> 'Expected back 8 Nov'; bans keep 'Suspended until …'."""
+    news = (news or "").strip()
+    return news.split(" - ", 1)[1].strip() if " - " in news else news
+
+
 def _build_team_absences(team_id: int, players: list[dict]) -> list[PlayerAbsence]:
     """Absent/doubtful players for one team, most important (by FPL price) first."""
     squad = [p for p in players if p["team"] == team_id]
+    # A "top scorer" on 1 goal is one of many tied — not a signal
     top_goals = max((p.get("goals_scored", 0) for p in squad), default=0)
     top_assists = max((p.get("assists", 0) for p in squad), default=0)
+    top_goals = top_goals if top_goals >= 2 else -1
+    top_assists = top_assists if top_assists >= 2 else -1
 
     absent = [
         (p, status) for p in squad
@@ -118,19 +127,21 @@ def _build_team_absences(team_id: int, players: list[dict]) -> list[PlayerAbsenc
             status=status,
             season_goals=goals,
             season_assists=assists,
-            is_top_scorer=top_goals > 0 and goals == top_goals,
-            is_top_assister=top_assists > 0 and assists == top_assists,
+            is_top_scorer=goals == top_goals,
+            is_top_assister=assists == top_assists,
             is_set_piece_taker=_is_set_piece_taker(p),
             source="fpl",
+            expected_return=_expected_return(p.get("news", "")),
         ))
     return absences
 
 
 def enrich_with_fpl_absences(matches: list[Match]) -> list[Match]:
     """
-    Fill TeamStats.injuries from FPL for Premier League teams that no structured
-    source (FotMob) has checked yet. One HTTP call per run; any failure returns
-    the matches unchanged.
+    Primary absence source for Premier League teams: the official feed, updated
+    daily from the clubs. Runs before FotMob, which then only fills PL teams
+    FPL could not (fetch failure, unresolved name). One HTTP call per run; any
+    failure returns the matches unchanged.
     """
     pl_matches = [m for m in matches if m.league == "Premier League" and m.country == "England"]
     if not pl_matches:
@@ -145,15 +156,21 @@ def enrich_with_fpl_absences(matches: list[Match]) -> list[Match]:
         players = data.get("elements", [])
         filled = 0
         for match in pl_matches:
-            for team_name, stats in ((match.home_team, match.home_stats), (match.away_team, match.away_stats)):
-                # Another structured source (FotMob) already answered — even "none missing"
-                if stats is None or stats.injuries or stats.absences_checked_source:
+            for attr, team_name in (("home_stats", match.home_team), ("away_stats", match.away_team)):
+                stats = getattr(match, attr)
+                if stats is None:
+                    stats = TeamStats(team_name=team_name)
+                    setattr(match, attr, stats)
+                # Another structured source already answered — even "none missing"
+                if stats.injuries or stats.absences_checked_source:
                     continue
                 team_id = _resolve_team(team_name, teams)
                 if team_id is None:
                     logger.warning("FPL: could not resolve team '%s'", team_name)
                     continue
-                stats.injuries = _build_team_absences(team_id, players)
+                absences = _build_team_absences(team_id, players)
+                stats.suspensions = [a for a in absences if a.expected_return.startswith("Suspended")]
+                stats.injuries = [a for a in absences if a not in stats.suspensions]
                 stats.absences_checked_source = "fpl"
                 filled += 1
         logger.info("FPL absences complete: %d PL teams filled", filled)

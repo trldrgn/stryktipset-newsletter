@@ -44,3 +44,12 @@ def test_absence_shows_contribution_and_expected_return():
         "Semenyo (RW, out) [fotmob] 2G/3A back: Mid December 2026 ⚡TOP ASSISTER; "
         "Erhahon (CDM, doubt) [fotmob]"
     )
+
+
+def test_suspension_only_team_is_not_tagged_fully_fit():
+    from analysis.claude_analyst import _injury_source_tag
+    from models.match import TeamStats
+    ts = TeamStats(team_name="Fulham", absences_checked_source="fpl",
+                   suspensions=[PlayerAbsence(player_name="Sessegnon", position="DEF", source="fpl")])
+    assert _injury_source_tag(ts) == ""
+    assert _injury_source_tag(TeamStats(team_name="X", absences_checked_source="fpl")) == "[checked: fpl — none missing]"

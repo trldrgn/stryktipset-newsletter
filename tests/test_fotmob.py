@@ -175,11 +175,13 @@ def test_parse_h2h_skips_unplayed_and_keeps_last_five(details):
     assert all(r.date < "2026-10-31" for r in h2h)       # the 2027 fixture is dropped
 
 
-def test_parse_referee(details):
-    name, avg = fotmob.parse_referee(details)
+def test_parse_referee_splits_yellows_and_reds(details):
+    # Madley: 4.39 yellows per match; reds come as a total (1 in 28 matches)
+    name, yellows, reds = fotmob.parse_referee(details)
     assert name == "Robert Madley"
-    assert avg == pytest.approx(4.39)
-    assert fotmob.parse_referee({}) == ("", None)
+    assert yellows == pytest.approx(4.39)
+    assert reds == pytest.approx(round(1 / 28, 2))
+    assert fotmob.parse_referee({}) == ("", None, None)
 
 
 def test_venue_records_and_season_xg(league):
@@ -294,6 +296,7 @@ def test_enrich_fills_every_field(details, team, league, player_stats):
     assert h.home_record is not None and h.season_xg_for is not None
     assert h.form_last5 and h.schedule and h.manager_name == "Steven Schumacher"
     assert len(m.h2h) == 5 and m.referee == "Robert Madley"
+    assert (m.referee_yellows_avg, m.referee_reds_avg) == (4.39, 0.04)
     assert m.away_stats.manager_name == "Michael Skubala"
 
 
@@ -354,3 +357,16 @@ def test_html_challenge_trips_circuit_breaker_and_pipeline_continues():
     # 3 date lookups for game 8, 1 for game 9 — then the breaker stops all calls
     assert get.call_count == fotmob._MAX_CONSECUTIVE_FAILURES
     assert m1.home_stats is None and m1.h2h == []
+
+
+def test_fotmob_does_not_override_fpl_absences(details, team, league, player_stats):
+    """FPL runs first for the Premier League; FotMob must keep its list."""
+    from models.match import PlayerAbsence
+    m = _match()
+    fpl_list = [PlayerAbsence(player_name="Official", position="MID", source="fpl")]
+    m.home_stats = TeamStats(team_name="Bolton", injuries=list(fpl_list), absences_checked_source="fpl")
+    with patch.object(fotmob, "_cached_get", side_effect=_routes(details, team, league, player_stats)):
+        fotmob.enrich_with_fotmob([m])
+    assert m.home_stats.injuries == fpl_list
+    assert m.home_stats.absences_checked_source == "fpl"
+    assert m.away_stats.absences_checked_source == "fotmob"     # other side still filled

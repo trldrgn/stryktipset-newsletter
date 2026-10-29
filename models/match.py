@@ -384,7 +384,9 @@ class Match:
     kickoff: Optional[datetime] = None
     api_football_fixture_id: Optional[int] = None   # resolved during stats fetch
     referee: str = ""                               # assigned referee name
-    referee_avg_cards: Optional[float] = None       # referee's avg total cards/game this season
+    referee_avg_cards: Optional[float] = None       # referee's avg total cards/game (yellows + reds)
+    referee_yellows_avg: Optional[float] = None     # referee's avg yellow cards/game
+    referee_reds_avg: Optional[float] = None        # referee's avg red cards/game
 
     # Populated progressively
     market: Optional[MarketSignals] = None
@@ -482,6 +484,8 @@ class WeeklyEvaluation:
     doubles_correct: int = 0
     doubles_total: int = 0
     full_covered: bool = False       # did full selection cover the actual result (always True)
+    # Same 4/8/1 coupon built from the odds alone — the bar we have to beat
+    market_correct: Optional[int] = None
 
     @property
     def accuracy_pct(self) -> float:

@@ -3,363 +3,260 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stryktipset v.{{ week_number }} · #{{ draw_number }}</title>
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
+<title>Stryktipset week {{ week_number }}, draw {{ draw_number }}</title>
+{#- Design: 346eur language in Dark Teal & Ivory. Off-white page, white cards, ink text, square boxes
+    with a hard offset shadow; filled boxes are our picks.
+    Size rule (Gmail clips at ~102 KB): anything that carries meaning — pick fills, form letters,
+    signal chips, outcome colours — is inline so it survives a client that drops <style>;
+    layout and type are short classes. Colours come from THEME (c) in renderer.py. -#}
 <style>
-  /* Gmail mobile strips this block. Critical bg/color styles are inline.
-     Desktop Gmail, Apple Mail, Outlook get these enhancement rules. */
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { -webkit-text-size-adjust:100%; }
-
-  /* Layout */
-  .ew { max-width:660px; width:100%; margin:0 auto; }
-  .hdr { padding:36px 40px 28px; text-align:center; border-bottom:2px solid #e8b84b; }
-  .sl td:first-child, .sl td:last-child { height:1px; font-size:0; line-height:0; }
-  .sl td:nth-child(2) { padding:0 12px; white-space:nowrap; font-size:9px; letter-spacing:3.5px; text-transform:uppercase; font-weight:700; }
-
-  /* Card */
-  .cw { border:1px solid #1a2540; overflow:hidden; border-radius:12px; }
-  .cw.ts { border-top:3px solid #4ade80; }
-  .cw.td { border-top:3px solid #60a5fa; }
-  .cw.tf { border-top:3px solid #fb923c; }
-  .ch { border-bottom:1px solid #1a2540; }
-  .gb { width:24px; height:24px; text-align:center; line-height:24px; font-size:11px; font-weight:700; border-radius:5px; }
-  .tt { font-size:18px; font-weight:800; margin-top:6px; letter-spacing:-0.3px; }
-  .fp { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 7px; border-radius:4px; margin-top:4px; }
-  .sp { font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; display:inline-block; border-radius:20px; }
-  .pb { width:32px; height:32px; text-align:center; line-height:32px; font-size:14px; font-weight:900; border-radius:7px; }
-  .cb { margin-top:6px; height:3px; overflow:hidden; border-radius:2px; }
-  .cf { height:100%; border-radius:2px; }
-
-  /* Stats */
-  .ss { border-bottom:1px solid #1a2540; }
-  .ss td { padding:9px 12px; font-size:11px; vertical-align:top; border-right:1px solid #1a2540; }
-  .ss td:last-child { border-right:none; }
-  .sl2 { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; display:block; margin-bottom:3px; }
-  .sv { font-weight:600; font-size:12px; display:block; }
-  .ssub { font-size:9px; display:block; margin-top:2px; }
-
-  /* Injuries */
-  .is { padding:8px 16px; border-bottom:1px solid #1a2540; font-size:12px; }
-  .ii { padding:3px 0; }
-
-  /* Odds */
-  .or { border-bottom:1px solid #1a2540; }
-  .ob { border:1px solid #1a2540; padding:4px 10px; font-size:13px; font-weight:700; text-align:center; min-width:44px; border-radius:5px; }
-  .ol { font-size:10px; font-weight:700; padding-right:4px; }
-  .ml { font-size:9px; letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:3px; font-weight:700; }
-  .db td { height:4px; font-size:0; line-height:0; }
-
-  /* Analysis */
-  .at { padding:16px 20px; font-size:14px; line-height:1.7; border-bottom:1px solid #1a2540; }
-  .at p { margin:0; }
-
-
-  /* Footer columns */
-  .fc td { padding:12px 16px; vertical-align:top; }
-  .fc td:first-child { border-right:1px solid #1a2540; width:50%; }
-  .ct { font-size:9px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:6px; }
-  .fi, .ri { font-size:12px; padding:2px 0; line-height:1.5; }
-
-  /* Coupon */
-  .co { border:1px solid #1a2540; overflow:hidden; border-radius:12px; }
-  .ctb { border-collapse:collapse; font-size:13px; }
-  .ctb th { padding:8px 10px; text-align:left; font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:700; border-bottom:1px solid #1a2540; }
-  .ctb td { padding:10px 10px; border-bottom:1px solid #0d1526; vertical-align:middle; }
-  .rp { font-size:16px; font-weight:900; letter-spacing:3px; }
-  .rt { font-size:8px; font-weight:800; letter-spacing:1px; text-transform:uppercase; }
-
-  /* Score ring */
-  .sr { width:58px; height:58px; border:3px solid #e8b84b; text-align:center; padding-top:12px; border-radius:50%; }
-  .chip { border:1px solid #1a2540; padding:5px 12px; font-size:12px; border-radius:6px; }
-
-  /* Lessons */
-  .lw { margin:0 20px 16px; border-left:3px solid #e8b84b; padding:10px 14px; font-size:13px; border-radius:0 6px 6px 0; }
-
-  /* Misc */
-  .ld { display:inline-block; width:8px; height:8px; vertical-align:middle; border-radius:2px; }
-
-  @media screen and (max-width:480px) {
-    .ew { width:100% !important; }
-    .sp2 { padding-left:12px !important; padding-right:12px !important; }
-    .tt { font-size:15px !important; }
+  .d { font-family: Arial Black, Arial, sans-serif; font-weight: 900; }
+  .m { color: {{ c.muted }}; }
+  .s { font-size: 13px; }
+  .xs { font-size: 12px; }
+  .lb { font-size: 13px; font-weight: 700; color: {{ c.muted }}; }
+  .px { padding-left: 24px; padding-right: 24px; }
+  .h { font-size: 22px; line-height: 1.1; padding-top: 36px; padding-bottom: 12px; }
+  .card { background: {{ c.card }}; border: 2px solid {{ c.text }}; box-shadow: 5px 5px 0 {{ c.text }}; }
+  .grid { background: {{ c.card }}; border: 2px solid {{ c.text }}; }
+  .sec { border-top: 2px solid {{ c.text }}; }
+  .in { padding: 12px 16px; }
+  .cr { padding: 7px 4px; border-bottom: 1px solid {{ c.line }}; font-size: 14px; }
+  .cn { padding-left: 12px; font-size: 13px; color: {{ c.muted }}; }
+  .ce { padding-right: 12px; text-align: right; white-space: nowrap; }
+  .k { padding: 8px 8px 8px 16px; border-top: 1px solid {{ c.line }}; font-weight: 600; color: {{ c.muted }}; vertical-align: top; }
+  .v { padding: 8px; border-top: 1px solid {{ c.line }}; vertical-align: top; }
+  .v2 { padding: 8px 16px 8px 8px; border-top: 1px solid {{ c.line }}; vertical-align: top; }
+  .gn { width: 34px; height: 34px; line-height: 34px; text-align: center; background: {{ c.text }}; color: {{ c.card }}; font-size: 16px; }
+  .tn { font-size: 22px; line-height: 1.1; letter-spacing: -0.5px; }
+  .l { display: inline-block; width: 19px; margin-right: 3px; text-align: center; font: 900 11px/19px Arial Black, Arial, sans-serif; }
+  .bx { text-align: center; vertical-align: middle; border: 2px solid {{ c.text }}; color: {{ c.muted }}; font-family: Arial Black, Arial, sans-serif; font-weight: 900; line-height: 1; }
+  .b22 { width: 22px; height: 22px; font-size: 10px; }
+  .b28 { width: 28px; height: 28px; font-size: 12px; }
+  .ch { display: inline-block; margin: 0 6px 6px 0; padding: 3px 9px; font-size: 12px; font-weight: 600; line-height: 1.3; white-space: nowrap; }
+  .oc { padding: 12px 16px; vertical-align: top; }
+  .ol { display: inline-block; min-width: 22px; padding: 1px 6px; text-align: center; font-size: 12px; }
+  .on { margin-top: 4px; font-size: 22px; line-height: 1; }
+  .op { margin-top: 4px; font-size: 12px; line-height: 1.35; color: {{ c.muted }}; }
+  .li { margin-top: 4px; font-size: 14px; line-height: 1.45; }
+  .lw { color: {{ c.positive }}; background: {{ c.positive_t }}; }
+  .ll { color: {{ c.danger }}; background: {{ c.danger_t }}; }
+  .ld { color: {{ c.muted }}; background: {{ c.page }}; }
+  .k-positive { color: {{ c.positive }}; background: {{ c.positive_t }}; }
+  .k-caution { color: {{ c.caution }}; background: {{ c.caution_t }}; }
+  .k-danger { color: {{ c.danger }}; background: {{ c.danger_t }}; }
+  .k-special { color: {{ c.special }}; background: {{ c.special_t }}; }
+  .o1 { background: {{ c.o1 }}; color: {{ c.on_o1 }}; }
+  .oX { background: {{ c.oX }}; color: {{ c.on_oX }}; }
+  .o2 { background: {{ c.o2 }}; color: {{ c.on_o2 }}; }
+  .bo { box-shadow: 2px 2px 0 {{ c.text }}; }
+  .b28.bo { box-shadow: 3px 3px 0 {{ c.text }}; }
+  .bdg { vertical-align: -5px; margin-right: 8px; border: 0; }
+  .lg { vertical-align: -3px; margin-right: 6px; border: 0; }
+  .ob { border-right: 1px solid {{ c.line }}; }
+  .pb { font-size: 10px; }
+  .rf { margin-top: 6px; font-size: 14px; white-space: nowrap; }
+  .crd { display: inline-block; width: 10px; height: 14px; vertical-align: -2px; border-radius: 2px; }
+  @media screen and (max-width: 480px) {
+    .px { padding-left: 14px !important; padding-right: 14px !important; }
+    .wm { font-size: 28px !important; }
+    .tn { font-size: 19px !important; }
+    .l { width: 16px !important; margin-right: 2px !important; }
+    .k { padding-right: 4px !important; }
+    .stack { display: block !important; width: 100% !important; padding: 0 0 10px 0 !important; }
   }
 </style>
 </head>
-<body style="background:#080d18;color:#e2e8f4;font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;margin:0;padding:0;">
+{%- macro boxes(picks, size=28) -%}
+<table cellpadding="0" cellspacing="4" style="margin:-4px"><tr>
+{%- for o in ['1', 'X', '2'] %}{% if o in picks %}<td class="bx b{{ size }} bo" style="background:{{ c.accent }};color:{{ c.on_accent }}">{{ o }}</td>{% else %}<td class="bx b{{ size }}">{{ o }}</td>{% endif %}{% endfor -%}
+</tr></table>
+{%- endmacro -%}
+{%- macro chip(ch) -%}
+<span class="ch k-{{ ch.kind }}"><b>{{ ch.icon }}</b> {{ ch.text }}</span>
+{%- endmacro -%}
+{%- macro letters(s) -%}
+{%- for ch in s %}<span class="l l{{ ch|lower }}">{{ ch }}</span>{% endfor -%}
+{%- endmacro -%}
+{%- macro heading(text, sub='') -%}
+<tr><td class="px h"><div class="d">{{ text }}</div>{% if sub %}<div class="s m" style="margin-top:4px;">{{ sub }}</div>{% endif %}</td></tr>
+{%- endmacro %}
+{%- macro grid_row(n, home, away, picks, end, end_style='', last=False) -%}
+<tr><td width="26" class="cr cn d"{% if last %} style="border-bottom:0"{% endif %}>{{ n }}</td><td class="cr"{% if last %} style="border-bottom:0"{% endif %}>{{ home }} – {{ away }}</td><td width="98" class="cr"{% if last %} style="border-bottom:0"{% endif %}>{{ boxes(picks, 22) }}</td><td width="44" class="cr ce"{% if last or end_style %} style="{% if last %}border-bottom:0;{% endif %}{{ end_style }}"{% endif %}>{{ end }}</td></tr>
+{%- endmacro %}
+<body style="margin:0;padding:0;background:{{ c.page }};">
+<table cellpadding="0" cellspacing="0" width="100%" style="background:{{ c.page }};">
+<tr><td align="center" style="color:{{ c.text }};font-family:{{ c.body }};font-size:15px;line-height:1.5;">
+<table cellpadding="0" cellspacing="0" width="600" style="width:100%;max-width:600px;">
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#080d18;">
-<tr><td align="center">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="660" class="ew" style="max-width:660px;width:100%;background:#080d18;">
-
-
-
-<tr><td class="hdr sp2" style="background:#111c35;border-bottom:2px solid #e8b84b;padding:36px 40px 28px;text-align:center;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 14px;">
-    <tr>
-      <td style="vertical-align:middle;padding-right:14px;">
-        <img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/logo-stryktipset.svg" width="52" height="52" alt="Stryktipset" style="vertical-align:middle;">
-      </td>
-      <td style="vertical-align:middle;text-align:left;">
-        <div style="font-size:22px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#e8b84b;line-height:1;">Stryktipset</div>
-        <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#5a7090;margin-top:4px;">Weekly Analysis</div>
-      </td>
-    </tr>
-  </table>
-  <div style="font-size:13px;color:#4a6080;">Week <strong style="color:#8ba4c4;">{{ week_number }}</strong> · Draw <strong style="color:#8ba4c4;">#{{ draw_number }}</strong> · {{ generated_date }} · 768 SEK system</div>
+{# ---------- Header ---------- #}
+<tr><td class="px" style="padding-top:28px;">
+  <table cellpadding="0" cellspacing="0" width="100%" style="border-bottom:3px solid {{ c.text }};"><tr>
+    <td valign="bottom" style="padding-bottom:12px;"><span class="wm d" style="font-size:34px;line-height:0.9;letter-spacing:-1px;">Stryktipset</span></td>
+    <td valign="bottom" align="right" class="s m" style="padding-bottom:12px;line-height:1.4;">Week {{ week_number }}, draw {{ draw_number }}<br>{{ report.total_cost_sek }} kr system</td>
+  </tr></table>
 </td></tr>
 
-
-
-{% if evaluation %}
-<tr><td>
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
-    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">Previous Round</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
-  </table>
-  <div style="margin:0 40px 8px;background:#0d1526;border:1px solid #1a2540;overflow:hidden;" class="cw sp2">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
-      <tr>
-        <td style="padding:16px 20px;width:70px;vertical-align:middle;">
-          <div class="sr" style="background:#0d1526;"><span style="font-size:18px;font-weight:900;color:#e8b84b;display:block;line-height:1;">{{ evaluation.total_correct }}</span><span style="font-size:10px;color:#4a6080;">/ {{ evaluation.evaluations|length }}</span></div>
-        </td>
-        <td style="padding:16px 0;vertical-align:middle;">
-          <div style="font-size:15px;font-weight:700;color:#e2e8f4;">Draw #{{ evaluation.draw_number }} — {{ evaluation.accuracy_pct }}% correct</div>
-          <div style="font-size:12px;color:#4a6080;margin-top:2px;">{{ evaluation.draw_date }}</div>
-        </td>
-      </tr>
-    </table>
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="padding:12px 20px;">
-      <tr>
-        <td class="chip" style="background:#111c35;color:#8ba4c4;">Singles <strong style="{% if evaluation.singles_correct == evaluation.singles_total %}color:#4ade80{% elif evaluation.singles_correct < evaluation.singles_total // 2 %}color:#f87171{% else %}color:#e2e8f4{% endif %}">{{ evaluation.singles_correct }}/{{ evaluation.singles_total }}</strong></td>
-        <td style="width:8px;"></td>
-        <td class="chip" style="background:#111c35;color:#8ba4c4;">Doubles <strong style="{% if evaluation.doubles_correct >= evaluation.doubles_total * 0.6 %}color:#4ade80{% elif evaluation.doubles_correct < evaluation.doubles_total * 0.4 %}color:#f87171{% else %}color:#e2e8f4{% endif %}">{{ evaluation.doubles_correct }}/{{ evaluation.doubles_total }}</strong></td>
-        <td style="width:8px;"></td>
-        <td class="chip" style="background:#111c35;color:#8ba4c4;">Full <strong style="color:#4ade80;">{% if evaluation.full_covered %}&#10003;{% else %}&#10007;{% endif %}</strong></td>
-      </tr>
-    </table>
-  </div>
+{# ---------- Last week, one line ---------- #}
+{% if last_week %}
+<tr><td class="px" style="padding-top:20px;">
+  <table cellpadding="0" cellspacing="0" width="100%" class="card" style="box-shadow:4px 4px 0 {{ c.text }};"><tr>
+    <td width="96" style="padding:12px 0 12px 16px;white-space:nowrap;"><span class="d" style="font-size:34px;line-height:1;color:{{ c.accent }};">{{ last_week.correct }}</span><span class="d m" style="font-size:16px;">/{{ last_week.total }}</span></td>
+    <td style="padding:12px 16px;font-size:14px;line-height:1.45;">Last week, draw {{ last_week.draw }}. Singles {{ last_week.singles }}, doubles {{ last_week.doubles }}.
+      {%- if last_week.market is not none %}<br><span class="m">Following the odds alone scored {{ last_week.market }}.</span>{% endif %}</td>
+  </tr></table>
 </td></tr>
 {% endif %}
 
-
-
+{# ---------- Summary ---------- #}
 {% if executive_summary %}
-<tr><td>
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
-    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">This Week's Coupon</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
-  </table>
-  <div style="padding:8px 40px 20px;font-size:15px;color:#8ba4c4;font-style:italic;line-height:1.7;border-bottom:1px solid #1a2540;" class="sp2">{{ executive_summary }}</div>
-</td></tr>
+<tr><td class="px" style="padding-top:24px;font-size:16px;line-height:1.6;">{{ executive_summary }}</td></tr>
 {% endif %}
 
+{# ---------- This week's coupon (hero) ---------- #}
+{{ heading("This week's coupon", report.total_cost_sek ~ ' kr: ' ~ report.singles|length ~ ' singles, ' ~ report.doubles|length ~ ' doubles, 1 full. Filled boxes are our picks.') }}
+<tr><td class="px">
+  <table cellpadding="0" cellspacing="0" width="100%" class="grid">
+    {% for card in cards %}
+    {{ grid_row(card.n, card.home, card.away, card.picks, 'All' if card.type == 'full' else card.confidence ~ '%', 'font-size:12px;color:' ~ c.muted, loop.last) }}
+    {% endfor %}
+  </table>
+  <div class="xs m" style="margin-top:8px;">The percentage is how sure the model is of the pick.</div>
+</td></tr>
+
+{# ---------- Value picks ---------- #}
 {% if value_radar %}
-<tr><td style="padding:12px 40px 16px;border-bottom:1px solid #1a2540;" class="sp2">
-  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e8b84b;font-weight:700;margin-bottom:8px;">Value Picks</div>
+{{ heading('Value picks') }}
+<tr><td class="px">
   {% for item in value_radar %}
-  <div style="font-size:13px;color:#5a7090;padding:3px 0;"><span style="color:#e8b84b;">&#9670;</span> {{ item }}</div>
+  <div class="li"><b style="color:{{ c.special }};">◆</b> {{ item }}</div>
   {% endfor %}
 </td></tr>
 {% endif %}
 
-<tr><td style="height:20px;"></td></tr>
+{# ---------- Match cards ---------- #}
+{{ heading('Match by match') }}
+{% for card in cards %}
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
 
+  {# header: game number, league + kickoff, our picks #}
+  <tr><td style="padding:14px 16px 4px;">
+    <table cellpadding="0" cellspacing="0" width="100%"><tr>
+      <td width="34"><div class="gn d">{{ card.n }}</div></td>
+      <td class="s m" style="padding-left:12px;">{% if card.league_badge %}<img src="{{ card.league_badge }}" width="16" height="16" alt="" class="lg">{% endif %}{{ card.league }}{% if card.when %}, {{ card.when }}{% endif %}</td>
+      <td align="right">{{ boxes(card.picks) }}</td>
+    </tr></table>
+  </td></tr>
 
+  {# teams with badges and signal chips #}
+  {% for side in ['home', 'away'] %}
+  <tr><td style="padding:{{ '6px 16px 4px' if side == 'home' else '4px 16px 12px' }};">
+    <div>{% if card[side ~ '_badge'] %}<img src="{{ card[side ~ '_badge'] }}" width="26" height="26" alt="" class="bdg">{% endif %}<span class="tn d">{{ card[side] }}</span></div>
+    {% if card[side ~ '_chips'] %}<div style="margin-top:6px;">{% for ch in card[side ~ '_chips'] %}{{ chip(ch) }}{% endfor %}</div>{% endif %}
+  </td></tr>
+  {% endfor %}
 
-<tr><td>
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
-    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">Coupon Summary</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
-  </table>
-  <div style="margin:0 40px 24px;background:#0d1526;border:1px solid #1a2540;overflow:hidden;" class="co sp2">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#111c35;border-bottom:2px solid #e8b84b;">
-      <tr>
-        <td style="padding:14px 20px;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#e8b84b;">Draw #{{ draw_number }} · System</td>
-        <td style="padding:14px 20px;text-align:right;font-size:20px;font-weight:900;color:#e2e8f4;">{{ report.total_cost_sek }} SEK <span style="font-size:12px;color:#4a6080;font-weight:400;">/ {{ report.total_rows }} rows</span></td>
-      </tr>
+  {# stats table #}
+  {% if card.rows %}
+  <tr><td class="sec">
+    <table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+      <tr><td width="30%"></td><td width="35%" class="d" style="padding:10px 8px 6px;">{{ card.home_short }}</td><td width="35%" class="d" style="padding:10px 16px 6px 8px;">{{ card.away_short }}</td></tr>
+      {% for row in card.rows %}
+      <tr><td class="k">{{ row.label }}</td><td class="v">{% if row.form %}{{ letters(row.home) }}{% else %}{{ row.home or '–' }}{% endif %}</td><td class="v2">{% if row.form %}{{ letters(row.away) }}{% else %}{{ row.away or '–' }}{% endif %}</td></tr>
+      {% endfor %}
     </table>
-    <table class="ctb" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
-      <thead><tr>
-        <th style="width:30px;background:#0a0f1e;color:#2a3a54;">#</th>
-        <th style="background:#0a0f1e;color:#2a3a54;">Match</th>
-        <th style="width:90px;text-align:center;background:#0a0f1e;color:#2a3a54;">Tips</th>
-        <th style="width:50px;text-align:center;background:#0a0f1e;color:#2a3a54;">Conf</th>
-      </tr></thead>
-      <tbody>
-        {% for pred in predictions %}
-        {% set tc = {'single':'#4ade80','double':'#60a5fa','full':'#fb923c'}[pred.selection_type.value] %}
-        <tr>
-          <td style="color:#2a3a54;font-size:11px;">{{ pred.game_number }}</td>
-          <td style="color:#8ba4c4;">{{ pred.home_team }} – {{ pred.away_team }}</td>
-          <td style="text-align:center;"><span class="rt" style="color:{{ tc }};">{{ pred.selection_type.value|upper }}</span><br><span class="rp" style="color:{{ tc }};">{{ pred.predicted_outcomes|map(attribute='value')|join(' ') }}</span></td>
-          <td style="text-align:center;">{% if pred.selection_type.value == 'full' %}<span style="color:#fb923c;font-weight:800;font-size:10px;">&#10003; ALL</span>{% else %}<span style="color:#2a3a54;font-size:11px;">{{ (pred.confidence*100)|int }}%</span>{% endif %}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-top:1px solid #1a2540;background:#0a0f1e;">
-      <tr>
-        <td style="padding:12px 16px;font-size:11px;color:#4a6080;"><span class="ld" style="background:#4ade80;"></span> Single</td>
-        <td style="padding:12px 8px;font-size:11px;color:#4a6080;"><span class="ld" style="background:#60a5fa;"></span> Double</td>
-        <td style="padding:12px 8px;font-size:11px;color:#4a6080;"><span class="ld" style="background:#fb923c;"></span> Full</td>
-        <td style="padding:12px 16px;font-size:10px;color:#2a3a54;font-style:italic;text-align:right;">Conf = model certainty</td>
-      </tr>
-    </table>
-  </div>
-</td></tr>
+  </td></tr>
+  {% endif %}
 
-<tr><td style="height:20px;"></td></tr>
-
-
-<tr><td>
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="sl" style="padding:24px 40px 12px;">
-    <tr><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td><td style="color:#e8b84b;padding:0 12px;white-space:nowrap;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;">Detailed Analysis</td><td style="background:#1a2540;height:1px;font-size:0;line-height:0;">&nbsp;</td></tr>
-  </table>
-</td></tr>
-
-
-
-{% for pred in predictions %}
-{% set match = matches_by_game[pred.game_number] %}
-{% set type = pred.selection_type.value %}
-{% set tc = {'single':'#4ade80','double':'#60a5fa','full':'#fb923c'}[type] %}
-{% set tbg = {'single':'#14532d','double':'#1e3a5f','full':'#431407'}[type] %}
-{% set wdl = {'1':'W','X':'D','2':'L'} %}
-
-<tr><td style="padding:0 40px 20px;" class="sp2">
-<div class="cw t{{ type[0] }}" style="background:#0d1526;border:1px solid #1a2540;border-top:3px solid {{ tc }};overflow:hidden;">
-
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ch" style="background:#111c35;border-bottom:1px solid #1a2540;">
-    <tr>
-      <td style="padding:16px 20px 14px;vertical-align:top;">
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td class="gb" style="background:#1a2540;color:#4a6080;vertical-align:middle;">{{ pred.game_number }}</td>
-          {% if match and match.league and badge_urls[match.league] is defined %}<td style="padding-left:8px;vertical-align:middle;"><img src="{{ badge_urls[match.league] }}" width="18" height="18" alt="{{ match.league }}" style="vertical-align:middle;"></td>{% endif %}
-          <td style="padding-left:{% if match and match.league and badge_urls[match.league] is defined %}4{% else %}8{% endif %}px;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#4a6080;font-weight:600;vertical-align:middle;">{{ match.league if match else '' }}</td>
-        </tr></table>
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
-          <tr>
-            <td style="vertical-align:top;">
-              {% if badge_urls[pred.home_team] is defined %}<img src="{{ badge_urls[pred.home_team] }}" width="22" height="22" alt="{{ pred.home_team }}" style="vertical-align:middle;margin-right:4px;">{% endif %}<span class="tt" style="color:#e2e8f4;vertical-align:middle;">{{ pred.home_team }}</span>
-              {%- if match and match.home_stats %}
-              <div style="margin-top:3px;">
-                {%- if match.home_stats.form_points_last5 >= 10 %}<span class="fp" style="background:#0a2a0a;color:#4ade80;">&#9650;</span> {% endif -%}
-                {%- if match.home_stats.form_points_last5 <= 4 and match.home_stats.form_last5|length >= 3 %}<span class="fp" style="background:#2a1a0a;color:#fb923c;">&#9660;</span> {% endif -%}
-                {%- if match.home_stats.fatigue_flag %}<span class="fp" style="background:#2a0a0a;color:#f87171;">&#9889;</span> {% endif -%}
-                {%- if match.home_stats.new_manager_bounce %}<span class="fp" style="background:#1a0a2a;color:#c084fc;">&#9733;</span> {% endif -%}
-                {%- if match.home_stats.injuries|length >= 5 or pred.home_absent_count >= 5 %}<span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> {% endif -%}
-              </div>
-              {%- endif %}
-            </td>
-            <td style="padding:0 8px;vertical-align:top;"><span style="color:#2a3a54;font-weight:400;font-size:14px;line-height:24px;">vs</span></td>
-            <td style="vertical-align:top;">
-              {% if badge_urls[pred.away_team] is defined %}<img src="{{ badge_urls[pred.away_team] }}" width="22" height="22" alt="{{ pred.away_team }}" style="vertical-align:middle;margin-right:4px;">{% endif %}<span class="tt" style="color:#e2e8f4;vertical-align:middle;">{{ pred.away_team }}</span>
-              {%- if match and match.away_stats %}
-              <div style="margin-top:3px;">
-                {%- if match.away_stats.form_points_last5 >= 10 %}<span class="fp" style="background:#0a2a0a;color:#4ade80;">&#9650;</span> {% endif -%}
-                {%- if match.away_stats.form_points_last5 <= 4 and match.away_stats.form_last5|length >= 3 %}<span class="fp" style="background:#2a1a0a;color:#fb923c;">&#9660;</span> {% endif -%}
-                {%- if match.away_stats.fatigue_flag %}<span class="fp" style="background:#2a0a0a;color:#f87171;">&#9889;</span> {% endif -%}
-                {%- if match.away_stats.new_manager_bounce %}<span class="fp" style="background:#1a0a2a;color:#c084fc;">&#9733;</span> {% endif -%}
-                {%- if match.away_stats.injuries|length >= 5 or pred.away_absent_count >= 5 %}<span class="fp" style="background:#ffffff;color:#dc2626;">&#10010;</span> {% endif -%}
-              </div>
-              {%- endif %}
-            </td>
-          </tr>
-        </table>
+  {# last 5 meetings + referee: whistle, name, yellow and red cards per game #}
+  {% if card.h2h or card.referee %}
+  <tr><td class="sec in">
+    <table cellpadding="0" cellspacing="0" width="100%"><tr>
+      {% if card.h2h %}
+      <td class="stack" valign="top" width="50%" style="padding-right:10px;">
+        <div class="lb">Last {{ card.h2h|length }} meetings, {{ card.home_short }} first</div>
+        <div style="margin-top:4px;">{% for m in card.h2h %}{{ letters(m.letter) }}{% endfor %}</div>
+        <div class="m" style="font-size:11px;">{{ card.h2h[0].year }}{% if card.h2h|length > 1 %} back to {{ card.h2h[-1].year }}{% endif %}</div>
       </td>
-      <td style="padding:16px 20px 14px;vertical-align:top;text-align:center;width:110px;">
-        {% if match and match.kickoff %}<div style="font-size:18px;font-weight:700;color:{{ tc }};letter-spacing:1px;">{{ match.kickoff.astimezone(tz).strftime('%H:%M') }}</div>{% endif %}
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px auto 0;"><tr>
-          {% for o in pred.predicted_outcomes %}<td class="pb" style="background:{{ tbg }};color:{{ tc }};{% if not loop.first %}margin-left:5px;{% endif %}">{{ o.value }}</td>{% endfor %}
-        </tr></table>
-        <div class="cb" style="background:#1a2540;"><div class="cf" style="width:{{ (pred.confidence*100)|int }}%;background:#e8b84b;"></div></div>
-        <span style="font-size:8px;color:#4a6080;display:block;margin-top:2px;">{{ (pred.confidence*100)|int }}%</span>
-      </td>
-    </tr>
-  </table>
-  {% if match and match.home_stats and match.away_stats %}
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="ss">
-    <tr>
-      <td><span class="sl2" style="color:#2a3a54;">Form</span><span class="sv" style="color:#8ba4c4;">{% for r in match.home_stats.form_last5|reverse %}{{ wdl[r.result.value] }}{% endfor %} <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> {% for r in match.away_stats.form_last5|reverse %}{{ wdl[r.result.value] }}{% endfor %}</span></td>
-      <td{% if not (match.home_stats.league_position or match.away_stats.league_position) %} style="border-right:none;"{% endif %}>
-        <span class="sl2" style="color:#2a3a54;">xG F/A</span>
-        <span class="sv" style="color:#8ba4c4;">{% if match.home_stats.xg_for_avg %}{{ "%.1f"|format(match.home_stats.xg_for_avg) }}{% else %}—{% endif %}/{% if match.home_stats.xg_against_avg %}{{ "%.1f"|format(match.home_stats.xg_against_avg) }}{% else %}—{% endif %} <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> {% if match.away_stats.xg_for_avg %}{{ "%.1f"|format(match.away_stats.xg_for_avg) }}{% else %}—{% endif %}/{% if match.away_stats.xg_against_avg %}{{ "%.1f"|format(match.away_stats.xg_against_avg) }}{% else %}—{% endif %}</span>
-      </td>
-      {% if match.home_stats.league_position or match.away_stats.league_position %}
-      <td style="border-right:none;"><span class="sl2" style="color:#2a3a54;">Pos</span><span class="sv" style="color:#8ba4c4;">{{ match.home_stats.league_position or '—' }} <span style="color:#2a3a54;font-size:9px;font-weight:400;">vs</span> {{ match.away_stats.league_position or '—' }}</span></td>
       {% endif %}
-    </tr>
-  </table>
-  {% set h_crit = match.home_stats.critical_absences %}
-  {% set a_crit = match.away_stats.critical_absences %}
-  {% if h_crit or a_crit %}
-  <div class="is" style="background:#0a0f1e;">
-    {% for a in h_crit %}<div class="ii" style="color:#5a7090;"><span style="color:#dc2626;">&#10010;</span> <span style="color:#f87171;font-weight:600;">{{ pred.home_team }}: {{ a.player_name }}</span> ({{ a.position }}, {{ a.status.value }}){% if a.matchup_risk and a.matchup_risk.risk_level.value in ['high','critical'] %} — <span style="color:#fb923c;">vs {{ a.matchup_risk.opponent_player }}</span>{% endif %}</div>{% endfor %}
-    {% for a in a_crit %}<div class="ii" style="color:#5a7090;"><span style="color:#dc2626;">&#10010;</span> <span style="color:#f87171;font-weight:600;">{{ pred.away_team }}: {{ a.player_name }}</span> ({{ a.position }}, {{ a.status.value }}){% if a.matchup_risk and a.matchup_risk.risk_level.value in ['high','critical'] %} — <span style="color:#fb923c;">vs {{ a.matchup_risk.opponent_player }}</span>{% endif %}</div>{% endfor %}
-  </div>
-  {% endif %}
-  {% endif %}
-  {% if match and match.market %}
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="or" style="background:#080d18;border-bottom:1px solid #1a2540;">
-    <tr>
-      <td style="padding:8px 16px;vertical-align:middle;">
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td class="ol" style="color:#2a3a54;">1</td><td class="ob" style="background:#111c35;color:#8ba4c4;">{{ match.market.odds_home or '—' }}</td><td style="width:6px;"></td>
-          <td class="ol" style="color:#2a3a54;">X</td><td class="ob" style="background:#111c35;color:#8ba4c4;">{{ match.market.odds_draw or '—' }}</td><td style="width:6px;"></td>
-          <td class="ol" style="color:#2a3a54;">2</td><td class="ob" style="background:#111c35;color:#8ba4c4;">{{ match.market.odds_away or '—' }}</td>
-        </tr></table>
+      {% if card.referee %}
+      <td class="stack" valign="top">
+        <div class="lb">Referee</div>
+        <div class="rf"><img src="{{ whistle_url }}" width="16" height="16" alt="Referee" style="vertical-align:-3px;border:0;"> <b>{{ card.referee }}</b>
+          {%- if card.ref_yellows is not none %}&nbsp; <span class="crd" title="Yellow cards per game" style="background:{{ c.yellow_card }};"></span> {{ '%.1f'|format(card.ref_yellows) }}{% endif -%}
+          {%- if card.ref_reds is not none %}&nbsp; <span class="crd" title="Red cards per game" style="background:{{ c.red_card }};"></span> {{ '%.2f'|format(card.ref_reds) }}{% endif %}</div>
       </td>
-      <td style="padding:8px 16px 8px 10px;vertical-align:middle;">
-        {% if match.market.public_pct_home is not none %}
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;"><tr>
-          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Public</td>
-          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
-            <td style="background:#4ade80;width:{{ [match.market.public_pct_home, 8]|max }}%;text-align:center;padding:2px 0;">{{ match.market.public_pct_home }}%</td>
-            <td style="background:#e8b84b;width:{{ [match.market.public_pct_draw, 8]|max }}%;text-align:center;padding:2px 0;">{{ match.market.public_pct_draw }}%</td>
-            <td style="background:#60a5fa;width:{{ [match.market.public_pct_away, 8]|max }}%;text-align:center;padding:2px 0;">{{ match.market.public_pct_away }}%</td>
-          </tr></table></td>
-        </tr></table>
-        {% endif %}
-        {% set tips_total = match.market.newspaper_tips_home + match.market.newspaper_tips_draw + match.market.newspaper_tips_away %}
-        {% if tips_total > 0 %}
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:8px;margin-top:4px;"><tr>
-          <td style="color:#4a6080;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding-right:6px;vertical-align:middle;white-space:nowrap;">Papers</td>
-          <td style="vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:120px;font-weight:700;color:#080d18;"><tr>
-            {% set ph = (match.market.newspaper_tips_home / tips_total * 100)|int %}
-            {% set pd = (match.market.newspaper_tips_draw / tips_total * 100)|int %}
-            {% set pa = (match.market.newspaper_tips_away / tips_total * 100)|int %}
-            <td style="background:#4ade80;width:{{ [ph, 12]|max }}%;text-align:center;padding:2px 0;">{{ match.market.newspaper_tips_home }}</td>
-            <td style="background:#e8b84b;width:{{ [pd, 12]|max }}%;text-align:center;padding:2px 0;">{{ match.market.newspaper_tips_draw }}</td>
-            <td style="background:#60a5fa;width:{{ [pa, 12]|max }}%;text-align:center;padding:2px 0;">{{ match.market.newspaper_tips_away }}</td>
-          </tr></table></td>
-        </tr></table>
-        {% endif %}
-      </td>
-    </tr>
-  </table>
+      {% endif %}
+    </tr></table>
+  </td></tr>
   {% endif %}
-  <div class="at" style="color:#8ba4c4;border-bottom:1px solid #1a2540;">
-    {% set paras = pred.analysis.split('\n\n') %}
-    <p>{{ paras[0] }}</p>
-  </div>
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="fc">
-    <tr>
-      {% if pred.key_factors %}<td>
-        <div class="ct" style="color:#4ade80;">Key Factors</div>
-        {% for f in pred.key_factors[:2] %}<div class="fi" style="color:#5a7090;"><span style="color:#4ade80;">&#9656;</span> {{ f }}</div>{% endfor %}
-      </td>{% endif %}
-      {% if pred.risk_flags %}<td{% if not pred.key_factors %} style="border-right:none;"{% endif %}>
-        <div class="ct" style="color:#fb923c;">Risks</div>
-        {% for r in pred.risk_flags[:2] %}<div class="ri" style="color:#5a7090;"><span style="color:#fb923c;">&#9670;</span> {{ r }}</div>{% endfor %}
-      </td>{% endif %}
-    </tr>
-  </table>
 
-</div>
+  {# odds vs public, with the value flag #}
+  {% if card.odds %}
+  <tr><td class="sec">
+    <table cellpadding="0" cellspacing="0" width="100%"><tr>
+      {% for o in card.odds.cells %}
+      <td width="33%" class="oc{% if not loop.last %} ob{% endif %}">
+        <span class="ol d o{{ o.o }}">{{ o.o }}</span>
+        <div class="on d">{{ o.odds }}</div>
+        <div class="op">Odds {{ o.implied }}%{% if o.public is not none %}<br>Public {{ o.public }}%{% endif %}</div>
+        {% if o.value %}<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +{{ o.value }}</span>{% endif %}
+      </td>
+      {% endfor %}
+    </tr></table>
+    {% if card.odds.public %}
+    <div style="padding:0 16px 14px;">
+      <table cellpadding="0" cellspacing="0" width="100%" style="border:1.5px solid {{ c.text }};"><tr>
+        {% for o in ['1', 'X', '2'] %}{% set p = card.odds.public[loop.index0] %}<td width="{{ p }}%" height="18" align="center" class="d pb o{{ o }}">{% if p >= 9 %}{{ p }}%{% endif %}</td>{% endfor %}
+      </tr></table>
+      <div class="m" style="margin-top:4px;font-size:11px;">How the public is betting</div>
+    </div>
+    {% endif %}
+  </td></tr>
+  {% endif %}
+
+  {# analysis #}
+  {% if card.analysis %}
+  <tr><td class="sec in" style="padding-top:14px;line-height:1.6;">{{ card.analysis }}</td></tr>
+  {% endif %}
+
+  {# why / risks #}
+  {% if card.why or card.risks %}
+  <tr><td style="padding:0 16px 16px;">
+    <table cellpadding="0" cellspacing="0" width="100%"><tr>
+      {% if card.why %}
+      <td class="stack" valign="top" width="50%" style="padding-right:10px;"><div class="lb">Why</div>{% for f in card.why %}<div class="li"><b style="color:{{ c.positive }};">▸</b> {{ f }}</div>{% endfor %}</td>
+      {% endif %}
+      {% if card.risks %}
+      <td class="stack" valign="top" width="50%"><div class="lb">Risks</div>{% for r in card.risks %}<div class="li"><b style="color:{{ c.caution }};">◆</b> {{ r }}</div>{% endfor %}</td>
+      {% endif %}
+    </tr></table>
+  </td></tr>
+  {% endif %}
+
+</table>
 </td></tr>
 {% endfor %}
 
+{# ---------- Last week's coupon with results ---------- #}
+{% if last_week and last_week.rows %}
+{{ heading("Last week's coupon", 'Draw ' ~ last_week.draw ~ ', our picks against the results.') }}
+<tr><td class="px">
+  <table cellpadding="0" cellspacing="0" width="100%" class="grid">
+    {% for r in last_week.rows %}
+    <tr><td width="26" class="cr cn d"{% if loop.last %} style="border-bottom:0"{% endif %}>{{ r.n }}</td><td class="cr"{% if loop.last %} style="border-bottom:0"{% endif %}>{{ r.home }} – {{ r.away }}</td><td width="96" class="cr ce d"{% if loop.last %} style="border-bottom:0"{% endif %}>{{ r.picks|join }} <span class="m">→</span> <span style="color:{{ c.positive if r.hit else c.danger }}">{{ r.result }} {{ '✓' if r.hit else '✗' }}</span></td></tr>
+    {% endfor %}
+  </table>
+</td></tr>
+{% endif %}
 
-<tr><td style="padding:24px 40px;text-align:center;border-top:1px solid #111c35;" class="sp2">
-  <p style="font-size:11px;color:#1e2a40;line-height:1.8;">Generated {{ generated_date }} · Draw #{{ draw_number }}</p>
-  <p style="font-size:11px;color:#1e2a40;line-height:1.8;margin-top:8px;">© {{ year }} Stryktipset Newsletter</p>
+{# ---------- Footer ---------- #}
+<tr><td class="px xs m" style="padding-top:32px;padding-bottom:40px;line-height:1.6;">
+  Generated {{ generated_date }} for draw {{ draw_number }}. Data: Svenska Spel, FotMob, Fantasy Premier League, football-data.co.uk.<br>
+  &copy; {{ year }} Stryktipset Newsletter
 </td></tr>
 
 </table>

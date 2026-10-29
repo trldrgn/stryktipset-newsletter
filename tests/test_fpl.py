@@ -127,3 +127,34 @@ def test_enrich_survives_http_failure():
         result = fpl.enrich_with_fpl_absences([m])
     assert result == [m]
     assert m.home_stats.injuries == []
+
+
+# ---------------------------------------------------------------------------
+# Return info and suspensions (FPL is the Premier League's primary source)
+# ---------------------------------------------------------------------------
+
+def test_expected_return_parsing():
+    assert fpl._expected_return("Hamstring injury - Expected back 8 Nov") == "Expected back 8 Nov"
+    assert fpl._expected_return("Hip injury - 75% chance of playing") == "75% chance of playing"
+    assert fpl._expected_return("Suspended until 29 Nov") == "Suspended until 29 Nov"
+    assert fpl._expected_return("") == ""
+
+
+def test_suspensions_split_from_injuries():
+    m = _make_match()
+    players = [
+        _player("Rodri", 1, "i", 0, cost=60, news="Knee injury - Expected back 8 Nov"),
+        _player("Banned", 1, "s", 0, cost=55, news="Suspended until 2 Nov"),
+    ]
+    with patch.object(fpl, "_fetch_bootstrap", return_value=_bootstrap(players)):
+        fpl.enrich_with_fpl_absences([m])
+    assert [a.player_name for a in m.home_stats.injuries] == ["Rodri"]
+    assert m.home_stats.injuries[0].expected_return == "Expected back 8 Nov"
+    assert [a.player_name for a in m.home_stats.suspensions] == ["Banned"]
+    assert m.home_stats.absences_checked_source == "fpl"
+
+
+def test_one_goal_tie_is_not_top_scorer():
+    players = [_player(f"P{i}", 1, "i" if i == 0 else "a", 0, goals=1) for i in range(5)]
+    absences = fpl._build_team_absences(1, players)
+    assert not absences[0].is_top_scorer

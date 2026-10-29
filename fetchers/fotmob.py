@@ -523,16 +523,26 @@ def parse_h2h(h2h: Optional[dict], home_team: str, away_team: str, home_id: Opti
     return out[:_H2H_MAX]
 
 
-def parse_referee(details: Optional[dict]) -> tuple[str, Optional[float]]:
-    """(name, avg yellow+red cards per match) from matchFacts.infoBox.Referee."""
+def parse_referee(details: Optional[dict]) -> tuple[str, Optional[float], Optional[float]]:
+    """
+    (name, yellows per match, reds per match) from matchFacts.infoBox.Referee.
+    FotMob gives yellows per match but reds only as a total, so reds are
+    divided by the referee's match count.
+    """
     ref = ((((details or {}).get("content") or {}).get("matchFacts") or {}).get("infoBox") or {}).get("Referee") or {}
     name = ref.get("text") or ""
-    per_match = {
-        s.get("type"): s.get("value") for s in ref.get("stats") or [] if s.get("valueType") == "perMatch"
-    }
-    yellows = per_match.get("yellowCards")
-    reds = per_match.get("redCards") or 0
-    return name, round(yellows + reds, 2) if yellows is not None else None
+    stats = {s.get("type"): s for s in ref.get("stats") or []}
+
+    def per_match(kind: str) -> Optional[float]:
+        s = stats.get(kind)
+        if not s or s.get("value") is None:
+            return None
+        if s.get("valueType") == "perMatch":
+            return round(float(s["value"]), 2)
+        matches = (stats.get("matches") or {}).get("value")
+        return round(float(s["value"]) / matches, 2) if matches else None
+
+    return name, per_match("yellowCards"), per_match("redCards")
 
 
 # ---------------------------------------------------------------------------
@@ -713,7 +723,10 @@ def _enrich_match(match: Match, fotmob_id: int, coverage: Counter) -> None:
     def _referee() -> bool:
         if match.referee:
             return False
-        match.referee, match.referee_avg_cards = parse_referee(details)
+        match.referee, yellows, reds = parse_referee(details)
+        match.referee_yellows_avg, match.referee_reds_avg = yellows, reds
+        if yellows is not None:
+            match.referee_avg_cards = round(yellows + (reds or 0), 2)
         return bool(match.referee)
 
     _fill("h2h", coverage, _h2h)

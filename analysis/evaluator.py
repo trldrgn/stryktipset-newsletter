@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Optional
 
 from config import PREDICTIONS_DIR, RESULTS_DIR, PERFORMANCE_DIR
-from fetchers.svenska_spel import fetch_result
+from fetchers.svenska_spel import fetch_coupon, fetch_result
 from models.match import (
     Outcome,
     SelectionType,
@@ -181,6 +181,39 @@ def _post_mortem_hint(pred: dict, actual: Outcome) -> str:
 # Main evaluation function
 # ---------------------------------------------------------------------------
 
+def market_baseline_correct(odds: dict[int, tuple[float, float, float]], results: dict[int, Outcome]) -> Optional[int]:
+    """
+    Score the coupon the bookmaker's odds alone would play: games ranked by the
+    favourite's implied probability, top 4 singles on the favourite, next 8
+    doubles on the two likeliest outcomes, the last one full. None if any game
+    lacks odds or a result.
+    """
+    ranked = []
+    for game, (o1, ox, o2) in odds.items():
+        if not (o1 and ox and o2) or game not in results:
+            return None
+        probs = {"1": 1 / o1, "X": 1 / ox, "2": 1 / o2}
+        order = sorted(probs, key=probs.get, reverse=True)
+        ranked.append((probs[order[0]], order, results[game].value))
+    ranked.sort(key=lambda r: r[0], reverse=True)
+    return sum(
+        actual in order[: 1 if i < 4 else 2 if i < len(ranked) - 1 else 3]
+        for i, (_, order, actual) in enumerate(ranked)
+    )
+
+
+def _market_baseline_for_draw(draw_number: int, results: dict[int, Outcome]) -> Optional[int]:
+    try:
+        odds = {
+            m.game_number: (m.market.odds_home, m.market.odds_draw, m.market.odds_away)
+            for m in fetch_coupon(draw_number) if m.market
+        }
+        return market_baseline_correct(odds, results) if len(odds) == len(results) else None
+    except Exception as e:
+        logger.warning("Market baseline for draw %d failed: %s", draw_number, e)
+        return None
+
+
 def evaluate_last_week(before_draw: int | None = None) -> Optional[WeeklyEvaluation]:
     """
     Load last week's predictions, fetch actual results, score them,
@@ -260,6 +293,7 @@ def evaluate_last_week(before_draw: int | None = None) -> Optional[WeeklyEvaluat
         doubles_correct=doubles_correct,
         doubles_total=doubles_total,
         full_covered=full_covered,
+        market_correct=_market_baseline_for_draw(draw_number, results),
     )
 
     # --- Persist results ---
@@ -267,10 +301,11 @@ def evaluate_last_week(before_draw: int | None = None) -> Optional[WeeklyEvaluat
     _append_to_history(draw_number, draw_date, evaluations, evaluation)
 
     logger.info(
-        "Evaluation complete: %d/%d correct (singles %d/%d, doubles %d/%d)",
+        "Evaluation complete: %d/%d correct (singles %d/%d, doubles %d/%d) — odds alone: %s",
         total_correct, len(evaluations),
         singles_correct, singles_total,
         doubles_correct, doubles_total,
+        evaluation.market_correct if evaluation.market_correct is not None else "n/a",
     )
 
     return evaluation
@@ -326,6 +361,7 @@ def _append_to_history(
         "doubles_correct": summary.doubles_correct,
         "doubles_total": summary.doubles_total,
         "full_covered": summary.full_covered,
+        "market_correct": summary.market_correct,
         "games": [
             {
                 "game_number": e.game_number,

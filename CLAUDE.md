@@ -146,6 +146,18 @@ python main.py --backfill-xg
 
 ---
 
+## Newsletter design
+
+- **Palette:** Dark Teal & Ivory (from @346eur), in `THEME` in `email_sender/renderer.py`. The signal colours are fixed: positive green, caution amber, danger red, special violet. All pairs are contrast-checked to WCAG AA.
+- **Design language:** off-white page, white cards, ink text, square boxes with a hard offset shadow.
+  - The coupon grid is the hero. Filled 1/X/2 boxes are our picks, so single, double and full need no colour code.
+- **Gmail clips at about 102 KB.** The template keeps meaning-carrying colours inline (pick fills) and moves layout into short `<style>` classes. `_compact()` strips indentation.
+  - The renderer logs a warning above 98 KB. A full week renders at about 94 KB.
+- **Display logic lives in `renderer.py`** (`_card`, `_odds`, `_h2h`, `_chips`) so `report.html` stays a layout file.
+- **Images:** team badges and the referee whistle (`static/icons/whistle.png`, MDI, Apache-2.0) are served from GitHub Pages. Teams with no local badge fall back to FotMob's crest by team id.
+
+---
+
 ## Data models
 
 All dataclasses live in `models/match.py`. Before modifying any fetcher or analyser, read this file — every field is documented.

@@ -417,32 +417,31 @@ def _build_card_stats(
     return avg_home, avg_away
 
 
-def _build_referee_stats(rows: list[dict]) -> dict[str, float]:
+def _build_referee_stats(rows: list[dict]) -> dict[str, tuple[float, float]]:
     """
-    Compute per-referee average total cards/game (Y + R for both sides)
-    from season CSV data. Returns {referee_name: avg_cards}.
+    Compute per-referee average yellows and reds per game (both sides)
+    from season CSV data. Returns {referee_name: (avg_yellows, avg_reds)}.
     """
     if not rows or "Referee" not in rows[0]:
         return {}
 
-    ref_cards: dict[str, list[int]] = {}
+    ref_cards: dict[str, list[tuple[int, int]]] = {}
     for row in rows:
         ref = row.get("Referee", "").strip()
         if not ref:
             continue
         try:
-            total = (
-                int(row.get("HY", 0) or 0)
-                + int(row.get("HR", 0) or 0)
-                + int(row.get("AY", 0) or 0)
-                + int(row.get("AR", 0) or 0)
-            )
+            yellows = int(row.get("HY", 0) or 0) + int(row.get("AY", 0) or 0)
+            reds = int(row.get("HR", 0) or 0) + int(row.get("AR", 0) or 0)
         except (ValueError, TypeError):
             continue
-        ref_cards.setdefault(ref, []).append(total)
+        ref_cards.setdefault(ref, []).append((yellows, reds))
 
     return {
-        ref: round(sum(games) / len(games), 1)
+        ref: (
+            round(sum(y for y, _ in games) / len(games), 2),
+            round(sum(r for _, r in games) / len(games), 2),
+        )
         for ref, games in ref_cards.items()
         if games
     }
@@ -505,7 +504,7 @@ def enrich_with_csv_stats(matches: list[Match]) -> list[Match]:
     csv_data: dict[str, list[dict]] = {}
     tables: dict[str, list[dict]] = {}
     team_sets: dict[str, set[str]] = {}
-    referee_stats: dict[str, dict[str, float]] = {}  # code → {referee: avg_cards}
+    referee_stats: dict[str, dict[str, tuple[float, float]]] = {}  # code → {referee: (yellows, reds)}
 
     for code, league_name in leagues_needed.items():
         try:
@@ -609,7 +608,8 @@ def enrich_with_csv_stats(matches: list[Match]) -> list[Match]:
                         avg = ref_avg
                         break
             if avg is not None:
-                match.referee_avg_cards = avg
+                match.referee_yellows_avg, match.referee_reds_avg = avg
+                match.referee_avg_cards = round(sum(avg), 2)
 
     logger.info("CSV enrichment complete: %d teams enriched", enriched_count)
     return matches

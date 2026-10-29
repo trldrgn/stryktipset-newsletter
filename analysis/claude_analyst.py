@@ -197,8 +197,9 @@ def _format_absences(absences) -> str:
         desc = f"{a.player_name} ({a.position}, {a.status.value}){src_tag}"
         if a.season_goals or a.season_assists:
             desc += f" {a.season_goals}G/{a.season_assists}A"
-        if a.expected_return and a.expected_return.lower() not in ("doubtful", "unknown"):
-            desc += f" back: {a.expected_return}"
+        ret = a.expected_return
+        if ret and ret.lower() not in ("doubtful", "unknown") and not ret.lower().startswith("unknown"):
+            desc += f" ({ret})" if a.source == "fpl" else f" back: {ret}"
         if a.is_top_scorer:
             desc += " ⚡TOP SCORER"
         if a.is_top_assister:
@@ -213,7 +214,7 @@ def _format_absences(absences) -> str:
 
 def _injury_source_tag(ts) -> str:
     """'' when structured absences exist; otherwise say whether a source confirmed 'none'."""
-    if ts and ts.injuries:
+    if ts and (ts.injuries or ts.suspensions):
         return ""
     checked = getattr(ts, "absences_checked_source", "") if ts else ""
     if checked:
@@ -369,7 +370,10 @@ def _format_match_block(match: Match) -> str:
     ref_parts = []
     if match.referee:
         ref_str = match.referee
-        if match.referee_avg_cards is not None:
+        if match.referee_yellows_avg is not None:
+            reds = f", {match.referee_reds_avg:.2f} reds" if match.referee_reds_avg is not None else ""
+            ref_str += f" ({match.referee_yellows_avg:.1f} yellows{reds} per game)"
+        elif match.referee_avg_cards is not None:
             ref_str += f" (avg {match.referee_avg_cards:.1f} cards/game)"
         ref_parts.append(f"Referee: {ref_str}")
     h_yel = f"{h.avg_yellows_home:.1f}Y/g(H)" if h and h.avg_yellows_home is not None else None
@@ -420,10 +424,11 @@ NEW MANAGER BOUNCE:
 - If a team has a new manager, mention it explicitly in your analysis and factor it into confidence.
 
 DATA SOURCE HIERARCHY — apply strictly when sources disagree:
-  1. Structured absences — FotMob [fotmob] (all leagues, injuries + suspensions with expected
-     return), FPL [fpl] (Premier League official feed), Sofascore [sofascore]. Equal rank; any of
-     these in the "Injuries/Suspensions" line is the ground truth for absences. "NG/NA" after a
-     player is his season goals/assists; "back: <date>" is FotMob's expected return.
+  1. Structured absences — FPL [fpl] (Premier League, official club-sourced feed; return info in
+     brackets, e.g. "(Expected back 8 Nov)", "(75% chance of playing)"), FotMob [fotmob] (all other
+     leagues; "back: <date>" is its expected return), Sofascore [sofascore]. Any of these in the
+     "Injuries/Suspensions" line is the ground truth for absences. "NG/NA" after a player is his
+     season goals/assists.
   2. Form, tables, H2H, referee, schedule — FotMob, with football-data.co.uk results as backup
      (equally reliable). Form is newest first: "W 2-1 Fulham(H,PL)" = won 2-1 at home vs Fulham
      in the league. "Home/Away record (season)" is the full-season record at that venue with

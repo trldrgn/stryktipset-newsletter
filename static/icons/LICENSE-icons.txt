@@ -1,0 +1,4 @@
+whistle.svg / whistle.png
+Source: Material Design Icons by Pictogrammers ("mdi:whistle"), https://pictogrammers.com/library/mdi/
+License: Apache License 2.0, https://www.apache.org/licenses/LICENSE-2.0
+Recoloured to #005F73 (Dark Teal) and rendered at 48x48 for the newsletter.

@@ -145,11 +145,17 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False, force: b
     logger.info("[3/9] Enriching matches with API-Football stats...")
     matches = enrich_all_matches(matches, season)
 
-    # --- Step 3a: FotMob (primary: xG, absences, H2H, tables, referee, schedule) ---
+    # --- Step 3a: FPL structured absences (Premier League primary, official feed) ---
+    # Runs before FotMob so the official club-sourced list wins for PL teams;
+    # FotMob then only fills absences for PL teams FPL could not cover.
+    logger.info("[3a] Enriching with FPL availability (Premier League)...")
+    matches = enrich_with_fpl_absences(matches)
+
+    # --- Step 3a2: FotMob (primary: xG, absences outside PL, H2H, tables, referee, schedule) ---
     # Runs after API-Football, which resets TeamStats when it fails. Every later
     # step only fills fields that are still empty, so if FotMob misses a field,
     # only that field falls back to the backup source.
-    logger.info("[3a] Enriching with FotMob (primary source)...")
+    logger.info("[3a2] Enriching with FotMob (primary source)...")
     matches = enrich_with_fotmob(matches)
 
     # --- Step 3b: CSV stats enrichment (standings, form, shots — all leagues) ---
@@ -167,10 +173,6 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False, force: b
     # --- Step 3d: Understat xG enrichment (Big 5 leagues) ---
     logger.info("[3d] Enriching with Understat xG data...")
     matches = enrich_with_understat_xg(matches)
-
-    # --- Step 3e: FPL structured absences (Premier League, official feed) ---
-    logger.info("[3e] Enriching with FPL availability (Premier League)...")
-    matches = enrich_with_fpl_absences(matches)
 
     # --- Step 3f: Sofascore snapshot (xG + missing players, collected locally) ---
     # Sofascore blocks GitHub runners; scripts/collect_sofascore.ps1 collects it
