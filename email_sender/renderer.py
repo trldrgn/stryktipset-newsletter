@@ -95,16 +95,13 @@ def _form_letters(form) -> str:
 
 
 def _h2h(match: Match) -> list[dict]:
-    """Last 5 meetings from the home team's perspective, newest first."""
+    """Last 5 meetings, newest first, as each side's own W/D/L (mirrored on the card)."""
     out = []
     for h in match.h2h[:5]:
         home_side = h.home_team == match.home_team
         gf, ga = (h.home_goals, h.away_goals) if home_side else (h.away_goals, h.home_goals)
-        out.append({
-            "letter": "W" if gf > ga else "D" if gf == ga else "L",
-            "year": h.date[:4],
-            "title": f"{h.date}: {h.home_team} {h.home_goals}-{h.away_goals} {h.away_team} ({h.competition})",
-        })
+        letter = "W" if gf > ga else "D" if gf == ga else "L"
+        out.append({"home": letter, "away": {"W": "L", "L": "W"}.get(letter, "D"), "year": h.date[:4]})
     return out
 
 
@@ -140,8 +137,7 @@ def _venue_record(stats: Optional[TeamStats], venue: str) -> str:
     rec = (stats.home_record if venue == "home" else stats.away_record) if stats else None
     if not rec:
         return ""
-    where = "at home" if venue == "home" else "away"
-    rank = f" ({_ordinal(rec.rank)} {where})" if rec.rank else ""
+    rank = f" ({_ordinal(rec.rank)})" if rec.rank else ""
     return f"W{rec.wins} D{rec.draws} L{rec.losses}, {rec.goals_for}–{rec.goals_against}{rank}"
 
 
@@ -198,11 +194,15 @@ def _chips(stats: Optional[TeamStats], absent_count: int) -> list[dict]:
         chips.append(("positive", "▲", "Up-form"))
     elif len(stats.form_last5) >= 3 and stats.form_points_last5 <= 4:
         chips.append(("caution", "▼", "Down-form"))
-    if stats.fatigue_flag and stats.schedule and stats.schedule.days_since_last_match is not None:
-        days = stats.schedule.days_since_last_match
-        chips.append(("caution", "⚡", f"{days} day{'s' if days != 1 else ''} rest"))
-    if stats.schedule and stats.schedule.upcoming_big_match:
-        chips.append(("caution", "⚡", f"Next: {stats.schedule.upcoming_big_match}"))
+    # Fatigue and an upcoming cup/European game share one chip to keep the sides balanced
+    sched = stats.schedule
+    rest = ""
+    if stats.fatigue_flag and sched and sched.days_since_last_match is not None:
+        days = sched.days_since_last_match
+        rest = f"{days} day{'s' if days != 1 else ''} rest"
+    upcoming = sched.upcoming_big_match if sched else ""
+    if rest or upcoming:
+        chips.append(("caution", "⚡", ", ".join(x for x in (rest, upcoming) if x)))
     if stats.new_manager_bounce:
         chips.append(("special", "★", "New manager"))
     absences = stats.injuries + stats.suspensions
@@ -217,7 +217,7 @@ def _chips(stats: Optional[TeamStats], absent_count: int) -> list[dict]:
 def _rows(h: Optional[TeamStats], a: Optional[TeamStats]) -> list[dict]:
     """Two-column stat rows; a row is dropped when neither side has data."""
     def xg(ts):
-        return f"{ts.xg_for_avg:.2f} – {ts.xg_against_avg:.2f}" if ts and ts.xg_for_avg is not None else ""
+        return f"{ts.xg_for_avg:.2f} / {ts.xg_against_avg:.2f}" if ts and ts.xg_for_avg is not None else ""
 
     def xpts(ts):
         if not ts or ts.season_xpoints is None or ts.league_points is None:
@@ -225,11 +225,11 @@ def _rows(h: Optional[TeamStats], a: Optional[TeamStats]) -> list[dict]:
         return f"{ts.league_points} vs {ts.season_xpoints:.0f} xPts"
 
     rows = [
-        {"label": "Form, newest first", "form": True,
+        {"label": "Form", "form": True,
          "home": _form_letters(h.form_last5) if h else "", "away": _form_letters(a.form_last5) if a else ""},
-        {"label": "Season at this venue", "home": _venue_record(h, "home"), "away": _venue_record(a, "away")},
-        {"label": "xG last 5, for–against", "home": xg(h), "away": xg(a)},
-        {"label": "Points vs expected", "home": xpts(h), "away": xpts(a)},
+        {"label": "Venue record", "home": _venue_record(h, "home"), "away": _venue_record(a, "away")},
+        {"label": "xG for / against", "home": xg(h), "away": xg(a)},
+        {"label": "Points vs xPts", "home": xpts(h), "away": xpts(a)},
         {"label": "Missing", "missing": True, "home": _missing(h), "away": _missing(a)},
     ]
     return [r for r in rows if r["home"] or r["away"]]

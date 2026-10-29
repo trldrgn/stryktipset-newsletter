@@ -53,16 +53,19 @@
   .o2 { background: {{ c.o2 }}; color: {{ c.on_o2 }}; }
   .bo { box-shadow: 2px 2px 0 {{ c.text }}; }
   .b28.bo { box-shadow: 3px 3px 0 {{ c.text }}; }
-  .hb { display: block; margin-bottom: 6px; border: 0; }
-  .ab { display: block; margin: 0 0 6px auto; border: 0; }
+  .hb { display: inline-block; margin-bottom: 6px; border: 0; }
+  .ab { display: inline-block; margin-bottom: 6px; border: 0; }
   .cha { margin: 0 0 6px 6px; }
-  .vs { padding-top: 42px; font-size: 13px; }
+  .vs { font-size: 13px; padding-bottom: 3px; }
   .sl { padding-right: 10px; }
+  .gv { padding: 9px 0; vertical-align: top; }
+  .gk { padding: 9px 6px; vertical-align: top; font-size: 12px; font-weight: 600; color: {{ c.muted }}; }
+  .bt { border-top: 1px solid {{ c.line }}; }
   .bdg { vertical-align: -5px; margin-right: 8px; border: 0; }
   .lg { vertical-align: -3px; margin-right: 6px; border: 0; }
   .ob { border-right: 1px solid {{ c.line }}; }
   .pb { font-size: 10px; }
-  .rf { margin-top: 6px; font-size: 14px; white-space: nowrap; }
+  .rf { font-size: 14px; white-space: nowrap; padding: 10px 0; }
   .crd { display: inline-block; width: 10px; height: 14px; vertical-align: -2px; border-radius: 2px; }
   @media screen and (max-width: 480px) {
     .px { padding-left: 14px !important; padding-right: 14px !important; }
@@ -162,64 +165,43 @@
     </tr></table>
   </td></tr>
 
-  {# teams side by side, scoreboard style: home left, away right, badge on the outside #}
-  <tr><td style="padding:8px 16px 10px;">
-    <table cellpadding="0" cellspacing="0" width="100%"><tr>
-      <td width="46%" valign="top">
-        {% if card.home_badge %}<img src="{{ card.home_badge }}" width="30" height="30" alt="" class="hb">{% endif %}
-        <div class="tn d">{{ card.home }}</div>
-        {% if card.home_chips %}<div style="margin-top:8px;">{% for ch in card.home_chips %}{{ chip(ch) }}{% endfor %}</div>{% endif %}
-      </td>
-      <td width="8%" valign="top" align="center" class="d m vs">v</td>
-      <td width="46%" valign="top" align="right">
-        {% if card.away_badge %}<img src="{{ card.away_badge }}" width="30" height="30" alt="" class="ab">{% endif %}
-        <div class="tn d">{{ card.away }}</div>
-        {% if card.away_chips %}<div style="margin-top:8px;">{% for ch in card.away_chips %}<span class="ch cha k-{{ ch.kind }}"><b>{{ ch.icon }}</b> {{ ch.text }}</span>{% endfor %}</div>{% endif %}
-      </td>
-    </tr></table>
+  {# One grid for the whole card: home 38% | centre 24% | away 38%. Home content aligns left,
+     away content right; "v", the row labels and the X outcome share the centre line. #}
+  <tr><td style="padding:8px 16px 12px;">
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <tr><td width="38%" valign="bottom">{% if card.home_badge %}<img src="{{ card.home_badge }}" width="30" height="30" alt="" class="hb">{% endif %}</td><td width="24%"></td><td width="38%" valign="bottom" align="right">{% if card.away_badge %}<img src="{{ card.away_badge }}" width="30" height="30" alt="" class="ab">{% endif %}</td></tr>
+      <tr><td valign="bottom" class="tn d">{{ card.home }}</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">{{ card.away }}</td></tr>
+      {% if card.home_chips or card.away_chips %}
+      <tr><td valign="top" style="padding-top:8px;">{% for ch in card.home_chips %}{{ chip(ch) }}{% endfor %}</td><td></td><td valign="top" align="right" style="padding-top:8px;">{% for ch in card.away_chips %}<span class="ch cha k-{{ ch.kind }}"><b>{{ ch.icon }}</b> {{ ch.text }}</span>{% endfor %}</td></tr>
+      {% endif %}
+    </table>
   </td></tr>
 
-  {# stats table #}
-  {% if card.rows %}
-  <tr><td class="sec">
+  {# stats, last meetings (each side's own results) and the referee, on the same grid #}
+  {% if card.rows or card.h2h or card.referee %}
+  <tr><td class="sec" style="padding:0 16px;">
     <table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
-      <tr><td width="30%"></td><td width="35%" class="d" style="padding:10px 8px 6px;">{{ card.home_short }}</td><td width="35%" class="d" style="padding:10px 16px 6px 8px;">{{ card.away_short }}</td></tr>
       {% for row in card.rows %}
-      <tr><td class="k">{{ row.label }}</td><td class="v">{{ cell(row, 'home') }}</td><td class="v2">{{ cell(row, 'away') }}</td></tr>
+      <tr><td width="38%" class="gv{% if not loop.first %} bt{% endif %}">{{ cell(row, 'home') }}</td><td width="24%" align="center" class="gk{% if not loop.first %} bt{% endif %}">{{ row.label }}</td><td width="38%" align="right" class="gv{% if not loop.first %} bt{% endif %}">{{ cell(row, 'away') }}</td></tr>
       {% endfor %}
+      {% if card.h2h %}
+      <tr><td class="gv{% if card.rows %} bt{% endif %}">{% for m in card.h2h %}{{ letters(m.home) }}{% endfor %}</td><td align="center" class="gk{% if card.rows %} bt{% endif %}">Last {{ card.h2h|length }} meetings<br><span style="font-weight:400">{{ card.h2h[-1].year }}–{{ card.h2h[0].year }}</span></td><td align="right" class="gv{% if card.rows %} bt{% endif %}">{% for m in card.h2h %}{{ letters(m.away) }}{% endfor %}</td></tr>
+      {% endif %}
+      {% if card.referee %}
+      <tr><td colspan="3" align="center" class="gv bt rf"><img src="{{ whistle_url }}" width="16" height="16" alt="Referee" style="vertical-align:-3px;border:0;"> <b>{{ card.referee }}</b>
+        {%- if card.ref_yellows is not none %}&nbsp; <span class="crd" style="background:{{ c.yellow_card }};"></span> {{ '%.1f'|format(card.ref_yellows) }}{% endif -%}
+        {%- if card.ref_reds is not none %}&nbsp; <span class="crd" style="background:{{ c.red_card }};"></span> {{ '%.2f'|format(card.ref_reds) }}{% endif %}</td></tr>
+      {% endif %}
     </table>
   </td></tr>
   {% endif %}
 
-  {# last 5 meetings + referee: whistle, name, yellow and red cards per game #}
-  {% if card.h2h or card.referee %}
+  {# odds: 1 under the home team, X on the centre line, 2 under the away team #}
+  {% if card.odds %}
   <tr><td class="sec in">
     <table cellpadding="0" cellspacing="0" width="100%"><tr>
-      {% if card.h2h %}
-      <td class="stack sl" valign="top" width="50%">
-        <div class="lb">Last {{ card.h2h|length }} meetings, {{ card.home_short }} first</div>
-        <div style="margin-top:4px;">{% for m in card.h2h %}{{ letters(m.letter) }}{% endfor %}</div>
-        <div class="m" style="font-size:11px;">{{ card.h2h[0].year }}{% if card.h2h|length > 1 %} back to {{ card.h2h[-1].year }}{% endif %}</div>
-      </td>
-      {% endif %}
-      {% if card.referee %}
-      <td class="stack" valign="top">
-        <div class="lb">Referee</div>
-        <div class="rf"><img src="{{ whistle_url }}" width="16" height="16" alt="Referee" style="vertical-align:-3px;border:0;"> <b>{{ card.referee }}</b>
-          {%- if card.ref_yellows is not none %}&nbsp; <span class="crd" title="Yellow cards per game" style="background:{{ c.yellow_card }};"></span> {{ '%.1f'|format(card.ref_yellows) }}{% endif -%}
-          {%- if card.ref_reds is not none %}&nbsp; <span class="crd" title="Red cards per game" style="background:{{ c.red_card }};"></span> {{ '%.2f'|format(card.ref_reds) }}{% endif %}</div>
-      </td>
-      {% endif %}
-    </tr></table>
-  </td></tr>
-  {% endif %}
-
-  {# odds vs public, with the value flag #}
-  {% if card.odds %}
-  <tr><td class="sec">
-    <table cellpadding="0" cellspacing="0" width="100%"><tr>
-      {% for o in card.odds.cells %}
-      <td width="33%" class="oc{% if not loop.last %} ob{% endif %}">
+      {% for o in card.odds.cells %}{% set al = ['left', 'center', 'right'][loop.index0] %}
+      <td width="{{ '24%' if loop.index0 == 1 else '38%' }}" valign="top" align="{{ al }}" style="text-align:{{ al }};">
         <span class="ol d o{{ o.o }}">{{ o.o }}</span>
         <div class="on d">{{ o.odds }}</div>
         <div class="op">Odds {{ o.implied }}%{% if o.public is not none %}<br>Public {{ o.public }}%{% endif %}</div>
@@ -230,23 +212,15 @@
   </td></tr>
   {% endif %}
 
-  {# analysis #}
+  {# analysis, then why and risks full width (running text reads best left-aligned) #}
   {% if card.analysis %}
   <tr><td class="sec in" style="padding-top:14px;line-height:1.6;">{{ card.analysis }}</td></tr>
   {% endif %}
-
-  {# why / risks #}
-  {% if card.why or card.risks %}
-  <tr><td style="padding:0 16px 16px;">
-    <table cellpadding="0" cellspacing="0" width="100%"><tr>
-      {% if card.why %}
-      <td class="stack sl" valign="top" width="50%"><div class="lb">Why</div>{% for f in card.why %}<div class="li"><b style="color:{{ c.positive }};">▸</b> {{ f }}</div>{% endfor %}</td>
-      {% endif %}
-      {% if card.risks %}
-      <td class="stack" valign="top" width="50%"><div class="lb">Risks</div>{% for r in card.risks %}<div class="li"><b style="color:{{ c.caution }};">◆</b> {{ r }}</div>{% endfor %}</td>
-      {% endif %}
-    </tr></table>
-  </td></tr>
+  {% if card.why %}
+  <tr><td style="padding:0 16px 10px;"><div class="lb">Why</div>{% for f in card.why %}<div class="li"><b style="color:{{ c.positive }};">▸</b> {{ f }}</div>{% endfor %}</td></tr>
+  {% endif %}
+  {% if card.risks %}
+  <tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div>{% for r in card.risks %}<div class="li"><b style="color:{{ c.caution }};">◆</b> {{ r }}</div>{% endfor %}</td></tr>
   {% endif %}
 
 </table>

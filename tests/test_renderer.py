@@ -49,9 +49,10 @@ def test_odds_flags_value_where_public_underbets():
     assert [c["value"] for c in odds["cells"]] == [None, None, 3]    # 21% by odds vs 18% public
 
 
-def test_h2h_is_from_home_team_perspective():
+def test_h2h_gives_each_side_its_own_results():
     h2h = renderer._h2h(_match())
-    assert [x["letter"] for x in h2h] == ["D", "L"]                 # 1-2 away loss reads as L for City
+    assert [x["home"] for x in h2h] == ["D", "L"]                   # 1-2 away loss reads as L for City
+    assert [x["away"] for x in h2h] == ["D", "W"]                   # ...and as W for Brighton
     assert h2h[0]["year"] == "2026"
 
 
@@ -74,6 +75,13 @@ def test_chips_cover_form_fatigue_and_key_absence():
     ]
 
 
+def test_rest_and_next_match_share_one_chip():
+    ts = _match().home_stats
+    ts.schedule.upcoming_big_match = "Champions League in 3d"
+    texts = [c["text"] for c in renderer._chips(ts, absent_count=1) if c["kind"] == "caution"]
+    assert texts == ["2 days rest, Champions League in 3d"]
+
+
 def test_render_shows_picks_referee_and_cards():
     m = _match()
     pred = MatchPrediction(game_number=3, home_team=m.home_team, away_team=m.away_team,
@@ -89,7 +97,6 @@ def test_render_shows_picks_referee_and_cards():
     assert "static/icons/whistle.png" in html and "Craig Pawson" in html
     assert "3.5" in html and "0.10" in html                           # yellows and reds per game
     assert "First paragraph." in html and "Second paragraph." not in html
-    assert "Man City" in html
     assert "\n  " not in html.split("</style>")[1]                    # indentation compacted away
 
 
