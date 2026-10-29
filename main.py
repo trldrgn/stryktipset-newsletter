@@ -7,6 +7,8 @@ Usage:
   python main.py --dry-run        # Run pipeline but don't send email (saves HTML locally)
   python main.py --draw 4945      # Run for a specific draw number
   python main.py --test-email     # Send the most recent newsletter HTML via email (test delivery)
+  python main.py --run --review-to me@example.com   # Full run, but email only the reviewer
+  python main.py --send-archived  # Send the reviewed newsletter for the current draw to everyone
   python main.py --improve        # Print model improvement analysis prompt (monthly use)
   python main.py --collect-xg     # Collect xG data for last 7 days (run Fridays)
   python main.py --backfill-xg    # Backfill xG data for last 5 weeks (first-time setup)
@@ -79,7 +81,10 @@ def log_data_coverage(matches: list[Match]) -> None:
     logger.info("DATA COVERAGE: %s", " | ".join(parts))
 
 
-def run_pipeline(draw_number: int | None = None, dry_run: bool = False, force: bool = False) -> None:
+def run_pipeline(
+    draw_number: int | None = None, dry_run: bool = False, force: bool = False,
+    review_to: str | None = None,
+) -> None:
     """
     Full newsletter pipeline:
       1. Evaluate last week's predictions
@@ -204,6 +209,8 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False, force: b
     draw_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     archive_path = NEWSLETTERS_DIR / f"draw_{current_draw}_{draw_date}.html"
     archive_path.write_text(html_body, encoding="utf-8")
+    # Kept next to the HTML so --send-archived can send this exact email later
+    archive_path.with_suffix(".subject.txt").write_text(subject, encoding="utf-8")
     logger.info("Newsletter archived to %s", archive_path)
 
     if dry_run:
@@ -214,6 +221,11 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False, force: b
         logger.info("DRY RUN: HTML also saved to %s", local_path)
         print(f"\nDry run complete. Newsletter saved to: {local_path}")
         print(f"Archived copy: {archive_path}")
+    elif review_to:
+        # Review mode: everything is saved as in a real run, but only the reviewer
+        # gets the email. --send-archived then sends this exact HTML to everyone.
+        send_newsletter(f"[REVIEW] {subject}", html_body, recipients=[review_to])
+        logger.info("Review copy sent to %s. Approve, then run --send-archived.", review_to)
     else:
         sent = send_newsletter(subject, html_body)
         logger.info("Newsletter sent to %d recipients", sent)
@@ -233,6 +245,32 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False, force: b
     logger.info("=" * 60)
     logger.info("PIPELINE COMPLETE in %.1f seconds", elapsed)
     logger.info("=" * 60)
+
+
+def send_archived(draw_number: int | None = None, force: bool = False) -> int:
+    """
+    Send the archived newsletter for a draw (the one a review run produced) to
+    all recipients, without re-running the pipeline or calling Claude again.
+    A `.sent` marker next to the HTML stops an accidental second send.
+    """
+    draw = draw_number or get_current_draw_number()
+    archived = sorted(NEWSLETTERS_DIR.glob(f"draw_{draw}_*.html"))
+    if not archived:
+        logger.error("No archived newsletter for draw %d — run the pipeline (review mode) first", draw)
+        return 0
+    html_path = archived[-1]
+    marker = html_path.with_suffix(".sent")
+    if marker.exists() and not force:
+        logger.error("Draw %d was already sent (%s). Use --force to send again.", draw, marker.name)
+        return 0
+
+    subject_path = html_path.with_suffix(".subject.txt")
+    subject = subject_path.read_text(encoding="utf-8").strip() if subject_path.exists() else f"Stryktipset #{draw}"
+    sent = send_newsletter(subject, html_path.read_text(encoding="utf-8"))
+    if sent:
+        marker.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
+    logger.info("Sent archived newsletter %s to %d recipients", html_path.name, sent)
+    return sent
 
 
 # ---------------------------------------------------------------------------
@@ -330,6 +368,16 @@ def main() -> None:
         help="LOCAL ONLY: collect Sofascore xG + missing players for the current draw via headless browser",
     )
     parser.add_argument(
+        "--review-to",
+        metavar="EMAIL",
+        help="Real run (predictions saved), but email only this address for review",
+    )
+    parser.add_argument(
+        "--send-archived",
+        action="store_true",
+        help="Send the archived (reviewed) newsletter for the current draw (or --draw) to all recipients",
+    )
+    parser.add_argument(
         "--test-email",
         action="store_true",
         help="Send the most recent newsletter HTML to configured recipients (test delivery)",
@@ -379,6 +427,10 @@ def main() -> None:
         print("\nCopy the above and paste it into a Claude conversation to get model improvement recommendations.")
         return
 
+    if args.send_archived:
+        sent = send_archived(args.draw or None, force=args.force)
+        sys.exit(0 if sent else 1)
+
     if args.test_email:
         # Find the most recent archived newsletter
         html_files = sorted(NEWSLETTERS_DIR.glob("draw_*.html"))
@@ -398,7 +450,8 @@ def main() -> None:
 
     if args.run or args.dry_run or args.draw:
         draw_number = args.draw or None
-        run_pipeline(draw_number=draw_number, dry_run=args.dry_run, force=args.force)
+        run_pipeline(draw_number=draw_number, dry_run=args.dry_run, force=args.force,
+                     review_to=args.review_to)
         return
 
     # Default: start scheduler

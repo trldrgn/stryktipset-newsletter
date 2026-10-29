@@ -1,15 +1,19 @@
 name: Stryktipset Newsletter
 
 on:
-  # Every Saturday at 06:30 UTC = 07:30 Stockholm (CET, winter) / 08:30 (CEST, summer)
-  # CEST runs late March–late October. Pipeline takes ~20 min. Coupon closes ~15:59.
+  # Every Friday at 17:00 UTC = 18:00 Stockholm (CET, winter) / 19:00 (CEST, summer),
+  # after the Friday press conferences, so the newsletter is in inboxes for Saturday
+  # morning. (It used to run Saturday morning to fit API-Football's daily quota;
+  # FotMob has no such limit.) Coupon closes Saturday ~15:59.
   # GitHub delays scheduled runs heavily (observed 4–6h late), so backup crons
-  # fire later in the morning. The already-run guard in main.py makes any run
-  # after the first a fast no-op (predictions file for the draw already exists).
+  # fire later Friday and early Saturday. The already-run guard in main.py makes
+  # any run after the first a fast no-op (predictions file for the draw exists),
+  # which is also how a manual review run "kills" that week's automatic run.
   schedule:
-    - cron: "30 6 * * 6"
-    - cron: "30 8 * * 6"
-    - cron: "30 10 * * 6"
+    - cron: "0 17 * * 5"
+    - cron: "0 19 * * 5"
+    - cron: "0 21 * * 5"
+    - cron: "30 6 * * 6"     # last resort if every Friday run failed
 
   # Manual trigger — also lets you specify a draw number for testing/backfill
   workflow_dispatch:
@@ -25,6 +29,15 @@ on:
         default: false
       force_rerun:
         description: "Re-run even if this draw was already sent (resends as 'uppdaterad')"
+        required: false
+        type: boolean
+        default: false
+      review_to:
+        description: "Review mode: full run (predictions saved) but email ONLY this address"
+        required: false
+        type: string
+      send_archived:
+        description: "Send the reviewed newsletter for this draw to everyone (no new analysis)"
         required: false
         type: boolean
         default: false
@@ -83,7 +96,9 @@ jobs:
         id: args
         run: |
           ARGS="--run"
-          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+          if [ "${{ github.event.inputs.send_archived }}" = "true" ]; then
+            ARGS="--send-archived"
+          elif [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             ARGS="--dry-run"
           fi
           if [ "${{ github.event.inputs.force_rerun }}" = "true" ]; then
@@ -94,9 +109,11 @@ jobs:
           fi
           echo "cli_args=$ARGS" >> $GITHUB_OUTPUT
 
+      # The review address goes through an env var, never pasted into the shell command
       - name: Run newsletter pipeline
-        run: python main.py ${{ steps.args.outputs.cli_args }}
+        run: python main.py ${{ steps.args.outputs.cli_args }} ${REVIEW_TO:+--review-to "$REVIEW_TO"}
         env:
+          REVIEW_TO: ${{ github.event.inputs.send_archived != 'true' && github.event.inputs.review_to || '' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}

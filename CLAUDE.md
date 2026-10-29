@@ -2,7 +2,7 @@
 
 ## What this project is
 
-An automated Python app that runs every Saturday at 08:00 Europe/Stockholm. It fetches the week's Stryktipset coupon (13 Swedish football pool matches), enriches each game with structured stats and live news, sends everything to Claude for editorial analysis, then emails a premium HTML newsletter to subscribers.
+An automated Python app that runs every Friday at 18:00 Europe/Stockholm (ready for Saturday morning). It fetches the week's Stryktipset coupon (13 Swedish football pool matches), enriches each game with structured stats and live news, sends everything to Claude for editorial analysis, then emails a premium HTML newsletter to subscribers.
 
 The long-term goal is to **beat bookmaker odds** through systematic signal tracking — not gambling luck. Every prediction is stored and evaluated so the model gets smarter over time.
 
@@ -72,7 +72,11 @@ python main.py --dry-run --draw 4945
 # Run the full pipeline and send email
 python main.py --run
 
-# Start the weekly scheduler (every Saturday 08:00 Stockholm)
+# Full run, but email only the reviewer; then send that exact HTML to everyone
+python main.py --run --review-to you@example.com
+python main.py --send-archived
+
+# Start the weekly scheduler (local; production uses the GitHub workflow)
 python main.py
 
 # Print model improvement analysis prompt (use monthly)
@@ -273,8 +277,14 @@ NEWSLETTER_RECIPIENTS
 **Workflows:**
 | Workflow | Schedule | What it does |
 |---|---|---|
-| `newsletter.yml` | Saturday 07:00 UTC | Full pipeline → send newsletter → commit predictions |
-| `xg-collector.yml` | Tue + Fri 20:00 UTC | Collect xG data for Championship/League One/Allsvenskan |
+| `newsletter.yml` | Friday 17:00 UTC (+ backups Fri 19:00, 21:00, Sat 06:30) | Full pipeline → send newsletter → commit predictions |
+| `xg-collector.yml` | Manual only (schedule off: needs the suspended API-Football key) | Collect xG for Championship/League One/Allsvenskan |
+
+**Review before sending (manual weeks):**
+1. Run `newsletter.yml` with `review_to=<your email>`. The full pipeline runs and saves predictions, but only you get the email (subject starts with "[REVIEW]"). Saved predictions make that week's scheduled runs skip.
+2. When it looks right, run `newsletter.yml` with `send_archived=true`. That exact HTML goes to all subscribers. There's no new Claude call, and a `.sent` marker blocks a second send (`force_rerun` overrides).
+
+Healthchecks.io: the check's expected schedule lives on healthchecks.io and must match the Friday cron.
 
 Both workflows commit data back to the repo automatically.
 Both support `workflow_dispatch` for manual triggering.
