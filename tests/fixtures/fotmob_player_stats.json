@@ -1,0 +1,182 @@
+{
+ "goals": {
+  "TopLists": [
+   {
+    "StatName": "goals",
+    "StatList": [
+     {
+      "ParticipantName": "Sam Dalby",
+      "ParticiantId": 789566,
+      "TeamId": 8559,
+      "StatValue": 4.0
+     },
+     {
+      "ParticipantName": "Dominic Ballard",
+      "ParticiantId": 1254208,
+      "TeamId": 8427,
+      "StatValue": 3.0
+     },
+     {
+      "ParticipantName": "Thierry Gale",
+      "ParticiantId": 932160,
+      "TeamId": 8559,
+      "StatValue": 3.0
+     },
+     {
+      "ParticipantName": "Scott Twine",
+      "ParticiantId": 746406,
+      "TeamId": 8427,
+      "StatValue": 3.0
+     },
+     {
+      "ParticipantName": "Atsuki Ito",
+      "ParticiantId": 1227813,
+      "TeamId": 8559,
+      "StatValue": 2.0
+     },
+     {
+      "ParticipantName": "Lorent Tolaj",
+      "ParticiantId": 1113899,
+      "TeamId": 8427,
+      "StatValue": 2.0
+     },
+     {
+      "ParticipantName": "Thelonius Bair",
+      "ParticiantId": 942893,
+      "TeamId": 8559,
+      "StatValue": 2.0
+     },
+     {
+      "ParticipantName": "Ethan Erhahon",
+      "ParticiantId": 914169,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Gaizka Larrazabal",
+      "ParticiantId": 802329,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Jason Knight",
+      "ParticiantId": 1051415,
+      "TeamId": 8427,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Josh Sheehan",
+      "ParticiantId": 489335,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Lisav Naif Eissat",
+      "ParticiantId": 1413851,
+      "TeamId": 8427,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Rob Dickie",
+      "ParticiantId": 621182,
+      "TeamId": 8427,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Xavier Simons",
+      "ParticiantId": 1096398,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Yu Hirakawa",
+      "ParticiantId": 1319774,
+      "TeamId": 8427,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Rúben Rodrigues",
+      "ParticiantId": 955974,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     }
+    ]
+   }
+  ]
+ },
+ "assists": {
+  "TopLists": [
+   {
+    "StatName": "goal_assist",
+    "StatList": [
+     {
+      "ParticipantName": "Rio Cardines",
+      "ParticiantId": 1422586,
+      "TeamId": 8427,
+      "StatValue": 6.0
+     },
+     {
+      "ParticipantName": "Gaizka Larrazabal",
+      "ParticiantId": 802329,
+      "TeamId": 8559,
+      "StatValue": 3.0
+     },
+     {
+      "ParticipantName": "Rúben Rodrigues",
+      "ParticiantId": 955974,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Thierry Gale",
+      "ParticiantId": 932160,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Jed Wallace",
+      "ParticiantId": 287892,
+      "TeamId": 8427,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Max Conway",
+      "ParticiantId": 1194102,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Samuel Iling-Junior",
+      "ParticiantId": 1368061,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Thelonius Bair",
+      "ParticiantId": 942893,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Kyliane Dong",
+      "ParticiantId": 1393660,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "Lorent Tolaj",
+      "ParticiantId": 1113899,
+      "TeamId": 8427,
+      "StatValue": 1.0
+     },
+     {
+      "ParticipantName": "John McAtee",
+      "ParticiantId": 843101,
+      "TeamId": 8559,
+      "StatValue": 1.0
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,522 @@
+{
+ "general": {
+  "matchId": "5836898",
+  "leagueId": 48,
+  "parentLeagueId": 48,
+  "homeTeam": {
+   "name": "Bolton Wanderers",
+   "id": 8559
+  },
+  "awayTeam": {
+   "name": "Bristol City",
+   "id": 8427
+  },
+  "matchTimeUTCDate": "2026-10-31T15:00:00.000Z"
+ },
+ "content": {
+  "lineup": {
+   "homeTeam": {
+    "id": 8559,
+    "name": "Bolton Wanderers",
+    "coach": {
+     "id": 23603,
+     "age": 42,
+     "optaId": "3",
+     "name": "Steven Schumacher",
+     "countryName": "England",
+     "countryCode": "ENG",
+     "firstName": "Steven",
+     "lastName": "Schumacher",
+     "nationalTeamId": 8491,
+     "primaryTeamId": 8559,
+     "primaryTeamName": "Bolton Wanderers",
+     "usualPlayingPositionId": null,
+     "isCoach": true
+    },
+    "unavailable": [
+     {
+      "id": 914169,
+      "age": 25,
+      "name": "Ethan Erhahon",
+      "countryName": "Scotland",
+      "countryCode": "SCO",
+      "marketValue": 892771,
+      "unavailability": {
+       "injuryId": 87,
+       "type": "injury",
+       "expectedReturn": "Doubtful"
+      },
+      "firstName": "Ethan",
+      "lastName": "Erhahon",
+      "nationalTeamId": 8498
+     },
+     {
+      "id": 1127293,
+      "age": 26,
+      "name": "Chris Forino-Joseph",
+      "countryName": "Saint Lucia",
+      "countryCode": "LCA",
+      "marketValue": 415536,
+      "unavailability": {
+       "injuryId": 47,
+       "type": "injury",
+       "expectedReturn": "Early November 2026"
+      },
+      "firstName": "Chris",
+      "lastName": "Forino-Joseph",
+      "nationalTeamId": 127408
+     }
+    ]
+   },
+   "awayTeam": {
+    "id": 8427,
+    "name": "Bristol City",
+    "coach": {
+     "id": 1437592,
+     "age": 44,
+     "optaId": "19",
+     "name": "Michael Skubala",
+     "countryName": "England",
+     "countryCode": "ENG",
+     "firstName": "Michael",
+     "lastName": "Skubala",
+     "nationalTeamId": 8491,
+     "primaryTeamId": 8427,
+     "primaryTeamName": "Bristol City",
+     "usualPlayingPositionId": null,
+     "isCoach": true
+    },
+    "unavailable": [
+     {
+      "id": 1113899,
+      "age": 25,
+      "name": "Lorent Tolaj",
+      "countryName": "Switzerland",
+      "countryCode": "SUI",
+      "marketValue": 1587781,
+      "unavailability": {
+       "injuryId": 87,
+       "type": "injury",
+       "expectedReturn": "Doubtful"
+      },
+      "firstName": "Lorent",
+      "lastName": "Tolaj",
+      "nationalTeamId": 6717
+     },
+     {
+      "id": 1231794,
+      "age": 24,
+      "name": "Noah Eile",
+      "countryName": "Sweden",
+      "countryCode": "SWE",
+      "marketValue": 4078529,
+      "unavailability": {
+       "injuryId": 92,
+       "type": "injury",
+       "expectedReturn": "Doubtful"
+      },
+      "firstName": "Noah",
+      "lastName": "Eile",
+      "nationalTeamId": 8520
+     }
+    ]
+   }
+  },
+  "h2h": {
+   "summary": [
+    3,
+    2,
+    4
+   ],
+   "matches": [
+    {
+     "time": {
+      "utcTime": "2027-01-23T15:00:00.000Z"
+     },
+     "matchUrl": "/matches/bristol-city-vs-bolton-wanderers/2dwei6#5837068",
+     "league": {
+      "name": "Championship",
+      "id": "48",
+      "pageUrl": "/leagues/48/overview/championship"
+     },
+     "home": {
+      "name": "Bristol City",
+      "id": "8427"
+     },
+     "status": {
+      "utcTime": "2027-01-23T15:00:00.000Z",
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "finished": false,
+     "away": {
+      "name": "Bolton Wanderers",
+      "id": "8559"
+     }
+    },
+    {
+     "time": {
+      "utcTime": "2019-01-25T19:45:00.000Z"
+     },
+     "matchUrl": "/matches/bristol-city-vs-bolton-wanderers/2dwei6#2961421",
+     "league": {
+      "name": "FA Cup",
+      "id": "132",
+      "pageUrl": "/leagues/132/overview/fa-cup"
+     },
+     "home": {
+      "name": "Bristol City",
+      "id": "8427"
+     },
+     "status": {
+      "utcTime": "2019-01-25T19:45:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "2 - 1",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "finished": false,
+     "away": {
+      "name": "Bolton Wanderers",
+      "id": "8559"
+     }
+    },
+    {
+     "time": {
+      "utcTime": "2019-01-12T15:00:00.000Z"
+     },
+     "matchUrl": "/matches/bristol-city-vs-bolton-wanderers/2dwei6#2791639",
+     "league": {
+      "name": "Championship",
+      "id": "48",
+      "pageUrl": "/leagues/48/overview/championship"
+     },
+     "home": {
+      "name": "Bristol City",
+      "id": "8427"
+     },
+     "status": {
+      "utcTime": "2019-01-12T15:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "2 - 1",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "finished": false,
+     "away": {
+      "name": "Bolton Wanderers",
+      "id": "8559"
+     }
+    },
+    {
+     "time": {
+      "utcTime": "2018-08-11T14:00:00.000Z"
+     },
+     "matchUrl": "/matches/bristol-city-vs-bolton-wanderers/2dwei6#2791340",
+     "league": {
+      "name": "Championship",
+      "id": "48",
+      "pageUrl": "/leagues/48/overview/championship"
+     },
+     "home": {
+      "name": "Bolton Wanderers",
+      "id": "8559"
+     },
+     "status": {
+      "utcTime": "2018-08-11T14:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "2 - 2",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "finished": false,
+     "away": {
+      "name": "Bristol City",
+      "id": "8427"
+     }
+    },
+    {
+     "time": {
+      "utcTime": "2018-02-02T20:00:00.000Z"
+     },
+     "matchUrl": "/matches/bristol-city-vs-bolton-wanderers/2dwei6#2529534",
+     "league": {
+      "name": "Championship",
+      "id": "48",
+      "pageUrl": "/leagues/48/overview/championship"
+     },
+     "home": {
+      "name": "Bolton Wanderers",
+      "id": "8559"
+     },
+     "status": {
+      "utcTime": "2018-02-02T20:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "1 - 0",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "finished": false,
+     "away": {
+      "name": "Bristol City",
+      "id": "8427"
+     }
+    },
+    {
+     "time": {
+      "utcTime": "2017-09-26T18:45:00.000Z"
+     },
+     "matchUrl": "/matches/bristol-city-vs-bolton-wanderers/2dwei6#2529296",
+     "league": {
+      "name": "Championship",
+      "id": "48",
+      "pageUrl": "/leagues/48/overview/championship"
+     },
+     "home": {
+      "name": "Bristol City",
+      "id": "8427"
+     },
+     "status": {
+      "utcTime": "2017-09-26T18:45:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "2 - 0",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "finished": false,
+     "away": {
+      "name": "Bolton Wanderers",
+      "id": "8559"
+     }
+    },
+    {
+     "time": {
+      "utcTime": "2016-03-19T15:00:00.000Z"
+     },
+     "matchUrl": "/matches/bristol-city-vs-bolton-wanderers/2dwei6#1988072",
+     "league": {
+      "name": "Championship",
+      "id": "48",
+      "pageUrl": "/leagues/48/overview/championship"
+     },
+     "home": {
+      "name": "Bristol City",
+      "id": "8427"
+     },
+     "status": {
+      "utcTime": "2016-03-19T15:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "6 - 0",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "finished": false,
+     "away": {
+      "name": "Bolton Wanderers",
+      "id": "8559"
+     }
+    },
+    {
+     "time": {
+      "utcTime": "2015-11-07T15:00:00.000Z"
+     },
+     "matchUrl": "/matches/bristol-city-vs-bolton-wanderers/2dwei6#1987807",
+     "league": {
+      "name": "Championship",
+      "id": "48",
+      "pageUrl": "/leagues/48/overview/championship"
+     },
+     "home": {
+      "name": "Bolton Wanderers",
+      "id": "8559"
+     },
+     "status": {
+      "utcTime": "2015-11-07T15:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "0 - 0",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "finished": false,
+     "away": {
+      "name": "Bristol City",
+      "id": "8427"
+     }
+    },
+    {
+     "time": {
+      "utcTime": "2013-04-13T14:00:00.000Z"
+     },
+     "matchUrl": "/matches/bristol-city-vs-bolton-wanderers/2dwei6#1230127",
+     "league": {
+      "name": "Championship",
+      "id": "48",
+      "pageUrl": "/leagues/48/overview/championship"
+     },
+     "home": {
+      "name": "Bristol City",
+      "id": "8427"
+     },
+     "status": {
+      "utcTime": "2013-04-13T14:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "1 - 2",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "finished": false,
+     "away": {
+      "name": "Bolton Wanderers",
+      "id": "8559"
+     }
+    },
+    {
+     "time": {
+      "utcTime": "2012-10-20T14:00:00.000Z"
+     },
+     "matchUrl": "/matches/bristol-city-vs-bolton-wanderers/2dwei6#1229699",
+     "league": {
+      "name": "Championship",
+      "id": "48",
+      "pageUrl": "/leagues/48/overview/championship"
+     },
+     "home": {
+      "name": "Bolton Wanderers",
+      "id": "8559"
+     },
+     "status": {
+      "utcTime": "2012-10-20T14:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "3 - 2",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "finished": false,
+     "away": {
+      "name": "Bristol City",
+      "id": "8427"
+     }
+    }
+   ]
+  },
+  "matchFacts": {
+   "infoBox": {
+    "Referee": {
+     "imgUrl": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+     "text": "Robert Madley",
+     "countryCode": "ENG",
+     "country": "England",
+     "id": 1001079749,
+     "leagueId": 48,
+     "leagueName": "Championship",
+     "stats": [
+      {
+       "type": "matches",
+       "value": 28,
+       "valueType": "total"
+      },
+      {
+       "type": "yellowCards",
+       "value": 4.39,
+       "valueType": "perMatch",
+       "average": 3.78,
+       "total": 123,
+       "averageType": "above",
+       "fillPercentage": 67.19,
+       "averagePercentage": 50
+      },
+      {
+       "type": "redCards",
+       "value": 1,
+       "valueType": "total"
+      },
+      {
+       "type": "unknown",
+       "value": 4,
+       "valueType": "total"
+      },
+      {
+       "type": "penalties",
+       "value": 7,
+       "valueType": "total"
+      },
+      {
+       "type": "fouls",
+       "value": 22.04,
+       "valueType": "perMatch",
+       "average": 21.99,
+       "total": 617,
+       "averageType": "average",
+       "fillPercentage": 50.31,
+       "averagePercentage": 50
+      }
+     ]
+    }
+   }
+  }
+ }
+}

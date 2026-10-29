@@ -13,7 +13,11 @@ The long-term goal is to **beat bookmaker odds** through systematic signal track
 ```
 Svenska Spel API → 13 Match objects
        ↓
-API-Football (100 req/day free tier) → H2H, injuries, standings
+API-Football (suspended — degrades to nothing)
+       ↓
+FotMob (primary) → xG, injuries/suspensions, H2H, home/away tables, referee, schedule
+       ↓   (every step below only fills fields still empty = per-field backups)
+football-data.co.uk CSVs → form, standings, shots, H2H backup
        ↓
 Football-Data.org (free tier) → form, league position, points (PL/Championship/etc.)
        ↓
@@ -36,6 +40,7 @@ Evaluator → score last week → append to data/performance/history.json
 | All data models | `models/match.py` |
 | Config / env | `config.py` |
 | Svenska Spel fetch | `fetchers/svenska_spel.py` |
+| FotMob (primary data) | `fetchers/fotmob.py` |
 | API-Football fetch | `fetchers/api_football.py` |
 | Football-Data.org | `fetchers/football_data.py` |
 | Understat xG | `fetchers/understat_xg.py` |
@@ -124,13 +129,18 @@ python main.py --backfill-xg
 
 ---
 
-## Data source status (2026-10-17)
+## Data source status (2026-10-29)
 
-- **API-Football: account suspended.** Every call fails; the code degrades gracefully. The xG collector (same key) collects nothing.
-- **H2H:** football-data.co.uk past-season CSVs (`enrich_with_csv_h2h`, current + 3 seasons, all divisions).
-- **Premier League injuries:** official FPL feed (`fetchers/fpl.py`).
+- **FotMob is the primary source** (`fetchers/fotmob.py`, step 3a). It covers xG (last 5 + season xG table/xPts), injuries + suspensions with expected return, H2H (last 5, all competitions), home/away tables, referee, coach, and schedule across all competitions. Unofficial public JSON (`/api/data/...`), no key; verified working from GitHub runners.
+  - **Per-field fallback:** FotMob and every later source only fill fields that are still empty, so one failed FotMob field falls back alone: CSV (form, tables, H2H), Understat (xG), FPL (PL absences), Sofascore snapshot.
+  - A structured source that sets `absences_checked_source` ("checked, none missing") also blocks the absence backups.
+  - FotMob must run **after** API-Football, which resets `TeamStats` when it fails.
+  - A circuit breaker stops calling FotMob after 4 consecutive failures. `FotMob coverage:` and `DATA COVERAGE:` log lines show the gaps for each field.
+  - No FotMob xG for Superettan or the National League.
+- **API-Football: account suspended** (still, 2026-10-29). Its free plan only reaches the 2022–2024 seasons anyway. The xG collector (same key) collects nothing.
+- **H2H backup:** football-data.co.uk past-season CSVs (`enrich_with_csv_h2h`, current + 3 seasons, all divisions).
+- **Premier League injuries backup:** official FPL feed (`fetchers/fpl.py`).
 - **Sofascore:** blocks GitHub runners by IP, and challenges headless sessions from home connections after a few runs. Live calls are no longer made in the pipeline. Instead `apply_sofascore_snapshot()` reads `data/sofascore/draw_{N}.json`, written locally by `python main.py --collect-sofascore` (or `scripts/collect_sofascore.ps1`; setup in `requirements-local.txt`). A missing snapshot is a warning, not an error. The collector refuses to write an empty (blocked) snapshot.
-- **Championship/League One:** no structured injuries or real xG unless a Sofascore snapshot exists.
 - `TeamStats.absences_checked_source` separates "checked, fully fit" from "no data" in the prompt.
 - **Re-sending a draw:** run the workflow with `force_rerun=true` (`--force`). It evaluates the previous draw, replaces rather than duplicates its `history.json` entry, and appends "(uppdaterad)" to the subject.
 

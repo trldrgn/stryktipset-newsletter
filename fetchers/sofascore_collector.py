@@ -156,7 +156,7 @@ def _apply_side(stats: TeamStats, side: dict) -> tuple[bool, bool]:
         )
         xg_applied = True
 
-    if not stats.injuries:
+    if not stats.injuries and not stats.absences_checked_source:
         absences = side.get("absences") or []
         if absences:
             stats.injuries = [

@@ -1,0 +1,67 @@
+{
+ "general": {
+  "matchId": "5836887",
+  "homeTeam": {
+   "name": "Bolton Wanderers",
+   "id": 8559
+  },
+  "awayTeam": {
+   "name": "Middlesbrough",
+   "id": 8549
+  }
+ },
+ "content": {
+  "stats": {
+   "Periods": {
+    "All": {
+     "stats": [
+      {
+       "title": "Top stats",
+       "key": "top_stats",
+       "stats": [
+        {
+         "title": "Expected goals (xG)",
+         "key": "expected_goals",
+         "stats": [
+          "0.97",
+          "4.38"
+         ]
+        },
+        {
+         "title": "Total shots",
+         "key": "total_shots",
+         "stats": [
+          12,
+          31
+         ]
+        }
+       ]
+      },
+      {
+       "title": "Expected goals (xG)",
+       "key": "expected_goals",
+       "stats": [
+        {
+         "title": "Expected goals (xG)",
+         "key": "expected_goals",
+         "stats": [
+          null,
+          null
+         ]
+        },
+        {
+         "title": "Expected goals (xG)",
+         "key": "expected_goals",
+         "stats": [
+          "0.97",
+          "4.38"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   }
+  }
+ }
+}

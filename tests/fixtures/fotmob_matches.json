@@ -1,0 +1,641 @@
+{
+ "leagues": [
+  {
+   "ccode": "ENG",
+   "id": 47,
+   "primaryId": 47,
+   "name": "Premier League",
+   "matches": [
+    {
+     "id": 5795498,
+     "leagueId": 47,
+     "time": "31.10.2026 13:30",
+     "home": {
+      "id": 8455,
+      "score": 0,
+      "name": "Chelsea",
+      "longName": "Chelsea"
+     },
+     "away": {
+      "id": 10260,
+      "score": 0,
+      "name": "Manchester United",
+      "shortName": "Man United",
+      "longName": "Manchester United"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "9",
+     "status": {
+      "utcTime": "2026-10-31T12:30:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 13:30:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793449800000
+    },
+    {
+     "id": 5795495,
+     "leagueId": 47,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 8678,
+      "score": 0,
+      "name": "AFC Bournemouth",
+      "shortName": "Bournemouth",
+      "longName": "AFC Bournemouth"
+     },
+     "away": {
+      "id": 8463,
+      "score": 0,
+      "name": "Leeds United",
+      "shortName": "Leeds",
+      "longName": "Leeds United"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "9",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5795497,
+     "leagueId": 47,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 9937,
+      "score": 0,
+      "name": "Brentford",
+      "longName": "Brentford"
+     },
+     "away": {
+      "id": 10203,
+      "score": 0,
+      "name": "Nottingham Forest",
+      "shortName": "Nottm Forest",
+      "longName": "Nottingham Forest"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "9",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5795499,
+     "leagueId": 47,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 8669,
+      "score": 0,
+      "name": "Coventry City",
+      "shortName": "Coventry",
+      "longName": "Coventry City"
+     },
+     "away": {
+      "id": 8472,
+      "score": 0,
+      "name": "Sunderland",
+      "longName": "Sunderland"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "9",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5795500,
+     "leagueId": 47,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 8667,
+      "score": 0,
+      "name": "Hull City",
+      "shortName": "Hull",
+      "longName": "Hull City"
+     },
+     "away": {
+      "id": 9902,
+      "score": 0,
+      "name": "Ipswich Town",
+      "shortName": "Ipswich",
+      "longName": "Ipswich Town"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "9",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5795502,
+     "leagueId": 47,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 8456,
+      "score": 0,
+      "name": "Manchester City",
+      "shortName": "Man City",
+      "longName": "Manchester City"
+     },
+     "away": {
+      "id": 10204,
+      "score": 0,
+      "name": "Brighton & Hove Albion",
+      "shortName": "Brighton",
+      "longName": "Brighton & Hove Albion"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "9",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5795504,
+     "leagueId": 47,
+     "time": "31.10.2026 18:30",
+     "home": {
+      "id": 8586,
+      "score": 0,
+      "name": "Tottenham Hotspur",
+      "shortName": "Tottenham",
+      "longName": "Tottenham Hotspur"
+     },
+     "away": {
+      "id": 9826,
+      "score": 0,
+      "name": "Crystal Palace",
+      "longName": "Crystal Palace"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "9",
+     "status": {
+      "utcTime": "2026-10-31T17:30:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 18:30:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793467800000
+    },
+    {
+     "id": 5795496,
+     "leagueId": 47,
+     "time": "31.10.2026 21:00",
+     "home": {
+      "id": 10252,
+      "score": 0,
+      "name": "Aston Villa",
+      "longName": "Aston Villa"
+     },
+     "away": {
+      "id": 9879,
+      "score": 0,
+      "name": "Fulham",
+      "shortName": "Fulham",
+      "longName": "Fulham"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "9",
+     "status": {
+      "utcTime": "2026-10-31T20:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 21:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793476800000
+    }
+   ],
+   "internalRank": 30,
+   "simpleLeague": false,
+   "localRank": 17
+  },
+  {
+   "ccode": "ENG",
+   "id": 1000001801,
+   "primaryId": 48,
+   "name": "Championship",
+   "matches": [
+    {
+     "id": 5836900,
+     "leagueId": 1000001801,
+     "time": "31.10.2026 13:30",
+     "home": {
+      "id": 8430,
+      "score": 0,
+      "name": "Lincoln City",
+      "shortName": "Lincoln",
+      "longName": "Lincoln City"
+     },
+     "away": {
+      "id": 8658,
+      "score": 0,
+      "name": "Birmingham City",
+      "shortName": "Birmingham",
+      "longName": "Birmingham City"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "13",
+     "status": {
+      "utcTime": "2026-10-31T12:30:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 13:30:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793449800000
+    },
+    {
+     "id": 5836903,
+     "leagueId": 1000001801,
+     "time": "31.10.2026 13:30",
+     "home": {
+      "id": 9850,
+      "score": 0,
+      "name": "Norwich City",
+      "shortName": "Norwich",
+      "longName": "Norwich City"
+     },
+     "away": {
+      "id": 9817,
+      "score": 0,
+      "name": "Watford",
+      "longName": "Watford"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "13",
+     "status": {
+      "utcTime": "2026-10-31T12:30:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 13:30:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793449800000
+    },
+    {
+     "id": 5836906,
+     "leagueId": 1000001801,
+     "time": "31.10.2026 13:30",
+     "home": {
+      "id": 10194,
+      "score": 0,
+      "name": "Stoke City",
+      "shortName": "Stoke",
+      "longName": "Stoke City"
+     },
+     "away": {
+      "id": 8411,
+      "score": 0,
+      "name": "Preston North End",
+      "shortName": "Preston",
+      "longName": "Preston North End"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "13",
+     "status": {
+      "utcTime": "2026-10-31T12:30:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 13:30:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793449800000
+    },
+    {
+     "id": 5836898,
+     "leagueId": 1000001801,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 8559,
+      "score": 0,
+      "name": "Bolton Wanderers",
+      "shortName": "Bolton",
+      "longName": "Bolton Wanderers"
+     },
+     "away": {
+      "id": 8427,
+      "score": 0,
+      "name": "Bristol City",
+      "longName": "Bristol City"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "13",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5836899,
+     "leagueId": 1000001801,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 8191,
+      "score": 0,
+      "name": "Burnley",
+      "longName": "Burnley"
+     },
+     "away": {
+      "id": 8462,
+      "score": 0,
+      "name": "Portsmouth",
+      "longName": "Portsmouth"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "13",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5836901,
+     "leagueId": 1000001801,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 8549,
+      "score": 0,
+      "name": "Middlesbrough",
+      "longName": "Middlesbrough"
+     },
+     "away": {
+      "id": 8451,
+      "score": 0,
+      "name": "Charlton Athletic",
+      "shortName": "Charlton",
+      "longName": "Charlton Athletic"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "13",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5836902,
+     "leagueId": 1000001801,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 10004,
+      "score": 0,
+      "name": "Millwall",
+      "longName": "Millwall"
+     },
+     "away": {
+      "id": 10170,
+      "score": 0,
+      "name": "Derby County",
+      "shortName": "Derby",
+      "longName": "Derby County"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "13",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5836905,
+     "leagueId": 1000001801,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 8466,
+      "score": 0,
+      "name": "Southampton",
+      "longName": "Southampton"
+     },
+     "away": {
+      "id": 10172,
+      "score": 0,
+      "name": "Queens Park Rangers",
+      "shortName": "QPR",
+      "longName": "Queens Park Rangers"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "13",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5836907,
+     "leagueId": 1000001801,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 10003,
+      "score": 0,
+      "name": "Swansea City",
+      "shortName": "Swansea",
+      "longName": "Swansea City"
+     },
+     "away": {
+      "id": 8655,
+      "score": 0,
+      "name": "Blackburn Rovers",
+      "shortName": "Blackburn",
+      "longName": "Blackburn Rovers"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "13",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5836908,
+     "leagueId": 1000001801,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 8654,
+      "score": 0,
+      "name": "West Ham United",
+      "shortName": "West Ham",
+      "longName": "West Ham United"
+     },
+     "away": {
+      "id": 8659,
+      "score": 0,
+      "name": "West Bromwich Albion",
+      "shortName": "West Brom",
+      "longName": "West Bromwich Albion"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "13",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    },
+    {
+     "id": 5836909,
+     "leagueId": 1000001801,
+     "time": "31.10.2026 16:00",
+     "home": {
+      "id": 8602,
+      "score": 0,
+      "name": "Wolverhampton Wanderers",
+      "shortName": "Wolves",
+      "longName": "Wolverhampton Wanderers"
+     },
+     "away": {
+      "id": 8344,
+      "score": 0,
+      "name": "Cardiff City",
+      "shortName": "Cardiff",
+      "longName": "Cardiff City"
+     },
+     "eliminatedTeamId": null,
+     "statusId": 1,
+     "tournamentStage": "13",
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "halfs": {
+       "firstHalfStarted": "31.10.2026 16:00:00"
+      },
+      "periodLength": 45,
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "timeTS": 1793458800000
+    }
+   ],
+   "parentLeagueId": 48,
+   "internalRank": 29,
+   "simpleLeague": false
+  }
+ ]
+}

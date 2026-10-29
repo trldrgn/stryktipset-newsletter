@@ -1,0 +1,179 @@
+{
+ "table": [
+  {
+   "data": {
+    "leagueId": 48,
+    "table": {
+     "all": [
+      {
+       "name": "Bristol City",
+       "shortName": "Bristol City",
+       "id": 8427,
+       "pageUrl": "/teams/8427/overview/bristol-city",
+       "deduction": null,
+       "ongoing": null,
+       "played": 12,
+       "wins": 4,
+       "draws": 3,
+       "losses": 5,
+       "scoresStr": "12-15",
+       "goalConDiff": -3,
+       "pts": 15,
+       "idx": 14,
+       "qualColor": null
+      },
+      {
+       "name": "Bolton Wanderers",
+       "shortName": "Bolton",
+       "id": 8559,
+       "pageUrl": "/teams/8559/overview/bolton-wanderers",
+       "deduction": null,
+       "ongoing": null,
+       "played": 12,
+       "wins": 4,
+       "draws": 2,
+       "losses": 6,
+       "scoresStr": "16-23",
+       "goalConDiff": -7,
+       "pts": 14,
+       "idx": 18,
+       "qualColor": null
+      }
+     ],
+     "home": [
+      {
+       "name": "Bristol City",
+       "shortName": "Bristol City",
+       "id": 8427,
+       "pageUrl": "/teams/8427/overview/bristol-city",
+       "deduction": null,
+       "ongoing": null,
+       "played": 6,
+       "wins": 2,
+       "draws": 0,
+       "losses": 4,
+       "scoresStr": "3-6",
+       "goalConDiff": -3,
+       "goalsScored": 3,
+       "pts": 6,
+       "idx": 19,
+       "qualColor": null
+      },
+      {
+       "name": "Bolton Wanderers",
+       "shortName": "Bolton",
+       "id": 8559,
+       "pageUrl": "/teams/8559/overview/bolton-wanderers",
+       "deduction": null,
+       "ongoing": null,
+       "played": 6,
+       "wins": 2,
+       "draws": 0,
+       "losses": 4,
+       "scoresStr": "7-12",
+       "goalConDiff": -5,
+       "goalsScored": 7,
+       "pts": 6,
+       "idx": 20,
+       "qualColor": null
+      }
+     ],
+     "away": [
+      {
+       "name": "Bristol City",
+       "shortName": "Bristol City",
+       "id": 8427,
+       "pageUrl": "/teams/8427/overview/bristol-city",
+       "deduction": null,
+       "ongoing": null,
+       "played": 6,
+       "wins": 2,
+       "draws": 3,
+       "losses": 1,
+       "scoresStr": "9-9",
+       "goalConDiff": 0,
+       "goalsScored": 9,
+       "pts": 9,
+       "idx": 9,
+       "qualColor": null
+      },
+      {
+       "name": "Bolton Wanderers",
+       "shortName": "Bolton",
+       "id": 8559,
+       "pageUrl": "/teams/8559/overview/bolton-wanderers",
+       "deduction": null,
+       "ongoing": null,
+       "played": 6,
+       "wins": 2,
+       "draws": 2,
+       "losses": 2,
+       "scoresStr": "9-11",
+       "goalConDiff": -2,
+       "goalsScored": 9,
+       "pts": 8,
+       "idx": 14,
+       "qualColor": null
+      }
+     ],
+     "xg": [
+      {
+       "name": "Bristol City",
+       "shortName": "Bristol City",
+       "id": 8427,
+       "pageUrl": "/teams/8427/overview/bristol-city",
+       "ongoing": null,
+       "played": 12,
+       "wins": 4,
+       "draws": 3,
+       "losses": 5,
+       "scoresStr": "12-15",
+       "goalConDiff": -3,
+       "pts": 15,
+       "teamId": 8427,
+       "teamName": "Bristol City",
+       "xg": 15.729599999999996,
+       "xgConceded": 15.699300000000001,
+       "xPoints": 17.321097673625957,
+       "position": 11,
+       "xgDiff": -3.729599999999996,
+       "xgConcededDiff": -0.6993000000000009,
+       "xPointsDiff": -2.3210976736259568,
+       "xPosition": 11,
+       "idx": 11,
+       "xPositionDiff": 3,
+       "qualColor": null
+      },
+      {
+       "name": "Bolton Wanderers",
+       "shortName": "Bolton",
+       "id": 8559,
+       "pageUrl": "/teams/8559/overview/bolton-wanderers",
+       "ongoing": null,
+       "played": 12,
+       "wins": 4,
+       "draws": 2,
+       "losses": 6,
+       "scoresStr": "16-23",
+       "goalConDiff": -7,
+       "pts": 14,
+       "teamId": 8559,
+       "teamName": "Bolton Wanderers",
+       "xg": 16.6216,
+       "xgConceded": 23.761000000000003,
+       "xPoints": 12.468376271723276,
+       "position": 19,
+       "xgDiff": -0.6216000000000008,
+       "xgConcededDiff": -0.7610000000000028,
+       "xPointsDiff": 1.531623728276724,
+       "xPosition": 19,
+       "idx": 19,
+       "xPositionDiff": -1,
+       "qualColor": null
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

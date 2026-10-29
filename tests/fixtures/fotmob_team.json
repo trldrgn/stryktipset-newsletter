@@ -1,0 +1,961 @@
+{
+ "squad": {
+  "squad": [
+   {
+    "title": "coach",
+    "members": [
+     {
+      "id": 23603,
+      "name": "Steven Schumacher"
+     }
+    ]
+   },
+   {
+    "title": "keepers",
+    "members": [
+     {
+      "id": 299148,
+      "name": "Jack Bonham",
+      "positionIdsDesc": "GK",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 967230,
+      "name": "David Harrington",
+      "positionIdsDesc": "GK",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 939390,
+      "name": "Gavin Bazunu",
+      "positionIdsDesc": "GK",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     }
+    ]
+   },
+   {
+    "title": "defenders",
+    "members": [
+     {
+      "id": 1127293,
+      "name": "Chris Forino",
+      "positionIdsDesc": "CB",
+      "goals": 0,
+      "assists": 0,
+      "injured": true,
+      "injury": {
+       "id": "47",
+       "expectedReturn": "Early November 2026"
+      }
+     },
+     {
+      "id": 1089592,
+      "name": "Lewis Brunt",
+      "positionIdsDesc": "CB,RB",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 424609,
+      "name": "Ben Davies",
+      "positionIdsDesc": "CB",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 780818,
+      "name": "Akin Famewo",
+      "positionIdsDesc": "LB,CB",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 860282,
+      "name": "Eoin Toal",
+      "positionIdsDesc": "CB",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 1194102,
+      "name": "Max Conway",
+      "positionIdsDesc": "LB,LM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     }
+    ]
+   },
+   {
+    "title": "midfielders",
+    "members": [
+     {
+      "id": 1096398,
+      "name": "Xavier Simons",
+      "positionIdsDesc": "CDM,CM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 489335,
+      "name": "Josh Sheehan",
+      "positionIdsDesc": "CDM,CM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 1389991,
+      "name": "David Watson",
+      "positionIdsDesc": "CDM,CM,LM,CAM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 1227813,
+      "name": "Atsuki Ito",
+      "positionIdsDesc": "CDM,RM,CM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 955974,
+      "name": "Rúben Rodrigues",
+      "positionIdsDesc": "CAM,CDM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 914169,
+      "name": "Ethan Erhahon",
+      "positionIdsDesc": "CDM",
+      "goals": 0,
+      "assists": 0,
+      "injured": true,
+      "injury": {
+       "id": "87",
+       "expectedReturn": "Doubtful"
+      }
+     },
+     {
+      "id": 802329,
+      "name": "Gaizka Larrazabal",
+      "positionIdsDesc": "RM,RB,RW",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 1082106,
+      "name": "Jayden Nelson",
+      "positionIdsDesc": "LW,LM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 1203619,
+      "name": "Luca Stephenson",
+      "positionIdsDesc": "CM,RM,RB,RWB,CDM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 843101,
+      "name": "John McAtee",
+      "positionIdsDesc": "CAM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     }
+    ]
+   },
+   {
+    "title": "attackers",
+    "members": [
+     {
+      "id": 1393660,
+      "name": "Kyliane Dong",
+      "positionIdsDesc": "LW,ST,RW,CM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 942893,
+      "name": "Theo Bair",
+      "positionIdsDesc": "ST",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 789566,
+      "name": "Sam Dalby",
+      "positionIdsDesc": "ST,CAM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 932160,
+      "name": "Thierry Gale",
+      "positionIdsDesc": "LW,LM",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 1368061,
+      "name": "Samuel Iling-Junior",
+      "positionIdsDesc": "RW,LWB",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     },
+     {
+      "id": 584825,
+      "name": "Ryan Hardie",
+      "positionIdsDesc": "ST",
+      "goals": 0,
+      "assists": 0,
+      "injury": null
+     }
+    ]
+   }
+  ],
+  "isNationalTeam": false
+ },
+ "fixtures": {
+  "allFixtures": {
+   "fixtures": [
+    {
+     "id": 5937767,
+     "home": {
+      "id": 103598,
+      "name": "DAC 1904 Dunajska Streda",
+      "score": 2
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 1
+     },
+     "tournament": {
+      "name": "Club Friendlies",
+      "stage": "",
+      "leagueId": 489
+     },
+     "status": {
+      "utcTime": "2026-07-17T16:30:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "2 - 1",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5956425,
+     "home": {
+      "id": 9785,
+      "name": "Oldham",
+      "score": 1
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 3
+     },
+     "tournament": {
+      "name": "Club Friendlies",
+      "stage": "",
+      "leagueId": 489
+     },
+     "status": {
+      "utcTime": "2026-07-21T18:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "1 - 3",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5853429,
+     "home": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "away": {
+      "id": 8668,
+      "name": "Everton",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Club Friendlies",
+      "stage": "",
+      "leagueId": 489
+     },
+     "status": {
+      "utcTime": "2026-07-25T14:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "0 - 0",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5973856,
+     "home": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 1
+     },
+     "away": {
+      "id": 9761,
+      "name": "NAC Breda",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Club Friendlies",
+      "stage": "",
+      "leagueId": 489
+     },
+     "status": {
+      "utcTime": "2026-08-01T14:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "1 - 0",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5840291,
+     "home": {
+      "id": 10163,
+      "name": "Sheff Wed",
+      "score": 1
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "tournament": {
+      "name": "EFL Cup",
+      "stage": "",
+      "leagueId": 133
+     },
+     "status": {
+      "utcTime": "2026-08-08T14:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "1 - 0",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836755,
+     "home": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 2
+     },
+     "away": {
+      "id": 8411,
+      "name": "Preston",
+      "score": 1
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-08-15T11:30:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "2 - 1",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836772,
+     "home": {
+      "id": 10172,
+      "name": "QPR",
+      "score": 0
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-08-22T14:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "0 - 0",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836779,
+     "home": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "away": {
+      "id": 8430,
+      "name": "Lincoln",
+      "score": 1
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-08-29T14:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "0 - 1",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836794,
+     "home": {
+      "id": 8657,
+      "name": "Sheff Utd",
+      "score": 3
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 2
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-09-01T18:45:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "3 - 2",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836805,
+     "home": {
+      "id": 10004,
+      "name": "Millwall",
+      "score": 4
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-09-05T14:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "4 - 0",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836815,
+     "home": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 2
+     },
+     "away": {
+      "id": 8654,
+      "name": "West Ham",
+      "score": 3
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-09-08T19:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "2 - 3",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836827,
+     "home": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 1
+     },
+     "away": {
+      "id": 8344,
+      "name": "Cardiff",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-09-12T11:30:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "1 - 0",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836844,
+     "home": {
+      "id": 9850,
+      "name": "Norwich",
+      "score": 3
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 4
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-09-20T12:30:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "3 - 4",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836851,
+     "home": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 1
+     },
+     "away": {
+      "id": 10194,
+      "name": "Stoke",
+      "score": 2
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-10-10T14:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "1 - 2",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836868,
+     "home": {
+      "id": 8602,
+      "name": "Wolves",
+      "score": 1
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 3
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-10-13T18:45:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "1 - 3",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836881,
+     "home": {
+      "id": 8466,
+      "name": "Southampton",
+      "score": 0
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-10-17T14:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "0 - 0",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836887,
+     "home": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 1
+     },
+     "away": {
+      "id": 8549,
+      "name": "Middlesbrough",
+      "score": 5
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-10-23T19:00:00.000Z",
+      "finished": true,
+      "started": true,
+      "cancelled": false,
+      "awarded": false,
+      "scoreStr": "1 - 5",
+      "reason": {
+       "short": "FT",
+       "shortKey": "fulltime_short",
+       "long": "Full-Time",
+       "longKey": "finished"
+      }
+     },
+     "notStarted": false
+    },
+    {
+     "id": 5836898,
+     "home": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "away": {
+      "id": 8427,
+      "name": "Bristol City",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-10-31T15:00:00.000Z",
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "notStarted": true
+    },
+    {
+     "id": 5836920,
+     "home": {
+      "id": 8451,
+      "name": "Charlton",
+      "score": 0
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-11-03T19:45:00.000Z",
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "notStarted": true
+    },
+    {
+     "id": 5836927,
+     "home": {
+      "id": 10170,
+      "name": "Derby",
+      "score": 0
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-11-06T20:00:00.000Z",
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "notStarted": true
+    },
+    {
+     "id": 5836934,
+     "home": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "away": {
+      "id": 8462,
+      "name": "Portsmouth",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-11-21T15:00:00.000Z",
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "notStarted": true
+    },
+    {
+     "id": 5836954,
+     "home": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "away": {
+      "id": 8659,
+      "name": "West Brom",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-11-25T19:45:00.000Z",
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "notStarted": true
+    },
+    {
+     "id": 5836958,
+     "home": {
+      "id": 8658,
+      "name": "Birmingham",
+      "score": 0
+     },
+     "away": {
+      "id": 8559,
+      "name": "Bolton",
+      "score": 0
+     },
+     "tournament": {
+      "name": "Championship",
+      "stage": "",
+      "leagueId": 48
+     },
+     "status": {
+      "utcTime": "2026-11-28T15:00:00.000Z",
+      "started": false,
+      "cancelled": false,
+      "finished": false
+     },
+     "notStarted": true
+    }
+   ]
+  }
+ }
+}

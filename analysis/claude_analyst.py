@@ -62,10 +62,14 @@ _COMP_ABBR = {
     "eredivisie": "ED",
     "primeira liga": "PRT",
     "uefa champions league": "UCL",
+    "champions league": "UCL",
     "uefa europa league": "UEL",
+    "europa league": "UEL",
     "uefa europa conference league": "UECL",
+    "conference league": "UECL",
     "fa cup": "FAC",
     "efl cup": "EFLC",
+    "efl trophy": "EFLT",
     "league cup": "EFLC",
     "carabao cup": "EFLC",
     "copa del rey": "CDR",
@@ -81,13 +85,21 @@ def _abbr_competition(name: str) -> str:
     return _COMP_ABBR.get(name.lower(), name[:3].upper())
 
 
+_WDL = {"1": "W", "X": "D", "2": "L"}   # FormResult.result is from the team's perspective
+
+
 def _format_form(form_list) -> str:
+    """Newest first, e.g. 'W 2-1 Fulham(H,PL), L 0-1 Leeds(A)'."""
     if not form_list:
         return "N/A"
-    return " ".join(
-        f"{r.result.value}({r.goals_for}-{r.goals_against},{_abbr_competition(r.competition)})"
-        for r in form_list
-    )
+    parts = []
+    for r in form_list:
+        tags = r.home_or_away
+        if r.competition:
+            tags += f",{_abbr_competition(r.competition)}"
+        opponent = f" {r.opponent}" if r.opponent else ""
+        parts.append(f"{_WDL[r.result.value]} {r.goals_for}-{r.goals_against}{opponent}({tags})")
+    return ", ".join(parts)
 
 
 def _season_label(match_date: datetime, ref_date: datetime) -> str:
@@ -109,9 +121,10 @@ def _season_label(match_date: datetime, ref_date: datetime) -> str:
 
 def _format_h2h(h2h_list, home_team: str = "", away_team: str = "") -> str:
     """
-    Render H2H meetings with explicit season + competition + venue tags so
-    Claude can't confuse "the reverse fixture" (same season, opposite venue)
-    with "that game a year ago". Drops meetings older than 3 years.
+    Render the last 5 H2H meetings with explicit season + competition + venue
+    tags so Claude can't confuse "the reverse fixture" (same season, opposite
+    venue) with "that game a year ago". Drops meetings older than 10 years —
+    the season tag tells Claude how much weight an old meeting deserves.
 
     The reverse-fixture marker is applied to the most recent same-season
     meeting at the opposite venue, if one exists. If teams haven't met yet
@@ -121,7 +134,7 @@ def _format_h2h(h2h_list, home_team: str = "", away_team: str = "") -> str:
         return "No H2H data"
 
     now = datetime.now(timezone.utc)
-    cutoff_years = 3
+    cutoff_years = 10
 
     # Parse + filter
     parsed = []
@@ -135,7 +148,7 @@ def _format_h2h(h2h_list, home_team: str = "", away_team: str = "") -> str:
         parsed.append((d, h))
 
     if not parsed:
-        return "No H2H data within last 3 years"
+        return "No H2H data within last 10 years"
 
     # Sort newest first
     parsed.sort(key=lambda x: x[0], reverse=True)
@@ -153,7 +166,7 @@ def _format_h2h(h2h_list, home_team: str = "", away_team: str = "") -> str:
                 break
 
     lines = []
-    for d, h in parsed[:8]:  # cap at 8 to keep prompt compact
+    for d, h in parsed[:5]:  # last 5 meetings keeps the prompt compact
         season = _season_label(d, now)
         comp = h.competition or "?"
         venue = f"at {h.venue}" if h.venue else ""
@@ -182,6 +195,10 @@ def _format_absences(absences) -> str:
     for a in absences:
         src_tag = f" [{a.source}]" if getattr(a, "source", "") else ""
         desc = f"{a.player_name} ({a.position}, {a.status.value}){src_tag}"
+        if a.season_goals or a.season_assists:
+            desc += f" {a.season_goals}G/{a.season_assists}A"
+        if a.expected_return and a.expected_return.lower() not in ("doubtful", "unknown"):
+            desc += f" back: {a.expected_return}"
         if a.is_top_scorer:
             desc += " ⚡TOP SCORER"
         if a.is_top_assister:
@@ -259,6 +276,35 @@ def _format_match_block(match: Match) -> str:
     home_shot_stats = _fmt_shot_stats(h)
     away_shot_stats = _fmt_shot_stats(a)
 
+    def _fmt_season_xg(ts) -> str:
+        """Season xG per game and expected points vs actual points (luck check)."""
+        if ts is None or ts.season_xg_for is None or not ts.season_played:
+            return ""
+        n = ts.season_played
+        pts = f" vs Pts:{ts.league_points}" if ts.league_points is not None else ""
+        return (
+            f"season({n}g): xGF/g:{ts.season_xg_for / n:.2f} xGA/g:{ts.season_xg_against / n:.2f} "
+            f"xPts:{ts.season_xpoints:.0f}{pts}"
+        )
+
+    def _fmt_venue_and_rest(ts, venue: str) -> str:
+        """'Home record: W5 D1 L0, 16-4, 16pts (#1) | Rest: 3d (EFLC), 3 games/14d, next: UCL in 3d'."""
+        parts = []
+        record = (ts.home_record if venue == "home" else ts.away_record) if ts else None
+        if record:
+            parts.append(f"{venue.capitalize()} record (season): {record.summary}")
+        s = ts.schedule if ts else None
+        if s and s.days_since_last_match is not None:
+            last = f" ({_abbr_competition(s.last_match_competition)})" if s.last_match_competition else ""
+            rest = f"Rest: {s.days_since_last_match}d{last}, {s.matches_last_14_days} games/14d"
+            if s.upcoming_big_match:
+                rest += f", next: {s.upcoming_big_match}"
+            parts.append(rest)
+        return " | ".join(parts)
+
+    home_venue_line = _fmt_venue_and_rest(h, "home")
+    away_venue_line = _fmt_venue_and_rest(a, "away")
+
     home_fatigue = " ⚠️FATIGUE" if h and h.fatigue_flag else ""
     away_fatigue = " ⚠️FATIGUE" if a and a.fatigue_flag else ""
 
@@ -316,8 +362,8 @@ def _format_match_block(match: Match) -> str:
     away_inj_tag = _injury_source_tag(a)
 
     # Build stat lines — only include non-empty values to keep prompt compact
-    home_stats_line = " | ".join(filter(None, [home_xg, home_shot_stats]))
-    away_stats_line = " | ".join(filter(None, [away_xg, away_shot_stats]))
+    home_stats_line = " | ".join(filter(None, [home_xg, _fmt_season_xg(h), home_shot_stats]))
+    away_stats_line = " | ".join(filter(None, [away_xg, _fmt_season_xg(a), away_shot_stats]))
 
     # --- Referee + disciplinary context ---
     ref_parts = []
@@ -339,12 +385,14 @@ Odds: {odds_str} | {dist_str} | {tips_str}{f" | {ref_line}" if ref_line else ""}
 
 HOME — {match.home_team} ({home_pos}){home_form_flag}{home_fatigue}{home_manager}
   Form (all): {home_form} | Form (home): {home_form_home}
+  {home_venue_line or 'Home record: N/A'}
   {home_stats_line if home_stats_line else 'Stats: N/A'}
   Injuries/Suspensions {home_inj_tag}: {home_injuries}
   Intl call-ups missing: {home_intl}
 
 AWAY — {match.away_team} ({away_pos}){away_form_flag}{away_fatigue}{away_manager}
   Form (all): {away_form} | Form (away): {away_form_away}
+  {away_venue_line or 'Away record: N/A'}
   {away_stats_line if away_stats_line else 'Stats: N/A'}
   Injuries/Suspensions {away_inj_tag}: {away_injuries}
   Intl call-ups missing: {away_intl}
@@ -372,15 +420,18 @@ NEW MANAGER BOUNCE:
 - If a team has a new manager, mention it explicitly in your analysis and factor it into confidence.
 
 DATA SOURCE HIERARCHY — apply strictly when sources disagree:
-  1. API-Football (injuries/manager/H2H) — authoritative when populated. H2H may instead come
-     from football-data.co.uk results (equally reliable).
-  2. Sofascore missing-players — authoritative when populated; equal rank to API-Football.
-     FPL [fpl] (Premier League only, official availability feed) — equal rank to API-Football.
-     Any of these appearing in the "Injuries/Suspensions [source: API-Football/Sofascore/FPL]"
-     line is the ground truth for absences.
-  3. Football-Data.org (form/standings) — authoritative for form/standings in its covered leagues.
-  4. Understat / Sofascore xG — authoritative for xG in their covered leagues.
-  5. Perplexity preview — narrative context and media perspective ONLY. Never name a specific
+  1. Structured absences — FotMob [fotmob] (all leagues, injuries + suspensions with expected
+     return), FPL [fpl] (Premier League official feed), Sofascore [sofascore]. Equal rank; any of
+     these in the "Injuries/Suspensions" line is the ground truth for absences. "NG/NA" after a
+     player is his season goals/assists; "back: <date>" is FotMob's expected return.
+  2. Form, tables, H2H, referee, schedule — FotMob, with football-data.co.uk results as backup
+     (equally reliable). Form is newest first: "W 2-1 Fulham(H,PL)" = won 2-1 at home vs Fulham
+     in the league. "Home/Away record (season)" is the full-season record at that venue with
+     the team's rank in the home/away table. "Rest" counts ALL competitions incl. cups/Europe.
+  3. xG — FotMob (Opta), Understat or Sofascore. "5g" = last 5 games; "season(Ng)" = per-game
+     season averages plus expected points (xPts) vs actual points: Pts far above xPts means
+     the table flatters the team (regression risk); far below means it has been unlucky.
+  4. Perplexity preview — narrative context and media perspective ONLY. Never name a specific
      injured player solely on a Perplexity claim. If Perplexity mentions a player who is NOT in
      the structured injury list, describe them as "reportedly out (unverified)" and lower the
      confidence you place on the absence. If Perplexity's total-absence count differs from the
@@ -401,11 +452,11 @@ INJURY ANALYSIS DEPTH:
   A fully fit squad is simply good news for that team — treat it as such.
 - You MUST output home_absent_count and away_absent_count in your JSON (see format below).
   Count all players confirmed OUT or DOUBTFUL for this match from the STRUCTURED sources
-  (API-Football + Sofascore). Use 0 if fully fit or unknown. This drives the injury crisis badge.
+  (FotMob / FPL / Sofascore). Use 0 if fully fit or unknown. This drives the injury crisis badge.
 
 DATA QUALITY NOTES:
-- xG showing N/A is common for lower-league teams (Championship, League One) and when the stats API
-  is restricted. Mention it once if relevant, then rely on form, odds, and news instead.
+- xG showing N/A is rare now (FotMob covers PL, EFL, Allsvenskan, Big 5) but happens for Superettan,
+  National League and cups. Mention it once if relevant, then rely on form, odds, and news instead.
 - "Form: N/A" means the stats API had no data. Use market signals and news to compensate.
 - When structured stats are sparse, weight the LATEST NEWS and market odds more heavily.
 - Do NOT write filler like "unfortunately no xG data available for this match" — just use what you have.

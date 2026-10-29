@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -43,11 +44,13 @@ from email_sender.renderer import render_newsletter
 from fetchers.api_football import enrich_all_matches
 from fetchers.football_data import enrich_with_football_data
 from fetchers.football_data_csv import enrich_with_csv_h2h, enrich_with_csv_stats
+from fetchers.fotmob import enrich_with_fotmob
 from fetchers.fpl import enrich_with_fpl_absences
 from fetchers.perplexity import fetch_all_match_news
 from fetchers.sofascore_collector import apply_sofascore_snapshot
 from fetchers.understat_xg import enrich_with_understat_xg
 from fetchers.svenska_spel import fetch_current_coupon, fetch_coupon, get_current_draw_number
+from models.match import Match
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -56,6 +59,25 @@ logger = get_logger(__name__)
 # ---------------------------------------------------------------------------
 # Core pipeline
 # ---------------------------------------------------------------------------
+
+def log_data_coverage(matches: list[Match]) -> None:
+    """One line per data field after all sources ran — gaps must not be silent."""
+    sides = [ts for m in matches for ts in (m.home_stats, m.away_stats)]
+    teams = len(sides)
+    abs_sources = Counter(ts.absences_checked_source or "none" for ts in sides if ts)
+    counts = {
+        "xG 5g": sum(1 for ts in sides if ts and ts.xg_for_avg is not None),
+        "season xG": sum(1 for ts in sides if ts and ts.season_xg_for is not None),
+        "form": sum(1 for ts in sides if ts and ts.form_last5),
+        "home/away record": sum(1 for ts in sides if ts and (ts.home_record or ts.away_record)),
+        "schedule": sum(1 for ts in sides if ts and ts.schedule),
+    }
+    parts = [f"{k} {v}/{teams}" for k, v in counts.items()]
+    parts.append("absences " + ", ".join(f"{s}:{n}" for s, n in abs_sources.most_common()))
+    parts.append(f"H2H {sum(1 for m in matches if m.h2h)}/{len(matches)}")
+    parts.append(f"referee {sum(1 for m in matches if m.referee)}/{len(matches)}")
+    logger.info("DATA COVERAGE: %s", " | ".join(parts))
+
 
 def run_pipeline(draw_number: int | None = None, dry_run: bool = False, force: bool = False) -> None:
     """
@@ -123,6 +145,13 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False, force: b
     logger.info("[3/9] Enriching matches with API-Football stats...")
     matches = enrich_all_matches(matches, season)
 
+    # --- Step 3a: FotMob (primary: xG, absences, H2H, tables, referee, schedule) ---
+    # Runs after API-Football, which resets TeamStats when it fails. Every later
+    # step only fills fields that are still empty, so if FotMob misses a field,
+    # only that field falls back to the backup source.
+    logger.info("[3a] Enriching with FotMob (primary source)...")
+    matches = enrich_with_fotmob(matches)
+
     # --- Step 3b: CSV stats enrichment (standings, form, shots — all leagues) ---
     logger.info("[3b] Enriching with football-data.co.uk CSV stats...")
     matches = enrich_with_csv_stats(matches)
@@ -148,6 +177,7 @@ def run_pipeline(draw_number: int | None = None, dry_run: bool = False, force: b
     # on a local machine and commits data/sofascore/draw_{N}.json.
     logger.info("[3f] Applying Sofascore snapshot (xG + missing players)...")
     matches = apply_sofascore_snapshot(matches, current_draw)
+    log_data_coverage(matches)
 
     # --- Step 4: Perplexity news ---
     logger.info("[4/9] Fetching Perplexity news context...")

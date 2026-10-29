@@ -103,7 +103,8 @@ class PlayerAbsence:
     # Data provenance — which fetcher produced this record? Lets the analyst
     # prompt show Claude which source each player comes from so it can weigh
     # conflicting reports (e.g. API-Football stale vs Sofascore fresh).
-    source: str = ""                    # "api-football" / "sofascore" / ""
+    source: str = ""                    # "fotmob" / "fpl" / "sofascore" / ""
+    expected_return: str = ""           # e.g. "Early November 2026", "Doubtful" (FotMob)
 
     @property
     def impact_summary(self) -> str:
@@ -174,6 +175,31 @@ class ScheduleContext:
 
 
 # ---------------------------------------------------------------------------
+# Season record at one venue (home table or away table)
+# ---------------------------------------------------------------------------
+
+@dataclass
+class VenueRecord:
+    played: int
+    wins: int
+    draws: int
+    losses: int
+    goals_for: int
+    goals_against: int
+    points: int
+    rank: Optional[int] = None      # position in the league's home/away table
+
+    @property
+    def summary(self) -> str:
+        """Compact prompt form, e.g. 'W5 D1 L0, 16-4, 16pts (1st)'."""
+        rank = f" (#{self.rank})" if self.rank else ""
+        return (
+            f"W{self.wins} D{self.draws} L{self.losses}, "
+            f"{self.goals_for}-{self.goals_against}, {self.points}pts{rank}"
+        )
+
+
+# ---------------------------------------------------------------------------
 # Full stats bundle for one team in a match
 # ---------------------------------------------------------------------------
 
@@ -192,9 +218,20 @@ class TeamStats:
     form_last5_home_only: list[FormResult] = field(default_factory=list)    # for home team
     form_last5_away_only: list[FormResult] = field(default_factory=list)    # for away team
 
-    # xG averages (last 5) — populated by Perplexity news parsing when available
+    # Season home/away table records (FotMob)
+    home_record: Optional[VenueRecord] = None
+    away_record: Optional[VenueRecord] = None
+
+    # xG averages (last 5) — FotMob, then Understat / xG history / Sofascore
     xg_for_avg: Optional[float] = None
     xg_against_avg: Optional[float] = None
+
+    # Season xG totals from the league xG table (FotMob) — xPoints vs actual
+    # points shows whether the table position flatters the team
+    season_played: Optional[int] = None
+    season_xg_for: Optional[float] = None
+    season_xg_against: Optional[float] = None
+    season_xpoints: Optional[float] = None
 
     # Absences
     injuries: list[PlayerAbsence] = field(default_factory=list)

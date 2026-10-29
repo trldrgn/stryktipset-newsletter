@@ -128,8 +128,8 @@ def _build_team_absences(team_id: int, players: list[dict]) -> list[PlayerAbsenc
 
 def enrich_with_fpl_absences(matches: list[Match]) -> list[Match]:
     """
-    Fill TeamStats.injuries from FPL for Premier League teams whose structured
-    injury list is still empty. One HTTP call per run; any failure returns
+    Fill TeamStats.injuries from FPL for Premier League teams that no structured
+    source (FotMob) has checked yet. One HTTP call per run; any failure returns
     the matches unchanged.
     """
     pl_matches = [m for m in matches if m.league == "Premier League" and m.country == "England"]
@@ -146,7 +146,8 @@ def enrich_with_fpl_absences(matches: list[Match]) -> list[Match]:
         filled = 0
         for match in pl_matches:
             for team_name, stats in ((match.home_team, match.home_stats), (match.away_team, match.away_stats)):
-                if stats is None or stats.injuries:
+                # Another structured source (FotMob) already answered — even "none missing"
+                if stats is None or stats.injuries or stats.absences_checked_source:
                     continue
                 team_id = _resolve_team(team_name, teams)
                 if team_id is None:
