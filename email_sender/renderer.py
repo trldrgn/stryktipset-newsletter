@@ -228,7 +228,7 @@ def _rows(h: Optional[TeamStats], a: Optional[TeamStats]) -> list[dict]:
         {"label": "Form", "form": True,
          "home": _form_letters(h.form_last5) if h else "", "away": _form_letters(a.form_last5) if a else ""},
         {"label": "Venue record", "home": _venue_record(h, "home"), "away": _venue_record(a, "away")},
-        {"label": "xG for / against", "home": xg(h), "away": xg(a)},
+        {"label": "xG last 5", "home": xg(h), "away": xg(a)},
         {"label": "Points vs xPts", "home": xpts(h), "away": xpts(a)},
         {"label": "Missing", "missing": True, "home": _missing(h), "away": _missing(a)},
     ]

@@ -152,6 +152,13 @@
 
 {# ---------- Match cards ---------- #}
 {{ heading('Match by match') }}
+<tr><td class="px xs m" style="padding-bottom:16px;line-height:1.55;">
+  <b>Form</b>: last 5 games, all competitions, newest first.
+  <b>Venue record</b>: this league season, at home for the home team and away for the away team.
+  <b>xG last 5</b>: expected goals created / conceded per game over the last 5 games.
+  <b>Points vs xPts</b>: league points this season against the points their chances deserved (xPts). Well above xPts often means luck that tends to even out.
+  <b>Last 5 meetings</b>: any competition, each side's own result.
+</td></tr>
 {% for card in cards %}
 <tr><td class="px" style="padding-bottom:28px;">
 <table cellpadding="0" cellspacing="0" width="100%" class="card">
