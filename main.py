@@ -235,8 +235,7 @@ def run_pipeline(
     elif review_to:
         # Review mode: everything is saved as in a real run, but only the reviewer
         # gets the email. --send-archived then sends this exact HTML to everyone.
-        send_newsletter(f"[REVIEW] {subject}", html_body, recipients=[review_to])
-        logger.info("Review copy sent to %s. Approve, then run --send-archived.", review_to)
+        _send_review(subject, html_body, review_to)
     else:
         sent = send_newsletter(subject, html_body)
         logger.info("Newsletter sent to %d recipients", sent)
@@ -256,6 +255,15 @@ def run_pipeline(
     logger.info("=" * 60)
     logger.info("PIPELINE COMPLETE in %.1f seconds", elapsed)
     logger.info("=" * 60)
+
+
+def _send_review(subject: str, html_body: str, review_to: str) -> bool:
+    """Email the review copy to one address and log whether it actually arrived."""
+    if send_newsletter(f"[REVIEW] {subject}", html_body, recipients=[review_to]):
+        logger.info("Review copy sent to %s. Approve, then run --send-archived.", review_to)
+        return True
+    logger.error("Review copy to %s FAILED — retry with --rerender --review-to (no Claude call).", review_to)
+    return False
 
 
 def rerender_newsletter(draw_number: int | None = None, review_to: str | None = None) -> Path | None:
@@ -284,8 +292,7 @@ def rerender_newsletter(draw_number: int | None = None, review_to: str | None = 
     logger.info("Re-rendered %s from saved predictions", archive_path.name)
 
     if review_to:
-        send_newsletter(f"[REVIEW] {subject}", html_body, recipients=[review_to])
-        logger.info("Review copy sent to %s. Approve, then run --send-archived.", review_to)
+        _send_review(subject, html_body, review_to)
     return archive_path
 
 

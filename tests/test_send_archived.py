@@ -94,3 +94,11 @@ def test_rerender_overwrites_archive_and_emails_only_reviewer(tmp_path, monkeypa
     assert path.read_text(encoding="utf-8") == "<p>v2</p>"
     assert path.with_suffix(".subject.txt").read_text(encoding="utf-8") == "Subject v2"
     send.assert_called_once_with("[REVIEW] Subject v2", "<p>v2</p>", recipients=["me@example.com"])
+
+
+def test_review_send_logs_failure_instead_of_success(caplog):
+    with patch.object(main, "send_newsletter", return_value=0):
+        assert main._send_review("S", "<p/>", "me@example.com") is False
+    assert "FAILED" in caplog.text and "Review copy sent" not in caplog.text
+    with patch.object(main, "send_newsletter", return_value=1):
+        assert main._send_review("S", "<p/>", "me@example.com") is True
