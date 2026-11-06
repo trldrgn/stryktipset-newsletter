@@ -1,0 +1,186 @@
+{
+  "draw_number": 4977,
+  "draw_date": "2026-10-29",
+  "evaluated_at": "2026-11-06T16:14:39.485485+00:00",
+  "results": [
+    {
+      "game_number": 1,
+      "home_team": "Aston Villa",
+      "away_team": "Fulham",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.72,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 2,
+      "home_team": "Tottenham",
+      "away_team": "Crystal Palace",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.75,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 3,
+      "home_team": "Manchester City",
+      "away_team": "Brighton",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.65,
+      "post_mortem": "Predicted 1/X (double, conf=0.65) but result was 2. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [2]: Brighton away record W2D0L2, 6 confirmed absentees, City unbeaten at home all season; City rotation could significantly weaken the starting XI given the UCL schedule demands. WRONG DROPOUT: The dropped outcome (2) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 4,
+      "home_team": "Bournemouth",
+      "away_team": "Leeds",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.7,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 5,
+      "home_team": "Coventry",
+      "away_team": "Sunderland",
+      "our_prediction": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.5,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Brentford",
+      "away_team": "Nottingham Forest",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.62,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 7,
+      "home_team": "Hull",
+      "away_team": "Ipswich",
+      "our_prediction": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.58,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Bolton",
+      "away_team": "Bristol City",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.65,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Burnley",
+      "away_team": "Portsmouth",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "X",
+      "correct": true,
+      "confidence": 0.58,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 10,
+      "home_team": "Millwall",
+      "away_team": "Derby",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.82,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 11,
+      "home_team": "Southampton",
+      "away_team": "Queens Park Rangers",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.82,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "Swansea",
+      "away_team": "Blackburn",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.7,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "West Ham",
+      "away_team": "West Bromwich",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.78,
+      "post_mortem": "Predicted 1 (single, conf=0.78) but result was 2. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [2]: West Brom away record W3D1L2 is respectable but they've lost 2 of last 3 away; missing key personnel; West Ham's recent home form includes a 2-3 loss to Southampton — not impenetrable at the London Stadium."
+    }
+  ]
+}

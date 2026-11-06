@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
+<title>Stryktipset week 45, draw 4978</title><style>
+.d { font-family: Arial Black, Arial, sans-serif; font-weight: 900; }
+.m { color: #3F555C; }
+.s { font-size: 13px; }
+.xs { font-size: 12px; }
+.lb { font-size: 13px; font-weight: 700; color: #3F555C; }
+.px { padding-left: 24px; padding-right: 24px; }
+.h { font-size: 22px; line-height: 1.1; padding-top: 36px; padding-bottom: 12px; }
+.card { background: #FFFFFF; border: 2px solid #001219; box-shadow: 5px 5px 0 #001219; }
+.grid { background: #FFFFFF; border: 2px solid #001219; }
+.sec { border-top: 2px solid #001219; }
+.in { padding: 12px 16px; }
+.cr { padding: 7px 4px; border-bottom: 1px solid #D5E6E8; font-size: 14px; }
+.cn { padding-left: 12px; font-size: 13px; color: #3F555C; }
+.ce { padding-right: 12px; text-align: right; white-space: nowrap; }
+.k { padding: 8px 8px 8px 16px; border-top: 1px solid #D5E6E8; font-weight: 600; color: #3F555C; vertical-align: top; }
+.v { padding: 8px; border-top: 1px solid #D5E6E8; vertical-align: top; }
+.v2 { padding: 8px 16px 8px 8px; border-top: 1px solid #D5E6E8; vertical-align: top; }
+.gn { width: 34px; height: 34px; line-height: 34px; text-align: center; background: #001219; color: #FFFFFF; font-size: 16px; }
+.tn { font-size: 20px; line-height: 1.1; letter-spacing: -0.5px; }
+.lw, .ll, .ld { display: inline-block; width: 19px; margin-right: 3px; text-align: center; font: 900 11px/19px Arial Black, Arial, sans-serif; }
+.bx { text-align: center; vertical-align: middle; border: 2px solid #001219; color: #3F555C; font-family: Arial Black, Arial, sans-serif; font-weight: 900; line-height: 1; }
+.b22 { width: 22px; height: 22px; font-size: 10px; }
+.b28 { width: 28px; height: 28px; font-size: 12px; }
+.ch { display: inline-block; margin: 0 6px 6px 0; padding: 3px 9px; font-size: 12px; font-weight: 600; line-height: 1.3; white-space: nowrap; }
+.oc { padding: 12px 16px; vertical-align: top; }
+.ol { display: inline-block; min-width: 22px; padding: 1px 6px; text-align: center; font-size: 12px; }
+.on { margin-top: 4px; font-size: 22px; line-height: 1; }
+.op { margin-top: 4px; font-size: 12px; line-height: 1.35; color: #3F555C; }
+.li { margin-top: 4px; font-size: 14px; line-height: 1.45; }
+.lw { color: #1F7548; background: #E2F2E8; }
+.ll { color: #B5302E; background: #FBE3E1; }
+.ld { color: #3F555C; background: #E6E5E0; }
+.k-positive { color: #1F7548; background: #E2F2E8; }
+.k-caution { color: #8C5A10; background: #FBEEDB; }
+.k-danger { color: #B5302E; background: #FBE3E1; }
+.k-special { color: #5A43B2; background: #ECE7FA; }
+.o1 { background: #005F73; color: #FFFFFF; }
+.oX { background: #E9D8A6; color: #001219; }
+.o2 { background: #94D2BD; color: #001219; }
+.bo { box-shadow: 2px 2px 0 #001219; }
+.b28.bo { box-shadow: 3px 3px 0 #001219; }
+.hb { display: inline-block; margin-bottom: 6px; border: 0; }
+.ab { display: inline-block; margin-bottom: 6px; border: 0; }
+.cha { margin: 0 0 6px 6px; }
+.vs { font-size: 13px; padding-bottom: 3px; }
+.sl { padding-right: 10px; }
+.gv { padding: 9px 0; vertical-align: top; }
+.gk { padding: 9px 6px; vertical-align: top; text-align: center; font-size: 12px; font-weight: 600; color: #3F555C; }
+.gr { text-align: right; }
+.bxt { margin: -4px; }
+.bt { border-top: 1px solid #D5E6E8; }
+.bdg { vertical-align: -5px; margin-right: 8px; border: 0; }
+.lg { vertical-align: -3px; margin-right: 6px; border: 0; }
+.ob { border-right: 1px solid #D5E6E8; }
+.pb { font-size: 10px; }
+.rf { font-size: 14px; white-space: nowrap; padding: 10px 0; }
+.wh { vertical-align: -3px; border: 0; }
+.crd { display: inline-block; width: 10px; height: 14px; vertical-align: -2px; border-radius: 2px; }
+@media screen and (max-width: 480px) {
+.px { padding-left: 14px !important; padding-right: 14px !important; }
+.wm { font-size: 28px !important; }
+.tn { font-size: 16px !important; }
+.lw, .ll, .ld { width: 16px !important; margin-right: 2px !important; }
+.k { padding-right: 4px !important; }
+.stack { display: block !important; width: 100% !important; padding: 0 0 10px 0 !important; }
+}
+</style>
+</head><body style="margin:0;padding:0;background:#E6E5E0;">
+<table cellpadding="0" cellspacing="0" width="100%" style="background:#E6E5E0;">
+<tr><td align="center" style="color:#001219;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;">
+<table cellpadding="0" cellspacing="0" width="600" style="width:100%;max-width:600px;">
+<tr><td class="px" style="padding-top:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" style="border-bottom:3px solid #001219;"><tr>
+<td valign="bottom" style="padding-bottom:12px;"><span class="wm d" style="font-size:34px;line-height:0.9;letter-spacing:-1px;">Stryktipset</span></td>
+<td valign="bottom" align="right" class="s m" style="padding-bottom:12px;line-height:1.4;">Week 45, draw 4978<br>768 kr system</td>
+</tr></table>
+</td></tr>
+<tr><td class="px" style="padding-top:20px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card" style="box-shadow:4px 4px 0 #001219;"><tr>
+<td width="96" style="padding:12px 0 12px 16px;white-space:nowrap;"><span class="d" style="font-size:34px;line-height:1;color:#005F73;">11</span><span class="d m" style="font-size:16px;">/13</span></td>
+<td style="padding:12px 16px;font-size:14px;line-height:1.45;">Last week, draw 4977. Singles 3/4, doubles 7/8.<br><span class="m">Following the odds alone scored 11.</span></td>
+</tr></table>
+</td></tr>
+<tr><td class="px" style="padding-top:24px;font-size:16px;line-height:1.6;">A coupon dominated by Championship mid-week congestion and Premier League fatigue signals. Four games earn single-worthy confidence: Arsenal at home despite Saka&#39;s absence, Southampton&#39;s visit to a hapless Preston, West Ham&#39;s superb away record carrying them past Blackburn, and Middlesbrough&#39;s league-leader quality overpowering Watford despite tight turnaround. The Championship batch is defined by an extraordinary injury burden on Millwall and Newcastle, which opens clear value on West Brom and Fulham respectively. The two FA Cup ties — Crewe vs Wimbledon and Oxford vs Stevenage — are genuinely low-data environments where confidence is capped, and the Cardiff vs Burnley defensive crisis makes that match a genuine toss-up.</td></tr>
+<tr><td class="px h"><div class="d">This week&#39;s coupon</div><div class="s m" style="margin-top:4px;">768 kr: 4 singles, 8 doubles, 1 full. Filled boxes are our picks.</div></td></tr>
+<tr><td class="px">
+<table cellpadding="0" cellspacing="0" width="100%" class="grid">
+<tr><td width="26" class="cr cn d">1</td><td class="cr">Nottingham – Manchester City</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22">1</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">72%</td></tr>
+<tr><td width="26" class="cr cn d">2</td><td class="cr">Arsenal – Hull</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b22">X</td><td class="bx b22">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">85%</td></tr>
+<tr><td width="26" class="cr cn d">3</td><td class="cr">Fulham – Newcastle</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b22">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">70%</td></tr>
+<tr><td width="26" class="cr cn d">4</td><td class="cr">Blackburn – West Ham</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22">1</td><td class="bx b22">X</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">80%</td></tr>
+<tr><td width="26" class="cr cn d">5</td><td class="cr">Birmingham – Swansea</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b22">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">75%</td></tr>
+<tr><td width="26" class="cr cn d">6</td><td class="cr">Cardiff – Burnley</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b22">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">62%</td></tr>
+<tr><td width="26" class="cr cn d">7</td><td class="cr">Charlton – Sheffield U</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22">1</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">70%</td></tr>
+<tr><td width="26" class="cr cn d">8</td><td class="cr">Preston – Southampton</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22">1</td><td class="bx b22">X</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">82%</td></tr>
+<tr><td width="26" class="cr cn d">9</td><td class="cr">Queens Park Rangers – Lincoln</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b22">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">72%</td></tr>
+<tr><td width="26" class="cr cn d">10</td><td class="cr">Watford – Middlesbrough</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22">1</td><td class="bx b22">X</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">80%</td></tr>
+<tr><td width="26" class="cr cn d">11</td><td class="cr">West Bromwich – Millwall</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b22">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">75%</td></tr>
+<tr><td width="26" class="cr cn d">12</td><td class="cr">Crewe – Wimbledon</td><td width="98" class="cr"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td><td width="44" class="cr ce" style="font-size:12px;color:#3F555C">All</td></tr>
+<tr><td width="26" class="cr cn d" style="border-bottom:0">13</td><td class="cr" style="border-bottom:0">Oxford – Stevenage</td><td width="98" class="cr" style="border-bottom:0"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b22 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b22">2</td></tr></table></td><td width="44" class="cr ce" style="border-bottom:0;font-size:12px;color:#3F555C">65%</td></tr>
+</table>
+<div class="xs m" style="margin-top:8px;">The percentage is how sure the model is of the pick.</div>
+</td></tr>
+<tr><td class="px h"><div class="d">Value picks</div></td></tr>
+<tr><td class="px">
+<div class="li"><b style="color:#5A43B2;">◆</b> Game 3 (Fulham vs Newcastle): Newcastle are missing Joelinton, Ramsey (suspended), Livramento, and Jaouen, with Miley only 50-50. That is roughly half a first XI gone. At 2.23 Fulham are undervalued — Fulham&#39;s xGF has also been systematically underperforming by 0.70 per game across the last five matches, suggesting a correction is due.</div>
+<div class="li"><b style="color:#5A43B2;">◆</b> Game 11 (West Brom vs Millwall): Millwall are reported to have five senior players out including two midfielders and two defenders, their away record reads W2 D1 L4, and West Brom&#39;s last-five xGF of 2.46 — the highest of any team on the coupon — is barely being reflected in their actual goals. Odds of 2.14 for West Brom at home look loose.</div>
+<div class="li"><b style="color:#5A43B2;">◆</b> Game 10 (Watford vs Middlesbrough): Boro at 1.52 looks short on the surface, but their xGF/g of 2.06 and xPts of 29 vs actual 28 show their position is entirely deserved and not built on luck. Watford&#39;s xGA of 1.75 against a team averaging over 2.0 xGF is a mismatch. Even with 2d rest and rotation, Boro&#39;s depth in this Championship is superior.</div>
+</td></tr>
+<tr><td class="px h"><div class="d">Match by match</div></td></tr>
+<tr><td class="px xs m" style="padding-bottom:16px;line-height:1.55;">
+<b>Form</b>: last 5 games, all competitions, newest first.
+<b>Venue record</b>: this league season, at home for the home team and away for the away team.
+<b>xG last 5</b>: expected goals created / conceded per game over the last 5 games.
+<b>Points vs xPts</b>: league points this season against the points their chances deserved (xPts). Well above xPts often means luck that tends to even out.
+<b>Last 5 meetings</b>: any competition, each side's own result.
+<b>Missing</b>: every injured and suspended player, key players first in bold; G and A are league goals and assists this season.
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">1</div></td>
+<td class="s m" style="padding-left:12px;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_english-premier-league.png" width="16" height="16" alt="" class="lg">Premier League, Saturday 18:30</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28">1</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/nottingham-forest.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/manchester-city.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Nottingham</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Manchester City</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-caution"><b>▼</b> Down-form</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-caution"><b>⚡</b> 2 days rest</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="ll">L</b><b class="ld">D</b><b class="ll">L</b><b class="ll">L</b><b class="ll">L</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="lw">W</b><b class="ll">L</b><b class="ld">D</b><b class="ll">L</b><b class="lw">W</b></td></tr><tr><td class="gv bt">W0 D1 L3, 0–3 (20th)</td><td class="gk bt">Venue record</td><td class="gv gr bt">W3 D0 L1, 9–3 (3rd)</td></tr><tr><td class="gv bt">1.70 / 1.03</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.78 / 1.14</td></tr><tr><td class="gv bt">6 vs 16 xPts</td><td class="gk bt">Points vs xPts</td><td class="gv gr bt">21 vs 17 xPts</td></tr><tr><td class="gv bt">Dominguez <span class="m">(MID)</span>, Savona <span class="m">(DEF)</span></td><td class="gk bt">Missing</td><td class="gv gr bt">Semenyo <span class="m">(MID, 2G 3A)</span></td></tr>      <tr><td class="gv bt"><b class="ld">D</b><b class="ll">L</b><b class="ll">L</b><b class="lw">W</b><b class="ll">L</b></td><td class="gk bt">Last 5 meetings<br><span style="font-weight:400">2024–2026</span></td><td class="gv gr bt"><b class="ld">D</b><b class="lw">W</b><b class="lw">W</b><b class="ll">L</b><b class="lw">W</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Samuel Barrott</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 3.8&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.02</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">4.80</div>
+<div class="op">Odds 20%<br>Public 17%</div>
+<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +3</span>      </td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">4.30</div>
+<div class="op">Odds 23%<br>Public 22%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">1.72</div>
+<div class="op">Odds 57%<br>Public 61%</div>
+</td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">Nottingham are deep in a statistical paradox: their xPts of 16 versus actual points of just 6 is the starkest luck deficit on the entire coupon, meaning the table flatters their opponents and misrepresents Forest&#39;s underlying quality. In the last five matches they have generated 1.70 xGF while scoring just 0.4 goals — an overperformance deficit of -1.30, the most extreme on this coupon. At some point the regression comes, and the concern for City backers is whether this is the fixture where it lands. That said, Nottingham&#39;s home record of W0 D1 L3 and a string of goalless home performances make it hard to project them scoring two or three tonight. Dominguez is confirmed out until late December and Savona is unavailable — both are rotation players rather than starters, but it limits Glasner&#39;s flexibility.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> Manchester City FATIGUE — only 2d rest from UCL, rotation likely in central areas</div><div class="li"><b style="color:#1F7548;">▸</b> Nottingham&#39;s extreme xPts-vs-Pts gap (+10) signals regression potential, but home goals have dried up completely</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> FATIGUE flag for City is real — 9th match of the month, rotation could weaken starting XI</div><div class="li"><b style="color:#8C5A10;">◆</b> Nottingham&#39;s underlying xG data suggests they are due a better attacking performance — City&#39;s defence may be more exposed than the odds imply</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">2</div></td>
+<td class="s m" style="padding-left:12px;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_english-premier-league.png" width="16" height="16" alt="" class="lg">Premier League, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b28">X</td><td class="bx b28">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/arsenal.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/hull-city.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Arsenal</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Hull</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-positive"><b>▲</b> Up-form</span><span class="ch k-caution"><b>⚡</b> 2 days rest</span><span class="ch k-danger"><b>✚</b> Saka out</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-caution"><b>▼</b> Down-form</span><span class="ch cha k-danger"><b>✚</b> 6 missing</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="lw">W</b><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b><b class="ld">D</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="ld">D</b><b class="ld">D</b><b class="ll">L</b><b class="ld">D</b><b class="ll">L</b></td></tr><tr><td class="gv bt">W4 D0 L0, 9–2 (1st)</td><td class="gk bt">Venue record</td><td class="gv gr bt">W1 D1 L2, 4–5 (14th)</td></tr><tr><td class="gv bt">1.79 / 1.28</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.09 / 1.46</td></tr><tr><td class="gv bt">24 vs 18 xPts</td><td class="gk bt">Points vs xPts</td><td class="gv gr bt">11 vs 9 xPts</td></tr><tr><td class="gv bt"><b>Saka</b> <span class="m">(MID, top scorer, set pieces)</span>, Dowman <span class="m">(MID, banned)</span></td><td class="gk bt">Missing</td><td class="gv gr bt">Morita <span class="m">(MID)</span>, Ansah <span class="m">(FWD)</span>, Matazo <span class="m">(MID)</span>, Hughes <span class="m">(DEF)</span>, Targett <span class="m">(DEF)</span>, Crooks <span class="m">(MID, banned)</span></td></tr>      <tr><td class="gv bt"><b class="lw">W</b><b class="lw">W</b><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b></td><td class="gk bt">Last 5 meetings<br><span style="font-weight:400">2015–2017</span></td><td class="gv gr bt"><b class="ll">L</b><b class="ll">L</b><b class="ll">L</b><b class="ld">D</b><b class="ll">L</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Farai Hallam</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 3.8&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.00</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">1.17</div>
+<div class="op">Odds 84%<br>Public 84%</div>
+</td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">8.50</div>
+<div class="op">Odds 12%<br>Public 10%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">21.00</div>
+<div class="op">Odds 5%<br>Public 6%</div>
+</td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">Arsenal&#39;s home record this season is flawless: W4 D0 L0, with nine goals scored and only two conceded in four Premier League home fixtures. Arteta&#39;s side have also beaten Lille and hammered Leeds at the Emirates, underscoring a fortress mentality on home soil. The xGF underperformance of -0.19 across the last five matches is negligible — this is a team whose quality is genuine and whose xPts of 18 against actual 24 tells you they have converted chances efficiently, though there is a mild regression note to monitor over time. The critical missing piece is Bukayo Saka, confirmed out for several weeks and not simply doubtful. Saka accounted for 3G/0A and was Arsenal&#39;s set-piece taker — his absence removes a creative hub on the right and will force Arteta to reshuffle. Dowman is also suspended until late November, adding a second confirmed absence. These are real costs, not trivial squad attrition.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> Saka confirmed out — Arsenal&#39;s most direct threat and set-piece taker is absent</div><div class="li"><b style="color:#1F7548;">▸</b> Hull missing 6 players including Crooks (suspended), Morita, Ansah, Matazo, Hughes, and Targett</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> Saka&#39;s absence is the one genuine risk — Arsenal&#39;s creativity will need to come from other sources</div><div class="li"><b style="color:#8C5A10;">◆</b> FATIGUE flag for Arsenal — 2d rest from UCL trip to Slavia Prague, rotation possible</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">3</div></td>
+<td class="s m" style="padding-left:12px;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_english-premier-league.png" width="16" height="16" alt="" class="lg">Premier League, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b28">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/fulham.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/newcastle.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Fulham</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Newcastle</td></tr>
+<tr><td valign="top" style="padding-top:8px;"></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-caution"><b>▼</b> Down-form</span><span class="ch cha k-danger"><b>✚</b> 5 missing</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="ld">D</b><b class="ll">L</b><b class="lw">W</b><b class="lw">W</b><b class="ll">L</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="ll">L</b><b class="ll">L</b><b class="lw">W</b><b class="ll">L</b><b class="ll">L</b></td></tr><tr><td class="gv bt">W1 D1 L2, 6–7 (16th)</td><td class="gk bt">Venue record</td><td class="gv gr bt">W2 D0 L2, 6–8 (8th)</td></tr><tr><td class="gv bt">1.50 / 0.84</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.44 / 1.73</td></tr><tr><td class="gv bt">9 vs 13 xPts</td><td class="gk bt">Points vs xPts</td><td class="gv gr bt">11 vs 8 xPts</td></tr><tr><td class="gv bt">Cairney <span class="m">(MID)</span></td><td class="gk bt">Missing</td><td class="gv gr bt">Joelinton <span class="m">(MID)</span>, Livramento <span class="m">(DEF, 1A)</span>, Jaouen <span class="m">(GK)</span>, J.Ramsey <span class="m">(MID, 1G, banned)</span>, L.Miley <span class="m">(MID, doubt)</span></td></tr>      <tr><td class="gv bt"><b class="lw">W</b><b class="ll">L</b><b class="ll">L</b><b class="lw">W</b><b class="lw">W</b></td><td class="gk bt">Last 5 meetings<br><span style="font-weight:400">2024–2026</span></td><td class="gv gr bt"><b class="ll">L</b><b class="lw">W</b><b class="lw">W</b><b class="ll">L</b><b class="ll">L</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Robert Jones</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 3.9&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.00</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">2.23</div>
+<div class="op">Odds 44%<br>Public 44%</div>
+</td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">3.65</div>
+<div class="op">Odds 27%<br>Public 28%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">3.35</div>
+<div class="op">Odds 29%<br>Public 28%</div>
+</td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">This is one of the most injury-distorted matchups on the coupon, and the market has not fully priced in Newcastle&#39;s absentee crisis. From the FPL structured feed, Newcastle are confirmed without Joelinton (MID, out), Livramento (DEF, out), Jaouen (GK, out), and Ramsey (MID, suspended until November 21st). Lewis Miley is listed at 50-50. That is at minimum three starters and quite possibly four unavailable for a team that is already in DOWN-FORM territory and carrying a FATIGUE flag after playing only four days ago. Manager Matthias Jaissle has spoken publicly about needing more &#39;confidence and courage&#39; — not language associated with a team on the march.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> Newcastle missing Joelinton, Livramento, Jaouen (all confirmed out) and Ramsey (suspended) — 4 unavailable with Miley 50-50</div><div class="li"><b style="color:#1F7548;">▸</b> Fulham&#39;s xGF overperformance deficit of -0.70 per game in last 5 — a regression toward more goals is overdue</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> DROPPED [2]: Newcastle&#39;s injury crisis (4 confirmed unavailable) and DOWN-FORM flag make a successful away performance against a stubborn Fulham side implausible</div><div class="li"><b style="color:#8C5A10;">◆</b> Fulham&#39;s home record (W1 D1 L2) is underwhelming and limits confidence in a straight win</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">4</div></td>
+<td class="s m" style="padding-left:12px;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-championship.png" width="16" height="16" alt="" class="lg">Championship, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28">1</td><td class="bx b28">X</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/blackburn-rovers.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/west-ham.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Blackburn</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">West Ham</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-caution"><b>⚡</b> 3 days rest</span><span class="ch k-danger"><b>✚</b> Ryoya Morishita out</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-caution"><b>⚡</b> 2 days rest</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="ll">L</b><b class="ll">L</b><b class="lw">W</b><b class="ll">L</b><b class="lw">W</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="ld">D</b><b class="ll">L</b><b class="ll">L</b><b class="lw">W</b><b class="lw">W</b></td></tr><tr><td class="gv bt">W4 D0 L3, 12–9 (11th)</td><td class="gk bt">Venue record</td><td class="gv gr bt">W3 D4 L0, 18–10 (1st)</td></tr><tr><td class="gv bt">0.95 / 2.37</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.91 / 1.23</td></tr><tr><td class="gv bt">18 vs 13 xPts</td><td class="gk bt">Points vs xPts</td><td class="gv gr bt">23 vs 25 xPts</td></tr><tr><td class="gv bt"><b>Ryoya Morishita</b> <span class="m">(CAM, top assister)</span>, Lewis Miller <span class="m">(CB)</span>, Adam Forshaw <span class="m">(CDM)</span>, Ryan Alebiosu <span class="m">(RWB, doubt)</span></td><td class="gk bt">Missing</td><td class="gv gr bt">Keiber Lamadrid <span class="m">(LW)</span></td></tr>      <tr><td class="gv bt"><b class="ld">D</b><b class="ll">L</b><b class="ld">D</b><b class="ld">D</b></td><td class="gk bt">Last 4 meetings<br><span style="font-weight:400">2010–2022</span></td><td class="gv gr bt"><b class="ld">D</b><b class="lw">W</b><b class="ld">D</b><b class="ld">D</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Thomas Kirk</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 4.3&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.03</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">4.75</div>
+<div class="op">Odds 20%<br>Public 24%</div>
+</td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">4.10</div>
+<div class="op">Odds 24%<br>Public 26%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">1.73</div>
+<div class="op">Odds 56%<br>Public 50%</div>
+<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +6</span>      </td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">West Ham&#39;s away record in the Championship this season is simply outstanding: W3 D4 L0, with 18 goals scored and only 10 conceded — the best away record in the division. That is not a fluke produced by weak opposition; it includes wins at Swansea and Lincoln and a 3-1 win at Bolton. Their xGF of 2.07 per game is backed by a season xGA of 1.24, and they have been slightly over-converting their xGF (+0.69 in last 5) which introduces a mild regression warning, but the underlying class is real. The Perplexity preview mentions Scott Parker in a &#39;new-management&#39; context — however, the structured data carries no [NEW MANAGER] tag, so I will not rely on a formal bounce narrative, merely note that West Ham&#39;s current momentum has an intensity and organisation that suggests strong coaching.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> West Ham&#39;s Championship-best away record: W3 D4 L0, 13pts — the strongest away form on the coupon</div><div class="li"><b style="color:#1F7548;">▸</b> Blackburn missing Morishita (top assister), Miller, and Forshaw — midfield and defence stripped</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> Both teams on 2-3d rest — fatigue is broadly neutral but West Ham&#39;s higher quality squad handles rotation better</div><div class="li"><b style="color:#8C5A10;">◆</b> DROPPED [1]: Blackburn&#39;s injury list and poor xGA metrics make a home win against the Championship&#39;s best away side implausible</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">5</div></td>
+<td class="s m" style="padding-left:12px;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-championship.png" width="16" height="16" alt="" class="lg">Championship, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b28">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8658_small.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/swansea-city.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Birmingham</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Swansea</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-positive"><b>▲</b> Up-form</span><span class="ch k-caution"><b>⚡</b> 3 days rest</span><span class="ch k-danger"><b>✚</b> August Priske out</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-caution"><b>⚡</b> 3 days rest</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="lw">W</b><b class="lw">W</b><b class="ll">L</b><b class="lw">W</b><b class="lw">W</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="ll">L</b><b class="lw">W</b><b class="ll">L</b><b class="ll">L</b><b class="lw">W</b></td></tr><tr><td class="gv bt">W3 D4 L0, 17–7 (5th)</td><td class="gk bt">Venue record</td><td class="gv gr bt">W4 D0 L3, 10–13 (7th)</td></tr><tr><td class="gv bt">1.62 / 1.50</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.64 / 1.57</td></tr><tr><td class="gv bt">26 vs 22 xPts</td><td class="gk bt">Points vs xPts</td><td class="gv gr bt">26 vs 23 xPts</td></tr><tr><td class="gv bt"><b>August Priske</b> <span class="m">(ST, top scorer, doubt)</span>, Paik Seung-Ho <span class="m">(CDM, 1G)</span>, James Beadle <span class="m">(GK)</span></td><td class="gk bt">Missing</td><td class="gv gr bt">Moussa Kounfolo Yeo <span class="m">(LW, 3G)</span>, Ronald <span class="m">(RW, 2G 1A)</span>, Cameron Burgess <span class="m">(CB)</span>, Stephen Welsh <span class="m">(CB, 1A, doubt)</span></td></tr>      <tr><td class="gv bt"><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b><b class="ld">D</b><b class="ld">D</b></td><td class="gk bt">Last 5 meetings<br><span style="font-weight:400">2023–2026</span></td><td class="gv gr bt"><b class="ll">L</b><b class="ld">D</b><b class="ll">L</b><b class="ld">D</b><b class="ld">D</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Anthony Backhouse</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 4.3&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.03</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">2.18</div>
+<div class="op">Odds 45%<br>Public 56%</div>
+</td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">3.60</div>
+<div class="op">Odds 27%<br>Public 26%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">3.40</div>
+<div class="op">Odds 29%<br>Public 18%</div>
+<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +11</span>      </td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">This is a promotion six-pointer with Birmingham in third and Swansea in fifth, but the injury situation strongly tilts the matchup toward the home side. Swansea travel to St Andrew&#39;s without wingers Moussa Kounfolo Yeo (3G) and Ronald (2G) — both confirmed out until mid-November — plus Cameron Burgess out for the season and Stephen Welsh a doubt at centre-back. Losing two goal-scoring wingers simultaneously is a severe blow to a side whose attacking threat relies heavily on wide play and transitions. Their away form (W4 D0 L3) has been streaky, with emphatic wins against lower opposition alternating with heavy defeats at QPR and Portsmouth.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> Swansea missing both senior wingers (Yeo 3G, Ronald 2G) — attacking threat severely compromised</div><div class="li"><b style="color:#1F7548;">▸</b> Birmingham&#39;s home record W3 D4 L0 at St Andrew&#39;s; won reverse fixture this season</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> Birmingham&#39;s xGF overperformance of +0.98 per game in last 5 — scoring rate may regress without Priske</div><div class="li"><b style="color:#8C5A10;">◆</b> DROPPED [2]: Swansea&#39;s two key wide attackers are confirmed absent, gutting their away attacking threat against a solid home side</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">6</div></td>
+<td class="s m" style="padding-left:12px;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-championship.png" width="16" height="16" alt="" class="lg">Championship, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b28">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/cardiff-city.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/burnley.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Cardiff</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Burnley</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-caution"><b>⚡</b> 2 days rest</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-caution"><b>▼</b> Down-form</span><span class="ch cha k-caution"><b>⚡</b> 3 days rest</span><span class="ch cha k-danger"><b>✚</b> 6 missing</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="ld">D</b><b class="ll">L</b><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="ld">D</b><b class="ld">D</b><b class="ll">L</b><b class="ll">L</b><b class="ld">D</b></td></tr><tr><td class="gv bt">W3 D4 L0, 16–9 (6th)</td><td class="gk bt">Venue record</td><td class="gv gr bt">W1 D2 L4, 10–16 (19th)</td></tr><tr><td class="gv bt">1.93 / 1.92</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.31 / 1.70</td></tr><tr><td class="gv bt">15 vs 20 xPts</td><td class="gk bt">Points vs xPts</td><td class="gv gr bt">10 vs 16 xPts</td></tr><tr><td class="gv bt">Krystian Bielik <span class="m">(CB)</span>, Dylan Lawlor <span class="m">(CB)</span>, Calum Chambers <span class="m">(CB)</span>, Perry Ng <span class="m">(RB, 1G 1A, doubt)</span></td><td class="gk bt">Missing</td><td class="gv gr bt"><b>Zeki Amdouni</b> <span class="m">(ST, top scorer, doubt)</span>, Hannibal Mejbri <span class="m">(CAM)</span>, Bashir Humphreys <span class="m">(CB, doubt)</span>, Armando Broja <span class="m">(ST, doubt)</span>, Jordan Beyer <span class="m">(CB, doubt)</span>, Ashley Barnes <span class="m">(ST, doubt)</span></td></tr>      <tr><td class="gv bt"><b class="lw">W</b><b class="ll">L</b><b class="ll">L</b><b class="ll">L</b><b class="ld">D</b></td><td class="gk bt">Last 5 meetings<br><span style="font-weight:400">2022–2025</span></td><td class="gv gr bt"><b class="ll">L</b><b class="lw">W</b><b class="lw">W</b><b class="lw">W</b><b class="ld">D</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Oliver Langford</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 3.4&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.16</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">2.28</div>
+<div class="op">Odds 43%<br>Public 50%</div>
+</td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">3.95</div>
+<div class="op">Odds 25%<br>Public 27%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">2.95</div>
+<div class="op">Odds 33%<br>Public 23%</div>
+<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +10</span>      </td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">Cardiff&#39;s home record is one of the quiet surprises of the Championship season — W3 D4 L0, with 13 points from seven matches and not a single home league defeat. Even in a torrid run away from home, the Cardiff City Stadium has been a fortress. Their xPts of 20 against actual 15 confirms this is a team performing above what their underlying numbers warrant, though in this case the overperformance has been more sustainable on home soil. The problem for Saturday is structural and severe: Krystian Bielik, Dylan Lawlor, and Calum Chambers are all confirmed out — that is three central defenders missing simultaneously. Perry Ng is doubtful after leaving the West Ham match early. Cardiff&#39;s back line is essentially being rebuilt from scratch, with Joel Bagan and potentially youth players deputising.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> Cardiff missing three first-choice CBs (Bielik, Lawlor, Chambers) — catastrophic defensive shortage</div><div class="li"><b style="color:#1F7548;">▸</b> Burnley&#39;s away record is W1 D2 L4 — ranked 19th in the Championship for away form</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> Cardiff&#39;s defensive injury crisis is unprecedented on this coupon — three CBs out simultaneously creates a massive vulnerability</div><div class="li"><b style="color:#8C5A10;">◆</b> Burnley&#39;s own injury list (Mejbri out, multiple 50-50s) means they cannot reliably exploit Cardiff&#39;s weakness</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">7</div></td>
+<td class="s m" style="padding-left:12px;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-championship.png" width="16" height="16" alt="" class="lg">Championship, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28">1</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/charlton.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/sheffield-united.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Charlton</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Sheffield U</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-caution"><b>▼</b> Down-form</span><span class="ch k-caution"><b>⚡</b> 3 days rest</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-positive"><b>▲</b> Up-form</span><span class="ch cha k-caution"><b>⚡</b> 3 days rest</span><span class="ch cha k-danger"><b>✚</b> Patrick Bamford out</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="ll">L</b><b class="ll">L</b><b class="ll">L</b><b class="ll">L</b><b class="ld">D</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="lw">W</b><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b><b class="ll">L</b></td></tr><tr><td class="gv bt">W2 D3 L2, 5–6 (18th)</td><td class="gk bt">Venue record</td><td class="gv gr bt">W3 D2 L2, 11–10 (9th)</td></tr><tr><td class="gv bt">1.08 / 1.62</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.88 / 1.06</td></tr><tr><td class="gv bt">14 vs 13 xPts</td><td class="gk bt">Points vs xPts</td><td class="gv gr bt">22 vs 18 xPts</td></tr><tr><td class="gv bt">Collins Sichenje <span class="m">(CB)</span></td><td class="gk bt">Missing</td><td class="gv gr bt"><b>Patrick Bamford</b> <span class="m">(ST, top scorer, doubt)</span>, Ryan Oné <span class="m">(ST)</span>, Jamie Shackleton <span class="m">(RW)</span></td></tr>      <tr><td class="gv bt"><b class="lw">W</b><b class="lw">W</b><b class="ll">L</b><b class="ld">D</b><b class="ll">L</b></td><td class="gk bt">Last 5 meetings<br><span style="font-weight:400">2014–2026</span></td><td class="gv gr bt"><b class="ll">L</b><b class="ll">L</b><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Matthew Corlett</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 4.6&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.05</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">3.00</div>
+<div class="op">Odds 32%<br>Public 22%</div>
+<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +10</span>      </td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">3.50</div>
+<div class="op">Odds 28%<br>Public 28%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">2.40</div>
+<div class="op">Odds 40%<br>Public 50%</div>
+</td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">Charlton are in their worst run of the season — four consecutive Championship defeats, with a goal difference of -8 across those matches. Their xGF of just 0.93 per game across the season confirms this is a team that struggles to create meaningful chances; the last five matches produced a meagre 0.6 goals per game against 2.2 conceded. Home form (W2 D3 L2) has also deteriorated, with Bolton and Norwich both winning at The Valley this season. The only structural positive is a minimal injury list — just Collins Sichenje confirmed out for the season — suggesting the losses are down to quality and form, not attrition.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> Charlton on a 4-match losing streak with 0.93 xGF per game — struggling badly to create chances</div><div class="li"><b style="color:#1F7548;">▸</b> Sheffield United UP-FORM (4 wins in 6) with best attacking xGF of visiting Championship sides this week</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> H2H — Charlton won both league meetings against Sheffield United last season, including at The Valley</div><div class="li"><b style="color:#8C5A10;">◆</b> Bamford&#39;s doubtful status removes Sheffield United&#39;s most reliable source of goals</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">8</div></td>
+<td class="s m" style="padding-left:12px;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-championship.png" width="16" height="16" alt="" class="lg">Championship, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28">1</td><td class="bx b28">X</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/preston-north-end.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/southampton.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Preston</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Southampton</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-caution"><b>▼</b> Down-form</span><span class="ch k-caution"><b>⚡</b> 3 days rest</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-positive"><b>▲</b> Up-form</span><span class="ch cha k-caution"><b>⚡</b> 3 days rest</span><span class="ch cha k-danger"><b>✚</b> Cyle Larin out</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="ll">L</b><b class="ll">L</b><b class="ld">D</b><b class="ll">L</b><b class="ll">L</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="ld">D</b><b class="lw">W</b><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b></td></tr><tr><td class="gv bt">W1 D1 L5, 7–13 (23rd)</td><td class="gk bt">Venue record</td><td class="gv gr bt">W2 D3 L2, 9–9 (14th)</td></tr><tr><td class="gv bt">0.91 / 2.15</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.69 / 1.49</td></tr><tr><td class="gv bt">5 vs 15 xPts</td><td class="gk bt">Points vs xPts</td><td class="gv gr bt">24 vs 23 xPts</td></tr><tr><td class="gv bt">Harry Clarke <span class="m">(RM)</span>, Liam Gibbs <span class="m">(RW)</span>, Johnny Kenny <span class="m">(ST, 2G, doubt)</span>, Alistair McCann <span class="m">(CM, doubt)</span></td><td class="gk bt">Missing</td><td class="gv gr bt"><b>Cyle Larin</b> <span class="m">(ST, top scorer, doubt)</span></td></tr>      <tr><td class="gv bt"><b class="ll">L</b><b class="lw">W</b><b class="ll">L</b><b class="ld">D</b><b class="ll">L</b></td><td class="gk bt">Last 5 meetings<br><span style="font-weight:400">2011–2026</span></td><td class="gv gr bt"><b class="lw">W</b><b class="ll">L</b><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Tom Nield</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 3.4&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.05</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">5.10</div>
+<div class="op">Odds 19%<br>Public 16%</div>
+</td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">4.50</div>
+<div class="op">Odds 22%<br>Public 18%</div>
+<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +4</span>      </td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">1.63</div>
+<div class="op">Odds 59%<br>Public 66%</div>
+</td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">Preston sit bottom of the Championship table with just 5 points from 14 matches, and the data paints a picture as bleak as the table suggests. Their xPts of 15 versus actual 5 is the most extreme unlucky reading on the coupon — they should have around 15 points but have only 5, suggesting extraordinary conversion failures and goalkeeping/defending that has been unable to absorb even modest pressure. Their xGA of 2.15 in the last five matches underpins a home record of W1 D1 L5, with 7 goals scored and 13 conceded. Manager Graham Alexander is insisting the squad focuses on winning rather than dwelling on the gap to safety — the kind of rhetoric that tends to accompany a club in genuine crisis. Johnny Kenny, their most lively attacker with 2G, is a doubt with a hamstring issue, Harry Clarke and Liam Gibbs are both out, and McCann is a doubt. That is potentially four unavailable heading into a must-win fixture.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> Preston bottom of the Championship with 5 actual points vs 15 xPts — quality is poor despite the statistical unluckiness</div><div class="li"><b style="color:#1F7548;">▸</b> Preston&#39;s home SoT of 1.6 per game is the lowest of any team on the coupon</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> Larin (7G, top scorer) is a doubt — if absent, Southampton&#39;s attack is redistributed rather than eliminated, but it matters</div><div class="li"><b style="color:#8C5A10;">◆</b> Preston&#39;s extreme xPts unluckiness (5 actual vs 15 expected) means they could theoretically produce a performance above their current standing</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">9</div></td>
+<td class="s m" style="padding-left:12px;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-championship.png" width="16" height="16" alt="" class="lg">Championship, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b28">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/queens-park-rangers.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8430_small.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Queens Park Rangers</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Lincoln</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-caution"><b>⚡</b> 3 days rest</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-caution"><b>▼</b> Down-form</span><span class="ch cha k-caution"><b>⚡</b> 3 days rest</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="ld">D</b><b class="ll">L</b><b class="lw">W</b><b class="ll">L</b><b class="lw">W</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="ll">L</b><b class="ll">L</b><b class="lw">W</b><b class="ld">D</b><b class="ll">L</b></td></tr><tr><td class="gv bt">W3 D3 L1, 14–6 (10th)</td><td class="gk bt">Venue record</td><td class="gv gr bt">W3 D1 L3, 6–8 (11th)</td></tr><tr><td class="gv bt">1.87 / 0.81</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.23 / 2.10</td></tr><tr><td class="gv bt">21 vs 25 xPts</td><td class="gk bt">Points vs xPts</td><td class="gv gr bt">15 vs 19 xPts</td></tr><tr><td class="gv bt">Rumarn Burrell <span class="m">(ST, 2G 1A)</span>, Nicolas Madsen <span class="m">(CM, 2G 1A)</span>, Tariq Lamptey <span class="m">(LB, 1A)</span>, Amadou Salif Mbengue <span class="m">(RB, 1A)</span></td><td class="gk bt">Missing</td><td class="gv gr bt">Tendayi Darikwa <span class="m">(RB, 1A)</span>, Mason Melia <span class="m">(ST, doubt)</span></td></tr>      <tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Robert Madley</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 4.3&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.03</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">1.91</div>
+<div class="op">Odds 51%<br>Public 69%</div>
+</td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">3.75</div>
+<div class="op">Odds 26%<br>Public 19%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">4.10</div>
+<div class="op">Odds 24%<br>Public 12%</div>
+<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +12</span>      </td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">QPR&#39;s situation is unusual: a team missing five confirmed players — Burrell (striker), Madsen (midfielder), Lamptey (left-back), Mbengue (right-back, season-ending ACL) — yet still operating with a home record of W3 D3 L1 and home xGF of 1.71 per game across the season. The injuries are real and concentrated in full-back and attacking areas, forcing manager Julien Stephan to reshuffle across both flanks. Despite this, QPR&#39;s home attacking returns have been among the more productive in the Championship mid-table, highlighted by their 5-0 destruction of Swansea and 4-1 win over Derby at Loftus Road this season. Richard Kone&#39;s contribution up front has been highlighted in preview coverage as a key variable with Burrell unavailable.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> QPR missing 4-5 players including both full-backs and multiple attackers — structural reshuffling required</div><div class="li"><b style="color:#1F7548;">▸</b> Lincoln shipped 6 goals at home last midweek and their xGA of 2.10 in last 5 reveals defensive frailty</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> QPR&#39;s injury list (5 confirmed out) is the most extensive of any home side on the coupon — full-back depth is severely tested</div><div class="li"><b style="color:#8C5A10;">◆</b> Lincoln have shown they can win away from home this season, including at Bristol City and Preston</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">10</div></td>
+<td class="s m" style="padding-left:12px;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-championship.png" width="16" height="16" alt="" class="lg">Championship, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28">1</td><td class="bx b28">X</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/watford.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/middlesbrough.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Watford</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Middlesbrough</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-caution"><b>⚡</b> 3 days rest</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-positive"><b>▲</b> Up-form</span><span class="ch cha k-caution"><b>⚡</b> 2 days rest</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="lw">W</b><b class="ll">L</b><b class="ll">L</b><b class="lw">W</b><b class="ll">L</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="ll">L</b><b class="lw">W</b><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b></td></tr><tr><td class="gv bt">W4 D1 L2, 9–9 (9th)</td><td class="gk bt">Venue record</td><td class="gv gr bt">W3 D2 L2, 13–10 (8th)</td></tr><tr><td class="gv bt">1.23 / 1.75</td><td class="gk bt">xG last 5</td><td class="gv gr bt">2.45 / 0.86</td></tr><tr><td class="gv bt">14 vs 12 xPts</td><td class="gk bt">Points vs xPts</td><td class="gv gr bt">28 vs 29 xPts</td></tr><tr><td class="gv bt">Edoardo Bove <span class="m">(CDM, doubt)</span>, Kwadwo Baah <span class="m">(RW, doubt)</span>, Jeremy Ngakia <span class="m">(RB, doubt)</span></td><td class="gk bt">Missing</td><td class="gv gr bt">Alfie Jones <span class="m">(CB, 1G)</span>, Rokas Pukštas <span class="m">(CAM)</span></td></tr>      <tr><td class="gv bt"><b class="ll">L</b><b class="lw">W</b><b class="lw">W</b><b class="lw">W</b><b class="ll">L</b></td><td class="gk bt">Last 5 meetings<br><span style="font-weight:400">2024–2026</span></td><td class="gv gr bt"><b class="lw">W</b><b class="ll">L</b><b class="ll">L</b><b class="ll">L</b><b class="lw">W</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Gavin Ward</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 3.4&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.10</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">6.10</div>
+<div class="op">Odds 16%<br>Public 20%</div>
+</td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">4.80</div>
+<div class="op">Odds 20%<br>Public 24%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">1.52</div>
+<div class="op">Odds 64%<br>Public 56%</div>
+<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +8</span>      </td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">Middlesbrough sit top of the Championship table and their underlying numbers justify every point of that position. Their season xGF of 2.06 per game is the highest of any team appearing on this coupon, their xGA of 1.01 is the second-tightest, and their xPts of 29 versus actual 28 confirms the table is a true reflection of merit rather than fortune. The last five matches produced xGF of 2.45 against xGA of just 0.86 — a dominant chance profile whether Boro win, draw, or lose on the day. UP-FORM across recent weeks, Boro have beaten Charlton 3-0, Bolton 5-1 away, and Stoke 3-2 on the road.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> Middlesbrough top of the Championship with xGF 2.06/g and xGA 1.01/g — genuine class gap over Watford</div><div class="li"><b style="color:#1F7548;">▸</b> FATIGUE — only 2d rest for Boro, rotation planned; Lankshear reportedly doubtful</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> Middlesbrough&#39;s 2d rest is the tightest of any team on the coupon — rotation will mean a weakened starting XI</div><div class="li"><b style="color:#8C5A10;">◆</b> H2H: Watford beat Middlesbrough 3-0 at this ground last season — familiarity can produce upsets</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">11</div></td>
+<td class="s m" style="padding-left:12px;"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/comp_efl-championship.png" width="16" height="16" alt="" class="lg">Championship, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b28">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/west-bromwich-albion.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/millwall.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">West Bromwich</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Millwall</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-positive"><b>▲</b> Up-form</span><span class="ch k-caution"><b>⚡</b> 3 days rest</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-caution"><b>▼</b> Down-form</span><span class="ch cha k-caution"><b>⚡</b> 3 days rest</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="ld">D</b><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b><b class="lw">W</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="ll">L</b><b class="lw">W</b><b class="ll">L</b><b class="ld">D</b><b class="ll">L</b></td></tr><tr><td class="gv bt">W3 D3 L1, 10–7 (12th)</td><td class="gk bt">Venue record</td><td class="gv gr bt">W2 D1 L4, 8–15 (16th)</td></tr><tr><td class="gv bt">2.46 / 1.12</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.80 / 1.27</td></tr><tr><td class="gv bt">25 vs 20 xPts</td><td class="gk bt">Points vs xPts</td><td class="gv gr bt">18 vs 24 xPts</td></tr><tr><td class="gv bt">Toby Collyer <span class="m">(CDM)</span>, Nolan Galves <span class="m">(RWB)</span>, Michael Johnston <span class="m">(RW)</span>, George Campbell <span class="m">(CB, doubt)</span></td><td class="gk bt">Missing</td><td class="gv gr bt">Mathis Servais <span class="m">(LWB)</span>, Casper de Norre <span class="m">(CDM, doubt)</span>, Filip Marschall <span class="m">(GK, doubt)</span>, Lukas Bornhøft Jensen <span class="m">(GK, doubt)</span></td></tr>      <tr><td class="gv bt"><b class="ld">D</b><b class="ll">L</b><b class="ld">D</b><b class="ld">D</b><b class="ld">D</b></td><td class="gk bt">Last 5 meetings<br><span style="font-weight:400">2024–2026</span></td><td class="gv gr bt"><b class="ld">D</b><b class="lw">W</b><b class="ld">D</b><b class="ld">D</b><b class="ld">D</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Thomas Bramall</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 3.7&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.13</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">2.14</div>
+<div class="op">Odds 45%<br>Public 58%</div>
+</td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">3.65</div>
+<div class="op">Odds 27%<br>Public 26%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">3.45</div>
+<div class="op">Odds 28%<br>Public 16%</div>
+<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +12</span>      </td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">West Brom&#39;s UP-FORM flag is backed by a compelling recent run — wins at West Ham (3-1) and Wrexham (2-1), plus a draw at Southampton, suggest a team that can perform both home and away against competitive opposition. Their last-five xGF of 2.46 is the highest of any home side on this coupon, and while actual goals (2.0 per game) have underperformed that figure, the chance creation is entirely real. The structured absences — Collyer (CDM, out until December), Galves (season-ending), Campbell (doubt), Johnston (out) — are significant in the engine room, and Perplexity confirms Daryl Dike (striker) has picked up an injury in the Southampton draw, adding a fifth potential absence. Dike&#39;s loss hurts in the final third, but West Brom have multiple goal threats and are playing with momentum.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> Millwall missing 8-9 players in total including both senior goalkeepers as doubts and multiple midfielders confirmed out</div><div class="li"><b style="color:#1F7548;">▸</b> West Brom&#39;s last-five xGF of 2.46 is the highest of any home side on this coupon — chance creation is elite</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> West Brom missing Dike (reported out per BBC/Perplexity) plus Collyer, Johnston, Galves — their own squad depth is being tested</div><div class="li"><b style="color:#8C5A10;">◆</b> H2H pattern has produced three 0-0 or 1-1 draws across the last five meetings at The Hawthorns</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">12</div></td>
+<td class="s m" style="padding-left:12px;">FA Cup, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/crewe.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/afc-wimbledon.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Crewe</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Wimbledon</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-caution"><b>⚡</b> EFL Trophy Northern Grp. B in 3d</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-caution"><b>▼</b> Down-form</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="ld">D</b><b class="ll">L</b><b class="ll">L</b><b class="lw">W</b><b class="lw">W</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="ll">L</b><b class="ll">L</b><b class="ld">D</b><b class="ll">L</b><b class="ll">L</b></td></tr><tr><td class="gv bt">1.12 / 1.15</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.02 / 2.16</td></tr>      <tr><td class="gv bt"><b class="ll">L</b><b class="ld">D</b><b class="ld">D</b><b class="ld">D</b><b class="ld">D</b></td><td class="gk bt">Last 5 meetings<br><span style="font-weight:400">2023–2025</span></td><td class="gv gr bt"><b class="lw">W</b><b class="ld">D</b><b class="ld">D</b><b class="ld">D</b><b class="ld">D</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Matt Donohue</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 4.2&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.06</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">2.50</div>
+<div class="op">Odds 38%<br>Public 43%</div>
+</td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">3.25</div>
+<div class="op">Odds 29%<br>Public 30%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">2.80</div>
+<div class="op">Odds 34%<br>Public 27%</div>
+<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +7</span>      </td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">An FA Cup first-round tie with limited data — no structured injury confirmations from either side, no detailed tactical preview beyond basic context from ESPN and BBC Sport. The analysis rests on form, league context, and odds. Wimbledon are from League One, one division above Crewe&#39;s League Two, which should theoretically represent a quality advantage. However, Wimbledon are in catastrophic form: DOWN-FORM flag, with four defeats in their last five matches including a 5-0 humiliation at Sheffield Wednesday and a 3-0 loss at home to Mansfield. Their xGF of 1.02 and xGA of 2.16 in the last five confirm this is a team collapsing structurally, not merely experiencing a bad run of luck. Their away record in League One reads L 1-2 Stockport, L 0-5 Sheffield Wednesday, L 1-2 Plymouth — three heavy away defeats in a row.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> Wimbledon DOWN-FORM — four losses in last five including 5-0 and 3-0 drubbings; xGA of 2.16 in last 5</div><div class="li"><b style="color:#1F7548;">▸</b> Wimbledon from League One but in complete form collapse; Crewe&#39;s home advantage at Gresty Road is meaningful</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> Wimbledon&#39;s divisional advantage (League One vs League Two) creates a quality floor regardless of recent form</div><div class="li"><b style="color:#8C5A10;">◆</b> FA Cup context could prompt rotation from both sides — lower quality XIs than league norm</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px" style="padding-bottom:28px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="card">
+<tr><td style="padding:14px 16px 4px;">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="34"><div class="gn d">13</div></td>
+<td class="s m" style="padding-left:12px;">FA Cup, Saturday 16:00</td>
+<td align="right"><table cellpadding="0" cellspacing="4" class="bxt"><tr><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">1</td><td class="bx b28 bo" style="background:#005F73;color:#FFFFFF">X</td><td class="bx b28">2</td></tr></table></td>
+</tr></table>
+</td></tr>
+<tr><td style="padding:8px 16px 12px;">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="38%" valign="bottom"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/oxford-united.png" width="30" height="30" alt="" class="hb"></td><td width="24%"></td><td width="38%" valign="bottom" align="right"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/badges/stevenage.png" width="30" height="30" alt="" class="ab"></td></tr>
+<tr><td valign="bottom" class="tn d">Oxford</td><td valign="bottom" align="center" class="d m vs">v</td><td valign="bottom" align="right" class="tn d">Stevenage</td></tr>
+<tr><td valign="top" style="padding-top:8px;"><span class="ch k-positive"><b>▲</b> Up-form</span><span class="ch k-caution"><b>⚡</b> 2 days rest, EFL Trophy Southern Grp. A in 3d</span></td><td></td><td valign="top" align="right" style="padding-top:8px;"><span class="ch cha k-caution"><b>⚡</b> EFL Trophy Southern Grp. B in 3d</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="sec" style="padding:0 16px;">
+<table cellpadding="0" cellspacing="0" width="100%" class="s" style="line-height:1.4;">
+<tr><td width="38%" class="gv"><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b></td><td width="24%" class="gk">Form</td><td width="38%" class="gv gr"><b class="ld">D</b><b class="ll">L</b><b class="lw">W</b><b class="ll">L</b><b class="lw">W</b></td></tr><tr><td class="gv bt">1.80 / 1.34</td><td class="gk bt">xG last 5</td><td class="gv gr bt">1.42 / 1.76</td></tr>      <tr><td class="gv bt"><b class="lw">W</b><b class="ld">D</b><b class="lw">W</b><b class="ll">L</b><b class="lw">W</b></td><td class="gk bt">Last 5 meetings<br><span style="font-weight:400">2017–2026</span></td><td class="gv gr bt"><b class="ll">L</b><b class="ld">D</b><b class="ll">L</b><b class="lw">W</b><b class="ll">L</b></td></tr>
+<tr><td colspan="3" align="center" class="gv bt rf"><img src="https://trldrgn.github.io/stryktipset-newsletter/static/icons/whistle.png" width="16" height="16" alt="Ref" class="wh"> <b>Paul Howard</b>&nbsp; <span class="crd" style="background:#F5C400;"></span> 3.5&nbsp; <span class="crd" style="background:#D32F2F;"></span> 0.10</td></tr>
+</table>
+</td></tr>
+<tr><td class="sec in">
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td width="38%" valign="top" align="left" style="text-align:left;">
+<span class="ol d o1">1</span>
+<div class="on d">1.95</div>
+<div class="op">Odds 48%<br>Public 58%</div>
+</td>
+<td width="24%" valign="top" align="center" style="text-align:center;">
+<span class="ol d oX">X</span>
+<div class="on d">3.50</div>
+<div class="op">Odds 27%<br>Public 26%</div>
+</td>
+<td width="38%" valign="top" align="right" style="text-align:right;">
+<span class="ol d o2">2</span>
+<div class="on d">3.75</div>
+<div class="op">Odds 25%<br>Public 16%</div>
+<span class="ch k-special" style="margin:4px 0 0;padding:2px 6px;font-size:11px"><b>◆</b> value +9</span>      </td>
+</tr></table>
+</td></tr>
+<tr><td class="sec in" style="padding-top:14px;line-height:1.6;">Oxford are UP-FORM in League One — three wins in their last five including victories over Reading, Stockport County, and Wigan at the Kassam Stadium — and their home record this season is strong (W2 D2 L0 from home matches visible in the form line, with the draw against Bradford and the wins framing a productive period). Their xGF of 1.80 and xGA of 1.34 in the last five represent the most positive differential among the FA Cup sides, though actual goals of only 1.2 per game suggest they have been unlucky in front of goal — another regression positive. Manager Aaron Ramsey has spoken publicly about the importance of FA Cup progress, which signals genuine motivation. The FATIGUE flag (2d rest) is real: Oxford played League One football only two days ago and have an EFL Trophy fixture in three days. Some rotation is possible, but for an FA Cup tie at home, full-strength selection is more probable.</td></tr>
+<tr><td style="padding:0 16px 10px;"><div class="lb">Why</div><div class="li"><b style="color:#1F7548;">▸</b> Oxford UP-FORM at home (W2 D0 L0 in recent home league fixtures) with better xG differential than Stevenage</div><div class="li"><b style="color:#1F7548;">▸</b> H2H: Oxford won reverse fixture 2-1 this season; H2H record leans clearly Oxford across recent seasons</div></td></tr>
+<tr><td style="padding:0 16px 16px;"><div class="lb">Risks</div><div class="li"><b style="color:#8C5A10;">◆</b> Oxford FATIGUE — 2d rest from League One, EFL Trophy in 3 days — rotation risk could weaken their starting XI significantly</div><div class="li"><b style="color:#8C5A10;">◆</b> Stevenage&#39;s impressive away results in EFL Trophy (6-1 Walsall, 5-1 Barnsley) could translate to a cup upset, albeit against weaker opposition</div></td></tr>
+</table>
+</td></tr>
+<tr><td class="px h"><div class="d">Last week&#39;s coupon</div><div class="s m" style="margin-top:4px;">Draw 4977, our picks against the results.</div></td></tr>
+<tr><td class="px">
+<table cellpadding="0" cellspacing="0" width="100%" class="grid">
+<tr><td width="26" class="cr cn d">1</td><td class="cr">Aston Villa – Fulham</td><td width="96" class="cr ce d">1X <span class="m">→</span> <span style="color:#1F7548">X ✓</span></td></tr>
+<tr><td width="26" class="cr cn d">2</td><td class="cr">Tottenham – Crystal Palace</td><td width="96" class="cr ce d">1 <span class="m">→</span> <span style="color:#1F7548">1 ✓</span></td></tr>
+<tr><td width="26" class="cr cn d">3</td><td class="cr">Manchester City – Brighton</td><td width="96" class="cr ce d">1X <span class="m">→</span> <span style="color:#B5302E">2 ✗</span></td></tr>
+<tr><td width="26" class="cr cn d">4</td><td class="cr">Bournemouth – Leeds</td><td width="96" class="cr ce d">1X <span class="m">→</span> <span style="color:#1F7548">1 ✓</span></td></tr>
+<tr><td width="26" class="cr cn d">5</td><td class="cr">Coventry – Sunderland</td><td width="96" class="cr ce d">1X2 <span class="m">→</span> <span style="color:#1F7548">1 ✓</span></td></tr>
+<tr><td width="26" class="cr cn d">6</td><td class="cr">Brentford – Nottingham Forest</td><td width="96" class="cr ce d">1X <span class="m">→</span> <span style="color:#1F7548">1 ✓</span></td></tr>
+<tr><td width="26" class="cr cn d">7</td><td class="cr">Hull – Ipswich</td><td width="96" class="cr ce d">X1 <span class="m">→</span> <span style="color:#1F7548">X ✓</span></td></tr>
+<tr><td width="26" class="cr cn d">8</td><td class="cr">Bolton – Bristol City</td><td width="96" class="cr ce d">2X <span class="m">→</span> <span style="color:#1F7548">2 ✓</span></td></tr>
+<tr><td width="26" class="cr cn d">9</td><td class="cr">Burnley – Portsmouth</td><td width="96" class="cr ce d">1X <span class="m">→</span> <span style="color:#1F7548">X ✓</span></td></tr>
+<tr><td width="26" class="cr cn d">10</td><td class="cr">Millwall – Derby</td><td width="96" class="cr ce d">1 <span class="m">→</span> <span style="color:#1F7548">1 ✓</span></td></tr>
+<tr><td width="26" class="cr cn d">11</td><td class="cr">Southampton – Queens Park Rangers</td><td width="96" class="cr ce d">1 <span class="m">→</span> <span style="color:#1F7548">1 ✓</span></td></tr>
+<tr><td width="26" class="cr cn d">12</td><td class="cr">Swansea – Blackburn</td><td width="96" class="cr ce d">1X <span class="m">→</span> <span style="color:#1F7548">1 ✓</span></td></tr>
+<tr><td width="26" class="cr cn d" style="border-bottom:0">13</td><td class="cr" style="border-bottom:0">West Ham – West Bromwich</td><td width="96" class="cr ce d" style="border-bottom:0">1 <span class="m">→</span> <span style="color:#B5302E">2 ✗</span></td></tr>
+</table>
+</td></tr>
+<tr><td class="px xs m" style="padding-top:32px;padding-bottom:40px;line-height:1.6;">
+Generated 6 Nov 2026, 17:25 for draw 4978. Data: Svenska Spel, FotMob, Fantasy Premier League, football-data.co.uk.<br>
+&copy; 2026 Stryktipset Newsletter
+</td></tr>
+</table>
+</td></tr>
+</table>
+</body>
+</html>
