@@ -1,0 +1,323 @@
+{
+  "draw_number": 4979,
+  "draw_date": "2026-11-13",
+  "saved_at": "2026-11-13T22:26:55.105815+00:00",
+  "executive_summary": "A Nations League-heavy coupon with four matches offering strong single-worthy confidence. The dominant theme this week is squad attrition: Bosnia lose two centre-backs into Sweden's most dangerous attack; Austria field a skeleton squad against Ireland; Reading travel to Stockport badly depleted by suspensions. Game 1 (Sweden) and Game 4 (Poland) are the clearest calls on form, motivation and opponent fragility. Games 6, 9 and 11 carry meaningful volatility due to injury crises and form reversals — treat those as doubles territory at best.",
+  "value_radar": [
+    "Game 6: Ireland at 6.00 looks significantly underpriced. Austria are missing 10 confirmed players including Alaba, Schlager, Prass and Wöber — effectively a reserve XI at home. Ireland only need to show up. The 4/7 Austrian price in the market reflects their promotion incentive (a draw suffices) rather than their squad quality this week.",
+    "Game 9: Plymouth at 3.05 is attractive. Sheffield Wednesday are DOWN-FORM, lost 0-4 to Accrington in midweek, and have additional absentees. Plymouth rank second in away form all season. The public (46% home) may be anchoring on Wednesday's home address rather than their recent implosion.",
+    "Game 13: Swindon at 3.30 offers marginal value. Grimsby's xPts of 26 against actual 20 points flags significant underperformance — their xGF is genuine (2.15/g) but their away record is W1 D4 L2 and Swindon's home form is solid. The draw at 3.55 is also worth noting."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Sverige",
+      "away_team": "Bosnien & Hercegovina",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.87,
+      "key_factors": [
+        "Bosnia missing both regular centre-backs (Muharemović SUSPENDED, Hadžikadunić OUT) — catastrophic matchup vs Gyökeres",
+        "Sweden UP-FORM at home, need this win for promotion — maximum motivation",
+        "Sweden season xGA 0.59/g is elite-level defensive structure; Bosnia xGF only 0.89 in last 5"
+      ],
+      "risk_flags": [
+        "Reverse fixture ended 1-1 in Sarajevo — Bosnia have shown capacity to absorb pressure",
+        "Bosnia may set up ultra-compact and play for the draw regardless of personnel; a 0-0 or 1-1 outcome cannot be dismissed"
+      ],
+      "analysis": "This is the decisive Group B4 fixture — Sweden secure promotion to Nations League A with a win, while Bosnia play for second place. The context could not be more sharply drawn, and Sweden arrive carrying the momentum of an UP-FORM tag and a home record of two wins from two in this campaign. Viktor Gyökeres is the story the continent is following, and UEFA have flagged his scoring run as the central narrative heading into Solna.\n\nThe structural case for Sweden is reinforced dramatically by Bosnia's defensive injury crisis. Tarik Muharemović is SUSPENDED and Dennis Hadžikadunić is confirmed out through injury — that is both first-choice centre-backs missing for a team about to face one of Europe's most potent club strikers. Replacement-quality matters enormously here: whoever fills in at the heart of Bosnia's defence will be improvised, poorly drilled as a partnership, and facing a forward line that ripped Romania apart 3-1 at this venue. Sweden's season xGA of 0.59 per game — an extraordinary figure — tells you they are built to control matches defensively as well as dominate offensively.\n\nThe reverse fixture finished 1-1 in Sarajevo, which the market will cite as evidence of Bosnia's resilience. But that was away from home, with both CBs fit, and without the added motivation pressure on Sweden of claiming top spot on home soil. Bosnia's xG data exposes their fragility further: their xGF of 0.89 in the last five games versus 1.20 actual goals suggests they have been marginally outscoring their chances — regression risk coming into a match where they will spend long periods defending. Sweden's home xGF of 1.69/g dwarfs that.\n\nThe only note of caution is that Wålemark is unavailable on the wing, slightly narrowing Sweden's attacking width, and Bosnia — when organised and compact — can grind out low-scoring results. The 0-0 away at Poland and the draw in Sweden in September show they know how to absorb pressure. But with two CBs out, and Sweden's motivation at its highest, the home win is the clearest call on this coupon.",
+      "value_note": "1.52 is short but justified given the injury context — Bosnia's defensive lineup is genuinely unknown.",
+      "home_absent_count": 1,
+      "away_absent_count": 2
+    },
+    {
+      "game_number": 2,
+      "home_team": "Portugal",
+      "away_team": "Danmark",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.84,
+      "key_factors": [
+        "Portugal won the reverse fixture 4-2 in Copenhagen — dominant H2H this season",
+        "Denmark's actual goals significantly exceed xGF (+0.45 overperformance) — regression risk",
+        "Portugal home record W2 D0 L0 in Nations League; maximum home dominance season xGA 1.14/g manageable"
+      ],
+      "risk_flags": [
+        "Francisco Conceição SUSPENDED — Portugal lose significant direct attacking threat from the right",
+        "DROPPED [2]: Denmark lost 2-4 in Lisbon earlier this season; away record W1 D0 L1; goals above xGF unsustainable"
+      ],
+      "analysis": "Portugal are the dominant force in this group — four wins from four in Nations League play, already qualified, with a 4-2 demolition of these opponents away from home just six weeks ago forming the cornerstone of their recent evidence. Jorge Jesus's side operate with a collective dynamism that the post-Ronaldo era has actually liberated: Gonçalo Ramos and João Félix both in form, and the team's xGF/g of 1.75 for the season is backed by genuine chance creation rather than fortunate bounces. Their actual points of 12 versus xPts of 8 is worth flagging — they have maximised their returns beyond expectation — but against Denmark's leaky away defence, regression seems unlikely to cost them here.\n\nFrancisco Conceição's suspension is a meaningful absence. The Porto winger has been one of Portugal's most direct and dangerous outlets, and his absence from the right flank creates a gap that will require creative management from Jesus. Nevertheless, the squad depth is real, and the reverse fixture — won 4-2 in Copenhagen — was achieved with a balanced attack rather than dependence on any single player.\n\nDenmark's issue is not lack of quality but structural inconsistency at away venues. Their away record this season reads W1 D0 L1, and their actual goals significantly outstrip xGF (+0.45 overperformance) — a classic signal that they have been fortunate or clinical beyond sustainable levels. Rasmus Højlund remains a genuine threat, and Denmark have already beaten Wales twice, suggesting they are not to be dismissed. But the aggregate evidence of the reverse fixture, Portugal's home form, and Denmark's reliance on overperforming their xG makes the away win the weakest supported outcome.\n\nThe 4.8 about the draw is interesting — Portugal's motivation for a third group win and Denmark's need for points creates competing pressures. But Portugal are simply a better-constructed side at home and have been ruthless throughout this campaign.",
+      "value_note": "1.50 is tight but Portugal's dominance in this group justifies it even with Conceição suspended.",
+      "home_absent_count": 1,
+      "away_absent_count": 0
+    },
+    {
+      "game_number": 3,
+      "home_team": "Norge",
+      "away_team": "Wales",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.8,
+      "key_factors": [
+        "Wales missing Ben Cabango (SUSPENDED), Sorba Thomas (SUSPENDED), and reportedly Kieffer Moore and Jordan James — four confirmed/reported absences",
+        "Norway xPts 6 vs actual 3 — been chronically unlucky; regression bounce expected at home",
+        "Wales away record W0 D0 L2 this season, xGA 1.70/g — cannot defend away from home"
+      ],
+      "risk_flags": [
+        "Wales won the reverse fixture 2-1 in Cardiff — psychological momentum exists",
+        "Jørgen Strand Larsen reportedly absent for Norway (unverified Perplexity source) — reduces strike depth behind Haaland",
+        "Norway conceding 2.0 goals/g recently despite xGA 1.20 — defensive fragility is real"
+      ],
+      "analysis": "Norway carry the DOWN-FORM tag into this fixture and have been deeply inconsistent, winning just one of their last five matches including a home defeat to Portugal. Their xPts of 6 against actual 3 points is one of the more glaring unlucky figures on this coupon — they have created the chances but not taken them, and their defence has conceded 2.0 goals per game against an xGA of only 1.20, meaning opponents have been clinical against them. At some point that luck must turn, and home advantage against a ravaged Wales side feels like the right moment.\n\nBecause Wales are genuinely devastated here. The structured data confirms Ben Cabango (CB) and Sorba Thomas (LW) as suspended, while Perplexity's BBC Sport-sourced reporting — credible enough to treat seriously — adds Kieffer Moore and Jordan James as withdrawn through injury. That is Wales' most physical striker and an important central midfielder both absent. Structurally, the two suspensions expose Wales at centre-back and limit their wide threat, while the unverified but plausible Perplexity absences compound the problem further. Their away record of W0 D0 L2 this Nations League season, with a xGA of 1.70/g, confirms they cannot defend away from home.\n\nNorway's Erling Haaland and Martin Ødegaard represent a firepower level that simply dwarfs Wales' resources, particularly a Wales side playing with a makeshift backline and without their most effective forward. Jørgen Strand Larsen is reportedly absent for Norway (Perplexity/ESPN, unverified) which removes depth up front but Haaland alone is transformative.\n\nThe reverse fixture — Wales winning 2-1 in Cardiff — will embolden the visitors emotionally, but the squad differential in this fixture is simply too wide. Norway at 1.27 is short but defensible, and the 76% public backing reflects genuine structural superiority rather than casual favouritism.",
+      "value_note": "1.27 is barely a paying price but the structural case for Norway is strong given Wales' personnel crisis.",
+      "home_absent_count": 1,
+      "away_absent_count": 4
+    },
+    {
+      "game_number": 4,
+      "home_team": "Rumänien",
+      "away_team": "Polen",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.8,
+      "key_factors": [
+        "Poland won the reverse fixture 6-0 — dominant H2H; Romania xGA 2.43/g season confirms structural defensive collapse",
+        "Marin SUSPENDED removes Romania's most important creative midfielder",
+        "Poland need the win for promotion play-off — sharp motivation asymmetry vs a Romania side with nothing to play for"
+      ],
+      "risk_flags": [
+        "Bednarek SUSPENDED at CB for Poland — increased aerial vulnerability from set pieces",
+        "DROPPED [1]: Romania season record W0 D0 L4 at home in Nations League; 0 points; xGF 0.64/g"
+      ],
+      "analysis": "Romania are, by any objective measure, the worst team in Group B4. They have lost all five of their recent fixtures, conceded an astonishing 2.8 goals per game in that span, and carry a season xGA of 2.43/g that confirms the defensive collapse is real rather than unlucky. Their xGF of just 0.64/g confirms they can barely threaten opponents even with a full complement. Crucially, Răzvan Marin — their most experienced central midfielder — is suspended for this fixture, robbing Romania of their primary ball-carrier and rhythm-setter in midfield. This is a team in structural freefall.\n\nPoland, meanwhile, carry DOWN-FORM tags and their own injury concerns: Frankowski is out at right-back and Bednarek is suspended at centre-back. Their away record in the Nations League shows two defeats, and they have not won away from home in this competition. However, the most recent meeting between these sides tells the entire story: Poland won 6-0 in Bucharest six weeks ago. That was not a fluke — Romania's xGA was atrocious even then, and Poland's xGF/g of 1.74 for the season is backed by real attacking quality.\n\nThe motivation angle also favours Poland here. They need a win to maintain promotion play-off hopes, while Romania are playing in a meaningless game from a results perspective (they face the relegation play-offs regardless). A desperate home side might make a brief game of it — the draw at 3.85 is tempting as an upset line — but Poland's quality in possession, the disparity in squad depth, and the 6-0 result from the reverse fixture all point firmly in one direction.\n\nPoland's Bednarek suspension at centre-back is a minor concern given they face limited aerial threat from Romania, and Frankowski's absence at right-back is managed by their squad depth. The case for the away win here is as clear-cut as any match on this coupon.",
+      "value_note": "Poland at 1.89 is good value given the 6-0 reverse and Romania's complete home collapse.",
+      "home_absent_count": 1,
+      "away_absent_count": 2
+    },
+    {
+      "game_number": 5,
+      "home_team": "Nordirland",
+      "away_team": "Ukraina",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Northern Ireland reportedly missing Conor Bradley and Daniel Ballard among others (reportedly out per BBC/Perplexity — unverified by structured sources)",
+        "Ukraine xGF 0.81/g, xGA 1.44/g — severely limited attacking and defensive quality",
+        "NI won 3-0 in Ukraine just six weeks ago — dominant H2H this season"
+      ],
+      "risk_flags": [
+        "NI injury list from Perplexity (6 players including Bradley and Ballard) is unverified by structured sources — treat with reduced confidence",
+        "Ukraine have motivation to avoid relegation play-offs — expect defensive compactness and counter-attack"
+      ],
+      "analysis": "Northern Ireland sit top of Group B2 and have yet to concede a single goal in their home Nations League matches — a remarkable defensive record for a side of their modest international pedigree. The 3-0 win in Ukraine just six weeks ago remains the defining result, and Michael O'Neill's side have shown genuine collective organisation throughout. Their xGF is underperforming actual goals (1.34 xGF vs 0.8 actual) which suggests some regression back toward the mean and potentially more goals in both boxes — but defensively the shape has been outstanding.\n\nHowever, Perplexity's BBC Sport-sourced reporting — while not corroborated by structured data — is specific and credible enough to flag seriously: Conor Bradley (Liverpool right-back), Daniel Ballard (CB), Eoin Toal, Ali McCann, Jamie McDonnell and Ceadach O'Neill are all reportedly ruled out. If even half of these absences are confirmed, Northern Ireland lose their most elite-level player in Bradley and the backbone of their defensive structure. The structured empty for NI injuries is noted but the volume and specificity of the Perplexity claims — with BBC Sport cited — reduces confidence materially. These absences are treated here as 'reportedly out' and factored accordingly.\n\nUkraine are DOWN-FORM and struggling badly — their season xGF of 0.81/g and xGA of 1.44/g are both alarming, and they lost 0-3 on this very ground earlier in the campaign. Their away record W1 D1 L0 looks solid but the wins have come against Georgia, not against sides of Northern Ireland's defensive structure. Even a depleted Northern Ireland at home, with the chance to secure promotion, should retain their defensive identity.\n\nThis is genuine toss-up territory if Bradley and Ballard are out. I edge toward Northern Ireland given their home record and motivation to seal promotion, but the injury cloud is significant.",
+      "value_note": "If NI injury list is confirmed, Ukraine at 3.25 becomes attractive. Worth monitoring team news.",
+      "home_absent_count": 6,
+      "away_absent_count": 0
+    },
+    {
+      "game_number": 6,
+      "home_team": "Österrike",
+      "away_team": "Irland",
+      "predicted_outcomes": [
+        "X",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.72,
+      "key_factors": [
+        "Austria confirmed missing 10 players including Alaba, Schlager, Prass, Wöber — near-total squad decimation per BBC Sport",
+        "Ireland only miss Coleman; Nathan Collins returns fit — meaningful squad advantage for the visitors",
+        "Austria need only a draw for promotion — may set up ultra-defensive despite depleted personnel"
+      ],
+      "risk_flags": [
+        "Austria motivation for a draw may produce a backs-to-the-wall 0-0 that the depleted squad can grind out",
+        "DROPPED [1]: Austria missing 10 confirmed starters; Ireland have better available squad quality for this specific fixture"
+      ],
+      "analysis": "This match has been transformed completely by Austria's injury catastrophe. BBC Sport's pre-match reporting — cited specifically for this fixture — confirms ten confirmed absentees: David Alaba, Xaver Schlager, Alexander Prass, Maximilian Wöber, Patrick Wimmer, Florian Grillitsch, Nikolas Veratschnig, Paul Wanner, Carney Chukwuemeka and Marco Grüll. This is not a squad rotation — it is the near-total destruction of Austria's first-choice XI. Alaba alone is one of the best defenders of his generation; Schlager is a Champions League-calibre central midfielder; Prass was one of their most dynamic attacking outlets. What remains is essentially an experimental fringe group.\n\nThe tactical context adds an interesting layer. Austria need only a draw to secure promotion and win the group — which means even their depleted side may be set up conservatively, looking to absorb pressure and hit on the counter. Ireland, meanwhile, need a positive result to stay in top-two contention. Nathan Collins returns fit after a calf injury which is a boost to Ireland's defensive structure, while they lose only Seamus Coleman, a veteran reserve-role player.\n\nIreland's season xGF of 1.44/g and xGA of 1.36/g suggests a balanced, functional side. Their away form has been respectable: a 3-0 win in Israel, a draw against Kosovo, and competitive performances throughout. The draw in Aviva Stadium in the reverse fixture — Austria equalising at 2-2 — showed Ireland are capable of matching them. Against a skeleton Austrian side, the gap in available quality shifts meaningfully toward Ireland.\n\nThe draw is tempting here because Austria may park their depleted defence and grind one out. But Ireland's attacking intent, combined with the sheer scale of Austria's absentee list, makes the visitors genuinely dangerous. I go X2 — the away win or draw are the two most likely outcomes.",
+      "value_note": "Ireland at 6.00 is significantly underpriced given Austria missing 10 players — strong value on 2.",
+      "home_absent_count": 10,
+      "away_absent_count": 1
+    },
+    {
+      "game_number": 7,
+      "home_team": "Georgien",
+      "away_team": "Ungern",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.68,
+      "key_factors": [
+        "Georgia xGF 1.06/g in last 5 but only 0.2 actual goals — catastrophic finishing; Kochorashvili SUSPENDED removes their defensive pivot",
+        "Hungary won the reverse fixture 1-0 and are unbeaten away in this group this season",
+        "Hungary xGF 1.50/g vs actual 1.0 — positive regression due; goals to come"
+      ],
+      "risk_flags": [
+        "Szoboszlai reportedly doubtful (knee) for Hungary — unverified by structured data, but would be significant loss if absent",
+        "Georgia xG suggests they should be creating chances; regression to converting could materialise tonight"
+      ],
+      "analysis": "Georgia's xG data tells a haunting story: their xGF of 1.06/g in the last five games has translated into just 0.2 actual goals — a negative overperformance of 0.86 that is extraordinary. They have been creating chances but finishing in almost comically wasteful fashion. While regression theory suggests they will eventually start converting, there is no guarantee that correction arrives against Hungary. Georgia are DOWN-FORM, bottom of the group, and lose their defensive anchor Giorgi Kochorashvili to suspension — the CDM was arguably their most important outfield player in terms of protecting the defence and distributing from deep.\n\nHungary present a coherent, balanced case. Their season xGF of 1.50/g versus actual 1.0/g flags negative overperformance in front of goal too — Szoboszlai's knee concern (reportedly doubtful, per Perplexity's BBC Sport-sourced reporting, though unverified by structured data) would significantly compound that if he misses out. Nevertheless, Hungary won the reverse fixture 1-0 in Budapest, and their away record in this group shows W1 D1 L0 — they know how to protect a lead and manage matches.\n\nThe group dynamics are live for both sides: Hungary need points to stay in promotion contention, while Georgia are playing to avoid relegation. But the evidence of Georgia's catastrophic finishing record and the loss of Kochorashvili in midfield tips the balance toward the visitors. Hungary's xGF being 0.47/g ahead of actual goals also suggests they are due a more productive performance — which is both a warning and an invitation for a good display here.\n\nThe odds — essentially a coin-flip three-way market — reflect genuine uncertainty, but Hungary's structural quality, their away record in this group, and Georgia's deeply dysfunctional attack make the away win the most credible single outcome.",
+      "value_note": "Hungary at 2.40 is fair-to-slight value given Georgia's structural problems and suspension of Kochorashvili.",
+      "home_absent_count": 1,
+      "away_absent_count": 0
+    },
+    {
+      "game_number": 8,
+      "home_team": "Milton Keynes Dons",
+      "away_team": "Burton",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.83,
+      "key_factors": [
+        "MK Dons UP-FORM — five consecutive wins including 6-1 and 4-1 at home; xGF 2.42, xGA 0.88 in last five",
+        "Burton away record W2 D1 L4 this season; xGA 1.64/g on the road — cannot defend away from home",
+        "No significant absences confirmed for either team — clean data supports the form reading"
+      ],
+      "risk_flags": [
+        "FATIGUE flag for MK Dons (3 games/14d) — could lead to slightly flat performance or rotation affecting first XI",
+        "MK Dons home draw rate is high (3 draws from 7 home games) — X cannot be fully dismissed"
+      ],
+      "analysis": "MK Dons have been the form team of League One over the past fortnight. Five consecutive wins, including a stunning 6-1 thrashing of Doncaster and a 4-1 demolition of Bromley at Stadium MK, have embedded them as genuine promotion contenders. The xG data for the last five games — xGF 2.42, xGA 0.88 — represents dominant two-way football that the scorelines have faithfully reflected. The FATIGUE flag is noted (three games in 14 days), but both clubs share that concern symmetrically.\n\nBurton arrive with an away record of W2 D1 L4 and an underlying xGA of 1.64/g on the road — they leak goals, they cannot score (xGF 0.98/g away), and their recent form includes a 0-2 defeat at Wycombe and a goalless draw at Bradford. The FA Cup victory over AFC Rushden & Diamonds was routine and reveals nothing about their capacity against a team of MK Dons' current quality. Their five-game form shows an xGF of 1.23 against xGA of 1.53, with actual goals well below expected — a team struggling to execute even when creating half-chances.\n\nMK Dons' home record of W3 D3 L1 includes some draws that might concern at first glance, but those came early in the season before this current run crystallised. The Telegraph has explicitly tipped MK Dons for this fixture, citing Burton's poor away scoring as the decisive factor. No significant absences are confirmed for either side — no injury disruption to factor in.\n\nThis is as clean a home win case as exists in English football's lower divisions this week. MK Dons' momentum, their home xG numbers, and Burton's structural fragility on the road combine into a confident selection. The fatigue flag could suppress the winning margin but not the result.",
+      "value_note": "1.67 is comfortable given the form gulf and Burton's away record.",
+      "home_absent_count": 0,
+      "away_absent_count": 0
+    },
+    {
+      "game_number": 9,
+      "home_team": "Sheffield W",
+      "away_team": "Plymouth",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.7,
+      "key_factors": [
+        "Sheffield W DOWN-FORM — 0-4 EFL loss, FA Cup exit vs Oldham, 0-2 league defeat; xGA 1.85/g last 5",
+        "Plymouth UP-FORM with second-best away record in League One this season (W4 D1 L2)",
+        "Challinor's direct aerial approach specifically targets Wednesday's known defensive weakness"
+      ],
+      "risk_flags": [
+        "DROPPED [1]: Wednesday DOWN-FORM, lost 0-4 at home last week, xGF only 0.92 in last 5 games",
+        "FATIGUE flags for both clubs complicate confidence in either direction — a flat 0-0 or low-scoring draw is plausible"
+      ],
+      "analysis": "Sheffield Wednesday's last fortnight has been alarming. The 0-4 home thrashing by Accrington in the EFL Trophy was not just a cup aberration — it exposed defensive vulnerabilities that also surfaced in the 1-2 FA Cup defeat to Oldham and the 0-2 league loss at Doncaster. Wednesday's recent xGF is just 0.92/g against an xGA of 1.85/g, confirming this is a structurally fragile side in present form rather than an unlucky one. The DOWN-FORM tag is merited. Four absentees are noted — though three represent international duty call-ups for fringe players rather than starters, and Joe Lumley's return from a rib injury at least stabilises the goalkeeping situation.\n\nPlymouth, meanwhile, carry the UP-FORM flag and the second-best away record in League One this season at W4 D1 L2. Dave Challinor's side are physical, direct, and effective at away venues — they have beaten Cambridge 3-2, Leyton Orient 2-0, and Blackpool 4-2 on the road this campaign. Their recent xGF of 1.29/g against xGA of 1.60/g is not spectacular, but their actual away results outstrip what the numbers suggest, indicating good game management under Challinor. No confirmed absences for Plymouth.\n\nThe FATIGUE flag applies to both sides, though Plymouth have played slightly fewer games in the window (two vs three for Wednesday). Wednesday's recent meltdown at home to Accrington — a third-tier side — signals genuine structural problems that Plymouth's direct aerial approach is well-designed to exploit. Challinor's pre-match comments confirm they will target Wednesday's backline with deliveries into the box, a threat Wednesday have consistently failed to repel.\n\nThe public backs Wednesday at 46% but the market's 2.12 price should be compared against Plymouth's objectively superior form and injury situation. I go X2: drop the home win on form and structural evidence.",
+      "value_note": "Plymouth at 3.05 is genuine value given Wednesday's recent implosion and Plymouth's away record.",
+      "home_absent_count": 4,
+      "away_absent_count": 0
+    },
+    {
+      "game_number": 10,
+      "home_team": "Stockport",
+      "away_team": "Reading",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.79,
+      "key_factors": [
+        "Stockport xGF 2.93 in last 5 vs actual 1.6 — massive positive regression due; home dominance is real",
+        "Reading confirmed missing at least 6 players including Brown (forward), Paudie O'Connor (suspended), and multiple others",
+        "Stockport's season home record W5 D0 L2 and xGF/g 2.22 — consistently dominant at Edgeley Park"
+      ],
+      "risk_flags": [
+        "Stockport's goalkeeper Addai is suspended — backup Whatmuff steps in; not ideal but manageable",
+        "Some Reading absentee details partly unverified beyond BBC Radio Berkshire — exact player identities partially unclear"
+      ],
+      "analysis": "Stockport sit second in League One and have assembled the most statistically dominant home profile in the division: a season xGF/g of 2.22, with 15 points from seven home games and an xGA of only 1.22/g at Edgeley Park. The last five games show an xGF of 2.93 against actual 1.6 — a significant negative overperformance that is the strongest regression signal on this coupon. Stockport have been creating in enormous volume but not converting. That correction cannot be postponed indefinitely, and the home game against a Reading side stripped of key personnel looks like the ideal moment.\n\nReading arrive with six confirmed or credible absences: Jacob Brown (forward, out with rib discomfort — arguably their most potent attacker), Paudie O'Connor (defender, suspended), two further suspensions (the specifics partially unverified by structured sources but BBC Radio Berkshire cited), Dorsett (out) and Ward (out). That is a comprehensive dismantling of their away travelling party before kick-off. Reading's away record of W1 D3 L3 this season is already weak enough without subtracting six contributors from a squad of limited depth.\n\nStockport's absentees — goalkeeper Addai (suspended, replaced by Whatmuff who is available after withdrawing from England U20 duty) and defender Mingi (surgery, long-term) — are manageable. The goalkeeper position is covered, and Mingi is one player in a solid defensive unit. Jimmy McNulty's side have the firepower to punish a depleted Reading backline.\n\nThis is one of the more structurally clear matches in the English section of this coupon. Stockport's xG regression, their home dominance, and Reading's personnel crisis combine into a confident home win selection.",
+      "value_note": "1.82 is fair and represents solid value given Reading's personnel crisis and Stockport's xG regression due.",
+      "home_absent_count": 2,
+      "away_absent_count": 6
+    },
+    {
+      "game_number": 11,
+      "home_team": "Wimbledon",
+      "away_team": "Blackpool",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.53,
+      "key_factors": [
+        "Wimbledon DOWN-FORM — zero wins in last five, xGA 2.16/g; but H2H: won both games last season",
+        "Blackpool UP-FORM at home but away record W1 D1 L4; xGA 2.01/g away this season — cannot defend on the road",
+        "Odds represent genuine three-way market — no dominant signal in any direction"
+      ],
+      "risk_flags": [
+        "DROPPED [1]: Wimbledon are DOWN-FORM in every recent metric; five consecutive winless results",
+        "Blackpool's away record undercuts their overall form flag — UP-FORM is primarily driven by home results"
+      ],
+      "analysis": "This is a basement-level League One fixture that defies clean analysis. Wimbledon sit 18th and are in alarming form — five games producing zero wins, with an xGA of 2.16/g in that span and actual conceding at 2.6/g that is even worse. They have been hammered by Mansfield at home, lost to Arsenal's Under-21s in the EFL Trophy, and been knocked out of the FA Cup by Crewe. At home, the record reads W2 D3 L1, which at least suggests they have some capacity to grind out results on familiar turf, but the trajectory is downward.\n\nBlackpool carry the UP-FORM tag overall and had an energetic 3-2 win over Aston Villa Under-21s midweek, plus a creditable draw at Sheffield Wednesday. However, the UP-FORM flag is driven by recent home performances — their away record this season is W1 D1 L4, and they have conceded 10 goals in their last four away fixtures. Their season xGA of 2.01/g on the road is dreadful. So Blackpool are a team in form at home who travel poorly, visiting a Wimbledon side that is in terrible form but has historically been capable at Plough Lane.\n\nH2H history strongly favours Wimbledon: they won both fixtures last season (4-1 and 2-0). The odds — essentially a three-way market at 2.80/3.40/2.43 — reflect genuine uncertainty, as does the near-even public split. No injury news for either side, so form is the only lever.\n\nI edge toward Blackpool as the slight favourite but Wimbledon's home environment and H2H record make the draw very live. This is the lowest confidence call of the week — a full or the third outcome in a double.",
+      "value_note": "X at 3.40 is marginally interesting given H2H record and Blackpool's poor road form.",
+      "home_absent_count": 0,
+      "away_absent_count": 0
+    },
+    {
+      "game_number": 12,
+      "home_team": "Wigan",
+      "away_team": "Barnsley",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "H2H: five of last six meetings ended level, including three consecutive 1-1 league results",
+        "Barnsley away record W1 D1 L4 this season; eight-game winless league run — form crisis in full effect",
+        "Wigan FATIGUE flag (4 games/14d) — heaviest congestion on this coupon; risk of depleted performance"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Barnsley away record W1 D1 L4; eight consecutive League One games without a win; Stendel under pressure",
+        "Wigan xGA 2.04/g last five — cannot be trusted defensively even at home; Barnsley could nick something"
+      ],
+      "analysis": "Gary Caldwell has spoken publicly about his side's spirit and four-match unbeaten momentum — a phrase that only makes sense in the context of a team that knows how precarious their position at 21st truly is. Wigan are UP-FORM but carry the heaviest fatigue flag on this coupon: four games in 14 days, including a midweek EFL Cup tie, an FA Cup away day, and two league fixtures. Their xGF of 1.35/g against xGA of 2.04/g in the last five reveals a leaky, asymmetric team — scoring just enough but conceding at a rate that makes clean sheets improbable. Their actual 11 points vs xPts of 16 tells a story of chronic bad luck that has left them in the drop zone despite performing above their level.\n\nBarnsley have beaten nobody and lost to everybody over the past eight league games — Daniel Stendel's side are in deep trouble and their away record of W1 D1 L4 this season, with an xGA of 1.80/g on the road, confirms the structural weakness. However, their five-game xGF of 1.35/g matches Wigan's, and their actual goals underperform that figure too. These are two imprecise, dangerous-to-themselves sides.\n\nH2H is unusually instructive here: five of their last six meetings have ended level, including three consecutive 1-1 results in league play. The draw at 3.55 is probably undervalued given the historical pattern. Wigan's home advantage, UP-FORM tag, and Barnsley's eight-game winless run are reasons to lean toward the home side, but the fatigue from four games in a fortnight and the pervasive H2H draw rate temper confidence.\n\nI go 1X: drop the away win given Barnsley's dismal road form, retain the draw given H2H history and both teams' structural tendency to cancel each other out.",
+      "value_note": "X at 3.55 is worth considering given the H2H draw pattern across five recent meetings.",
+      "home_absent_count": 0,
+      "away_absent_count": 0
+    },
+    {
+      "game_number": 13,
+      "home_team": "Swindon",
+      "away_team": "Grimsby",
+      "predicted_outcomes": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "key_factors": [
+        "Grimsby xGF 2.75/g in last five — dominant attacking quality; 2.15/g season average is elite for League Two",
+        "Grimsby away record W1 D4 L2 — tend to draw matches on the road rather than win them",
+        "Swindon home record W4 D2 L1; Grimsby xPts 26 vs Pts 20 — underperforming over the season"
+      ],
+      "risk_flags": [
+        "DROPPED [1]: Grimsby's attacking xG (2.75/g last 5) is too dangerous for Swindon's defence (xGA 1.66/g) to contain; home win is least likely",
+        "Both clubs carry FATIGUE flags (3 games/14d for Swindon) — open but physically compromised game likely"
+      ],
+      "analysis": "Grimsby sit sixth in League Two and have assembled the most imposing attacking xG data in this section: a season xGF/g of 2.15 and an astonishing last-five figure of 2.75. That 2.75 compares against actual goals of 2.8 — almost perfectly converting — which means their shot volume and quality is real and not a statistical artefact. However, the season xPts of 26 against actual 20 points flags a significant underperformance over the longer term, suggesting either goalkeeper heroics against them or clinical finishing from opponents. David Artell is clearly building something coherent in terms of attacking threat.\n\nThe complication is Grimsby's away form. W1 D4 L2 on the road this season, with a habit of drawing matches they should be winning — 3-3 at Stafford Rangers in the FA Cup, 2-2 at Rochdale — suggests a team that creates well but manages games poorly away from home. Swindon's home record of W4 D2 L1 is competitive, and Grimsby manager Artell has described Swindon as 'a good home side' in his BBC preview.\n\nSwindon's xGF/g of 1.20 and xGA of 1.66/g suggest they are a team that concedes but also scores — against Grimsby's high line and aggressive press, there could be a lively, open game. H2H is split in both directions: Grimsby won 4-0 last season at Blundell Park but Swindon won the previous reverse fixture 2-2 (draw) and 3-1 historically. Swindon at 3.30 offers marginal value given Grimsby's away inconsistency.\n\nBoth sides carry fatigue flags. I go X2: Grimsby's attacking quality makes them slight favourites but their away draw tendency and Swindon's competitive home form make the draw very live. The home win at 3.30 is the outcome to drop given the attacking differential.",
+      "value_note": "Swindon at 3.30 is marginally attractive given Grimsby's road draw tendency.",
+      "home_absent_count": 0,
+      "away_absent_count": 0
+    }
+  ]
+}
