@@ -1,0 +1,186 @@
+{
+  "draw_number": 4979,
+  "draw_date": "2026-11-13",
+  "evaluated_at": "2026-11-20T22:52:18.306696+00:00",
+  "results": [
+    {
+      "game_number": 1,
+      "home_team": "Sverige",
+      "away_team": "Bosnien & Hercegovina",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.87,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 2,
+      "home_team": "Portugal",
+      "away_team": "Danmark",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "2",
+      "correct": false,
+      "confidence": 0.84,
+      "post_mortem": "Predicted 1 (single, conf=0.84) but result was 2. BORDERLINE SINGLE: This was a marginal single pick. Consider whether it should have been a double. IGNORED RISKS: Risk flags were noted but not weighted enough: Francisco Conceição SUSPENDED — Portugal lose significant direct attacking threat from the right; DROPPED [2]: Denmark lost 2-4 in Lisbon earlier this season; away record W1 D0 L1; goals above xGF unsustainable."
+    },
+    {
+      "game_number": 3,
+      "home_team": "Norge",
+      "away_team": "Wales",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.8,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 4,
+      "home_team": "Rumänien",
+      "away_team": "Polen",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": false,
+      "confidence": 0.8,
+      "post_mortem": "Predicted 2/X (double, conf=0.80) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: Bednarek SUSPENDED at CB for Poland — increased aerial vulnerability from set pieces; DROPPED [1]: Romania season record W0 D0 L4 at home in Nations League; 0 points; xGF 0.64/g. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 5,
+      "home_team": "Nordirland",
+      "away_team": "Ukraina",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.6,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 6,
+      "home_team": "Österrike",
+      "away_team": "Irland",
+      "our_prediction": [
+        "X",
+        "2"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": false,
+      "confidence": 0.72,
+      "post_mortem": "Predicted X/2 (double, conf=0.72) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: Austria motivation for a draw may produce a backs-to-the-wall 0-0 that the depleted squad can grind out; DROPPED [1]: Austria missing 10 confirmed starters; Ireland have better available squad quality for this specific fixture. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 7,
+      "home_team": "Georgien",
+      "away_team": "Ungern",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.68,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 8,
+      "home_team": "Milton Keynes Dons",
+      "away_team": "Burton",
+      "our_prediction": [
+        "1"
+      ],
+      "selection_type": "single",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.83,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 9,
+      "home_team": "Sheffield W",
+      "away_team": "Plymouth",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": false,
+      "confidence": 0.7,
+      "post_mortem": "Predicted 2/X (double, conf=0.70) but result was 1. IGNORED RISKS: Risk flags were noted but not weighted enough: DROPPED [1]: Wednesday DOWN-FORM, lost 0-4 at home last week, xGF only 0.92 in last 5 games; FATIGUE flags for both clubs complicate confidence in either direction — a flat 0-0 or low-scoring draw is plausible. WRONG DROPOUT: The dropped outcome (1) was the actual result. Market or form signals may have been misleading."
+    },
+    {
+      "game_number": 10,
+      "home_team": "Stockport",
+      "away_team": "Reading",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.79,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 11,
+      "home_team": "Wimbledon",
+      "away_team": "Blackpool",
+      "our_prediction": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.53,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 12,
+      "home_team": "Wigan",
+      "away_team": "Barnsley",
+      "our_prediction": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "1",
+      "correct": true,
+      "confidence": 0.6,
+      "post_mortem": ""
+    },
+    {
+      "game_number": 13,
+      "home_team": "Swindon",
+      "away_team": "Grimsby",
+      "our_prediction": [
+        "2",
+        "X"
+      ],
+      "selection_type": "double",
+      "actual_result": "2",
+      "correct": true,
+      "confidence": 0.63,
+      "post_mortem": ""
+    }
+  ]
+}
