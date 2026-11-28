@@ -1,0 +1,335 @@
+{
+  "draw_number": 4981,
+  "draw_date": "2026-11-28",
+  "saved_at": "2026-11-28T00:28:11.569995+00:00",
+  "executive_summary": "A coupon shaped by fixture congestion, with nine of the thirteen sides carrying FATIGUE flags from midweek action — most critically Aston Villa (UCL) and Manchester United (UCL), both on just 48-72 hours' rest. Two games stand out as near-singles: Leeds' unbeaten home record against a heavily depleted Coventry, and Birmingham's flawless home record against a Bolton side missing five players. Beyond those two, a week of genuine uncertainty populated by down-form teams, injury-depleted squads, and volatile xG regression signals demands caution. The standout value alert is West Ham at 1.47 to beat a Stoke side sitting second in the table with five consecutive wins and outstanding away form — that price deserves scrutiny even factoring in the regression risk on Stoke's points tally.",
+  "value_radar": [
+    "Game 9: West Ham 1.47 looks dangerously short for a 13th-placed side hosting the Championship's second-placed team. Stoke's away record (W5 D1 L2) and five-game winning streak would make them favourites in most neutral venues. The xPts regression warning on Stoke (35pts vs xPts 21) prevents a confident away bet, but the draw at 4.80 carries genuine interest given West Ham's own xG regression (xPts 32 vs Pts 24).",
+    "Game 2: Manchester United 2.00 is a price built on name recognition, not current form. With Bruno Fernandes doubtful (virus), Rashford doubtful, and Šeško/Ugarte/Baleba all confirmed out, this is a depleted United on 48 hours' rest. Brentford's draw at 3.95 looks mispriced given their solidity on the road (W0 D4 L1 away) and Brentford have already beaten United this season at Brentford.",
+    "Game 12: Reading at 2.80 away at Sheffield Wednesday is a compelling regression play — Reading's xPts of 29 vs actual 22 points represents one of the season's biggest luck deficits. Their DOWN-FORM flag is real, but the underlying numbers suggest their true level is considerably higher."
+  ],
+  "predictions": [
+    {
+      "game_number": 1,
+      "home_team": "Ipswich",
+      "away_team": "Aston Villa",
+      "predicted_outcomes": [
+        "X",
+        "2"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Villa on 72-hour turnaround after UCL defeat in Galatasaray — FATIGUE is a genuine suppressor",
+        "Villa six matches without a win; attack generating but not converting (xGF 1.41 vs GF 1.0 in last 5)",
+        "H2H: both Premier League meetings finished as draws; Ipswich uninjured, Villa missing Onana and Ruggeri",
+        "Ipswich home attack weak (xGF 1.02 last 5) — unlikely to punish a depleted but organised Villa defence"
+      ],
+      "risk_flags": [
+        "DROPPED [1]: Ipswich attacking output too low to back as winners; xGF 1.02 in last 5 games",
+        "Villa regression upside — their xGF underperformance of -0.41 in last 5 means they could click unexpectedly"
+      ],
+      "analysis": "This fixture pits two sides sharing a DOWN-FORM flag and a creeping sense of crisis, but the decisive factor is Villa's schedule. Unai Emery's side played in Galatasaray on Tuesday and arrive at Portman Road on 72 hours' rest — the FATIGUE flag is not cosmetic here. A 0-1 defeat in Turkey in the Champions League was Villa's sixth match without a win, and the front line's output has been alarmingly low. Their five-game xGF reads 1.41 but actual goals are just 1.0, confirming a team generating chances but failing to convert — a problem that has persisted long enough to look structural rather than cyclical.\n\nIpswich, for all their defensive frailty (xGA 2.26 in the last five), have no injuries to report after Gary O'Neil confirmed Leif Davis fit. Their home record of W2 D1 L2 is modest but includes a win over Fulham and a draw against Nottingham Forest. The Tractor Boys have been unlucky in a narrow sense — their actual goals conceded (2.0 per game) almost exactly match xGA — but their attack generates feebly (1.02 xGF in the last five).\n\nAston Villa are missing Amadou Onana in midfield and Matteo Ruggeri at left back, the latter especially problematic given Villa's reliance on width in transition. Matty Cash's return at right back steadies the defensive line, but the cumulative effect of two Champions League defeats, a six-game winless run, and minimal recovery time creates the conditions for another disappointing result. H2H recent history produced draws in both Premier League meetings — 2-2 and 1-1.\n\nThe draw looks the most honest reflection of where these two clubs are. Villa lack the energy and momentum to impose themselves convincingly away from home in this state, and Ipswich lack the attacking quality to punish a Villa defence that, even understrength, is better organised than the hosts' own backline. A cagey stalemate is the route of least resistance.",
+      "value_note": "Draw at 3.95 carries value given both clubs' poor form trajectories and Villa's midweek fatigue factor",
+      "home_absent_count": 0,
+      "away_absent_count": 2
+    },
+    {
+      "game_number": 2,
+      "home_team": "Manchester United",
+      "away_team": "Brentford",
+      "predicted_outcomes": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Man Utd on 48-hour turnaround from UCL away trip, Fernandes and Rashford both doubtful",
+        "Confirmed absentees: Šeško, Ugarte, Baleba — United's midfield and attack severely disrupted",
+        "Brentford away record W0 D4 L1; solid defensive structure limits defeat probability",
+        "Brentford missing Thiago (suspended, 2G/3A) but collective defensive organisation remains"
+      ],
+      "risk_flags": [
+        "DROPPED [1]: Man Utd 19th with worst home record in league, depleted squad, 48hr turnaround after European away trip",
+        "United's season xPts (13) vs actual Pts (8) — marginally unlucky but defence genuinely porous"
+      ],
+      "analysis": "The 2.00 price on Manchester United at home reflects reputation rather than evidence. Pochettino's side are 19th in the table with just 8 points from 11 games — a team 5 points below their expected points tally of 13, suggesting some bad luck, but also leaking an average of 2.87 xGA per game in the last five. They played Sporting CP away on Wednesday evening and return to Old Trafford 48 hours later in a state of physical and psychological exhaustion. The home record — W1 D2 L2 — is one of the worst in the league.\n\nThe injury situation is severe. Šeško, Ugarte, and Baleba are all confirmed out from the structured FPL feed. Crucially, both Bruno Fernandes (virus) and Marcus Rashford (individual training only) are doubtful. If Fernandes misses this, United lose their attacking orchestrator and primary creative outlet. Joshua Zirkzee's rumoured start would be his first league start of the campaign — hardly an inspiring backstop for a side that must chase a result.\n\nBrentford, meanwhile, have been characteristically efficient on the road this season: W0 D4 L1 away. They do not concede goals — xGA 1.36 per game across the season — and their own xGF of 1.56 is generated consistently. The key absence is Igor Thiago (suspended), who contributes 2 goals and 3 assists as a set-piece threat, and Collins, Dasilva, Milambo, Hickey, Furo and Henry are also sidelined. Despite the injury list, Thomas Frank's side has the defensive structure to absorb United's diminished attack and the capacity to nick something.\n\nThis has the hallmarks of a low-scoring draw. United do not have the personnel or freshness to press the game, and Brentford away do not lose often. The cautious read is a stalemate — perhaps an edgy 1-1 or 0-0 — with a Brentford upset perfectly plausible if Fernandes is absent.",
+      "value_note": "Draw at 3.95 appears mispriced. United's condition and injury list make a home win at 2.00 poor value.",
+      "home_absent_count": 4,
+      "away_absent_count": 7
+    },
+    {
+      "game_number": 3,
+      "home_team": "Leeds",
+      "away_team": "Coventry",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.85,
+      "key_factors": [
+        "Leeds unbeaten at home all season (W2 D3 L0) with solid defensive metrics (xGA 0.88 last 5)",
+        "Coventry missing 5 players including top striker Awoniyi — attack severely compromised",
+        "H2H: Leeds won 3-0 and 2-0 in both recent Championship meetings at Elland Road",
+        "Coventry's away record W1 D0 L4 and xGF 1.05 — bottom-tier away attacking output"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Coventry missing Awoniyi and Wright up front, away record W1 D0 L4 this season",
+        "Lampard new manager effect is limited — not applicable here as Lampard's manager_weeks exceeds typical bounce window context, and Coventry's depleted squad negates any short-term lift"
+      ],
+      "analysis": "Leeds are in compelling form and in the most favourable conditions for a home win this weekend. Daniel Farke's side beat Chelsea 4-1 at Stamford Bridge in their most recent away trip — a result that announced them as genuine Premier League contenders — and their home record of W2 D3 L0 means they have not been beaten at Elland Road all season. Only the solitary absence of Mateo Joseph clouds their squad picture, and he is not a first-choice starter. Their xGA of 0.88 in the last five games reflects a genuinely tight defensive structure.\n\nCoventry arrive under Frank Lampard with a mounting crisis. Taiwo Awoniyi — the striker who had given their attack purpose — is out with a significant ankle injury. Hadji Wright is also unavailable, alongside Eccles, Woolfenden and Amenda from the defensive and midfield units. That is five confirmed absences, stripping the visitors of key personnel across the pitch. Their away record reads W1 D0 L4 and their actual goals output on the road has been poor against better sides. xGF of 1.05 is among the Championship's lowest — and that includes their home games.\n\nThe H2H history in this fixture sits firmly with Leeds. At Elland Road in their two recent Championship meetings, Leeds won 3-0 and 2-0 — both comfortable. Coventry's one away win this season came against a struggling side, and they will not replicate that here.\n\nThe market has this right at 1.58, with 76% of the public backing Leeds. There is no meaningful contrarian signal worth pursuing. This is one of the clearest outcomes on the entire coupon: an in-form Leeds side, unbeaten at home, against a depleted and down-form visiting team managed by a coach still finding his feet. Leeds should win this comfortably.",
+      "value_note": "",
+      "home_absent_count": 1,
+      "away_absent_count": 5
+    },
+    {
+      "game_number": 4,
+      "home_team": "Birmingham",
+      "away_team": "Bolton",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.85,
+      "key_factors": [
+        "Birmingham unbeaten at home all season (W4 D4 L0) — the most reliable home record in the Championship",
+        "Bolton missing 5 key players across defence, midfield and attack — Erhahon, McAtee, Nelson, Hardie, Toal all out",
+        "Birmingham UP-FORM with strong xGF (2.05) vs xGA (1.31) over last 5 games",
+        "Bolton DOWN-FORM in 19th, xGA 1.71 in last 5 — leaky on the road"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Bolton missing 5 first-team players, DOWN-FORM, 19th in table, 0 wins in last 5",
+        "Birmingham slight season overperformance (32pts vs xPts 28) — marginal regression risk, not enough to undermine confidence"
+      ],
+      "analysis": "Birmingham's home record this season is one of the Championship's most imposing: W4 D4 L0, entirely unbeaten across eight home games, with 19 goals scored and just 8 conceded. That is the bedrock of a team that leads the division's home form table. The UP-FORM flag reflects five recent wins in league action including a 3-0 hammering of Millwall and wins over Swansea and Burnley. Their xGF (2.05) substantially outpaces xGA (1.31) over the last five, and their season xPts of 28 versus actual 32 points confirms they are delivering above their underlying expectation — an overperformance that speaks to cohesion and clinical finishing rather than pure luck.\n\nBoth sides carry a 48-hour FATIGUE flag, having played midweek in the Championship, so the schedule is neutral in that regard. But Bolton's condition is far worse in personnel terms. The structured FotMob data confirms five first-team absences: Erhahon (CDM), McAtee (CAM), Nelson (LW), Hardie (ST) and Toal (CB) — a midfielder, an attacker on each flank, a striker and a central defender all unavailable. That is an extraordinary attrition across every line. Bolton sit 19th in DOWN-FORM, their xGA of 1.71 in the last five confirming a defence that leaks regularly.\n\nH2H within the Championship era is thin — their most recent competitive meeting saw Bolton beat Birmingham in League One — but the context was entirely different. Bolton's current squad, with its five absentees and poor form, represents a qualitatively different proposition. Birmingham's ability to rotate and maintain intensity across their squad has been one of their most striking qualities this season.\n\nThe case for Bolton winning away from home simply does not stand up to scrutiny: they are DOWN-FORM, depleted in every area, and travelling to the division's most formidable home side. Birmingham are strong favourites at 1.58 and the case is as solid as it gets outside of a truly one-sided matchup.",
+      "value_note": "",
+      "home_absent_count": 0,
+      "away_absent_count": 5
+    },
+    {
+      "game_number": 5,
+      "home_team": "Derby",
+      "away_team": "Watford",
+      "predicted_outcomes": [
+        "X",
+        "1"
+      ],
+      "selection_type": "double",
+      "confidence": 0.57,
+      "key_factors": [
+        "Watford NEW MANAGER (Iordanescu, days into the job) — bounce effect real in first 3 weeks, especially with squad galvanised",
+        "Derby missing top scorer Szmodics plus three left-backs — attack and defensive shape both compromised",
+        "Watford's W0 D1 L7 away record is the worst in the league — structural barrier against a road win",
+        "Both sides in poor form; both flagged FATIGUE from midweek Championship action"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Watford's W0 D1 L7 away record is a primary structural barrier regardless of new manager bounce",
+        "Derby's xPts (14) vs Pts (10) suggests some bad luck — they may be better than results show, reducing away win probability further"
+      ],
+      "analysis": "This is a Championship basement battle between two deeply struggling sides, made more intriguing by the appointment of Edward Iordanescu as Watford manager earlier in the week. The new manager bounce is a genuine phenomenon — particularly in the first three weeks — and it arrives at a fixture where Watford desperately need to stop the slide. The question is whether that psychological reset can survive one of the worst away records in the division.\n\nWatford's away form reads W0 D1 L7 — nine away matches into the season and just a single point on the road. Their xGF of 0.71 in the last five games is anemic, and Jordan Zemura's suspension removes one of their attacking outlets from the left channel. Michel Antonio and Ngakia are also unavailable, limiting their attacking depth significantly. Nevertheless, the new manager bounce should not be dismissed: a fresh voice, an altered tactical shape, and players motivated to impress a new boss can and do produce unexpected results.\n\nDerby are equally beleaguered. The loss of Sammie Szmodics — their top scorer with the ⚡ flag — is hugely damaging. Three additional left-backs are out, leaving the defensive structure misshapen, and Henrik Meister is a doubt up front. Their home record is W1 D2 L5, and their xGA of 3.16 in the last five games is catastrophic. The underlying data (xPts 14 vs actual 10) suggests Derby have been unlucky, but their defence has been genuinely poor.\n\nThis feels like a match where the most likely outcome is a low-scoring draw. Neither side can generate goals consistently, both are fatigued from midweek, and the new manager effect for Watford is likely to produce a compact, defensive structure prioritising not losing rather than winning. Derby's depleted attack, without Szmodics, cannot be relied upon to break that down.",
+      "value_note": "Draw at 3.55 has genuine appeal given both sides' inability to score and Watford's new manager defensive reset",
+      "home_absent_count": 5,
+      "away_absent_count": 4
+    },
+    {
+      "game_number": 6,
+      "home_team": "Millwall",
+      "away_team": "Burnley",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "key_factors": [
+        "Millwall massive positive xG regression signal: generating 1.67 xGF/g but scoring just ~1.0/g — overdue correction",
+        "Burnley missing Roberts (SUSPENDED), Mejbri, Satpaev outright plus Broja/Beyer/Barnes as doubts — multiple defensive absences",
+        "Burnley away record W1 D2 L5 with xGA 2.36 in last 5 — defence leaks consistently on the road",
+        "Both sides FATIGUE from midweek, neutralising schedule advantage"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Burnley missing Roberts (SUSPENDED) plus Mejbri/Satpaev, away record poor, in relegation zone",
+        "Millwall's season overperformance in reverse (Pts 18 vs xPts 25) — their actual xG has been consistently above results, suggesting bad luck rather than quality gap"
+      ],
+      "analysis": "Fabio Celestini has identified defensive fragility as Millwall's core problem, and the numbers support him — four consecutive Championship defeats prior to last week's 4-1 win over Derby. Their xGF situation is one of the most striking on the entire coupon: over the season, they are generating 1.67 expected goals per game but scoring at a rate of approximately 1.0 — a persistent underperformance that represents a strong regression signal. That Derby win, with its four goals, may be the first sign of the numbers correcting. The home record (W3 D2 L3) is underwhelming for a club with Millwall's physical profile, and several players including Coburn, Crama, Servais, Marschall and Leonard are unavailable.\n\nBurnley arrive in arguably worse shape. They are 23rd — in the Championship's bottom three — with a meagre five points from their eight away games (W1 D2 L5). Their xGA of 2.36 in the last five betrays a defence that simply cannot hold shape away from home. Connor Roberts is SUSPENDED, removing their right-back. Mejbri (CDM) is out, Satpaev (LW) is out, while Broja, Beyer and Barnes are all doubts. That is effectively half a first team either absent or uncertain. Their season xPts of 17 versus actual 11 suggests the table is too harsh on them — but that unlucky reading must be weighed against genuinely poor defensive metrics.\n\nH2H history does not favour Millwall: Burnley won 5-1 in the FA Cup and 3-1 in the Championship in their last two meetings. But those were different squads in different circumstances, and Burnley's current state makes extrapolating from those results dangerous. This is a fixture between two flawed, injury-hit, fatigued sides where Millwall's home advantage and their xG regression signal — combined with Burnley's depleted backline — tilts the probability towards the hosts.\n\nMillwall's xG regression is the strongest signal here: a team generating 1.67 xGF per game but only scoring 1.0 is due a corrective performance. Against a defensively porous Burnley away side with multiple absentees, the conditions are right for Millwall's attack to finally fire.",
+      "value_note": "",
+      "home_absent_count": 4,
+      "away_absent_count": 6
+    },
+    {
+      "game_number": 7,
+      "home_team": "West Bromwich",
+      "away_team": "Bristol City",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.7,
+      "key_factors": [
+        "West Brom losing Isaac Price (TOP SCORER, 7G/3A) to 6-week injury — attack loses its primary threat",
+        "West Brom UP-FORM with xGF 2.76 in last 5 — collective quality remains even without Price",
+        "Bristol City massively unlucky (xPts 23 vs Pts 19) — better than results suggest, away record W3 D3 L2",
+        "West Brom also missing Collyer and Diakité in midfield — engine room depleted alongside attack"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Bristol City away record W3 D3 L2 is respectable; they compete away from home, reducing two-way win-loss scenario",
+        "Price's absence is a genuine matchup risk — his goal and assist return was disproportionate to West Brom's overall output"
+      ],
+      "analysis": "West Brom's UP-FORM flag is well-earned: wins over Bolton, Millwall and West Ham in the last five, and an extraordinary five-game xGF of 2.76 — the product of a team pressing high, creating in volume, and converting. Their season points tally of 32 (vs xPts 27) suggests they have outperformed their underlying numbers slightly, but the gap is not so wide as to invite a dramatic regression. James Morrison's side are second in the Championship home table and have genuine promotion credentials.\n\nThe single most damaging piece of news is Isaac Price's absence. The ⚡ TOP SCORER flag and his 7 goals and 3 assists make him West Brom's most decisive individual — a grade-two medial ligament injury ruling him out for up to six weeks is a serious blow to their attacking architecture. The question is whether their collective quality can absorb that loss. Toby Collyer (CDM) and Ousmane Diakité (CM) are also out, depleting the midfield engine room, while Michael Johnston is a doubt and Nolan Galves is out for the season.\n\nBristol City's DOWN-FORM flag reflects a club in poor recent form — L 0-5 to Norwich last week was alarming — but their seasonal away record (W3 D3 L2) shows genuine resilience on the road. They are massively unlucky on the season: xPts of 23 versus actual 19 reflects a team that has been punished beyond what their underlying play deserves. Their injuries are limited — Eile out, McNally a doubt — and both are defensive concerns that West Brom's depleted but still potent attack can exploit.\n\nThe balance of probability still favours West Brom. Even without Price, they carry sufficient quality across their forward line and the home advantage at The Hawthorns is real. But the confidence is tempered by Price's absence — he is the difference between a comfortable win and a nervy one — and Bristol City's ability to grind out draws on the road makes the home win-draw double the prudent play.",
+      "value_note": "",
+      "home_absent_count": 4,
+      "away_absent_count": 2
+    },
+    {
+      "game_number": 8,
+      "home_team": "Queens Park Rangers",
+      "away_team": "Sheffield U",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.63,
+      "key_factors": [
+        "QPR home defensive excellence: xGA 0.77 in last 5, the kind of backline structure that wins tight home games",
+        "Sheffield Utd UP-FORM but missing Rothwell, Seriki, Oné, Doherty — four confirmed absentees across key positions",
+        "QPR home record W4 D3 L1 versus Sheffield Utd's mixed away form W3 D2 L3",
+        "H2H: Sheffield Utd won at Loftus Road last season — but QPR are better organised defensively this campaign"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Sheffield Utd's away record is mixed (W3 D2 L3), they're missing key personnel, and QPR's defensive structure is the best it's been at home this season",
+        "Sheffield Utd slight season overperformance (26pts vs xPts 24) — marginal regression risk on their recent run"
+      ],
+      "analysis": "QPR's home form has been one of the quiet success stories of the Championship season. Their Loftus Road record of W4 D3 L1 is built on defensive solidity — xGA of 0.77 in the last five games is elite — and an ability to find winning goals even when not at their best. Their season xPts of 30 versus actual 28 reflects an accurate team, not a lucky one. The only confirmed absence is Amadou Mbengue, out for the season at right back, but the defence has not been structurally destabilised by that loss.\n\nSheffield United arrive with an UP-FORM flag and momentum from three wins in their last five, including a 4-0 hammering of Watford and a 3-2 win at Preston. But their away record is split — W3 D2 L3 — and four confirmed absentees (Rothwell, Seriki, Oné, Doherty) reduce their depth in midfield, right back, and central defence. Chris Wilder is building something coherent, and their xGF of 1.59 versus xGA of 0.79 in the last five is genuinely impressive — the attack has found rhythm while the defence has tightened.\n\nH2H history leans slightly towards Sheffield United: they won 2-0 at Loftus Road last season and drew 0-0 at home in the reverse fixture. But QPR's home form this season makes direct extrapolation hazardous — this is a better-organised QPR than the one that lost that fixture. Both sides carry a fatigue flag from midweek Championship action, so the schedule is neutral.\n\nThe public lean (45% QPR) is modest, and the market has this as a genuinely close contest. QPR's defensive xGA is the decisive tiebreaker — a team conceding 0.77 expected goals per game at home is very difficult to beat. The home win and draw is the selection, with QPR's defensive structure the key reason for tilting towards the hosts.",
+      "value_note": "",
+      "home_absent_count": 1,
+      "away_absent_count": 4
+    },
+    {
+      "game_number": 9,
+      "home_team": "West Ham",
+      "away_team": "Stoke",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.58,
+      "key_factors": [
+        "Stoke 2nd in table, W5 D1 L2 away — extraordinary away form that the market has significantly underpriced",
+        "West Ham massive positive regression signal: xPts 32 vs actual Pts 24 — severely unlucky, overdue corrective performance",
+        "Stoke's regression risk: xPts 21 vs Pts 35 — historically extreme overperformance; some normalisation due",
+        "West Ham 5g xGF 2.05 but only converting at 1.2/g — generating but not finishing, should improve"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Stoke's W5 D1 L2 away record is elite-level and they're 11 places above West Ham — dropping them from the double purely on regression risk and home advantage",
+        "CONTRARIAN SIGNAL: West Ham 1.47 looks mispriced — Stoke 7.00 and Draw 4.80 carry value vs a 13th-placed host"
+      ],
+      "analysis": "The pricing of this match demands scrutiny. West Ham at 1.47 to beat Stoke — the Championship's second-placed side with five consecutive wins and an away record of W5 D1 L2 — appears to reflect historical Premier League brand recognition far more than current Championship reality. West Ham are 13th in this division, 11 points and 11 places below their opponents. That should be the starting point for any honest analysis.\n\nStoke's UP-FORM flag is fully justified: five straight wins, including four of them on the road, with an xGF of 1.47 versus xGA of 0.92 in the last five. Mark Robins has built a compact, well-drilled unit that wins more than it should according to their underlying xG — their season points tally of 35 versus xPts of 21 is one of the most extreme overperformances on the coupon, a genuine regression warning. That disparity is the primary risk in backing them confidently. The absence of Djibril Soumaré (CDM) reduces their midfield depth, and Lamine Cissé is a doubt in attack.\n\nWest Ham's situation carries its own paradox. Their five-game xGF of 2.05 is decent, suggesting they create enough chances — but actual goals scored average just 1.2 per game. The inverse is dramatic: they're conceding more than their xGA suggests they should, and their season xPts of 32 versus actual 24 makes them one of the unluckiest teams in this analysis. The regression signal for West Ham is strongly positive — they have been punished beyond what their play deserves, particularly at home.\n\nIf both regression signals fire simultaneously — West Ham converting at a healthier rate while Stoke's luck normalises — a home win becomes very plausible. But Stoke's away record and collective confidence make dismissing them foolish at any price. The draw at 4.80 represents genuine interest given the competing regression forces, but on balance, West Ham's home advantage and positive xG regression edge gives them the slight nod, without high confidence.",
+      "value_note": "Draw at 4.80 looks the most mispriced outcome given competing regression signals; Stoke 7.00 is a value alert despite their overperformance risk",
+      "home_absent_count": 3,
+      "away_absent_count": 2
+    },
+    {
+      "game_number": 10,
+      "home_team": "Wrexham",
+      "away_team": "Portsmouth",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.65,
+      "key_factors": [
+        "Portsmouth missing BOTH senior strikers (Marezi and Bishop out) — no recognised forward partnership available",
+        "Portsmouth's away attacking xGF of 0.62 in last 5 is the worst on the coupon — further suppressed by striker absences",
+        "Wrexham home record W3 D3 L2 and H2H win over Portsmouth last season at this venue",
+        "Portsmouth overperforming (xPts 21 vs Pts 26) — regression due, especially with key strikers unavailable"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Portsmouth missing both strikers, xGF 0.62 in last 5, away record W2 D4 L2 — no capacity to win this game attacking-wise",
+        "Wrexham's own absences in creative positions (Windass, Broadhead) may keep this low-scoring rather than free-flowing"
+      ],
+      "analysis": "Both clubs arrive at STōK Cae Ras in fragmented condition, but Portsmouth's injury situation stands out as a genuine crisis. The structured FotMob data confirms nine players unavailable or uncertain: Marezi and Colby Bishop — both strikers — are out until early December, gutting their forward line. Ogilvie (CB), Kosznovszky (CDM), Brooke-Smith (LW) and Anderson (LW) are all out for extended periods, while Swift (CAM), Arthur (50-50) and Meghoma (doubt) add further uncertainty. This is a club fielding a significantly depleted squad in every area of the pitch.\n\nPortsmouth's underlying numbers tell the story of a team living dangerously: xGF of 0.62 in the last five games is alarming, while their five-game actual goals (1.2) massively overperform that — their season xPts of 21 versus actual 26 reflects a team that has punched above its weight through defensive discipline and moments of clinical efficiency. With two strikers absent, that clinical moment becomes much harder to find.\n\nWrexham are not without their own injury concerns — O'Hare (doubt), Smith, Windass, Broadhead, Cacace and Revan cover the attacking midfield zone and left wing-back areas — but their absentees are more concentrated in creative positions rather than a wholesale destruction of every unit. Their home form (W3 D3 L2) is solid enough for this level, and their xGF and xGA are essentially balanced, suggesting a compact side that makes the most of Stōk Cae Ras.\n\nThe case for Wrexham at home is straightforward: they face a Portsmouth side with no recognisable striker partnership, playing away from home with a terrible attacking output in recent weeks. H2H supports the hosts — Wrexham won 2-1 last season at home. The 2.17 price for Wrexham is fair and the home win with draw cover is the selection.",
+      "value_note": "",
+      "home_absent_count": 5,
+      "away_absent_count": 8
+    },
+    {
+      "game_number": 11,
+      "home_team": "Luton",
+      "away_team": "Oxford",
+      "predicted_outcomes": [
+        "1"
+      ],
+      "selection_type": "single",
+      "confidence": 0.72,
+      "key_factors": [
+        "Oxford massive overperformance regression risk: xPts 21 vs actual Pts 29 — results have been flattering their underlying quality",
+        "Luton fully fit, UP-FORM, strong home record (W4 D2 L1), season xPts accurately matches actual points (reliable)",
+        "Oxford FATIGUE: 72-hour turnaround after EFL Trophy fixture on Wednesday",
+        "Luton's xGF 1.81 vs xGA 1.03 in last 5 — balanced, effective home attacking and defensive metrics"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Oxford's away record W3 D2 L1 is decent but their overperformance regression risk and fatigue make a road win the weakest probability outcome",
+        "Oxford's raw xGF (2.17 last 5) suggests genuine quality — if regression bites and Luton underperform, a draw is live"
+      ],
+      "analysis": "Aaron Ramsey's Oxford have been one of League One's most eye-catching sides — currently third in the table with an UP-FORM flag and a points tally of 29 from 14 games. But the most critical number on this fixture sheet is hidden in their seasonal xPts: 21 expected points against 29 actual. That is the second-largest overperformance on this coupon. Oxford's results have been substantially better than the underlying data justifies, and the regression risk is real — particularly when they travel on a 72-hour turnaround after an EFL Trophy fixture.\n\nLuton, managed by Jack Wilshere, are UP-FORM themselves and entirely free of injuries. Their home record of W4 D2 L1 reflects a side that is quietly imposing at Kenilworth Road, and their five-game xGF of 1.81 versus xGA of 1.03 is well-balanced. Their season xPts of 28 versus actual 27 reflects an accurate team — results closely matching expected output — which signals reliability rather than volatility.\n\nOxford's fatigue from their EFL Trophy midweek tie (W 4-0 Cheltenham) is a minor concern, but their five-game xGF of 2.17 is impressive. The issue is conversion — actual goals are just 1.6 per game despite generating at that rate, an underperformance of 0.57 xGF. The H2H between these clubs at this level is not deep, but their two Championship meetings finished with Oxford winning — though that was a qualitatively different context.\n\nThe public backs Luton at 60% and the 1.73 price is justified. The combination of Luton's fully fit squad, strong home form, accurate underlying metrics, Oxford's overperformance regression risk, and slight fatigue disadvantage makes the home win the clear selection. Dropping the draw is tempting given the game's potential to be settled by a goal or two, but Oxford's underlying xG quality means a draw cannot be fully dismissed.",
+      "value_note": "",
+      "home_absent_count": 0,
+      "away_absent_count": 0
+    },
+    {
+      "game_number": 12,
+      "home_team": "Sheffield W",
+      "away_team": "Reading",
+      "predicted_outcomes": [
+        "1",
+        "X"
+      ],
+      "selection_type": "double",
+      "confidence": 0.6,
+      "key_factors": [
+        "Reading's massive positive regression signal: xPts 29 vs Pts 22 — one of the most unlucky teams on the coupon, overdue positive correction",
+        "Sheffield W DOWN in recent xGF (1.00 in last 5 vs 1.65 season average) — creative output has softened",
+        "Sheffield W three games in 14 days including cup/trophy matches — mild fatigue consideration",
+        "Reading away record W1 D3 L4 — structural barrier to road win despite underlying quality"
+      ],
+      "risk_flags": [
+        "DROPPED [2]: Reading's away record W1 D3 L4 is a persistent pattern; their underlying quality hasn't translated to road wins despite strong home xG numbers",
+        "Sheffield W slight overperformance (27pts vs xPts 23) — regression could flatter Reading's chances"
+      ],
+      "analysis": "Sheffield Wednesday are fourth in League One, unbeaten in their last five league fixtures, and playing at Hillsborough with a home record of W3 D4 L1. Dave Challinor's side are reliable rather than explosive — their season xGF of 1.65 per game is healthy, but the recent five-game xGF has dipped to 1.00, hinting at a mild creative slowdown. They are also carrying the most acute fatigue flag in the division, having played three games in 14 days including a heavy 0-4 EFL Trophy defeat and an FA Cup loss to Oldham — competition noise, but physical depletion is real. Their season points tally (27) comfortably exceeds xPts (23), signalling mild overperformance.\n\nReading present one of the most compelling regression stories on the coupon. Their season xPts is 29 versus just 22 actual points — a 7-point deficit that represents one of the largest unlucky performances in English football this autumn. They have been generating in volume and quality (xGF 1.92 per game, SoT 6.0 per game) but their actual goals and results have not reflected it. The DOWN-FORM flag is accurate — three successive defeats — but the underlying quality has not dissipated; it simply has not converted into points. Their five-game xGF of 1.63 versus actual 1.2 goals confirms the story.\n\nThe caution on a Reading bet is their away record: W1 D3 L4 on the road this season, and a loss at Oxford last time out. Away from home they have conceded at a rate that keeps results tight, which may again produce a draw. The odds of 2.80 for Reading represent excellent value if the regression corrects — but the away record is a structural barrier.\n\nThis reads as a narrow home win or draw. Wednesday's home solidity and League One experience tips the balance towards the hosts, but Reading's underlying quality makes this competitive throughout.",
+      "value_note": "Reading 2.80 is a strong regression play if backing away wins; their xPts deficit is among the largest in the data",
+      "home_absent_count": 0,
+      "away_absent_count": 0
+    },
+    {
+      "game_number": 13,
+      "home_team": "Wycombe",
+      "away_team": "Bradford",
+      "predicted_outcomes": [
+        "1",
+        "X",
+        "2"
+      ],
+      "selection_type": "full",
+      "confidence": 0.52,
+      "key_factors": [
+        "Bradford UP-FORM with excellent away record (W3 D3 L1) including wins at Luton and Oxford this season",
+        "H2H: Bradford won both meetings last season, including 1-2 at this venue",
+        "Bradford's potential TOP SCORER doubt (Humphrys, 3G) — could significantly reduce attacking potency if unavailable",
+        "Wycombe home record mediocre (W2 D3 L2), xGA 1.83 in last 5 — concede too often to be a safe home pick"
+      ],
+      "risk_flags": [
+        "DROPPED [1]: Wycombe's home record W2 D3 L2 and poor defensive xGA (1.83 last 5) provide insufficient base to back home win confidently",
+        "Humphrys doubt is the genuine swing factor — if he plays, Bradford are clearer favourites; if absent, draw becomes more likely"
+      ],
+      "analysis": "The market has spoken with unusual clarity about its uncertainty here. Public opinion is split almost perfectly three ways — 32% Wycombe, 33% draw, 35% Bradford — and the odds (2.50 / 3.30 / 2.75) confirm a genuine three-way contest with no meaningful favourite. This is exactly the type of match where analysis must resist false confidence.\n\nBradford arrive with an UP-FORM flag, sixth in League One, and an impressive away record of W3 D3 L1. Their road form has been particularly notable: wins at Luton, Rotherham, and Oxford are significant scalps. Their season xPts of 23 versus actual 26 suggests a slight overperformance, but the gap is modest and sustainable. The key injury concern is Stephen Humphrys — the ⚡ TOP SCORER doubt with 3 goals — whose participation is uncertain. If he starts, Bradford have a genuine threat. If he is absent or limited, their attacking potency is reduced, though their defensive structure (xGA 1.07 season-long) would still make them hard to beat.\n\nWycombe are 15th with a home record of W2 D3 L2 — mediocre by any standard. Their xGF of 1.26 versus xGA of 1.83 in the last five reflects a team that creates modestly and concedes with some regularity. Their actual goals (1.8) in the last five overperform their xGF (1.26) by 0.54 — one of the larger home overperformances, suggesting some regression risk on their attacking numbers. They are FATIGUED from a midweek FA Cup away win, and there is no structural evidence that they are the superior side.\n\nH2H supports Bradford firmly: wins in both meetings last season (2-1 and 1-2 at Wycombe). With Bradford's superior away form, their H2H advantage, and Wycombe's modest home record, Bradford are a slight lean — but Humphrys' injury doubt and both sides' fatigue keep this in genuine toss-up territory.",
+      "value_note": "",
+      "home_absent_count": 0,
+      "away_absent_count": 1
+    }
+  ]
+}
